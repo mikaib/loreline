@@ -1495,6 +1495,24 @@ async function main() {
             }
         }
 
+        const goModulePath = path.join(__dirname, 'go', 'loreline', 'go.mod');
+        const currentModule = fs.readFileSync(goModulePath, 'utf8').match(/^module\s+(\S+)/m)[1];
+        const targetModule = process.env.LORELINE_GO_MODULE || 'github.com/jeremyfa/loreline/go/loreline';
+        if (currentModule != targetModule) {
+            const moduleFiles = [
+                path.join('go', 'loreline', 'go.mod'),
+                path.join('go', 'loreline', 'loreline.go'),
+                path.join('go', 'loreline', 'loreline_test.go'),
+                path.join('sample', 'loreline-go', 'go.mod'),
+                path.join('sample', 'loreline-go', 'main.go')
+            ];
+            for (const file of moduleFiles) {
+                const filePath = path.join(__dirname, file);
+                fs.writeFileSync(filePath, fs.readFileSync(filePath, 'utf8').split(currentModule).join(targetModule));
+            }
+            console.log('Go module: ' + currentModule + ' -> ' + targetModule);
+        }
+
         await command('go', ['build', './...'], { cwd: path.join(__dirname, 'go', 'loreline') });
 
         console.log('Generated: go/loreline/internal/core');
@@ -2364,6 +2382,8 @@ async function main() {
         const goBin = path.join(__dirname, 'build', 'go', process.platform == 'win32' ? 'loreline.exe' : 'loreline');
         await command(goBin, ['test', './test']);
         await command(goBin, ['test-lsp', './test-lsp']);
+        await command('node', ['./setup', '--go-lib']);
+        await command('go', ['test', '.'], { cwd: path.join(__dirname, 'go', 'loreline') });
 
     }
 

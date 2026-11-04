@@ -487,8 +487,11 @@ jobs:
   loreline-go:
 
     runs-on: "ubuntu-22.04"
+    permissions:
+      contents: write
     env:
       HX2GO_REF: result-fix
+      LORELINE_GO_MODULE: github.com/${{ github.repository }}/go/loreline
     steps:
 
       - uses: actions/checkout@v6
@@ -525,12 +528,42 @@ jobs:
       - name: Build Go library
         run: node ./setup --go-lib
 
+      - name: Run Go library tests
+        working-directory: go/loreline
+        run: go test .
+
       - name: Build and run Go sample
         run: |
           node ./setup --sample go
           cd sample/loreline-go
           go vet .
           printf '1\n1\n1\n1\n1\n1\n1\n1\n' | go run . | grep -q "Barista:"
+
+      - name: Commit generated Go library
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')
+        run: |
+          git add -A go/loreline sample/loreline-go
+          if git diff --cached --quiet; then
+            echo "Generated Go library is up to date"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update generated Go library"
+          git pull --rebase origin "${{ github.ref_name }}"
+          git push origin "HEAD:${{ github.ref_name }}"
+
+      - name: Tag Go module release
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          git add -A go/loreline sample/loreline-go
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Generated Go library for ${{ github.ref_name }}"
+          fi
+          git tag "go/loreline/${{ github.ref_name }}"
+          git push origin "go/loreline/${{ github.ref_name }}"
 
 
   loreline-js:
@@ -2101,7 +2134,7 @@ jobs:
 
   create-release:
     if: startsWith(github.ref, 'refs/tags/')
-    needs: [loreline-windows, loreline-mac, loreline-linux, loreline-ios, loreline-android, loreline-wasm, loreline-js, loreline-csharp, loreline-python, loreline-lua, loreline-php, loreline-unity, loreline-web, loreline-jvm, loreline-cpp, loreline-sdl3, loreline-sdl3-test, loreline-godot, loreline-godot-test-linux, loreline-godot-test-web, loreline-godot-test-lifetime, loreline-gdscript]
+    needs: [loreline-windows, loreline-go, loreline-mac, loreline-linux, loreline-ios, loreline-android, loreline-wasm, loreline-js, loreline-csharp, loreline-python, loreline-lua, loreline-php, loreline-unity, loreline-web, loreline-jvm, loreline-cpp, loreline-sdl3, loreline-sdl3-test, loreline-godot, loreline-godot-test-linux, loreline-godot-test-web, loreline-godot-test-lifetime, loreline-gdscript]
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v6

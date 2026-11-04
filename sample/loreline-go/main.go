@@ -96,9 +96,9 @@ func main() {
 			fmt.Fprintln(os.Stderr, "Error:", err)
 			os.Exit(1)
 		}
-		_, err = script.Resume(handlers, string(save), "")
+		_, err = script.Resume(handlers, string(save), nil)
 	} else {
-		_, err = script.Play(handlers, "")
+		_, err = script.Play(handlers, nil)
 	}
 
 	if err != nil {

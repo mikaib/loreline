@@ -1,7 +1,7 @@
 package loreline
 
 import (
-	"fmt"
+	"errors"
 	"os"
 
 	"github.com/jeremyfa/loreline/go/loreline/internal/core"
@@ -32,19 +32,49 @@ type ChoiceHandler func(it *Interpreter, options []ChoiceOption, choose func(ind
 
 type FinishHandler func(it *Interpreter)
 
+type ErrorHandler func(it *Interpreter, err error)
+
+type Function func(it *Interpreter, args []any) any
+
+type FileReader func(path string) (string, bool)
+
 type Handlers struct {
 	Dialogue DialogueHandler
 	Choice   ChoiceHandler
 	Finish   FinishHandler
+	Error    ErrorHandler
+}
+
+type Options struct {
+	Beat         string
+	Functions    map[string]Function
+	StrictAccess bool
+	Translations *Translations
+}
+
+type Node struct {
+	node *core.Hx_Obj_loreline_lib_gonode
 }
 
 type Script struct {
+	Node
 	script *core.Hx_Obj_loreline_lib_goscript
 }
 
-type Interpreter struct {
-	interp *core.Hx_Obj_loreline_lib_gointerpreter
+type Translations struct {
+	translations *core.Hx_Obj_loreline_lib_gotranslations
 }
+
+type Interpreter struct {
+	interp  *core.Hx_Obj_loreline_lib_gointerpreter
+	onError ErrorHandler
+	err     error
+}
+
+var (
+	syncDepth int
+	syncErr   error
+)
 
 func Parse(source string) (*Script, error) {
 	return ParseWithImports(source, "", nil)
@@ -56,85 +86,226 @@ func ParseFile(path string) (*Script, error) {
 		return nil, err
 	}
 
-	return ParseWithImports(string(source), path, func(importPath string) (string, bool) {
-		data, err := os.ReadFile(importPath)
-		return string(data), err == nil
-	})
+	return ParseWithImports(string(source), path, ReadFile)
 }
 
-func ParseWithImports(source string, path string, readFile func(path string) (string, bool)) (script *Script, err error) {
-	defer recoverError(&err)
+func ReadFile(path string) (string, bool) {
+	data, err := os.ReadFile(path)
+	return string(data), err == nil
+}
 
-	s, err := library.Parse(source, path, func(importPath string) string {
-		if readFile == nil {
-			return core.HxStringNull
-		}
-		data, ok := readFile(importPath)
-		if !ok {
-			return core.HxStringNull
-		}
-		return data
+func ParseWithImports(source string, path string, readFile FileReader) (*Script, error) {
+	var s *core.Hx_Obj_loreline_lib_goscript
+	err := run(func() (err error) {
+		s, err = library.Parse(source, path, coreReader(readFile))
+		return err
 	})
 	if err != nil {
 		return nil, err
 	}
 
-	return &Script{script: s}, nil
+	return newScript(s), nil
 }
 
-func (s *Script) Play(handlers Handlers, beat string) (it *Interpreter, err error) {
-	defer recoverError(&err)
-
-	it = &Interpreter{}
-	dialogue, choice, finish := it.bridges(handlers)
-	interp, err := s.script.Play(dialogue, choice, finish, beat)
+func ScriptFromJSON(json string) (*Script, error) {
+	var s *core.Hx_Obj_loreline_lib_goscript
+	err := run(func() (err error) {
+		s, err = library.ScriptFromJson(json)
+		return err
+	})
 	if err != nil {
 		return nil, err
 	}
 
-	it.interp = interp
-	return it, nil
+	return newScript(s), nil
 }
 
-func (s *Script) Resume(handlers Handlers, save string, beat string) (it *Interpreter, err error) {
-	defer recoverError(&err)
-
-	it = &Interpreter{}
-	dialogue, choice, finish := it.bridges(handlers)
-	interp, err := s.script.Resume(dialogue, choice, finish, save, beat)
+func NodeFromJSON(json string) (*Node, error) {
+	var n *core.Hx_Obj_loreline_lib_gonode
+	err := run(func() (err error) {
+		n, err = library.NodeFromJson(json)
+		return err
+	})
 	if err != nil {
 		return nil, err
 	}
 
-	it.interp = interp
-	return it, nil
+	return &Node{node: n}, nil
+}
+
+func ExtractTranslations(script *Script) *Translations {
+	return &Translations{translations: library.ExtractTranslations(script.script)}
+}
+
+func LoadLocale(locale string, script *Script, path string, readFile FileReader) (*Translations, error) {
+	if readFile == nil {
+		readFile = ReadFile
+	}
+
+	var t *core.Hx_Obj_loreline_lib_gotranslations
+	err := run(func() (err error) {
+		t, err = library.LoadLocale(locale, script.script, path, coreReader(readFile))
+		return err
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return &Translations{translations: t}, nil
+}
+
+func TranslationFormat(name string, enabled bool) {
+	library.TranslationFormat(name, enabled)
+}
+
+func Update(delta float64) {
+	run(func() error {
+		library.Update(delta)
+		return nil
+	})
+}
+
+func (n *Node) Type() string {
+	return n.node.Type()
+}
+
+func (n *Node) Line() int {
+	return int(n.node.Line())
+}
+
+func (n *Node) Column() int {
+	return int(n.node.Column())
+}
+
+func (n *Node) Offset() int {
+	return int(n.node.Offset())
+}
+
+func (n *Node) Length() int {
+	return int(n.node.Length())
+}
+
+func (n *Node) ID() string {
+	return n.node.Id()
+}
+
+func (n *Node) ToJSON(pretty bool) string {
+	return n.node.ToJson(pretty)
+}
+
+func (s *Script) Play(handlers Handlers, options *Options) (*Interpreter, error) {
+	var interp *core.Hx_Obj_loreline_lib_gointerpreter
+	dialogue, choice, finish := bridges(handlers, true)
+	err := run(func() (err error) {
+		interp, err = s.script.Play(dialogue, choice, finish, beatOf(options), coreOptions(options))
+		return err
+	})
+	return started(interp, handlers, err)
+}
+
+func (s *Script) Resume(handlers Handlers, save string, options *Options) (*Interpreter, error) {
+	var interp *core.Hx_Obj_loreline_lib_gointerpreter
+	dialogue, choice, finish := bridges(handlers, true)
+	err := run(func() (err error) {
+		interp, err = s.script.Resume(dialogue, choice, finish, save, beatOf(options), coreOptions(options))
+		return err
+	})
+	return started(interp, handlers, err)
+}
+
+func (s *Script) Print(indent string, newline string) string {
+	return s.script.Print(indent, newline)
 }
 
 func (s *Script) Format() string {
-	return s.script.Format()
+	return s.Print("  ", "\n")
 }
 
-func (it *Interpreter) Start(beat string) (err error) {
-	defer recoverError(&err)
-	return it.interp.Start(beat)
+func (it *Interpreter) Err() error {
+	return it.err
 }
 
-func (it *Interpreter) Save() (save string, err error) {
-	defer recoverError(&err)
-	return it.interp.Save()
+func (it *Interpreter) Start(beat string) error {
+	return run(func() error {
+		return it.interp.Start(beat)
+	})
 }
 
-func (it *Interpreter) Restore(save string) (err error) {
-	defer recoverError(&err)
-	return it.interp.Restore(save)
+func (it *Interpreter) Save() (string, error) {
+	var save string
+	err := run(func() (err error) {
+		save, err = it.interp.Save()
+		return err
+	})
+	return save, err
 }
 
-func (it *Interpreter) StateField(name string) any {
-	return fromHaxe(it.interp.StateField(name))
+func (it *Interpreter) Restore(save string) error {
+	return run(func() error {
+		return it.interp.Restore(save)
+	})
 }
 
-func (it *Interpreter) SetStateField(name string, value any) {
-	it.interp.SetStateField(name, toHaxe(value))
+func (it *Interpreter) Resume() error {
+	return run(func() error {
+		return it.interp.Resume()
+	})
+}
+
+func (it *Interpreter) Key() string {
+	return it.interp.Key()
+}
+
+func (it *Interpreter) IsRoot() bool {
+	return it.interp.IsRoot()
+}
+
+func (it *Interpreter) Spawn(key string, handlers Handlers) (*Interpreter, error) {
+	var interp *core.Hx_Obj_loreline_lib_gointerpreter
+	dialogue, choice, finish := bridges(handlers, false)
+	err := run(func() (err error) {
+		interp, err = it.interp.Spawn(key, dialogue, choice, finish)
+		return err
+	})
+	return it.child(interp, handlers, err)
+}
+
+func (it *Interpreter) ResumeSpawn(key string, handlers Handlers) (*Interpreter, error) {
+	var interp *core.Hx_Obj_loreline_lib_gointerpreter
+	dialogue, choice, finish := bridges(handlers, false)
+	err := run(func() (err error) {
+		interp, err = it.interp.ResumeSpawn(key, dialogue, choice, finish)
+		return err
+	})
+	return it.child(interp, handlers, err)
+}
+
+func (it *Interpreter) ResumableSpawnKeys() []string {
+	keys := it.interp.ResumableSpawnKeys()
+	result := make([]string, keys.Len())
+	for i := range result {
+		result[i] = keys.Get(int32(i))
+	}
+	return result
+}
+
+func (it *Interpreter) SeedRandom(seed float64) {
+	it.interp.SeedRandom(seed)
+}
+
+func (it *Interpreter) SeedRandomFromClock() {
+	it.interp.SeedRandomFromClock()
+}
+
+func (it *Interpreter) Dispose() error {
+	return run(func() error {
+		return it.interp.Dispose()
+	})
+}
+
+func (it *Interpreter) Character(name string) map[string]any {
+	fields, _ := fromHaxe(it.interp.Character(name)).(map[string]any)
+	return fields
 }
 
 func (it *Interpreter) CharacterField(character string, name string) any {
@@ -145,58 +316,214 @@ func (it *Interpreter) SetCharacterField(character string, name string, value an
 	it.interp.SetCharacterField(character, name, toHaxe(value))
 }
 
-func (it *Interpreter) bridges(handlers Handlers) (
+func (it *Interpreter) StateField(name string) any {
+	return fromHaxe(it.interp.StateField(name))
+}
+
+func (it *Interpreter) SetStateField(name string, value any) {
+	it.interp.SetStateField(name, toHaxe(value))
+}
+
+func (it *Interpreter) TopLevelStateField(name string) any {
+	return fromHaxe(it.interp.TopLevelStateField(name))
+}
+
+func (it *Interpreter) SetTopLevelStateField(name string, value any) {
+	it.interp.SetTopLevelStateField(name, toHaxe(value))
+}
+
+func (it *Interpreter) CurrentNode() *Node {
+	node := it.interp.CurrentNode()
+	if node == nil {
+		return nil
+	}
+	return &Node{node: node}
+}
+
+func newScript(s *core.Hx_Obj_loreline_lib_goscript) *Script {
+	return &Script{Node: Node{node: &s.Hx_Obj_loreline_lib_gonode}, script: s}
+}
+
+func started(interp *core.Hx_Obj_loreline_lib_gointerpreter, handlers Handlers, err error) (*Interpreter, error) {
+	if err != nil {
+		return nil, err
+	}
+
+	it := wrap(interp)
+	it.onError = handlers.Error
+	return it, nil
+}
+
+func (it *Interpreter) child(interp *core.Hx_Obj_loreline_lib_gointerpreter, handlers Handlers, err error) (*Interpreter, error) {
+	if err != nil {
+		return nil, err
+	}
+
+	child := wrap(interp)
+	child.onError = handlers.Error
+	if child.onError == nil {
+		child.onError = it.onError
+	}
+	return child, nil
+}
+
+func wrap(interp *core.Hx_Obj_loreline_lib_gointerpreter) *Interpreter {
+	if interp == nil {
+		return nil
+	}
+	if it, ok := interp.Host().(*Interpreter); ok {
+		return it
+	}
+
+	it := &Interpreter{interp: interp}
+	interp.SetHost(it)
+	return it
+}
+
+func run(call func() error) (err error) {
+	syncDepth++
+	defer func() {
+		syncDepth--
+		if r := recover(); r != nil {
+			err = toError(r)
+		}
+		if err == nil && syncDepth == 0 {
+			err = syncErr
+		}
+		if syncDepth == 0 {
+			syncErr = nil
+		}
+	}()
+
+	return call()
+}
+
+func (it *Interpreter) guard(call func()) {
+	defer func() {
+		if r := recover(); r != nil {
+			err := toError(r)
+			if syncDepth > 0 {
+				if syncErr == nil {
+					syncErr = err
+				}
+				return
+			}
+			it.err = err
+			if it.onError != nil {
+				it.onError(it, err)
+			}
+		}
+	}()
+
+	call()
+}
+
+func toError(value any) error {
+	if err, ok := value.(error); ok {
+		return err
+	}
+	return errors.New(library.ErrorMessage(value))
+}
+
+func bridges(handlers Handlers, root bool) (
 	core.Hx_Typedef_loreline_lib_godialoguehandler,
 	core.Hx_Typedef_loreline_lib_gochoicehandler,
 	core.Hx_Typedef_loreline_lib_gofinishhandler,
 ) {
-	dialogue := func(interp *core.Hx_Obj_loreline_lib_gointerpreter, character string, text string, tags core.HxArray[*core.Hx_Obj_loreline_texttag], advance func()) {
-		it.interp = interp
-		if handlers.Dialogue == nil {
-			advance()
-			return
+	var dialogue core.Hx_Typedef_loreline_lib_godialoguehandler
+	if handlers.Dialogue != nil || root {
+		dialogue = func(interp *core.Hx_Obj_loreline_lib_gointerpreter, character string, text string, tags core.HxArray[*core.Hx_Obj_loreline_texttag], advance func()) {
+			it := wrap(interp)
+			next := func() {
+				it.guard(advance)
+			}
+			if handlers.Dialogue == nil {
+				next()
+				return
+			}
+			handlers.Dialogue(it, character, text, convertTags(tags), next)
 		}
-		handlers.Dialogue(it, character, text, convertTags(tags), advance)
 	}
 
-	choice := func(interp *core.Hx_Obj_loreline_lib_gointerpreter, options core.HxArray[*core.Hx_Obj_loreline_choiceoption], choose func(int32)) {
-		it.interp = interp
-		converted := make([]ChoiceOption, options.Len())
-		for i := range converted {
-			option := options.Get(int32(i))
-			converted[i] = ChoiceOption{
-				Text:    option.Hx_Field_text,
-				Tags:    convertTags(option.Hx_Field_tags),
-				Enabled: option.Hx_Field_enabled,
+	var choice core.Hx_Typedef_loreline_lib_gochoicehandler
+	if handlers.Choice != nil || root {
+		choice = func(interp *core.Hx_Obj_loreline_lib_gointerpreter, options core.HxArray[*core.Hx_Obj_loreline_choiceoption], choose func(int32)) {
+			it := wrap(interp)
+			converted := convertOptions(options)
+			pick := func(index int) {
+				it.guard(func() {
+					choose(int32(index))
+				})
 			}
-		}
-		if handlers.Choice == nil {
-			for i, option := range converted {
-				if option.Enabled {
-					choose(int32(i))
-					return
+			if handlers.Choice == nil {
+				for i, option := range converted {
+					if option.Enabled {
+						pick(i)
+						return
+					}
 				}
+				return
 			}
-			return
+			handlers.Choice(it, converted, pick)
 		}
-		handlers.Choice(it, converted, func(index int) {
-			choose(int32(index))
-		})
 	}
 
-	finish := func(interp *core.Hx_Obj_loreline_lib_gointerpreter) {
-		it.interp = interp
-		if handlers.Finish != nil {
-			handlers.Finish(it)
+	var finish core.Hx_Typedef_loreline_lib_gofinishhandler
+	if handlers.Finish != nil || root {
+		finish = func(interp *core.Hx_Obj_loreline_lib_gointerpreter) {
+			if handlers.Finish != nil {
+				handlers.Finish(wrap(interp))
+			}
 		}
 	}
 
 	return dialogue, choice, finish
 }
 
+func coreReader(readFile FileReader) func(string) string {
+	if readFile == nil {
+		return nil
+	}
+
+	return func(path string) string {
+		data, ok := readFile(path)
+		if !ok {
+			return core.HxStringNull
+		}
+		return data
+	}
+}
+
+func beatOf(options *Options) string {
+	if options == nil {
+		return ""
+	}
+	return options.Beat
+}
+
+func coreOptions(options *Options) *core.Hx_Obj_loreline_lib_gooptions {
+	if options == nil {
+		return nil
+	}
+
+	result := core.Hx_Obj_loreline_lib_gooptions_CreateInstance()
+	for name, fn := range options.Functions {
+		fn := fn
+		result.AddFunction(name, func(interp *core.Hx_Obj_loreline_lib_gointerpreter, args core.HxArray[any]) any {
+			values, _ := fromHaxe(args).([]any)
+			return toHaxe(fn(wrap(interp), values))
+		})
+	}
+	result.SetStrictAccess(options.StrictAccess)
+	if options.Translations != nil {
+		result.SetTranslations(options.Translations.translations)
+	}
+	return result
+}
+
 func convertTags(tags core.HxArray[*core.Hx_Obj_loreline_texttag]) []TextTag {
 	if tags == nil {
-		return nil
+		return []TextTag{}
 	}
 
 	converted := make([]TextTag, tags.Len())
@@ -211,10 +538,17 @@ func convertTags(tags core.HxArray[*core.Hx_Obj_loreline_texttag]) []TextTag {
 	return converted
 }
 
-func recoverError(err *error) {
-	if r := recover(); r != nil {
-		*err = fmt.Errorf("loreline: %v", r)
+func convertOptions(options core.HxArray[*core.Hx_Obj_loreline_choiceoption]) []ChoiceOption {
+	converted := make([]ChoiceOption, options.Len())
+	for i := range converted {
+		option := options.Get(int32(i))
+		converted[i] = ChoiceOption{
+			Text:    option.Hx_Field_text,
+			Tags:    convertTags(option.Hx_Field_tags),
+			Enabled: option.Hx_Field_enabled,
+		}
 	}
+	return converted
 }
 
 func fromHaxe(value any) any {
@@ -260,6 +594,12 @@ func toHaxe(value any) any {
 		items := make([]any, len(v))
 		for i, item := range v {
 			items[i] = toHaxe(item)
+		}
+		return core.HxMakeArray[any](items...)
+	case []string:
+		items := make([]any, len(v))
+		for i, item := range v {
+			items[i] = item
 		}
 		return core.HxMakeArray[any](items...)
 	case map[string]any:

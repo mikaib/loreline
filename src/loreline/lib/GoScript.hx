@@ -2,7 +2,6 @@ package loreline.lib;
 
 import go.Error;
 import go.Tuple;
-import haxe.Json;
 import loreline.Interpreter;
 import loreline.Loreline;
 import loreline.Script;
@@ -13,21 +12,28 @@ typedef GoChoiceHandler = (GoInterpreter, Array<ChoiceOption>, Int -> Void) -> V
 
 typedef GoFinishHandler = GoInterpreter -> Void;
 
-class GoScript {
+class GoScript extends GoNode {
 
-    final script:Script;
+    public final script:Script;
 
     public function new(script:Script) {
+        super(script);
         this.script = script;
     }
 
     @:go.Export
     @:go.Tuple('interpreter', 'err')
-    public function play(dialogue:GoDialogueHandler, choice:GoChoiceHandler, finish:GoFinishHandler, beat:String):Tuple<{ interpreter:GoInterpreter, err:Error }> {
-        final wrapper = new GoInterpreter();
+    public function play(dialogue:GoDialogueHandler, choice:GoChoiceHandler, finish:GoFinishHandler, beat:String, options:GoOptions):Tuple<{ interpreter:GoInterpreter, err:Error }> {
         try {
-            wrapper.interpreter = Loreline.play(script, dialogueBridge(wrapper, dialogue), choiceBridge(wrapper, choice), finishBridge(wrapper, finish), GoInterpreter.beatOrNull(beat));
-            return { interpreter: wrapper, err: null };
+            final interpreter = Loreline.play(
+                script,
+                GoInterpreter.dialogueHandler(dialogue),
+                GoInterpreter.choiceHandler(choice),
+                GoInterpreter.finishHandler(finish),
+                GoLibrary.emptyToNull(beat),
+                GoOptions.build(options)
+            );
+            return { interpreter: GoInterpreter.of(interpreter), err: null };
         }
         catch (e:Any) {
             return { interpreter: null, err: GoLibrary.toError(e) };
@@ -36,11 +42,18 @@ class GoScript {
 
     @:go.Export
     @:go.Tuple('interpreter', 'err')
-    public function resume(dialogue:GoDialogueHandler, choice:GoChoiceHandler, finish:GoFinishHandler, save:String, beat:String):Tuple<{ interpreter:GoInterpreter, err:Error }> {
-        final wrapper = new GoInterpreter();
+    public function resume(dialogue:GoDialogueHandler, choice:GoChoiceHandler, finish:GoFinishHandler, save:String, beat:String, options:GoOptions):Tuple<{ interpreter:GoInterpreter, err:Error }> {
         try {
-            wrapper.interpreter = Loreline.resume(script, dialogueBridge(wrapper, dialogue), choiceBridge(wrapper, choice), finishBridge(wrapper, finish), Json.parse(save), GoInterpreter.beatOrNull(beat));
-            return { interpreter: wrapper, err: null };
+            final interpreter = Loreline.resume(
+                script,
+                GoInterpreter.dialogueHandler(dialogue),
+                GoInterpreter.choiceHandler(choice),
+                GoInterpreter.finishHandler(finish),
+                loreline.Json.parse(save),
+                GoLibrary.emptyToNull(beat),
+                GoOptions.build(options)
+            );
+            return { interpreter: GoInterpreter.of(interpreter), err: null };
         }
         catch (e:Any) {
             return { interpreter: null, err: GoLibrary.toError(e) };
@@ -48,29 +61,8 @@ class GoScript {
     }
 
     @:go.Export
-    public function format():String {
-        return Loreline.print(script);
-    }
-
-    static function dialogueBridge(wrapper:GoInterpreter, dialogue:GoDialogueHandler):DialogueHandler {
-        return (interpreter, character, text, tags, callback) -> {
-            wrapper.interpreter = interpreter;
-            dialogue(wrapper, character ?? "", text, tags, callback);
-        };
-    }
-
-    static function choiceBridge(wrapper:GoInterpreter, choice:GoChoiceHandler):ChoiceHandler {
-        return (interpreter, options, callback) -> {
-            wrapper.interpreter = interpreter;
-            choice(wrapper, options, callback);
-        };
-    }
-
-    static function finishBridge(wrapper:GoInterpreter, finish:GoFinishHandler):FinishHandler {
-        return interpreter -> {
-            wrapper.interpreter = interpreter;
-            finish(wrapper);
-        };
+    public function print(indent:String, newline:String):String {
+        return Loreline.print(script, indent, newline);
     }
 
 }

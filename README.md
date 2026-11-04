@@ -73,7 +73,8 @@ php php/test-runner.php ./test          # Run PHP tests only
 php build/php-cli/index.php test ./test # Run PHP CLI tests only
 npx tsx js/test-runner.ts ./test        # Run JS tests only
 java -cp jvm/loreline.jar:build/jvm/test TestRunner ./test  # Run JVM tests only
-build/go/loreline test ./test           # Run Go tests only
+build/go/loreline test ./test           # Run Go CLI tests only
+(cd go/loreline && go test .)           # Run Go package tests only
 node ./setup --gdscript-test            # Run GDScript tests only (headless Godot)
 node ./setup --test                     # Build and run all test suites (Neko + C# + C# AOT + C# (with generics) + JS + C++ lib + Python + Lua + PHP + PHP CLI + JVM + Go)
 ```
