@@ -1,15 +1,17 @@
 package loreline
 
 import (
-	"errors"
 	"fmt"
 	"os"
 
 	"github.com/jeremyfa/loreline/go/loreline/internal/core"
 )
 
+var library *core.Hx_Obj_loreline_lib_golibrary
+
 func init() {
 	core.Hx_Boot()
+	library = core.Hx_Obj_loreline_lib_golibrary_CreateInstance()
 }
 
 type TextTag struct {
@@ -37,11 +39,11 @@ type Handlers struct {
 }
 
 type Script struct {
-	script *core.Hx_Obj_loreline_script
+	script *core.Hx_Obj_loreline_lib_goscript
 }
 
 type Interpreter struct {
-	interp *core.Hx_Obj_loreline_interpreter
+	interp *core.Hx_Obj_loreline_lib_gointerpreter
 }
 
 func Parse(source string) (*Script, error) {
@@ -63,7 +65,7 @@ func ParseFile(path string) (*Script, error) {
 func ParseWithImports(source string, path string, readFile func(path string) (string, bool)) (script *Script, err error) {
 	defer recoverError(&err)
 
-	read := func(importPath string) string {
+	s, err := library.Parse(source, path, func(importPath string) string {
 		if readFile == nil {
 			return core.HxStringNull
 		}
@@ -72,10 +74,8 @@ func ParseWithImports(source string, path string, readFile func(path string) (st
 			return core.HxStringNull
 		}
 		return data
-	}
-
-	s := core.Hx_Field_loreline_lib_golibrary_parse(source, path, read)
-	if err := takeError(); err != nil {
+	})
+	if err != nil {
 		return nil, err
 	}
 
@@ -87,8 +87,8 @@ func (s *Script) Play(handlers Handlers, beat string) (it *Interpreter, err erro
 
 	it = &Interpreter{}
 	dialogue, choice, finish := it.bridges(handlers)
-	interp := core.Hx_Field_loreline_lib_golibrary_play(s.script, dialogue, choice, finish, beat)
-	if err := takeError(); err != nil {
+	interp, err := s.script.Play(dialogue, choice, finish, beat)
+	if err != nil {
 		return nil, err
 	}
 
@@ -101,8 +101,8 @@ func (s *Script) Resume(handlers Handlers, save string, beat string) (it *Interp
 
 	it = &Interpreter{}
 	dialogue, choice, finish := it.bridges(handlers)
-	interp := core.Hx_Field_loreline_lib_golibrary_resume(s.script, dialogue, choice, finish, save, beat)
-	if err := takeError(); err != nil {
+	interp, err := s.script.Resume(dialogue, choice, finish, save, beat)
+	if err != nil {
 		return nil, err
 	}
 
@@ -111,56 +111,46 @@ func (s *Script) Resume(handlers Handlers, save string, beat string) (it *Interp
 }
 
 func (s *Script) Format() string {
-	return core.Hx_Field_loreline_lib_golibrary_print(s.script)
+	return s.script.Format()
 }
 
 func (it *Interpreter) Start(beat string) (err error) {
 	defer recoverError(&err)
-
-	core.Hx_Field_loreline_lib_golibrary_start(it.interp, beat)
-	return takeError()
+	return it.interp.Start(beat)
 }
 
 func (it *Interpreter) Save() (save string, err error) {
 	defer recoverError(&err)
-
-	save = core.Hx_Field_loreline_lib_golibrary_save(it.interp)
-	if err := takeError(); err != nil {
-		return "", err
-	}
-
-	return save, nil
+	return it.interp.Save()
 }
 
 func (it *Interpreter) Restore(save string) (err error) {
 	defer recoverError(&err)
-
-	core.Hx_Field_loreline_lib_golibrary_restore(it.interp, save)
-	return takeError()
+	return it.interp.Restore(save)
 }
 
 func (it *Interpreter) StateField(name string) any {
-	return fromHaxe(core.Hx_Field_loreline_lib_golibrary_getStateField(it.interp, name))
+	return fromHaxe(it.interp.StateField(name))
 }
 
 func (it *Interpreter) SetStateField(name string, value any) {
-	core.Hx_Field_loreline_lib_golibrary_setStateField(it.interp, name, toHaxe(value))
+	it.interp.SetStateField(name, toHaxe(value))
 }
 
 func (it *Interpreter) CharacterField(character string, name string) any {
-	return fromHaxe(core.Hx_Field_loreline_lib_golibrary_getCharacterField(it.interp, character, name))
+	return fromHaxe(it.interp.CharacterField(character, name))
 }
 
 func (it *Interpreter) SetCharacterField(character string, name string, value any) {
-	core.Hx_Field_loreline_lib_golibrary_setCharacterField(it.interp, character, name, toHaxe(value))
+	it.interp.SetCharacterField(character, name, toHaxe(value))
 }
 
 func (it *Interpreter) bridges(handlers Handlers) (
-	func(*core.Hx_Obj_loreline_interpreter, string, string, core.HxArray[*core.Hx_Obj_loreline_texttag], func()),
-	func(*core.Hx_Obj_loreline_interpreter, core.HxArray[*core.Hx_Obj_loreline_choiceoption], func(int32)),
-	func(*core.Hx_Obj_loreline_interpreter),
+	core.Hx_Typedef_loreline_lib_godialoguehandler,
+	core.Hx_Typedef_loreline_lib_gochoicehandler,
+	core.Hx_Typedef_loreline_lib_gofinishhandler,
 ) {
-	dialogue := func(interp *core.Hx_Obj_loreline_interpreter, character string, text string, tags core.HxArray[*core.Hx_Obj_loreline_texttag], advance func()) {
+	dialogue := func(interp *core.Hx_Obj_loreline_lib_gointerpreter, character string, text string, tags core.HxArray[*core.Hx_Obj_loreline_texttag], advance func()) {
 		it.interp = interp
 		if handlers.Dialogue == nil {
 			advance()
@@ -169,7 +159,7 @@ func (it *Interpreter) bridges(handlers Handlers) (
 		handlers.Dialogue(it, character, text, convertTags(tags), advance)
 	}
 
-	choice := func(interp *core.Hx_Obj_loreline_interpreter, options core.HxArray[*core.Hx_Obj_loreline_choiceoption], choose func(int32)) {
+	choice := func(interp *core.Hx_Obj_loreline_lib_gointerpreter, options core.HxArray[*core.Hx_Obj_loreline_choiceoption], choose func(int32)) {
 		it.interp = interp
 		converted := make([]ChoiceOption, options.Len())
 		for i := range converted {
@@ -194,7 +184,7 @@ func (it *Interpreter) bridges(handlers Handlers) (
 		})
 	}
 
-	finish := func(interp *core.Hx_Obj_loreline_interpreter) {
+	finish := func(interp *core.Hx_Obj_loreline_lib_gointerpreter) {
 		it.interp = interp
 		if handlers.Finish != nil {
 			handlers.Finish(it)
@@ -219,16 +209,6 @@ func convertTags(tags core.HxArray[*core.Hx_Obj_loreline_texttag]) []TextTag {
 		}
 	}
 	return converted
-}
-
-func takeError() error {
-	message := core.Hx_Field_loreline_lib_golibrary_error
-	if message == "" || message == core.HxStringNull {
-		return nil
-	}
-
-	core.Hx_Field_loreline_lib_golibrary_error = core.HxStringNull
-	return errors.New(message)
 }
 
 func recoverError(err *error) {
