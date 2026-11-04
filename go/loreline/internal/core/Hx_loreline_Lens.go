@@ -508,55 +508,55 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_lens() {
 }
 
 type Hx_Obj_VTable_loreline_lens interface {
-	Hx_Field_getVisibleBeats(fromNode *Hx_Obj_loreline_node) HxArray[*Hx_Obj_loreline_nbeatdecl]
-	Hx_Field_getAllTags() HxArray[string]
-	Hx_Field_isTopLevelNode(node *Hx_Obj_loreline_node) bool
-	Hx_Field_getClosestNodeAtOrBeforePosition(pos *Hx_Obj_loreline_position) *Hx_Obj_loreline_node
-	Hx_Field_resolveArrayAccess(access *Hx_Obj_loreline_narrayaccess) *Hx_Obj_loreline_node
-	Hx_Field_findBeatFromAccess(access *Hx_Obj_loreline_naccess) *Hx_Obj_loreline_nbeatdecl
-	Hx_Field_findCallArgument(node *Hx_Obj_loreline_node) any
-	Hx_Field_resolveLorscriptAccess(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl, expr any) *Hx_Obj_loreline_node
-	Hx_Field_getNodeById(id Hx_Typedef_haxe__int64___int64) *Hx_Obj_loreline_node
-	Hx_Field_getDialogueSpeakers(node *Hx_Obj_loreline_node) HxArray[string]
-	Hx_Field_countTags() Hx_Typedef_map
-	Hx_Field_findStateField(access *Hx_Obj_loreline_naccess) *Hx_Obj_loreline_nobjectfield
-	Hx_Field_findOutboundBeats(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
-	Hx_Field_findBeatCharacters(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
-	Hx_Field_findReadCharacterFields(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
-	Hx_Field_getNodeAncestorFilePaths(node *Hx_Obj_loreline_node) HxArray[string]
-	Hx_Field_getNodeRelativeFilePath(node *Hx_Obj_loreline_node) string
-	Hx_Field_findBeatFromTransition(transition *Hx_Obj_loreline_ntransition) *Hx_Obj_loreline_nbeatdecl
-	Hx_Field_findTopLevelBeatFromNode(node *Hx_Obj_loreline_node) *Hx_Obj_loreline_nbeatdecl
-	Hx_Field_findModifiedCharacterFields(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
-	Hx_Field_isLorscriptExpr(input any) bool
-	Hx_Field_resolveAccessInFunction(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl, pos *Hx_Obj_loreline_position) *Hx_Obj_loreline_node
-	Hx_Field_getParentNode(node *Hx_Obj_loreline_node) *Hx_Obj_loreline_node
-	Hx_Field_findBeatParamFromAccess(access *Hx_Obj_loreline_naccess) any
-	Hx_Field_findBeatFromInsertion(insertion *Hx_Obj_loreline_ninsertion) *Hx_Obj_loreline_nbeatdecl
-	Hx_Field_getVisibleFunctions() HxArray[*Hx_Obj_loreline_nfunctiondecl]
-	Hx_Field_findReferencesToBeat(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
-	Hx_Field_getFuncLorscript(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl) *Hx_Obj_loreline_funclorscript
-	Hx_Field_getNodeAtPosition(pos *Hx_Obj_loreline_position) *Hx_Obj_loreline_node
-	Hx_Field_getImportedPaths(rootPath string) HxArray[string]
 	Hx_Field__getImportedPaths(rootPath string, script *Hx_Obj_loreline_script, result HxArray[string], used Hx_Typedef_map) HxArray[string]
-	Hx_Field_findBeatByPathFromNode(path string, node *Hx_Obj_loreline_node) *Hx_Obj_loreline_nbeatdecl
-	Hx_Field_getVisibleStateFields(fromNode *Hx_Obj_loreline_node) HxArray[*Hx_Obj_loreline_nobjectfield]
-	Hx_Field_findReadStateFields(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
-	Hx_Field_traverse(node *Hx_Obj_loreline_node, callback func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node) bool)
-	Hx_Field_initialize()
-	Hx_Field_getNodesOfType(nodeType *Hx_Obj_go_haxe_hxclass, includeImported__isOptional any) HxArray[any]
-	Hx_Field_getNodeFilePath(node *Hx_Obj_loreline_node, rootPath string) string
-	Hx_Field_findCharacterFromDialogue(dialogue *Hx_Obj_loreline_ndialoguestatement) *Hx_Obj_loreline_ncharacterdecl
-	Hx_Field_findFunctionByNameFromNode(name string, node *Hx_Obj_loreline_node) *Hx_Obj_loreline_nfunctiondecl
-	Hx_Field_getVisibleCharacters() HxArray[*Hx_Obj_loreline_ncharacterdecl]
-	Hx_Field_findModifiedStateFields(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
-	Hx_Field_getLorscriptExpr(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl, pos *Hx_Obj_loreline_position) any
-	Hx_Field_findBeatByNameFromNode(name string, node *Hx_Obj_loreline_node) *Hx_Obj_loreline_nbeatdecl
-	Hx_Field_getLorscriptCompletion(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl, pos *Hx_Obj_loreline_position) *Hx_Obj_loreline_lorscriptcompletion
-	Hx_Field_getFirstParentOfType(node *Hx_Obj_loreline_node, _hx_reserved_type *Hx_Obj_go_haxe_hxclass) any
+	Hx_Field_countTags() Hx_Typedef_map
+	Hx_Field_findBeatCharacters(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
+	Hx_Field_getImportedPaths(rootPath string) HxArray[string]
 	Hx_Field_resolveAccess(access *Hx_Obj_loreline_naccess) *Hx_Obj_loreline_node
+	Hx_Field_findBeatByPathFromNode(path string, node *Hx_Obj_loreline_node) *Hx_Obj_loreline_nbeatdecl
+	Hx_Field_findBeatByNameFromNode(name string, node *Hx_Obj_loreline_node) *Hx_Obj_loreline_nbeatdecl
+	Hx_Field_isLorscriptExpr(input any) bool
+	Hx_Field_getNodeAncestorFilePaths(node *Hx_Obj_loreline_node) HxArray[string]
+	Hx_Field_findBeatFromAccess(access *Hx_Obj_loreline_naccess) *Hx_Obj_loreline_nbeatdecl
 	Hx_Field_findCharacterByNameFromNode(name string, node *Hx_Obj_loreline_node) *Hx_Obj_loreline_ncharacterdecl
 	Hx_Field_getWhenWarnings(when *Hx_Obj_loreline_nwhenstatement) HxArray[any]
+	Hx_Field_findFunctionByNameFromNode(name string, node *Hx_Obj_loreline_node) *Hx_Obj_loreline_nfunctiondecl
+	Hx_Field_getVisibleBeats(fromNode *Hx_Obj_loreline_node) HxArray[*Hx_Obj_loreline_nbeatdecl]
+	Hx_Field_findModifiedCharacterFields(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
+	Hx_Field_getLorscriptExpr(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl, pos *Hx_Obj_loreline_position) any
+	Hx_Field_getNodeAtPosition(pos *Hx_Obj_loreline_position) *Hx_Obj_loreline_node
+	Hx_Field_getClosestNodeAtOrBeforePosition(pos *Hx_Obj_loreline_position) *Hx_Obj_loreline_node
+	Hx_Field_getParentNode(node *Hx_Obj_loreline_node) *Hx_Obj_loreline_node
+	Hx_Field_getFirstParentOfType(node *Hx_Obj_loreline_node, _hx_reserved_type *Hx_Obj_go_haxe_hxclass) any
+	Hx_Field_getNodeRelativeFilePath(node *Hx_Obj_loreline_node) string
+	Hx_Field_findReadCharacterFields(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
+	Hx_Field_traverse(node *Hx_Obj_loreline_node, callback func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node) bool)
+	Hx_Field_resolveLorscriptAccess(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl, expr any) *Hx_Obj_loreline_node
+	Hx_Field_findCallArgument(node *Hx_Obj_loreline_node) any
+	Hx_Field_findBeatFromTransition(transition *Hx_Obj_loreline_ntransition) *Hx_Obj_loreline_nbeatdecl
+	Hx_Field_isTopLevelNode(node *Hx_Obj_loreline_node) bool
+	Hx_Field_getFuncLorscript(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl) *Hx_Obj_loreline_funclorscript
+	Hx_Field_resolveArrayAccess(access *Hx_Obj_loreline_narrayaccess) *Hx_Obj_loreline_node
+	Hx_Field_initialize()
+	Hx_Field_getDialogueSpeakers(node *Hx_Obj_loreline_node) HxArray[string]
+	Hx_Field_findCharacterFromDialogue(dialogue *Hx_Obj_loreline_ndialoguestatement) *Hx_Obj_loreline_ncharacterdecl
+	Hx_Field_getAllTags() HxArray[string]
+	Hx_Field_findStateField(access *Hx_Obj_loreline_naccess) *Hx_Obj_loreline_nobjectfield
+	Hx_Field_findModifiedStateFields(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
+	Hx_Field_findReadStateFields(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
+	Hx_Field_findBeatFromInsertion(insertion *Hx_Obj_loreline_ninsertion) *Hx_Obj_loreline_nbeatdecl
+	Hx_Field_findTopLevelBeatFromNode(node *Hx_Obj_loreline_node) *Hx_Obj_loreline_nbeatdecl
+	Hx_Field_getVisibleFunctions() HxArray[*Hx_Obj_loreline_nfunctiondecl]
+	Hx_Field_getVisibleStateFields(fromNode *Hx_Obj_loreline_node) HxArray[*Hx_Obj_loreline_nobjectfield]
+	Hx_Field_findReferencesToBeat(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
+	Hx_Field_resolveAccessInFunction(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl, pos *Hx_Obj_loreline_position) *Hx_Obj_loreline_node
+	Hx_Field_getNodesOfType(nodeType *Hx_Obj_go_haxe_hxclass, includeImported__isOptional any) HxArray[any]
+	Hx_Field_findBeatParamFromAccess(access *Hx_Obj_loreline_naccess) any
+	Hx_Field_getVisibleCharacters() HxArray[*Hx_Obj_loreline_ncharacterdecl]
+	Hx_Field_findOutboundBeats(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
+	Hx_Field_getLorscriptCompletion(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl, pos *Hx_Obj_loreline_position) *Hx_Obj_loreline_lorscriptcompletion
+	Hx_Field_getNodeById(id Hx_Typedef_haxe__int64___int64) *Hx_Obj_loreline_node
+	Hx_Field_getNodeFilePath(node *Hx_Obj_loreline_node, rootPath string) string
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -4401,20 +4401,20 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getVisibleCharacters() HxArray[*Hx_Ob
 	_ = result
 	result = HxMakeArray[*Hx_Obj_loreline_ncharacterdecl]()
 	{
-		var node any
-		_ = node
-		node = ((any)(this.Hx_Field_script.VTable.Hx_Field_iterator()))
+		var _gnode any
+		_ = _gnode
+		_gnode = ((any)(this.Hx_Field_script.VTable.Hx_Field_iterator()))
 		for {
 			var _hx_tmp_0 any
 			_ = _hx_tmp_0
-			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(node, "hasNext")
+			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(_gnode, "hasNext")
 			if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_0, HxMakeArray[any]().Dyn()))) {
 				break
 			}
 
 			var _hx_tmp_1 any
 			_ = _hx_tmp_1
-			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(node, "next")
+			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(_gnode, "next")
 			var hx_dyncast_151 any
 			_ = hx_dyncast_151
 			hx_dyncast_151 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()), "Hx_Obj_loreline_astnode")
@@ -4428,14 +4428,14 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getVisibleCharacters() HxArray[*Hx_Ob
 				_hx_tmp_2 = nil
 			}
 
-			var node1 *Hx_Obj_loreline_astnode
-			_ = node1
-			node1 = _hx_tmp_2
-			if Hx_Field_std_isOfType(node1, Hx_Obj_loreline_ncharacterdecl_RTTI) {
+			var node *Hx_Obj_loreline_astnode
+			_ = node
+			node = _hx_tmp_2
+			if Hx_Field_std_isOfType(node, Hx_Obj_loreline_ncharacterdecl_RTTI) {
 				var _hx_tmp_3 HxArray[*Hx_Obj_loreline_ncharacterdecl]
 				_ = _hx_tmp_3
 				_hx_tmp_3 = result
-				_ = (Hx_Array_Push[*Hx_Obj_loreline_ncharacterdecl](_hx_tmp_3, node1.VTable.(interface {
+				_ = (Hx_Array_Push[*Hx_Obj_loreline_ncharacterdecl](_hx_tmp_3, node.VTable.(interface {
 					Hx_As_Hx_Obj_loreline_ncharacterdecl() *Hx_Obj_loreline_ncharacterdecl
 				}).Hx_As_Hx_Obj_loreline_ncharacterdecl()))
 			}
@@ -4450,20 +4450,20 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getVisibleFunctions() HxArray[*Hx_Obj
 	_ = result
 	result = HxMakeArray[*Hx_Obj_loreline_nfunctiondecl]()
 	{
-		var node any
-		_ = node
-		node = ((any)(this.Hx_Field_script.VTable.Hx_Field_iterator()))
+		var _gnode any
+		_ = _gnode
+		_gnode = ((any)(this.Hx_Field_script.VTable.Hx_Field_iterator()))
 		for {
 			var _hx_tmp_0 any
 			_ = _hx_tmp_0
-			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(node, "hasNext")
+			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(_gnode, "hasNext")
 			if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_0, HxMakeArray[any]().Dyn()))) {
 				break
 			}
 
 			var _hx_tmp_1 any
 			_ = _hx_tmp_1
-			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(node, "next")
+			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(_gnode, "next")
 			var hx_dyncast_152 any
 			_ = hx_dyncast_152
 			hx_dyncast_152 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()), "Hx_Obj_loreline_astnode")
@@ -4477,14 +4477,14 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getVisibleFunctions() HxArray[*Hx_Obj
 				_hx_tmp_2 = nil
 			}
 
-			var node1 *Hx_Obj_loreline_astnode
-			_ = node1
-			node1 = _hx_tmp_2
-			if Hx_Field_std_isOfType(node1, Hx_Obj_loreline_nfunctiondecl_RTTI) {
+			var node *Hx_Obj_loreline_astnode
+			_ = node
+			node = _hx_tmp_2
+			if Hx_Field_std_isOfType(node, Hx_Obj_loreline_nfunctiondecl_RTTI) {
 				var _hx_tmp_3 HxArray[*Hx_Obj_loreline_nfunctiondecl]
 				_ = _hx_tmp_3
 				_hx_tmp_3 = result
-				_ = (Hx_Array_Push[*Hx_Obj_loreline_nfunctiondecl](_hx_tmp_3, node1.VTable.(interface {
+				_ = (Hx_Array_Push[*Hx_Obj_loreline_nfunctiondecl](_hx_tmp_3, node.VTable.(interface {
 					Hx_As_Hx_Obj_loreline_nfunctiondecl() *Hx_Obj_loreline_nfunctiondecl
 				}).Hx_As_Hx_Obj_loreline_nfunctiondecl()))
 			}
@@ -4902,24 +4902,24 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getAllTags() HxArray[string] {
 	_ = _g
 	_g = HxMakeArray[string]()
 	{
-		var tag any
-		_ = tag
-		tag = tags.VTable.Hx_Field_keys()
+		var _gtag any
+		_ = _gtag
+		_gtag = tags.VTable.Hx_Field_keys()
 		for {
 			var _hx_tmp_2 any
 			_ = _hx_tmp_2
-			_hx_tmp_2 = Hx_Field_go_haxe_hxdynamic_getField(tag, "hasNext")
+			_hx_tmp_2 = Hx_Field_go_haxe_hxdynamic_getField(_gtag, "hasNext")
 			if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_2, HxMakeArray[any]().Dyn()))) {
 				break
 			}
 
 			var _hx_tmp_3 any
 			_ = _hx_tmp_3
-			_hx_tmp_3 = Hx_Field_go_haxe_hxdynamic_getField(tag, "next")
-			var tag1 string
-			_ = tag1
-			tag1 = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_3, HxMakeArray[any]().Dyn()))
-			_ = (Hx_Array_Push[string](_g, tag1))
+			_hx_tmp_3 = Hx_Field_go_haxe_hxdynamic_getField(_gtag, "next")
+			var tag string
+			_ = tag
+			tag = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_3, HxMakeArray[any]().Dyn()))
+			_ = (Hx_Array_Push[string](_g, tag))
 		}
 	}
 
@@ -5531,20 +5531,20 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_findModifiedStateFields(beatDecl *Hx_
 	_ = _g
 	_g = HxMakeArray[*Hx_Obj_loreline_reference]()
 	{
-		var ref any
-		_ = ref
-		ref = modifiedFields.VTable.Hx_Field_iterator()
+		var _gref any
+		_ = _gref
+		_gref = modifiedFields.VTable.Hx_Field_iterator()
 		for {
 			var _hx_tmp_1 any
 			_ = _hx_tmp_1
-			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(ref, "hasNext")
+			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(_gref, "hasNext")
 			if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()))) {
 				break
 			}
 
 			var _hx_tmp_2 any
 			_ = _hx_tmp_2
-			_hx_tmp_2 = Hx_Field_go_haxe_hxdynamic_getField(ref, "next")
+			_hx_tmp_2 = Hx_Field_go_haxe_hxdynamic_getField(_gref, "next")
 			var hx_dyncast_161 any
 			_ = hx_dyncast_161
 			hx_dyncast_161 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_2, HxMakeArray[any]().Dyn()), "Hx_Obj_loreline_reference")
@@ -5558,10 +5558,10 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_findModifiedStateFields(beatDecl *Hx_
 				_hx_tmp_3 = nil
 			}
 
-			var ref1 *Hx_Obj_loreline_reference
-			_ = ref1
-			ref1 = _hx_tmp_3
-			_ = (Hx_Array_Push[*Hx_Obj_loreline_reference](_g, ref1))
+			var ref *Hx_Obj_loreline_reference
+			_ = ref
+			ref = _hx_tmp_3
+			_ = (Hx_Array_Push[*Hx_Obj_loreline_reference](_g, ref))
 		}
 	}
 
@@ -5711,20 +5711,20 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_findReadStateFields(beatDecl *Hx_Obj_
 	_ = _g
 	_g = HxMakeArray[*Hx_Obj_loreline_reference]()
 	{
-		var ref any
-		_ = ref
-		ref = readFields.VTable.Hx_Field_iterator()
+		var _gref any
+		_ = _gref
+		_gref = readFields.VTable.Hx_Field_iterator()
 		for {
 			var _hx_tmp_1 any
 			_ = _hx_tmp_1
-			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(ref, "hasNext")
+			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(_gref, "hasNext")
 			if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()))) {
 				break
 			}
 
 			var _hx_tmp_2 any
 			_ = _hx_tmp_2
-			_hx_tmp_2 = Hx_Field_go_haxe_hxdynamic_getField(ref, "next")
+			_hx_tmp_2 = Hx_Field_go_haxe_hxdynamic_getField(_gref, "next")
 			var hx_dyncast_165 any
 			_ = hx_dyncast_165
 			hx_dyncast_165 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_2, HxMakeArray[any]().Dyn()), "Hx_Obj_loreline_reference")
@@ -5738,10 +5738,10 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_findReadStateFields(beatDecl *Hx_Obj_
 				_hx_tmp_3 = nil
 			}
 
-			var ref1 *Hx_Obj_loreline_reference
-			_ = ref1
-			ref1 = _hx_tmp_3
-			_ = (Hx_Array_Push[*Hx_Obj_loreline_reference](_g, ref1))
+			var ref *Hx_Obj_loreline_reference
+			_ = ref
+			ref = _hx_tmp_3
+			_ = (Hx_Array_Push[*Hx_Obj_loreline_reference](_g, ref))
 		}
 	}
 

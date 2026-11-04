@@ -1,4 +1,4 @@
-module github.com/jeremyfa/loreline/go/loreline
+module github.com/mikaib/loreline/go/loreline
 
 go 1.26.0
 

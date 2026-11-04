@@ -9,18 +9,18 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_int64map() {
 }
 
 type Hx_Obj_VTable_loreline_int64map interface {
+	Hx_Field_resize(newCapacity int32)
+	Hx_Field_iterator() *Hx_Obj_loreline__int64map_int64mapiterator
+	Hx_Field_clear()
 	Hx_Field_copy() *Hx_Obj_loreline_int64map
+	Hx_Field__remove(high int32, low int32) bool
+	Hx_Field_keyIterator() *Hx_Obj_loreline__int64map_int64mapkeyiterator
+	Hx_Field_hashCoords(high int32, low int32) int32
 	Hx_Field__set(high int32, low int32, value any)
 	Hx_Field__get(high int32, low int32) any
-	Hx_Field__exists(high int32, low int32) bool
 	Hx_Field_keyValueIterator() *Hx_Obj_loreline__int64map_int64mapkeyvalueiterator
-	Hx_Field_iterator() *Hx_Obj_loreline__int64map_int64mapiterator
-	Hx_Field_hashCoords(high int32, low int32) int32
-	Hx_Field__remove(high int32, low int32) bool
-	Hx_Field_resize(newCapacity int32)
-	Hx_Field_keyIterator() *Hx_Obj_loreline__int64map_int64mapkeyiterator
 	Hx_Field_length() int32
-	Hx_Field_clear()
+	Hx_Field__exists(high int32, low int32) bool
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -1022,9 +1022,9 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline__int64map_int64mapkeyvalueiterator() {
 }
 
 type Hx_Obj_VTable_loreline__int64map_int64mapkeyvalueiterator interface {
-	Hx_Field_skipNulls()
 	Hx_Field_hasNext() bool
 	Hx_Field_next() any
+	Hx_Field_skipNulls()
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

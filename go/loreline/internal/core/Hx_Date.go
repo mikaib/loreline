@@ -9,23 +9,23 @@ func Hx_StaticInit_Hx_Obj_VTable_date() {
 }
 
 type Hx_Obj_VTable_date interface {
-	Hx_Field_getUTCFullYear() int32
-	Hx_Field_toString() string
-	Hx_Field_getDay() int32
-	Hx_Field_getUTCDate() int32
-	Hx_Field_getUTCHours() int32
-	Hx_Field_getUTCDay() int32
-	Hx_Field_getDate() int32
+	Hx_Field_getFullYear() int32
 	Hx_Field_getHours() int32
-	Hx_Field_getMinutes() int32
-	Hx_Field_getSeconds() int32
-	Hx_Field_getUTCSeconds() int32
-	Hx_Field_getTime() float64
 	Hx_Field_getUTCMonth() int32
 	Hx_Field_getUTCMinutes() int32
-	Hx_Field_getTimezoneOffset() int32
-	Hx_Field_getFullYear() int32
+	Hx_Field_toString() string
+	Hx_Field_getTime() float64
 	Hx_Field_getMonth() int32
+	Hx_Field_getUTCFullYear() int32
+	Hx_Field_getTimezoneOffset() int32
+	Hx_Field_getDate() int32
+	Hx_Field_getMinutes() int32
+	Hx_Field_getUTCDate() int32
+	Hx_Field_getUTCDay() int32
+	Hx_Field_getSeconds() int32
+	Hx_Field_getDay() int32
+	Hx_Field_getUTCHours() int32
+	Hx_Field_getUTCSeconds() int32
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

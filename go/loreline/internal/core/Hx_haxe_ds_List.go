@@ -7,20 +7,20 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_ds_list() {
 }
 
 type Hx_Obj_VTable_haxe_ds_list interface {
-	Hx_Field_first() any
-	Hx_Field_last() any
 	Hx_Field_remove(v any) bool
 	Hx_Field_iterator() *Hx_Obj_haxe_ds__list_listiterator
+	Hx_Field_keyValueIterator() *Hx_Obj_haxe_ds__list_listkeyvalueiterator
+	Hx_Field_toString() string
+	Hx_Field_push(item any)
+	Hx_Field_first() any
+	Hx_Field_pop() any
+	Hx_Field_join(sep string) string
 	Hx_Field_filter(f func(_hx_carg0 any) bool) *Hx_Obj_haxe_ds_list
 	Hx_Field_map(f func(_hx_carg0 any) any) *Hx_Obj_haxe_ds_list
 	Hx_Field_add(item any)
-	Hx_Field_push(item any)
-	Hx_Field_pop() any
+	Hx_Field_last() any
 	Hx_Field_isEmpty() bool
 	Hx_Field_clear()
-	Hx_Field_keyValueIterator() *Hx_Obj_haxe_ds__list_listkeyvalueiterator
-	Hx_Field_toString() string
-	Hx_Field_join(sep string) string
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

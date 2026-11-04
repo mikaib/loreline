@@ -4,7 +4,7 @@ import (
 	"errors"
 	"os"
 
-	"github.com/jeremyfa/loreline/go/loreline/internal/core"
+	"github.com/mikaib/loreline/go/loreline/internal/core"
 )
 
 var library *core.Hx_Obj_loreline_lib_golibrary

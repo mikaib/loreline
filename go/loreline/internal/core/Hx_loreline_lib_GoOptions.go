@@ -7,9 +7,9 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_lib_gooptions() {
 }
 
 type Hx_Obj_VTable_loreline_lib_gooptions interface {
-	Hx_Field_setTranslations(translations *Hx_Obj_loreline_lib_gotranslations)
 	Hx_Field_addFunction(name string, fn func(_hx_carg0 *Hx_Obj_loreline_lib_gointerpreter, _hx_carg1 HxArray[any]) any)
 	Hx_Field_setStrictAccess(strictAccess bool)
+	Hx_Field_setTranslations(translations *Hx_Obj_loreline_lib_gotranslations)
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

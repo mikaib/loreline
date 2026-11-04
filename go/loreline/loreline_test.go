@@ -11,7 +11,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/jeremyfa/loreline/go/loreline"
+	"github.com/mikaib/loreline/go/loreline"
 )
 
 var customTestFunctions = map[string]loreline.Function{

@@ -10,20 +10,20 @@ func Hx_StaticInit_Hx_Obj_VTable_ereg() {
 }
 
 type Hx_Obj_VTable_ereg interface {
-	Hx_Field_map(s string, f func(_hx_carg0 *Hx_Obj_ereg) string) string
-	Hx_Field_byteFrom(s string, a int32) string
-	Hx_Field_byteLen(s string) int32
-	Hx_Field_match(s string) bool
-	Hx_Field_matched(n int32) string
 	Hx_Field_matchedLeft() string
 	Hx_Field_matchedRight() string
 	Hx_Field_matchedPos() any
-	Hx_Field_byteSub(s string, a int32, b int32) string
-	Hx_Field_charToByte(s string, pos int32) int32
 	Hx_Field_matchSub(s string, pos int32, _hx_reserved_len__isOptional any) bool
 	Hx_Field_matchedNum() int32
 	Hx_Field_split(s string) HxArray[string]
 	Hx_Field_replace(s string, by string) string
+	Hx_Field_map(s string, f func(_hx_carg0 *Hx_Obj_ereg) string) string
+	Hx_Field_byteSub(s string, a int32, b int32) string
+	Hx_Field_byteFrom(s string, a int32) string
+	Hx_Field_byteLen(s string) int32
+	Hx_Field_charToByte(s string, pos int32) int32
+	Hx_Field_match(s string) bool
+	Hx_Field_matched(n int32) string
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

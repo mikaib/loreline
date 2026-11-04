@@ -7,8 +7,8 @@ func Hx_StaticInit_Hx_Obj_VTable_intiterator() {
 }
 
 type Hx_Obj_VTable_intiterator interface {
-	Hx_Field_hasNext() bool
 	Hx_Field_next() int32
+	Hx_Field_hasNext() bool
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

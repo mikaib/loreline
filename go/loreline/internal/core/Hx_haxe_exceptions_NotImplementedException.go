@@ -7,15 +7,15 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_exceptions_notimplementedexception() {
 }
 
 type Hx_Obj_VTable_haxe_exceptions_notimplementedexception interface {
-	Hx_Field_get_stack() HxArray[Hx_Enum_haxe_stackitem]
-	Hx_Field_set_stack(stack HxArray[Hx_Enum_haxe_stackitem]) HxArray[Hx_Enum_haxe_stackitem]
-	Hx_Field_get_previous() *Hx_Obj_haxe_exception
-	Hx_Field_unwrap() any
 	Hx_Field_details() string
 	Hx_Field_toString() string
-	Hx_Field_get_message() string
+	Hx_Field_set_stack(stack HxArray[Hx_Enum_haxe_stackitem]) HxArray[Hx_Enum_haxe_stackitem]
+	Hx_Field_get_previous() *Hx_Obj_haxe_exception
 	Hx_Field_get_native() any
 	Hx_Field_error() string
+	Hx_Field_get_message() string
+	Hx_Field_get_stack() HxArray[Hx_Enum_haxe_stackitem]
+	Hx_Field_unwrap() any
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

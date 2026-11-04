@@ -106,23 +106,23 @@ func (this *Hx_Obj_haxe_xml_printer) Hx_Field_writeNode(value *Hx_Obj_xml, tabs 
 			}
 
 			{
-				var attribute any
-				_ = attribute
-				attribute = value.VTable.Hx_Field_attributes()
+				var _gattribute any
+				_ = _gattribute
+				_gattribute = value.VTable.Hx_Field_attributes()
 				for {
 					var _hx_tmp_0 any
 					_ = _hx_tmp_0
-					_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(attribute, "hasNext")
+					_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(_gattribute, "hasNext")
 					if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_0, HxMakeArray[any]().Dyn()))) {
 						break
 					}
 
 					var _hx_tmp_1 any
 					_ = _hx_tmp_1
-					_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(attribute, "next")
-					var attribute1 string
-					_ = attribute1
-					attribute1 = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()))
+					_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(_gattribute, "next")
+					var attribute string
+					_ = attribute
+					attribute = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()))
 					func() func(x string) {
 						var _hx_closure_src_335 func(x any)
 						_ = _hx_closure_src_335
@@ -130,11 +130,11 @@ func (this *Hx_Obj_haxe_xml_printer) Hx_Field_writeNode(value *Hx_Obj_xml, tabs 
 						return func(x string) {
 							_hx_closure_src_335(((any)(x)))
 						}
-					}()(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(" ", attribute1), "=\""))
+					}()(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(" ", attribute), "=\""))
 					{
 						var input string
 						_ = input
-						input = Hx_Field_stringtools_htmlEscape((value.VTable.Hx_Field_get(attribute1)).Value, true)
+						input = Hx_Field_stringtools_htmlEscape((value.VTable.Hx_Field_get(attribute)).Value, true)
 						func() func(x string) {
 							var _hx_closure_src_336 func(x any)
 							_ = _hx_closure_src_336

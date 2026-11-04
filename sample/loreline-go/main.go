@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/jeremyfa/loreline/go/loreline"
+	"github.com/mikaib/loreline/go/loreline"
 )
 
 const savePath = "save.json"

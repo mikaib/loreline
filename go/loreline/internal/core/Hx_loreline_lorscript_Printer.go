@@ -7,12 +7,12 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_lorscript_printer() {
 }
 
 type Hx_Obj_VTable_loreline_lorscript_printer interface {
+	Hx_Field_typeToString(t Hx_Enum_loreline_lorscript_ctype) string
 	Hx_Field_add(s any)
 	Hx_Field_type(t Hx_Enum_loreline_lorscript_ctype)
 	Hx_Field_addType(t Hx_Enum_loreline_lorscript_ctype)
 	Hx_Field_expr(e any)
 	Hx_Field_exprToString(e any) string
-	Hx_Field_typeToString(t Hx_Enum_loreline_lorscript_ctype) string
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

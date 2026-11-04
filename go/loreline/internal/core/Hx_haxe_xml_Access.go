@@ -466,20 +466,20 @@ func Hx_Field_haxe_xml__access_nodelistaccess_impl__resolve(this *Hx_Obj_xml, na
 	_ = l
 	l = HxMakeArray[*Hx_Obj_xml]()
 	{
-		var x any
-		_ = x
-		x = this.VTable.Hx_Field_elementsNamed(name)
+		var _gx any
+		_ = _gx
+		_gx = this.VTable.Hx_Field_elementsNamed(name)
 		for {
 			var _hx_tmp_0 any
 			_ = _hx_tmp_0
-			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(x, "hasNext")
+			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(_gx, "hasNext")
 			if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_0, HxMakeArray[any]().Dyn()))) {
 				break
 			}
 
 			var _hx_tmp_1 any
 			_ = _hx_tmp_1
-			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(x, "next")
+			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(_gx, "next")
 			var hx_dyncast_50 any
 			_ = hx_dyncast_50
 			hx_dyncast_50 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()), "Hx_Obj_xml")
@@ -491,14 +491,14 @@ func Hx_Field_haxe_xml__access_nodelistaccess_impl__resolve(this *Hx_Obj_xml, na
 				_hx_tmp_2 = nil
 			}
 
-			var x1 *Hx_Obj_xml
-			_ = x1
-			x1 = _hx_tmp_2
-			if (x1.Hx_Field_nodeType != Hx_Field_xml_Document) && (x1.Hx_Field_nodeType != Hx_Field_xml_Element) {
-				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Invalid nodeType ", Hx_Field__xml_xmltype_impl__toString(x1.Hx_Field_nodeType))))))
+			var x *Hx_Obj_xml
+			_ = x
+			x = _hx_tmp_2
+			if (x.Hx_Field_nodeType != Hx_Field_xml_Document) && (x.Hx_Field_nodeType != Hx_Field_xml_Element) {
+				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Invalid nodeType ", Hx_Field__xml_xmltype_impl__toString(x.Hx_Field_nodeType))))))
 			}
 
-			_ = (Hx_Array_Push[*Hx_Obj_xml](l, x1))
+			_ = (Hx_Array_Push[*Hx_Obj_xml](l, x))
 		}
 	}
 

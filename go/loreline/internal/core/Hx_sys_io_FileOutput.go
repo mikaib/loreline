@@ -9,26 +9,26 @@ func Hx_StaticInit_Hx_Obj_VTable_sys_io_fileoutput() {
 }
 
 type Hx_Obj_VTable_sys_io_fileoutput interface {
-	Hx_Field_writeString(s string, encoding__isOptional any)
+	Hx_Field_writeByte(c int32)
+	Hx_Field_writeFloat(x float64)
+	Hx_Field_writeInt32(x int32)
+	Hx_Field_prepare(nbytes int32)
+	Hx_Field_close()
 	Hx_Field_seek(p int32, pos Hx_Enum_sys_io_fileseek)
-	Hx_Field_writeFullBytes(s *Hx_Obj_haxe_io_bytes, pos int32, _hx_reserved_len int32)
-	Hx_Field_flush()
 	Hx_Field_set_bigEndian(b bool) bool
 	Hx_Field_write(s *Hx_Obj_haxe_io_bytes)
-	Hx_Field_writeDouble(x float64)
+	Hx_Field_writeFullBytes(s *Hx_Obj_haxe_io_bytes, pos int32, _hx_reserved_len int32)
 	Hx_Field_writeInt8(x int32)
-	Hx_Field_writeInt16(x int32)
-	Hx_Field_close()
 	Hx_Field_writeUInt16(x int32)
-	Hx_Field_writeUInt24(x int32)
-	Hx_Field_writeInt32(x int32)
 	Hx_Field_writeInput(i *Hx_Obj_haxe_io_input, bufsize__isOptional any)
-	Hx_Field_writeByte(c int32)
 	Hx_Field_writeBytes(s *Hx_Obj_haxe_io_bytes, p int32, l int32) int32
 	Hx_Field_tell() int32
-	Hx_Field_writeFloat(x float64)
+	Hx_Field_flush()
+	Hx_Field_writeDouble(x float64)
+	Hx_Field_writeInt16(x int32)
 	Hx_Field_writeInt24(x int32)
-	Hx_Field_prepare(nbytes int32)
+	Hx_Field_writeUInt24(x int32)
+	Hx_Field_writeString(s string, encoding__isOptional any)
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
