@@ -484,6 +484,45 @@ jobs:
         run: node run test-lsp ./test-lsp
 
 
+  loreline-go:
+
+    runs-on: "ubuntu-22.04"
+    env:
+      HX2GO_REF: result-fix
+    steps:
+
+      - uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Setup Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: stable
+
+      - name: Setup Haxe 5
+        uses: krdlab/setup-haxe@v2.1.0
+        with:
+          haxe-version: 5.0.0-preview.1
+
+      - name: Install hx2go
+        run: |
+          haxelib git hx2go https://github.com/go2hx/hx2go $HX2GO_REF --always
+          cd "$(haxelib libpath hx2go)" && git submodule update --init --recursive
+
+      - name: Build Go CLI
+        run: node ./setup --go
+
+      - name: Run Go tests
+        run: build/go/loreline test ./test
+
+      - name: Run language server tests
+        run: build/go/loreline test-lsp ./test-lsp
+
+
   loreline-js:
 
     runs-on: "ubuntu-22.04"

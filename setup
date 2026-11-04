@@ -173,6 +173,7 @@ async function main() {
     let buildPhp = rawArgs.indexOf('--php') != -1;
     let buildPhpCli = rawArgs.indexOf('--php-cli') != -1;
     let buildJvm = rawArgs.indexOf('--jvm') != -1;
+    let buildGo = rawArgs.indexOf('--go') != -1;
     let buildIos = rawArgs.indexOf('--ios') != -1;
     let buildAndroid = rawArgs.indexOf('--android') != -1;
     let buildWasm = rawArgs.indexOf('--wasm') != -1;
@@ -1466,6 +1467,25 @@ async function main() {
         await command(haxe, ['build-cli.hxml', '--php', 'build/php-cli', '-D', 'loreline_utf8_vector'].concat(haxeBuildArgs));
     }
 
+    if (buildGo) {
+        console.log('Export loreline Go CLI (hx2go)');
+
+        // hx2go needs Haxe 5, so this uses the haxe on the PATH instead of the bundled Haxe 4
+        const goHaxe = process.env.LORELINE_GO_HAXE || 'haxe';
+        const goHaxelib = process.env.LORELINE_GO_HAXELIB || 'haxelib';
+        try {
+            execSync(goHaxelib + ' path hx2go', { stdio: 'ignore' });
+        }
+        catch (e) {
+            await command(goHaxelib, ['git', 'hx2go', 'https://github.com/go2hx/hx2go', process.env.HX2GO_REF || 'main', '--always']);
+        }
+
+        await command(goHaxe, ['build-go.hxml'].concat(haxeBuildArgs));
+        await command('go', ['-C', 'build/go/main', 'build', '-o', path.join('..', process.platform == 'win32' ? 'loreline.exe' : 'loreline'), '.']);
+
+        console.log('Generated: build/go/' + (process.platform == 'win32' ? 'loreline.exe' : 'loreline'));
+    }
+
     if (buildGdscript) {
         console.log('Export loreline for GDScript (Godot)');
 
@@ -2297,6 +2317,13 @@ async function main() {
             '-cp', [path.join(__dirname, 'jvm', 'loreline.jar'), jvmTestClassesDir].join(jvmCpSep),
             'TestRunner', './test'
         ]);
+
+        // 13. Go (hx2go) build + tests
+        console.log('\n=== Go (hx2go) build + tests ===');
+        await command('node', ['./setup', '--go']);
+        const goBin = path.join(__dirname, 'build', 'go', process.platform == 'win32' ? 'loreline.exe' : 'loreline');
+        await command(goBin, ['test', './test']);
+        await command(goBin, ['test-lsp', './test-lsp']);
 
     }
 
