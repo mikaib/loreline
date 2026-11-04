@@ -503,10 +503,10 @@ jobs:
         with:
           go-version: stable
 
-      - name: Setup Haxe 5
+      - name: Setup Haxe nightly
         uses: krdlab/setup-haxe@v2.1.0
         with:
-          haxe-version: 5.0.0-preview.1
+          haxe-version: latest
 
       - name: Install hx2go
         run: |
