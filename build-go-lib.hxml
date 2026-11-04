@@ -1,0 +1,8 @@
+--class-path src
+--main loreline.lib.GoLibrary
+-D loreline_auto_wrap_functions
+-D loreline_utf8_vector
+-L hx2go
+-D go-package=core
+-D go-no-entry
+--custom-target go=build/go-lib

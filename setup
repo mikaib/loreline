@@ -174,6 +174,7 @@ async function main() {
     let buildPhpCli = rawArgs.indexOf('--php-cli') != -1;
     let buildJvm = rawArgs.indexOf('--jvm') != -1;
     let buildGo = rawArgs.indexOf('--go') != -1;
+    let buildGoLib = rawArgs.indexOf('--go-lib') != -1;
     let buildIos = rawArgs.indexOf('--ios') != -1;
     let buildAndroid = rawArgs.indexOf('--android') != -1;
     let buildWasm = rawArgs.indexOf('--wasm') != -1;
@@ -192,9 +193,9 @@ async function main() {
     let runTest = rawArgs.indexOf('--test') != -1;
     let debug = false;
 
-    // --sample [web|unity|cpp|python|lua|sdl3|java]: copy built files into sample projects
+    // --sample [web|unity|cpp|python|lua|go|sdl3|java]: copy built files into sample projects
     let setupSample = rawArgs.indexOf('--sample') != -1;
-    let sampleTarget = null; // null = all, 'web', 'unity', 'cpp', 'python', 'lua', 'sdl3', or 'java'
+    let sampleTarget = null; // null = all, 'web', 'unity', 'cpp', 'python', 'lua', 'go', 'sdl3', or 'java'
     if (setupSample) {
         const idx = rawArgs.indexOf('--sample');
         if (idx + 1 < rawArgs.length && !rawArgs[idx + 1].startsWith('-')) {
@@ -1467,18 +1468,40 @@ async function main() {
         await command(haxe, ['build-cli.hxml', '--php', 'build/php-cli', '-D', 'loreline_utf8_vector'].concat(haxeBuildArgs));
     }
 
-    if (buildGo) {
-        console.log('Export loreline Go CLI (hx2go)');
-
-        // hx2go needs Haxe 5, so this uses the haxe on the PATH instead of the bundled Haxe 4
-        const goHaxe = process.env.LORELINE_GO_HAXE || 'haxe';
-        const goHaxelib = process.env.LORELINE_GO_HAXELIB || 'haxelib';
+    // hx2go needs Haxe 5, so the Go builds use the haxe on the PATH instead of the bundled Haxe 4
+    const goHaxe = process.env.LORELINE_GO_HAXE || 'haxe';
+    const goHaxelib = process.env.LORELINE_GO_HAXELIB || 'haxelib';
+    if (buildGo || buildGoLib) {
         try {
             execSync(goHaxelib + ' path hx2go', { stdio: 'ignore' });
         }
         catch (e) {
             await command(goHaxelib, ['git', 'hx2go', 'https://github.com/go2hx/hx2go', process.env.HX2GO_REF || 'main', '--always']);
         }
+    }
+
+    if (buildGoLib) {
+        console.log('Export loreline Go library (hx2go)');
+
+        await command(goHaxe, ['build-go-lib.hxml'].concat(haxeBuildArgs));
+
+        const goGeneratedDir = path.join(__dirname, 'build', 'go-lib', 'main');
+        const goCoreDir = path.join(__dirname, 'go', 'loreline', 'internal', 'core');
+        fs.rmSync(goCoreDir, { recursive: true, force: true });
+        fs.mkdirSync(goCoreDir, { recursive: true });
+        for (const file of fs.readdirSync(goGeneratedDir)) {
+            if (file.endsWith('.go')) {
+                fs.copyFileSync(path.join(goGeneratedDir, file), path.join(goCoreDir, file));
+            }
+        }
+
+        await command('go', ['build', './...'], { cwd: path.join(__dirname, 'go', 'loreline') });
+
+        console.log('Generated: go/loreline/internal/core');
+    }
+
+    if (buildGo) {
+        console.log('Export loreline Go CLI (hx2go)');
 
         await command(goHaxe, ['build-go.hxml'].concat(haxeBuildArgs));
         await command('go', ['-C', 'build/go/main', 'build', '-o', path.join('..', process.platform == 'win32' ? 'loreline.exe' : 'loreline'), '.']);
@@ -1745,6 +1768,7 @@ async function main() {
     //   node ./setup --sample cpp      (loreline-cpp only)
     //   node ./setup --sample python   (loreline-python only)
     //   node ./setup --sample lua      (loreline-lua only)
+    //   node ./setup --sample go       (loreline-go only)
     //   node ./setup --sample java     (loreline-java only)
     //   node ./setup --sample sdl3     (loreline-sdl3 only)
 
@@ -2062,6 +2086,22 @@ async function main() {
                     path.join(luaStoryDir, name)
                 );
                 console.log('  sample/' + name + ' -> sample/loreline-lua/story/' + name);
+            }
+        }
+
+        // loreline-go: needs go/loreline/internal/core (from --go-lib) + story files
+        if (sampleTarget == null || sampleTarget == 'go') {
+            console.log('Set up sample: loreline-go');
+
+            const goStoryDir = path.join(__dirname, 'sample', 'loreline-go', 'story');
+            fs.mkdirSync(goStoryDir, { recursive: true });
+
+            for (const name of ['CoffeeShop.lor', 'characters.lor']) {
+                fs.copyFileSync(
+                    path.join(__dirname, 'sample', name),
+                    path.join(goStoryDir, name)
+                );
+                console.log('  sample/' + name + ' -> sample/loreline-go/story/' + name);
             }
         }
 

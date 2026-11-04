@@ -19,7 +19,7 @@ What follows is only needed if you want to modify Loreline from source. If you j
 Building Loreline from source requires [Node.js](https://nodejs.org/) (v18+).
 The resulting outputs (JS library, C# library, native CLI) have no Node.js dependency.
 
-The Go CLI is built with [hx2go](https://github.com/go2hx/hx2go), which needs [Go](https://go.dev/) and Haxe 5 on the PATH (instead of the bundled Haxe 4). If hx2go is not installed in haxelib, `--go` installs it from git (`HX2GO_REF` picks the branch or tag, `main` by default).
+The Go CLI and Go library are built with [hx2go](https://github.com/go2hx/hx2go), which needs [Go](https://go.dev/) and Haxe 5 on the PATH (instead of the bundled Haxe 4). If hx2go is not installed in haxelib, `--go` and `--go-lib` install it from git (`HX2GO_REF` picks the branch or tag, `main` by default).
 
 ```sh
 npm install    # Install Node.js dependencies (esbuild, tsx, etc.)
@@ -38,6 +38,7 @@ node ./setup --php         # Build PHP package (php/)
 node ./setup --php-cli     # Build PHP CLI (build/php-cli/)
 node ./setup --cpp         # Build native CLI (loreline / loreline.exe)
 node ./setup --go          # Build Go CLI with hx2go (build/go/loreline)
+node ./setup --go-lib      # Build Go package (go/loreline/)
 node ./setup --cpp-lib     # Build C++ shared library
 node ./setup --jvm         # Build JVM jar (jvm/loreline.jar)
 node ./setup --gdscript    # Export pure-GDScript Godot addon (godot/gdscript/)
@@ -52,12 +53,13 @@ node ./setup --sample unity    # Set up loreline-unity only
 node ./setup --sample cpp      # Set up loreline-cpp only
 node ./setup --sample python   # Set up loreline-python only
 node ./setup --sample lua      # Set up loreline-lua only
+node ./setup --sample go       # Set up loreline-go only
 ```
 
 This copies the built runtime and story files into the sample directories.
 For loreline-web, run `--js` first. For loreline-unity, run `--cs` first.
 For loreline-cpp, run `--cpp` first. For loreline-python, run `--py` first.
-For loreline-lua, run `--lua` first.
+For loreline-lua, run `--lua` first. For loreline-go, run `--go-lib` first.
 
 ### Testing
 

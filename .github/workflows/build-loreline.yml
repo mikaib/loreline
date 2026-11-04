@@ -522,6 +522,16 @@ jobs:
       - name: Run language server tests
         run: build/go/loreline test-lsp ./test-lsp
 
+      - name: Build Go library
+        run: node ./setup --go-lib
+
+      - name: Build and run Go sample
+        run: |
+          node ./setup --sample go
+          cd sample/loreline-go
+          go vet .
+          printf '1\n1\n1\n1\n1\n1\n1\n1\n' | go run . | grep -q "Barista:"
+
 
   loreline-js:
 
