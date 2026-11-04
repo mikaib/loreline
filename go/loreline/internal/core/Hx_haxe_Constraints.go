@@ -291,17 +291,17 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_imap() {
 }
 
 type Hx_Obj_VTable_haxe_imap interface {
-	Hx_Field_keys() any
-	Hx_Field_iterator() any
 	Hx_Field_clear()
 	Hx_Field_get(k any) any
 	Hx_Field_remove(k any) bool
-	Hx_Field_keyValueIterator() any
 	Hx_Field_copy() *Hx_Obj_haxe_imap
 	Hx_Field_toString() string
 	Hx_Field_size() int32
 	Hx_Field_set(k any, v any)
 	Hx_Field_exists(k any) bool
+	Hx_Field_keys() any
+	Hx_Field_iterator() any
+	Hx_Field_keyValueIterator() any
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

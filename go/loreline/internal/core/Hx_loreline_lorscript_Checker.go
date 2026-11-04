@@ -764,13 +764,13 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_lorscript_checkertypes() {
 }
 
 type Hx_Obj_VTable_loreline_lorscript_checkertypes interface {
-	Hx_Field_addXmlType(x Hx_Enum_haxe_rtti_typetree, todo HxArray[func()])
-	Hx_Field_addMeta(src any, to any)
 	Hx_Field_makeXmlType(t Hx_Enum_haxe_rtti_ctype) Hx_Enum_loreline_lorscript_ttype
 	Hx_Field_getType(name string, args__isOptional any) Hx_Enum_loreline_lorscript_ttype
 	Hx_Field_resolve(name string, args__isOptional any) Hx_Enum_loreline_lorscript_ttype
 	Hx_Field_addXmlApi(api *Hx_Obj_xml)
 	Hx_Field_defineClass(name string, ct__isOptional any) any
+	Hx_Field_addXmlType(x Hx_Enum_haxe_rtti_typetree, todo HxArray[func()])
+	Hx_Field_addMeta(src any, to any)
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -2699,38 +2699,38 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_lorscript_checker() {
 }
 
 type Hx_Obj_VTable_loreline_lorscript_checker interface {
-	Hx_Field_onTopDownEnum(en any, field string) bool
-	Hx_Field_error(msg string, curExpr any)
-	Hx_Field_follow(t Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_mk(e Hx_Enum_loreline_lorscript_exprdef, p any) any
-	Hx_Field_typeExpr(expr any, withType Hx_Enum_loreline_lorscript__checker_withtype) Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_link(a Hx_Enum_loreline_lorscript_ttype, b Hx_Enum_loreline_lorscript_ttype, r any) bool
-	Hx_Field_mapType(t Hx_Enum_loreline_lorscript_ttype, f func(_hx_carg0 Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_typeExprWith(expr any, t Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_isString(t Hx_Enum_loreline_lorscript_ttype) bool
-	Hx_Field_setEvent(name string, _hx_reserved_type Hx_Enum_loreline_lorscript_ttype)
-	Hx_Field_getGlobals() Hx_Typedef_map
-	Hx_Field_linkLoop(a Hx_Enum_loreline_lorscript_ttype, t Hx_Enum_loreline_lorscript_ttype) bool
-	Hx_Field_typeEq(t1 Hx_Enum_loreline_lorscript_ttype, t2 Hx_Enum_loreline_lorscript_ttype) bool
-	Hx_Field_apply(t Hx_Enum_loreline_lorscript_ttype, params HxArray[Hx_Enum_loreline_lorscript_ttype], args HxArray[Hx_Enum_loreline_lorscript_ttype]) Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_makeMono() Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_typeArgs(args HxArray[any], pos any) HxArray[any]
-	Hx_Field_getFields(t Hx_Enum_loreline_lorscript_ttype) HxArray[any]
-	Hx_Field_getIteratorType(it any, itt Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_setGlobal(name string, _hx_reserved_type Hx_Enum_loreline_lorscript_ttype)
+	Hx_Field_check(expr any, withType__isOptional any, isCompletion__isOptional any) Hx_Enum_loreline_lorscript_ttype
 	Hx_Field_edef(e any) Hx_Enum_loreline_lorscript_exprdef
+	Hx_Field_apply(t Hx_Enum_loreline_lorscript_ttype, params HxArray[Hx_Enum_loreline_lorscript_ttype], args HxArray[Hx_Enum_loreline_lorscript_ttype]) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_mapType(t Hx_Enum_loreline_lorscript_ttype, f func(_hx_carg0 Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_follow(t Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_getField(t Hx_Enum_loreline_lorscript_ttype, f string, e any, forWrite__isOptional any) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_link(a Hx_Enum_loreline_lorscript_ttype, b Hx_Enum_loreline_lorscript_ttype, r any) bool
+	Hx_Field_typeExprWith(expr any, t Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_typeExpr(expr any, withType Hx_Enum_loreline_lorscript__checker_withtype) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_isString(t Hx_Enum_loreline_lorscript_ttype) bool
+	Hx_Field_setGlobals(cl any, allowPrivate__isOptional any)
+	Hx_Field_setEvent(name string, _hx_reserved_type Hx_Enum_loreline_lorscript_ttype)
+	Hx_Field_unify(t1 Hx_Enum_loreline_lorscript_ttype, t2 Hx_Enum_loreline_lorscript_ttype, e any)
 	Hx_Field_unasync(t Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype
 	Hx_Field_makeIterator(t Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_typeField(o any, f string, expr any, forWrite bool) Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_check(expr any, withType__isOptional any, isCompletion__isOptional any) Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_saveLocals() *Hx_Obj_haxe_imap
-	Hx_Field_unify(t1 Hx_Enum_loreline_lorscript_ttype, t2 Hx_Enum_loreline_lorscript_ttype, e any)
-	Hx_Field_onCompletion(expr any, t Hx_Enum_loreline_lorscript_ttype)
-	Hx_Field_setGlobals(cl any, allowPrivate__isOptional any)
 	Hx_Field_removeGlobal(name string)
-	Hx_Field_tryUnify(t1 Hx_Enum_loreline_lorscript_ttype, t2 Hx_Enum_loreline_lorscript_ttype) bool
-	Hx_Field_getField(t Hx_Enum_loreline_lorscript_ttype, f string, e any, forWrite__isOptional any) Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_setGlobal(name string, _hx_reserved_type Hx_Enum_loreline_lorscript_ttype)
+	Hx_Field_typeArgs(args HxArray[any], pos any) HxArray[any]
+	Hx_Field_linkLoop(a Hx_Enum_loreline_lorscript_ttype, t Hx_Enum_loreline_lorscript_ttype) bool
+	Hx_Field_getFields(t Hx_Enum_loreline_lorscript_ttype) HxArray[any]
+	Hx_Field_onCompletion(expr any, t Hx_Enum_loreline_lorscript_ttype)
+	Hx_Field_error(msg string, curExpr any)
+	Hx_Field_getIteratorType(it any, itt Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_mk(e Hx_Enum_loreline_lorscript_exprdef, p any) any
 	Hx_Field_makeType(t Hx_Enum_loreline_lorscript_ctype, e any) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_tryUnify(t1 Hx_Enum_loreline_lorscript_ttype, t2 Hx_Enum_loreline_lorscript_ttype) bool
+	Hx_Field_typeField(o any, f string, expr any, forWrite bool) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_makeMono() Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_getGlobals() Hx_Typedef_map
+	Hx_Field_onTopDownEnum(en any, field string) bool
+	Hx_Field_saveLocals() *Hx_Obj_haxe_imap
+	Hx_Field_typeEq(t1 Hx_Enum_loreline_lorscript_ttype, t2 Hx_Enum_loreline_lorscript_ttype) bool
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

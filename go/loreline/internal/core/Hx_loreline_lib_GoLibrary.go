@@ -10,6 +10,9 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_lib_golibrary() {
 }
 
 type Hx_Obj_VTable_loreline_lib_golibrary interface {
+	Hx_Field_translationFormat(name string, enabled bool)
+	Hx_Field_update(delta float64)
+	Hx_Field_errorMessage(value any) string
 	Hx_Field_parse(source string, path string, readFile func(_hx_carg0 string) string) struct {
 		Err    error
 		Script *Hx_Obj_loreline_lib_goscript
@@ -27,9 +30,6 @@ type Hx_Obj_VTable_loreline_lib_golibrary interface {
 		Err          error
 		Translations *Hx_Obj_loreline_lib_gotranslations
 	}
-	Hx_Field_translationFormat(name string, enabled bool)
-	Hx_Field_update(delta float64)
-	Hx_Field_errorMessage(value any) string
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

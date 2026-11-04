@@ -7,13 +7,13 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_lib_gonode() {
 }
 
 type Hx_Obj_VTable_loreline_lib_gonode interface {
-	Hx_Field_toJson(pretty bool) string
 	Hx_Field_type() string
 	Hx_Field_line() int32
 	Hx_Field_column() int32
 	Hx_Field_offset() int32
 	Hx_Field_length() int32
 	Hx_Field_id() string
+	Hx_Field_toJson(pretty bool) string
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

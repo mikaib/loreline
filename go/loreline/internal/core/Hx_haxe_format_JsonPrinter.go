@@ -9,15 +9,15 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_format_jsonprinter() {
 }
 
 type Hx_Obj_VTable_haxe_format_jsonprinter interface {
-	Hx_Field_ipad()
-	Hx_Field_newl()
 	Hx_Field_classString(v any)
+	Hx_Field_objString(v any)
+	Hx_Field_fieldsString(v any, fields HxArray[string])
+	Hx_Field_quote(s string)
 	Hx_Field_beginStack(v any)
 	Hx_Field_endStack(v any)
-	Hx_Field_fieldsString(v any, fields HxArray[string])
+	Hx_Field_ipad()
+	Hx_Field_newl()
 	Hx_Field_write(k any, v any)
-	Hx_Field_objString(v any)
-	Hx_Field_quote(s string)
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

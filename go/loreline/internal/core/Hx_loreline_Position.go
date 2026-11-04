@@ -9,10 +9,10 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_position() {
 }
 
 type Hx_Obj_VTable_loreline_position interface {
-	Hx_Field_toString() string
-	Hx_Field_toJson() any
 	Hx_Field_withOffset(content string, additionalOffset int32, newLength__isOptional any, contentStart__isOptional any) *Hx_Obj_loreline_position
 	Hx_Field_extendedTo(endPos *Hx_Obj_loreline_position) *Hx_Obj_loreline_position
+	Hx_Field_toString() string
+	Hx_Field_toJson() any
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

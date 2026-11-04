@@ -96,38 +96,38 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_lorscript_interp() {
 }
 
 type Hx_Obj_VTable_loreline_lorscript_interp interface {
-	Hx_Field_assignOp(op string, fop func(_hx_carg0 any, _hx_carg1 any) any)
-	Hx_Field_restore(old int32)
-	Hx_Field_rethrow(e any)
-	Hx_Field_fcall(o any, f string, args HxArray[any]) any
-	Hx_Field_posInfos() any
-	Hx_Field_execute(expr any) any
-	Hx_Field_doWhileLoop(econd any, e any)
-	Hx_Field_whileLoop(econd any, e any)
-	Hx_Field_isMap(o any) bool
-	Hx_Field_resetVariables()
-	Hx_Field_evalAssignOp(op string, fop func(_hx_carg0 any, _hx_carg1 any) any, e1 any, e2 any) any
-	Hx_Field_makeIterator(v any) any
-	Hx_Field_loopRun(f func()) bool
-	Hx_Field_setVar(name string, v any) any
-	Hx_Field_forLoop(n string, it any, e any)
-	Hx_Field_dynamicCall(args HxArray[any]) any
-	Hx_Field_duplicate(h Hx_Typedef_map) *Hx_Obj_haxe_imap
+	Hx_Field_callIsShadowed() bool
 	Hx_Field_error(e Hx_Enum_loreline_lorscript_errordef, rethrow__isOptional any) any
 	Hx_Field_setMapValue(_hx_reserved_map any, key any, value any)
-	Hx_Field_call(o any, f any, args HxArray[any]) any
+	Hx_Field_get(o any, f string) any
 	Hx_Field_cnew(cl string, args HxArray[any]) any
-	Hx_Field_initOps()
-	Hx_Field_resolve(id string) any
-	Hx_Field_makeMap(keys HxArray[any], values HxArray[any]) any
-	Hx_Field_set(o any, f string, v any) any
+	Hx_Field_posInfos() any
+	Hx_Field_assignOp(op string, fop func(_hx_carg0 any, _hx_carg1 any) any)
+	Hx_Field_execute(expr any) any
 	Hx_Field_exprReturn(e any) any
-	Hx_Field_getMapValue(_hx_reserved_map any, key any) any
-	Hx_Field_callIsShadowed() bool
-	Hx_Field_assign(e1 any, e2 any) any
+	Hx_Field_rethrow(e any)
+	Hx_Field_loopRun(f func()) bool
 	Hx_Field_increment(e any, prefix bool, delta int32) any
 	Hx_Field_expr(e any) any
-	Hx_Field_get(o any, f string) any
+	Hx_Field_whileLoop(econd any, e any)
+	Hx_Field_isMap(o any) bool
+	Hx_Field_call(o any, f any, args HxArray[any]) any
+	Hx_Field_fcall(o any, f string, args HxArray[any]) any
+	Hx_Field_dynamicCall(args HxArray[any]) any
+	Hx_Field_resolve(id string) any
+	Hx_Field_forLoop(n string, it any, e any)
+	Hx_Field_set(o any, f string, v any) any
+	Hx_Field_assign(e1 any, e2 any) any
+	Hx_Field_evalAssignOp(op string, fop func(_hx_carg0 any, _hx_carg1 any) any, e1 any, e2 any) any
+	Hx_Field_makeMap(keys HxArray[any], values HxArray[any]) any
+	Hx_Field_restore(old int32)
+	Hx_Field_makeIterator(v any) any
+	Hx_Field_resetVariables()
+	Hx_Field_initOps()
+	Hx_Field_setVar(name string, v any) any
+	Hx_Field_duplicate(h Hx_Typedef_map) *Hx_Obj_haxe_imap
+	Hx_Field_doWhileLoop(econd any, e any)
+	Hx_Field_getMapValue(_hx_reserved_map any, key any) any
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

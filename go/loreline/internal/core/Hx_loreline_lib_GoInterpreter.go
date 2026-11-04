@@ -7,37 +7,37 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_lib_gointerpreter() {
 }
 
 type Hx_Obj_VTable_loreline_lib_gointerpreter interface {
-	Hx_Field_spawn(key string, dialogue Hx_Typedef_loreline_lib_godialoguehandler, choice Hx_Typedef_loreline_lib_gochoicehandler, finish Hx_Typedef_loreline_lib_gofinishhandler) struct {
-		Err         error
-		Interpreter *Hx_Obj_loreline_lib_gointerpreter
-	}
-	Hx_Field_resumeSpawn(key string, dialogue Hx_Typedef_loreline_lib_godialoguehandler, choice Hx_Typedef_loreline_lib_gochoicehandler, finish Hx_Typedef_loreline_lib_gofinishhandler) struct {
-		Err         error
-		Interpreter *Hx_Obj_loreline_lib_gointerpreter
-	}
-	Hx_Field_resumableSpawnKeys() HxArray[string]
-	Hx_Field_topLevelStateField(name string) any
-	Hx_Field_host() any
-	Hx_Field_start(beat string) error
-	Hx_Field_seedRandomFromClock()
-	Hx_Field_character(name string) any
-	Hx_Field_setTopLevelStateField(name string, value any)
-	Hx_Field_resume() error
-	Hx_Field_dispose() error
-	Hx_Field_setCharacterField(character string, name string, value any)
-	Hx_Field_stateField(name string) any
-	Hx_Field_setStateField(name string, value any)
-	Hx_Field_currentNode() *Hx_Obj_loreline_lib_gonode
-	Hx_Field_key() string
 	Hx_Field_save() struct {
 		Err  error
 		Save string
 	}
+	Hx_Field_spawn(key string, dialogue Hx_Typedef_loreline_lib_godialoguehandler, choice Hx_Typedef_loreline_lib_gochoicehandler, finish Hx_Typedef_loreline_lib_gofinishhandler) struct {
+		Err         error
+		Interpreter *Hx_Obj_loreline_lib_gointerpreter
+	}
 	Hx_Field_seedRandom(seed float64)
-	Hx_Field_characterField(character string, name string) any
-	Hx_Field_setHost(value any)
-	Hx_Field_isRoot() bool
+	Hx_Field_character(name string) any
+	Hx_Field_setStateField(name string, value any)
+	Hx_Field_topLevelStateField(name string) any
+	Hx_Field_setTopLevelStateField(name string, value any)
+	Hx_Field_host() any
+	Hx_Field_resume() error
+	Hx_Field_currentNode() *Hx_Obj_loreline_lib_gonode
+	Hx_Field_start(beat string) error
 	Hx_Field_restore(save string) error
+	Hx_Field_resumeSpawn(key string, dialogue Hx_Typedef_loreline_lib_godialoguehandler, choice Hx_Typedef_loreline_lib_gochoicehandler, finish Hx_Typedef_loreline_lib_gofinishhandler) struct {
+		Err         error
+		Interpreter *Hx_Obj_loreline_lib_gointerpreter
+	}
+	Hx_Field_dispose() error
+	Hx_Field_setHost(value any)
+	Hx_Field_key() string
+	Hx_Field_isRoot() bool
+	Hx_Field_resumableSpawnKeys() HxArray[string]
+	Hx_Field_seedRandomFromClock()
+	Hx_Field_characterField(character string, name string) any
+	Hx_Field_setCharacterField(character string, name string, value any)
+	Hx_Field_stateField(name string) any
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

@@ -7,10 +7,10 @@ func Hx_StaticInit_Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue() {
 }
 
 type Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue interface {
-	Hx_Field_enumParameter(index int32) any
 	Hx_Field_enumIndex() int32
 	Hx_Field_enumParams() HxArray[any]
 	Hx_Field_enumType() *Hx_Obj_go_haxe_hxenum
+	Hx_Field_enumParameter(index int32) any
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

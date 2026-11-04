@@ -209,9 +209,12 @@ func Hx_Field_loreline_utf8_uCharAt(str string, pos int32) string {
 }
 
 func Hx_Field_loreline_utf8_toCodes(str string) HxArray[int32] {
+	var runes []int32
+	_ = runes
+	runes = []rune(str)
 	var _hx_reserved_len int32
 	_ = _hx_reserved_len
-	_hx_reserved_len = int32(utf8.RuneCountInString(str))
+	_hx_reserved_len = ((int32)(len(runes)))
 	var length HxNullable[int32]
 	_ = length
 	length = HxNullable[int32]{Value: _hx_reserved_len, Valid: true}
@@ -251,7 +254,7 @@ func Hx_Field_loreline_utf8_toCodes(str string) HxArray[int32] {
 			{
 				var val int32
 				_ = val
-				val = (Hx_Field_go_haxe_hxstring_charCodeAt(str, i)).Value
+				val = runes[i]
 				HxMakeArrayView[any](v).Set(i, ((any)(val)))
 			}
 		}

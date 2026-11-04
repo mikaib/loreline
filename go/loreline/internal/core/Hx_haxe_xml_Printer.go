@@ -9,10 +9,10 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_xml_printer() {
 }
 
 type Hx_Obj_VTable_haxe_xml_printer interface {
-	Hx_Field_writeNode(value *Hx_Obj_xml, tabs string)
 	Hx_Field_write(input string)
 	Hx_Field_newline()
 	Hx_Field_hasChildren(value *Hx_Obj_xml) bool
+	Hx_Field_writeNode(value *Hx_Obj_xml, tabs string)
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

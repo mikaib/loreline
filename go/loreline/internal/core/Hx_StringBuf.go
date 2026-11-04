@@ -10,12 +10,12 @@ func Hx_StaticInit_Hx_Obj_VTable_stringbuf() {
 }
 
 type Hx_Obj_VTable_stringbuf interface {
-	Hx_Field_add(x any)
-	Hx_Field_addChar(c int32)
-	Hx_Field_addSub(s string, pos int32, _hx_reserved_len__isOptional any)
 	Hx_Field_clear()
 	Hx_Field_toString() string
 	Hx_Field_get_length() int32
+	Hx_Field_add(x any)
+	Hx_Field_addChar(c int32)
+	Hx_Field_addSub(s string, pos int32, _hx_reserved_len__isOptional any)
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

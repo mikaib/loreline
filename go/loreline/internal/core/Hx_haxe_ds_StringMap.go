@@ -98,17 +98,17 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_ds_stringmap() {
 }
 
 type Hx_Obj_VTable_haxe_ds_stringmap interface {
-	Hx_Field_keyValueIterator() any
-	Hx_Field_toString() string
-	Hx_Field_get(_hx_param_key any) any
-	Hx_Field_copy() *Hx_Obj_haxe_imap
 	Hx_Field_size() int32
 	Hx_Field_clear()
 	Hx_Field_set(_hx_param_key any, _hx_param_value any)
 	Hx_Field_exists(_hx_param_key any) bool
-	Hx_Field_remove(_hx_param_key any) bool
 	Hx_Field_keys() any
+	Hx_Field_copy() *Hx_Obj_haxe_imap
+	Hx_Field_toString() string
+	Hx_Field_get(_hx_param_key any) any
+	Hx_Field_remove(_hx_param_key any) bool
 	Hx_Field_iterator() any
+	Hx_Field_keyValueIterator() any
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

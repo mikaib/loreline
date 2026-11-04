@@ -7,36 +7,36 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_rtti_xmlparser() {
 }
 
 type Hx_Obj_VTable_haxe_rtti_xmlparser interface {
-	Hx_Field_process(x *Hx_Obj_xml, platform string)
-	Hx_Field_xabstract(x *Hx_Obj_xml) any
-	Hx_Field_mergeTypedefs(t any, t2 any) bool
-	Hx_Field_mkRights(r string) Hx_Enum_haxe_rtti_rights
-	Hx_Field_xmeta(x *Hx_Obj_xml) HxArray[any]
-	Hx_Field_xclassfield(x *Hx_Obj_xml, defPublic__isOptional any) any
-	Hx_Field_xtypeparams(x *Hx_Obj_xml) HxArray[Hx_Enum_haxe_rtti_ctype]
-	Hx_Field_xenum(x *Hx_Obj_xml) any
-	Hx_Field_mergeRights(f1 any, f2 any) bool
-	Hx_Field_merge(t Hx_Enum_haxe_rtti_typetree)
-	Hx_Field_processElement(x *Hx_Obj_xml) Hx_Enum_haxe_rtti_typetree
-	Hx_Field_mergeFields(f any, f2 any) bool
-	Hx_Field_mergeEnums(e any, e2 any) bool
-	Hx_Field_xenumfield(x *Hx_Obj_xml) any
-	Hx_Field_defplat() HxArray[string]
-	Hx_Field_sort(l__isOptional any)
-	Hx_Field_mergeClasses(c any, c2 any) bool
-	Hx_Field_mergeAbstracts(a any, a2 any) bool
 	Hx_Field_xtypedef(x *Hx_Obj_xml) any
-	Hx_Field_sortFields(a HxArray[any])
-	Hx_Field_mkPath(p string) Hx_Typedef_haxe_rtti_path
-	Hx_Field_mkTypeParams(p string) Hx_Typedef_haxe_rtti_typeparams
-	Hx_Field_xroot(x *Hx_Obj_xml)
-	Hx_Field_xclass(x *Hx_Obj_xml) any
 	Hx_Field_xtype(x *Hx_Obj_xml) Hx_Enum_haxe_rtti_ctype
-	Hx_Field_mergeDoc(f1 any, f2 any) bool
+	Hx_Field_defplat() HxArray[string]
+	Hx_Field_process(x *Hx_Obj_xml, platform string)
+	Hx_Field_processElement(x *Hx_Obj_xml) Hx_Enum_haxe_rtti_typetree
+	Hx_Field_xclassfield(x *Hx_Obj_xml, defPublic__isOptional any) any
+	Hx_Field_mergeFields(f any, f2 any) bool
 	Hx_Field_newField(c any, f any)
+	Hx_Field_mergeEnums(e any, e2 any) bool
+	Hx_Field_mkTypeParams(p string) Hx_Typedef_haxe_rtti_typeparams
 	Hx_Field_xerror(c *Hx_Obj_xml) any
 	Hx_Field_xoverloads(x *Hx_Obj_xml) HxArray[any]
+	Hx_Field_sortFields(a HxArray[any])
+	Hx_Field_mergeRights(f1 any, f2 any) bool
+	Hx_Field_mergeAbstracts(a any, a2 any) bool
+	Hx_Field_xroot(x *Hx_Obj_xml)
+	Hx_Field_xenum(x *Hx_Obj_xml) any
+	Hx_Field_xabstract(x *Hx_Obj_xml) any
+	Hx_Field_xtypeparams(x *Hx_Obj_xml) HxArray[Hx_Enum_haxe_rtti_ctype]
+	Hx_Field_mergeTypedefs(t any, t2 any) bool
+	Hx_Field_mkRights(r string) Hx_Enum_haxe_rtti_rights
+	Hx_Field_xenumfield(x *Hx_Obj_xml) any
+	Hx_Field_sort(l__isOptional any)
+	Hx_Field_xmeta(x *Hx_Obj_xml) HxArray[any]
+	Hx_Field_xclass(x *Hx_Obj_xml) any
+	Hx_Field_mkPath(p string) Hx_Typedef_haxe_rtti_path
 	Hx_Field_xpath(x *Hx_Obj_xml) any
+	Hx_Field_mergeDoc(f1 any, f2 any) bool
+	Hx_Field_mergeClasses(c any, c2 any) bool
+	Hx_Field_merge(t Hx_Enum_haxe_rtti_typetree)
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
