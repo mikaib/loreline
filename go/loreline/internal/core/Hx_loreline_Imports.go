@@ -80,10 +80,10 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_imports() {
 }
 
 type Hx_Obj_VTable_loreline_imports interface {
+	Hx_Field_handleItemInLoop(item string, loopInfo *Hx_Obj_loreline__imports_importsloopinfo, toImport HxArray[string], visitedImports Hx_Typedef_map, resolvedImports Hx_Typedef_map)
 	Hx_Field_extractImports(cwd string, tokens Hx_Typedef_loreline_tokens, toImport HxArray[string], visitedImports Hx_Typedef_map)
 	Hx_Field_resolve(rootPath string, tokens Hx_Typedef_loreline_tokens, handleFile Hx_Typedef_loreline_importsfilehandler, handleError Hx_Typedef_loreline_importserrorhandler, done Hx_Typedef_loreline_importscallback)
 	Hx_Field_processImports(toImport HxArray[string], visitedImports Hx_Typedef_map, resolvedImports Hx_Typedef_map)
-	Hx_Field_handleItemInLoop(item string, loopInfo *Hx_Obj_loreline__imports_importsloopinfo, toImport HxArray[string], visitedImports Hx_Typedef_map, resolvedImports Hx_Typedef_map)
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

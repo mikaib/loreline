@@ -863,14 +863,14 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_nodeidmap() {
 }
 
 type Hx_Obj_VTable_loreline_nodeidmap interface {
+	Hx_Field_keys() *Hx_Obj_loreline__node_nodeidmapkeyiterator
+	Hx_Field_keyValueIterator() *Hx_Obj_loreline__node_nodeidmapkeyvalueiterator
 	Hx_Field_get(key Hx_Typedef_haxe__int64___int64) any
 	Hx_Field_set(key Hx_Typedef_haxe__int64___int64, value any)
 	Hx_Field_remove(key Hx_Typedef_haxe__int64___int64)
 	Hx_Field_exists(key Hx_Typedef_haxe__int64___int64) bool
 	Hx_Field_clear()
 	Hx_Field_iterator() *Hx_Obj_loreline__node_nodeidmapiterator
-	Hx_Field_keys() *Hx_Obj_loreline__node_nodeidmapkeyiterator
-	Hx_Field_keyValueIterator() *Hx_Obj_loreline__node_nodeidmapkeyvalueiterator
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -994,9 +994,9 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline__node_nodeidmapiterator() {
 }
 
 type Hx_Obj_VTable_loreline__node_nodeidmapiterator interface {
+	Hx_Field_skipNulls()
 	Hx_Field_hasNext() bool
 	Hx_Field_next() any
-	Hx_Field_skipNulls()
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -1138,9 +1138,9 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline__node_nodeidmapkeyiterator() {
 }
 
 type Hx_Obj_VTable_loreline__node_nodeidmapkeyiterator interface {
+	Hx_Field_next() Hx_Typedef_haxe__int64___int64
 	Hx_Field_skipNulls()
 	Hx_Field_hasNext() bool
-	Hx_Field_next() Hx_Typedef_haxe__int64___int64
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -1639,10 +1639,10 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_astnode() {
 }
 
 type Hx_Obj_VTable_loreline_astnode interface {
+	Hx_Field_type() string
 	Hx_Field_eachComment(handleComment func(node *Hx_Obj_loreline_astnode, comment *Hx_Obj_loreline_comment))
 	Hx_Field_each(handleNode func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node))
 	Hx_Field_toJson() any
-	Hx_Field_type() string
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -2044,10 +2044,10 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_nexpr() {
 }
 
 type Hx_Obj_VTable_loreline_nexpr interface {
-	Hx_Field_toJson() any
 	Hx_Field_type() string
 	Hx_Field_eachComment(handleComment func(node *Hx_Obj_loreline_astnode, comment *Hx_Obj_loreline_comment))
 	Hx_Field_each(handleNode func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node))
+	Hx_Field_toJson() any
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -2153,11 +2153,11 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_nstatedecl() {
 }
 
 type Hx_Obj_VTable_loreline_nstatedecl interface {
+	Hx_Field_type() string
 	Hx_Field_get(name string) *Hx_Obj_loreline_nexpr
 	Hx_Field_each(handleNode func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node))
 	Hx_Field_toJson() any
 	Hx_Field_eachComment(handleComment func(node *Hx_Obj_loreline_astnode, comment *Hx_Obj_loreline_comment))
-	Hx_Field_type() string
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -2368,10 +2368,10 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_nobjectfield() {
 }
 
 type Hx_Obj_VTable_loreline_nobjectfield interface {
+	Hx_Field_type() string
 	Hx_Field_each(handleNode func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node))
 	Hx_Field_toJson() any
 	Hx_Field_eachComment(handleComment func(node *Hx_Obj_loreline_astnode, comment *Hx_Obj_loreline_comment))
-	Hx_Field_type() string
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -2823,10 +2823,10 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_nbeatdecl() {
 }
 
 type Hx_Obj_VTable_loreline_nbeatdecl interface {
-	Hx_Field_type() string
 	Hx_Field_each(handleNode func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node))
 	Hx_Field_toJson() any
 	Hx_Field_eachComment(handleComment func(node *Hx_Obj_loreline_astnode, comment *Hx_Obj_loreline_comment))
+	Hx_Field_type() string
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -3558,10 +3558,10 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_nstringpart() {
 }
 
 type Hx_Obj_VTable_loreline_nstringpart interface {
+	Hx_Field_type() string
 	Hx_Field_each(handleNode func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node))
 	Hx_Field_toJson() any
 	Hx_Field_eachComment(handleComment func(node *Hx_Obj_loreline_astnode, comment *Hx_Obj_loreline_comment))
-	Hx_Field_type() string
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -3786,10 +3786,10 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_nstringliteral() {
 }
 
 type Hx_Obj_VTable_loreline_nstringliteral interface {
-	Hx_Field_type() string
-	Hx_Field_each(handleNode func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node))
 	Hx_Field_toJson() any
 	Hx_Field_eachComment(handleComment func(node *Hx_Obj_loreline_astnode, comment *Hx_Obj_loreline_comment))
+	Hx_Field_type() string
+	Hx_Field_each(handleNode func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node))
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -3971,10 +3971,10 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_ntextstatement() {
 }
 
 type Hx_Obj_VTable_loreline_ntextstatement interface {
-	Hx_Field_type() string
 	Hx_Field_each(handleNode func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node))
 	Hx_Field_toJson() any
 	Hx_Field_eachComment(handleComment func(node *Hx_Obj_loreline_astnode, comment *Hx_Obj_loreline_comment))
+	Hx_Field_type() string
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -4143,10 +4143,10 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_ndialoguestatement() {
 }
 
 type Hx_Obj_VTable_loreline_ndialoguestatement interface {
-	Hx_Field_eachComment(handleComment func(node *Hx_Obj_loreline_astnode, comment *Hx_Obj_loreline_comment))
 	Hx_Field_type() string
 	Hx_Field_each(handleNode func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node))
 	Hx_Field_toJson() any
+	Hx_Field_eachComment(handleComment func(node *Hx_Obj_loreline_astnode, comment *Hx_Obj_loreline_comment))
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -4507,10 +4507,10 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_nchoiceoption() {
 }
 
 type Hx_Obj_VTable_loreline_nchoiceoption interface {
+	Hx_Field_type() string
 	Hx_Field_each(handleNode func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node))
 	Hx_Field_toJson() any
 	Hx_Field_eachComment(handleComment func(node *Hx_Obj_loreline_astnode, comment *Hx_Obj_loreline_comment))
-	Hx_Field_type() string
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -5278,10 +5278,10 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_nblock() {
 }
 
 type Hx_Obj_VTable_loreline_nblock interface {
-	Hx_Field_type() string
-	Hx_Field_each(handleNode func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node))
 	Hx_Field_toJson() any
 	Hx_Field_eachComment(handleComment func(node *Hx_Obj_loreline_astnode, comment *Hx_Obj_loreline_comment))
+	Hx_Field_type() string
+	Hx_Field_each(handleNode func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node))
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -6247,10 +6247,10 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_ncall() {
 }
 
 type Hx_Obj_VTable_loreline_ncall interface {
-	Hx_Field_eachComment(handleComment func(node *Hx_Obj_loreline_astnode, comment *Hx_Obj_loreline_comment))
 	Hx_Field_type() string
 	Hx_Field_each(handleNode func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node))
 	Hx_Field_toJson() any
+	Hx_Field_eachComment(handleComment func(node *Hx_Obj_loreline_astnode, comment *Hx_Obj_loreline_comment))
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -8161,10 +8161,10 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_nbinary() {
 }
 
 type Hx_Obj_VTable_loreline_nbinary interface {
-	Hx_Field_eachComment(handleComment func(node *Hx_Obj_loreline_astnode, comment *Hx_Obj_loreline_comment))
 	Hx_Field_type() string
 	Hx_Field_each(handleNode func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node))
 	Hx_Field_toJson() any
+	Hx_Field_eachComment(handleComment func(node *Hx_Obj_loreline_astnode, comment *Hx_Obj_loreline_comment))
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -8326,10 +8326,10 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_nunary() {
 }
 
 type Hx_Obj_VTable_loreline_nunary interface {
-	Hx_Field_type() string
 	Hx_Field_each(handleNode func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node))
 	Hx_Field_toJson() any
 	Hx_Field_eachComment(handleComment func(node *Hx_Obj_loreline_astnode, comment *Hx_Obj_loreline_comment))
+	Hx_Field_type() string
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -8464,10 +8464,10 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_nternary() {
 }
 
 type Hx_Obj_VTable_loreline_nternary interface {
+	Hx_Field_eachComment(handleComment func(node *Hx_Obj_loreline_astnode, comment *Hx_Obj_loreline_comment))
 	Hx_Field_type() string
 	Hx_Field_each(handleNode func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node))
 	Hx_Field_toJson() any
-	Hx_Field_eachComment(handleComment func(node *Hx_Obj_loreline_astnode, comment *Hx_Obj_loreline_comment))
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -8649,10 +8649,10 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_nimportstatement() {
 }
 
 type Hx_Obj_VTable_loreline_nimportstatement interface {
+	Hx_Field_each(handleNode func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node))
 	Hx_Field_type() string
 	Hx_Field_toJson() any
 	Hx_Field_eachComment(handleComment func(node *Hx_Obj_loreline_astnode, comment *Hx_Obj_loreline_comment))
-	Hx_Field_each(handleNode func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node))
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

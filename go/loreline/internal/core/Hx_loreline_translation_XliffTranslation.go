@@ -192,20 +192,20 @@ func Hx_Field_loreline_translation_xlifftranslation_toLoreline(content string, l
 	_ = first
 	first = true
 	{
-		var file any
-		_ = file
-		file = xliff.VTable.Hx_Field_elementsNamed("file")
+		var _gfile any
+		_ = _gfile
+		_gfile = xliff.VTable.Hx_Field_elementsNamed("file")
 		for {
 			var _hx_tmp_6 any
 			_ = _hx_tmp_6
-			_hx_tmp_6 = Hx_Field_go_haxe_hxdynamic_getField(file, "hasNext")
+			_hx_tmp_6 = Hx_Field_go_haxe_hxdynamic_getField(_gfile, "hasNext")
 			if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_6, HxMakeArray[any]().Dyn()))) {
 				break
 			}
 
 			var _hx_tmp_7 any
 			_ = _hx_tmp_7
-			_hx_tmp_7 = Hx_Field_go_haxe_hxdynamic_getField(file, "next")
+			_hx_tmp_7 = Hx_Field_go_haxe_hxdynamic_getField(_gfile, "next")
 			var hx_dyncast_363 any
 			_ = hx_dyncast_363
 			hx_dyncast_363 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_7, HxMakeArray[any]().Dyn()), "Hx_Obj_xml")
@@ -217,14 +217,14 @@ func Hx_Field_loreline_translation_xlifftranslation_toLoreline(content string, l
 				_hx_tmp_8 = nil
 			}
 
-			var file1 *Hx_Obj_xml
-			_ = file1
-			file1 = _hx_tmp_8
+			var file *Hx_Obj_xml
+			_ = file
+			file = _hx_tmp_8
 			if !is2x {
 				var _hx_tmp_9 HxNullable[string]
 				_ = _hx_tmp_9
-				if file1.VTable.Hx_Field_exists("target-language") {
-					_hx_tmp_9 = file1.VTable.Hx_Field_get("target-language")
+				if file.VTable.Hx_Field_exists("target-language") {
+					_hx_tmp_9 = file.VTable.Hx_Field_get("target-language")
 				} else {
 					_hx_tmp_9 = HxNullable[string]{Value: HxStringNull}
 				}
@@ -246,20 +246,20 @@ func Hx_Field_loreline_translation_xlifftranslation_toLoreline(content string, l
 			}
 
 			if is2x {
-				var unit any
-				_ = unit
-				unit = file1.VTable.Hx_Field_elementsNamed("unit")
+				var _gunit any
+				_ = _gunit
+				_gunit = file.VTable.Hx_Field_elementsNamed("unit")
 				for {
 					var _hx_tmp_11 any
 					_ = _hx_tmp_11
-					_hx_tmp_11 = Hx_Field_go_haxe_hxdynamic_getField(unit, "hasNext")
+					_hx_tmp_11 = Hx_Field_go_haxe_hxdynamic_getField(_gunit, "hasNext")
 					if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_11, HxMakeArray[any]().Dyn()))) {
 						break
 					}
 
 					var _hx_tmp_12 any
 					_ = _hx_tmp_12
-					_hx_tmp_12 = Hx_Field_go_haxe_hxdynamic_getField(unit, "next")
+					_hx_tmp_12 = Hx_Field_go_haxe_hxdynamic_getField(_gunit, "next")
 					var hx_dyncast_364 any
 					_ = hx_dyncast_364
 					hx_dyncast_364 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_12, HxMakeArray[any]().Dyn()), "Hx_Obj_xml")
@@ -271,34 +271,34 @@ func Hx_Field_loreline_translation_xlifftranslation_toLoreline(content string, l
 						_hx_tmp_13 = nil
 					}
 
-					var unit1 *Hx_Obj_xml
-					_ = unit1
-					unit1 = _hx_tmp_13
-					if !unit1.VTable.Hx_Field_exists("id") {
+					var unit *Hx_Obj_xml
+					_ = unit
+					unit = _hx_tmp_13
+					if !unit.VTable.Hx_Field_exists("id") {
 						continue
 					}
 
 					var id HxNullable[string]
 					_ = id
-					id = unit1.VTable.Hx_Field_get("id")
+					id = unit.VTable.Hx_Field_get("id")
 					var _g HxArray[*Hx_Obj_xml]
 					_ = _g
 					_g = HxMakeArray[*Hx_Obj_xml]()
 					{
-						var s any
-						_ = s
-						s = unit1.VTable.Hx_Field_elementsNamed("segment")
+						var _gs any
+						_ = _gs
+						_gs = unit.VTable.Hx_Field_elementsNamed("segment")
 						for {
 							var _hx_tmp_14 any
 							_ = _hx_tmp_14
-							_hx_tmp_14 = Hx_Field_go_haxe_hxdynamic_getField(s, "hasNext")
+							_hx_tmp_14 = Hx_Field_go_haxe_hxdynamic_getField(_gs, "hasNext")
 							if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_14, HxMakeArray[any]().Dyn()))) {
 								break
 							}
 
 							var _hx_tmp_15 any
 							_ = _hx_tmp_15
-							_hx_tmp_15 = Hx_Field_go_haxe_hxdynamic_getField(s, "next")
+							_hx_tmp_15 = Hx_Field_go_haxe_hxdynamic_getField(_gs, "next")
 							var hx_dyncast_365 any
 							_ = hx_dyncast_365
 							hx_dyncast_365 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_15, HxMakeArray[any]().Dyn()), "Hx_Obj_xml")
@@ -310,10 +310,10 @@ func Hx_Field_loreline_translation_xlifftranslation_toLoreline(content string, l
 								_hx_tmp_16 = nil
 							}
 
-							var s1 *Hx_Obj_xml
-							_ = s1
-							s1 = _hx_tmp_16
-							_ = (Hx_Array_Push[*Hx_Obj_xml](_g, s1))
+							var s *Hx_Obj_xml
+							_ = s
+							s = _hx_tmp_16
+							_ = (Hx_Array_Push[*Hx_Obj_xml](_g, s))
 						}
 					}
 
@@ -392,26 +392,26 @@ func Hx_Field_loreline_translation_xlifftranslation_toLoreline(content string, l
 			} else {
 				var body *Hx_Obj_xml
 				_ = body
-				body = Hx_Field_loreline_translation_xlifftranslation_firstChildElement(file1, "body")
+				body = Hx_Field_loreline_translation_xlifftranslation_firstChildElement(file, "body")
 				if body == nil {
 					continue
 				}
 
 				{
-					var unit any
-					_ = unit
-					unit = body.VTable.Hx_Field_elementsNamed("trans-unit")
+					var _gunit any
+					_ = _gunit
+					_gunit = body.VTable.Hx_Field_elementsNamed("trans-unit")
 					for {
 						var _hx_tmp_19 any
 						_ = _hx_tmp_19
-						_hx_tmp_19 = Hx_Field_go_haxe_hxdynamic_getField(unit, "hasNext")
+						_hx_tmp_19 = Hx_Field_go_haxe_hxdynamic_getField(_gunit, "hasNext")
 						if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_19, HxMakeArray[any]().Dyn()))) {
 							break
 						}
 
 						var _hx_tmp_20 any
 						_ = _hx_tmp_20
-						_hx_tmp_20 = Hx_Field_go_haxe_hxdynamic_getField(unit, "next")
+						_hx_tmp_20 = Hx_Field_go_haxe_hxdynamic_getField(_gunit, "next")
 						var hx_dyncast_366 any
 						_ = hx_dyncast_366
 						hx_dyncast_366 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_20, HxMakeArray[any]().Dyn()), "Hx_Obj_xml")
@@ -423,22 +423,22 @@ func Hx_Field_loreline_translation_xlifftranslation_toLoreline(content string, l
 							_hx_tmp_21 = nil
 						}
 
-						var unit1 *Hx_Obj_xml
-						_ = unit1
-						unit1 = _hx_tmp_21
-						if !unit1.VTable.Hx_Field_exists("id") {
+						var unit *Hx_Obj_xml
+						_ = unit
+						unit = _hx_tmp_21
+						if !unit.VTable.Hx_Field_exists("id") {
 							continue
 						}
 
 						var id HxNullable[string]
 						_ = id
-						id = unit1.VTable.Hx_Field_get("id")
+						id = unit.VTable.Hx_Field_get("id")
 						var src string
 						_ = src
-						src = Hx_Field_loreline_translation_xlifftranslation_innerText(Hx_Field_loreline_translation_xlifftranslation_firstChildElement(unit1, "source"))
+						src = Hx_Field_loreline_translation_xlifftranslation_innerText(Hx_Field_loreline_translation_xlifftranslation_firstChildElement(unit, "source"))
 						var tgt string
 						_ = tgt
-						tgt = Hx_Field_loreline_translation_xlifftranslation_innerText(Hx_Field_loreline_translation_xlifftranslation_firstChildElement(unit1, "target"))
+						tgt = Hx_Field_loreline_translation_xlifftranslation_innerText(Hx_Field_loreline_translation_xlifftranslation_firstChildElement(unit, "target"))
 						if (tgt == HxStringNull) || (tgt == "") {
 							continue
 						}

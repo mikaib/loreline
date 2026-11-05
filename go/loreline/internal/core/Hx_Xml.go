@@ -196,25 +196,25 @@ func Hx_StaticInit_Hx_Obj_VTable_xml() {
 }
 
 type Hx_Obj_VTable_xml interface {
-	Hx_Field_elements() any
-	Hx_Field_addChild(x *Hx_Obj_xml)
-	Hx_Field_get_nodeName() string
-	Hx_Field_remove(att string)
-	Hx_Field_insertChild(x *Hx_Obj_xml, pos int32)
-	Hx_Field_exists(att string) bool
-	Hx_Field_elementsNamed(name string) any
-	Hx_Field_removeChild(x *Hx_Obj_xml) bool
-	Hx_Field_toString() string
-	Hx_Field_set_nodeName(v string) string
-	Hx_Field_get_nodeValue() string
 	Hx_Field_set_nodeValue(v string) string
 	Hx_Field_attributes() any
 	Hx_Field_iterator() any
-	Hx_Field_firstChild() *Hx_Obj_xml
+	Hx_Field_elements() any
+	Hx_Field_toString() string
+	Hx_Field_get_nodeValue() string
+	Hx_Field_remove(att string)
 	Hx_Field_firstElement() *Hx_Obj_xml
 	Hx_Field_ensureElementType()
+	Hx_Field_get_nodeName() string
+	Hx_Field_elementsNamed(name string) any
+	Hx_Field_firstChild() *Hx_Obj_xml
+	Hx_Field_addChild(x *Hx_Obj_xml)
+	Hx_Field_set_nodeName(v string) string
 	Hx_Field_get(att string) HxNullable[string]
 	Hx_Field_set(att string, value string)
+	Hx_Field_exists(att string) bool
+	Hx_Field_removeChild(x *Hx_Obj_xml) bool
+	Hx_Field_insertChild(x *Hx_Obj_xml, pos int32)
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

@@ -9,27 +9,27 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_io_bytes() {
 }
 
 type Hx_Obj_VTable_haxe_io_bytes interface {
-	Hx_Field_getData() Hx_Typedef_haxe_io_bytesdata
-	Hx_Field_set(pos int32, v int32)
-	Hx_Field_fill(pos int32, _hx_reserved_len int32, value int32)
-	Hx_Field_compare(other *Hx_Obj_haxe_io_bytes) int32
-	Hx_Field_getInt32(pos int32) int32
-	Hx_Field_getInt64(pos int32) Hx_Typedef_haxe__int64___int64
-	Hx_Field_setInt64(pos int32, v Hx_Typedef_haxe__int64___int64)
-	Hx_Field_get(pos int32) int32
-	Hx_Field_sub(pos int32, _hx_reserved_len int32) *Hx_Obj_haxe_io_bytes
-	Hx_Field_getFloat(pos int32) float64
 	Hx_Field_setDouble(pos int32, v float64)
+	Hx_Field_getInt64(pos int32) Hx_Typedef_haxe__int64___int64
+	Hx_Field_toString() string
+	Hx_Field_getData() Hx_Typedef_haxe_io_bytesdata
+	Hx_Field_blit(pos int32, src *Hx_Obj_haxe_io_bytes, srcpos int32, _hx_reserved_len int32)
+	Hx_Field_setFloat(pos int32, v float64)
+	Hx_Field_getUInt16(pos int32) int32
 	Hx_Field_setUInt16(pos int32, v int32)
 	Hx_Field_setInt32(pos int32, v int32)
-	Hx_Field_getString(pos int32, _hx_reserved_len int32, encoding__isOptional any) string
-	Hx_Field_getDouble(pos int32) float64
-	Hx_Field_setFloat(pos int32, v float64)
-	Hx_Field_readString(pos int32, _hx_reserved_len int32) string
 	Hx_Field_toHex() string
-	Hx_Field_blit(pos int32, src *Hx_Obj_haxe_io_bytes, srcpos int32, _hx_reserved_len int32)
-	Hx_Field_getUInt16(pos int32) int32
-	Hx_Field_toString() string
+	Hx_Field_get(pos int32) int32
+	Hx_Field_set(pos int32, v int32)
+	Hx_Field_getDouble(pos int32) float64
+	Hx_Field_fill(pos int32, _hx_reserved_len int32, value int32)
+	Hx_Field_compare(other *Hx_Obj_haxe_io_bytes) int32
+	Hx_Field_getFloat(pos int32) float64
+	Hx_Field_getInt32(pos int32) int32
+	Hx_Field_setInt64(pos int32, v Hx_Typedef_haxe__int64___int64)
+	Hx_Field_getString(pos int32, _hx_reserved_len int32, encoding__isOptional any) string
+	Hx_Field_readString(pos int32, _hx_reserved_len int32) string
+	Hx_Field_sub(pos int32, _hx_reserved_len int32) *Hx_Obj_haxe_io_bytes
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

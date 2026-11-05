@@ -3376,88 +3376,88 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_lexer() {
 }
 
 type Hx_Obj_VTable_loreline_lexer interface {
-	Hx_Field_readLineComment() *Hx_Obj_loreline_token
-	Hx_Field_isAfterLBracket() bool
-	Hx_Field_followsAssignStart() bool
-	Hx_Field_makeStrictIfFollowingCallable()
-	Hx_Field_followsCallableOrIndexable() bool
-	Hx_Field_skipBalancedParens(p int32, allowTags bool) int32
-	Hx_Field_mergeIsNot(tokenType Hx_Enum_loreline_tokentype) Hx_Enum_loreline_tokentype
-	Hx_Field_readIdentifier() *Hx_Obj_loreline_token
-	Hx_Field_makeToken(_hx_reserved_type Hx_Enum_loreline_tokentype, position__isOptional any) *Hx_Obj_loreline_token
-	Hx_Field_isConditionEnd(pos int32) bool
-	Hx_Field_followsOnlyWhitespacesOrCommentsInLine() bool
-	Hx_Field_readMultiLineComment() *Hx_Obj_loreline_token
-	Hx_Field_nextLineOpensBlock(p int32, indent int32) bool
+	Hx_Field_isWhenStart(pos int32) bool
+	Hx_Field_conditionGroupEnd(pos int32) int32
 	Hx_Field_isAfterComma() bool
-	Hx_Field_peek(offset__isOptional any) int32
-	Hx_Field_matchIdentifier(pos int32) HxNullable[string]
-	Hx_Field_skipInlineSpacesAndComments(pos int32) int32
-	Hx_Field_readFunction(start *Hx_Obj_loreline_position) *Hx_Obj_loreline_token
-	Hx_Field_countIndentation() int32
-	Hx_Field_inBeat() bool
-	Hx_Field_conditionOperandEnd(pos int32) int32
+	Hx_Field_isAfterLBracket() bool
+	Hx_Field_isStrict() bool
+	Hx_Field_makePosition() *Hx_Obj_loreline_position
+	Hx_Field_reset()
+	Hx_Field_isConditionUntilLineEnd(pos int32) bool
 	Hx_Field_isIdentifierExpressionStart(pos int32, lowercaseIdentOnly bool) bool
+	Hx_Field_isTransitionStart(pos int32) bool
+	Hx_Field_isColon(pos int32, skipWhitespaces__isOptional any) bool
+	Hx_Field_followsAssignStart() bool
+	Hx_Field_advance(count__isOptional any)
+	Hx_Field_isIfStart(pos int32) bool
+	Hx_Field_followsUnquotedAssign() bool
 	Hx_Field_followsOnlyLabelOrCommentsInLine() bool
+	Hx_Field_skipBalancedParens(p int32, allowTags bool) int32
+	Hx_Field_makePositionRelativeTo(stringStart *Hx_Obj_loreline_position) *Hx_Obj_loreline_position
+	Hx_Field_isIdentifierStart(c int32) bool
+	Hx_Field_isLowerCase(c int32) bool
+	Hx_Field_isNumber(value string) bool
+	Hx_Field_isIdentifierPart(c int32) bool
+	Hx_Field_tokenize() Hx_Typedef_loreline_tokens
+	Hx_Field_parentBlockType() Hx_Enum_loreline_tokentype
+	Hx_Field_isWhitespace(c int32) bool
+	Hx_Field_matchIdentifier(pos int32) HxNullable[string]
+	Hx_Field_isAssignStart(pos int32, strict bool) bool
+	Hx_Field_followsCallableOrIndexable() bool
+	Hx_Field_scanStringEnd(startPos int32, allowTags bool) int32
+	Hx_Field_isCallStart(pos int32) bool
+	Hx_Field_isInsideBrackets() bool
+	Hx_Field_readHashComment() *Hx_Obj_loreline_token
+	Hx_Field_isDigit(c int32) bool
+	Hx_Field_nextToken() *Hx_Obj_loreline_token
+	Hx_Field_inChoiceRoot() bool
+	Hx_Field_conditionOperandEnd(pos int32) int32
+	Hx_Field_followsOnlyWhitespacesOrCommentsInLine() bool
+	Hx_Field_tryReadUnquotedString() *Hx_Obj_loreline_token
+	Hx_Field_readFieldAccessInterpolation(interpStart *Hx_Obj_loreline_position) Hx_Typedef_loreline_tokens
+	Hx_Field_isLabelStart(pos int32) bool
+	Hx_Field_isStartingMultilineDialogue(labelIdentifierTokenIndex int32) int32
+	Hx_Field_readMultiLineComment() *Hx_Obj_loreline_token
+	Hx_Field_skipQuotedString()
+	Hx_Field_countIndentation() int32
+	Hx_Field_conditionOperatorEnd(pos int32) int32
+	Hx_Field_isInsertionStart(pos int32) bool
+	Hx_Field_followsChoiceOncePrefix() bool
+	Hx_Field_scanTagEnd(startPos int32) int32
+	Hx_Field_wordEnd(p int32, word string) int32
+	Hx_Field_makeToken(_hx_reserved_type Hx_Enum_loreline_tokentype, position__isOptional any) *Hx_Obj_loreline_token
+	Hx_Field_skipWhitespace()
+	Hx_Field_nextLineOpensBlock(p int32, indent int32) bool
+	Hx_Field_isConditionEnd(pos int32) bool
+	Hx_Field_skipInlineSpacesAndComments(pos int32) int32
+	Hx_Field_isChoiceOnceStart(pos int32) bool
+	Hx_Field_hasNonSpecialChar(str string) bool
+	Hx_Field_makeLooseOrStrictAfterBracket()
+	Hx_Field_readNumber() *Hx_Obj_loreline_token
+	Hx_Field_readFunction(start *Hx_Obj_loreline_position) *Hx_Obj_loreline_token
+	Hx_Field_readLineComment() *Hx_Obj_loreline_token
+	Hx_Field_getErrors() HxArray[*Hx_Obj_loreline_lexererror]
+	Hx_Field_readLineBreak() *Hx_Obj_loreline_token
+	Hx_Field__skipWhitespaceAndCommentsStopNextLine(pos int32) int32
+	Hx_Field_afterLabelIdentifierToken(inSameLine__isOptional any) int32
 	Hx_Field_readImportValue(c int32, startPos *Hx_Obj_loreline_position) *Hx_Obj_loreline_token
 	Hx_Field_readString(stringStart *Hx_Obj_loreline_position) *Hx_Obj_loreline_token
 	Hx_Field_readComplexInterpolation(interpStart *Hx_Obj_loreline_position) Hx_Typedef_loreline_tokens
-	Hx_Field_tokenize() Hx_Typedef_loreline_tokens
-	Hx_Field_isWhenStart(pos int32) bool
-	Hx_Field_readLineBreak() *Hx_Obj_loreline_token
-	Hx_Field_isInsertionStart(pos int32) bool
-	Hx_Field_isChoiceOnceStart(pos int32) bool
-	Hx_Field_isColon(pos int32, skipWhitespaces__isOptional any) bool
-	Hx_Field_afterLabelIdentifierToken(inSameLine__isOptional any) int32
-	Hx_Field_tryReadUnquotedString() *Hx_Obj_loreline_token
-	Hx_Field_inWhenRoot() bool
-	Hx_Field_isConditionUntilLineEnd(pos int32) bool
-	Hx_Field_isAssignStart(pos int32, strict bool) bool
-	Hx_Field_readHashComment() *Hx_Obj_loreline_token
-	Hx_Field_wordEnd(p int32, word string) int32
-	Hx_Field_error(message string, fatal bool) *Hx_Obj_loreline_lexererror
-	Hx_Field_conditionOperatorEnd(pos int32) int32
-	Hx_Field_isStrict() bool
-	Hx_Field_scanTagEnd(startPos int32) int32
-	Hx_Field_getErrors() HxArray[*Hx_Obj_loreline_lexererror]
-	Hx_Field_isWhitespace(c int32) bool
-	Hx_Field_isCallStart(pos int32) bool
-	Hx_Field_followsUnquotedAssign() bool
-	Hx_Field_scanStringEnd(startPos int32, allowTags bool) int32
-	Hx_Field_makePosition() *Hx_Obj_loreline_position
-	Hx_Field_skipWhitespace()
-	Hx_Field_isNumber(value string) bool
-	Hx_Field_isTagStart(pos int32) bool
-	Hx_Field_reset()
-	Hx_Field_isIfStart(pos int32) bool
-	Hx_Field_scanAccessorChain(p int32, allowTags bool) int32
-	Hx_Field_makePositionRelativeTo(stringStart *Hx_Obj_loreline_position) *Hx_Obj_loreline_position
-	Hx_Field_readNumber() *Hx_Obj_loreline_token
-	Hx_Field__skipWhitespaceAndComments(pos int32, stopNextLine__isOptional any) int32
-	Hx_Field__skipWhitespaceAndCommentsStopNextLine(pos int32) int32
-	Hx_Field_isTransitionStart(pos int32) bool
-	Hx_Field_isLabelStart(pos int32) bool
-	Hx_Field_followsChoiceOncePrefix() bool
-	Hx_Field_hasNonSpecialChar(str string) bool
+	Hx_Field_mergeIsNot(tokenType Hx_Enum_loreline_tokentype) Hx_Enum_loreline_tokentype
 	Hx_Field_skipSpacesAndTabs(p int32) int32
-	Hx_Field_nextToken() *Hx_Obj_loreline_token
-	Hx_Field_isDigit(c int32) bool
-	Hx_Field_isLowerCase(c int32) bool
-	Hx_Field_isIdentifierPart(c int32) bool
-	Hx_Field_inChoiceRoot() bool
 	Hx_Field_inStateOrCharacter() bool
-	Hx_Field_conditionGroupEnd(pos int32) int32
-	Hx_Field_readFieldAccessInterpolation(interpStart *Hx_Obj_loreline_position) Hx_Typedef_loreline_tokens
-	Hx_Field_isContinuingMultilineText(pos int32, indent int32) bool
-	Hx_Field_isInsideBrackets() bool
-	Hx_Field_makeLooseOrStrictAfterBracket()
+	Hx_Field_makeStrictIfFollowingCallable()
 	Hx_Field_nextTokenWithPosition(startPos *Hx_Obj_loreline_position) *Hx_Obj_loreline_token
-	Hx_Field_skipQuotedString()
-	Hx_Field_advance(count__isOptional any)
-	Hx_Field_isIdentifierStart(c int32) bool
-	Hx_Field_parentBlockType() Hx_Enum_loreline_tokentype
-	Hx_Field_isStartingMultilineDialogue(labelIdentifierTokenIndex int32) int32
 	Hx_Field_readIdentifierTokenInInterpolation(stringStart *Hx_Obj_loreline_position) *Hx_Obj_loreline_token
+	Hx_Field_readIdentifier() *Hx_Obj_loreline_token
+	Hx_Field_error(message string, fatal bool) *Hx_Obj_loreline_lexererror
+	Hx_Field_inWhenRoot() bool
+	Hx_Field_isContinuingMultilineText(pos int32, indent int32) bool
+	Hx_Field_isTagStart(pos int32) bool
+	Hx_Field_scanAccessorChain(p int32, allowTags bool) int32
+	Hx_Field_inBeat() bool
+	Hx_Field__skipWhitespaceAndComments(pos int32, stopNextLine__isOptional any) int32
+	Hx_Field_peek(offset__isOptional any) int32
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

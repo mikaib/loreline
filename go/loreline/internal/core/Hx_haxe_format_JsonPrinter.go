@@ -9,15 +9,15 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_format_jsonprinter() {
 }
 
 type Hx_Obj_VTable_haxe_format_jsonprinter interface {
-	Hx_Field_objString(v any)
+	Hx_Field_write(k any, v any)
 	Hx_Field_beginStack(v any)
 	Hx_Field_endStack(v any)
+	Hx_Field_quote(s string)
 	Hx_Field_ipad()
 	Hx_Field_newl()
-	Hx_Field_write(k any, v any)
 	Hx_Field_classString(v any)
+	Hx_Field_objString(v any)
 	Hx_Field_fieldsString(v any, fields HxArray[string])
-	Hx_Field_quote(s string)
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -361,30 +361,30 @@ func (this *Hx_Obj_haxe_format_jsonprinter) Hx_Field_write(k any, v any) {
 							_ = o
 							o = any(map[string]any{})
 							{
-								var k any
-								_ = k
-								k = v1.VTable.Hx_Field_keys()
+								var _gk any
+								_ = _gk
+								_gk = v1.VTable.Hx_Field_keys()
 								for {
 									var _hx_tmp_8 any
 									_ = _hx_tmp_8
-									_hx_tmp_8 = Hx_Field_go_haxe_hxdynamic_getField(k, "hasNext")
+									_hx_tmp_8 = Hx_Field_go_haxe_hxdynamic_getField(_gk, "hasNext")
 									if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_8, HxMakeArray[any]().Dyn()))) {
 										break
 									}
 
 									var _hx_tmp_9 any
 									_ = _hx_tmp_9
-									_hx_tmp_9 = Hx_Field_go_haxe_hxdynamic_getField(k, "next")
-									var k1 string
-									_ = k1
-									k1 = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_9, HxMakeArray[any]().Dyn()))
+									_hx_tmp_9 = Hx_Field_go_haxe_hxdynamic_getField(_gk, "next")
+									var k string
+									_ = k
+									k = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_9, HxMakeArray[any]().Dyn()))
 									var _hx_tmp_10 any
 									_ = _hx_tmp_10
 									_hx_tmp_10 = o
 									var _hx_tmp_11 string
 									_ = _hx_tmp_11
-									_hx_tmp_11 = k1
-									Hx_Field_reflect_setField(_hx_tmp_10, _hx_tmp_11, v1.VTable.Hx_Field_get(k1))
+									_hx_tmp_11 = k
+									Hx_Field_reflect_setField(_hx_tmp_10, _hx_tmp_11, v1.VTable.Hx_Field_get(k))
 								}
 							}
 

@@ -9,9 +9,9 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_random() {
 }
 
 type Hx_Obj_VTable_loreline_random interface {
-	Hx_Field_next() float64
 	Hx_Field_between(min int32, max int32) int32
 	Hx_Field_reset(initialSeed__isOptional any)
+	Hx_Field_next() float64
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

@@ -306,27 +306,27 @@ func Hx_Field_haxe_json_convert(raw any) any {
 				var self []string
 				_ = self
 				self = keys
-				var key_current int32
-				_ = key_current
-				key_current = 0
-				var key_array HxArray[string]
-				_ = key_array
-				key_array = HxMakeArray(self...)
+				var _gkey_current int32
+				_ = _gkey_current
+				_gkey_current = 0
+				var _gkey_array HxArray[string]
+				_ = _gkey_array
+				_gkey_array = HxMakeArray(self...)
 				for {
 					var _hx_tmp_1 int32
 					_ = _hx_tmp_1
-					_hx_tmp_1 = key_current
-					if !(_hx_tmp_1 < key_array.Len()) {
+					_hx_tmp_1 = _gkey_current
+					if !(_hx_tmp_1 < _gkey_array.Len()) {
 						break
 					}
 
 					var _hx_tmp_2 HxArray[string]
 					_ = _hx_tmp_2
-					_hx_tmp_2 = key_array
+					_hx_tmp_2 = _gkey_array
 					var _hx_tmp_3 int32
 					_ = _hx_tmp_3
-					_hx_tmp_3 = key_current
-					key_current = (key_current + 1)
+					_hx_tmp_3 = _gkey_current
+					_gkey_current = (_gkey_current + 1)
 					var key string
 					_ = key
 					key = _hx_tmp_2.Get(_hx_tmp_3)

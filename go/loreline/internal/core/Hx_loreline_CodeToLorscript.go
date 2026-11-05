@@ -192,40 +192,40 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_codetolorscript() {
 }
 
 type Hx_Obj_VTable_loreline_codetolorscript interface {
-	Hx_Field_processString()
-	Hx_Field_processFieldAccessInterpolation()
+	Hx_Field_inputPosFromProcessedPos(pos int32) int32
+	Hx_Field_processedPosFromInputPos(pos int32) int32
+	Hx_Field_processComment()
+	Hx_Field_nextLineIndentOffset(line string, pos int32) int32
+	Hx_Field_isAlphaNumeric(c int32) bool
+	Hx_Field_skipWhitespaceAndComments(pos int32) int32
+	Hx_Field_stackPop() HxNullable[int32]
 	Hx_Field_processIdentifier()
 	Hx_Field_endsOrFollowsWithChar(line string, c int32, pos int32, hxpos__isOptional any) bool
-	Hx_Field_stackPop() HxNullable[int32]
-	Hx_Field_processComplexInterpolation()
+	Hx_Field_followsWithIf(pos int32) bool
 	Hx_Field_followsWithWord(word string, pos int32) bool
 	Hx_Field_endsWithControlKeyword(line string, pos int32) bool
-	Hx_Field_isWhitespace(c int32) bool
-	Hx_Field_isAlphaNumeric(c int32) bool
-	Hx_Field_stackPush(item int32)
-	Hx_Field_inputPosFromProcessedPos(pos int32) int32
-	Hx_Field_nextLineIndentOffset(line string, pos int32) int32
-	Hx_Field_endsWithArrayIndexable(line string) bool
-	Hx_Field_isAfterDot() bool
-	Hx_Field_processInput(until__isOptional any)
-	Hx_Field_isIdentifierPart(c int32) bool
-	Hx_Field_endsWithChar(line string, c int32) bool
-	Hx_Field_followsWithChar(c int32, pos int32) bool
-	Hx_Field_inObjectBlock() bool
-	Hx_Field_inArrayBlock() bool
 	Hx_Field__add(c int32, incrementIndex bool)
-	Hx_Field_process(input string) string
+	Hx_Field_processString()
+	Hx_Field_isAfterDot() bool
 	Hx_Field_toLorelinePos(funcPos *Hx_Obj_loreline_position, pmin int32, pmax int32) *Hx_Obj_loreline_position
+	Hx_Field_endsWithWord(line string, word string) bool
+	Hx_Field_endsWithArrayIndexable(line string) bool
+	Hx_Field_isWhitespace(c int32) bool
+	Hx_Field_inArrayBlock() bool
+	Hx_Field_isLabelStart(pos int32) bool
+	Hx_Field_processInput(until__isOptional any)
 	Hx_Field_isDigit(c int32) bool
 	Hx_Field_isIdentifierStart(c int32) bool
-	Hx_Field_skipWhitespaceAndComments(pos int32) int32
 	Hx_Field_error(message string)
-	Hx_Field_followsWithIf(pos int32) bool
-	Hx_Field_endsWithWord(line string, word string) bool
-	Hx_Field_processComment()
-	Hx_Field_processedPosFromInputPos(pos int32) int32
+	Hx_Field_followsWithChar(c int32, pos int32) bool
+	Hx_Field_inObjectBlock() bool
+	Hx_Field_stackPush(item int32)
+	Hx_Field_isIdentifierPart(c int32) bool
+	Hx_Field_endsWithChar(line string, c int32) bool
+	Hx_Field_process(input string) string
+	Hx_Field_processComplexInterpolation()
+	Hx_Field_processFieldAccessInterpolation()
 	Hx_Field_inStatementsBlock() bool
-	Hx_Field_isLabelStart(pos int32) bool
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
