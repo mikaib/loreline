@@ -343,7 +343,7 @@ func Hx_Field_std_parseFloat(x string) float64 {
 								var _hx_tmp_1 string
 								_ = _hx_tmp_1
 								_hx_tmp_1 = y
-								y = Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_1, (Hx_Field_go_haxe_hxstring_charAt(x, i)))
+								y = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_1, (Hx_Field_go_haxe_hxstring_charAt(x, i)))
 								lastCharWasSign = true
 							}
 						}
@@ -353,7 +353,7 @@ func Hx_Field_std_parseFloat(x string) float64 {
 							var _hx_tmp_2 string
 							_ = _hx_tmp_2
 							_hx_tmp_2 = y
-							y = Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_2, (Hx_Field_go_haxe_hxstring_charAt(x, i)))
+							y = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_2, (Hx_Field_go_haxe_hxstring_charAt(x, i)))
 							lastCharWasSign = false
 						}
 
@@ -362,7 +362,7 @@ func Hx_Field_std_parseFloat(x string) float64 {
 							var _hx_tmp_3 string
 							_ = _hx_tmp_3
 							_hx_tmp_3 = y
-							y = Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_3, (Hx_Field_go_haxe_hxstring_charAt(x, i)))
+							y = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_3, (Hx_Field_go_haxe_hxstring_charAt(x, i)))
 							hadDigit = true
 							lastCharWasSign = false
 						}
@@ -378,7 +378,7 @@ func Hx_Field_std_parseFloat(x string) float64 {
 							var _hx_tmp_4 string
 							_ = _hx_tmp_4
 							_hx_tmp_4 = y
-							y = Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_4, (Hx_Field_go_haxe_hxstring_charAt(x, i)))
+							y = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_4, (Hx_Field_go_haxe_hxstring_charAt(x, i)))
 						}
 
 					default:
@@ -505,7 +505,7 @@ func Hx_Field_std_stringIter(s any, depth int32) string {
 			}
 		}
 
-		return Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("[", (Hx_Array_Join[string](values, ","))), "]")
+		return Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("[", (Hx_Array_Join[string](values, ","))), "]")
 	}
 
 	var kind reflect.Kind
@@ -613,8 +613,8 @@ func Hx_Field_std_stringIter(s any, depth int32) string {
 				_hx_tmp_11 = _g
 				var _hx_tmp_12 string
 				_ = _hx_tmp_12
-				_hx_tmp_12 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("", Hx_Field_std_stringIter(v, (depth+1))), " => ")
-				_ = (Hx_Array_Push[string](_hx_tmp_11, Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_12, Hx_Field_std_stringIter(value.MapIndex(v), (depth+1)))))
+				_hx_tmp_12 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("", Hx_Field_std_stringIter(v, (depth+1))), " => ")
+				_ = (Hx_Array_Push[string](_hx_tmp_11, Hx_Field_go_haxe_hxstring_concat(_hx_tmp_12, Hx_Field_std_stringIter(value.MapIndex(v), (depth+1)))))
 			}
 		}
 
@@ -715,8 +715,8 @@ func Hx_Field_std_stringIter(s any, depth int32) string {
 			} else {
 				var _hx_tmp_18 string
 				_ = _hx_tmp_18
-				_hx_tmp_18 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("", enumCtorName), "(")
-				return Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_18, (Hx_Array_Join[string](values, ","))), ")")
+				_hx_tmp_18 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("", enumCtorName), "(")
+				return Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_18, (Hx_Array_Join[string](values, ","))), ")")
 			}
 		}
 

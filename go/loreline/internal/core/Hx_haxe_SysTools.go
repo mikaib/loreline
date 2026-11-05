@@ -81,7 +81,7 @@ func Hx_Field_haxe_systools_quoteUnixArg(argument string) string {
 		return argument
 	}
 
-	return Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("'", Hx_Field_stringtools_replace(argument, "'", "'\"'\"'")), "'")
+	return Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("'", Hx_Field_stringtools_replace(argument, "'", "'\"'\"'")), "'")
 }
 
 func Hx_Field_haxe_systools_quoteWinArg(argument string, escapeMetaCharacters bool) string {

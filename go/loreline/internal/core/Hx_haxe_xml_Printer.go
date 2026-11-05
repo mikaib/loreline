@@ -9,10 +9,10 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_xml_printer() {
 }
 
 type Hx_Obj_VTable_haxe_xml_printer interface {
+	Hx_Field_writeNode(value *Hx_Obj_xml, tabs string)
 	Hx_Field_write(input string)
 	Hx_Field_newline()
 	Hx_Field_hasChildren(value *Hx_Obj_xml) bool
-	Hx_Field_writeNode(value *Hx_Obj_xml, tabs string)
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -89,10 +89,10 @@ func (this *Hx_Obj_haxe_xml_printer) Hx_Field_writeNode(value *Hx_Obj_xml, tabs 
 				return func(x string) {
 					_hx_closure_src_333(((any)(x)))
 				}
-			}()(Hx_Field_go_haxe_hxdynamic_stringConcat(tabs, "<"))
+			}()(Hx_Field_go_haxe_hxstring_concat(tabs, "<"))
 			{
 				if value.Hx_Field_nodeType != Hx_Field_xml_Element {
-					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(value.Hx_Field_nodeType))))))
+					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(value.Hx_Field_nodeType))))))
 				}
 
 				func() func(x string) {
@@ -106,23 +106,23 @@ func (this *Hx_Obj_haxe_xml_printer) Hx_Field_writeNode(value *Hx_Obj_xml, tabs 
 			}
 
 			{
-				var _gattribute any
-				_ = _gattribute
-				_gattribute = value.VTable.Hx_Field_attributes()
+				var attribute any
+				_ = attribute
+				attribute = value.VTable.Hx_Field_attributes()
 				for {
 					var _hx_tmp_0 any
 					_ = _hx_tmp_0
-					_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(_gattribute, "hasNext")
+					_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(attribute, "hasNext")
 					if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_0, HxMakeArray[any]().Dyn()))) {
 						break
 					}
 
 					var _hx_tmp_1 any
 					_ = _hx_tmp_1
-					_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(_gattribute, "next")
-					var attribute string
-					_ = attribute
-					attribute = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()))
+					_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(attribute, "next")
+					var attribute1 string
+					_ = attribute1
+					attribute1 = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()))
 					func() func(x string) {
 						var _hx_closure_src_335 func(x any)
 						_ = _hx_closure_src_335
@@ -130,11 +130,11 @@ func (this *Hx_Obj_haxe_xml_printer) Hx_Field_writeNode(value *Hx_Obj_xml, tabs 
 						return func(x string) {
 							_hx_closure_src_335(((any)(x)))
 						}
-					}()(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(" ", attribute), "=\""))
+					}()(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(" ", attribute1), "=\""))
 					{
 						var input string
 						_ = input
-						input = Hx_Field_stringtools_htmlEscape((value.VTable.Hx_Field_get(attribute)).Value, true)
+						input = Hx_Field_stringtools_htmlEscape((value.VTable.Hx_Field_get(attribute1)).Value, true)
 						func() func(x string) {
 							var _hx_closure_src_336 func(x any)
 							_ = _hx_closure_src_336
@@ -178,7 +178,7 @@ func (this *Hx_Obj_haxe_xml_printer) Hx_Field_writeNode(value *Hx_Obj_xml, tabs 
 
 				{
 					if (value.Hx_Field_nodeType != Hx_Field_xml_Document) && (value.Hx_Field_nodeType != Hx_Field_xml_Element) {
-						panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element or Document but found ", Hx_Field__xml_xmltype_impl__toString(value.Hx_Field_nodeType))))))
+						panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element or Document but found ", Hx_Field__xml_xmltype_impl__toString(value.Hx_Field_nodeType))))))
 					}
 
 					var _g_current int32
@@ -211,7 +211,7 @@ func (this *Hx_Obj_haxe_xml_printer) Hx_Field_writeNode(value *Hx_Obj_xml, tabs 
 						var _hx_tmp_6 string
 						_ = _hx_tmp_6
 						if this.Hx_Field_pretty {
-							_hx_tmp_6 = Hx_Field_go_haxe_hxdynamic_stringConcat(tabs, "\t")
+							_hx_tmp_6 = Hx_Field_go_haxe_hxstring_concat(tabs, "\t")
 						} else {
 							_hx_tmp_6 = tabs
 						}
@@ -227,10 +227,10 @@ func (this *Hx_Obj_haxe_xml_printer) Hx_Field_writeNode(value *Hx_Obj_xml, tabs 
 					return func(x string) {
 						_hx_closure_src_340(((any)(x)))
 					}
-				}()(Hx_Field_go_haxe_hxdynamic_stringConcat(tabs, "</"))
+				}()(Hx_Field_go_haxe_hxstring_concat(tabs, "</"))
 				{
 					if value.Hx_Field_nodeType != Hx_Field_xml_Element {
-						panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(value.Hx_Field_nodeType))))))
+						panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(value.Hx_Field_nodeType))))))
 					}
 
 					func() func(x string) {
@@ -286,7 +286,7 @@ func (this *Hx_Obj_haxe_xml_printer) Hx_Field_writeNode(value *Hx_Obj_xml, tabs 
 	case 1:
 		{
 			if (value.Hx_Field_nodeType == Hx_Field_xml_Document) || (value.Hx_Field_nodeType == Hx_Field_xml_Element) {
-				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, unexpected ", Hx_Field__xml_xmltype_impl__toString(value.Hx_Field_nodeType))))))
+				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, unexpected ", Hx_Field__xml_xmltype_impl__toString(value.Hx_Field_nodeType))))))
 			}
 
 			var nodeValue string
@@ -302,7 +302,7 @@ func (this *Hx_Obj_haxe_xml_printer) Hx_Field_writeNode(value *Hx_Obj_xml, tabs 
 					_hx_tmp_8 = nodeValue
 					var input string
 					_ = input
-					input = Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_7, Hx_Field_stringtools_htmlEscape(_hx_tmp_8, nil))
+					input = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_7, Hx_Field_stringtools_htmlEscape(_hx_tmp_8, nil))
 					func() func(x string) {
 						var _hx_closure_src_346 func(x any)
 						_ = _hx_closure_src_346
@@ -335,10 +335,10 @@ func (this *Hx_Obj_haxe_xml_printer) Hx_Field_writeNode(value *Hx_Obj_xml, tabs 
 				return func(x string) {
 					_hx_closure_src_348(((any)(x)))
 				}
-			}()(Hx_Field_go_haxe_hxdynamic_stringConcat(tabs, "<![CDATA["))
+			}()(Hx_Field_go_haxe_hxstring_concat(tabs, "<![CDATA["))
 			{
 				if (value.Hx_Field_nodeType == Hx_Field_xml_Document) || (value.Hx_Field_nodeType == Hx_Field_xml_Element) {
-					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, unexpected ", Hx_Field__xml_xmltype_impl__toString(value.Hx_Field_nodeType))))))
+					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, unexpected ", Hx_Field__xml_xmltype_impl__toString(value.Hx_Field_nodeType))))))
 				}
 
 				func() func(x string) {
@@ -374,14 +374,14 @@ func (this *Hx_Obj_haxe_xml_printer) Hx_Field_writeNode(value *Hx_Obj_xml, tabs 
 	case 3:
 		{
 			if (value.Hx_Field_nodeType == Hx_Field_xml_Document) || (value.Hx_Field_nodeType == Hx_Field_xml_Element) {
-				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, unexpected ", Hx_Field__xml_xmltype_impl__toString(value.Hx_Field_nodeType))))))
+				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, unexpected ", Hx_Field__xml_xmltype_impl__toString(value.Hx_Field_nodeType))))))
 			}
 
 			var commentContent string
 			_ = commentContent
 			commentContent = value.Hx_Field_nodeValue
 			commentContent = Hx_Obj_ereg_CreateInstance("[\n\r\t]+", "g").VTable.Hx_Field_replace(commentContent, "")
-			commentContent = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("<!--", commentContent), "-->")
+			commentContent = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("<!--", commentContent), "-->")
 			func() func(x string) {
 				var _hx_closure_src_352 func(x any)
 				_ = _hx_closure_src_352
@@ -420,7 +420,7 @@ func (this *Hx_Obj_haxe_xml_printer) Hx_Field_writeNode(value *Hx_Obj_xml, tabs 
 		{
 			{
 				if (value.Hx_Field_nodeType == Hx_Field_xml_Document) || (value.Hx_Field_nodeType == Hx_Field_xml_Element) {
-					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, unexpected ", Hx_Field__xml_xmltype_impl__toString(value.Hx_Field_nodeType))))))
+					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, unexpected ", Hx_Field__xml_xmltype_impl__toString(value.Hx_Field_nodeType))))))
 				}
 
 				func() func(x string) {
@@ -430,7 +430,7 @@ func (this *Hx_Obj_haxe_xml_printer) Hx_Field_writeNode(value *Hx_Obj_xml, tabs 
 					return func(x string) {
 						_hx_closure_src_355(((any)(x)))
 					}
-				}()(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("<!DOCTYPE ", value.Hx_Field_nodeValue), ">"))
+				}()(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("<!DOCTYPE ", value.Hx_Field_nodeValue), ">"))
 			}
 
 			if this.Hx_Field_pretty {
@@ -449,7 +449,7 @@ func (this *Hx_Obj_haxe_xml_printer) Hx_Field_writeNode(value *Hx_Obj_xml, tabs 
 		{
 			{
 				if (value.Hx_Field_nodeType == Hx_Field_xml_Document) || (value.Hx_Field_nodeType == Hx_Field_xml_Element) {
-					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, unexpected ", Hx_Field__xml_xmltype_impl__toString(value.Hx_Field_nodeType))))))
+					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, unexpected ", Hx_Field__xml_xmltype_impl__toString(value.Hx_Field_nodeType))))))
 				}
 
 				func() func(x string) {
@@ -459,7 +459,7 @@ func (this *Hx_Obj_haxe_xml_printer) Hx_Field_writeNode(value *Hx_Obj_xml, tabs 
 					return func(x string) {
 						_hx_closure_src_357(((any)(x)))
 					}
-				}()(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("<?", value.Hx_Field_nodeValue), "?>"))
+				}()(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("<?", value.Hx_Field_nodeValue), "?>"))
 			}
 
 			if this.Hx_Field_pretty {
@@ -477,7 +477,7 @@ func (this *Hx_Obj_haxe_xml_printer) Hx_Field_writeNode(value *Hx_Obj_xml, tabs 
 	case 6:
 		{
 			if (value.Hx_Field_nodeType != Hx_Field_xml_Document) && (value.Hx_Field_nodeType != Hx_Field_xml_Element) {
-				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element or Document but found ", Hx_Field__xml_xmltype_impl__toString(value.Hx_Field_nodeType))))))
+				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element or Document but found ", Hx_Field__xml_xmltype_impl__toString(value.Hx_Field_nodeType))))))
 			}
 
 			var _g_current int32
@@ -538,7 +538,7 @@ func (this *Hx_Obj_haxe_xml_printer) Hx_Field_newline() {
 func (this *Hx_Obj_haxe_xml_printer) Hx_Field_hasChildren(value *Hx_Obj_xml) bool {
 	{
 		if (value.Hx_Field_nodeType != Hx_Field_xml_Document) && (value.Hx_Field_nodeType != Hx_Field_xml_Element) {
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element or Document but found ", Hx_Field__xml_xmltype_impl__toString(value.Hx_Field_nodeType))))))
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element or Document but found ", Hx_Field__xml_xmltype_impl__toString(value.Hx_Field_nodeType))))))
 		}
 
 		var _g_current int32
@@ -574,7 +574,7 @@ func (this *Hx_Obj_haxe_xml_printer) Hx_Field_hasChildren(value *Hx_Obj_xml) boo
 			case 2, 3:
 				{
 					if (child.Hx_Field_nodeType == Hx_Field_xml_Document) || (child.Hx_Field_nodeType == Hx_Field_xml_Element) {
-						panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, unexpected ", Hx_Field__xml_xmltype_impl__toString(child.Hx_Field_nodeType))))))
+						panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, unexpected ", Hx_Field__xml_xmltype_impl__toString(child.Hx_Field_nodeType))))))
 					}
 
 					var s string

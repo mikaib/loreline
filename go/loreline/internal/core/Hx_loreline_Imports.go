@@ -842,7 +842,7 @@ func (this *Hx_Obj_loreline_imports) Hx_Field_extractImports(cwd string, tokens 
 					}
 
 					if !tmp {
-						path = Hx_Field_go_haxe_hxdynamic_stringConcat(path, this.Hx_Field_ext)
+						path = Hx_Field_go_haxe_hxstring_concat(path, this.Hx_Field_ext)
 					}
 
 					if !func() func(_hx_param_key string) bool {

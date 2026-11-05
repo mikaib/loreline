@@ -96,38 +96,38 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_lorscript_interp() {
 }
 
 type Hx_Obj_VTable_loreline_lorscript_interp interface {
-	Hx_Field_callIsShadowed() bool
-	Hx_Field_error(e Hx_Enum_loreline_lorscript_errordef, rethrow__isOptional any) any
-	Hx_Field_setMapValue(_hx_reserved_map any, key any, value any)
-	Hx_Field_get(o any, f string) any
-	Hx_Field_cnew(cl string, args HxArray[any]) any
+	Hx_Field_resetVariables()
 	Hx_Field_posInfos() any
-	Hx_Field_assignOp(op string, fop func(_hx_carg0 any, _hx_carg1 any) any)
-	Hx_Field_execute(expr any) any
-	Hx_Field_exprReturn(e any) any
-	Hx_Field_rethrow(e any)
-	Hx_Field_loopRun(f func()) bool
-	Hx_Field_increment(e any, prefix bool, delta int32) any
+	Hx_Field_isMap(o any) bool
+	Hx_Field_get(o any, f string) any
+	Hx_Field_evalAssignOp(op string, fop func(_hx_carg0 any, _hx_carg1 any) any, e1 any, e2 any) any
+	Hx_Field_setMapValue(_hx_reserved_map any, key any, value any)
+	Hx_Field_cnew(cl string, args HxArray[any]) any
+	Hx_Field_setVar(name string, v any) any
 	Hx_Field_expr(e any) any
 	Hx_Field_whileLoop(econd any, e any)
-	Hx_Field_isMap(o any) bool
-	Hx_Field_call(o any, f any, args HxArray[any]) any
-	Hx_Field_fcall(o any, f string, args HxArray[any]) any
-	Hx_Field_dynamicCall(args HxArray[any]) any
-	Hx_Field_resolve(id string) any
-	Hx_Field_forLoop(n string, it any, e any)
-	Hx_Field_set(o any, f string, v any) any
-	Hx_Field_assign(e1 any, e2 any) any
-	Hx_Field_evalAssignOp(op string, fop func(_hx_carg0 any, _hx_carg1 any) any, e1 any, e2 any) any
 	Hx_Field_makeMap(keys HxArray[any], values HxArray[any]) any
-	Hx_Field_restore(old int32)
-	Hx_Field_makeIterator(v any) any
-	Hx_Field_resetVariables()
+	Hx_Field_set(o any, f string, v any) any
+	Hx_Field_error(e Hx_Enum_loreline_lorscript_errordef, rethrow__isOptional any) any
 	Hx_Field_initOps()
-	Hx_Field_setVar(name string, v any) any
-	Hx_Field_duplicate(h Hx_Typedef_map) *Hx_Obj_haxe_imap
-	Hx_Field_doWhileLoop(econd any, e any)
+	Hx_Field_increment(e any, prefix bool, delta int32) any
+	Hx_Field_exprReturn(e any) any
+	Hx_Field_restore(old int32)
 	Hx_Field_getMapValue(_hx_reserved_map any, key any) any
+	Hx_Field_dynamicCall(args HxArray[any]) any
+	Hx_Field_execute(expr any) any
+	Hx_Field_rethrow(e any)
+	Hx_Field_loopRun(f func()) bool
+	Hx_Field_callIsShadowed() bool
+	Hx_Field_assign(e1 any, e2 any) any
+	Hx_Field_assignOp(op string, fop func(_hx_carg0 any, _hx_carg1 any) any)
+	Hx_Field_duplicate(h Hx_Typedef_map) *Hx_Obj_haxe_imap
+	Hx_Field_resolve(id string) any
+	Hx_Field_doWhileLoop(econd any, e any)
+	Hx_Field_makeIterator(v any) any
+	Hx_Field_fcall(o any, f string, args HxArray[any]) any
+	Hx_Field_call(o any, f any, args HxArray[any]) any
+	Hx_Field_forLoop(n string, it any, e any)
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -1464,27 +1464,27 @@ func (this *Hx_Obj_loreline_lorscript_interp) Hx_Field_duplicate(h Hx_Typedef_ma
 		return &Hx_Obj_haxe_imap{VTable: _hx_icast_194.VTable.(Hx_Obj_VTable_haxe_imap)}
 	})()
 	{
-		var _gk any
-		_ = _gk
-		_gk = h.VTable.Hx_Field_keys()
+		var k any
+		_ = k
+		k = h.VTable.Hx_Field_keys()
 		for {
 			var _hx_tmp_0 any
 			_ = _hx_tmp_0
-			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(_gk, "hasNext")
+			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(k, "hasNext")
 			if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_0, HxMakeArray[any]().Dyn()))) {
 				break
 			}
 
 			var _hx_tmp_1 any
 			_ = _hx_tmp_1
-			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(_gk, "next")
-			var k string
-			_ = k
-			k = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()))
+			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(k, "next")
+			var k1 string
+			_ = k1
+			k1 = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()))
 			var _hx_tmp_2 string
 			_ = _hx_tmp_2
-			_hx_tmp_2 = k
-			h2.VTable.Hx_Field_set(_hx_tmp_2, h.VTable.Hx_Field_get(k))
+			_hx_tmp_2 = k1
+			h2.VTable.Hx_Field_set(_hx_tmp_2, h.VTable.Hx_Field_get(k1))
 		}
 	}
 
@@ -2090,7 +2090,7 @@ func (this *Hx_Obj_loreline_lorscript_interp) Hx_Field_expr(e any) any {
 					if Hx_Field_go_haxe_hxdynamic_getArrayLength(args) < minParams {
 						var _hx_tmp_12 string
 						_ = _hx_tmp_12
-						_hx_tmp_12 = Hx_Field_go_haxe_hxdynamic_stringConcat(("Invalid number of parameters. Got " + Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_getArrayLength(args))), ", required ")
+						_hx_tmp_12 = Hx_Field_go_haxe_hxstring_concat(("Invalid number of parameters. Got " + Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_getArrayLength(args))), ", required ")
 						var str string
 						_ = str
 						str = (_hx_tmp_12 + Hx_Field_go_haxe_hxdynamic_toString(minParams))
@@ -2098,7 +2098,7 @@ func (this *Hx_Obj_loreline_lorscript_interp) Hx_Field_expr(e any) any {
 							var _hx_tmp_13 string
 							_ = _hx_tmp_13
 							_hx_tmp_13 = str
-							str = Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_13, Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(" for function '", (name).Value), "'"))
+							str = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_13, Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(" for function '", (name).Value), "'"))
 						}
 
 						var e *Hx_Obj_loreline_lorscript_error
@@ -3508,7 +3508,7 @@ func (this *Hx_Obj_loreline_lorscript_interp) Hx_Field_makeMap(keys HxArray[any]
 
 	var e *Hx_Obj_loreline_lorscript_error
 	_ = e
-	e = Hx_Obj_loreline_lorscript_error_CreateInstance(Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxdynamic_stringConcat("Invalid map keys ", Hx_Field_std_string(keys))}, ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(Hx_Field_go_haxe_hxdynamic_getField(this.Hx_Field_curExpr, "pmin")))), ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(Hx_Field_go_haxe_hxdynamic_getField(this.Hx_Field_curExpr, "pmax")))), Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_getField(this.Hx_Field_curExpr, "origin")), ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(Hx_Field_go_haxe_hxdynamic_getField(this.Hx_Field_curExpr, "line")))))
+	e = Hx_Obj_loreline_lorscript_error_CreateInstance(Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxstring_concat("Invalid map keys ", Hx_Field_std_string(keys))}, ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(Hx_Field_go_haxe_hxdynamic_getField(this.Hx_Field_curExpr, "pmin")))), ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(Hx_Field_go_haxe_hxdynamic_getField(this.Hx_Field_curExpr, "pmax")))), Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_getField(this.Hx_Field_curExpr, "origin")), ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(Hx_Field_go_haxe_hxdynamic_getField(this.Hx_Field_curExpr, "line")))))
 	panic(Hx_Field_haxe_exception_thrown(((any)(e))))
 }
 
@@ -3721,7 +3721,7 @@ func (this *Hx_Obj_loreline_lorscript_interp) Hx_Field_dynamicCall(args HxArray[
 		} else {
 			var e *Hx_Obj_loreline_lorscript_error
 			_ = e
-			e = Hx_Obj_loreline_lorscript_error_CreateInstance(Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxdynamic_stringConcat("call() target not found: ", name)}, ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(Hx_Field_go_haxe_hxdynamic_getField(this.Hx_Field_curExpr, "pmin")))), ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(Hx_Field_go_haxe_hxdynamic_getField(this.Hx_Field_curExpr, "pmax")))), Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_getField(this.Hx_Field_curExpr, "origin")), ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(Hx_Field_go_haxe_hxdynamic_getField(this.Hx_Field_curExpr, "line")))))
+			e = Hx_Obj_loreline_lorscript_error_CreateInstance(Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxstring_concat("call() target not found: ", name)}, ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(Hx_Field_go_haxe_hxdynamic_getField(this.Hx_Field_curExpr, "pmin")))), ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(Hx_Field_go_haxe_hxdynamic_getField(this.Hx_Field_curExpr, "pmax")))), Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_getField(this.Hx_Field_curExpr, "origin")), ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(Hx_Field_go_haxe_hxdynamic_getField(this.Hx_Field_curExpr, "line")))))
 			panic(Hx_Field_haxe_exception_thrown(((any)(e))))
 		}
 	}

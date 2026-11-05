@@ -7,25 +7,25 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_ds_balancedtree() {
 }
 
 type Hx_Obj_VTable_haxe_ds_balancedtree interface {
-	Hx_Field_iterator() any
-	Hx_Field_setLoop(k any, v any, node *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
-	Hx_Field_minBinding(t *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
-	Hx_Field_removeMinBinding(t *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
-	Hx_Field_clear()
-	Hx_Field_get(_hx_param_key any) any
-	Hx_Field_exists(_hx_param_key any) bool
-	Hx_Field_copy() *Hx_Obj_haxe_imap
-	Hx_Field_toString() string
-	Hx_Field_set(_hx_param_key any, _hx_param_value any)
-	Hx_Field_remove(_hx_param_key any) bool
-	Hx_Field_keyValueIterator() any
-	Hx_Field_removeLoop(k any, node *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
-	Hx_Field_merge(t1 *Hx_Obj_haxe_ds_treenode, t2 *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
-	Hx_Field_size() int32
 	Hx_Field_keys() any
-	Hx_Field_keysLoop(node *Hx_Obj_haxe_ds_treenode, acc HxArray[any])
+	Hx_Field_clear()
+	Hx_Field_size() int32
+	Hx_Field_exists(_hx_param_key any) bool
+	Hx_Field_minBinding(t *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
 	Hx_Field_balance(l *Hx_Obj_haxe_ds_treenode, k any, v any, r *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
 	Hx_Field_compare(k1 any, k2 any) int32
+	Hx_Field_setLoop(k any, v any, node *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
+	Hx_Field_removeLoop(k any, node *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
+	Hx_Field_set(_hx_param_key any, _hx_param_value any)
+	Hx_Field_iterator() any
+	Hx_Field_keyValueIterator() any
+	Hx_Field_copy() *Hx_Obj_haxe_imap
+	Hx_Field_keysLoop(node *Hx_Obj_haxe_ds_treenode, acc HxArray[any])
+	Hx_Field_merge(t1 *Hx_Obj_haxe_ds_treenode, t2 *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
+	Hx_Field_removeMinBinding(t *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
+	Hx_Field_toString() string
+	Hx_Field_get(_hx_param_key any) any
+	Hx_Field_remove(_hx_param_key any) bool
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -440,7 +440,7 @@ func (this *Hx_Obj_haxe_ds_balancedtree) Hx_Field_toString() string {
 	if this.Hx_Field_root == nil {
 		return "[]"
 	} else {
-		return Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("[", this.Hx_Field_root.VTable.Hx_Field_toString()), "]")
+		return Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("[", this.Hx_Field_root.VTable.Hx_Field_toString()), "]")
 	}
 }
 
@@ -621,21 +621,21 @@ func (this *Hx_Obj_haxe_ds_treenode) Hx_Field_toString() string {
 	if this.Hx_Field_left == nil {
 		_hx_tmp_0 = ""
 	} else {
-		_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_std_string(this.Hx_Field_left.VTable.Hx_Field_toString()), ", ")
+		_hx_tmp_0 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_std_string(this.Hx_Field_left.VTable.Hx_Field_toString()), ", ")
 	}
 
 	var _hx_tmp_1 string
 	_ = _hx_tmp_1
-	_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("", Hx_Field_std_string(this.Hx_Field_key)), " => ")
+	_hx_tmp_1 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("", Hx_Field_std_string(this.Hx_Field_key)), " => ")
 	var _hx_tmp_2 string
 	_ = _hx_tmp_2
 	if this.Hx_Field_right == nil {
 		_hx_tmp_2 = ""
 	} else {
-		_hx_tmp_2 = Hx_Field_go_haxe_hxdynamic_stringConcat(", ", Hx_Field_std_string(this.Hx_Field_right.VTable.Hx_Field_toString()))
+		_hx_tmp_2 = Hx_Field_go_haxe_hxstring_concat(", ", Hx_Field_std_string(this.Hx_Field_right.VTable.Hx_Field_toString()))
 	}
 
-	return Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat((_hx_tmp_0), (Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_1, Hx_Field_std_string(this.Hx_Field_value)))), (_hx_tmp_2))
+	return Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat((_hx_tmp_0), (Hx_Field_go_haxe_hxstring_concat(_hx_tmp_1, Hx_Field_std_string(this.Hx_Field_value)))), (_hx_tmp_2))
 }
 
 func init() {

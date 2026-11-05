@@ -409,7 +409,7 @@ func Hx_Field_type_createEnum(e *Hx_Obj_go_haxe_hxenum, constr string, params__i
 		_ = i
 		i = (Hx_Array_IndexOf[string](_hx_tmp_0, _hx_tmp_1, HxNullable[int32]{}))
 		if i < 0 {
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Unknown constructor ", constr), " for enum "), e1.Hx_Field_name)))))
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Unknown constructor ", constr), " for enum "), e1.Hx_Field_name)))))
 		}
 
 		return Hx_Field_type_createEnumIndex(((*Hx_Obj_go_haxe_hxenum)(e1)), i, params)
@@ -446,8 +446,8 @@ func Hx_Field_type_createEnumIndex(e *Hx_Obj_go_haxe_hxenum, index int32, params
 		if _hx_tmp_0 {
 			var _hx_tmp_3 string
 			_ = _hx_tmp_3
-			_hx_tmp_3 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Invalid enum index ", e1.Hx_Field_name), ".")
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_3, Hx_Field_go_haxe_hxdynamic_toString(index))))))
+			_hx_tmp_3 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Invalid enum index ", e1.Hx_Field_name), ".")
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_3, Hx_Field_go_haxe_hxdynamic_toString(index))))))
 		}
 
 		var expected int32
@@ -463,7 +463,7 @@ func Hx_Field_type_createEnumIndex(e *Hx_Obj_go_haxe_hxenum, index int32, params
 
 		if _hx_tmp_4 {
 			if expected != 0 {
-				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Constructor ", e1.Hx_Field_name), "."), e1.Hx_Field_constructorNames.Get(index)), " takes parameters")))))
+				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Constructor ", e1.Hx_Field_name), "."), e1.Hx_Field_constructorNames.Get(index)), " takes parameters")))))
 			}
 
 			return ((any)(e1.Hx_Field_createByIndex(index, params)))
@@ -472,8 +472,8 @@ func Hx_Field_type_createEnumIndex(e *Hx_Obj_go_haxe_hxenum, index int32, params
 		if Hx_Field_go_haxe_hxdynamic_getArrayLength(params) != expected {
 			var _hx_tmp_5 string
 			_ = _hx_tmp_5
-			_hx_tmp_5 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Constructor ", e1.Hx_Field_name), "."), e1.Hx_Field_constructorNames.Get(index)), " does not takes ")
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_5, Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_getArrayLength(params))), " parameters")))))
+			_hx_tmp_5 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Constructor ", e1.Hx_Field_name), "."), e1.Hx_Field_constructorNames.Get(index)), " does not takes ")
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_5, Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_getArrayLength(params))), " parameters")))))
 		}
 
 		return ((any)(e1.Hx_Field_createByIndex(index, params)))
@@ -665,7 +665,14 @@ func Hx_Field_type_typeof(v any) Hx_Enum_valuetype {
 }
 
 func Hx_Field_type_enumEq(a any, b any) bool {
-	return Hx_Field_go_haxe_hxdynamic_equals(a, b)
+	var fast int32
+	_ = fast
+	fast = HxEnumEqFast(a, b)
+	if fast >= 0 {
+		return (fast == 1)
+	} else {
+		return Hx_Field_go_haxe_hxdynamic_equals(a, b)
+	}
 }
 
 func Hx_Field_type_enumConstructor(e Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue) string {

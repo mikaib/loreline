@@ -31,7 +31,7 @@ func Hx_Obj_go_haxe_hxstring_CreateInstance() *Hx_Obj_go_haxe_hxstring {
 
 var Hx_Obj_go_haxe_hxstring_RTTI = Hx_Obj_go_haxe_hxclass_CreateInstance(
 	"go.haxe.HxString",
-	HxMakeArray[string]("toUpperCase", "toLowerCase", "charAt", "charCodeAt", "indexOf", "lastIndexOf", "split", "substr", "substring", "toString", "fromCharCode"),
+	HxMakeArray[string]("toUpperCase", "toLowerCase", "concat", "charAt", "charCodeAt", "indexOf", "lastIndexOf", "split", "substr", "substring", "toString", "fromCharCode"),
 	HxMakeArray[string](),
 	nil,
 	HxMakeArray[*Hx_Obj_go_haxe_hxclass](),
@@ -52,6 +52,8 @@ func init() {
 			return Hx_Field_go_haxe_hxstring_toUpperCase
 		case "toLowerCase":
 			return Hx_Field_go_haxe_hxstring_toLowerCase
+		case "concat":
+			return Hx_Field_go_haxe_hxstring_concat
 		case "charAt":
 			return Hx_Field_go_haxe_hxstring_charAt
 		case "charCodeAt":
@@ -89,6 +91,10 @@ func Hx_Field_go_haxe_hxstring_toUpperCase(s string) string {
 
 func Hx_Field_go_haxe_hxstring_toLowerCase(s string) string {
 	return strings.ToLower(s)
+}
+
+func Hx_Field_go_haxe_hxstring_concat(a string, b string) string {
+	return HxStringConcat(a, b)
 }
 
 func Hx_Field_go_haxe_hxstring_charAt(s string, index int32) string {

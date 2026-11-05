@@ -13,17 +13,17 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_lib_goscript() {
 }
 
 type Hx_Obj_VTable_loreline_lib_goscript interface {
+	Hx_Field_id() string
 	Hx_Field_play(dialogue Hx_Typedef_loreline_lib_godialoguehandler, choice Hx_Typedef_loreline_lib_gochoicehandler, finish Hx_Typedef_loreline_lib_gofinishhandler, beat string, options *Hx_Obj_loreline_lib_gooptions) struct {
 		Err         error
 		Interpreter *Hx_Obj_loreline_lib_gointerpreter
 	}
+	Hx_Field_toJson(pretty bool) string
 	Hx_Field_resume(dialogue Hx_Typedef_loreline_lib_godialoguehandler, choice Hx_Typedef_loreline_lib_gochoicehandler, finish Hx_Typedef_loreline_lib_gofinishhandler, save string, beat string, options *Hx_Obj_loreline_lib_gooptions) struct {
 		Err         error
 		Interpreter *Hx_Obj_loreline_lib_gointerpreter
 	}
 	Hx_Field_print(indent string, newline string) string
-	Hx_Field_id() string
-	Hx_Field_toJson(pretty bool) string
 	Hx_Field_type() string
 	Hx_Field_line() int32
 	Hx_Field_column() int32

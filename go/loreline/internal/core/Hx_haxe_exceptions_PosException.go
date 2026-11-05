@@ -7,15 +7,15 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_exceptions_posexception() {
 }
 
 type Hx_Obj_VTable_haxe_exceptions_posexception interface {
-	Hx_Field_details() string
 	Hx_Field_toString() string
 	Hx_Field_get_message() string
-	Hx_Field_set_stack(stack HxArray[Hx_Enum_haxe_stackitem]) HxArray[Hx_Enum_haxe_stackitem]
-	Hx_Field_get_native() any
-	Hx_Field_unwrap() any
-	Hx_Field_error() string
 	Hx_Field_get_stack() HxArray[Hx_Enum_haxe_stackitem]
+	Hx_Field_get_native() any
+	Hx_Field_error() string
+	Hx_Field_set_stack(stack HxArray[Hx_Enum_haxe_stackitem]) HxArray[Hx_Enum_haxe_stackitem]
 	Hx_Field_get_previous() *Hx_Obj_haxe_exception
+	Hx_Field_unwrap() any
+	Hx_Field_details() string
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -109,7 +109,7 @@ func (this *Hx_Obj_haxe_exceptions_posexception) Hx_As_Hx_Obj_haxe_exceptions_po
 func (this *Hx_Obj_haxe_exceptions_posexception) Hx_Field_toString() string {
 	var _hx_tmp_3 any
 	_ = _hx_tmp_3
-	_hx_tmp_3 = ((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("", this.Hx_Obj_haxe_exception.Hx_Field_toString()), " in ")))
+	_hx_tmp_3 = ((any)(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("", this.Hx_Obj_haxe_exception.Hx_Field_toString()), " in ")))
 	var _hx_tmp_2 any
 	_ = _hx_tmp_2
 	_hx_tmp_2 = Hx_Field_go_haxe_hxdynamic_add(Hx_Field_go_haxe_hxdynamic_add(_hx_tmp_3, Hx_Field_go_haxe_hxdynamic_getField(this.Hx_Field_posInfos, "className")), ((any)(".")))

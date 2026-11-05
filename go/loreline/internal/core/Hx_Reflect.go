@@ -137,7 +137,7 @@ func Hx_Field_reflect_getProperty(o any, field string) any {
 	_hx_tmp_1 = o
 	var fn any
 	_ = fn
-	fn = Hx_Field_go_haxe_hxdynamic_getField(_hx_tmp_1, Hx_Field_go_haxe_hxdynamic_stringConcat("get_", field))
+	fn = Hx_Field_go_haxe_hxdynamic_getField(_hx_tmp_1, Hx_Field_go_haxe_hxstring_concat("get_", field))
 	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(fn, nil))) {
 		return Hx_Field_go_haxe_hxdynamic_getField(o, field)
 	}
@@ -154,7 +154,7 @@ func Hx_Field_reflect_setProperty(o any, field string, value any) {
 	_hx_tmp_0 = o
 	var fn any
 	_ = fn
-	fn = Hx_Field_go_haxe_hxdynamic_getField(_hx_tmp_0, Hx_Field_go_haxe_hxdynamic_stringConcat("set_", field))
+	fn = Hx_Field_go_haxe_hxdynamic_getField(_hx_tmp_0, Hx_Field_go_haxe_hxstring_concat("set_", field))
 	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(fn, nil))) {
 		Hx_Field_go_haxe_hxdynamic_setField(o, field, value)
 		return

@@ -764,13 +764,13 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_lorscript_checkertypes() {
 }
 
 type Hx_Obj_VTable_loreline_lorscript_checkertypes interface {
-	Hx_Field_makeXmlType(t Hx_Enum_haxe_rtti_ctype) Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_getType(name string, args__isOptional any) Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_resolve(name string, args__isOptional any) Hx_Enum_loreline_lorscript_ttype
 	Hx_Field_addXmlApi(api *Hx_Obj_xml)
 	Hx_Field_defineClass(name string, ct__isOptional any) any
 	Hx_Field_addXmlType(x Hx_Enum_haxe_rtti_typetree, todo HxArray[func()])
 	Hx_Field_addMeta(src any, to any)
+	Hx_Field_makeXmlType(t Hx_Enum_haxe_rtti_ctype) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_getType(name string, args__isOptional any) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_resolve(name string, args__isOptional any) Hx_Enum_loreline_lorscript_ttype
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -2699,38 +2699,38 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_lorscript_checker() {
 }
 
 type Hx_Obj_VTable_loreline_lorscript_checker interface {
+	Hx_Field_linkLoop(a Hx_Enum_loreline_lorscript_ttype, t Hx_Enum_loreline_lorscript_ttype) bool
+	Hx_Field_typeField(o any, f string, expr any, forWrite bool) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_typeExpr(expr any, withType Hx_Enum_loreline_lorscript__checker_withtype) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_typeArgs(args HxArray[any], pos any) HxArray[any]
+	Hx_Field_unify(t1 Hx_Enum_loreline_lorscript_ttype, t2 Hx_Enum_loreline_lorscript_ttype, e any)
+	Hx_Field_follow(t Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_makeIterator(t Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_setGlobals(cl any, allowPrivate__isOptional any)
+	Hx_Field_error(msg string, curExpr any)
+	Hx_Field_apply(t Hx_Enum_loreline_lorscript_ttype, params HxArray[Hx_Enum_loreline_lorscript_ttype], args HxArray[Hx_Enum_loreline_lorscript_ttype]) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_typeExprWith(expr any, t Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_isString(t Hx_Enum_loreline_lorscript_ttype) bool
+	Hx_Field_setEvent(name string, _hx_reserved_type Hx_Enum_loreline_lorscript_ttype)
+	Hx_Field_mk(e Hx_Enum_loreline_lorscript_exprdef, p any) any
+	Hx_Field_getGlobals() Hx_Typedef_map
+	Hx_Field_saveLocals() *Hx_Obj_haxe_imap
+	Hx_Field_makeType(t Hx_Enum_loreline_lorscript_ctype, e any) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_onCompletion(expr any, t Hx_Enum_loreline_lorscript_ttype)
+	Hx_Field_onTopDownEnum(en any, field string) bool
+	Hx_Field_link(a Hx_Enum_loreline_lorscript_ttype, b Hx_Enum_loreline_lorscript_ttype, r any) bool
+	Hx_Field_typeEq(t1 Hx_Enum_loreline_lorscript_ttype, t2 Hx_Enum_loreline_lorscript_ttype) bool
+	Hx_Field_getField(t Hx_Enum_loreline_lorscript_ttype, f string, e any, forWrite__isOptional any) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_unasync(t Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_makeMono() Hx_Enum_loreline_lorscript_ttype
 	Hx_Field_setGlobal(name string, _hx_reserved_type Hx_Enum_loreline_lorscript_ttype)
+	Hx_Field_tryUnify(t1 Hx_Enum_loreline_lorscript_ttype, t2 Hx_Enum_loreline_lorscript_ttype) bool
+	Hx_Field_mapType(t Hx_Enum_loreline_lorscript_ttype, f func(_hx_carg0 Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_getFields(t Hx_Enum_loreline_lorscript_ttype) HxArray[any]
+	Hx_Field_getIteratorType(it any, itt Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype
+	Hx_Field_removeGlobal(name string)
 	Hx_Field_check(expr any, withType__isOptional any, isCompletion__isOptional any) Hx_Enum_loreline_lorscript_ttype
 	Hx_Field_edef(e any) Hx_Enum_loreline_lorscript_exprdef
-	Hx_Field_apply(t Hx_Enum_loreline_lorscript_ttype, params HxArray[Hx_Enum_loreline_lorscript_ttype], args HxArray[Hx_Enum_loreline_lorscript_ttype]) Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_mapType(t Hx_Enum_loreline_lorscript_ttype, f func(_hx_carg0 Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_follow(t Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_getField(t Hx_Enum_loreline_lorscript_ttype, f string, e any, forWrite__isOptional any) Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_link(a Hx_Enum_loreline_lorscript_ttype, b Hx_Enum_loreline_lorscript_ttype, r any) bool
-	Hx_Field_typeExprWith(expr any, t Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_typeExpr(expr any, withType Hx_Enum_loreline_lorscript__checker_withtype) Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_isString(t Hx_Enum_loreline_lorscript_ttype) bool
-	Hx_Field_setGlobals(cl any, allowPrivate__isOptional any)
-	Hx_Field_setEvent(name string, _hx_reserved_type Hx_Enum_loreline_lorscript_ttype)
-	Hx_Field_unify(t1 Hx_Enum_loreline_lorscript_ttype, t2 Hx_Enum_loreline_lorscript_ttype, e any)
-	Hx_Field_unasync(t Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_makeIterator(t Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_removeGlobal(name string)
-	Hx_Field_typeArgs(args HxArray[any], pos any) HxArray[any]
-	Hx_Field_linkLoop(a Hx_Enum_loreline_lorscript_ttype, t Hx_Enum_loreline_lorscript_ttype) bool
-	Hx_Field_getFields(t Hx_Enum_loreline_lorscript_ttype) HxArray[any]
-	Hx_Field_onCompletion(expr any, t Hx_Enum_loreline_lorscript_ttype)
-	Hx_Field_error(msg string, curExpr any)
-	Hx_Field_getIteratorType(it any, itt Hx_Enum_loreline_lorscript_ttype) Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_mk(e Hx_Enum_loreline_lorscript_exprdef, p any) any
-	Hx_Field_makeType(t Hx_Enum_loreline_lorscript_ctype, e any) Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_tryUnify(t1 Hx_Enum_loreline_lorscript_ttype, t2 Hx_Enum_loreline_lorscript_ttype) bool
-	Hx_Field_typeField(o any, f string, expr any, forWrite bool) Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_makeMono() Hx_Enum_loreline_lorscript_ttype
-	Hx_Field_getGlobals() Hx_Typedef_map
-	Hx_Field_onTopDownEnum(en any, field string) bool
-	Hx_Field_saveLocals() *Hx_Obj_haxe_imap
-	Hx_Field_typeEq(t1 Hx_Enum_loreline_lorscript_ttype, t2 Hx_Enum_loreline_lorscript_ttype) bool
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -2881,28 +2881,28 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_setGlobals(cl any, allow
 					_hx_tmp_0 = nil
 				}
 
-				var _gf any
-				_ = _gf
-				_gf = _hx_tmp_0.VTable.(interface {
+				var f any
+				_ = f
+				f = _hx_tmp_0.VTable.(interface {
 					Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 				}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_iterator()
 				for {
 					var _hx_tmp_1 any
 					_ = _hx_tmp_1
-					_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(_gf, "hasNext")
+					_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(f, "hasNext")
 					if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()))) {
 						break
 					}
 
 					var _hx_tmp_2 any
 					_ = _hx_tmp_2
-					_hx_tmp_2 = Hx_Field_go_haxe_hxdynamic_getField(_gf, "next")
-					var f any
-					_ = f
-					f = Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_2, HxMakeArray[any]().Dyn())
+					_hx_tmp_2 = Hx_Field_go_haxe_hxdynamic_getField(f, "next")
+					var f1 any
+					_ = f1
+					f1 = Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_2, HxMakeArray[any]().Dyn())
 					var _hx_tmp_3 bool
 					_ = _hx_tmp_3
-					if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_getField(f, "isPublic"))) {
+					if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_getField(f1, "isPublic"))) {
 						_hx_tmp_3 = true
 					} else {
 						_hx_tmp_3 = allowPrivate
@@ -2911,9 +2911,9 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_setGlobals(cl any, allow
 					if _hx_tmp_3 {
 						var _hx_tmp_4 Hx_Enum_loreline_lorscript_ttype
 						_ = _hx_tmp_4
-						if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(Hx_Field_go_haxe_hxdynamic_getField(f, "params"), "length"), ((int32)(0))))) {
+						if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(Hx_Field_go_haxe_hxdynamic_getField(f1, "params"), "length"), ((int32)(0))))) {
 							_hx_tmp_4 = func() Hx_Enum_loreline_lorscript_ttype {
-								_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(Hx_Field_go_haxe_hxdynamic_getField(f, "t"))
+								_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(Hx_Field_go_haxe_hxdynamic_getField(f1, "t"))
 								if _hx_d == nil {
 									var _hx_z Hx_Enum_loreline_lorscript_ttype
 									return _hx_z
@@ -2925,10 +2925,10 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_setGlobals(cl any, allow
 								var _gthis1 *Hx_Obj_loreline_lorscript_checker
 								_ = _gthis1
 								_gthis1 = _gthis
-								var f1 Hx_Enum_loreline_lorscript_ttype
-								_ = f1
-								f1 = func() Hx_Enum_loreline_lorscript_ttype {
-									_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(Hx_Field_go_haxe_hxdynamic_getField(f, "t"))
+								var tmp_f_1 Hx_Enum_loreline_lorscript_ttype
+								_ = tmp_f_1
+								tmp_f_1 = func() Hx_Enum_loreline_lorscript_ttype {
+									_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(Hx_Field_go_haxe_hxdynamic_getField(f1, "t"))
 									if _hx_d == nil {
 										var _hx_z Hx_Enum_loreline_lorscript_ttype
 										return _hx_z
@@ -2937,7 +2937,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_setGlobals(cl any, allow
 								}()
 								var f2 HxArray[Hx_Enum_loreline_lorscript_ttype]
 								_ = f2
-								f2 = HxAnyToTypedArray[Hx_Enum_loreline_lorscript_ttype](Hx_Field_go_haxe_hxdynamic_getField(f, "params"))
+								f2 = HxAnyToTypedArray[Hx_Enum_loreline_lorscript_ttype](Hx_Field_go_haxe_hxdynamic_getField(f1, "params"))
 								var _g HxArray[Hx_Enum_loreline_lorscript_ttype]
 								_ = _g
 								_g = HxMakeArray[Hx_Enum_loreline_lorscript_ttype]()
@@ -2947,7 +2947,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_setGlobals(cl any, allow
 									_g1 = 0
 									var _g2 int32
 									_ = _g2
-									_g2 = ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(Hx_Field_go_haxe_hxdynamic_getField(Hx_Field_go_haxe_hxdynamic_getField(f, "params"), "length"))))
+									_g2 = ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(Hx_Field_go_haxe_hxdynamic_getField(Hx_Field_go_haxe_hxdynamic_getField(f1, "params"), "length"))))
 									for _g1 < _g2 {
 										var _hx_tmp_5 int32
 										_ = _hx_tmp_5
@@ -2966,14 +2966,14 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_setGlobals(cl any, allow
 									}
 								}
 
-								return _gthis1.VTable.Hx_Field_apply(f1, f2, _g)
+								return _gthis1.VTable.Hx_Field_apply(tmp_f_1, f2, _g)
 							}}
 						}
 
 						var tmp Hx_Enum_loreline_lorscript_ttype
 						_ = tmp
 						tmp = _hx_tmp_4
-						this.VTable.Hx_Field_setGlobal(Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_getField(f, "name")), tmp)
+						this.VTable.Hx_Field_setGlobal(Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_getField(f1, "name")), tmp)
 					}
 				}
 			}
@@ -3399,28 +3399,28 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_saveLocals() *Hx_Obj_hax
 		return &Hx_Obj_haxe_imap{VTable: _hx_icast_80.VTable.(Hx_Obj_VTable_haxe_imap)}
 	})()
 	{
-		var _gk any
-		_ = _gk
-		_gk = this.Hx_Field_locals.VTable.(interface {
+		var k any
+		_ = k
+		k = this.Hx_Field_locals.VTable.(interface {
 			Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 		}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_keys()
 		for {
 			var _hx_tmp_0 any
 			_ = _hx_tmp_0
-			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(_gk, "hasNext")
+			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(k, "hasNext")
 			if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_0, HxMakeArray[any]().Dyn()))) {
 				break
 			}
 
 			var _hx_tmp_1 any
 			_ = _hx_tmp_1
-			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(_gk, "next")
-			var k string
-			_ = k
-			k = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()))
+			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(k, "next")
+			var k1 string
+			_ = k1
+			k1 = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()))
 			var _hx_tmp_2 string
 			_ = _hx_tmp_2
-			_hx_tmp_2 = k
+			_hx_tmp_2 = k1
 			func() func(_hx_param_key string, _hx_param_value Hx_Enum_loreline_lorscript_ttype) {
 				var _hx_closure_src_415 func(_hx_param_key any, _hx_param_value any)
 				_ = _hx_closure_src_415
@@ -3444,7 +3444,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_saveLocals() *Hx_Obj_hax
 						return _hx_d.(Hx_Enum_loreline_lorscript_ttype)
 					}()
 				}
-			}()(k))
+			}()(k1))
 		}
 	}
 
@@ -3508,7 +3508,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_makeType(t Hx_Enum_lorel
 				{
 					var e1 Hx_Enum_loreline_lorscript_errordef
 					_ = e1
-					e1 = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxdynamic_stringConcat("Unknown type ", Hx_Field_std_string(path))}
+					e1 = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxstring_concat("Unknown type ", Hx_Field_std_string(path))}
 
 					var e2 *Hx_Obj_loreline_lorscript_error
 					_ = e2
@@ -3561,7 +3561,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_makeType(t Hx_Enum_lorel
 					_ = _hx_tmp_4
 					_hx_tmp_4 = i
 					i = (i + 1)
-					_ = (Hx_Array_Push[any](_hx_tmp_3, any(map[string]any{"name": ((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("p", Hx_Field_go_haxe_hxdynamic_toString(_hx_tmp_4)))), "opt": ((any)(false)), "t": ((any)(this.VTable.Hx_Field_makeType(a, e)))})))
+					_ = (Hx_Array_Push[any](_hx_tmp_3, any(map[string]any{"name": ((any)(Hx_Field_go_haxe_hxstring_concat("p", Hx_Field_go_haxe_hxdynamic_toString(_hx_tmp_4)))), "opt": ((any)(false)), "t": ((any)(this.VTable.Hx_Field_makeType(a, e)))})))
 				}
 			}
 
@@ -6032,10 +6032,10 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_unify(t1 Hx_Enum_lorelin
 	if !this.VTable.Hx_Field_tryUnify(t1, t2) {
 		var _hx_tmp_0 string
 		_ = _hx_tmp_0
-		_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_loreline_lorscript_checker_typeStr(t1), " should be ")
+		_hx_tmp_0 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_loreline_lorscript_checker_typeStr(t1), " should be ")
 		var e1 Hx_Enum_loreline_lorscript_errordef
 		_ = e1
-		e1 = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_0, Hx_Field_loreline_lorscript_checker_typeStr(t2))}
+		e1 = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxstring_concat(_hx_tmp_0, Hx_Field_loreline_lorscript_checker_typeStr(t2))}
 
 		var e2 *Hx_Obj_loreline_lorscript_error
 		_ = e2
@@ -6567,25 +6567,25 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_getFields(t Hx_Enum_lore
 								_hx_tmp_1 = nil
 							}
 
-							var _gfname any
-							_ = _gfname
-							_gfname = _hx_tmp_1.VTable.(interface {
+							var fname any
+							_ = fname
+							fname = _hx_tmp_1.VTable.(interface {
 								Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 							}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_keys()
 							for {
 								var _hx_tmp_2 any
 								_ = _hx_tmp_2
-								_hx_tmp_2 = Hx_Field_go_haxe_hxdynamic_getField(_gfname, "hasNext")
+								_hx_tmp_2 = Hx_Field_go_haxe_hxdynamic_getField(fname, "hasNext")
 								if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_2, HxMakeArray[any]().Dyn()))) {
 									break
 								}
 
 								var _hx_tmp_3 any
 								_ = _hx_tmp_3
-								_hx_tmp_3 = Hx_Field_go_haxe_hxdynamic_getField(_gfname, "next")
-								var fname string
-								_ = fname
-								fname = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_3, HxMakeArray[any]().Dyn()))
+								_hx_tmp_3 = Hx_Field_go_haxe_hxdynamic_getField(fname, "next")
+								var fname1 string
+								_ = fname1
+								fname1 = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_3, HxMakeArray[any]().Dyn()))
 								var hx_dyncast_86 any
 								_ = hx_dyncast_86
 								hx_dyncast_86 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_getField(c, "fields"), "Hx_Obj_haxe_imap")
@@ -6601,7 +6601,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_getFields(t Hx_Enum_lore
 								_ = f
 								f = _hx_tmp_4.VTable.(interface {
 									Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
-								}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_get(fname)
+								}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_get(fname1)
 								var _hx_tmp_5 bool
 								_ = _hx_tmp_5
 								if !((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_getField(f, "isPublic")))) {
@@ -6884,7 +6884,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_getField(t Hx_Enum_lorel
 
 					cf = _hx_tmp_2.VTable.(interface {
 						Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
-					}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_get(Hx_Field_go_haxe_hxdynamic_stringConcat("a_", f))
+					}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_get(Hx_Field_go_haxe_hxstring_concat("a_", f))
 					if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(cf, nil))) {
 						var isPublic bool
 						_ = isPublic
@@ -6990,7 +6990,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_getField(t Hx_Enum_lorel
 				if !((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_getField(cf, "isPublic")))) {
 					var _hx_tmp_12 any
 					_ = _hx_tmp_12
-					_hx_tmp_12 = ((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Can't access private field ", f), " on ")))
+					_hx_tmp_12 = ((any)(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Can't access private field ", f), " on ")))
 					var e1 Hx_Enum_loreline_lorscript_errordef
 					_ = e1
 					e1 = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_add(_hx_tmp_12, Hx_Field_go_haxe_hxdynamic_getField(c, "name")))}
@@ -7014,7 +7014,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_getField(t Hx_Enum_lorel
 				if _hx_tmp_13 {
 					var _hx_tmp_14 any
 					_ = _hx_tmp_14
-					_hx_tmp_14 = ((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Can't write readonly field ", f), " on ")))
+					_hx_tmp_14 = ((any)(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Can't write readonly field ", f), " on ")))
 					var e1 Hx_Enum_loreline_lorscript_errordef
 					_ = e1
 					e1 = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_add(_hx_tmp_14, Hx_Field_go_haxe_hxdynamic_getField(c, "name")))}
@@ -7248,7 +7248,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_typeField(o any, f strin
 		{
 			var e Hx_Enum_loreline_lorscript_errordef
 			_ = e
-			e = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_loreline_lorscript_checker_typeStr(ot), " has no field "), f)}
+			e = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(Hx_Field_loreline_lorscript_checker_typeStr(ot), " has no field "), f)}
 
 			var e1 *Hx_Obj_loreline_lorscript_error
 			_ = e1
@@ -7407,7 +7407,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_typeExpr(expr any, withT
 									return _hx_d.(Hx_Enum_loreline_lorscript_ttype)
 								}()
 							}
-						}()(Hx_Field_go_haxe_hxdynamic_stringConcat("a_", v))
+						}()(Hx_Field_go_haxe_hxstring_concat("a_", v))
 						if g != nil {
 							g = this.VTable.Hx_Field_unasync(g)
 						}
@@ -7501,7 +7501,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_typeExpr(expr any, withT
 							{
 								var e Hx_Enum_loreline_lorscript_errordef
 								_ = e
-								e = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxdynamic_stringConcat("Unknown identifier ", v)}
+								e = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxstring_concat("Unknown identifier ", v)}
 
 								var e1 *Hx_Obj_loreline_lorscript_error
 								_ = e1
@@ -7957,7 +7957,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_typeExpr(expr any, withT
 									if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(tmp__g_1.(Hx_Enum_loreline_lorscript_ttype_TInst).Hx_Field_c, "name"), ((any)("String"))))) {
 										var e Hx_Enum_loreline_lorscript_errordef
 										_ = e
-										e = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxdynamic_stringConcat("Cannot compare ", Hx_Field_loreline_lorscript_checker_typeStr(t1))}
+										e = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxstring_concat("Cannot compare ", Hx_Field_loreline_lorscript_checker_typeStr(t1))}
 
 										var tmp_e1_1 *Hx_Obj_loreline_lorscript_error
 										_ = tmp_e1_1
@@ -7972,7 +7972,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_typeExpr(expr any, withT
 								{
 									var e Hx_Enum_loreline_lorscript_errordef
 									_ = e
-									e = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxdynamic_stringConcat("Cannot compare ", Hx_Field_loreline_lorscript_checker_typeStr(t1))}
+									e = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxstring_concat("Cannot compare ", Hx_Field_loreline_lorscript_checker_typeStr(t1))}
 
 									var tmp_e1_1 *Hx_Obj_loreline_lorscript_error
 									_ = tmp_e1_1
@@ -8113,7 +8113,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_typeExpr(expr any, withT
 						{
 							var e Hx_Enum_loreline_lorscript_errordef
 							_ = e
-							e = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxdynamic_stringConcat("Unsupported operation ", op)}
+							e = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxstring_concat("Unsupported operation ", op)}
 
 							var e3 *Hx_Obj_loreline_lorscript_error
 							_ = e3
@@ -8441,7 +8441,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_typeExpr(expr any, withT
 						{
 							var e1 Hx_Enum_loreline_lorscript_errordef
 							_ = e1
-							e1 = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_loreline_lorscript_checker_typeStr(ft), " cannot be called")}
+							e1 = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxstring_concat(Hx_Field_loreline_lorscript_checker_typeStr(ft), " cannot be called")}
 
 							var e2 *Hx_Obj_loreline_lorscript_error
 							_ = e2
@@ -8781,7 +8781,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_typeExpr(expr any, withT
 					_hx_tmp_48 = Hx_Field_go_haxe_hxdynamic_getArrayLength(withArgs)
 					var msg string
 					_ = msg
-					msg = Hx_Field_go_haxe_hxdynamic_stringConcat(("Missing " + Hx_Field_go_haxe_hxdynamic_toString((_hx_tmp_48 - Hx_Field_go_haxe_hxdynamic_getArrayLength(targs)))), " arguments (")
+					msg = Hx_Field_go_haxe_hxstring_concat(("Missing " + Hx_Field_go_haxe_hxdynamic_toString((_hx_tmp_48 - Hx_Field_go_haxe_hxdynamic_getArrayLength(targs)))), " arguments (")
 					var tmp__g_1 HxArray[string]
 					_ = tmp__g_1
 					tmp__g_1 = HxMakeArray[string]()
@@ -8819,7 +8819,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_typeExpr(expr any, withT
 					_hx_tmp_51 = msg
 					var e Hx_Enum_loreline_lorscript_errordef
 					_ = e
-					e = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_51, (Hx_Array_Join[string](tmp__g_1, ","))), ")")}
+					e = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_51, (Hx_Array_Join[string](tmp__g_1, ","))), ")")}
 
 					var e1 *Hx_Obj_loreline_lorscript_error
 					_ = e1
@@ -8841,7 +8841,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_typeExpr(expr any, withT
 				if _hx_tmp_52 {
 					var e Hx_Enum_loreline_lorscript_errordef
 					_ = e
-					e = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxdynamic_stringConcat("Missing return ", Hx_Field_loreline_lorscript_checker_typeStr(tret))}
+					e = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxstring_concat("Missing return ", Hx_Field_loreline_lorscript_checker_typeStr(tret))}
 
 					var e1 *Hx_Obj_loreline_lorscript_error
 					_ = e1
@@ -8963,7 +8963,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_typeExpr(expr any, withT
 								} else {
 									var e Hx_Enum_loreline_lorscript_errordef
 									_ = e
-									e = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_loreline_lorscript_checker_typeStr(at), " is not an Array")}
+									e = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxstring_concat(Hx_Field_loreline_lorscript_checker_typeStr(at), " is not an Array")}
 
 									var e1 *Hx_Obj_loreline_lorscript_error
 									_ = e1
@@ -8975,7 +8975,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_typeExpr(expr any, withT
 							} else {
 								var e Hx_Enum_loreline_lorscript_errordef
 								_ = e
-								e = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_loreline_lorscript_checker_typeStr(at), " is not an Array")}
+								e = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxstring_concat(Hx_Field_loreline_lorscript_checker_typeStr(at), " is not an Array")}
 
 								var e1 *Hx_Obj_loreline_lorscript_error
 								_ = e1
@@ -8987,7 +8987,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_typeExpr(expr any, withT
 						} else {
 							var e Hx_Enum_loreline_lorscript_errordef
 							_ = e
-							e = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_loreline_lorscript_checker_typeStr(at), " is not an Array")}
+							e = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxstring_concat(Hx_Field_loreline_lorscript_checker_typeStr(at), " is not an Array")}
 
 							var e1 *Hx_Obj_loreline_lorscript_error
 							_ = e1
@@ -9577,7 +9577,7 @@ func (this *Hx_Obj_loreline_lorscript_checker) Hx_Field_typeExpr(expr any, withT
 	{
 		var e Hx_Enum_loreline_lorscript_errordef
 		_ = e
-		e = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxdynamic_stringConcat("Don't know how to type ", Hx_Field_type_enumConstructor(func() Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue {
+		e = Hx_Enum_loreline_lorscript_errordef_ECustom{Hx_Field_go_haxe_hxstring_concat("Don't know how to type ", Hx_Field_type_enumConstructor(func() Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue {
 			_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(Hx_Field_go_haxe_hxdynamic_getField(expr, "e"))
 			if _hx_d == nil {
 				var _hx_z Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue
@@ -9722,7 +9722,7 @@ func Hx_Field_loreline_lorscript_checker_typeStr(t Hx_Enum_loreline_lorscript_tt
 			var name string
 			_ = name
 			name = t.(Hx_Enum_loreline_lorscript_ttype_TUnresolved).Hx_Field_name
-			return Hx_Field_go_haxe_hxdynamic_stringConcat("?", name)
+			return Hx_Field_go_haxe_hxstring_concat("?", name)
 		}
 
 	case 8:
@@ -9730,7 +9730,7 @@ func Hx_Field_loreline_lorscript_checker_typeStr(t Hx_Enum_loreline_lorscript_tt
 			var t1 Hx_Enum_loreline_lorscript_ttype
 			_ = t1
 			t1 = t.(Hx_Enum_loreline_lorscript_ttype_TNull).Hx_Field_t
-			return Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Null<", Hx_Field_loreline_lorscript_checker_typeStr(t1)), ">")
+			return Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Null<", Hx_Field_loreline_lorscript_checker_typeStr(t1)), ">")
 		}
 
 	case 9:
@@ -9775,10 +9775,10 @@ func Hx_Field_loreline_lorscript_checker_typeStr(t Hx_Enum_loreline_lorscript_tt
 					}
 				}
 
-				tmp = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("<", (Hx_Array_Join[string](_g, ","))), ">")
+				tmp = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("<", (Hx_Array_Join[string](_g, ","))), ">")
 			}
 
-			return Hx_Field_go_haxe_hxdynamic_stringConcat(c1, tmp)
+			return Hx_Field_go_haxe_hxstring_concat(c1, tmp)
 		}
 
 	case 10:
@@ -9823,10 +9823,10 @@ func Hx_Field_loreline_lorscript_checker_typeStr(t Hx_Enum_loreline_lorscript_tt
 					}
 				}
 
-				tmp = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("<", (Hx_Array_Join[string](_g, ","))), ">")
+				tmp = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("<", (Hx_Array_Join[string](_g, ","))), ">")
 			}
 
-			return Hx_Field_go_haxe_hxdynamic_stringConcat(e1, tmp)
+			return Hx_Field_go_haxe_hxstring_concat(e1, tmp)
 		}
 
 	case 11:
@@ -9874,10 +9874,10 @@ func Hx_Field_loreline_lorscript_checker_typeStr(t Hx_Enum_loreline_lorscript_tt
 						}
 					}
 
-					tmp = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("<", (Hx_Array_Join[string](_g, ","))), ">")
+					tmp = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("<", (Hx_Array_Join[string](_g, ","))), ">")
 				}
 
-				return Hx_Field_go_haxe_hxdynamic_stringConcat(t, tmp)
+				return Hx_Field_go_haxe_hxstring_concat(t, tmp)
 			}
 		}
 
@@ -9923,10 +9923,10 @@ func Hx_Field_loreline_lorscript_checker_typeStr(t Hx_Enum_loreline_lorscript_tt
 					}
 				}
 
-				tmp = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("<", (Hx_Array_Join[string](_g, ","))), ">")
+				tmp = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("<", (Hx_Array_Join[string](_g, ","))), ">")
 			}
 
-			return Hx_Field_go_haxe_hxdynamic_stringConcat(a1, tmp)
+			return Hx_Field_go_haxe_hxstring_concat(a1, tmp)
 		}
 
 	case 13:
@@ -9975,7 +9975,7 @@ func Hx_Field_loreline_lorscript_checker_typeStr(t Hx_Enum_loreline_lorscript_tt
 						_hx_tmp_11 = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_add(Hx_Field_go_haxe_hxdynamic_getField(a, "name"), ((any)(":"))))
 					}
 
-					_ = (Hx_Array_Push[string](_hx_tmp_9, Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat((_hx_tmp_10), (_hx_tmp_11)), Hx_Field_loreline_lorscript_checker_typeStr(func() Hx_Enum_loreline_lorscript_ttype {
+					_ = (Hx_Array_Push[string](_hx_tmp_9, Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat((_hx_tmp_10), (_hx_tmp_11)), Hx_Field_loreline_lorscript_checker_typeStr(func() Hx_Enum_loreline_lorscript_ttype {
 						_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(Hx_Field_go_haxe_hxdynamic_getField(a, "t"))
 						if _hx_d == nil {
 							var _hx_z Hx_Enum_loreline_lorscript_ttype
@@ -9988,8 +9988,8 @@ func Hx_Field_loreline_lorscript_checker_typeStr(t Hx_Enum_loreline_lorscript_tt
 
 			var _hx_tmp_12 string
 			_ = _hx_tmp_12
-			_hx_tmp_12 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("(", (Hx_Array_Join[string](_g, ", "))), ") -> ")
-			return Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_12, Hx_Field_loreline_lorscript_checker_typeStr(ret))
+			_hx_tmp_12 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("(", (Hx_Array_Join[string](_g, ", "))), ") -> ")
+			return Hx_Field_go_haxe_hxstring_concat(_hx_tmp_12, Hx_Field_loreline_lorscript_checker_typeStr(ret))
 		}
 
 	case 14:
@@ -10038,7 +10038,7 @@ func Hx_Field_loreline_lorscript_checker_typeStr(t Hx_Enum_loreline_lorscript_tt
 				}
 			}
 
-			return Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("{", (Hx_Array_Join[string](_g, ", "))), "}")
+			return Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("{", (Hx_Array_Join[string](_g, ", "))), "}")
 		}
 
 	default:

@@ -117,7 +117,7 @@ func Hx_Field_loreline_translation_translationformats_convert(ext string, conten
 
 	default:
 		{
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_haxe_exception_CreateInstance(Hx_Field_go_haxe_hxdynamic_stringConcat("Unknown translation format extension: ", ext), nil, nil)))))
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_haxe_exception_CreateInstance(Hx_Field_go_haxe_hxstring_concat("Unknown translation format extension: ", ext), nil, nil)))))
 		}
 	}
 }
@@ -271,7 +271,7 @@ func Hx_Field_loreline_translation_translationformats_wrap(underlying Hx_Typedef
 		if withLocaleSuffix {
 			var _hx_tmp_4 any
 			_ = _hx_tmp_4
-			_hx_tmp_4 = ((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(stem, "."), locale)))
+			_hx_tmp_4 = ((any)(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(stem, "."), locale)))
 			var _hx_tmp_5 any
 			_ = _hx_tmp_5
 			_hx_tmp_5 = _hx_tmp_4
@@ -304,7 +304,7 @@ func Hx_Field_loreline_translation_translationformats_wrap(underlying Hx_Typedef
 								if e, _hx_ok := Hx_Field_haxe_exception_catchValue(_hx_ex, "*Hx_Obj_loreline_error").(*Hx_Obj_loreline_error); _hx_ok {
 									_ = e
 									{
-										captured = Hx_Obj_loreline_error_CreateInstance(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Failed to load translation file \"", candidate), "\": "), e.Hx_Field_message), nil)
+										captured = Hx_Obj_loreline_error_CreateInstance(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Failed to load translation file \"", candidate), "\": "), e.Hx_Field_message), nil)
 										tryNext(stem, withLocaleSuffix, (index + 1), cb)
 									}
 								} else {
@@ -454,7 +454,7 @@ func Hx_Field_loreline_translation_translationformats_wrap(underlying Hx_Typedef
 			withoutLorExt = _hx_tmp_14
 			var localeSuffix string
 			_ = localeSuffix
-			localeSuffix = Hx_Field_go_haxe_hxdynamic_stringConcat(".", locale)
+			localeSuffix = Hx_Field_go_haxe_hxstring_concat(".", locale)
 			var stem string
 			_ = stem
 			var sLen int32

@@ -400,7 +400,7 @@ func Hx_Field_haxe__int64_int64_impl__ucompare(a Hx_Typedef_haxe__int64___int64,
 }
 
 func Hx_Field_haxe__int64_int64_impl__toStr(x Hx_Typedef_haxe__int64___int64) string {
-	return Hx_Field_go_haxe_hxdynamic_stringConcat("", Hx_Field_std_string(x))
+	return Hx_Field_go_haxe_hxstring_concat("", Hx_Field_std_string(x))
 }
 
 func Hx_Field_haxe__int64_int64_impl__divMod(dividend Hx_Typedef_haxe__int64___int64, divisor Hx_Typedef_haxe__int64___int64) any {
@@ -408,7 +408,7 @@ func Hx_Field_haxe__int64_int64_impl__divMod(dividend Hx_Typedef_haxe__int64___i
 }
 
 func Hx_Field_haxe__int64_int64_impl__toString(this Hx_Typedef_haxe__int64___int64) string {
-	return Hx_Field_go_haxe_hxdynamic_stringConcat("", Hx_Field_std_string(this))
+	return Hx_Field_go_haxe_hxstring_concat("", Hx_Field_std_string(this))
 }
 
 func Hx_Field_haxe__int64_int64_impl__parseString(sParam string) Hx_Typedef_haxe__int64___int64 {

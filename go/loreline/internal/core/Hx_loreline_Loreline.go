@@ -995,7 +995,7 @@ func Hx_Field_loreline_loreline_loadLocale(locale string, script *Hx_Obj_lorelin
 			rootStem1 = (rootStem).Value
 			var rootTransName string
 			_ = rootTransName
-			rootTransName = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(rootStem1, "."), locale), ext)
+			rootTransName = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(rootStem1, "."), locale), ext)
 			_ = (Hx_Array_Push[string](relativePaths, "."))
 			var _hx_tmp_34 HxArray[string]
 			_ = _hx_tmp_34
@@ -1350,7 +1350,7 @@ func Hx_Field_loreline_loreline_loadLocale(locale string, script *Hx_Obj_lorelin
 					importStem1 = (importStem).Value
 					var importTransRelPath string
 					_ = importTransRelPath
-					importTransRelPath = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(importStem1, "."), locale), ext)
+					importTransRelPath = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(importStem1, "."), locale), ext)
 					var path string
 					_ = path
 					path = Hx_Field_haxe_io_path_normalize(importRelPath)
@@ -1766,7 +1766,7 @@ func Hx_Field_loreline_loreline_loadLocale(locale string, script *Hx_Obj_lorelin
 											_ = e
 											{
 												if firstParseError == nil {
-													firstParseError = Hx_Obj_loreline_error_CreateInstance(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Failed to load translation file \"", transPath), "\": "), e.Hx_Field_message), nil)
+													firstParseError = Hx_Obj_loreline_error_CreateInstance(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Failed to load translation file \"", transPath), "\": "), e.Hx_Field_message), nil)
 												}
 											}
 										} else if e, _hx_ok := Hx_Field_haxe_exception_catchValue(_hx_ex, "any").(any); _hx_ok {
@@ -1775,7 +1775,7 @@ func Hx_Field_loreline_loreline_loadLocale(locale string, script *Hx_Obj_lorelin
 												if firstParseError == nil {
 													var _hx_tmp_82 string
 													_ = _hx_tmp_82
-													_hx_tmp_82 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Failed to load translation file \"", transPath), "\": ")
+													_hx_tmp_82 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Failed to load translation file \"", transPath), "\": ")
 													var _hx_tmp_83 string
 													_ = _hx_tmp_83
 													if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(e, nil))) {
@@ -1784,7 +1784,7 @@ func Hx_Field_loreline_loreline_loadLocale(locale string, script *Hx_Obj_lorelin
 														_hx_tmp_83 = Hx_Field_std_string(e)
 													}
 
-													firstParseError = Hx_Obj_loreline_error_CreateInstance(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_82, (_hx_tmp_83)), nil)
+													firstParseError = Hx_Obj_loreline_error_CreateInstance(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_82, (_hx_tmp_83)), nil)
 												}
 											}
 										} else {
@@ -1885,7 +1885,7 @@ func Hx_Field_loreline_loreline_loadLocale(locale string, script *Hx_Obj_lorelin
 													return func(_hx_param_key string, _hx_param_value *Hx_Obj_loreline_nstringliteral) {
 														_hx_closure_src_846(((any)(_hx_param_key)), ((any)(_hx_param_value)))
 													}
-												}()(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(relPath, "#"), id), str)
+												}()(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(relPath, "#"), id), str)
 											}
 										}
 									}
@@ -2196,11 +2196,11 @@ func Hx_Field_loreline_loreline_generateTranslationFile(script *Hx_Obj_loreline_
 		}
 
 		if _hx_tmp_4 {
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_error_CreateInstance(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("A locale is required when generating a translation file in format '", (format).Value), "'"), nil)))))
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_error_CreateInstance(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("A locale is required when generating a translation file in format '", (format).Value), "'"), nil)))))
 		}
 
 		if (format).Valid == false {
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_error_CreateInstance(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Unknown translation file format: '", (format).Value), "'"), nil)))))
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_error_CreateInstance(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Unknown translation file format: '", (format).Value), "'"), nil)))))
 		} else {
 			switch (format).Value {
 			case "csv":
@@ -2273,7 +2273,7 @@ func Hx_Field_loreline_loreline_generateTranslationFile(script *Hx_Obj_loreline_
 
 			default:
 				{
-					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_error_CreateInstance(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Unknown translation file format: '", (format).Value), "'"), nil)))))
+					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_error_CreateInstance(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Unknown translation file format: '", (format).Value), "'"), nil)))))
 				}
 			}
 		}

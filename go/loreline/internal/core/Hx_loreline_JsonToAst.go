@@ -148,7 +148,7 @@ func Hx_Field_loreline_jsontoast_scriptFromJson(json any) *Hx_Obj_loreline_scrip
 	_ = nodeType
 	nodeType = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_getField(json, "type"))
 	if nodeType != "Script" {
-		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Expected Script node, got: ", nodeType)))))
+		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Expected Script node, got: ", nodeType)))))
 	}
 
 	var id Hx_Typedef_haxe__int64___int64
@@ -577,7 +577,7 @@ func Hx_Field_loreline_jsontoast_nodeFromJsonOfType(json any) *Hx_Obj_loreline_n
 
 	default:
 		{
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Unknown node type: ", nodeType)))))
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Unknown node type: ", nodeType)))))
 		}
 	}
 }
@@ -848,7 +848,7 @@ func Hx_Field_loreline_jsontoast_stringPartFromJson(json any) *Hx_Obj_loreline_n
 
 	default:
 		{
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Unknown string part type: ", partStr)))))
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Unknown string part type: ", partStr)))))
 		}
 	}
 
@@ -2032,7 +2032,7 @@ func Hx_Field_loreline_jsontoast_literalFromJson(json any) *Hx_Obj_loreline_nlit
 
 	default:
 		{
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Unknown literal type: ", litStr)))))
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Unknown literal type: ", litStr)))))
 		}
 	}
 
@@ -2474,7 +2474,7 @@ func Hx_Field_loreline_jsontoast_tokenTypeFromString(s string) Hx_Enum_loreline_
 								_hx_tmp_4 = s
 								return Hx_Enum_loreline_tokentype_OpOr{((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_4, "true", HxNullable[int32]{})) != -1)}
 							} else {
-								panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Unknown operator: ", s)))))
+								panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Unknown operator: ", s)))))
 							}
 						}
 					}

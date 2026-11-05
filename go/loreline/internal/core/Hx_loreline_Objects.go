@@ -200,24 +200,24 @@ func Hx_Field_loreline_objects_getFields(interpreter *Hx_Obj_loreline_interprete
 					_hx_tmp_1 = nil
 				}
 
-				var _gkey any
-				_ = _gkey
-				_gkey = _hx_tmp_1.VTable.Hx_Field_keys()
+				var key any
+				_ = key
+				key = _hx_tmp_1.VTable.Hx_Field_keys()
 				for {
 					var _hx_tmp_2 any
 					_ = _hx_tmp_2
-					_hx_tmp_2 = Hx_Field_go_haxe_hxdynamic_getField(_gkey, "hasNext")
+					_hx_tmp_2 = Hx_Field_go_haxe_hxdynamic_getField(key, "hasNext")
 					if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_2, HxMakeArray[any]().Dyn()))) {
 						break
 					}
 
 					var _hx_tmp_3 any
 					_ = _hx_tmp_3
-					_hx_tmp_3 = Hx_Field_go_haxe_hxdynamic_getField(_gkey, "next")
-					var key string
-					_ = key
-					key = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_3, HxMakeArray[any]().Dyn()))
-					_ = (Hx_Array_Push[string](_g, key))
+					_hx_tmp_3 = Hx_Field_go_haxe_hxdynamic_getField(key, "next")
+					var key1 string
+					_ = key1
+					key1 = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_3, HxMakeArray[any]().Dyn()))
+					_ = (Hx_Array_Push[string](_g, key1))
 				}
 			}
 

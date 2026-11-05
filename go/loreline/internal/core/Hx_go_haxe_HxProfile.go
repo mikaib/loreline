@@ -106,7 +106,7 @@ func Hx_Field_go_haxe_hxprofile_writeHeap(name string) {
 		Result *os.File
 	}
 	_ = hx_result_14
-	hx_result_14.Result, hx_result_14.Error = os.Create(Hx_Field_go_haxe_hxdynamic_stringConcat(name, ".pprof"))
+	hx_result_14.Result, hx_result_14.Error = os.Create(Hx_Field_go_haxe_hxstring_concat(name, ".pprof"))
 	var this1 struct {
 		Error  error
 		Result *os.File

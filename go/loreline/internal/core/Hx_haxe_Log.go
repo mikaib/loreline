@@ -97,11 +97,11 @@ func Hx_Field_haxe_log_formatOutput(v any, infos any) string {
 			var _hx_tmp_2 string
 			_ = _hx_tmp_2
 			_hx_tmp_2 = str
-			str = Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_2, Hx_Field_go_haxe_hxdynamic_stringConcat(", ", Hx_Field_std_string(v)))
+			str = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_2, Hx_Field_go_haxe_hxstring_concat(", ", Hx_Field_std_string(v)))
 		}
 	}
 
-	return Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(pstr, ": "), str)
+	return Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(pstr, ": "), str)
 }
 
 var Hx_Field_haxe_log_trace = func(v any, infos__isOptional any) {

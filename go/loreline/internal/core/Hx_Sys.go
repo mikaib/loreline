@@ -125,7 +125,7 @@ func Hx_Field_sys_println(v any) {
 			Result int
 		}
 		_ = hx_result_26
-		hx_result_26.Result, hx_result_26.Error = (*os.Stdout).WriteString(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_std_string(v), "\n"))
+		hx_result_26.Result, hx_result_26.Error = (*os.Stdout).WriteString(Hx_Field_go_haxe_hxstring_concat(Hx_Field_std_string(v), "\n"))
 		_ = hx_result_26
 	}
 }
@@ -272,7 +272,7 @@ func Hx_Field_sys_getCwd() string {
 		return ret
 	}
 
-	return Hx_Field_go_haxe_hxdynamic_stringConcat(ret, trailingSlash)
+	return Hx_Field_go_haxe_hxstring_concat(ret, trailingSlash)
 }
 
 func Hx_Field_sys_setCwd(s string) {

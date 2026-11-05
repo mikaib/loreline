@@ -10,9 +10,6 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_lib_golibrary() {
 }
 
 type Hx_Obj_VTable_loreline_lib_golibrary interface {
-	Hx_Field_translationFormat(name string, enabled bool)
-	Hx_Field_update(delta float64)
-	Hx_Field_errorMessage(value any) string
 	Hx_Field_parse(source string, path string, readFile func(_hx_carg0 string) string) struct {
 		Err    error
 		Script *Hx_Obj_loreline_lib_goscript
@@ -30,6 +27,9 @@ type Hx_Obj_VTable_loreline_lib_golibrary interface {
 		Err          error
 		Translations *Hx_Obj_loreline_lib_gotranslations
 	}
+	Hx_Field_translationFormat(name string, enabled bool)
+	Hx_Field_update(delta float64)
+	Hx_Field_errorMessage(value any) string
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -517,7 +517,7 @@ func (this *Hx_Obj_loreline_lib_golibrary) Hx_Field_loadLocale(locale string, sc
 					if e != nil {
 						_hx_tmp_4 = Hx_Field_std_string(e)
 					} else {
-						_hx_tmp_4 = Hx_Field_go_haxe_hxdynamic_stringConcat("Failed to load locale ", locale)
+						_hx_tmp_4 = Hx_Field_go_haxe_hxstring_concat("Failed to load locale ", locale)
 					}
 
 					var hx_dyncast_384 any
@@ -615,26 +615,36 @@ func Hx_Field_loreline_lib_golibrary_main() {
 
 func Hx_Field_loreline_lib_golibrary_message(e any) string {
 	if Hx_Field_std_isOfType(e, Hx_Obj_haxe_valueexception_RTTI) {
-		var hx_dyncast_387 any
-		_ = hx_dyncast_387
-		hx_dyncast_387 = Hx_Field_go_haxe_hxdynamic_castClass(e, "Hx_Obj_haxe_valueexception")
+		var hx_dyncast_389 any
+		_ = hx_dyncast_389
+		hx_dyncast_389 = Hx_Field_go_haxe_hxdynamic_castClass(e, "Hx_Obj_haxe_valueexception")
 		var _hx_tmp_0 *Hx_Obj_haxe_valueexception
 		_ = _hx_tmp_0
-		if hx_dyncast_387 != nil {
-			_hx_tmp_0 = hx_dyncast_387.(interface {
+		if hx_dyncast_389 != nil {
+			_hx_tmp_0 = hx_dyncast_389.(interface {
 				Hx_As_Hx_Obj_haxe_valueexception() *Hx_Obj_haxe_valueexception
 			}).Hx_As_Hx_Obj_haxe_valueexception()
 		} else {
 			_hx_tmp_0 = nil
 		}
 
-		var tmp any
-		_ = tmp
-		tmp = _hx_tmp_0.Hx_Field_value
-		if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(tmp, nil))) {
+		if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(_hx_tmp_0.Hx_Field_value, nil))) {
 			return "null"
 		} else {
-			return Hx_Field_std_string(tmp)
+			var hx_dyncast_388 any
+			_ = hx_dyncast_388
+			hx_dyncast_388 = Hx_Field_go_haxe_hxdynamic_castClass(e, "Hx_Obj_haxe_valueexception")
+			var _hx_tmp_1 *Hx_Obj_haxe_valueexception
+			_ = _hx_tmp_1
+			if hx_dyncast_388 != nil {
+				_hx_tmp_1 = hx_dyncast_388.(interface {
+					Hx_As_Hx_Obj_haxe_valueexception() *Hx_Obj_haxe_valueexception
+				}).Hx_As_Hx_Obj_haxe_valueexception()
+			} else {
+				_hx_tmp_1 = nil
+			}
+
+			return Hx_Field_std_string(_hx_tmp_1.Hx_Field_value)
 		}
 	}
 

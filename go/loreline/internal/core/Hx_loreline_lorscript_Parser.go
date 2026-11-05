@@ -439,55 +439,55 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_lorscript_parser() {
 }
 
 type Hx_Obj_VTable_loreline_lorscript_parser interface {
-	Hx_Field__token() Hx_Enum_loreline_lorscript_token
-	Hx_Field_parsePreproCond() any
-	Hx_Field_ensureToken(tk Hx_Enum_loreline_lorscript_token)
-	Hx_Field_pmin(e any) int32
-	Hx_Field_parseExprNext(e1 any) any
-	Hx_Field_parseModule(content string, origin__isOptional any, position__isOptional any) HxArray[Hx_Enum_loreline_lorscript_moduledecl]
-	Hx_Field_skipTokens()
 	Hx_Field_getIdent() string
+	Hx_Field_parseExprList(etk Hx_Enum_loreline_lorscript_token) HxArray[any]
+	Hx_Field_parseModuleDecl() Hx_Enum_loreline_lorscript_moduledecl
+	Hx_Field_parsePreproCond() any
+	Hx_Field_preprocess(id string) Hx_Enum_loreline_lorscript_token
+	Hx_Field_tokenString(t Hx_Enum_loreline_lorscript_token) string
+	Hx_Field_unexpected(tk Hx_Enum_loreline_lorscript_token) any
+	Hx_Field_isBlock(e any) bool
+	Hx_Field_parseFullExpr(exprs HxArray[any])
+	Hx_Field_parseModule(content string, origin__isOptional any, position__isOptional any) HxArray[Hx_Enum_loreline_lorscript_moduledecl]
+	Hx_Field_parseField() any
+	Hx_Field_invalidChar(c int32)
+	Hx_Field_parseObject(p1 HxNullable[int32]) any
+	Hx_Field_makeUnop(op string, e any) any
+	Hx_Field_parseExprNext(e1 any) any
+	Hx_Field_token() Hx_Enum_loreline_lorscript_token
+	Hx_Field_initParser(origin string, pos int32)
+	Hx_Field_ensure(tk Hx_Enum_loreline_lorscript_token)
+	Hx_Field_parseMetaArgs() HxArray[any]
+	Hx_Field_makeBinop(op string, e1 any, e any) any
+	Hx_Field_parseTypeNext(t Hx_Enum_loreline_lorscript_ctype) Hx_Enum_loreline_lorscript_ctype
+	Hx_Field_parseParams() any
+	Hx_Field_readChar() int32
+	Hx_Field_tokenComment(op string, char int32) Hx_Enum_loreline_lorscript_token
+	Hx_Field_parseString(s string, origin__isOptional any, position__isOptional any) any
+	Hx_Field_push(tk Hx_Enum_loreline_lorscript_token)
+	Hx_Field_ensureToken(tk Hx_Enum_loreline_lorscript_token)
+	Hx_Field_maybe(tk Hx_Enum_loreline_lorscript_token) bool
 	Hx_Field_mapCompr(tmp string, e any) any
 	Hx_Field_parseStructure(id string) any
 	Hx_Field_parseFunctionArgs() HxArray[any]
-	Hx_Field_parseFunctionDecl() any
-	Hx_Field_parseField() any
-	Hx_Field_tokenComment(op string, char int32) Hx_Enum_loreline_lorscript_token
-	Hx_Field_get_currentPos() int32
-	Hx_Field_parseString(s string, origin__isOptional any, position__isOptional any) any
-	Hx_Field_expr(e any) Hx_Enum_loreline_lorscript_exprdef
-	Hx_Field_parseObject(p1 HxNullable[int32]) any
-	Hx_Field_parseExpr() any
-	Hx_Field_makeUnop(op string, e any) any
-	Hx_Field_parseModuleDecl() Hx_Enum_loreline_lorscript_moduledecl
-	Hx_Field_evalPreproCond(e any) bool
-	Hx_Field_push(tk Hx_Enum_loreline_lorscript_token)
-	Hx_Field_maybe(tk Hx_Enum_loreline_lorscript_token) bool
 	Hx_Field_parseType() Hx_Enum_loreline_lorscript_ctype
-	Hx_Field_readChar() int32
-	Hx_Field_preprocValue(id string) any
-	Hx_Field_tokenString(t Hx_Enum_loreline_lorscript_token) string
-	Hx_Field_ensure(tk Hx_Enum_loreline_lorscript_token)
-	Hx_Field_parseLambda(args HxArray[any], pmin HxNullable[int32]) any
-	Hx_Field_parseMetaArgs() HxArray[any]
-	Hx_Field_makeBinop(op string, e1 any, e any) any
-	Hx_Field_parseExprList(etk Hx_Enum_loreline_lorscript_token) HxArray[any]
-	Hx_Field_error(err Hx_Enum_loreline_lorscript_errordef, pmin int32, pmax int32)
-	Hx_Field_invalidChar(c int32)
-	Hx_Field_pmax(e any) int32
-	Hx_Field_parseTypeNext(t Hx_Enum_loreline_lorscript_ctype) Hx_Enum_loreline_lorscript_ctype
-	Hx_Field_parseMetadata() HxArray[any]
-	Hx_Field_token() Hx_Enum_loreline_lorscript_token
-	Hx_Field_preprocess(id string) Hx_Enum_loreline_lorscript_token
+	Hx_Field_get_currentPos() int32
+	Hx_Field_expr(e any) Hx_Enum_loreline_lorscript_exprdef
 	Hx_Field_mk(e Hx_Enum_loreline_lorscript_exprdef, pmin__isOptional any, pmax__isOptional any) any
-	Hx_Field_parseFullExpr(exprs HxArray[any])
-	Hx_Field_parsePath() HxArray[string]
-	Hx_Field_parseParams() any
-	Hx_Field_constString(c Hx_Enum_loreline_lorscript_const) string
-	Hx_Field_initParser(origin string, pos int32)
-	Hx_Field_unexpected(tk Hx_Enum_loreline_lorscript_token) any
-	Hx_Field_isBlock(e any) bool
+	Hx_Field_parseExpr() any
+	Hx_Field_parseLambda(args HxArray[any], pmin HxNullable[int32]) any
+	Hx_Field_preprocValue(id string) any
+	Hx_Field_pmin(e any) int32
+	Hx_Field_pmax(e any) int32
+	Hx_Field_parseFunctionDecl() any
 	Hx_Field_readString(until int32) string
+	Hx_Field__token() Hx_Enum_loreline_lorscript_token
+	Hx_Field_evalPreproCond(e any) bool
+	Hx_Field_skipTokens()
+	Hx_Field_error(err Hx_Enum_loreline_lorscript_errordef, pmin int32, pmax int32)
+	Hx_Field_parsePath() HxArray[string]
+	Hx_Field_parseMetadata() HxArray[any]
+	Hx_Field_constString(c Hx_Enum_loreline_lorscript_const) string
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -9725,7 +9725,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field__token() Hx_Enum_loreline
 						var _hx_tmp_6 string
 						_ = _hx_tmp_6
 						_hx_tmp_6 = id
-						id = Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_6, Hx_Field_go_haxe_hxstring_fromCharCode(char))
+						id = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_6, Hx_Field_go_haxe_hxstring_fromCharCode(char))
 					}
 				}
 
@@ -10113,7 +10113,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field__token() Hx_Enum_loreline
 						var _hx_tmp_31 string
 						_ = _hx_tmp_31
 						_hx_tmp_31 = id
-						id = Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_31, Hx_Field_go_haxe_hxstring_fromCharCode(char))
+						id = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_31, Hx_Field_go_haxe_hxstring_fromCharCode(char))
 					}
 				}
 
@@ -10170,7 +10170,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field__token() Hx_Enum_loreline
 						var _hx_tmp_34 string
 						_ = _hx_tmp_34
 						_hx_tmp_34 = op
-						op = Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_34, Hx_Field_go_haxe_hxstring_fromCharCode(char))
+						op = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_34, Hx_Field_go_haxe_hxstring_fromCharCode(char))
 						var _hx_tmp_35 bool
 						_ = _hx_tmp_35
 						if !func() func(_hx_param_key string) bool {
@@ -10233,7 +10233,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field__token() Hx_Enum_loreline
 						var _hx_tmp_38 string
 						_ = _hx_tmp_38
 						_hx_tmp_38 = id
-						id = Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_38, Hx_Field_go_haxe_hxstring_fromCharCode(char))
+						id = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_38, Hx_Field_go_haxe_hxstring_fromCharCode(char))
 					}
 				}
 
@@ -10476,7 +10476,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_evalPreproCond(e any) boo
 					{
 						var err Hx_Enum_loreline_lorscript_errordef
 						_ = err
-						err = Hx_Enum_loreline_lorscript_errordef_EInvalidPreprocessor{Hx_Field_go_haxe_hxdynamic_stringConcat("Can't eval ", Hx_Field_type_enumConstructor(func() Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue {
+						err = Hx_Enum_loreline_lorscript_errordef_EInvalidPreprocessor{Hx_Field_go_haxe_hxstring_concat("Can't eval ", Hx_Field_type_enumConstructor(func() Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue {
 							_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(Hx_Field_go_haxe_hxdynamic_getField(e, "e"))
 							if _hx_d == nil {
 								var _hx_z Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue
@@ -10506,7 +10506,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_evalPreproCond(e any) boo
 				{
 					var err Hx_Enum_loreline_lorscript_errordef
 					_ = err
-					err = Hx_Enum_loreline_lorscript_errordef_EInvalidPreprocessor{Hx_Field_go_haxe_hxdynamic_stringConcat("Can't eval ", Hx_Field_type_enumConstructor(func() Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue {
+					err = Hx_Enum_loreline_lorscript_errordef_EInvalidPreprocessor{Hx_Field_go_haxe_hxstring_concat("Can't eval ", Hx_Field_type_enumConstructor(func() Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue {
 						_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(Hx_Field_go_haxe_hxdynamic_getField(e, "e"))
 						if _hx_d == nil {
 							var _hx_z Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue
@@ -10529,7 +10529,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_evalPreproCond(e any) boo
 			{
 				var err Hx_Enum_loreline_lorscript_errordef
 				_ = err
-				err = Hx_Enum_loreline_lorscript_errordef_EInvalidPreprocessor{Hx_Field_go_haxe_hxdynamic_stringConcat("Can't eval ", Hx_Field_type_enumConstructor(func() Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue {
+				err = Hx_Enum_loreline_lorscript_errordef_EInvalidPreprocessor{Hx_Field_go_haxe_hxstring_concat("Can't eval ", Hx_Field_type_enumConstructor(func() Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue {
 					_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(Hx_Field_go_haxe_hxdynamic_getField(e, "e"))
 					if _hx_d == nil {
 						var _hx_z Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue
@@ -10884,7 +10884,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_tokenString(t Hx_Enum_lor
 			var id string
 			_ = id
 			id = t.(Hx_Enum_loreline_lorscript_token_TMeta).Hx_Field_s
-			return Hx_Field_go_haxe_hxdynamic_stringConcat("@", id)
+			return Hx_Field_go_haxe_hxstring_concat("@", id)
 		}
 
 	case 17:
@@ -10892,7 +10892,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_tokenString(t Hx_Enum_lor
 			var id string
 			_ = id
 			id = t.(Hx_Enum_loreline_lorscript_token_TPrepro).Hx_Field_s
-			return Hx_Field_go_haxe_hxdynamic_stringConcat("#", id)
+			return Hx_Field_go_haxe_hxstring_concat("#", id)
 		}
 
 	default:

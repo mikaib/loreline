@@ -7,27 +7,27 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_ds_enumvaluemap() {
 }
 
 type Hx_Obj_VTable_haxe_ds_enumvaluemap interface {
-	Hx_Field_minBinding(t *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
 	Hx_Field_removeMinBinding(t *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
-	Hx_Field_compare(_hx_param_k1 any, _hx_param_k2 any) int32
-	Hx_Field_compareArgs(a1 HxArray[any], a2 HxArray[any]) int32
-	Hx_Field_copy() *Hx_Obj_haxe_imap
-	Hx_Field_setLoop(k any, v any, node *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
-	Hx_Field_toString() string
-	Hx_Field_clear()
-	Hx_Field_compareArg(v1 any, v2 any) int32
-	Hx_Field_set(_hx_param_key any, _hx_param_value any)
-	Hx_Field_removeLoop(k any, node *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
 	Hx_Field_balance(l *Hx_Obj_haxe_ds_treenode, k any, v any, r *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
+	Hx_Field_compareArgs(a1 HxArray[any], a2 HxArray[any]) int32
+	Hx_Field_remove(_hx_param_key any) bool
+	Hx_Field_keysLoop(node *Hx_Obj_haxe_ds_treenode, acc HxArray[any])
+	Hx_Field_minBinding(t *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
+	Hx_Field_set(_hx_param_key any, _hx_param_value any)
 	Hx_Field_get(_hx_param_key any) any
 	Hx_Field_keyValueIterator() any
-	Hx_Field_keys() any
+	Hx_Field_toString() string
+	Hx_Field_clear()
 	Hx_Field_size() int32
-	Hx_Field_getSortIndex(v any) HxNullable[int32]
-	Hx_Field_remove(_hx_param_key any) bool
+	Hx_Field_compare(_hx_param_k1 any, _hx_param_k2 any) int32
+	Hx_Field_compareArg(v1 any, v2 any) int32
 	Hx_Field_exists(_hx_param_key any) bool
 	Hx_Field_iterator() any
-	Hx_Field_keysLoop(node *Hx_Obj_haxe_ds_treenode, acc HxArray[any])
+	Hx_Field_keys() any
+	Hx_Field_removeLoop(k any, node *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
+	Hx_Field_getSortIndex(v any) HxNullable[int32]
+	Hx_Field_copy() *Hx_Obj_haxe_imap
+	Hx_Field_setLoop(k any, v any, node *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
 	Hx_Field_merge(t1 *Hx_Obj_haxe_ds_treenode, t2 *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
@@ -367,8 +367,8 @@ func (this *Hx_Obj_haxe_ds_enumvaluemap) Hx_Field_compareArg(v1 any, v2 any) int
 			if vt2.Hx_Field_enumIndex() == 6 {
 				var _hx_tmp_8 string
 				_ = _hx_tmp_8
-				_hx_tmp_8 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Unsupported comparison types: ", Hx_Field_std_string(vt1)), " ")
-				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_8, Hx_Field_std_string(vt2))))))
+				_hx_tmp_8 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Unsupported comparison types: ", Hx_Field_std_string(vt1)), " ")
+				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_8, Hx_Field_std_string(vt2))))))
 			} else {
 				var _hx_tmp_9 int32
 				_ = _hx_tmp_9
@@ -534,8 +534,8 @@ func (this *Hx_Obj_haxe_ds_enumvaluemap) Hx_Field_compareArg(v1 any, v2 any) int
 			if vt2.Hx_Field_enumIndex() == 9 {
 				var _hx_tmp_19 string
 				_ = _hx_tmp_19
-				_hx_tmp_19 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Unsupported comparison types: ", Hx_Field_std_string(vt1)), " ")
-				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_19, Hx_Field_std_string(vt2))))))
+				_hx_tmp_19 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Unsupported comparison types: ", Hx_Field_std_string(vt1)), " ")
+				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_19, Hx_Field_std_string(vt2))))))
 			} else {
 				var _hx_tmp_20 int32
 				_ = _hx_tmp_20

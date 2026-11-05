@@ -9,14 +9,14 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_io_bytesbuffer() {
 type Hx_Obj_VTable_haxe_io_bytesbuffer interface {
 	Hx_Field_get_length() int32
 	Hx_Field_addByte(_hx_reserved_byte int32)
-	Hx_Field_add(src *Hx_Obj_haxe_io_bytes)
-	Hx_Field_addBytes(src *Hx_Obj_haxe_io_bytes, pos int32, _hx_reserved_len int32)
-	Hx_Field_getBytes() *Hx_Obj_haxe_io_bytes
-	Hx_Field_addString(v string, encoding__isOptional any)
-	Hx_Field_addInt32(v int32)
 	Hx_Field_addInt64(v Hx_Typedef_haxe__int64___int64)
 	Hx_Field_addFloat(v float64)
 	Hx_Field_addDouble(v float64)
+	Hx_Field_addBytes(src *Hx_Obj_haxe_io_bytes, pos int32, _hx_reserved_len int32)
+	Hx_Field_add(src *Hx_Obj_haxe_io_bytes)
+	Hx_Field_addString(v string, encoding__isOptional any)
+	Hx_Field_addInt32(v int32)
+	Hx_Field_getBytes() *Hx_Obj_haxe_io_bytes
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

@@ -355,7 +355,7 @@ func (this *Hx_Obj_haxe_xml_xmlparserexception) Hx_As_Hx_Obj_haxe_xml_xmlparsere
 func (this *Hx_Obj_haxe_xml_xmlparserexception) Hx_Field_toString() string {
 	var _hx_tmp_1 string
 	_ = _hx_tmp_1
-	_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_type_getClassName(((*Hx_Obj_go_haxe_hxclass)(func() func(o *Hx_Obj_haxe_xml_xmlparserexception) *Hx_Obj_go_haxe_hxclass {
+	_hx_tmp_1 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(Hx_Field_type_getClassName(((*Hx_Obj_go_haxe_hxclass)(func() func(o *Hx_Obj_haxe_xml_xmlparserexception) *Hx_Obj_go_haxe_hxclass {
 		var _hx_closure_src_362 func(o any) *Hx_Obj_go_haxe_hxclass
 		_ = _hx_closure_src_362
 		_hx_closure_src_362 = Hx_Field_type_getClass
@@ -365,7 +365,7 @@ func (this *Hx_Obj_haxe_xml_xmlparserexception) Hx_Field_toString() string {
 	}()(this)))), ": "), this.Hx_Field_message), " at line ")
 	var _hx_tmp_0 string
 	_ = _hx_tmp_0
-	_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_stringConcat((_hx_tmp_1 + Hx_Field_go_haxe_hxdynamic_toString(this.Hx_Field_lineNumber)), " char ")
+	_hx_tmp_0 = Hx_Field_go_haxe_hxstring_concat((_hx_tmp_1 + Hx_Field_go_haxe_hxdynamic_toString(this.Hx_Field_lineNumber)), " char ")
 	return (_hx_tmp_0 + Hx_Field_go_haxe_hxdynamic_toString(this.Hx_Field_positionAtLine))
 }
 
@@ -743,7 +743,7 @@ func Hx_Field_haxe_xml_parser_doParse(str string, strict bool, p__isOptional any
 						tmp = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_9, _hx_tmp_10, HxNullable[int32]{Value: (p - start), Valid: true}))
 						aname = HxNullableString(tmp)
 						if xml.VTable.Hx_Field_exists((aname).Value) {
-							panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_haxe_xml_xmlparserexception_CreateInstance(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Duplicate attribute [", (aname).Value), "]"), str, p)))))
+							panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_haxe_xml_xmlparserexception_CreateInstance(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Duplicate attribute [", (aname).Value), "]"), str, p)))))
 						}
 
 						state = ((int32)(0))
@@ -800,7 +800,7 @@ func Hx_Field_haxe_xml_parser_doParse(str string, strict bool, p__isOptional any
 					case 60, 62:
 						{
 							if strict {
-								panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_haxe_xml_xmlparserexception_CreateInstance(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Invalid unescaped ", Hx_Field_go_haxe_hxstring_fromCharCode(c)), " in attribute value"), str, p)))))
+								panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_haxe_xml_xmlparserexception_CreateInstance(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Invalid unescaped ", Hx_Field_go_haxe_hxstring_fromCharCode(c)), " in attribute value"), str, p)))))
 							} else {
 								if c == attrValQuote {
 									var _hx_tmp_13 string
@@ -867,19 +867,19 @@ func Hx_Field_haxe_xml_parser_doParse(str string, strict bool, p__isOptional any
 						_ = v
 						v = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_17, _hx_tmp_18, HxNullable[int32]{Value: (p - start), Valid: true}))
 						if (parent == nil) || (parent.Hx_Field_nodeType != ((int32)(0))) {
-							panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_haxe_xml_xmlparserexception_CreateInstance(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Unexpected </", v), ">, tag is not open"), str, p)))))
+							panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_haxe_xml_xmlparserexception_CreateInstance(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Unexpected </", v), ">, tag is not open"), str, p)))))
 						}
 
 						if parent.Hx_Field_nodeType != Hx_Field_xml_Element {
-							panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(parent.Hx_Field_nodeType))))))
+							panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(parent.Hx_Field_nodeType))))))
 						}
 
 						if v != parent.Hx_Field_nodeName {
 							if parent.Hx_Field_nodeType != Hx_Field_xml_Element {
-								panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(parent.Hx_Field_nodeType))))))
+								panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(parent.Hx_Field_nodeType))))))
 							}
 
-							panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_haxe_xml_xmlparserexception_CreateInstance(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Expected </", parent.Hx_Field_nodeName), ">"), str, p)))))
+							panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_haxe_xml_xmlparserexception_CreateInstance(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Expected </", parent.Hx_Field_nodeName), ">"), str, p)))))
 						}
 
 						state = ((int32)(0))
@@ -1098,7 +1098,7 @@ func Hx_Field_haxe_xml_parser_doParse(str string, strict bool, p__isOptional any
 								var _hx_tmp_40 string
 								_ = _hx_tmp_40
 								_hx_tmp_40 = _hx_tmp_39
-								_hx_tmp_38 = Hx_Field_std_parseInt(Hx_Field_go_haxe_hxdynamic_stringConcat("0", (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_40, 1, HxNullable[int32]{Value: (int32(utf8.RuneCountInString(s)) - 1), Valid: true}))))
+								_hx_tmp_38 = Hx_Field_std_parseInt(Hx_Field_go_haxe_hxstring_concat("0", (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_40, 1, HxNullable[int32]{Value: (int32(utf8.RuneCountInString(s)) - 1), Valid: true}))))
 							} else {
 								var _hx_tmp_41 string
 								_ = _hx_tmp_41
@@ -1123,7 +1123,7 @@ func Hx_Field_haxe_xml_parser_doParse(str string, strict bool, p__isOptional any
 								}
 							}()(s) {
 								if strict {
-									panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_haxe_xml_xmlparserexception_CreateInstance(Hx_Field_go_haxe_hxdynamic_stringConcat("Undefined entity: ", s), str, p)))))
+									panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_haxe_xml_xmlparserexception_CreateInstance(Hx_Field_go_haxe_hxstring_concat("Undefined entity: ", s), str, p)))))
 								}
 
 								func() func(x string) {
@@ -1133,7 +1133,7 @@ func Hx_Field_haxe_xml_parser_doParse(str string, strict bool, p__isOptional any
 									return func(x string) {
 										_hx_closure_src_369(((any)(x)))
 									}
-								}()(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("&", s), ";"))
+								}()(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("&", s), ";"))
 							} else {
 								func() func(x HxNullable[string]) {
 									var _hx_closure_src_370 func(x any)
@@ -1180,7 +1180,7 @@ func Hx_Field_haxe_xml_parser_doParse(str string, strict bool, p__isOptional any
 					} else {
 						if !((((((((c >= 97) && (c <= 122)) || ((c >= 65) && (c <= 90))) || ((c >= 48) && (c <= 57))) || (c == 58)) || (c == 46)) || (c == 95)) || (c == 45)) && (c != 35) {
 							if strict {
-								panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_haxe_xml_xmlparserexception_CreateInstance(Hx_Field_go_haxe_hxdynamic_stringConcat("Invalid character in entity: ", Hx_Field_go_haxe_hxstring_fromCharCode(c)), str, p)))))
+								panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_haxe_xml_xmlparserexception_CreateInstance(Hx_Field_go_haxe_hxstring_concat("Invalid character in entity: ", Hx_Field_go_haxe_hxstring_fromCharCode(c)), str, p)))))
 							}
 
 							buf.VTable.Hx_Field_addChar(38)
@@ -1211,10 +1211,10 @@ func Hx_Field_haxe_xml_parser_doParse(str string, strict bool, p__isOptional any
 		if state == ((int32)(13)) {
 			if parent.Hx_Field_nodeType == ((int32)(0)) {
 				if parent.Hx_Field_nodeType != Hx_Field_xml_Element {
-					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(parent.Hx_Field_nodeType))))))
+					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(parent.Hx_Field_nodeType))))))
 				}
 
-				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_haxe_xml_xmlparserexception_CreateInstance(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Unclosed node <", parent.Hx_Field_nodeName), ">"), str, p)))))
+				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_haxe_xml_xmlparserexception_CreateInstance(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Unclosed node <", parent.Hx_Field_nodeName), ">"), str, p)))))
 			}
 
 			if p != start {

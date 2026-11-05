@@ -391,23 +391,23 @@ func Hx_Field_loreline_equal_stringMapEqual(interpreter *Hx_Obj_loreline_interpr
 	}
 
 	{
-		var _gkey any
-		_ = _gkey
-		_gkey = b.VTable.Hx_Field_keys()
+		var key any
+		_ = key
+		key = b.VTable.Hx_Field_keys()
 		for {
 			var _hx_tmp_3 any
 			_ = _hx_tmp_3
-			_hx_tmp_3 = Hx_Field_go_haxe_hxdynamic_getField(_gkey, "hasNext")
+			_hx_tmp_3 = Hx_Field_go_haxe_hxdynamic_getField(key, "hasNext")
 			if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_3, HxMakeArray[any]().Dyn()))) {
 				break
 			}
 
 			var _hx_tmp_4 any
 			_ = _hx_tmp_4
-			_hx_tmp_4 = Hx_Field_go_haxe_hxdynamic_getField(_gkey, "next")
-			var key string
-			_ = key
-			key = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_4, HxMakeArray[any]().Dyn()))
+			_hx_tmp_4 = Hx_Field_go_haxe_hxdynamic_getField(key, "next")
+			var key1 string
+			_ = key1
+			key1 = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_4, HxMakeArray[any]().Dyn()))
 			if !func() func(_hx_param_key string) bool {
 				var _hx_closure_src_537 func(_hx_param_key any) bool
 				_ = _hx_closure_src_537
@@ -415,7 +415,7 @@ func Hx_Field_loreline_equal_stringMapEqual(interpreter *Hx_Obj_loreline_interpr
 				return func(_hx_param_key string) bool {
 					return _hx_closure_src_537(((any)(_hx_param_key)))
 				}
-			}()(key) {
+			}()(key1) {
 				return false
 			}
 		}
@@ -491,23 +491,23 @@ func Hx_Field_loreline_equal_intMapEqual(interpreter *Hx_Obj_loreline_interprete
 	}
 
 	{
-		var _gkey any
-		_ = _gkey
-		_gkey = b.VTable.Hx_Field_keys()
+		var key any
+		_ = key
+		key = b.VTable.Hx_Field_keys()
 		for {
 			var _hx_tmp_3 any
 			_ = _hx_tmp_3
-			_hx_tmp_3 = Hx_Field_go_haxe_hxdynamic_getField(_gkey, "hasNext")
+			_hx_tmp_3 = Hx_Field_go_haxe_hxdynamic_getField(key, "hasNext")
 			if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_3, HxMakeArray[any]().Dyn()))) {
 				break
 			}
 
 			var _hx_tmp_4 any
 			_ = _hx_tmp_4
-			_hx_tmp_4 = Hx_Field_go_haxe_hxdynamic_getField(_gkey, "next")
-			var key int32
-			_ = key
-			key = ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_4, HxMakeArray[any]().Dyn()))))
+			_hx_tmp_4 = Hx_Field_go_haxe_hxdynamic_getField(key, "next")
+			var key1 int32
+			_ = key1
+			key1 = ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_4, HxMakeArray[any]().Dyn()))))
 			if !func() func(_hx_param_key int32) bool {
 				var _hx_closure_src_539 func(_hx_param_key any) bool
 				_ = _hx_closure_src_539
@@ -515,7 +515,7 @@ func Hx_Field_loreline_equal_intMapEqual(interpreter *Hx_Obj_loreline_interprete
 				return func(_hx_param_key int32) bool {
 					return _hx_closure_src_539(((any)(_hx_param_key)))
 				}
-			}()(key) {
+			}()(key1) {
 				return false
 			}
 		}

@@ -603,7 +603,7 @@ func Hx_Field_stringtools_hex(n int32, digits__isOptional any) string {
 		_ = hexChars
 		hexChars = "0123456789ABCDEF"
 		for {
-			s = Hx_Field_go_haxe_hxdynamic_stringConcat((Hx_Field_go_haxe_hxstring_charAt(hexChars, (n & 15))), s)
+			s = Hx_Field_go_haxe_hxstring_concat((Hx_Field_go_haxe_hxstring_charAt(hexChars, (n & 15))), s)
 			n = ((int32)((((uint32)(n)) >> 4)))
 			if !(n > 0) {
 				break
@@ -616,7 +616,7 @@ func Hx_Field_stringtools_hex(n int32, digits__isOptional any) string {
 					break
 				}
 
-				s = Hx_Field_go_haxe_hxdynamic_stringConcat("0", s)
+				s = Hx_Field_go_haxe_hxstring_concat("0", s)
 			}
 		}
 
@@ -651,7 +651,7 @@ func Hx_Field_stringtools_quoteUnixArg(argument string) string {
 		if !Hx_Obj_ereg_CreateInstance("[^a-zA-Z0-9_@%+=:,./-]", "").VTable.Hx_Field_match(argument) {
 			return argument
 		} else {
-			return Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("'", Hx_Field_stringtools_replace(argument, "'", "'\"'\"'")), "'")
+			return Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("'", Hx_Field_stringtools_replace(argument, "'", "'\"'\"'")), "'")
 		}
 	}
 }

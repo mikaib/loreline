@@ -70,7 +70,7 @@ func Hx_Obj_go_haxe_hxdynamic_CreateInstance() *Hx_Obj_go_haxe_hxdynamic {
 
 var Hx_Obj_go_haxe_hxdynamic_RTTI = Hx_Obj_go_haxe_hxclass_CreateInstance(
 	"go.haxe.HxDynamic",
-	HxMakeArray[string]("Null", "not", "increment", "decrement", "negate", "bitnot", "and", "or", "jointKind", "toAnySlice", "formatField", "isNilValue", "isNull", "equals", "enumEquals", "nequals", "lt", "gtequals", "gt", "ltequals", "add", "stringConcat", "subtract", "multiply", "divide", "modulo", "bitand", "bitor", "bitxor", "lbitshift", "rbitshift", "urbitshift", "toString", "toBool", "valueToInt", "isClass", "classVTable", "convertToType", "createNewClosure", "call", "toInt", "valueToInt64", "toInt64", "valueToFloat", "toFloat", "valueToClass", "toClass", "castClass", "isNullableType", "unwrapNullable", "getField", "tryHxClass", "tryHxEnum", "hxEnumConstructor", "isHxClass", "isHxEnum", "isHxEnumValue", "asClass", "asEnum", "hxClassStaticValue", "getFieldFrom", "setField", "tryDynamicArray", "setArrayIndex", "getArrayIndex", "getArrayLength", "ensureValue", "valueToAssign", "ensureConcreteValue", "ensureInterface", "funcReceiver"),
+	HxMakeArray[string]("Null", "not", "increment", "decrement", "negate", "bitnot", "and", "or", "jointKind", "toAnySlice", "formatField", "isNilValue", "isNull", "equals", "enumEquals", "nequals", "lt", "gtequals", "gt", "ltequals", "add", "subtract", "multiply", "divide", "modulo", "bitand", "bitor", "bitxor", "lbitshift", "rbitshift", "urbitshift", "toString", "toBool", "valueToInt", "isClass", "classVTable", "convertToType", "createNewClosure", "call", "toInt", "valueToInt64", "toInt64", "valueToFloat", "toFloat", "valueToClass", "toClass", "castClass", "isNullableType", "unwrapNullable", "getField", "tryHxClass", "tryHxEnum", "hxEnumConstructor", "isHxClass", "isHxEnum", "isHxEnumValue", "asClass", "asEnum", "hxClassStaticValue", "getFieldFrom", "setField", "tryDynamicArray", "setArrayIndex", "getArrayIndex", "getArrayLength", "ensureValue", "valueToAssign", "ensureConcreteValue", "ensureInterface", "funcReceiver"),
 	HxMakeArray[string](),
 	nil,
 	HxMakeArray[*Hx_Obj_go_haxe_hxclass](),
@@ -129,8 +129,6 @@ func init() {
 			return Hx_Field_go_haxe_hxdynamic_ltequals
 		case "add":
 			return Hx_Field_go_haxe_hxdynamic_add
-		case "stringConcat":
-			return Hx_Field_go_haxe_hxdynamic_stringConcat
 		case "subtract":
 			return Hx_Field_go_haxe_hxdynamic_subtract
 		case "multiply":
@@ -262,7 +260,7 @@ func Hx_Field_go_haxe_hxdynamic_not(d any) bool {
 		return !dB
 	}
 
-	panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.not value invalid: ", Hx_Field_std_string(d))))))
+	panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.not value invalid: ", Hx_Field_std_string(d))))))
 }
 
 func Hx_Field_go_haxe_hxdynamic_increment(d any) any {
@@ -285,7 +283,7 @@ func Hx_Field_go_haxe_hxdynamic_increment(d any) any {
 		}
 	}
 
-	panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.increment value invalid: ", Hx_Field_std_string(d))))))
+	panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.increment value invalid: ", Hx_Field_std_string(d))))))
 }
 
 func Hx_Field_go_haxe_hxdynamic_decrement(d any) any {
@@ -308,7 +306,7 @@ func Hx_Field_go_haxe_hxdynamic_decrement(d any) any {
 		}
 	}
 
-	panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.decrement value invalid: ", Hx_Field_std_string(d))))))
+	panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.decrement value invalid: ", Hx_Field_std_string(d))))))
 }
 
 func Hx_Field_go_haxe_hxdynamic_negate(d any) any {
@@ -331,7 +329,7 @@ func Hx_Field_go_haxe_hxdynamic_negate(d any) any {
 		}
 	}
 
-	panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.negate value invalid: ", Hx_Field_std_string(d))))))
+	panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.negate value invalid: ", Hx_Field_std_string(d))))))
 }
 
 func Hx_Field_go_haxe_hxdynamic_bitnot(d any) any {
@@ -350,7 +348,7 @@ func Hx_Field_go_haxe_hxdynamic_bitnot(d any) any {
 		return ((any)(^Hx_Field_go_haxe_hxdynamic_valueToInt(dV)))
 	}
 
-	panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.bitnot value invalid: ", Hx_Field_std_string(d))))))
+	panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.bitnot value invalid: ", Hx_Field_std_string(d))))))
 }
 
 func Hx_Field_go_haxe_hxdynamic_and(a any, b any) bool {
@@ -390,8 +388,8 @@ func Hx_Field_go_haxe_hxdynamic_and(a any, b any) bool {
 	} else {
 		var _hx_tmp_5 string
 		_ = _hx_tmp_5
-		_hx_tmp_5 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.and invalid operands: ", aV.String()), " and ")
-		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_5, bV.String())))))
+		_hx_tmp_5 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.and invalid operands: ", aV.String()), " and ")
+		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_5, bV.String())))))
 	}
 }
 
@@ -432,8 +430,8 @@ func Hx_Field_go_haxe_hxdynamic_or(a any, b any) bool {
 	} else {
 		var _hx_tmp_5 string
 		_ = _hx_tmp_5
-		_hx_tmp_5 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.or invalid operands: ", aV.String()), " and ")
-		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_5, bV.String())))))
+		_hx_tmp_5 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.or invalid operands: ", aV.String()), " and ")
+		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_5, bV.String())))))
 	}
 }
 
@@ -578,7 +576,7 @@ func Hx_Field_go_haxe_hxdynamic_formatField(name string) string {
 		return name
 	}
 
-	return Hx_Field_go_haxe_hxdynamic_stringConcat("Hx_Field_", name)
+	return Hx_Field_go_haxe_hxstring_concat("Hx_Field_", name)
 }
 
 func Hx_Field_go_haxe_hxdynamic_isNilValue(v reflect.Value) bool {
@@ -1097,8 +1095,8 @@ func Hx_Field_go_haxe_hxdynamic_lt(a any, b any) bool {
 			} else {
 				var _hx_tmp_9 string
 				_ = _hx_tmp_9
-				_hx_tmp_9 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.lt invalid operands: ", aV.String()), " and ")
-				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_9, bV.String())))))
+				_hx_tmp_9 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.lt invalid operands: ", aV.String()), " and ")
+				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_9, bV.String())))))
 			}
 		}
 	}
@@ -1161,8 +1159,8 @@ func Hx_Field_go_haxe_hxdynamic_gt(a any, b any) bool {
 			} else {
 				var _hx_tmp_9 string
 				_ = _hx_tmp_9
-				_hx_tmp_9 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.gt invalid operands: ", aV.String()), " and ")
-				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_9, bV.String())))))
+				_hx_tmp_9 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.gt invalid operands: ", aV.String()), " and ")
+				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_9, bV.String())))))
 			}
 		}
 	}
@@ -1224,19 +1222,15 @@ func Hx_Field_go_haxe_hxdynamic_add(a any, b any) any {
 				var bS string
 				_ = bS
 				bS = Hx_Field_go_haxe_hxdynamic_toString(b)
-				return ((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(aS, bS)))
+				return ((any)(Hx_Field_go_haxe_hxstring_concat(aS, bS)))
 			} else {
 				var _hx_tmp_8 string
 				_ = _hx_tmp_8
-				_hx_tmp_8 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.add invalid operands: ", aV.String()), " and ")
-				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_8, bV.String())))))
+				_hx_tmp_8 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.add invalid operands: ", aV.String()), " and ")
+				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_8, bV.String())))))
 			}
 		}
 	}
-}
-
-func Hx_Field_go_haxe_hxdynamic_stringConcat(a string, b string) string {
-	return HxStringConcat(a, b)
 }
 
 func Hx_Field_go_haxe_hxdynamic_subtract(a any, b any) any {
@@ -1283,8 +1277,8 @@ func Hx_Field_go_haxe_hxdynamic_subtract(a any, b any) any {
 		} else {
 			var _hx_tmp_7 string
 			_ = _hx_tmp_7
-			_hx_tmp_7 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.subtract invalid operands: ", aV.String()), " and ")
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_7, bV.String())))))
+			_hx_tmp_7 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.subtract invalid operands: ", aV.String()), " and ")
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_7, bV.String())))))
 		}
 	}
 }
@@ -1333,8 +1327,8 @@ func Hx_Field_go_haxe_hxdynamic_multiply(a any, b any) any {
 		} else {
 			var _hx_tmp_7 string
 			_ = _hx_tmp_7
-			_hx_tmp_7 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.multiply invalid operands: ", aV.String()), " and ")
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_7, bV.String())))))
+			_hx_tmp_7 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.multiply invalid operands: ", aV.String()), " and ")
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_7, bV.String())))))
 		}
 	}
 }
@@ -1374,8 +1368,8 @@ func Hx_Field_go_haxe_hxdynamic_divide(a any, b any) any {
 	} else {
 		var _hx_tmp_5 string
 		_ = _hx_tmp_5
-		_hx_tmp_5 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.divide invalid operands: ", aV.String()), " and ")
-		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_5, bV.String())))))
+		_hx_tmp_5 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.divide invalid operands: ", aV.String()), " and ")
+		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_5, bV.String())))))
 	}
 }
 
@@ -1423,8 +1417,8 @@ func Hx_Field_go_haxe_hxdynamic_modulo(a any, b any) any {
 		} else {
 			var _hx_tmp_7 string
 			_ = _hx_tmp_7
-			_hx_tmp_7 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.modulo invalid operands: ", aV.String()), " and ")
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_7, bV.String())))))
+			_hx_tmp_7 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.modulo invalid operands: ", aV.String()), " and ")
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_7, bV.String())))))
 		}
 	}
 }
@@ -1464,8 +1458,8 @@ func Hx_Field_go_haxe_hxdynamic_bitand(a any, b any) any {
 	} else {
 		var _hx_tmp_5 string
 		_ = _hx_tmp_5
-		_hx_tmp_5 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.bitand invalid operands: ", aV.String()), " and ")
-		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_5, bV.String())))))
+		_hx_tmp_5 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.bitand invalid operands: ", aV.String()), " and ")
+		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_5, bV.String())))))
 	}
 }
 
@@ -1504,8 +1498,8 @@ func Hx_Field_go_haxe_hxdynamic_bitor(a any, b any) any {
 	} else {
 		var _hx_tmp_5 string
 		_ = _hx_tmp_5
-		_hx_tmp_5 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.bitor invalid operands: ", aV.String()), " and ")
-		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_5, bV.String())))))
+		_hx_tmp_5 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.bitor invalid operands: ", aV.String()), " and ")
+		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_5, bV.String())))))
 	}
 }
 
@@ -1544,8 +1538,8 @@ func Hx_Field_go_haxe_hxdynamic_bitxor(a any, b any) any {
 	} else {
 		var _hx_tmp_5 string
 		_ = _hx_tmp_5
-		_hx_tmp_5 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.bitxor invalid operands: ", aV.String()), " and ")
-		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_5, bV.String())))))
+		_hx_tmp_5 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.bitxor invalid operands: ", aV.String()), " and ")
+		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_5, bV.String())))))
 	}
 }
 
@@ -1584,8 +1578,8 @@ func Hx_Field_go_haxe_hxdynamic_lbitshift(a any, b any) any {
 	} else {
 		var _hx_tmp_5 string
 		_ = _hx_tmp_5
-		_hx_tmp_5 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.lbitshift invalid operands: ", aV.String()), " and ")
-		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_5, bV.String())))))
+		_hx_tmp_5 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.lbitshift invalid operands: ", aV.String()), " and ")
+		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_5, bV.String())))))
 	}
 }
 
@@ -1624,8 +1618,8 @@ func Hx_Field_go_haxe_hxdynamic_rbitshift(a any, b any) any {
 	} else {
 		var _hx_tmp_5 string
 		_ = _hx_tmp_5
-		_hx_tmp_5 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.rbitshift invalid operands: ", aV.String()), " and ")
-		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_5, bV.String())))))
+		_hx_tmp_5 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.rbitshift invalid operands: ", aV.String()), " and ")
+		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_5, bV.String())))))
 	}
 }
 
@@ -1664,8 +1658,8 @@ func Hx_Field_go_haxe_hxdynamic_urbitshift(a any, b any) any {
 	} else {
 		var _hx_tmp_5 string
 		_ = _hx_tmp_5
-		_hx_tmp_5 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.urbitshift invalid operands: ", aV.String()), " and ")
-		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_5, bV.String())))))
+		_hx_tmp_5 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.urbitshift invalid operands: ", aV.String()), " and ")
+		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_5, bV.String())))))
 	}
 }
 
@@ -2131,7 +2125,7 @@ func Hx_Field_go_haxe_hxdynamic_call(fn any, args HxArray[any]) any {
 	_ = _hx_tmp_1
 	_hx_tmp_1 = fV.Kind()
 	if _hx_tmp_1 != reflect.Func {
-		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.call value not callable: ", Hx_Field_std_string(fn))))))
+		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.call value not callable: ", Hx_Field_std_string(fn))))))
 	}
 
 	var fType reflect.Type
@@ -2587,7 +2581,7 @@ func Hx_Field_go_haxe_hxdynamic_castClass(d any, className string) any {
 	_ = cls
 	cls = Hx_Field_go_haxe_hxdynamic_valueToClass(_hx_tmp_0, _hx_tmp_1, nil)
 	if !cls.IsValid() {
-		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Can't cast ", v.Type().String()), " to "), className)))))
+		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Can't cast ", v.Type().String()), " to "), className)))))
 	}
 
 	var _hx_tmp_2 reflect.Kind
@@ -2880,7 +2874,7 @@ func Hx_Field_go_haxe_hxdynamic_getFieldFrom(dyn any, fieldName string, hop bool
 	}
 
 	if Hx_Field_go_haxe_hxdynamic_isNull(dyn) {
-		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.field null field access: ", fieldName)))))
+		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.field null field access: ", fieldName)))))
 	}
 
 	var hxCls *Hx_Obj_go_haxe_hxclass
@@ -3229,7 +3223,7 @@ func Hx_Field_go_haxe_hxdynamic_getFieldFrom(dyn any, fieldName string, hop bool
 	}
 
 	if _hx_tmp_1 {
-		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.field null field access: ", fieldName)))))
+		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.field null field access: ", fieldName)))))
 	}
 
 	var _hx_tmp_2 bool
@@ -3598,7 +3592,7 @@ func Hx_Field_go_haxe_hxdynamic_setField(dyn any, fieldName string, v any) any {
 		sv = Hx_Field_go_haxe_hxdynamic_hxClassStaticValue(hxCls, fieldName)
 		if sv.IsValid() {
 			if !sv.CanSet() {
-				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.setField cannot set static \"", fieldName), "\" on \""), hxCls.Hx_Field_name), "\"")))))
+				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.setField cannot set static \"", fieldName), "\" on \""), hxCls.Hx_Field_name), "\"")))))
 			}
 
 			var _hx_tmp_0 any
@@ -3640,15 +3634,15 @@ func Hx_Field_go_haxe_hxdynamic_setField(dyn any, fieldName string, v any) any {
 		if !field.IsValid() {
 			var _hx_tmp_4 string
 			_ = _hx_tmp_4
-			_hx_tmp_4 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.setField field \"", fieldName), "\" not present on \"")
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_4, Hx_Field_std_string(value)), "\"")))))
+			_hx_tmp_4 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.setField field \"", fieldName), "\" not present on \"")
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_4, Hx_Field_std_string(value)), "\"")))))
 		}
 
 		if !field.CanSet() {
 			var _hx_tmp_5 string
 			_ = _hx_tmp_5
-			_hx_tmp_5 = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("runtime.HxDynamic.setField cannot set \"", fieldName), "\" on \"")
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_5, Hx_Field_std_string(value)), "\"")))))
+			_hx_tmp_5 = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("runtime.HxDynamic.setField cannot set \"", fieldName), "\" on \"")
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_5, Hx_Field_std_string(value)), "\"")))))
 		}
 
 		var _hx_tmp_6 any

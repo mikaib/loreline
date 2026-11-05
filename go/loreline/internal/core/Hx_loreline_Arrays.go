@@ -328,15 +328,12 @@ func Hx_Field_loreline_arrays_arrayJoin(array any, sep string) string {
 				}()(sep)
 			}
 
-			var tmp any
-			_ = tmp
-			tmp = Hx_Field_loreline_arrays_arrayGet(array, i)
 			var _hx_tmp_1 string
 			_ = _hx_tmp_1
-			if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(tmp, nil))) {
+			if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_loreline_arrays_arrayGet(array, i), nil))) {
 				_hx_tmp_1 = "null"
 			} else {
-				_hx_tmp_1 = Hx_Field_std_string(tmp)
+				_hx_tmp_1 = Hx_Field_std_string(Hx_Field_loreline_arrays_arrayGet(array, i))
 			}
 
 			func() func(x string) {

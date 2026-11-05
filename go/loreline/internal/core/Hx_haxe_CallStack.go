@@ -625,7 +625,7 @@ func Hx_Field_haxe__callstack_callstack_impl__exceptionToString(e *Hx_Obj_haxe_e
 	if e.VTable.Hx_Field_get_previous() == nil {
 		var tmp string
 		_ = tmp
-		tmp = Hx_Field_go_haxe_hxdynamic_stringConcat("Exception: ", e.VTable.Hx_Field_toString())
+		tmp = Hx_Field_go_haxe_hxstring_concat("Exception: ", e.VTable.Hx_Field_toString())
 		var tmp1 HxArray[Hx_Enum_haxe_stackitem]
 		_ = tmp1
 		tmp1 = e.VTable.Hx_Field_get_stack()
@@ -640,7 +640,7 @@ func Hx_Field_haxe__callstack_callstack_impl__exceptionToString(e *Hx_Obj_haxe_e
 			_hx_tmp_1 = Hx_Field_haxe__callstack_callstack_impl__toString(tmp1)
 		}
 
-		return Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_0, (_hx_tmp_1))
+		return Hx_Field_go_haxe_hxstring_concat(_hx_tmp_0, (_hx_tmp_1))
 	}
 
 	var result string
@@ -655,7 +655,7 @@ func Hx_Field_haxe__callstack_callstack_impl__exceptionToString(e *Hx_Obj_haxe_e
 		if prev == nil {
 			var result1 string
 			_ = result1
-			result1 = Hx_Field_go_haxe_hxdynamic_stringConcat("Exception: ", e1.VTable.Hx_Field_get_message())
+			result1 = Hx_Field_go_haxe_hxstring_concat("Exception: ", e1.VTable.Hx_Field_get_message())
 			var tmp HxArray[Hx_Enum_haxe_stackitem]
 			_ = tmp
 			tmp = e1.VTable.Hx_Field_get_stack()
@@ -670,7 +670,7 @@ func Hx_Field_haxe__callstack_callstack_impl__exceptionToString(e *Hx_Obj_haxe_e
 				_hx_tmp_3 = Hx_Field_haxe__callstack_callstack_impl__toString(tmp)
 			}
 
-			result = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_2, (_hx_tmp_3)), result)
+			result = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_2, (_hx_tmp_3)), result)
 		} else {
 			var _hx_tmp_4 HxArray[Hx_Enum_haxe_stackitem]
 			_ = _hx_tmp_4
@@ -680,7 +680,7 @@ func Hx_Field_haxe__callstack_callstack_impl__exceptionToString(e *Hx_Obj_haxe_e
 			prevStack = Hx_Field_haxe__callstack_callstack_impl__subtract(_hx_tmp_4, prev.VTable.Hx_Field_get_stack())
 			var _hx_tmp_5 string
 			_ = _hx_tmp_5
-			_hx_tmp_5 = Hx_Field_go_haxe_hxdynamic_stringConcat("Exception: ", e1.VTable.Hx_Field_get_message())
+			_hx_tmp_5 = Hx_Field_go_haxe_hxstring_concat("Exception: ", e1.VTable.Hx_Field_get_message())
 			var _hx_tmp_6 string
 			_ = _hx_tmp_6
 			if prevStack == nil {
@@ -689,7 +689,7 @@ func Hx_Field_haxe__callstack_callstack_impl__exceptionToString(e *Hx_Obj_haxe_e
 				_hx_tmp_6 = Hx_Field_haxe__callstack_callstack_impl__toString(prevStack)
 			}
 
-			result = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_5, (_hx_tmp_6)), "\n\nNext "), result)
+			result = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_5, (_hx_tmp_6)), "\n\nNext "), result)
 		}
 
 		prev = e1

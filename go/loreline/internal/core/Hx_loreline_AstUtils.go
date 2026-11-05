@@ -221,7 +221,7 @@ func Hx_Field_loreline_astutils_removeQuotes(node *Hx_Obj_loreline_astnode) {
 								var text string
 								_ = text
 								text = _g2.(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
-								fullText = Hx_Field_go_haxe_hxdynamic_stringConcat(fullText, text)
+								fullText = Hx_Field_go_haxe_hxstring_concat(fullText, text)
 							}
 						}
 					}
@@ -924,7 +924,7 @@ func Hx_Field_loreline_astutils_insertLocalizationKeys(content string, node *Hx_
 				var _hx_tmp_11 any
 				_ = _hx_tmp_11
 				_hx_tmp_11 = ((any)((str.Hx_Field_pos.Hx_Field_offset + str.Hx_Field_pos.Hx_Field_length)))
-				_ = (Hx_Array_Push[any](_hx_tmp_10, any(map[string]any{"offset": _hx_tmp_11, "text": ((any)(Hx_Field_go_haxe_hxdynamic_stringConcat(" #", id)))})))
+				_ = (Hx_Array_Push[any](_hx_tmp_10, any(map[string]any{"offset": _hx_tmp_11, "text": ((any)(Hx_Field_go_haxe_hxstring_concat(" #", id)))})))
 			}
 		})
 		if Hx_Field_go_haxe_hxdynamic_getArrayLength(insertions) == 0 {
@@ -1020,7 +1020,7 @@ func Hx_Field_loreline_astutils_insertLocalizationKeys(content string, node *Hx_
 					_hx_tmp_20 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_23, _hx_tmp_24, HxNullable[int32]{}))
 				}
 
-				result = Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_19, (_hx_tmp_20))
+				result = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_19, (_hx_tmp_20))
 			}
 		}
 
@@ -1249,7 +1249,7 @@ func Hx_Field_loreline_astutils_removeLocalizationKeys(content string, node *Hx_
 				_hx_tmp_14 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_17, _hx_tmp_18, HxNullable[int32]{}))
 			}
 
-			result = Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_13, (_hx_tmp_14))
+			result = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_13, (_hx_tmp_14))
 		}
 	}
 
@@ -3116,14 +3116,14 @@ func Hx_Field_loreline_astutils_randomId(rng *Hx_Obj_loreline_random, length int
 		_hx_tmp_13 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_14, 0, HxNullable[int32]{Value: pos, Valid: true}))
 		var _hx_tmp_12 string
 		_ = _hx_tmp_12
-		_hx_tmp_12 = Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_13, Hx_Field_go_haxe_hxstring_fromCharCode((replacement).Value))
+		_hx_tmp_12 = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_13, Hx_Field_go_haxe_hxstring_fromCharCode((replacement).Value))
 		var _hx_tmp_15 string
 		_ = _hx_tmp_15
 		_hx_tmp_15 = result
 		var _hx_tmp_16 int32
 		_ = _hx_tmp_16
 		_hx_tmp_16 = (pos + 1)
-		result = Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_12, (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_15, _hx_tmp_16, HxNullable[int32]{})))
+		result = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_12, (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_15, _hx_tmp_16, HxNullable[int32]{})))
 	}
 
 	return result

@@ -195,7 +195,7 @@ func (this *Hx_Obj_haxe_io_path) Hx_Field_toString() string {
 		var _hx_tmp_3 string
 		_ = _hx_tmp_3
 		_hx_tmp_3 = _hx_tmp_1
-		_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_3, (_hx_tmp_2))
+		_hx_tmp_0 = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_3, (_hx_tmp_2))
 	}
 
 	var _hx_tmp_4 string
@@ -203,10 +203,10 @@ func (this *Hx_Obj_haxe_io_path) Hx_Field_toString() string {
 	if (this.Hx_Field_ext).Valid == false {
 		_hx_tmp_4 = ""
 	} else {
-		_hx_tmp_4 = Hx_Field_go_haxe_hxdynamic_stringConcat(".", (this.Hx_Field_ext).Value)
+		_hx_tmp_4 = Hx_Field_go_haxe_hxstring_concat(".", (this.Hx_Field_ext).Value)
 	}
 
-	return Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat((_hx_tmp_0), this.Hx_Field_file), (_hx_tmp_4))
+	return Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat((_hx_tmp_0), this.Hx_Field_file), (_hx_tmp_4))
 }
 
 func Hx_Field_haxe_io_path_withoutExtension(path string) string {
@@ -312,7 +312,7 @@ func Hx_Field_haxe_io_path_join(paths HxArray[string]) string {
 			_ = i
 			i = _hx_tmp_1
 			path = Hx_Field_haxe_io_path_addTrailingSlash(path)
-			path = Hx_Field_go_haxe_hxdynamic_stringConcat(path, paths1.Get(i))
+			path = Hx_Field_go_haxe_hxstring_concat(path, paths1.Get(i))
 		}
 	}
 
@@ -531,7 +531,7 @@ func Hx_Field_haxe_io_path_addTrailingSlash(path string) string {
 		_ = _hx_tmp_2
 		_hx_tmp_2 = c2
 		if _hx_tmp_2 != (int32(utf8.RuneCountInString(path)) - 1) {
-			return Hx_Field_go_haxe_hxdynamic_stringConcat(path, "\\")
+			return Hx_Field_go_haxe_hxstring_concat(path, "\\")
 		} else {
 			return path
 		}
@@ -540,7 +540,7 @@ func Hx_Field_haxe_io_path_addTrailingSlash(path string) string {
 		_ = _hx_tmp_3
 		_hx_tmp_3 = c1
 		if _hx_tmp_3 != (int32(utf8.RuneCountInString(path)) - 1) {
-			return Hx_Field_go_haxe_hxdynamic_stringConcat(path, "/")
+			return Hx_Field_go_haxe_hxstring_concat(path, "/")
 		} else {
 			return path
 		}

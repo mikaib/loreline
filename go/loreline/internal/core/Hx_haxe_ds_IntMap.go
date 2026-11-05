@@ -7,17 +7,17 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_ds_intmap() {
 }
 
 type Hx_Obj_VTable_haxe_ds_intmap interface {
-	Hx_Field_set(_hx_param_key any, _hx_param_value any)
-	Hx_Field_get(_hx_param_key any) any
-	Hx_Field_exists(_hx_param_key any) bool
-	Hx_Field_keys() any
-	Hx_Field_iterator() any
-	Hx_Field_copy() *Hx_Obj_haxe_imap
-	Hx_Field_clear()
-	Hx_Field_remove(_hx_param_key any) bool
 	Hx_Field_keyValueIterator() any
 	Hx_Field_toString() string
+	Hx_Field_set(_hx_param_key any, _hx_param_value any)
+	Hx_Field_remove(_hx_param_key any) bool
+	Hx_Field_keys() any
+	Hx_Field_copy() *Hx_Obj_haxe_imap
+	Hx_Field_clear()
 	Hx_Field_size() int32
+	Hx_Field_get(_hx_param_key any) any
+	Hx_Field_exists(_hx_param_key any) bool
+	Hx_Field_iterator() any
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -180,27 +180,27 @@ func (this *Hx_Obj_haxe_ds_intmap) Hx_Field_copy() *Hx_Obj_haxe_imap {
 	_ = copied
 	copied = Hx_Obj_haxe_ds_intmap_CreateInstance()
 	{
-		var _gkey any
-		_ = _gkey
-		_gkey = this.VTable.Hx_Field_keys()
+		var key any
+		_ = key
+		key = this.VTable.Hx_Field_keys()
 		for {
 			var _hx_tmp_0 any
 			_ = _hx_tmp_0
-			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(_gkey, "hasNext")
+			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(key, "hasNext")
 			if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_0, HxMakeArray[any]().Dyn()))) {
 				break
 			}
 
 			var _hx_tmp_1 any
 			_ = _hx_tmp_1
-			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(_gkey, "next")
-			var key int32
-			_ = key
-			key = ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()))))
+			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(key, "next")
+			var key1 int32
+			_ = key1
+			key1 = ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()))))
 			var _hx_tmp_2 int32
 			_ = _hx_tmp_2
-			_hx_tmp_2 = key
-			copied.VTable.Hx_Field_set(_hx_tmp_2, this.VTable.Hx_Field_get(key))
+			_hx_tmp_2 = key1
+			copied.VTable.Hx_Field_set(_hx_tmp_2, this.VTable.Hx_Field_get(key1))
 		}
 	}
 

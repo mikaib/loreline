@@ -92,7 +92,7 @@ func Hx_Field_loreline_translation_xlifftranslation_toLoreline(content string, l
 					if e, _hx_ok := Hx_Field_haxe_exception_catchValue(_hx_ex, "any").(any); _hx_ok {
 						_ = e
 						{
-							panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_error_CreateInstance(Hx_Field_go_haxe_hxdynamic_stringConcat("Invalid XLIFF: ", Hx_Field_std_string(e)), nil)))))
+							panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_error_CreateInstance(Hx_Field_go_haxe_hxstring_concat("Invalid XLIFF: ", Hx_Field_std_string(e)), nil)))))
 						}
 					} else {
 						panic(_hx_ex)
@@ -115,7 +115,7 @@ func Hx_Field_loreline_translation_xlifftranslation_toLoreline(content string, l
 	_ = xliff
 	{
 		if (root.Hx_Field_nodeType != Hx_Field_xml_Document) && (root.Hx_Field_nodeType != Hx_Field_xml_Element) {
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element or Document but found ", Hx_Field__xml_xmltype_impl__toString(root.Hx_Field_nodeType))))))
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element or Document but found ", Hx_Field__xml_xmltype_impl__toString(root.Hx_Field_nodeType))))))
 		}
 
 		var _g_current int32
@@ -144,7 +144,7 @@ func Hx_Field_loreline_translation_xlifftranslation_toLoreline(content string, l
 			child = _hx_tmp_2.Get(_hx_tmp_3)
 			if child.Hx_Field_nodeType == ((int32)(0)) {
 				if child.Hx_Field_nodeType != Hx_Field_xml_Element {
-					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(child.Hx_Field_nodeType))))))
+					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(child.Hx_Field_nodeType))))))
 				}
 
 				if child.Hx_Field_nodeName == "xliff" {
@@ -192,20 +192,20 @@ func Hx_Field_loreline_translation_xlifftranslation_toLoreline(content string, l
 	_ = first
 	first = true
 	{
-		var _gfile any
-		_ = _gfile
-		_gfile = xliff.VTable.Hx_Field_elementsNamed("file")
+		var file any
+		_ = file
+		file = xliff.VTable.Hx_Field_elementsNamed("file")
 		for {
 			var _hx_tmp_6 any
 			_ = _hx_tmp_6
-			_hx_tmp_6 = Hx_Field_go_haxe_hxdynamic_getField(_gfile, "hasNext")
+			_hx_tmp_6 = Hx_Field_go_haxe_hxdynamic_getField(file, "hasNext")
 			if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_6, HxMakeArray[any]().Dyn()))) {
 				break
 			}
 
 			var _hx_tmp_7 any
 			_ = _hx_tmp_7
-			_hx_tmp_7 = Hx_Field_go_haxe_hxdynamic_getField(_gfile, "next")
+			_hx_tmp_7 = Hx_Field_go_haxe_hxdynamic_getField(file, "next")
 			var hx_dyncast_363 any
 			_ = hx_dyncast_363
 			hx_dyncast_363 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_7, HxMakeArray[any]().Dyn()), "Hx_Obj_xml")
@@ -217,14 +217,14 @@ func Hx_Field_loreline_translation_xlifftranslation_toLoreline(content string, l
 				_hx_tmp_8 = nil
 			}
 
-			var file *Hx_Obj_xml
-			_ = file
-			file = _hx_tmp_8
+			var file1 *Hx_Obj_xml
+			_ = file1
+			file1 = _hx_tmp_8
 			if !is2x {
 				var _hx_tmp_9 HxNullable[string]
 				_ = _hx_tmp_9
-				if file.VTable.Hx_Field_exists("target-language") {
-					_hx_tmp_9 = file.VTable.Hx_Field_get("target-language")
+				if file1.VTable.Hx_Field_exists("target-language") {
+					_hx_tmp_9 = file1.VTable.Hx_Field_get("target-language")
 				} else {
 					_hx_tmp_9 = HxNullable[string]{Value: HxStringNull}
 				}
@@ -246,20 +246,20 @@ func Hx_Field_loreline_translation_xlifftranslation_toLoreline(content string, l
 			}
 
 			if is2x {
-				var _gunit any
-				_ = _gunit
-				_gunit = file.VTable.Hx_Field_elementsNamed("unit")
+				var unit any
+				_ = unit
+				unit = file1.VTable.Hx_Field_elementsNamed("unit")
 				for {
 					var _hx_tmp_11 any
 					_ = _hx_tmp_11
-					_hx_tmp_11 = Hx_Field_go_haxe_hxdynamic_getField(_gunit, "hasNext")
+					_hx_tmp_11 = Hx_Field_go_haxe_hxdynamic_getField(unit, "hasNext")
 					if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_11, HxMakeArray[any]().Dyn()))) {
 						break
 					}
 
 					var _hx_tmp_12 any
 					_ = _hx_tmp_12
-					_hx_tmp_12 = Hx_Field_go_haxe_hxdynamic_getField(_gunit, "next")
+					_hx_tmp_12 = Hx_Field_go_haxe_hxdynamic_getField(unit, "next")
 					var hx_dyncast_364 any
 					_ = hx_dyncast_364
 					hx_dyncast_364 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_12, HxMakeArray[any]().Dyn()), "Hx_Obj_xml")
@@ -271,34 +271,34 @@ func Hx_Field_loreline_translation_xlifftranslation_toLoreline(content string, l
 						_hx_tmp_13 = nil
 					}
 
-					var unit *Hx_Obj_xml
-					_ = unit
-					unit = _hx_tmp_13
-					if !unit.VTable.Hx_Field_exists("id") {
+					var unit1 *Hx_Obj_xml
+					_ = unit1
+					unit1 = _hx_tmp_13
+					if !unit1.VTable.Hx_Field_exists("id") {
 						continue
 					}
 
 					var id HxNullable[string]
 					_ = id
-					id = unit.VTable.Hx_Field_get("id")
+					id = unit1.VTable.Hx_Field_get("id")
 					var _g HxArray[*Hx_Obj_xml]
 					_ = _g
 					_g = HxMakeArray[*Hx_Obj_xml]()
 					{
-						var _gs any
-						_ = _gs
-						_gs = unit.VTable.Hx_Field_elementsNamed("segment")
+						var s any
+						_ = s
+						s = unit1.VTable.Hx_Field_elementsNamed("segment")
 						for {
 							var _hx_tmp_14 any
 							_ = _hx_tmp_14
-							_hx_tmp_14 = Hx_Field_go_haxe_hxdynamic_getField(_gs, "hasNext")
+							_hx_tmp_14 = Hx_Field_go_haxe_hxdynamic_getField(s, "hasNext")
 							if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_14, HxMakeArray[any]().Dyn()))) {
 								break
 							}
 
 							var _hx_tmp_15 any
 							_ = _hx_tmp_15
-							_hx_tmp_15 = Hx_Field_go_haxe_hxdynamic_getField(_gs, "next")
+							_hx_tmp_15 = Hx_Field_go_haxe_hxdynamic_getField(s, "next")
 							var hx_dyncast_365 any
 							_ = hx_dyncast_365
 							hx_dyncast_365 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_15, HxMakeArray[any]().Dyn()), "Hx_Obj_xml")
@@ -310,10 +310,10 @@ func Hx_Field_loreline_translation_xlifftranslation_toLoreline(content string, l
 								_hx_tmp_16 = nil
 							}
 
-							var s *Hx_Obj_xml
-							_ = s
-							s = _hx_tmp_16
-							_ = (Hx_Array_Push[*Hx_Obj_xml](_g, s))
+							var s1 *Hx_Obj_xml
+							_ = s1
+							s1 = _hx_tmp_16
+							_ = (Hx_Array_Push[*Hx_Obj_xml](_g, s1))
 						}
 					}
 
@@ -392,26 +392,26 @@ func Hx_Field_loreline_translation_xlifftranslation_toLoreline(content string, l
 			} else {
 				var body *Hx_Obj_xml
 				_ = body
-				body = Hx_Field_loreline_translation_xlifftranslation_firstChildElement(file, "body")
+				body = Hx_Field_loreline_translation_xlifftranslation_firstChildElement(file1, "body")
 				if body == nil {
 					continue
 				}
 
 				{
-					var _gunit any
-					_ = _gunit
-					_gunit = body.VTable.Hx_Field_elementsNamed("trans-unit")
+					var unit any
+					_ = unit
+					unit = body.VTable.Hx_Field_elementsNamed("trans-unit")
 					for {
 						var _hx_tmp_19 any
 						_ = _hx_tmp_19
-						_hx_tmp_19 = Hx_Field_go_haxe_hxdynamic_getField(_gunit, "hasNext")
+						_hx_tmp_19 = Hx_Field_go_haxe_hxdynamic_getField(unit, "hasNext")
 						if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_19, HxMakeArray[any]().Dyn()))) {
 							break
 						}
 
 						var _hx_tmp_20 any
 						_ = _hx_tmp_20
-						_hx_tmp_20 = Hx_Field_go_haxe_hxdynamic_getField(_gunit, "next")
+						_hx_tmp_20 = Hx_Field_go_haxe_hxdynamic_getField(unit, "next")
 						var hx_dyncast_366 any
 						_ = hx_dyncast_366
 						hx_dyncast_366 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_20, HxMakeArray[any]().Dyn()), "Hx_Obj_xml")
@@ -423,22 +423,22 @@ func Hx_Field_loreline_translation_xlifftranslation_toLoreline(content string, l
 							_hx_tmp_21 = nil
 						}
 
-						var unit *Hx_Obj_xml
-						_ = unit
-						unit = _hx_tmp_21
-						if !unit.VTable.Hx_Field_exists("id") {
+						var unit1 *Hx_Obj_xml
+						_ = unit1
+						unit1 = _hx_tmp_21
+						if !unit1.VTable.Hx_Field_exists("id") {
 							continue
 						}
 
 						var id HxNullable[string]
 						_ = id
-						id = unit.VTable.Hx_Field_get("id")
+						id = unit1.VTable.Hx_Field_get("id")
 						var src string
 						_ = src
-						src = Hx_Field_loreline_translation_xlifftranslation_innerText(Hx_Field_loreline_translation_xlifftranslation_firstChildElement(unit, "source"))
+						src = Hx_Field_loreline_translation_xlifftranslation_innerText(Hx_Field_loreline_translation_xlifftranslation_firstChildElement(unit1, "source"))
 						var tgt string
 						_ = tgt
-						tgt = Hx_Field_loreline_translation_xlifftranslation_innerText(Hx_Field_loreline_translation_xlifftranslation_firstChildElement(unit, "target"))
+						tgt = Hx_Field_loreline_translation_xlifftranslation_innerText(Hx_Field_loreline_translation_xlifftranslation_firstChildElement(unit1, "target"))
 						if (tgt == HxStringNull) || (tgt == "") {
 							continue
 						}
@@ -598,7 +598,7 @@ func Hx_Field_loreline_translation_xlifftranslation_primarySubtag(s string) stri
 func Hx_Field_loreline_translation_xlifftranslation_firstChildElement(parent *Hx_Obj_xml, name string) *Hx_Obj_xml {
 	{
 		if (parent.Hx_Field_nodeType != Hx_Field_xml_Document) && (parent.Hx_Field_nodeType != Hx_Field_xml_Element) {
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element or Document but found ", Hx_Field__xml_xmltype_impl__toString(parent.Hx_Field_nodeType))))))
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element or Document but found ", Hx_Field__xml_xmltype_impl__toString(parent.Hx_Field_nodeType))))))
 		}
 
 		var _g_current int32
@@ -627,7 +627,7 @@ func Hx_Field_loreline_translation_xlifftranslation_firstChildElement(parent *Hx
 			c = _hx_tmp_1.Get(_hx_tmp_2)
 			if c.Hx_Field_nodeType == ((int32)(0)) {
 				if c.Hx_Field_nodeType != Hx_Field_xml_Element {
-					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(c.Hx_Field_nodeType))))))
+					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(c.Hx_Field_nodeType))))))
 				}
 
 				if c.Hx_Field_nodeName == name {
@@ -650,7 +650,7 @@ func Hx_Field_loreline_translation_xlifftranslation_innerText(node *Hx_Obj_xml) 
 	buf = Hx_Obj_stringbuf_CreateInstance()
 	{
 		if (node.Hx_Field_nodeType != Hx_Field_xml_Document) && (node.Hx_Field_nodeType != Hx_Field_xml_Element) {
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element or Document but found ", Hx_Field__xml_xmltype_impl__toString(node.Hx_Field_nodeType))))))
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element or Document but found ", Hx_Field__xml_xmltype_impl__toString(node.Hx_Field_nodeType))))))
 		}
 
 		var _g_current int32
@@ -693,7 +693,7 @@ func Hx_Field_loreline_translation_xlifftranslation_innerText(node *Hx_Obj_xml) 
 			case 1:
 				{
 					if (c.Hx_Field_nodeType == Hx_Field_xml_Document) || (c.Hx_Field_nodeType == Hx_Field_xml_Element) {
-						panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, unexpected ", Hx_Field__xml_xmltype_impl__toString(c.Hx_Field_nodeType))))))
+						panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, unexpected ", Hx_Field__xml_xmltype_impl__toString(c.Hx_Field_nodeType))))))
 					}
 
 					func() func(x string) {
@@ -709,7 +709,7 @@ func Hx_Field_loreline_translation_xlifftranslation_innerText(node *Hx_Obj_xml) 
 			case 2:
 				{
 					if (c.Hx_Field_nodeType == Hx_Field_xml_Document) || (c.Hx_Field_nodeType == Hx_Field_xml_Element) {
-						panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, unexpected ", Hx_Field__xml_xmltype_impl__toString(c.Hx_Field_nodeType))))))
+						panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, unexpected ", Hx_Field__xml_xmltype_impl__toString(c.Hx_Field_nodeType))))))
 					}
 
 					func() func(x string) {

@@ -550,7 +550,7 @@ func Hx_Field_loreline_translation_csvtranslation_escapeForCsvField(s string, se
 		return s
 	}
 
-	return Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("\"", (Hx_Array_Join[string]((Hx_Field_go_haxe_hxstring_split(s, "\"")), "\"\""))), "\"")
+	return Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("\"", (Hx_Array_Join[string]((Hx_Field_go_haxe_hxstring_split(s, "\"")), "\"\""))), "\"")
 }
 
 func Hx_Field_loreline_translation_csvtranslation_findColumn(header HxArray[string], names HxArray[string]) int32 {

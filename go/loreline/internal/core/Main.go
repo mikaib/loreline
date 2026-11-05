@@ -1,5 +1,8 @@
 package core
 
+func init() {
+	Hx_Boot()
+}
 func Hx_Boot() {
 	Hx_ClassInit_Hx_Obj_VTable__any_any_impl_()
 	Hx_ClassInit_Hx_Obj_VTable_date()
@@ -45,6 +48,7 @@ func Hx_Boot() {
 	Hx_ClassInit_Hx_Obj_VTable_haxe__int32_int32_impl_()
 	Hx_ClassInit_Hx_Obj_VTable_haxe__int64_int64_impl_()
 	Hx_ClassInit_Hx_Obj_VTable_haxe_int64helper()
+	Hx_ClassInit_Hx_Obj_VTable_haxe__json_jsonvaluekind_impl_()
 	Hx_ClassInit_Hx_Obj_VTable_haxe_json()
 	Hx_ClassInit_Hx_Obj_VTable_haxe_log()
 	Hx_ClassInit_Hx_Obj_VTable_haxe_nativestacktrace()
@@ -264,6 +268,7 @@ func Hx_Boot() {
 	Hx_StaticInit_Hx_Obj_VTable_haxe__int32_int32_impl_()
 	Hx_StaticInit_Hx_Obj_VTable_haxe__int64_int64_impl_()
 	Hx_StaticInit_Hx_Obj_VTable_haxe_int64helper()
+	Hx_StaticInit_Hx_Obj_VTable_haxe__json_jsonvaluekind_impl_()
 	Hx_StaticInit_Hx_Obj_VTable_haxe_json()
 	Hx_StaticInit_Hx_Obj_VTable_haxe_log()
 	Hx_StaticInit_Hx_Obj_VTable_haxe_nativestacktrace()

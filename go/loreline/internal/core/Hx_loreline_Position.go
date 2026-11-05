@@ -9,10 +9,10 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_position() {
 }
 
 type Hx_Obj_VTable_loreline_position interface {
-	Hx_Field_withOffset(content string, additionalOffset int32, newLength__isOptional any, contentStart__isOptional any) *Hx_Obj_loreline_position
-	Hx_Field_extendedTo(endPos *Hx_Obj_loreline_position) *Hx_Obj_loreline_position
 	Hx_Field_toString() string
 	Hx_Field_toJson() any
+	Hx_Field_withOffset(content string, additionalOffset int32, newLength__isOptional any, contentStart__isOptional any) *Hx_Obj_loreline_position
+	Hx_Field_extendedTo(endPos *Hx_Obj_loreline_position) *Hx_Obj_loreline_position
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -97,14 +97,14 @@ func (this *Hx_Obj_loreline_position) Hx_As_Hx_Obj_loreline_position() *Hx_Obj_l
 func (this *Hx_Obj_loreline_position) Hx_Field_toString() string {
 	var _hx_tmp_2 string
 	_ = _hx_tmp_2
-	_hx_tmp_2 = Hx_Field_go_haxe_hxdynamic_stringConcat(("(" + Hx_Field_go_haxe_hxdynamic_toString(this.Hx_Field_line)), ":")
+	_hx_tmp_2 = Hx_Field_go_haxe_hxstring_concat(("(" + Hx_Field_go_haxe_hxdynamic_toString(this.Hx_Field_line)), ":")
 	var _hx_tmp_1 string
 	_ = _hx_tmp_1
-	_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_stringConcat((_hx_tmp_2 + Hx_Field_go_haxe_hxdynamic_toString(this.Hx_Field_column)), ":")
+	_hx_tmp_1 = Hx_Field_go_haxe_hxstring_concat((_hx_tmp_2 + Hx_Field_go_haxe_hxdynamic_toString(this.Hx_Field_column)), ":")
 	var _hx_tmp_0 string
 	_ = _hx_tmp_0
-	_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_stringConcat((_hx_tmp_1 + Hx_Field_go_haxe_hxdynamic_toString(this.Hx_Field_offset)), ":")
-	return Hx_Field_go_haxe_hxdynamic_stringConcat((_hx_tmp_0 + Hx_Field_go_haxe_hxdynamic_toString(this.Hx_Field_length)), ")")
+	_hx_tmp_0 = Hx_Field_go_haxe_hxstring_concat((_hx_tmp_1 + Hx_Field_go_haxe_hxdynamic_toString(this.Hx_Field_offset)), ":")
+	return Hx_Field_go_haxe_hxstring_concat((_hx_tmp_0 + Hx_Field_go_haxe_hxdynamic_toString(this.Hx_Field_length)), ")")
 }
 
 func (this *Hx_Obj_loreline_position) Hx_Field_toJson() any {

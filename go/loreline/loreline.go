@@ -10,7 +10,6 @@ import (
 var library *core.Hx_Obj_loreline_lib_golibrary
 
 func init() {
-	core.Hx_Boot()
 	library = core.Hx_Obj_loreline_lib_golibrary_CreateInstance()
 }
 

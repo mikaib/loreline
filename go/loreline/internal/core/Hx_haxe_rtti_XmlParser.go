@@ -7,36 +7,36 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_rtti_xmlparser() {
 }
 
 type Hx_Obj_VTable_haxe_rtti_xmlparser interface {
-	Hx_Field_xtypedef(x *Hx_Obj_xml) any
-	Hx_Field_xtype(x *Hx_Obj_xml) Hx_Enum_haxe_rtti_ctype
-	Hx_Field_defplat() HxArray[string]
-	Hx_Field_process(x *Hx_Obj_xml, platform string)
-	Hx_Field_processElement(x *Hx_Obj_xml) Hx_Enum_haxe_rtti_typetree
-	Hx_Field_xclassfield(x *Hx_Obj_xml, defPublic__isOptional any) any
-	Hx_Field_mergeFields(f any, f2 any) bool
-	Hx_Field_newField(c any, f any)
-	Hx_Field_mergeEnums(e any, e2 any) bool
-	Hx_Field_mkTypeParams(p string) Hx_Typedef_haxe_rtti_typeparams
-	Hx_Field_xerror(c *Hx_Obj_xml) any
-	Hx_Field_xoverloads(x *Hx_Obj_xml) HxArray[any]
-	Hx_Field_sortFields(a HxArray[any])
+	Hx_Field_sort(l__isOptional any)
 	Hx_Field_mergeRights(f1 any, f2 any) bool
 	Hx_Field_mergeAbstracts(a any, a2 any) bool
-	Hx_Field_xroot(x *Hx_Obj_xml)
-	Hx_Field_xenum(x *Hx_Obj_xml) any
+	Hx_Field_xclass(x *Hx_Obj_xml) any
 	Hx_Field_xabstract(x *Hx_Obj_xml) any
+	Hx_Field_xroot(x *Hx_Obj_xml)
+	Hx_Field_xtypedef(x *Hx_Obj_xml) any
+	Hx_Field_defplat() HxArray[string]
+	Hx_Field_mergeClasses(c any, c2 any) bool
+	Hx_Field_xenum(x *Hx_Obj_xml) any
+	Hx_Field_xenumfield(x *Hx_Obj_xml) any
+	Hx_Field_xtype(x *Hx_Obj_xml) Hx_Enum_haxe_rtti_ctype
 	Hx_Field_xtypeparams(x *Hx_Obj_xml) HxArray[Hx_Enum_haxe_rtti_ctype]
+	Hx_Field_mergeFields(f any, f2 any) bool
+	Hx_Field_newField(c any, f any)
+	Hx_Field_xerror(c *Hx_Obj_xml) any
+	Hx_Field_processElement(x *Hx_Obj_xml) Hx_Enum_haxe_rtti_typetree
+	Hx_Field_sortFields(a HxArray[any])
 	Hx_Field_mergeTypedefs(t any, t2 any) bool
 	Hx_Field_mkRights(r string) Hx_Enum_haxe_rtti_rights
-	Hx_Field_xenumfield(x *Hx_Obj_xml) any
-	Hx_Field_sort(l__isOptional any)
-	Hx_Field_xmeta(x *Hx_Obj_xml) HxArray[any]
-	Hx_Field_xclass(x *Hx_Obj_xml) any
-	Hx_Field_mkPath(p string) Hx_Typedef_haxe_rtti_path
-	Hx_Field_xpath(x *Hx_Obj_xml) any
+	Hx_Field_xoverloads(x *Hx_Obj_xml) HxArray[any]
+	Hx_Field_process(x *Hx_Obj_xml, platform string)
 	Hx_Field_mergeDoc(f1 any, f2 any) bool
-	Hx_Field_mergeClasses(c any, c2 any) bool
 	Hx_Field_merge(t Hx_Enum_haxe_rtti_typetree)
+	Hx_Field_mkTypeParams(p string) Hx_Typedef_haxe_rtti_typeparams
+	Hx_Field_xpath(x *Hx_Obj_xml) any
+	Hx_Field_xclassfield(x *Hx_Obj_xml, defPublic__isOptional any) any
+	Hx_Field_mkPath(p string) Hx_Typedef_haxe_rtti_path
+	Hx_Field_mergeEnums(e any, e2 any) bool
+	Hx_Field_xmeta(x *Hx_Obj_xml) HxArray[any]
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -124,7 +124,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_sort(l__isOptional any) {
 				var p string
 				_ = p
 				p = e1.(Hx_Enum_haxe_rtti_typetree_TPackage).Hx_Field_name
-				n1 = Hx_Field_go_haxe_hxdynamic_stringConcat(" ", p)
+				n1 = Hx_Field_go_haxe_hxstring_concat(" ", p)
 			} else {
 				n1 = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_getField(Hx_Field_haxe_rtti_typeapi_typeInfos(e1), "path"))
 			}
@@ -135,7 +135,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_sort(l__isOptional any) {
 				var p string
 				_ = p
 				p = e2.(Hx_Enum_haxe_rtti_typetree_TPackage).Hx_Field_name
-				n2 = Hx_Field_go_haxe_hxdynamic_stringConcat(" ", p)
+				n2 = Hx_Field_go_haxe_hxstring_concat(" ", p)
 			} else {
 				n2 = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_getField(Hx_Field_haxe_rtti_typeapi_typeInfos(e2), "path"))
 			}
@@ -255,7 +255,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_sortFields(a HxArray[any]) {
 func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_process(x *Hx_Obj_xml, platform string) {
 	this.Hx_Field_curplatform = platform
 	if (x.Hx_Field_nodeType != Hx_Field_xml_Document) && (x.Hx_Field_nodeType != Hx_Field_xml_Element) {
-		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Invalid nodeType ", Hx_Field__xml_xmltype_impl__toString(x.Hx_Field_nodeType))))))
+		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Invalid nodeType ", Hx_Field__xml_xmltype_impl__toString(x.Hx_Field_nodeType))))))
 	}
 
 	this.VTable.Hx_Field_xroot(x)
@@ -1174,30 +1174,30 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xerror(c *Hx_Obj_xml) any {
 		tmp = "Document"
 	} else {
 		if c.Hx_Field_nodeType != Hx_Field_xml_Element {
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(c.Hx_Field_nodeType))))))
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(c.Hx_Field_nodeType))))))
 		}
 
 		tmp = c.Hx_Field_nodeName
 	}
 
-	panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Invalid ", tmp)))))
+	panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Invalid ", tmp)))))
 }
 
 func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xroot(x *Hx_Obj_xml) {
-	var _gc any
-	_ = _gc
-	_gc = x.VTable.Hx_Field_elements()
+	var c any
+	_ = c
+	c = x.VTable.Hx_Field_elements()
 	for {
 		var _hx_tmp_0 any
 		_ = _hx_tmp_0
-		_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(_gc, "hasNext")
+		_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(c, "hasNext")
 		if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_0, HxMakeArray[any]().Dyn()))) {
 			break
 		}
 
 		var _hx_tmp_1 any
 		_ = _hx_tmp_1
-		_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(_gc, "next")
+		_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(c, "next")
 		var hx_dyncast_52 any
 		_ = hx_dyncast_52
 		hx_dyncast_52 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()), "Hx_Obj_xml")
@@ -1209,16 +1209,16 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xroot(x *Hx_Obj_xml) {
 			_hx_tmp_2 = nil
 		}
 
-		var c *Hx_Obj_xml
-		_ = c
-		c = _hx_tmp_2
-		this.VTable.Hx_Field_merge(this.VTable.Hx_Field_processElement(c))
+		var c1 *Hx_Obj_xml
+		_ = c1
+		c1 = _hx_tmp_2
+		this.VTable.Hx_Field_merge(this.VTable.Hx_Field_processElement(c1))
 	}
 }
 
 func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_processElement(x *Hx_Obj_xml) Hx_Enum_haxe_rtti_typetree {
 	if (x.Hx_Field_nodeType != Hx_Field_xml_Document) && (x.Hx_Field_nodeType != Hx_Field_xml_Element) {
-		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Invalid nodeType ", Hx_Field__xml_xmltype_impl__toString(x.Hx_Field_nodeType))))))
+		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Invalid nodeType ", Hx_Field__xml_xmltype_impl__toString(x.Hx_Field_nodeType))))))
 	}
 
 	var c *Hx_Obj_xml
@@ -1230,7 +1230,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_processElement(x *Hx_Obj_xml) H
 		_g = "Document"
 	} else {
 		if c.Hx_Field_nodeType != Hx_Field_xml_Element {
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(c.Hx_Field_nodeType))))))
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(c.Hx_Field_nodeType))))))
 		}
 
 		_g = c.Hx_Field_nodeName
@@ -1338,20 +1338,20 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xoverloads(x *Hx_Obj_xml) HxArr
 	_ = l
 	l = HxMakeArray[any]().Dyn()
 	{
-		var _gm any
-		_ = _gm
-		_gm = x.VTable.Hx_Field_elements()
+		var m any
+		_ = m
+		m = x.VTable.Hx_Field_elements()
 		for {
 			var _hx_tmp_0 any
 			_ = _hx_tmp_0
-			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(_gm, "hasNext")
+			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(m, "hasNext")
 			if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_0, HxMakeArray[any]().Dyn()))) {
 				break
 			}
 
 			var _hx_tmp_1 any
 			_ = _hx_tmp_1
-			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(_gm, "next")
+			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(m, "next")
 			var hx_dyncast_53 any
 			_ = hx_dyncast_53
 			hx_dyncast_53 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()), "Hx_Obj_xml")
@@ -1363,15 +1363,15 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xoverloads(x *Hx_Obj_xml) HxArr
 				_hx_tmp_2 = nil
 			}
 
-			var m *Hx_Obj_xml
-			_ = m
-			m = _hx_tmp_2
+			var m1 *Hx_Obj_xml
+			_ = m1
+			m1 = _hx_tmp_2
 			var _hx_tmp_3 HxArray[any]
 			_ = _hx_tmp_3
 			_hx_tmp_3 = HxMakeArrayView[any](l)
 			var _hx_tmp_4 *Hx_Obj_xml
 			_ = _hx_tmp_4
-			_hx_tmp_4 = m
+			_hx_tmp_4 = m1
 			_ = (Hx_Array_Push[any](_hx_tmp_3, this.VTable.Hx_Field_xclassfield(_hx_tmp_4, nil)))
 		}
 	}
@@ -1387,20 +1387,20 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xpath(x *Hx_Obj_xml) any {
 	_ = params
 	params = HxMakeArray[Hx_Enum_haxe_rtti_ctype]()
 	{
-		var _gc any
-		_ = _gc
-		_gc = x.VTable.Hx_Field_elements()
+		var c any
+		_ = c
+		c = x.VTable.Hx_Field_elements()
 		for {
 			var _hx_tmp_0 any
 			_ = _hx_tmp_0
-			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(_gc, "hasNext")
+			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(c, "hasNext")
 			if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_0, HxMakeArray[any]().Dyn()))) {
 				break
 			}
 
 			var _hx_tmp_1 any
 			_ = _hx_tmp_1
-			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(_gc, "next")
+			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(c, "next")
 			var hx_dyncast_54 any
 			_ = hx_dyncast_54
 			hx_dyncast_54 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()), "Hx_Obj_xml")
@@ -1412,13 +1412,13 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xpath(x *Hx_Obj_xml) any {
 				_hx_tmp_2 = nil
 			}
 
-			var c *Hx_Obj_xml
-			_ = c
-			c = _hx_tmp_2
+			var c1 *Hx_Obj_xml
+			_ = c1
+			c1 = _hx_tmp_2
 			var _hx_tmp_3 HxArray[Hx_Enum_haxe_rtti_ctype]
 			_ = _hx_tmp_3
 			_hx_tmp_3 = params
-			_ = (Hx_Array_Push[Hx_Enum_haxe_rtti_ctype](_hx_tmp_3, this.VTable.Hx_Field_xtype(c)))
+			_ = (Hx_Array_Push[Hx_Enum_haxe_rtti_ctype](_hx_tmp_3, this.VTable.Hx_Field_xtype(c1)))
 		}
 	}
 
@@ -1450,20 +1450,20 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xclass(x *Hx_Obj_xml) any {
 	_ = isInterface
 	isInterface = x.VTable.Hx_Field_exists("interface")
 	{
-		var _gc any
-		_ = _gc
-		_gc = x.VTable.Hx_Field_elements()
+		var c any
+		_ = c
+		c = x.VTable.Hx_Field_elements()
 		for {
 			var _hx_tmp_0 any
 			_ = _hx_tmp_0
-			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(_gc, "hasNext")
+			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(c, "hasNext")
 			if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_0, HxMakeArray[any]().Dyn()))) {
 				break
 			}
 
 			var _hx_tmp_1 any
 			_ = _hx_tmp_1
-			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(_gc, "next")
+			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(c, "next")
 			var hx_dyncast_55 any
 			_ = hx_dyncast_55
 			hx_dyncast_55 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()), "Hx_Obj_xml")
@@ -1475,20 +1475,20 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xclass(x *Hx_Obj_xml) any {
 				_hx_tmp_2 = nil
 			}
 
-			var c *Hx_Obj_xml
-			_ = c
-			c = _hx_tmp_2
+			var c1 *Hx_Obj_xml
+			_ = c1
+			c1 = _hx_tmp_2
 			{
 				var _g string
 				_ = _g
-				if c.Hx_Field_nodeType == Hx_Field_xml_Document {
+				if c1.Hx_Field_nodeType == Hx_Field_xml_Document {
 					_g = "Document"
 				} else {
-					if c.Hx_Field_nodeType != Hx_Field_xml_Element {
-						panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(c.Hx_Field_nodeType))))))
+					if c1.Hx_Field_nodeType != Hx_Field_xml_Element {
+						panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(c1.Hx_Field_nodeType))))))
 					}
 
-					_g = c.Hx_Field_nodeName
+					_g = c1.Hx_Field_nodeName
 				}
 
 				switch _g {
@@ -1498,24 +1498,24 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xclass(x *Hx_Obj_xml) any {
 							var _hx_tmp_3 HxArray[any]
 							_ = _hx_tmp_3
 							_hx_tmp_3 = HxMakeArrayView[any](interfaces)
-							_ = (Hx_Array_Push[any](_hx_tmp_3, this.VTable.Hx_Field_xpath(c)))
+							_ = (Hx_Array_Push[any](_hx_tmp_3, this.VTable.Hx_Field_xpath(c1)))
 						} else {
-							csuper = this.VTable.Hx_Field_xpath(c)
+							csuper = this.VTable.Hx_Field_xpath(c1)
 						}
 					}
 
 				case "haxe_doc":
 					{
-						doc = HxNullableString(Hx_Field_haxe_xml__access_access_impl__get_innerData(c))
+						doc = HxNullableString(Hx_Field_haxe_xml__access_access_impl__get_innerData(c1))
 					}
 
 				case "haxe_dynamic":
 					{
 						var x *Hx_Obj_xml
 						_ = x
-						x = c.VTable.Hx_Field_firstElement()
+						x = c1.VTable.Hx_Field_firstElement()
 						if (x.Hx_Field_nodeType != Hx_Field_xml_Document) && (x.Hx_Field_nodeType != Hx_Field_xml_Element) {
-							panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Invalid nodeType ", Hx_Field__xml_xmltype_impl__toString(x.Hx_Field_nodeType))))))
+							panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Invalid nodeType ", Hx_Field__xml_xmltype_impl__toString(x.Hx_Field_nodeType))))))
 						}
 
 						tdynamic = this.VTable.Hx_Field_xtype(x)
@@ -1526,23 +1526,23 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xclass(x *Hx_Obj_xml) any {
 						var _hx_tmp_4 HxArray[any]
 						_ = _hx_tmp_4
 						_hx_tmp_4 = HxMakeArrayView[any](interfaces)
-						_ = (Hx_Array_Push[any](_hx_tmp_4, this.VTable.Hx_Field_xpath(c)))
+						_ = (Hx_Array_Push[any](_hx_tmp_4, this.VTable.Hx_Field_xpath(c1)))
 					}
 
 				case "meta":
 					{
-						meta = this.VTable.Hx_Field_xmeta(c)
+						meta = this.VTable.Hx_Field_xmeta(c1)
 					}
 
 				default:
 					{
-						if c.VTable.Hx_Field_exists("static") {
+						if c1.VTable.Hx_Field_exists("static") {
 							var _hx_tmp_5 HxArray[any]
 							_ = _hx_tmp_5
 							_hx_tmp_5 = HxMakeArrayView[any](statics)
 							var _hx_tmp_6 *Hx_Obj_xml
 							_ = _hx_tmp_6
-							_hx_tmp_6 = c
+							_hx_tmp_6 = c1
 							_ = (Hx_Array_Push[any](_hx_tmp_5, this.VTable.Hx_Field_xclassfield(_hx_tmp_6, nil)))
 						} else {
 							var _hx_tmp_7 HxArray[any]
@@ -1550,7 +1550,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xclass(x *Hx_Obj_xml) any {
 							_hx_tmp_7 = HxMakeArrayView[any](fields)
 							var _hx_tmp_8 *Hx_Obj_xml
 							_ = _hx_tmp_8
-							_hx_tmp_8 = c
+							_hx_tmp_8 = c1
 							_ = (Hx_Array_Push[any](_hx_tmp_7, this.VTable.Hx_Field_xclassfield(_hx_tmp_8, nil)))
 						}
 					}
@@ -1677,20 +1677,20 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xclassfield(x *Hx_Obj_xml, defP
 		var overloads HxArray[any]
 		_ = overloads
 		{
-			var _gc any
-			_ = _gc
-			_gc = e
+			var c any
+			_ = c
+			c = e
 			for {
 				var _hx_tmp_2 any
 				_ = _hx_tmp_2
-				_hx_tmp_2 = Hx_Field_go_haxe_hxdynamic_getField(_gc, "hasNext")
+				_hx_tmp_2 = Hx_Field_go_haxe_hxdynamic_getField(c, "hasNext")
 				if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_2, HxMakeArray[any]().Dyn()))) {
 					break
 				}
 
 				var _hx_tmp_3 any
 				_ = _hx_tmp_3
-				_hx_tmp_3 = Hx_Field_go_haxe_hxdynamic_getField(_gc, "next")
+				_hx_tmp_3 = Hx_Field_go_haxe_hxdynamic_getField(c, "next")
 				var hx_dyncast_57 any
 				_ = hx_dyncast_57
 				hx_dyncast_57 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_3, HxMakeArray[any]().Dyn()), "Hx_Obj_xml")
@@ -1702,41 +1702,41 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xclassfield(x *Hx_Obj_xml, defP
 					_hx_tmp_4 = nil
 				}
 
-				var c *Hx_Obj_xml
-				_ = c
-				c = _hx_tmp_4
+				var c1 *Hx_Obj_xml
+				_ = c1
+				c1 = _hx_tmp_4
 				{
 					var _g string
 					_ = _g
-					if c.Hx_Field_nodeType == Hx_Field_xml_Document {
+					if c1.Hx_Field_nodeType == Hx_Field_xml_Document {
 						_g = "Document"
 					} else {
-						if c.Hx_Field_nodeType != Hx_Field_xml_Element {
-							panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(c.Hx_Field_nodeType))))))
+						if c1.Hx_Field_nodeType != Hx_Field_xml_Element {
+							panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(c1.Hx_Field_nodeType))))))
 						}
 
-						_g = c.Hx_Field_nodeName
+						_g = c1.Hx_Field_nodeName
 					}
 
 					switch _g {
 					case "haxe_doc":
 						{
-							doc = HxNullableString(Hx_Field_haxe_xml__access_access_impl__get_innerData(c))
+							doc = HxNullableString(Hx_Field_haxe_xml__access_access_impl__get_innerData(c1))
 						}
 
 					case "meta":
 						{
-							meta = this.VTable.Hx_Field_xmeta(c)
+							meta = this.VTable.Hx_Field_xmeta(c1)
 						}
 
 					case "overloads":
 						{
-							overloads = this.VTable.Hx_Field_xoverloads(c)
+							overloads = this.VTable.Hx_Field_xoverloads(c1)
 						}
 
 					default:
 						{
-							this.VTable.Hx_Field_xerror(c)
+							this.VTable.Hx_Field_xerror(c1)
 						}
 					}
 				}
@@ -1749,7 +1749,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xclassfield(x *Hx_Obj_xml, defP
 			tmp = "Document"
 		} else {
 			if x.Hx_Field_nodeType != Hx_Field_xml_Element {
-				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(x.Hx_Field_nodeType))))))
+				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(x.Hx_Field_nodeType))))))
 			}
 
 			tmp = x.Hx_Field_nodeName
@@ -1876,20 +1876,20 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xenum(x *Hx_Obj_xml) any {
 	_ = meta
 	meta = HxMakeArray[any]().Dyn()
 	{
-		var _gc any
-		_ = _gc
-		_gc = x.VTable.Hx_Field_elements()
+		var c any
+		_ = c
+		c = x.VTable.Hx_Field_elements()
 		for {
 			var _hx_tmp_0 any
 			_ = _hx_tmp_0
-			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(_gc, "hasNext")
+			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(c, "hasNext")
 			if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_0, HxMakeArray[any]().Dyn()))) {
 				break
 			}
 
 			var _hx_tmp_1 any
 			_ = _hx_tmp_1
-			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(_gc, "next")
+			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(c, "next")
 			var hx_dyncast_58 any
 			_ = hx_dyncast_58
 			hx_dyncast_58 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()), "Hx_Obj_xml")
@@ -1901,43 +1901,43 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xenum(x *Hx_Obj_xml) any {
 				_hx_tmp_2 = nil
 			}
 
-			var c *Hx_Obj_xml
-			_ = c
-			c = _hx_tmp_2
+			var c1 *Hx_Obj_xml
+			_ = c1
+			c1 = _hx_tmp_2
 			var tmp string
 			_ = tmp
-			if c.Hx_Field_nodeType == Hx_Field_xml_Document {
+			if c1.Hx_Field_nodeType == Hx_Field_xml_Document {
 				tmp = "Document"
 			} else {
-				if c.Hx_Field_nodeType != Hx_Field_xml_Element {
-					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(c.Hx_Field_nodeType))))))
+				if c1.Hx_Field_nodeType != Hx_Field_xml_Element {
+					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(c1.Hx_Field_nodeType))))))
 				}
 
-				tmp = c.Hx_Field_nodeName
+				tmp = c1.Hx_Field_nodeName
 			}
 
 			if tmp == "haxe_doc" {
-				doc = HxNullableString(Hx_Field_haxe_xml__access_access_impl__get_innerData(c))
+				doc = HxNullableString(Hx_Field_haxe_xml__access_access_impl__get_innerData(c1))
 			} else {
 				var tmp_tmp_1 string
 				_ = tmp_tmp_1
-				if c.Hx_Field_nodeType == Hx_Field_xml_Document {
+				if c1.Hx_Field_nodeType == Hx_Field_xml_Document {
 					tmp_tmp_1 = "Document"
 				} else {
-					if c.Hx_Field_nodeType != Hx_Field_xml_Element {
-						panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(c.Hx_Field_nodeType))))))
+					if c1.Hx_Field_nodeType != Hx_Field_xml_Element {
+						panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(c1.Hx_Field_nodeType))))))
 					}
 
-					tmp_tmp_1 = c.Hx_Field_nodeName
+					tmp_tmp_1 = c1.Hx_Field_nodeName
 				}
 
 				if tmp_tmp_1 == "meta" {
-					meta = this.VTable.Hx_Field_xmeta(c)
+					meta = this.VTable.Hx_Field_xmeta(c1)
 				} else {
 					var _hx_tmp_3 HxArray[any]
 					_ = _hx_tmp_3
 					_hx_tmp_3 = HxMakeArrayView[any](cl)
-					_ = (Hx_Array_Push[any](_hx_tmp_3, this.VTable.Hx_Field_xenumfield(c)))
+					_ = (Hx_Array_Push[any](_hx_tmp_3, this.VTable.Hx_Field_xenumfield(c1)))
 				}
 			}
 		}
@@ -2113,7 +2113,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xenumfield(x *Hx_Obj_xml) any {
 		tmp = "Document"
 	} else {
 		if x.Hx_Field_nodeType != Hx_Field_xml_Element {
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(x.Hx_Field_nodeType))))))
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(x.Hx_Field_nodeType))))))
 		}
 
 		tmp = x.Hx_Field_nodeName
@@ -2125,7 +2125,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xenumfield(x *Hx_Obj_xml) any {
 		tmp1 = HxStringNull
 	} else {
 		if (xdoc.Hx_Field_nodeType != Hx_Field_xml_Document) && (xdoc.Hx_Field_nodeType != Hx_Field_xml_Element) {
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Invalid nodeType ", Hx_Field__xml_xmltype_impl__toString(xdoc.Hx_Field_nodeType))))))
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Invalid nodeType ", Hx_Field__xml_xmltype_impl__toString(xdoc.Hx_Field_nodeType))))))
 		}
 
 		tmp1 = Hx_Field_haxe_xml__access_access_impl__get_innerData(xdoc)
@@ -2165,20 +2165,20 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xabstract(x *Hx_Obj_xml) any {
 	_ = from
 	from = HxMakeArray[any]().Dyn()
 	{
-		var _gc any
-		_ = _gc
-		_gc = x.VTable.Hx_Field_elements()
+		var c any
+		_ = c
+		c = x.VTable.Hx_Field_elements()
 		for {
 			var _hx_tmp_0 any
 			_ = _hx_tmp_0
-			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(_gc, "hasNext")
+			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(c, "hasNext")
 			if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_0, HxMakeArray[any]().Dyn()))) {
 				break
 			}
 
 			var _hx_tmp_1 any
 			_ = _hx_tmp_1
-			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(_gc, "next")
+			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(c, "next")
 			var hx_dyncast_62 any
 			_ = hx_dyncast_62
 			hx_dyncast_62 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()), "Hx_Obj_xml")
@@ -2190,39 +2190,39 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xabstract(x *Hx_Obj_xml) any {
 				_hx_tmp_2 = nil
 			}
 
-			var c *Hx_Obj_xml
-			_ = c
-			c = _hx_tmp_2
+			var c1 *Hx_Obj_xml
+			_ = c1
+			c1 = _hx_tmp_2
 			{
 				var _g string
 				_ = _g
-				if c.Hx_Field_nodeType == Hx_Field_xml_Document {
+				if c1.Hx_Field_nodeType == Hx_Field_xml_Document {
 					_g = "Document"
 				} else {
-					if c.Hx_Field_nodeType != Hx_Field_xml_Element {
-						panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(c.Hx_Field_nodeType))))))
+					if c1.Hx_Field_nodeType != Hx_Field_xml_Element {
+						panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(c1.Hx_Field_nodeType))))))
 					}
 
-					_g = c.Hx_Field_nodeName
+					_g = c1.Hx_Field_nodeName
 				}
 
 				switch _g {
 				case "from":
 					{
-						var _gt any
-						_ = _gt
-						_gt = c.VTable.Hx_Field_elements()
+						var t any
+						_ = t
+						t = c1.VTable.Hx_Field_elements()
 						for {
 							var _hx_tmp_3 any
 							_ = _hx_tmp_3
-							_hx_tmp_3 = Hx_Field_go_haxe_hxdynamic_getField(_gt, "hasNext")
+							_hx_tmp_3 = Hx_Field_go_haxe_hxdynamic_getField(t, "hasNext")
 							if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_3, HxMakeArray[any]().Dyn()))) {
 								break
 							}
 
 							var _hx_tmp_4 any
 							_ = _hx_tmp_4
-							_hx_tmp_4 = Hx_Field_go_haxe_hxdynamic_getField(_gt, "next")
+							_hx_tmp_4 = Hx_Field_go_haxe_hxdynamic_getField(t, "next")
 							var hx_dyncast_63 any
 							_ = hx_dyncast_63
 							hx_dyncast_63 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_4, HxMakeArray[any]().Dyn()), "Hx_Obj_xml")
@@ -2234,14 +2234,14 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xabstract(x *Hx_Obj_xml) any {
 								_hx_tmp_5 = nil
 							}
 
-							var t *Hx_Obj_xml
-							_ = t
-							t = _hx_tmp_5
+							var t1 *Hx_Obj_xml
+							_ = t1
+							t1 = _hx_tmp_5
 							var x *Hx_Obj_xml
 							_ = x
-							x = t.VTable.Hx_Field_firstElement()
+							x = t1.VTable.Hx_Field_firstElement()
 							if (x.Hx_Field_nodeType != Hx_Field_xml_Document) && (x.Hx_Field_nodeType != Hx_Field_xml_Element) {
-								panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Invalid nodeType ", Hx_Field__xml_xmltype_impl__toString(x.Hx_Field_nodeType))))))
+								panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Invalid nodeType ", Hx_Field__xml_xmltype_impl__toString(x.Hx_Field_nodeType))))))
 							}
 
 							var _hx_tmp_6 HxArray[any]
@@ -2252,8 +2252,8 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xabstract(x *Hx_Obj_xml) any {
 							_hx_tmp_7 = ((any)(this.VTable.Hx_Field_xtype(x)))
 							var _hx_tmp_8 HxNullable[string]
 							_ = _hx_tmp_8
-							if Hx_Field_haxe_xml__access_hasattribaccess_impl__resolve(t, "field") {
-								_hx_tmp_8 = HxNullableString(Hx_Field_haxe_xml__access_attribaccess_impl__resolve(t, "field"))
+							if Hx_Field_haxe_xml__access_hasattribaccess_impl__resolve(t1, "field") {
+								_hx_tmp_8 = HxNullableString(Hx_Field_haxe_xml__access_attribaccess_impl__resolve(t1, "field"))
 							} else {
 								_hx_tmp_8 = HxNullable[string]{Value: HxStringNull}
 							}
@@ -2275,26 +2275,26 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xabstract(x *Hx_Obj_xml) any {
 
 				case "haxe_doc":
 					{
-						doc = HxNullableString(Hx_Field_haxe_xml__access_access_impl__get_innerData(c))
+						doc = HxNullableString(Hx_Field_haxe_xml__access_access_impl__get_innerData(c1))
 					}
 
 				case "impl":
 					{
-						impl = this.VTable.Hx_Field_xclass(Hx_Field_haxe_xml__access_nodeaccess_impl__resolve(c, "class"))
+						impl = this.VTable.Hx_Field_xclass(Hx_Field_haxe_xml__access_nodeaccess_impl__resolve(c1, "class"))
 					}
 
 				case "meta":
 					{
-						meta = this.VTable.Hx_Field_xmeta(c)
+						meta = this.VTable.Hx_Field_xmeta(c1)
 					}
 
 				case "this":
 					{
 						var x *Hx_Obj_xml
 						_ = x
-						x = c.VTable.Hx_Field_firstElement()
+						x = c1.VTable.Hx_Field_firstElement()
 						if (x.Hx_Field_nodeType != Hx_Field_xml_Document) && (x.Hx_Field_nodeType != Hx_Field_xml_Element) {
-							panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Invalid nodeType ", Hx_Field__xml_xmltype_impl__toString(x.Hx_Field_nodeType))))))
+							panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Invalid nodeType ", Hx_Field__xml_xmltype_impl__toString(x.Hx_Field_nodeType))))))
 						}
 
 						athis = this.VTable.Hx_Field_xtype(x)
@@ -2302,20 +2302,20 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xabstract(x *Hx_Obj_xml) any {
 
 				case "to":
 					{
-						var _gt any
-						_ = _gt
-						_gt = c.VTable.Hx_Field_elements()
+						var t any
+						_ = t
+						t = c1.VTable.Hx_Field_elements()
 						for {
 							var _hx_tmp_10 any
 							_ = _hx_tmp_10
-							_hx_tmp_10 = Hx_Field_go_haxe_hxdynamic_getField(_gt, "hasNext")
+							_hx_tmp_10 = Hx_Field_go_haxe_hxdynamic_getField(t, "hasNext")
 							if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_10, HxMakeArray[any]().Dyn()))) {
 								break
 							}
 
 							var _hx_tmp_11 any
 							_ = _hx_tmp_11
-							_hx_tmp_11 = Hx_Field_go_haxe_hxdynamic_getField(_gt, "next")
+							_hx_tmp_11 = Hx_Field_go_haxe_hxdynamic_getField(t, "next")
 							var hx_dyncast_64 any
 							_ = hx_dyncast_64
 							hx_dyncast_64 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_11, HxMakeArray[any]().Dyn()), "Hx_Obj_xml")
@@ -2327,14 +2327,14 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xabstract(x *Hx_Obj_xml) any {
 								_hx_tmp_12 = nil
 							}
 
-							var t *Hx_Obj_xml
-							_ = t
-							t = _hx_tmp_12
+							var t1 *Hx_Obj_xml
+							_ = t1
+							t1 = _hx_tmp_12
 							var x *Hx_Obj_xml
 							_ = x
-							x = t.VTable.Hx_Field_firstElement()
+							x = t1.VTable.Hx_Field_firstElement()
 							if (x.Hx_Field_nodeType != Hx_Field_xml_Document) && (x.Hx_Field_nodeType != Hx_Field_xml_Element) {
-								panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Invalid nodeType ", Hx_Field__xml_xmltype_impl__toString(x.Hx_Field_nodeType))))))
+								panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Invalid nodeType ", Hx_Field__xml_xmltype_impl__toString(x.Hx_Field_nodeType))))))
 							}
 
 							var _hx_tmp_13 HxArray[any]
@@ -2345,8 +2345,8 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xabstract(x *Hx_Obj_xml) any {
 							_hx_tmp_14 = ((any)(this.VTable.Hx_Field_xtype(x)))
 							var _hx_tmp_15 HxNullable[string]
 							_ = _hx_tmp_15
-							if Hx_Field_haxe_xml__access_hasattribaccess_impl__resolve(t, "field") {
-								_hx_tmp_15 = HxNullableString(Hx_Field_haxe_xml__access_attribaccess_impl__resolve(t, "field"))
+							if Hx_Field_haxe_xml__access_hasattribaccess_impl__resolve(t1, "field") {
+								_hx_tmp_15 = HxNullableString(Hx_Field_haxe_xml__access_attribaccess_impl__resolve(t1, "field"))
 							} else {
 								_hx_tmp_15 = HxNullable[string]{Value: HxStringNull}
 							}
@@ -2368,7 +2368,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xabstract(x *Hx_Obj_xml) any {
 
 				default:
 					{
-						this.VTable.Hx_Field_xerror(c)
+						this.VTable.Hx_Field_xerror(c1)
 					}
 				}
 			}
@@ -2436,20 +2436,20 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xtypedef(x *Hx_Obj_xml) any {
 	_ = meta
 	meta = HxMakeArray[any]().Dyn()
 	{
-		var _gc any
-		_ = _gc
-		_gc = x.VTable.Hx_Field_elements()
+		var c any
+		_ = c
+		c = x.VTable.Hx_Field_elements()
 		for {
 			var _hx_tmp_0 any
 			_ = _hx_tmp_0
-			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(_gc, "hasNext")
+			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(c, "hasNext")
 			if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_0, HxMakeArray[any]().Dyn()))) {
 				break
 			}
 
 			var _hx_tmp_1 any
 			_ = _hx_tmp_1
-			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(_gc, "next")
+			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(c, "next")
 			var hx_dyncast_65 any
 			_ = hx_dyncast_65
 			hx_dyncast_65 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()), "Hx_Obj_xml")
@@ -2461,40 +2461,40 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xtypedef(x *Hx_Obj_xml) any {
 				_hx_tmp_2 = nil
 			}
 
-			var c *Hx_Obj_xml
-			_ = c
-			c = _hx_tmp_2
+			var c1 *Hx_Obj_xml
+			_ = c1
+			c1 = _hx_tmp_2
 			var tmp string
 			_ = tmp
-			if c.Hx_Field_nodeType == Hx_Field_xml_Document {
+			if c1.Hx_Field_nodeType == Hx_Field_xml_Document {
 				tmp = "Document"
 			} else {
-				if c.Hx_Field_nodeType != Hx_Field_xml_Element {
-					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(c.Hx_Field_nodeType))))))
+				if c1.Hx_Field_nodeType != Hx_Field_xml_Element {
+					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(c1.Hx_Field_nodeType))))))
 				}
 
-				tmp = c.Hx_Field_nodeName
+				tmp = c1.Hx_Field_nodeName
 			}
 
 			if tmp == "haxe_doc" {
-				doc = HxNullableString(Hx_Field_haxe_xml__access_access_impl__get_innerData(c))
+				doc = HxNullableString(Hx_Field_haxe_xml__access_access_impl__get_innerData(c1))
 			} else {
 				var tmp_tmp_1 string
 				_ = tmp_tmp_1
-				if c.Hx_Field_nodeType == Hx_Field_xml_Document {
+				if c1.Hx_Field_nodeType == Hx_Field_xml_Document {
 					tmp_tmp_1 = "Document"
 				} else {
-					if c.Hx_Field_nodeType != Hx_Field_xml_Element {
-						panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(c.Hx_Field_nodeType))))))
+					if c1.Hx_Field_nodeType != Hx_Field_xml_Element {
+						panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(c1.Hx_Field_nodeType))))))
 					}
 
-					tmp_tmp_1 = c.Hx_Field_nodeName
+					tmp_tmp_1 = c1.Hx_Field_nodeName
 				}
 
 				if tmp_tmp_1 == "meta" {
-					meta = this.VTable.Hx_Field_xmeta(c)
+					meta = this.VTable.Hx_Field_xmeta(c1)
 				} else {
-					t = this.VTable.Hx_Field_xtype(c)
+					t = this.VTable.Hx_Field_xtype(c1)
 				}
 			}
 		}
@@ -2584,7 +2584,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xtype(x *Hx_Obj_xml) Hx_Enum_ha
 		_g = "Document"
 	} else {
 		if x.Hx_Field_nodeType != Hx_Field_xml_Element {
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(x.Hx_Field_nodeType))))))
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(x.Hx_Field_nodeType))))))
 		}
 
 		_g = x.Hx_Field_nodeName
@@ -2597,20 +2597,20 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xtype(x *Hx_Obj_xml) Hx_Enum_ha
 			_ = fields
 			fields = HxMakeArray[any]().Dyn()
 			{
-				var _gf any
-				_ = _gf
-				_gf = x.VTable.Hx_Field_elements()
+				var f any
+				_ = f
+				f = x.VTable.Hx_Field_elements()
 				for {
 					var _hx_tmp_0 any
 					_ = _hx_tmp_0
-					_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(_gf, "hasNext")
+					_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(f, "hasNext")
 					if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_0, HxMakeArray[any]().Dyn()))) {
 						break
 					}
 
 					var _hx_tmp_1 any
 					_ = _hx_tmp_1
-					_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(_gf, "next")
+					_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(f, "next")
 					var hx_dyncast_67 any
 					_ = hx_dyncast_67
 					hx_dyncast_67 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()), "Hx_Obj_xml")
@@ -2622,20 +2622,20 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xtype(x *Hx_Obj_xml) Hx_Enum_ha
 						_hx_tmp_2 = nil
 					}
 
-					var f *Hx_Obj_xml
-					_ = f
-					f = _hx_tmp_2
+					var f1 *Hx_Obj_xml
+					_ = f1
+					f1 = _hx_tmp_2
 					var _hx_tmp_3 *Hx_Obj_xml
 					_ = _hx_tmp_3
-					_hx_tmp_3 = f
-					var f1 any
-					_ = f1
-					f1 = this.VTable.Hx_Field_xclassfield(_hx_tmp_3, HxNullable[bool]{Value: true, Valid: true})
+					_hx_tmp_3 = f1
+					var f2 any
+					_ = f2
+					f2 = this.VTable.Hx_Field_xclassfield(_hx_tmp_3, HxNullable[bool]{Value: true, Valid: true})
 					var _hx_tmp_4 any
 					_ = _hx_tmp_4
-					_hx_tmp_4 = f1
+					_hx_tmp_4 = f2
 					Hx_Field_go_haxe_hxdynamic_setField(_hx_tmp_4, "platforms", HxMakeArray[string]())
-					_ = (Hx_Array_Push[any](HxMakeArrayView[any](fields), f1))
+					_ = (Hx_Array_Push[any](HxMakeArrayView[any](fields), f2))
 				}
 			}
 
@@ -2659,7 +2659,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xtype(x *Hx_Obj_xml) Hx_Enum_ha
 			tx = x.VTable.Hx_Field_firstElement()
 			if tx != nil {
 				if (tx.Hx_Field_nodeType != Hx_Field_xml_Document) && (tx.Hx_Field_nodeType != Hx_Field_xml_Element) {
-					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Invalid nodeType ", Hx_Field__xml_xmltype_impl__toString(tx.Hx_Field_nodeType))))))
+					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Invalid nodeType ", Hx_Field__xml_xmltype_impl__toString(tx.Hx_Field_nodeType))))))
 				}
 
 				t = this.VTable.Hx_Field_xtype(tx)
@@ -2702,20 +2702,20 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xtype(x *Hx_Obj_xml) Hx_Enum_ha
 			_ = evalues
 			evalues = _hx_tmp_7
 			{
-				var _ge any
-				_ = _ge
-				_ge = x.VTable.Hx_Field_elements()
+				var e any
+				_ = e
+				e = x.VTable.Hx_Field_elements()
 				for {
 					var _hx_tmp_8 any
 					_ = _hx_tmp_8
-					_hx_tmp_8 = Hx_Field_go_haxe_hxdynamic_getField(_ge, "hasNext")
+					_hx_tmp_8 = Hx_Field_go_haxe_hxdynamic_getField(e, "hasNext")
 					if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_8, HxMakeArray[any]().Dyn()))) {
 						break
 					}
 
 					var _hx_tmp_9 any
 					_ = _hx_tmp_9
-					_hx_tmp_9 = Hx_Field_go_haxe_hxdynamic_getField(_ge, "next")
+					_hx_tmp_9 = Hx_Field_go_haxe_hxdynamic_getField(e, "next")
 					var hx_dyncast_68 any
 					_ = hx_dyncast_68
 					hx_dyncast_68 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_9, HxMakeArray[any]().Dyn()), "Hx_Obj_xml")
@@ -2727,9 +2727,9 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xtype(x *Hx_Obj_xml) Hx_Enum_ha
 						_hx_tmp_10 = nil
 					}
 
-					var e *Hx_Obj_xml
-					_ = e
-					e = _hx_tmp_10
+					var e1 *Hx_Obj_xml
+					_ = e1
+					e1 = _hx_tmp_10
 					var opt bool
 					_ = opt
 					opt = false
@@ -2839,7 +2839,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xtype(x *Hx_Obj_xml) Hx_Enum_ha
 					_hx_tmp_24 = ((any)(opt))
 					var _hx_tmp_25 any
 					_ = _hx_tmp_25
-					_hx_tmp_25 = ((any)(this.VTable.Hx_Field_xtype(e)))
+					_hx_tmp_25 = ((any)(this.VTable.Hx_Field_xtype(e1)))
 					var _hx_tmp_26 HxNullable[string]
 					_ = _hx_tmp_26
 					var _hx_tmp_27 bool
@@ -2931,20 +2931,20 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xtypeparams(x *Hx_Obj_xml) HxAr
 	_ = p
 	p = HxMakeArray[Hx_Enum_haxe_rtti_ctype]()
 	{
-		var _gc any
-		_ = _gc
-		_gc = x.VTable.Hx_Field_elements()
+		var c any
+		_ = c
+		c = x.VTable.Hx_Field_elements()
 		for {
 			var _hx_tmp_0 any
 			_ = _hx_tmp_0
-			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(_gc, "hasNext")
+			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(c, "hasNext")
 			if !Hx_Field_go_haxe_hxdynamic_toBool((Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_0, HxMakeArray[any]().Dyn()))) {
 				break
 			}
 
 			var _hx_tmp_1 any
 			_ = _hx_tmp_1
-			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(_gc, "next")
+			_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_getField(c, "next")
 			var hx_dyncast_69 any
 			_ = hx_dyncast_69
 			hx_dyncast_69 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_1, HxMakeArray[any]().Dyn()), "Hx_Obj_xml")
@@ -2956,13 +2956,13 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xtypeparams(x *Hx_Obj_xml) HxAr
 				_hx_tmp_2 = nil
 			}
 
-			var c *Hx_Obj_xml
-			_ = c
-			c = _hx_tmp_2
+			var c1 *Hx_Obj_xml
+			_ = c1
+			c1 = _hx_tmp_2
 			var _hx_tmp_3 HxArray[Hx_Enum_haxe_rtti_ctype]
 			_ = _hx_tmp_3
 			_hx_tmp_3 = p
-			_ = (Hx_Array_Push[Hx_Enum_haxe_rtti_ctype](_hx_tmp_3, this.VTable.Hx_Field_xtype(c)))
+			_ = (Hx_Array_Push[Hx_Enum_haxe_rtti_ctype](_hx_tmp_3, this.VTable.Hx_Field_xtype(c1)))
 		}
 	}
 

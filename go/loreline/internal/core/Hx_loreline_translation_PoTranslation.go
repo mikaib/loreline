@@ -756,7 +756,7 @@ func Hx_Field_loreline_translation_potranslation_parse(content string) HxArray[*
 			_ = more
 			more = Hx_Field_loreline_translation_potranslation_readQuotedString(nextTrim, 0)
 			if more != HxStringNull {
-				combined = Hx_Field_go_haxe_hxdynamic_stringConcat(combined, more)
+				combined = Hx_Field_go_haxe_hxstring_concat(combined, more)
 			}
 
 			j++

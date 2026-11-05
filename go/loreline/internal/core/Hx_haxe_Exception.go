@@ -7,15 +7,15 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_exception() {
 }
 
 type Hx_Obj_VTable_haxe_exception interface {
-	Hx_Field_get_stack() HxArray[Hx_Enum_haxe_stackitem]
-	Hx_Field_get_previous() *Hx_Obj_haxe_exception
-	Hx_Field_unwrap() any
-	Hx_Field_error() string
+	Hx_Field_get_native() any
+	Hx_Field_details() string
 	Hx_Field_get_message() string
 	Hx_Field_set_stack(stack HxArray[Hx_Enum_haxe_stackitem]) HxArray[Hx_Enum_haxe_stackitem]
-	Hx_Field_get_native() any
+	Hx_Field_get_previous() *Hx_Obj_haxe_exception
+	Hx_Field_unwrap() any
 	Hx_Field_toString() string
-	Hx_Field_details() string
+	Hx_Field_error() string
+	Hx_Field_get_stack() HxArray[Hx_Enum_haxe_stackitem]
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -138,7 +138,7 @@ func (this *Hx_Obj_haxe_exception) Hx_Field_unwrap() any {
 }
 
 func (this *Hx_Obj_haxe_exception) Hx_Field_toString() string {
-	return Hx_Field_go_haxe_hxdynamic_stringConcat("", this.VTable.Hx_Field_get_message())
+	return Hx_Field_go_haxe_hxstring_concat("", this.VTable.Hx_Field_get_message())
 }
 
 func (this *Hx_Obj_haxe_exception) Hx_Field_error() string {
@@ -152,8 +152,8 @@ func (this *Hx_Obj_haxe_exception) Error() string {
 func (this *Hx_Obj_haxe_exception) Hx_Field_details() string {
 	var _hx_tmp_0 string
 	_ = _hx_tmp_0
-	_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_stringConcat(this.VTable.Hx_Field_toString(), "\n")
-	return Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_0, Hx_Field_haxe__callstack_callstack_impl__toString(this.VTable.Hx_Field_get_stack()))
+	_hx_tmp_0 = Hx_Field_go_haxe_hxstring_concat(this.VTable.Hx_Field_toString(), "\n")
+	return Hx_Field_go_haxe_hxstring_concat(_hx_tmp_0, Hx_Field_haxe__callstack_callstack_impl__toString(this.VTable.Hx_Field_get_stack()))
 }
 
 func Hx_Field_haxe_exception_caught(value any) *Hx_Obj_haxe_exception {

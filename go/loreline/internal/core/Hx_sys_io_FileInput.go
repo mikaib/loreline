@@ -9,27 +9,27 @@ func Hx_StaticInit_Hx_Obj_VTable_sys_io_fileinput() {
 }
 
 type Hx_Obj_VTable_sys_io_fileinput interface {
-	Hx_Field_readByte() int32
-	Hx_Field_seek(p int32, pos Hx_Enum_sys_io_fileseek)
-	Hx_Field_eof() bool
-	Hx_Field_readFullBytes(s *Hx_Obj_haxe_io_bytes, pos int32, _hx_reserved_len int32)
-	Hx_Field_read(nbytes int32) *Hx_Obj_haxe_io_bytes
-	Hx_Field_readInt16() int32
-	Hx_Field_readUInt16() int32
-	Hx_Field_readUInt24() int32
-	Hx_Field_readBytes(s *Hx_Obj_haxe_io_bytes, p int32, l int32) int32
-	Hx_Field_close()
-	Hx_Field_readAll(bufsize__isOptional any) *Hx_Obj_haxe_io_bytes
-	Hx_Field_readUntil(end int32) string
-	Hx_Field_readLine() string
-	Hx_Field_readInt24() int32
-	Hx_Field_readInt32() int32
-	Hx_Field_readString(_hx_reserved_len int32, encoding__isOptional any) string
-	Hx_Field_tell() int32
 	Hx_Field_readFloat() float64
 	Hx_Field_readDouble() float64
-	Hx_Field_set_bigEndian(b bool) bool
 	Hx_Field_readInt8() int32
+	Hx_Field_readInt16() int32
+	Hx_Field_close()
+	Hx_Field_set_bigEndian(b bool) bool
+	Hx_Field_readFullBytes(s *Hx_Obj_haxe_io_bytes, pos int32, _hx_reserved_len int32)
+	Hx_Field_readInt24() int32
+	Hx_Field_readUInt24() int32
+	Hx_Field_readString(_hx_reserved_len int32, encoding__isOptional any) string
+	Hx_Field_seek(p int32, pos Hx_Enum_sys_io_fileseek)
+	Hx_Field_read(nbytes int32) *Hx_Obj_haxe_io_bytes
+	Hx_Field_readUntil(end int32) string
+	Hx_Field_readBytes(s *Hx_Obj_haxe_io_bytes, p int32, l int32) int32
+	Hx_Field_readAll(bufsize__isOptional any) *Hx_Obj_haxe_io_bytes
+	Hx_Field_readLine() string
+	Hx_Field_readUInt16() int32
+	Hx_Field_readInt32() int32
+	Hx_Field_readByte() int32
+	Hx_Field_tell() int32
+	Hx_Field_eof() bool
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 

@@ -1419,7 +1419,7 @@ func Hx_Field_haxe_rtti_ctypetools_toString(t Hx_Enum_haxe_rtti_ctype) string {
 			_ = ret
 			ret = t.(Hx_Enum_haxe_rtti_ctype_CFunction).Hx_Field_ret
 			if Hx_Field_go_haxe_hxdynamic_getArrayLength(args) == 0 {
-				return Hx_Field_go_haxe_hxdynamic_stringConcat("Void -> ", Hx_Field_haxe_rtti_ctypetools_toString(ret))
+				return Hx_Field_go_haxe_hxstring_concat("Void -> ", Hx_Field_haxe_rtti_ctypetools_toString(ret))
 			} else {
 				var f func(_hx_carg0 any) string
 				_ = f
@@ -1455,8 +1455,8 @@ func Hx_Field_haxe_rtti_ctypetools_toString(t Hx_Enum_haxe_rtti_ctype) string {
 
 				var _hx_tmp_2 string
 				_ = _hx_tmp_2
-				_hx_tmp_2 = Hx_Field_go_haxe_hxdynamic_stringConcat((Hx_Array_Join[string](_g, " -> ")), " -> ")
-				return Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_2, Hx_Field_haxe_rtti_ctypetools_toString(ret))
+				_hx_tmp_2 = Hx_Field_go_haxe_hxstring_concat((Hx_Array_Join[string](_g, " -> ")), " -> ")
+				return Hx_Field_go_haxe_hxstring_concat(_hx_tmp_2, Hx_Field_haxe_rtti_ctypetools_toString(ret))
 			}
 		}
 
@@ -1497,7 +1497,7 @@ func Hx_Field_haxe_rtti_ctypetools_toString(t Hx_Enum_haxe_rtti_ctype) string {
 				}
 			}
 
-			return Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("{ ", (Hx_Array_Join[string](_g, ", "))), "}")
+			return Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("{ ", (Hx_Array_Join[string](_g, ", "))), "}")
 		}
 
 	case 6:
@@ -1508,7 +1508,7 @@ func Hx_Field_haxe_rtti_ctypetools_toString(t Hx_Enum_haxe_rtti_ctype) string {
 			if d == nil {
 				return "Dynamic"
 			} else {
-				return Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Dynamic<", Hx_Field_haxe_rtti_ctypetools_toString(d)), ">")
+				return Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Dynamic<", Hx_Field_haxe_rtti_ctypetools_toString(d)), ">")
 			}
 		}
 
@@ -1537,7 +1537,7 @@ func Hx_Field_haxe_rtti_ctypetools_nameWithParams(name string, params HxArray[Hx
 
 	var tmp string
 	_ = tmp
-	tmp = Hx_Field_go_haxe_hxdynamic_stringConcat(name, "<")
+	tmp = Hx_Field_go_haxe_hxstring_concat(name, "<")
 	var f func(_hx_carg0 Hx_Enum_haxe_rtti_ctype) string
 	_ = f
 	f = Hx_Field_haxe_rtti_ctypetools_toString
@@ -1573,7 +1573,7 @@ func Hx_Field_haxe_rtti_ctypetools_nameWithParams(name string, params HxArray[Hx
 	var _hx_tmp_2 string
 	_ = _hx_tmp_2
 	_hx_tmp_2 = tmp
-	return Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(_hx_tmp_2, (Hx_Array_Join[string](_g, ", "))), ">")
+	return Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_2, (Hx_Array_Join[string](_g, ", "))), ">")
 }
 
 func Hx_Field_haxe_rtti_ctypetools_functionArgumentName(arg any) string {
@@ -1601,7 +1601,7 @@ func Hx_Field_haxe_rtti_ctypetools_functionArgumentName(arg any) string {
 		_hx_tmp_2 = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_add(((any)(" = ")), Hx_Field_go_haxe_hxdynamic_getField(arg, "value")))
 	}
 
-	return Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat((_hx_tmp_0), (_hx_tmp_1)), Hx_Field_haxe_rtti_ctypetools_toString(func() Hx_Enum_haxe_rtti_ctype {
+	return Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat((_hx_tmp_0), (_hx_tmp_1)), Hx_Field_haxe_rtti_ctypetools_toString(func() Hx_Enum_haxe_rtti_ctype {
 		_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(Hx_Field_go_haxe_hxdynamic_getField(arg, "t"))
 		if _hx_d == nil {
 			var _hx_z Hx_Enum_haxe_rtti_ctype

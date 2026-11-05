@@ -184,6 +184,12 @@ func Hx_Field_haxe_int64helper_fromFloat(f float64) Hx_Typedef_haxe__int64___int
 		panic(Hx_Field_haxe_exception_thrown(((any)("Conversion underflow"))))
 	}
 
+	var _v int32
+	_ = _v
+	_v = 0
+	var result Hx_Typedef_haxe__int64___int64
+	_ = result
+	result = ((Hx_Typedef_haxe__int64___int64)(_v))
 	var neg bool
 	_ = neg
 	neg = (noFractions < ((float64)(0)))
@@ -198,12 +204,6 @@ func Hx_Field_haxe_int64helper_fromFloat(f float64) Hx_Typedef_haxe__int64___int
 	var rest float64
 	_ = rest
 	rest = _hx_tmp_2
-	var _v int32
-	_ = _v
-	_v = 0
-	var result Hx_Typedef_haxe__int64___int64
-	_ = result
-	result = ((Hx_Typedef_haxe__int64___int64)(_v))
 	var i int32
 	_ = i
 	i = 0

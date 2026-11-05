@@ -625,7 +625,7 @@ func (this *Hx_Obj_loreline_lorscript_printer) Hx_Field_expr(e any) {
 						return func(x string) {
 							_hx_closure_src_228(((any)(x)))
 						}
-					}()(Hx_Field_go_haxe_hxdynamic_stringConcat("var ", n))
+					}()(Hx_Field_go_haxe_hxstring_concat("var ", n))
 					this.VTable.Hx_Field_addType(t)
 					if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(e, nil))) {
 						func() func(x string) {
@@ -682,7 +682,7 @@ func (this *Hx_Obj_loreline_lorscript_printer) Hx_Field_expr(e any) {
 						}
 					}()("{}")
 				} else {
-					this.Hx_Field_tabs = Hx_Field_go_haxe_hxdynamic_stringConcat(this.Hx_Field_tabs, "\t")
+					this.Hx_Field_tabs = Hx_Field_go_haxe_hxstring_concat(this.Hx_Field_tabs, "\t")
 					func() func(x string) {
 						var _hx_closure_src_233 func(x any)
 						_ = _hx_closure_src_233
@@ -759,7 +759,7 @@ func (this *Hx_Obj_loreline_lorscript_printer) Hx_Field_expr(e any) {
 						return func(x string) {
 							_hx_closure_src_237(((any)(x)))
 						}
-					}()(Hx_Field_go_haxe_hxdynamic_stringConcat(".", f))
+					}()(Hx_Field_go_haxe_hxstring_concat(".", f))
 				}
 			}
 
@@ -783,7 +783,7 @@ func (this *Hx_Obj_loreline_lorscript_printer) Hx_Field_expr(e any) {
 						return func(x string) {
 							_hx_closure_src_238(((any)(x)))
 						}
-					}()(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(" ", op), " "))
+					}()(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(" ", op), " "))
 					this.VTable.Hx_Field_expr(e2)
 				}
 			}
@@ -1021,7 +1021,7 @@ func (this *Hx_Obj_loreline_lorscript_printer) Hx_Field_expr(e any) {
 						return func(x string) {
 							_hx_closure_src_251(((any)(x)))
 						}
-					}()(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("for( ", v), " in "))
+					}()(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("for( ", v), " in "))
 					this.VTable.Hx_Field_expr(it)
 					func() func(x string) {
 						var _hx_closure_src_252 func(x any)
@@ -1090,7 +1090,7 @@ func (this *Hx_Obj_loreline_lorscript_printer) Hx_Field_expr(e any) {
 							return func(x string) {
 								_hx_closure_src_256(((any)(x)))
 							}
-						}()(Hx_Field_go_haxe_hxdynamic_stringConcat(" ", (name).Value))
+						}()(Hx_Field_go_haxe_hxstring_concat(" ", (name).Value))
 					}
 
 					func() func(x string) {
@@ -1319,7 +1319,7 @@ func (this *Hx_Obj_loreline_lorscript_printer) Hx_Field_expr(e any) {
 						return func(x string) {
 							_hx_closure_src_270(((any)(x)))
 						}
-					}()(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("new ", cl), "("))
+					}()(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("new ", cl), "("))
 					var first bool
 					_ = first
 					first = true
@@ -1416,7 +1416,7 @@ func (this *Hx_Obj_loreline_lorscript_printer) Hx_Field_expr(e any) {
 						return func(x string) {
 							_hx_closure_src_275(((any)(x)))
 						}
-					}()(Hx_Field_go_haxe_hxdynamic_stringConcat(" catch( ", v))
+					}()(Hx_Field_go_haxe_hxstring_concat(" catch( ", v))
 					this.VTable.Hx_Field_addType(t)
 					func() func(x string) {
 						var _hx_closure_src_276 func(x any)
@@ -1445,7 +1445,7 @@ func (this *Hx_Obj_loreline_lorscript_printer) Hx_Field_expr(e any) {
 						}
 					}()("{}")
 				} else {
-					this.Hx_Field_tabs = Hx_Field_go_haxe_hxdynamic_stringConcat(this.Hx_Field_tabs, "\t")
+					this.Hx_Field_tabs = Hx_Field_go_haxe_hxstring_concat(this.Hx_Field_tabs, "\t")
 					func() func(x string) {
 						var _hx_closure_src_278 func(x any)
 						_ = _hx_closure_src_278
@@ -1897,7 +1897,7 @@ func Hx_Field_loreline_lorscript_printer_errorToString(e *Hx_Obj_loreline_lorscr
 				_hx_tmp_0 = Hx_Field_go_haxe_hxstring_fromCharCode(c)
 			}
 
-			message = Hx_Field_go_haxe_hxdynamic_stringConcat((Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Invalid character: '", (_hx_tmp_0)), "' (") + Hx_Field_go_haxe_hxdynamic_toString(c)), ")")
+			message = Hx_Field_go_haxe_hxstring_concat((Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Invalid character: '", (_hx_tmp_0)), "' (") + Hx_Field_go_haxe_hxdynamic_toString(c)), ")")
 		}
 
 	case 1:
@@ -1905,7 +1905,7 @@ func Hx_Field_loreline_lorscript_printer_errorToString(e *Hx_Obj_loreline_lorscr
 			var s string
 			_ = s
 			s = _g.(Hx_Enum_loreline_lorscript_errordef_EUnexpected).Hx_Field_s
-			message = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Unexpected token: \"", s), "\"")
+			message = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Unexpected token: \"", s), "\"")
 		}
 
 	case 2:
@@ -1923,7 +1923,7 @@ func Hx_Field_loreline_lorscript_printer_errorToString(e *Hx_Obj_loreline_lorscr
 			var str string
 			_ = str
 			str = _g.(Hx_Enum_loreline_lorscript_errordef_EInvalidPreprocessor).Hx_Field_msg
-			message = Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("Invalid preprocessor (", str), ")")
+			message = Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Invalid preprocessor (", str), ")")
 		}
 
 	case 5:
@@ -1931,7 +1931,7 @@ func Hx_Field_loreline_lorscript_printer_errorToString(e *Hx_Obj_loreline_lorscr
 			var v string
 			_ = v
 			v = _g.(Hx_Enum_loreline_lorscript_errordef_EUnknownVariable).Hx_Field_v
-			message = Hx_Field_go_haxe_hxdynamic_stringConcat("Unknown variable: ", v)
+			message = Hx_Field_go_haxe_hxstring_concat("Unknown variable: ", v)
 		}
 
 	case 6:
@@ -1939,7 +1939,7 @@ func Hx_Field_loreline_lorscript_printer_errorToString(e *Hx_Obj_loreline_lorscr
 			var v string
 			_ = v
 			v = _g.(Hx_Enum_loreline_lorscript_errordef_EInvalidIterator).Hx_Field_v
-			message = Hx_Field_go_haxe_hxdynamic_stringConcat("Invalid iterator: ", v)
+			message = Hx_Field_go_haxe_hxstring_concat("Invalid iterator: ", v)
 		}
 
 	case 7:
@@ -1947,7 +1947,7 @@ func Hx_Field_loreline_lorscript_printer_errorToString(e *Hx_Obj_loreline_lorscr
 			var op string
 			_ = op
 			op = _g.(Hx_Enum_loreline_lorscript_errordef_EInvalidOp).Hx_Field_op
-			message = Hx_Field_go_haxe_hxdynamic_stringConcat("Invalid operator: ", op)
+			message = Hx_Field_go_haxe_hxstring_concat("Invalid operator: ", op)
 		}
 
 	case 8:
@@ -1955,7 +1955,7 @@ func Hx_Field_loreline_lorscript_printer_errorToString(e *Hx_Obj_loreline_lorscr
 			var f string
 			_ = f
 			f = _g.(Hx_Enum_loreline_lorscript_errordef_EInvalidAccess).Hx_Field_f
-			message = Hx_Field_go_haxe_hxdynamic_stringConcat("Invalid access to field ", f)
+			message = Hx_Field_go_haxe_hxstring_concat("Invalid access to field ", f)
 		}
 
 	case 9:
@@ -1970,8 +1970,8 @@ func Hx_Field_loreline_lorscript_printer_errorToString(e *Hx_Obj_loreline_lorscr
 
 	var _hx_tmp_1 string
 	_ = _hx_tmp_1
-	_hx_tmp_1 = Hx_Field_go_haxe_hxdynamic_stringConcat(e.Hx_Field_origin, ":")
-	return Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat((_hx_tmp_1+Hx_Field_go_haxe_hxdynamic_toString(e.Hx_Field_line)), ": "), message)
+	_hx_tmp_1 = Hx_Field_go_haxe_hxstring_concat(e.Hx_Field_origin, ":")
+	return Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat((_hx_tmp_1+Hx_Field_go_haxe_hxdynamic_toString(e.Hx_Field_line)), ": "), message)
 }
 
 func init() {

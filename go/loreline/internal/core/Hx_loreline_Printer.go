@@ -9,60 +9,60 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_printer() {
 }
 
 type Hx_Obj_VTable_loreline_printer interface {
-	Hx_Field_printStateDecl(state *Hx_Obj_loreline_nstatedecl)
-	Hx_Field_indent()
-	Hx_Field_tab() *Hx_Obj_loreline_printer
-	Hx_Field_printStringLiteralAsReference(str *Hx_Obj_loreline_nstringliteral) string
-	Hx_Field_printStringLiteralAsText(str *Hx_Obj_loreline_nstringliteral) string
-	Hx_Field_printOperand(expr *Hx_Obj_loreline_nexpr, minPrecedence int32)
-	Hx_Field_printHashTrailingComments(node *Hx_Obj_loreline_astnode)
-	Hx_Field_printImport(imp *Hx_Obj_loreline_nimportstatement)
-	Hx_Field_printDialogueStatement(dialogue *Hx_Obj_loreline_ndialoguestatement)
-	Hx_Field_unindent()
-	Hx_Field_newline() *Hx_Obj_loreline_printer
-	Hx_Field_printScript(script *Hx_Obj_loreline_script)
-	Hx_Field_printWhenRule(rule *Hx_Obj_loreline_nwhenrule)
-	Hx_Field_printIfStatement(ifStmt *Hx_Obj_loreline_nifstatement, isElseIf__isOptional any)
-	Hx_Field_printAlternative(alt *Hx_Obj_loreline_nalternative)
-	Hx_Field_printTransition(trans *Hx_Obj_loreline_ntransition, sameLine bool)
-	Hx_Field_write(s string) *Hx_Obj_loreline_printer
-	Hx_Field__writeln(s__isOptional any) *Hx_Obj_loreline_printer
-	Hx_Field_printNode(node *Hx_Obj_loreline_node, sameLine__isOptional any)
-	Hx_Field_printCharacterDecl(char *Hx_Obj_loreline_ncharacterdecl)
-	Hx_Field_printBeatDecl(beat *Hx_Obj_loreline_nbeatdecl)
 	Hx_Field_printFunctionDecl(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl)
-	Hx_Field_printInsertion(insert *Hx_Obj_loreline_ninsertion)
-	Hx_Field_printUnary(unary *Hx_Obj_loreline_nunary)
-	Hx_Field_space() *Hx_Obj_loreline_printer
-	Hx_Field_toString() string
-	Hx_Field_printChoiceOption(option *Hx_Obj_loreline_nchoiceoption)
-	Hx_Field_hasRealNewlines(node *Hx_Obj_loreline_node) bool
-	Hx_Field_getOperator(op Hx_Enum_loreline_tokentype) string
-	Hx_Field_print(node *Hx_Obj_loreline_node) string
-	Hx_Field_printTrailingComments(node *Hx_Obj_loreline_astnode)
+	Hx_Field_printTextStatement(text *Hx_Obj_loreline_ntextstatement)
 	Hx_Field_printChoiceStatement(choice *Hx_Obj_loreline_nchoicestatement)
 	Hx_Field_printImportStatement(imp *Hx_Obj_loreline_nimportstatement)
+	Hx_Field_needsEmptyLines(node *Hx_Obj_loreline_astnode) bool
+	Hx_Field_printTransition(trans *Hx_Obj_loreline_ntransition, sameLine bool)
+	Hx_Field_clear()
+	Hx_Field_space() *Hx_Obj_loreline_printer
+	Hx_Field_printNode(node *Hx_Obj_loreline_node, sameLine__isOptional any)
+	Hx_Field_printDialogueStatement(dialogue *Hx_Obj_loreline_ndialoguestatement)
+	Hx_Field_printInsertion(insert *Hx_Obj_loreline_ninsertion)
+	Hx_Field_printTargetExprAndArgs(targetExpr *Hx_Obj_loreline_nexpr, args HxArray[*Hx_Obj_loreline_nexpr])
+	Hx_Field_writeUnquotedRaw(text string)
+	Hx_Field_printArrayAccess(access *Hx_Obj_loreline_narrayaccess)
+	Hx_Field__writeln(s__isOptional any) *Hx_Obj_loreline_printer
+	Hx_Field_toString() string
+	Hx_Field_printScript(script *Hx_Obj_loreline_script)
+	Hx_Field_printIfStatement(ifStmt *Hx_Obj_loreline_nifstatement, isElseIf__isOptional any)
+	Hx_Field_printAlternative(alt *Hx_Obj_loreline_nalternative)
+	Hx_Field_printBeatCall(call *Hx_Obj_loreline_nbeatcall)
+	Hx_Field_printAccess(access *Hx_Obj_loreline_naccess)
+	Hx_Field_tab() *Hx_Obj_loreline_printer
+	Hx_Field__line(s string) *Hx_Obj_loreline_printer
+	Hx_Field_print(node *Hx_Obj_loreline_node) string
+	Hx_Field_printStateDecl(state *Hx_Obj_loreline_nstatedecl)
+	Hx_Field_printBeatDecl(beat *Hx_Obj_loreline_nbeatdecl)
+	Hx_Field_printBinary(binary *Hx_Obj_loreline_nbinary)
+	Hx_Field_printUnary(unary *Hx_Obj_loreline_nunary)
+	Hx_Field_newline() *Hx_Obj_loreline_printer
+	Hx_Field_printOperand(expr *Hx_Obj_loreline_nexpr, minPrecedence int32)
+	Hx_Field_printCharacterDecl(char *Hx_Obj_loreline_ncharacterdecl)
+	Hx_Field_printWhenStatement(when *Hx_Obj_loreline_nwhenstatement)
+	Hx_Field_printLiteral(lit *Hx_Obj_loreline_nliteral)
+	Hx_Field_printAssignment(assign *Hx_Obj_loreline_nassign)
+	Hx_Field_getOperator(op Hx_Enum_loreline_tokentype) string
+	Hx_Field_unindent()
+	Hx_Field_printStringLiteralAsReference(str *Hx_Obj_loreline_nstringliteral) string
+	Hx_Field_printImport(imp *Hx_Obj_loreline_nimportstatement)
+	Hx_Field_printWhenRule(rule *Hx_Obj_loreline_nwhenrule)
+	Hx_Field_printChoiceOption(option *Hx_Obj_loreline_nchoiceoption)
+	Hx_Field_hasRealNewlines(node *Hx_Obj_loreline_node) bool
+	Hx_Field_printTrailingComments(node *Hx_Obj_loreline_astnode)
+	Hx_Field_writeRawWithContinuation(text string, stripIndent bool)
+	Hx_Field_printInLineExpression(expr *Hx_Obj_loreline_nexpr, parens bool)
+	Hx_Field_printStringLiteralAsText(str *Hx_Obj_loreline_nstringliteral) string
+	Hx_Field_printLeadingComments(node *Hx_Obj_loreline_astnode)
+	Hx_Field_printHashTrailingComments(node *Hx_Obj_loreline_astnode)
 	Hx_Field_printStringLiteral(str *Hx_Obj_loreline_nstringliteral)
 	Hx_Field_writeQuotedRaw(text string)
-	Hx_Field_writeRawWithContinuation(text string, stripIndent bool)
-	Hx_Field_clear()
-	Hx_Field__line(s string) *Hx_Obj_loreline_printer
-	Hx_Field_printLeadingComments(node *Hx_Obj_loreline_astnode)
-	Hx_Field_printWhenStatement(when *Hx_Obj_loreline_nwhenstatement)
-	Hx_Field_writeUnquotedRaw(text string)
-	Hx_Field_printAccess(access *Hx_Obj_loreline_naccess)
-	Hx_Field_printArrayAccess(access *Hx_Obj_loreline_narrayaccess)
 	Hx_Field_printCall(call *Hx_Obj_loreline_ncall)
-	Hx_Field_printTargetExprAndArgs(targetExpr *Hx_Obj_loreline_nexpr, args HxArray[*Hx_Obj_loreline_nexpr])
-	Hx_Field_printLiteral(lit *Hx_Obj_loreline_nliteral)
-	Hx_Field_printBinary(binary *Hx_Obj_loreline_nbinary)
-	Hx_Field_printAssignment(assign *Hx_Obj_loreline_nassign)
-	Hx_Field_printInLineExpression(expr *Hx_Obj_loreline_nexpr, parens bool)
-	Hx_Field_printTextStatement(text *Hx_Obj_loreline_ntextstatement)
-	Hx_Field_needsEmptyLines(node *Hx_Obj_loreline_astnode) bool
-	Hx_Field_printBeatCall(call *Hx_Obj_loreline_nbeatcall)
 	Hx_Field_printTernary(ternary *Hx_Obj_loreline_nternary)
 	Hx_Field_isSimpleInterpolationExpr(expr *Hx_Obj_loreline_nexpr) bool
+	Hx_Field_indent()
+	Hx_Field_write(s string) *Hx_Obj_loreline_printer
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -595,7 +595,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printNode(node *Hx_Obj_loreline_no
 				}
 			}()(node)
 			if _g2 == nil {
-				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Unsupported node type: ", Hx_Field_type_getClassName(((*Hx_Obj_go_haxe_hxclass)(func() func(o *Hx_Obj_loreline_node) *Hx_Obj_go_haxe_hxclass {
+				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Unsupported node type: ", Hx_Field_type_getClassName(((*Hx_Obj_go_haxe_hxclass)(func() func(o *Hx_Obj_loreline_node) *Hx_Obj_go_haxe_hxclass {
 					var _hx_closure_src_446 func(o any) *Hx_Obj_go_haxe_hxclass
 					_ = _hx_closure_src_446
 					_hx_closure_src_446 = Hx_Field_type_getClass
@@ -790,7 +790,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printNode(node *Hx_Obj_loreline_no
 
 				default:
 					{
-						panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Unsupported node type: ", Hx_Field_type_getClassName(((*Hx_Obj_go_haxe_hxclass)(func() func(o *Hx_Obj_loreline_node) *Hx_Obj_go_haxe_hxclass {
+						panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Unsupported node type: ", Hx_Field_type_getClassName(((*Hx_Obj_go_haxe_hxclass)(func() func(o *Hx_Obj_loreline_node) *Hx_Obj_go_haxe_hxclass {
 							var _hx_closure_src_447 func(o any) *Hx_Obj_go_haxe_hxclass
 							_ = _hx_closure_src_447
 							_hx_closure_src_447 = Hx_Field_type_getClass
@@ -876,14 +876,14 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printLeadingComments(node *Hx_Obj_
 			comment = _g1.Get(_g)
 			_g++
 			if comment.Hx_Field_multiline {
-				this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("/*", comment.Hx_Field_content), "*/"))
+				this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("/*", comment.Hx_Field_content), "*/"))
 				this.VTable.Hx_Field_newline()
 			} else {
 				if comment.Hx_Field_isHash {
-					this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxdynamic_stringConcat("#", comment.Hx_Field_content))
+					this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxstring_concat("#", comment.Hx_Field_content))
 					this.VTable.Hx_Field_newline()
 				} else {
-					this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxdynamic_stringConcat("//", comment.Hx_Field_content))
+					this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxstring_concat("//", comment.Hx_Field_content))
 					this.VTable.Hx_Field_newline()
 				}
 			}
@@ -917,7 +917,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printHashTrailingComments(node *Hx
 				}
 
 				{
-					this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxdynamic_stringConcat("#", comment.Hx_Field_content))
+					this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxstring_concat("#", comment.Hx_Field_content))
 					this.VTable.Hx_Field_newline()
 				}
 			}
@@ -950,14 +950,14 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printTrailingComments(node *Hx_Obj
 			}
 
 			if comment.Hx_Field_multiline {
-				this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("/*", comment.Hx_Field_content), "*/"))
+				this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("/*", comment.Hx_Field_content), "*/"))
 				this.VTable.Hx_Field_space()
 			} else {
 				if comment.Hx_Field_isHash {
-					this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxdynamic_stringConcat("#", comment.Hx_Field_content))
+					this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxstring_concat("#", comment.Hx_Field_content))
 					this.VTable.Hx_Field_newline()
 				} else {
-					this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxdynamic_stringConcat("//", comment.Hx_Field_content))
+					this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxstring_concat("//", comment.Hx_Field_content))
 					this.VTable.Hx_Field_newline()
 				}
 			}
@@ -974,7 +974,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printImport(imp *Hx_Obj_loreline_n
 		return nil
 	})())
 	{
-		this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("import \"", Hx_Field_std_string(imp.Hx_Field_path)), "\""))
+		this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("import \"", Hx_Field_std_string(imp.Hx_Field_path)), "\""))
 		this.VTable.Hx_Field_newline()
 	}
 
@@ -1087,7 +1087,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printStateDecl(state *Hx_Obj_lorel
 				}
 				return nil
 			})())
-			this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("", field.Hx_Field_name), ":"))
+			this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("", field.Hx_Field_name), ":"))
 			this.VTable.Hx_Field_space()
 			this.VTable.Hx_Field_printTrailingComments((func() *Hx_Obj_loreline_astnode {
 				_hx_up := field
@@ -1127,7 +1127,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printCharacterDecl(char *Hx_Obj_lo
 		}
 		return nil
 	})())
-	this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxdynamic_stringConcat("character ", char.Hx_Field_name))
+	this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxstring_concat("character ", char.Hx_Field_name))
 	this.VTable.Hx_Field_space()
 	this.VTable.Hx_Field_printTrailingComments((func() *Hx_Obj_loreline_astnode {
 		_hx_up := char
@@ -1170,7 +1170,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printCharacterDecl(char *Hx_Obj_lo
 				}
 				return nil
 			})())
-			this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("", prop.Hx_Field_name), ":"))
+			this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("", prop.Hx_Field_name), ":"))
 			this.VTable.Hx_Field_space()
 			this.VTable.Hx_Field_printTrailingComments((func() *Hx_Obj_loreline_astnode {
 				_hx_up := prop
@@ -1212,7 +1212,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printBeatDecl(beat *Hx_Obj_lorelin
 		}
 		return nil
 	})())
-	this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxdynamic_stringConcat("beat ", beat.Hx_Field_name))
+	this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxstring_concat("beat ", beat.Hx_Field_name))
 	if beat.Hx_Field_params != nil {
 		var savedComments bool
 		_ = savedComments
@@ -1411,7 +1411,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printDialogueStatement(dialogue *H
 	}
 
 	if _hx_tmp_0 {
-		this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("", dialogue.Hx_Field_character), ":"))
+		this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("", dialogue.Hx_Field_character), ":"))
 		this.VTable.Hx_Field_printTrailingComments((func() *Hx_Obj_loreline_astnode {
 			_hx_up := dialogue
 			if _hx_up != nil {
@@ -1433,7 +1433,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printDialogueStatement(dialogue *H
 		this.VTable.Hx_Field_printNode(_hx_tmp_1, nil)
 		this.Hx_Field__level--
 	} else {
-		this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("", dialogue.Hx_Field_character), ": "))
+		this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("", dialogue.Hx_Field_character), ": "))
 		this.VTable.Hx_Field_printTrailingComments((func() *Hx_Obj_loreline_astnode {
 			_hx_up := dialogue
 			if _hx_up != nil {
@@ -1541,7 +1541,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printWhenStatement(when *Hx_Obj_lo
 	})())
 	this.VTable.Hx_Field_write("when")
 	if (when.Hx_Field_strategy).Valid != false {
-		this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxdynamic_stringConcat(" ", (when.Hx_Field_strategy).Value))
+		this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxstring_concat(" ", (when.Hx_Field_strategy).Value))
 	}
 
 	this.VTable.Hx_Field_printTrailingComments((func() *Hx_Obj_loreline_astnode {
@@ -2258,7 +2258,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printTransition(trans *Hx_Obj_lore
 		this.VTable.Hx_Field_printTargetExprAndArgs(trans.Hx_Field_targetExpr, trans.Hx_Field_args)
 		this.VTable.Hx_Field_write(")")
 	} else {
-		this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxdynamic_stringConcat("-> ", trans.Hx_Field_target))
+		this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxstring_concat("-> ", trans.Hx_Field_target))
 		if trans.Hx_Field_args != nil {
 			this.VTable.Hx_Field_write("(")
 			this.VTable.Hx_Field_printTargetExprAndArgs(nil, trans.Hx_Field_args)
@@ -2292,7 +2292,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printInsertion(insert *Hx_Obj_lore
 		this.VTable.Hx_Field_printTargetExprAndArgs(insert.Hx_Field_targetExpr, insert.Hx_Field_args)
 		this.VTable.Hx_Field_write(")")
 	} else {
-		this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxdynamic_stringConcat("+ ", insert.Hx_Field_target))
+		this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxstring_concat("+ ", insert.Hx_Field_target))
 		if insert.Hx_Field_args != nil {
 			this.VTable.Hx_Field_write("(")
 			this.VTable.Hx_Field_printTargetExprAndArgs(nil, insert.Hx_Field_args)
@@ -3044,7 +3044,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printLiteral(lit *Hx_Obj_loreline_
 								}
 								return nil
 							})())
-							this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat("", field.Hx_Field_name), ":"))
+							this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("", field.Hx_Field_name), ":"))
 							this.VTable.Hx_Field_space()
 							this.VTable.Hx_Field_printTrailingComments((func() *Hx_Obj_loreline_astnode {
 								_hx_up := field
@@ -3217,7 +3217,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printBinary(binary *Hx_Obj_lorelin
 		return nil
 	})())
 	this.VTable.Hx_Field_printOperand(binary.Hx_Field_left, level)
-	this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(" ", this.VTable.Hx_Field_getOperator(binary.Hx_Field_op)), " "))
+	this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(" ", this.VTable.Hx_Field_getOperator(binary.Hx_Field_op)), " "))
 	if Hx_Field_loreline_printer_isWordNotAfterIs(binary) {
 		this.VTable.Hx_Field_write("(")
 		var _hx_tmp_0 *Hx_Obj_loreline_node
@@ -3321,7 +3321,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printAssignment(assign *Hx_Obj_lor
 		}
 		return nil
 	})())
-	this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxdynamic_stringConcat(Hx_Field_go_haxe_hxdynamic_stringConcat(" ", this.VTable.Hx_Field_getOperator(assign.Hx_Field_op)), " "))
+	this.VTable.Hx_Field_write(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(" ", this.VTable.Hx_Field_getOperator(assign.Hx_Field_op)), " "))
 	var _hx_tmp_1 *Hx_Obj_loreline_node
 	_ = _hx_tmp_1
 	_hx_tmp_1 = (func() *Hx_Obj_loreline_node {
@@ -3587,7 +3587,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_getOperator(op Hx_Enum_loreline_to
 
 	default:
 		{
-			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxdynamic_stringConcat("Unsupported operator: ", Hx_Field_std_string(op))))))
+			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Unsupported operator: ", Hx_Field_std_string(op))))))
 		}
 	}
 }
