@@ -114,7 +114,7 @@ func Hx_Field_std_isHexadecimalDigit(code int32) bool {
 
 func Hx_Field_std_parseInt(x string) HxNullable[int32] {
 	if x == HxStringNull {
-		return HxNullable[int32]{}
+		return HxDefault[HxNullable[int32]]()
 	}
 
 	var _hx_reserved_len int32
@@ -230,7 +230,7 @@ func Hx_Field_std_parseInt(x string) HxNullable[int32] {
 	_ = firstInvalidIndex
 	firstInvalidIndex = cur
 	if index == firstInvalidIndex {
-		return HxNullable[int32]{}
+		return HxDefault[HxNullable[int32]]()
 	}
 
 	var hx_result_7 struct {
@@ -813,7 +813,7 @@ func Hx_Field_std_isOfType(v any, t any) bool {
 			var _hx_tmp_0 bool
 			_ = _hx_tmp_0
 			if vt.Hx_Field_enumIndex() == 7 {
-				_hx_tmp_0 = (vt.(Hx_Enum_valuetype_TClass).Hx_Field_c == Hx_Obj_array_RTTI)
+				_hx_tmp_0 = (((Hx_Enum_valuetype)(vt)).(Hx_Enum_valuetype_TClass).Hx_Field_c == Hx_Obj_array_RTTI)
 			} else {
 				_hx_tmp_0 = false
 			}
@@ -910,7 +910,7 @@ func Hx_Field_std_isOfType(v any, t any) bool {
 			var _hx_tmp_8 bool
 			_ = _hx_tmp_8
 			if vt.Hx_Field_enumIndex() == 7 {
-				_hx_tmp_8 = (vt.(Hx_Enum_valuetype_TClass).Hx_Field_c == Hx_Obj_string_RTTI)
+				_hx_tmp_8 = (((Hx_Enum_valuetype)(vt)).(Hx_Enum_valuetype_TClass).Hx_Field_c == Hx_Obj_string_RTTI)
 			} else {
 				_hx_tmp_8 = false
 			}
@@ -925,7 +925,7 @@ func Hx_Field_std_isOfType(v any, t any) bool {
 				{
 					var q *Hx_Obj_go_haxe_hxclass
 					_ = q
-					q = vt.(Hx_Enum_valuetype_TClass).Hx_Field_c
+					q = ((Hx_Enum_valuetype)(vt)).(Hx_Enum_valuetype_TClass).Hx_Field_c
 					if !Hx_Field_go_haxe_hxdynamic_isHxClass(t) {
 						return false
 					}
@@ -1004,7 +1004,7 @@ func Hx_Field_std_isOfType(v any, t any) bool {
 				{
 					var q *Hx_Obj_go_haxe_hxenum
 					_ = q
-					q = vt.(Hx_Enum_valuetype_TEnum).Hx_Field_e
+					q = ((Hx_Enum_valuetype)(vt)).(Hx_Enum_valuetype_TEnum).Hx_Field_e
 					if !Hx_Field_go_haxe_hxdynamic_isHxEnum(t) {
 						return false
 					}

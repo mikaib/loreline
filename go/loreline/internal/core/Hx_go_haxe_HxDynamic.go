@@ -527,8 +527,7 @@ func Hx_Field_go_haxe_hxdynamic_toAnySlice(v any) []any {
 	_hx_reserved_len = Hx_Field_go_haxe_hxdynamic_getArrayLength(v)
 	var length HxNullable[int32]
 	_ = length
-	length = HxNullable[int32]{}
-
+	length = HxDefault[HxNullable[int32]]()
 	var this1 []any
 	_ = this1
 	var length1 HxNullable[int32]
@@ -2054,8 +2053,7 @@ func Hx_Field_go_haxe_hxdynamic_createNewClosure(fn reflect.Value, t reflect.Typ
 		results = fn.Call(self.Underlying())
 		var length HxNullable[int32]
 		_ = length
-		length = HxNullable[int32]{}
-
+		length = HxDefault[HxNullable[int32]]()
 		var this1 []reflect.Value
 		_ = this1
 		var length1 HxNullable[int32]
@@ -2304,7 +2302,7 @@ func Hx_Field_go_haxe_hxdynamic_call(fn any, args HxArray[any]) any {
 			_hx_tmp_23 = ((int32)((_hx_tmp_24 - int(((int32)(1))))))
 			var rest HxArray[any]
 			_ = rest
-			rest = (Hx_Array_Slice[any](_hx_tmp_22, _hx_tmp_23, HxNullable[int32]{}))
+			rest = (Hx_Array_Slice[any](_hx_tmp_22, _hx_tmp_23, HxDefault[HxNullable[int32]]()))
 			var _hx_tmp_25 int
 			_ = _hx_tmp_25
 			_hx_tmp_25 = numIn
@@ -2740,7 +2738,7 @@ func Hx_Field_go_haxe_hxdynamic_hxEnumConstructor(en *Hx_Obj_go_haxe_hxenum, fie
 	_hx_tmp_1 = fieldName
 	var i int32
 	_ = i
-	i = (Hx_Array_IndexOf[string](_hx_tmp_0, _hx_tmp_1, HxNullable[int32]{}))
+	i = (Hx_Array_IndexOf[string](_hx_tmp_0, _hx_tmp_1, HxDefault[HxNullable[int32]]()))
 	if i < 0 {
 		return nil
 	}
@@ -2840,7 +2838,7 @@ func Hx_Field_go_haxe_hxdynamic_asEnum(d any) any {
 }
 
 func Hx_Field_go_haxe_hxdynamic_hxClassStaticValue(cls *Hx_Obj_go_haxe_hxclass, fieldName string) reflect.Value {
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(((any)(cls.Hx_Field_getStaticFieldPtr)), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(((any)(cls.Hx_Field_getStaticFieldPtr)), HxDefault[any]()))) {
 		return Hx_Field_go_haxe_hxdynamic_Null
 	}
 
@@ -2977,8 +2975,7 @@ func Hx_Field_go_haxe_hxdynamic_getFieldFrom(dyn any, fieldName string, hop bool
 						if (fromIndex).Valid == false {
 							var hx_nullable_t14 HxNullable[int32]
 							_ = hx_nullable_t14
-							hx_nullable_t14 = HxNullable[int32]{}
-
+							hx_nullable_t14 = HxDefault[HxNullable[int32]]()
 							fromIndex = HxNullable[int32]{Value: (hx_nullable_t14).Value, Valid: (hx_nullable_t14).Valid}
 						}
 
@@ -3045,8 +3042,7 @@ func Hx_Field_go_haxe_hxdynamic_getFieldFrom(dyn any, fieldName string, hop bool
 						if (fromIndex).Valid == false {
 							var hx_nullable_t15 HxNullable[int32]
 							_ = hx_nullable_t15
-							hx_nullable_t15 = HxNullable[int32]{}
-
+							hx_nullable_t15 = HxDefault[HxNullable[int32]]()
 							fromIndex = HxNullable[int32]{Value: (hx_nullable_t15).Value, Valid: (hx_nullable_t15).Valid}
 						}
 
@@ -3148,8 +3144,7 @@ func Hx_Field_go_haxe_hxdynamic_getFieldFrom(dyn any, fieldName string, hop bool
 						if (end).Valid == false {
 							var hx_nullable_t16 HxNullable[int32]
 							_ = hx_nullable_t16
-							hx_nullable_t16 = HxNullable[int32]{}
-
+							hx_nullable_t16 = HxDefault[HxNullable[int32]]()
 							end = HxNullable[int32]{Value: (hx_nullable_t16).Value, Valid: (hx_nullable_t16).Valid}
 						}
 
@@ -3417,8 +3412,7 @@ func Hx_Field_go_haxe_hxdynamic_getFieldFrom(dyn any, fieldName string, hop bool
 						if (startIndex).Valid == false {
 							var hx_nullable_t17 HxNullable[int32]
 							_ = hx_nullable_t17
-							hx_nullable_t17 = HxNullable[int32]{}
-
+							hx_nullable_t17 = HxDefault[HxNullable[int32]]()
 							startIndex = HxNullable[int32]{Value: (hx_nullable_t17).Value, Valid: (hx_nullable_t17).Valid}
 						}
 
@@ -3445,8 +3439,7 @@ func Hx_Field_go_haxe_hxdynamic_getFieldFrom(dyn any, fieldName string, hop bool
 						if (startIndex).Valid == false {
 							var hx_nullable_t18 HxNullable[int32]
 							_ = hx_nullable_t18
-							hx_nullable_t18 = HxNullable[int32]{}
-
+							hx_nullable_t18 = HxDefault[HxNullable[int32]]()
 							startIndex = HxNullable[int32]{Value: (hx_nullable_t18).Value, Valid: (hx_nullable_t18).Valid}
 						}
 
@@ -3488,8 +3481,7 @@ func Hx_Field_go_haxe_hxdynamic_getFieldFrom(dyn any, fieldName string, hop bool
 						if (_hx_reserved_len).Valid == false {
 							var hx_nullable_t19 HxNullable[int32]
 							_ = hx_nullable_t19
-							hx_nullable_t19 = HxNullable[int32]{}
-
+							hx_nullable_t19 = HxDefault[HxNullable[int32]]()
 							_hx_reserved_len = HxNullable[int32]{Value: (hx_nullable_t19).Value, Valid: (hx_nullable_t19).Valid}
 						}
 
@@ -3516,8 +3508,7 @@ func Hx_Field_go_haxe_hxdynamic_getFieldFrom(dyn any, fieldName string, hop bool
 						if (endIndex).Valid == false {
 							var hx_nullable_t20 HxNullable[int32]
 							_ = hx_nullable_t20
-							hx_nullable_t20 = HxNullable[int32]{}
-
+							hx_nullable_t20 = HxDefault[HxNullable[int32]]()
 							endIndex = HxNullable[int32]{Value: (hx_nullable_t20).Value, Valid: (hx_nullable_t20).Valid}
 						}
 
@@ -3682,7 +3673,7 @@ func Hx_Field_go_haxe_hxdynamic_tryDynamicArray(dyn any) HxNullable[HxArrayDyn] 
 	if ok {
 		_hx_tmp_0 = HxNullable[HxArrayDyn]{Value: arr, Valid: true}
 	} else {
-		_hx_tmp_0 = HxNullable[HxArrayDyn]{}
+		_hx_tmp_0 = HxDefault[HxNullable[HxArrayDyn]]()
 	}
 
 	return _hx_tmp_0
@@ -4043,6 +4034,7 @@ func Hx_Field_go_haxe_hxdynamic_ensureInterface(dyn any) any {
 	return value.Interface()
 }
 
+//go:nocheckptr
 func Hx_Field_go_haxe_hxdynamic_funcReceiver(fn any) uintptr {
 	var header unsafe.Pointer
 	_ = header

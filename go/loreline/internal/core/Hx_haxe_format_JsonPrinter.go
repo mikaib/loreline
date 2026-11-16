@@ -9,15 +9,15 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_format_jsonprinter() {
 }
 
 type Hx_Obj_VTable_haxe_format_jsonprinter interface {
-	Hx_Field_quote(s string)
-	Hx_Field_ipad()
 	Hx_Field_newl()
-	Hx_Field_classString(v any)
-	Hx_Field_beginStack(v any)
-	Hx_Field_endStack(v any)
 	Hx_Field_write(k any, v any)
 	Hx_Field_objString(v any)
+	Hx_Field_beginStack(v any)
+	Hx_Field_ipad()
+	Hx_Field_classString(v any)
+	Hx_Field_endStack(v any)
 	Hx_Field_fieldsString(v any, fields HxArray[string])
+	Hx_Field_quote(s string)
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -138,7 +138,7 @@ func (this *Hx_Obj_haxe_format_jsonprinter) Hx_Field_newl() {
 }
 
 func (this *Hx_Obj_haxe_format_jsonprinter) Hx_Field_write(k any, v any) {
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(this.Hx_Field_replacer)), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(this.Hx_Field_replacer)), HxDefault[any]()))) {
 		v = this.Hx_Field_replacer(k, v)
 	}
 
@@ -230,7 +230,7 @@ func (this *Hx_Obj_haxe_format_jsonprinter) Hx_Field_write(k any, v any) {
 			{
 				var c *Hx_Obj_go_haxe_hxclass
 				_ = c
-				c = _g.(Hx_Enum_valuetype_TClass).Hx_Field_c
+				c = ((Hx_Enum_valuetype)(_g)).(Hx_Enum_valuetype_TClass).Hx_Field_c
 				if c == Hx_Obj_string_RTTI {
 					this.VTable.Hx_Field_quote(Hx_Field_go_haxe_hxdynamic_toString(v))
 				} else {
@@ -777,8 +777,7 @@ func Hx_Field_haxe_format_jsonprinter_print(o any, replacer__isOptional any, spa
 		if (space).Valid == false {
 			var hx_nullable_t31 HxNullable[string]
 			_ = hx_nullable_t31
-			hx_nullable_t31 = HxNullable[string]{Value: HxStringNull}
-
+			hx_nullable_t31 = HxDefault[HxNullable[string]]()
 			space = HxNullable[string]{Value: (hx_nullable_t31).Value, Valid: (hx_nullable_t31).Valid}
 		}
 

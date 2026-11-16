@@ -79,7 +79,7 @@ func (this *Hx_Obj_go_haxe_hxprofile) Hx_As_Hx_Obj_go_haxe_hxprofile() *Hx_Obj_g
 var Hx_Field_go_haxe_hxprofile_cpuFile *os.File
 
 func Hx_Init_Hx_Field_go_haxe_hxprofile_cpuFile() *os.File {
-	return ((*os.File)(nil))
+	return HxDefault[*os.File]()
 }
 
 var Hx_Field_go_haxe_hxprofile_cpuPath string

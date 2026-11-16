@@ -201,8 +201,7 @@ func (this *Hx_Obj_stringbuf) Hx_Field_addSub(s string, pos int32, _hx_reserved_
 		if (_hx_reserved_len).Valid == false {
 			var hx_nullable_t6 HxNullable[int32]
 			_ = hx_nullable_t6
-			hx_nullable_t6 = HxNullable[int32]{}
-
+			hx_nullable_t6 = HxDefault[HxNullable[int32]]()
 			_hx_reserved_len = HxNullable[int32]{Value: (hx_nullable_t6).Value, Valid: (hx_nullable_t6).Valid}
 		}
 
@@ -226,7 +225,7 @@ func (this *Hx_Obj_stringbuf) Hx_Field_addSub(s string, pos int32, _hx_reserved_
 			var _hx_tmp_4 int32
 			_ = _hx_tmp_4
 			_hx_tmp_4 = _hx_tmp_2
-			_hx_tmp_0 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_3, _hx_tmp_4, HxNullable[int32]{}))
+			_hx_tmp_0 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_3, _hx_tmp_4, HxDefault[HxNullable[int32]]()))
 		} else {
 			_hx_tmp_0 = (Hx_Field_go_haxe_hxstring_substr(s, pos, _hx_reserved_len))
 		}

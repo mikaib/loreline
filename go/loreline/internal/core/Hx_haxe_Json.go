@@ -241,8 +241,7 @@ func Hx_Field_haxe_json_stringify(value any, replacer__isOptional any, space__is
 		if (space).Valid == false {
 			var hx_nullable_t32 HxNullable[string]
 			_ = hx_nullable_t32
-			hx_nullable_t32 = HxNullable[string]{Value: HxStringNull}
-
+			hx_nullable_t32 = HxDefault[HxNullable[string]]()
 			space = HxNullable[string]{Value: (hx_nullable_t32).Value, Valid: (hx_nullable_t32).Valid}
 		}
 
@@ -251,17 +250,48 @@ func Hx_Field_haxe_json_stringify(value any, replacer__isOptional any, space__is
 }
 
 func Hx_Field_haxe_json_kindOf(raw any) int32 {
-	return func() int32 {
-		switch raw.(type) {
-		case map[string]any:
-			return 1
-		case []any:
-			return 2
-		case json.Number:
-			return 3
-		}
-		return 0
-	}()
+	var ret HxNullable[int32]
+	_ = ret
+	ret = HxDefault[HxNullable[int32]]()
+	var _hx_tmp_0 any
+	_ = _hx_tmp_0
+	_hx_tmp_0 = raw
+	var _hx_tmp_1 func(_hx_reserved__ map[string]any)
+	_ = _hx_tmp_1
+	_hx_tmp_1 = func(_hx_blank0 map[string]any) {
+		ret = HxNullable[int32]{Value: ((int32)(1)), Valid: true}
+	}
+
+	var _hx_tmp_2 func(_hx_reserved__ []any)
+	_ = _hx_tmp_2
+	_hx_tmp_2 = func(_hx_blank0 []any) {
+		ret = HxNullable[int32]{Value: ((int32)(2)), Valid: true}
+	}
+
+	var _hx_tmp_3 func(_hx_reserved__ json.Number)
+	_ = _hx_tmp_3
+	_hx_tmp_3 = func(_hx_blank0 json.Number) {
+		ret = HxNullable[int32]{Value: ((int32)(3)), Valid: true}
+	}
+
+	switch _hx_arg := _hx_tmp_0.(type) {
+	case map[string]any:
+		_ = _hx_arg
+		_hx_tmp_1(_hx_arg)
+	case []any:
+		_ = _hx_arg
+		_hx_tmp_2(_hx_arg)
+	case json.Number:
+		_ = _hx_arg
+		_hx_tmp_3(_hx_arg)
+	default:
+		_ = _hx_arg
+		func(_hx_blank0 any) {
+			ret = HxNullable[int32]{Value: ((int32)(0)), Valid: true}
+		}(_hx_arg)
+	}
+
+	return (ret).Value
 }
 
 func Hx_Field_haxe_json_convert(raw any) any {
@@ -286,8 +316,7 @@ func Hx_Field_haxe_json_convert(raw any) any {
 			{
 				var length HxNullable[int32]
 				_ = length
-				length = HxNullable[int32]{}
-
+				length = HxDefault[HxNullable[int32]]()
 				var _hx_tmp_0 int32
 				_ = _hx_tmp_0
 				if (length).Valid != false {
@@ -417,7 +446,7 @@ func Hx_Field_haxe_json_convert(raw any) any {
 			var _hx_tmp_10 string
 			_ = _hx_tmp_10
 			_hx_tmp_10 = text
-			if (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_10, ".", HxNullable[int32]{})) >= 0 {
+			if (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_10, ".", HxDefault[HxNullable[int32]]())) >= 0 {
 				return ((any)(f))
 			}
 

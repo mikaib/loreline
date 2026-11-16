@@ -13,22 +13,22 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_lib_goscript() {
 }
 
 type Hx_Obj_VTable_loreline_lib_goscript interface {
-	Hx_Field_play(dialogue Hx_Typedef_loreline_lib_godialoguehandler, choice Hx_Typedef_loreline_lib_gochoicehandler, finish Hx_Typedef_loreline_lib_gofinishhandler, beat string, options *Hx_Obj_loreline_lib_gooptions) struct {
-		Err         error
-		Interpreter *Hx_Obj_loreline_lib_gointerpreter
-	}
+	Hx_Field_type() string
+	Hx_Field_line() int32
+	Hx_Field_column() int32
+	Hx_Field_id() string
 	Hx_Field_resume(dialogue Hx_Typedef_loreline_lib_godialoguehandler, choice Hx_Typedef_loreline_lib_gochoicehandler, finish Hx_Typedef_loreline_lib_gofinishhandler, save string, beat string, options *Hx_Obj_loreline_lib_gooptions) struct {
 		Err         error
 		Interpreter *Hx_Obj_loreline_lib_gointerpreter
 	}
-	Hx_Field_type() string
-	Hx_Field_line() int32
-	Hx_Field_column() int32
-	Hx_Field_print(indent string, newline string) string
 	Hx_Field_offset() int32
 	Hx_Field_length() int32
-	Hx_Field_id() string
 	Hx_Field_toJson(pretty bool) string
+	Hx_Field_play(dialogue Hx_Typedef_loreline_lib_godialoguehandler, choice Hx_Typedef_loreline_lib_gochoicehandler, finish Hx_Typedef_loreline_lib_gofinishhandler, beat string, options *Hx_Obj_loreline_lib_gooptions) struct {
+		Err         error
+		Interpreter *Hx_Obj_loreline_lib_gointerpreter
+	}
+	Hx_Field_print(indent string, newline string) string
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -128,7 +128,7 @@ func (this *Hx_Obj_loreline_lib_goscript) Hx_Field_play(dialogue Hx_Typedef_lore
 							}()
 							var hx_dyncast_374 any
 							_ = hx_dyncast_374
-							hx_dyncast_374 = Hx_Field_go_haxe_hxdynamic_castClass(((any)(nil)), "Hx_Obj_loreline_lib_gointerpreter")
+							hx_dyncast_374 = Hx_Field_go_haxe_hxdynamic_castClass(HxDefault[any](), "Hx_Obj_loreline_lib_gointerpreter")
 							var _hx_tmp_7 *Hx_Obj_loreline_lib_gointerpreter
 							_ = _hx_tmp_7
 							if hx_dyncast_374 != nil {
@@ -188,7 +188,7 @@ func (this *Hx_Obj_loreline_lib_goscript) Hx_Field_play(dialogue Hx_Typedef_lore
 					Err         error
 					Interpreter *Hx_Obj_loreline_lib_gointerpreter
 				}{func() error {
-					_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(((any)(nil)))
+					_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(HxDefault[any]())
 					if _hx_d == nil {
 						var _hx_z error
 						return _hx_z
@@ -239,7 +239,7 @@ func (this *Hx_Obj_loreline_lib_goscript) Hx_Field_resume(dialogue Hx_Typedef_lo
 							}()
 							var hx_dyncast_376 any
 							_ = hx_dyncast_376
-							hx_dyncast_376 = Hx_Field_go_haxe_hxdynamic_castClass(((any)(nil)), "Hx_Obj_loreline_lib_gointerpreter")
+							hx_dyncast_376 = Hx_Field_go_haxe_hxdynamic_castClass(HxDefault[any](), "Hx_Obj_loreline_lib_gointerpreter")
 							var _hx_tmp_8 *Hx_Obj_loreline_lib_gointerpreter
 							_ = _hx_tmp_8
 							if hx_dyncast_376 != nil {
@@ -302,7 +302,7 @@ func (this *Hx_Obj_loreline_lib_goscript) Hx_Field_resume(dialogue Hx_Typedef_lo
 					Err         error
 					Interpreter *Hx_Obj_loreline_lib_gointerpreter
 				}{func() error {
-					_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(((any)(nil)))
+					_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(HxDefault[any]())
 					if _hx_d == nil {
 						var _hx_z error
 						return _hx_z

@@ -135,8 +135,7 @@ func Hx_Field_loreline_loreline_parse(input string, filePath__isOptional any, ha
 		if (filePath).Valid == false {
 			var hx_nullable_t74 HxNullable[string]
 			_ = hx_nullable_t74
-			hx_nullable_t74 = HxNullable[string]{Value: HxStringNull}
-
+			hx_nullable_t74 = HxDefault[HxNullable[string]]()
 			filePath = HxNullable[string]{Value: (hx_nullable_t74).Value, Valid: (hx_nullable_t74).Valid}
 		}
 
@@ -173,7 +172,7 @@ func Hx_Field_loreline_loreline_parse(input string, filePath__isOptional any, ha
 		var _hx_tmp_1 bool
 		_ = _hx_tmp_1
 		if (filePath).Valid != false {
-			_hx_tmp_1 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(handleFile)), ((any)(nil))))))
+			_hx_tmp_1 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(handleFile)), HxDefault[any]()))))
 		} else {
 			_hx_tmp_1 = false
 		}
@@ -229,7 +228,7 @@ func Hx_Field_loreline_loreline_parse(input string, filePath__isOptional any, ha
 					return
 				}
 
-				if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(callback)), ((any)(nil))))) {
+				if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(callback)), HxDefault[any]()))) {
 					callback(result)
 				}
 			})))
@@ -262,7 +261,7 @@ func Hx_Field_loreline_loreline_parse(input string, filePath__isOptional any, ha
 			})(), callback)
 		}
 
-		if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(callback)), ((any)(nil))))) {
+		if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(callback)), HxDefault[any]()))) {
 			callback(result)
 		}
 
@@ -281,7 +280,7 @@ func Hx_Field_loreline_loreline__reportParseError(e *Hx_Obj_loreline_error, call
 	}
 	{
 		Hx_Field_loreline_loreline__lastError = e
-		if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(callback)), ((any)(nil))))) {
+		if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(callback)), HxDefault[any]()))) {
 			callback(nil)
 			return nil
 		}
@@ -319,8 +318,7 @@ func Hx_Field_loreline_loreline_loadLocale(locale string, script *Hx_Obj_lorelin
 		if (filePath).Valid == false {
 			var hx_nullable_t75 HxNullable[string]
 			_ = hx_nullable_t75
-			hx_nullable_t75 = HxNullable[string]{Value: HxStringNull}
-
+			hx_nullable_t75 = HxDefault[HxNullable[string]]()
 			filePath = HxNullable[string]{Value: (hx_nullable_t75).Value, Valid: (hx_nullable_t75).Valid}
 		}
 
@@ -333,7 +331,7 @@ func Hx_Field_loreline_loreline_loadLocale(locale string, script *Hx_Obj_lorelin
 			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_error_CreateInstance("Cannot load locale: no filePath provided and script.filePath is null", nil)))))
 		}
 
-		if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(((any)(handleFile)), ((any)(nil))))) {
+		if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(((any)(handleFile)), HxDefault[any]()))) {
 			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_error_CreateInstance("Cannot load locale: handleFile is required", nil)))))
 		}
 
@@ -655,7 +653,7 @@ func Hx_Field_loreline_loreline_loadLocale(locale string, script *Hx_Obj_lorelin
 					var _hx_tmp_15 string
 					_ = _hx_tmp_15
 					_hx_tmp_15 = _hx_tmp_14
-					_hx_tmp_13 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_15, 0, HxNullable[int32]{}))
+					_hx_tmp_13 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_15, 0, HxDefault[HxNullable[int32]]()))
 				}
 
 				translationsBaseDir = _hx_tmp_13
@@ -871,7 +869,7 @@ func Hx_Field_loreline_loreline_loadLocale(locale string, script *Hx_Obj_lorelin
 						var _hx_tmp_26 string
 						_ = _hx_tmp_26
 						_hx_tmp_26 = _hx_tmp_25
-						_hx_tmp_24 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_26, 0, HxNullable[int32]{}))
+						_hx_tmp_24 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_26, 0, HxDefault[HxNullable[int32]]()))
 					}
 
 					rootStem = HxNullableString(_hx_tmp_24)
@@ -980,7 +978,7 @@ func Hx_Field_loreline_loreline_loadLocale(locale string, script *Hx_Obj_lorelin
 							var _hx_tmp_33 string
 							_ = _hx_tmp_33
 							_hx_tmp_33 = _hx_tmp_32
-							_hx_tmp_31 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_33, 0, HxNullable[int32]{}))
+							_hx_tmp_31 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_33, 0, HxDefault[HxNullable[int32]]()))
 						}
 
 						rootStem = HxNullableString(_hx_tmp_31)
@@ -1226,7 +1224,7 @@ func Hx_Field_loreline_loreline_loadLocale(locale string, script *Hx_Obj_lorelin
 								var _hx_tmp_46 string
 								_ = _hx_tmp_46
 								_hx_tmp_46 = _hx_tmp_45
-								_hx_tmp_44 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_46, 0, HxNullable[int32]{}))
+								_hx_tmp_44 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_46, 0, HxDefault[HxNullable[int32]]()))
 							}
 
 							importStem = HxNullableString(_hx_tmp_44)
@@ -1335,7 +1333,7 @@ func Hx_Field_loreline_loreline_loadLocale(locale string, script *Hx_Obj_lorelin
 									var _hx_tmp_53 string
 									_ = _hx_tmp_53
 									_hx_tmp_53 = _hx_tmp_52
-									_hx_tmp_51 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_53, 0, HxNullable[int32]{}))
+									_hx_tmp_51 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_53, 0, HxDefault[HxNullable[int32]]()))
 								}
 
 								importStem = HxNullableString(_hx_tmp_51)
@@ -1548,7 +1546,7 @@ func Hx_Field_loreline_loreline_loadLocale(locale string, script *Hx_Obj_lorelin
 								var _hx_tmp_64 string
 								_ = _hx_tmp_64
 								_hx_tmp_64 = _hx_tmp_63
-								_hx_tmp_62 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_64, 0, HxNullable[int32]{}))
+								_hx_tmp_62 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_64, 0, HxDefault[HxNullable[int32]]()))
 							}
 
 							tmp = _hx_tmp_62
@@ -1657,7 +1655,7 @@ func Hx_Field_loreline_loreline_loadLocale(locale string, script *Hx_Obj_lorelin
 									var _hx_tmp_71 string
 									_ = _hx_tmp_71
 									_hx_tmp_71 = _hx_tmp_70
-									_hx_tmp_69 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_71, 0, HxNullable[int32]{}))
+									_hx_tmp_69 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_71, 0, HxDefault[HxNullable[int32]]()))
 								}
 
 								tmp = _hx_tmp_69
@@ -1715,7 +1713,7 @@ func Hx_Field_loreline_loreline_loadLocale(locale string, script *Hx_Obj_lorelin
 			finalError = _hx_tmp_73
 			if finalError != nil {
 				Hx_Field_loreline_loreline__lastError = finalError
-				if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(callback)), ((any)(nil))))) {
+				if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(callback)), HxDefault[any]()))) {
 					callback(nil)
 					return
 				}
@@ -1723,7 +1721,7 @@ func Hx_Field_loreline_loreline_loadLocale(locale string, script *Hx_Obj_lorelin
 				panic(Hx_Field_haxe_exception_thrown(((any)(finalError))))
 			}
 
-			if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(callback)), ((any)(nil))))) {
+			if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(callback)), HxDefault[any]()))) {
 				callback(result)
 			}
 		}
@@ -1878,12 +1876,12 @@ func Hx_Field_loreline_loreline_loadLocale(locale string, script *Hx_Obj_lorelin
 												var str *Hx_Obj_loreline_nstringliteral
 												_ = str
 												str = _g_value
-												func() func(_hx_param_key string, _hx_param_value *Hx_Obj_loreline_nstringliteral) {
+												func() func(key string, value *Hx_Obj_loreline_nstringliteral) {
 													var _hx_closure_src_846 func(_hx_param_key any, _hx_param_value any)
 													_ = _hx_closure_src_846
 													_hx_closure_src_846 = result.VTable.Hx_Field_set
-													return func(_hx_param_key string, _hx_param_value *Hx_Obj_loreline_nstringliteral) {
-														_hx_closure_src_846(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+													return func(key string, value *Hx_Obj_loreline_nstringliteral) {
+														_hx_closure_src_846(((any)(key)), ((any)(value)))
 													}
 												}()(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(relPath, "#"), id), str)
 											}
@@ -2038,8 +2036,7 @@ func Hx_Field_loreline_loreline_play(script *Hx_Obj_loreline_script, handleDialo
 		if (beatName).Valid == false {
 			var hx_nullable_t76 HxNullable[string]
 			_ = hx_nullable_t76
-			hx_nullable_t76 = HxNullable[string]{Value: HxStringNull}
-
+			hx_nullable_t76 = HxDefault[HxNullable[string]]()
 			beatName = HxNullable[string]{Value: (hx_nullable_t76).Value, Valid: (hx_nullable_t76).Valid}
 		}
 
@@ -2072,8 +2069,7 @@ func Hx_Field_loreline_loreline_resume(script *Hx_Obj_loreline_script, handleDia
 		if (beatName).Valid == false {
 			var hx_nullable_t77 HxNullable[string]
 			_ = hx_nullable_t77
-			hx_nullable_t77 = HxNullable[string]{Value: HxStringNull}
-
+			hx_nullable_t77 = HxDefault[HxNullable[string]]()
 			beatName = HxNullable[string]{Value: (hx_nullable_t77).Value, Valid: (hx_nullable_t77).Valid}
 		}
 
@@ -2134,16 +2130,14 @@ func Hx_Field_loreline_loreline_generateTranslationFile(script *Hx_Obj_loreline_
 		if (format).Valid == false {
 			var hx_nullable_t79 HxNullable[string]
 			_ = hx_nullable_t79
-			hx_nullable_t79 = HxNullable[string]{Value: HxStringNull}
-
+			hx_nullable_t79 = HxDefault[HxNullable[string]]()
 			format = HxNullable[string]{Value: (hx_nullable_t79).Value, Valid: (hx_nullable_t79).Valid}
 		}
 
 		if (locale).Valid == false {
 			var hx_nullable_t78 HxNullable[string]
 			_ = hx_nullable_t78
-			hx_nullable_t78 = HxNullable[string]{Value: HxStringNull}
-
+			hx_nullable_t78 = HxDefault[HxNullable[string]]()
 			locale = HxNullable[string]{Value: (hx_nullable_t78).Value, Valid: (hx_nullable_t78).Valid}
 		}
 
@@ -2388,16 +2382,14 @@ func Hx_Field_loreline_loreline_print(script *Hx_Obj_loreline_script, indent__is
 		if (indent).Valid == false {
 			var hx_nullable_t81 HxNullable[string]
 			_ = hx_nullable_t81
-			hx_nullable_t81 = HxNullable[string]{Value: HxStringNull}
-
+			hx_nullable_t81 = HxDefault[HxNullable[string]]()
 			indent = HxNullable[string]{Value: (hx_nullable_t81).Value, Valid: (hx_nullable_t81).Valid}
 		}
 
 		if (newline).Valid == false {
 			var hx_nullable_t80 HxNullable[string]
 			_ = hx_nullable_t80
-			hx_nullable_t80 = HxNullable[string]{Value: HxStringNull}
-
+			hx_nullable_t80 = HxDefault[HxNullable[string]]()
 			newline = HxNullable[string]{Value: (hx_nullable_t80).Value, Valid: (hx_nullable_t80).Valid}
 		}
 

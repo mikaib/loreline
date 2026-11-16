@@ -441,44 +441,44 @@ func Hx_Init_Hx_Field_haxe_xml_parser_escapes() *Hx_Obj_haxe_ds_stringmap {
 	var h *Hx_Obj_haxe_ds_stringmap
 	_ = h
 	h = Hx_Obj_haxe_ds_stringmap_CreateInstance()
-	func() func(_hx_param_key string, _hx_param_value string) {
+	func() func(key string, value string) {
 		var _hx_closure_src_363 func(_hx_param_key any, _hx_param_value any)
 		_ = _hx_closure_src_363
 		_hx_closure_src_363 = h.VTable.Hx_Field_set
-		return func(_hx_param_key string, _hx_param_value string) {
-			_hx_closure_src_363(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+		return func(key string, value string) {
+			_hx_closure_src_363(((any)(key)), ((any)(value)))
 		}
 	}()("lt", "<")
-	func() func(_hx_param_key string, _hx_param_value string) {
+	func() func(key string, value string) {
 		var _hx_closure_src_364 func(_hx_param_key any, _hx_param_value any)
 		_ = _hx_closure_src_364
 		_hx_closure_src_364 = h.VTable.Hx_Field_set
-		return func(_hx_param_key string, _hx_param_value string) {
-			_hx_closure_src_364(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+		return func(key string, value string) {
+			_hx_closure_src_364(((any)(key)), ((any)(value)))
 		}
 	}()("gt", ">")
-	func() func(_hx_param_key string, _hx_param_value string) {
+	func() func(key string, value string) {
 		var _hx_closure_src_365 func(_hx_param_key any, _hx_param_value any)
 		_ = _hx_closure_src_365
 		_hx_closure_src_365 = h.VTable.Hx_Field_set
-		return func(_hx_param_key string, _hx_param_value string) {
-			_hx_closure_src_365(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+		return func(key string, value string) {
+			_hx_closure_src_365(((any)(key)), ((any)(value)))
 		}
 	}()("amp", "&")
-	func() func(_hx_param_key string, _hx_param_value string) {
+	func() func(key string, value string) {
 		var _hx_closure_src_366 func(_hx_param_key any, _hx_param_value any)
 		_ = _hx_closure_src_366
 		_hx_closure_src_366 = h.VTable.Hx_Field_set
-		return func(_hx_param_key string, _hx_param_value string) {
-			_hx_closure_src_366(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+		return func(key string, value string) {
+			_hx_closure_src_366(((any)(key)), ((any)(value)))
 		}
 	}()("quot", "\"")
-	func() func(_hx_param_key string, _hx_param_value string) {
+	func() func(key string, value string) {
 		var _hx_closure_src_367 func(_hx_param_key any, _hx_param_value any)
 		_ = _hx_closure_src_367
 		_hx_closure_src_367 = h.VTable.Hx_Field_set
-		return func(_hx_param_key string, _hx_param_value string) {
-			_hx_closure_src_367(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+		return func(key string, value string) {
+			_hx_closure_src_367(((any)(key)), ((any)(value)))
 		}
 	}()("apos", "'")
 	return h
@@ -530,8 +530,7 @@ func Hx_Field_haxe_xml_parser_doParse(str string, strict bool, p__isOptional any
 		next = ((int32)(1))
 		var aname HxNullable[string]
 		_ = aname
-		aname = HxNullable[string]{Value: HxStringNull}
-
+		aname = HxDefault[HxNullable[string]]()
 		var start int32
 		_ = start
 		start = 0
@@ -1114,12 +1113,12 @@ func Hx_Field_haxe_xml_parser_doParse(str string, strict bool, p__isOptional any
 							tmp_c_1 = _hx_tmp_38
 							buf.VTable.Hx_Field_addChar((tmp_c_1).Value)
 						} else {
-							if !func() func(_hx_param_key string) bool {
+							if !func() func(key string) bool {
 								var _hx_closure_src_368 func(_hx_param_key any) bool
 								_ = _hx_closure_src_368
 								_hx_closure_src_368 = Hx_Field_haxe_xml_parser_escapes.VTable.Hx_Field_exists
-								return func(_hx_param_key string) bool {
-									return _hx_closure_src_368(((any)(_hx_param_key)))
+								return func(key string) bool {
+									return _hx_closure_src_368(((any)(key)))
 								}
 							}()(s) {
 								if strict {
@@ -1153,18 +1152,18 @@ func Hx_Field_haxe_xml_parser_doParse(str string, strict bool, p__isOptional any
 
 										_hx_closure_src_370(_hx_tmp_43)
 									}
-								}()(func() func(_hx_param_key string) HxNullable[string] {
+								}()(func() func(key string) HxNullable[string] {
 									var _hx_closure_src_371 func(_hx_param_key any) any
 									_ = _hx_closure_src_371
 									_hx_closure_src_371 = Hx_Field_haxe_xml_parser_escapes.VTable.Hx_Field_get
-									return func(_hx_param_key string) HxNullable[string] {
+									return func(key string) HxNullable[string] {
 										var hx_nullable_t44 any
 										_ = hx_nullable_t44
-										hx_nullable_t44 = _hx_closure_src_371(((any)(_hx_param_key)))
+										hx_nullable_t44 = _hx_closure_src_371(((any)(key)))
 										var _hx_tmp_44 HxNullable[string]
 										_ = _hx_tmp_44
 										if hx_nullable_t44 == nil {
-											_hx_tmp_44 = HxNullable[string]{Value: HxStringNull}
+											_hx_tmp_44 = HxDefault[HxNullable[string]]()
 										} else {
 											_hx_tmp_44 = HxNullable[string]{Value: Hx_Field_go_haxe_hxdynamic_toString(hx_nullable_t44), Valid: true}
 										}

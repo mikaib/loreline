@@ -114,7 +114,7 @@ func Hx_Field_haxe_nativestacktrace_toHaxe(nativeStackTrace Hx_Typedef_haxe__nat
 			var _hx_tmp_1 int32
 			_ = _hx_tmp_1
 			_hx_tmp_1 = skip
-			return (Hx_Array_Slice[Hx_Enum_haxe_stackitem](_hx_tmp_0, _hx_tmp_1, HxNullable[int32]{}))
+			return (Hx_Array_Slice[Hx_Enum_haxe_stackitem](_hx_tmp_0, _hx_tmp_1, HxDefault[HxNullable[int32]]()))
 		}
 
 		return HxAnyToTypedArray[Hx_Enum_haxe_stackitem](nativeStackTrace)
@@ -137,7 +137,7 @@ func Hx_Field_haxe_nativestacktrace_isHaxeCallStackFrame(f string) bool {
 		var _hx_tmp_4 string
 		_ = _hx_tmp_4
 		_hx_tmp_4 = _hx_tmp_3
-		_hx_tmp_2 = ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_4, "haxe_nativestacktrace", HxNullable[int32]{})) != -1)
+		_hx_tmp_2 = ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_4, "haxe_nativestacktrace", HxDefault[HxNullable[int32]]())) != -1)
 	}
 
 	if _hx_tmp_2 {
@@ -149,7 +149,7 @@ func Hx_Field_haxe_nativestacktrace_isHaxeCallStackFrame(f string) bool {
 		var _hx_tmp_6 string
 		_ = _hx_tmp_6
 		_hx_tmp_6 = _hx_tmp_5
-		_hx_tmp_1 = ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_6, "haxe__callstack", HxNullable[int32]{})) != -1)
+		_hx_tmp_1 = ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_6, "haxe__callstack", HxDefault[HxNullable[int32]]())) != -1)
 	}
 
 	if _hx_tmp_1 {
@@ -179,7 +179,7 @@ func Hx_Field_haxe_nativestacktrace_isConstructorFrame(f string) bool {
 		var _hx_tmp_5 string
 		_ = _hx_tmp_5
 		_hx_tmp_5 = _hx_tmp_4
-		_hx_tmp_3 = ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_5, "_CreateEmptyInstance", HxNullable[int32]{})) != -1)
+		_hx_tmp_3 = ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_5, "_CreateEmptyInstance", HxDefault[HxNullable[int32]]())) != -1)
 	}
 
 	if _hx_tmp_3 {
@@ -191,7 +191,7 @@ func Hx_Field_haxe_nativestacktrace_isConstructorFrame(f string) bool {
 		var _hx_tmp_7 string
 		_ = _hx_tmp_7
 		_hx_tmp_7 = _hx_tmp_6
-		_hx_tmp_2 = ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_7, "_CreateInstance", HxNullable[int32]{})) != -1)
+		_hx_tmp_2 = ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_7, "_CreateInstance", HxDefault[HxNullable[int32]]())) != -1)
 	}
 
 	if _hx_tmp_2 {
@@ -203,7 +203,7 @@ func Hx_Field_haxe_nativestacktrace_isConstructorFrame(f string) bool {
 		var _hx_tmp_9 string
 		_ = _hx_tmp_9
 		_hx_tmp_9 = _hx_tmp_8
-		_hx_tmp_1 = ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_9, "haxe_exception_thrown", HxNullable[int32]{})) != -1)
+		_hx_tmp_1 = ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_9, "haxe_exception_thrown", HxDefault[HxNullable[int32]]())) != -1)
 	}
 
 	if _hx_tmp_1 {
@@ -215,7 +215,7 @@ func Hx_Field_haxe_nativestacktrace_isConstructorFrame(f string) bool {
 		var _hx_tmp_11 string
 		_ = _hx_tmp_11
 		_hx_tmp_11 = _hx_tmp_10
-		_hx_tmp_0 = ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_11, "haxe_exception_caught", HxNullable[int32]{})) != -1)
+		_hx_tmp_0 = ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_11, "haxe_exception_caught", HxDefault[HxNullable[int32]]())) != -1)
 	}
 
 	return _hx_tmp_0
@@ -312,7 +312,7 @@ func Hx_Field_haxe_nativestacktrace_capture() HxArray[Hx_Enum_haxe_stackitem] {
 		var _hx_tmp_7 int32
 		_ = _hx_tmp_7
 		_hx_tmp_7 = ((int32)(frame.Line))
-		_ = (Hx_Array_Push[Hx_Enum_haxe_stackitem](_hx_tmp_4, Hx_Enum_haxe_stackitem_FilePos{_hx_tmp_5, _hx_tmp_6, _hx_tmp_7, HxNullable[int32]{}}))
+		_ = (Hx_Array_Push[Hx_Enum_haxe_stackitem](_hx_tmp_4, Hx_Enum_haxe_stackitem_FilePos{_hx_tmp_5, _hx_tmp_6, _hx_tmp_7, HxDefault[HxNullable[int32]]()}))
 	}
 
 	return items
@@ -325,9 +325,9 @@ func Hx_Field_haxe_nativestacktrace_createMethod(fn string) Hx_Enum_haxe_stackit
 	_hx_tmp_0 = fn
 	var dot int32
 	_ = dot
-	dot = (Hx_Field_go_haxe_hxstring_lastIndexOf(_hx_tmp_0, ".", HxNullable[int32]{}))
+	dot = (Hx_Field_go_haxe_hxstring_lastIndexOf(_hx_tmp_0, ".", HxDefault[HxNullable[int32]]()))
 	if dot <= 0 {
-		return Hx_Enum_haxe_stackitem_Method{HxNullable[string]{Value: HxStringNull}, fn}
+		return Hx_Enum_haxe_stackitem_Method{HxDefault[HxNullable[string]](), fn}
 	}
 
 	var _hx_tmp_2 string
@@ -342,7 +342,7 @@ func Hx_Field_haxe_nativestacktrace_createMethod(fn string) Hx_Enum_haxe_stackit
 	var _hx_tmp_4 int32
 	_ = _hx_tmp_4
 	_hx_tmp_4 = (dot + 1)
-	return Hx_Enum_haxe_stackitem_Method{_hx_tmp_1, (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_3, _hx_tmp_4, HxNullable[int32]{}))}
+	return Hx_Enum_haxe_stackitem_Method{_hx_tmp_1, (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_3, _hx_tmp_4, HxDefault[HxNullable[int32]]()))}
 }
 
 func Hx_Field_haxe_nativestacktrace_stripClosureSuffix(fn string) string {
@@ -352,7 +352,7 @@ func Hx_Field_haxe_nativestacktrace_stripClosureSuffix(fn string) string {
 		_hx_tmp_0 = fn
 		var dot int32
 		_ = dot
-		dot = (Hx_Field_go_haxe_hxstring_lastIndexOf(_hx_tmp_0, ".", HxNullable[int32]{}))
+		dot = (Hx_Field_go_haxe_hxstring_lastIndexOf(_hx_tmp_0, ".", HxDefault[HxNullable[int32]]()))
 		if dot <= 0 {
 			return fn
 		}
@@ -365,7 +365,7 @@ func Hx_Field_haxe_nativestacktrace_stripClosureSuffix(fn string) string {
 		_hx_tmp_2 = (dot + 1)
 		var seg string
 		_ = seg
-		seg = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_1, _hx_tmp_2, HxNullable[int32]{}))
+		seg = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_1, _hx_tmp_2, HxDefault[HxNullable[int32]]()))
 		if Hx_Field_haxe_nativestacktrace_isClosureSegment(seg) {
 			var _hx_tmp_3 string
 			_ = _hx_tmp_3
@@ -387,7 +387,7 @@ func Hx_Field_haxe_nativestacktrace_isClosureSegment(seg string) bool {
 		var _hx_tmp_2 string
 		_ = _hx_tmp_2
 		_hx_tmp_2 = _hx_tmp_1
-		_hx_tmp_0 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_2, 4, HxNullable[int32]{}))
+		_hx_tmp_0 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_2, 4, HxDefault[HxNullable[int32]]()))
 	} else {
 		_hx_tmp_0 = seg
 	}

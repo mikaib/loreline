@@ -7,15 +7,15 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_exception() {
 }
 
 type Hx_Obj_VTable_haxe_exception interface {
-	Hx_Field_toString() string
-	Hx_Field_details() string
+	Hx_Field_get_previous() *Hx_Obj_haxe_exception
 	Hx_Field_get_message() string
-	Hx_Field_unwrap() any
-	Hx_Field_error() string
 	Hx_Field_get_stack() HxArray[Hx_Enum_haxe_stackitem]
 	Hx_Field_set_stack(stack HxArray[Hx_Enum_haxe_stackitem]) HxArray[Hx_Enum_haxe_stackitem]
-	Hx_Field_get_previous() *Hx_Obj_haxe_exception
 	Hx_Field_get_native() any
+	Hx_Field_unwrap() any
+	Hx_Field_toString() string
+	Hx_Field_error() string
+	Hx_Field_details() string
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -258,7 +258,7 @@ func Hx_Field_haxe_exception_catchValue(ex any, goType string) any {
 	_hx_tmp_2 = goType
 	var name string
 	_ = name
-	name = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_2, 1, HxNullable[int32]{}))
+	name = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_2, 1, HxDefault[HxNullable[int32]]()))
 	var hit any
 	_ = hit
 	hit = Hx_Field_go_haxe_hxdynamic_toClass(value, name)

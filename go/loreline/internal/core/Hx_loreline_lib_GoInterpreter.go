@@ -7,37 +7,37 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_lib_gointerpreter() {
 }
 
 type Hx_Obj_VTable_loreline_lib_gointerpreter interface {
+	Hx_Field_setHost(value any)
 	Hx_Field_key() string
-	Hx_Field_seedRandomFromClock()
-	Hx_Field_character(name string) any
-	Hx_Field_topLevelStateField(name string) any
-	Hx_Field_currentNode() *Hx_Obj_loreline_lib_gonode
-	Hx_Field_start(beat string) error
-	Hx_Field_save() struct {
-		Err  error
-		Save string
+	Hx_Field_isRoot() bool
+	Hx_Field_resume() error
+	Hx_Field_spawn(key string, dialogue Hx_Typedef_loreline_lib_godialoguehandler, choice Hx_Typedef_loreline_lib_gochoicehandler, finish Hx_Typedef_loreline_lib_gofinishhandler) struct {
+		Err         error
+		Interpreter *Hx_Obj_loreline_lib_gointerpreter
 	}
 	Hx_Field_resumeSpawn(key string, dialogue Hx_Typedef_loreline_lib_godialoguehandler, choice Hx_Typedef_loreline_lib_gochoicehandler, finish Hx_Typedef_loreline_lib_gofinishhandler) struct {
 		Err         error
 		Interpreter *Hx_Obj_loreline_lib_gointerpreter
 	}
-	Hx_Field_characterField(character string, name string) any
+	Hx_Field_character(name string) any
 	Hx_Field_setStateField(name string, value any)
-	Hx_Field_setTopLevelStateField(name string, value any)
-	Hx_Field_host() any
-	Hx_Field_setHost(value any)
-	Hx_Field_restore(save string) error
-	Hx_Field_spawn(key string, dialogue Hx_Typedef_loreline_lib_godialoguehandler, choice Hx_Typedef_loreline_lib_gochoicehandler, finish Hx_Typedef_loreline_lib_gofinishhandler) struct {
-		Err         error
-		Interpreter *Hx_Obj_loreline_lib_gointerpreter
-	}
-	Hx_Field_seedRandom(seed float64)
+	Hx_Field_start(beat string) error
 	Hx_Field_dispose() error
-	Hx_Field_setCharacterField(character string, name string, value any)
-	Hx_Field_isRoot() bool
-	Hx_Field_resume() error
-	Hx_Field_resumableSpawnKeys() HxArray[string]
+	Hx_Field_characterField(character string, name string) any
+	Hx_Field_topLevelStateField(name string) any
+	Hx_Field_host() any
+	Hx_Field_save() struct {
+		Err  error
+		Save string
+	}
+	Hx_Field_restore(save string) error
+	Hx_Field_seedRandom(seed float64)
+	Hx_Field_seedRandomFromClock()
 	Hx_Field_stateField(name string) any
+	Hx_Field_setTopLevelStateField(name string, value any)
+	Hx_Field_currentNode() *Hx_Obj_loreline_lib_gonode
+	Hx_Field_resumableSpawnKeys() HxArray[string]
+	Hx_Field_setCharacterField(character string, name string, value any)
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -238,7 +238,7 @@ func (this *Hx_Obj_loreline_lib_gointerpreter) Hx_Field_save() struct {
 					Err  error
 					Save string
 				}{func() error {
-					_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(((any)(nil)))
+					_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(HxDefault[any]())
 					if _hx_d == nil {
 						var _hx_z error
 						return _hx_z
@@ -365,7 +365,7 @@ func (this *Hx_Obj_loreline_lib_gointerpreter) Hx_Field_spawn(key string, dialog
 							}()
 							var hx_dyncast_284 any
 							_ = hx_dyncast_284
-							hx_dyncast_284 = Hx_Field_go_haxe_hxdynamic_castClass(((any)(nil)), "Hx_Obj_loreline_lib_gointerpreter")
+							hx_dyncast_284 = Hx_Field_go_haxe_hxdynamic_castClass(HxDefault[any](), "Hx_Obj_loreline_lib_gointerpreter")
 							var _hx_tmp_6 *Hx_Obj_loreline_lib_gointerpreter
 							_ = _hx_tmp_6
 							if hx_dyncast_284 != nil {
@@ -422,7 +422,7 @@ func (this *Hx_Obj_loreline_lib_gointerpreter) Hx_Field_spawn(key string, dialog
 					Err         error
 					Interpreter *Hx_Obj_loreline_lib_gointerpreter
 				}{func() error {
-					_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(((any)(nil)))
+					_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(HxDefault[any]())
 					if _hx_d == nil {
 						var _hx_z error
 						return _hx_z
@@ -473,7 +473,7 @@ func (this *Hx_Obj_loreline_lib_gointerpreter) Hx_Field_resumeSpawn(key string, 
 							}()
 							var hx_dyncast_286 any
 							_ = hx_dyncast_286
-							hx_dyncast_286 = Hx_Field_go_haxe_hxdynamic_castClass(((any)(nil)), "Hx_Obj_loreline_lib_gointerpreter")
+							hx_dyncast_286 = Hx_Field_go_haxe_hxdynamic_castClass(HxDefault[any](), "Hx_Obj_loreline_lib_gointerpreter")
 							var _hx_tmp_6 *Hx_Obj_loreline_lib_gointerpreter
 							_ = _hx_tmp_6
 							if hx_dyncast_286 != nil {
@@ -530,7 +530,7 @@ func (this *Hx_Obj_loreline_lib_gointerpreter) Hx_Field_resumeSpawn(key string, 
 					Err         error
 					Interpreter *Hx_Obj_loreline_lib_gointerpreter
 				}{func() error {
-					_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(((any)(nil)))
+					_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(HxDefault[any]())
 					if _hx_d == nil {
 						var _hx_z error
 						return _hx_z
@@ -746,7 +746,7 @@ func Hx_Field_loreline_lib_gointerpreter_of(interpreter *Hx_Obj_loreline_interpr
 }
 
 func Hx_Field_loreline_lib_gointerpreter_dialogueHandler(handler Hx_Typedef_loreline_lib_godialoguehandler) Hx_Typedef_loreline_dialoguehandler {
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(((any)(handler)), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(((any)(handler)), HxDefault[any]()))) {
 		return nil
 	}
 
@@ -770,7 +770,7 @@ func Hx_Field_loreline_lib_gointerpreter_dialogueHandler(handler Hx_Typedef_lore
 }
 
 func Hx_Field_loreline_lib_gointerpreter_choiceHandler(handler Hx_Typedef_loreline_lib_gochoicehandler) Hx_Typedef_loreline_choicehandler {
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(((any)(handler)), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(((any)(handler)), HxDefault[any]()))) {
 		return nil
 	}
 
@@ -780,7 +780,7 @@ func Hx_Field_loreline_lib_gointerpreter_choiceHandler(handler Hx_Typedef_loreli
 }
 
 func Hx_Field_loreline_lib_gointerpreter_finishHandler(handler Hx_Typedef_loreline_lib_gofinishhandler) Hx_Typedef_loreline_finishhandler {
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(((any)(handler)), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(((any)(handler)), HxDefault[any]()))) {
 		return nil
 	}
 

@@ -201,12 +201,12 @@ func Hx_Field_loreline_translation_csvtranslation_convert(content string, sep in
 				if hx_nullable_i69 >= 0 && hx_nullable_i69 < hx_nullable_a68.Len() {
 					_hx_tmp_5 = HxNullable[string]{Value: hx_nullable_a68.Get(hx_nullable_i69), Valid: true}
 				} else {
-					_hx_tmp_5 = HxNullable[string]{Value: HxStringNull}
+					_hx_tmp_5 = HxDefault[HxNullable[string]]()
 				}
 
 				_hx_tmp_3 = _hx_tmp_5
 			} else {
-				_hx_tmp_3 = HxNullable[string]{Value: HxStringNull}
+				_hx_tmp_3 = HxDefault[HxNullable[string]]()
 			}
 
 			var src HxNullable[string]
@@ -411,12 +411,12 @@ func Hx_Field_loreline_translation_csvtranslation_generate(script *Hx_Obj_loreli
 			var _hx_tmp_3 bool
 			_ = _hx_tmp_3
 			if existing != nil {
-				_hx_tmp_3 = func() func(_hx_param_key string) bool {
+				_hx_tmp_3 = func() func(key string) bool {
 					var _hx_closure_src_773 func(_hx_param_key any) bool
 					_ = _hx_closure_src_773
 					_hx_closure_src_773 = existing.VTable.Hx_Field_exists
-					return func(_hx_param_key string) bool {
-						return _hx_closure_src_773(((any)(_hx_param_key)))
+					return func(key string) bool {
+						return _hx_closure_src_773(((any)(key)))
 					}
 				}()(Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_getField(entry, "id")))
 			} else {
@@ -424,14 +424,14 @@ func Hx_Field_loreline_translation_csvtranslation_generate(script *Hx_Obj_loreli
 			}
 
 			if _hx_tmp_3 {
-				_hx_tmp_2 = printer.VTable.Hx_Field_printStringLiteralAsText(func() func(_hx_param_key string) *Hx_Obj_loreline_nstringliteral {
+				_hx_tmp_2 = printer.VTable.Hx_Field_printStringLiteralAsText(func() func(key string) *Hx_Obj_loreline_nstringliteral {
 					var _hx_closure_src_774 func(_hx_param_key any) any
 					_ = _hx_closure_src_774
 					_hx_closure_src_774 = existing.VTable.Hx_Field_get
-					return func(_hx_param_key string) *Hx_Obj_loreline_nstringliteral {
+					return func(key string) *Hx_Obj_loreline_nstringliteral {
 						var hx_dyncast_360 any
 						_ = hx_dyncast_360
-						hx_dyncast_360 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_774(((any)(_hx_param_key))), "Hx_Obj_loreline_nstringliteral")
+						hx_dyncast_360 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_774(((any)(key))), "Hx_Obj_loreline_nstringliteral")
 						var _hx_tmp_4 *Hx_Obj_loreline_nstringliteral
 						_ = _hx_tmp_4
 						if hx_dyncast_360 != nil {
@@ -629,7 +629,7 @@ func Hx_Field_loreline_translation_csvtranslation_findLocaleColumn(header HxArra
 	_hx_tmp_1 = locLow
 	var dash int32
 	_ = dash
-	dash = (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_1, "-", HxNullable[int32]{}))
+	dash = (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_1, "-", HxDefault[HxNullable[int32]]()))
 	var _hx_tmp_2 string
 	_ = _hx_tmp_2
 	if dash < 0 {
@@ -652,7 +652,7 @@ func Hx_Field_loreline_translation_csvtranslation_findLocaleColumn(header HxArra
 			var _hx_tmp_7 string
 			_ = _hx_tmp_7
 			_hx_tmp_7 = _hx_tmp_6
-			_hx_tmp_3 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_7, 0, HxNullable[int32]{}))
+			_hx_tmp_3 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_7, 0, HxDefault[HxNullable[int32]]()))
 		}
 
 		_hx_tmp_2 = _hx_tmp_3
@@ -684,7 +684,7 @@ func Hx_Field_loreline_translation_csvtranslation_findLocaleColumn(header HxArra
 			_hx_tmp_9 = s
 			var tmp_dash_1 int32
 			_ = tmp_dash_1
-			tmp_dash_1 = (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_9, "-", HxNullable[int32]{}))
+			tmp_dash_1 = (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_9, "-", HxDefault[HxNullable[int32]]()))
 			var _hx_tmp_10 string
 			_ = _hx_tmp_10
 			if tmp_dash_1 < 0 {
@@ -707,7 +707,7 @@ func Hx_Field_loreline_translation_csvtranslation_findLocaleColumn(header HxArra
 					var _hx_tmp_15 string
 					_ = _hx_tmp_15
 					_hx_tmp_15 = _hx_tmp_14
-					_hx_tmp_11 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_15, 0, HxNullable[int32]{}))
+					_hx_tmp_11 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_15, 0, HxDefault[HxNullable[int32]]()))
 				}
 
 				_hx_tmp_10 = _hx_tmp_11
@@ -728,7 +728,7 @@ func Hx_Field_loreline_translation_csvtranslation_primarySubtag(s string) string
 	_hx_tmp_0 = s
 	var dash int32
 	_ = dash
-	dash = (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, "-", HxNullable[int32]{}))
+	dash = (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, "-", HxDefault[HxNullable[int32]]()))
 	if dash < 0 {
 		return s
 	}
@@ -742,7 +742,7 @@ func Hx_Field_loreline_translation_csvtranslation_primarySubtag(s string) string
 		var _hx_tmp_2 string
 		_ = _hx_tmp_2
 		_hx_tmp_2 = s
-		return (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_2, 0, HxNullable[int32]{}))
+		return (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_2, 0, HxDefault[HxNullable[int32]]()))
 	}
 }
 

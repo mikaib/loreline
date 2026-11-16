@@ -316,7 +316,7 @@ func Hx_Field_type_getClass(o any) *Hx_Obj_go_haxe_hxclass {
 	if _g.Hx_Field_enumIndex() == 7 {
 		var o *Hx_Obj_go_haxe_hxclass
 		_ = o
-		o = _g.(Hx_Enum_valuetype_TClass).Hx_Field_c
+		o = ((Hx_Enum_valuetype)(_g)).(Hx_Enum_valuetype_TClass).Hx_Field_c
 		return o
 	} else {
 		return nil
@@ -330,7 +330,7 @@ func Hx_Field_type_getEnum(o Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue) *H
 	if _g.Hx_Field_enumIndex() == 8 {
 		var o *Hx_Obj_go_haxe_hxenum
 		_ = o
-		o = _g.(Hx_Enum_valuetype_TEnum).Hx_Field_e
+		o = ((Hx_Enum_valuetype)(_g)).(Hx_Enum_valuetype_TEnum).Hx_Field_e
 		return o
 	} else {
 		return nil
@@ -367,7 +367,7 @@ func Hx_Field_type_resolveEnum(name string) *Hx_Obj_go_haxe_hxenum {
 func Hx_Field_type_createInstance(cl *Hx_Obj_go_haxe_hxclass, args HxArray[any]) any {
 	if Hx_Field_type_getClassName(cl) == "String" {
 		if Hx_Field_go_haxe_hxdynamic_getArrayLength(args) == 0 {
-			return ((any)(HxStringNull))
+			return HxDefault[any]()
 		} else {
 			return ((any)(Hx_Field_std_string(args.Get(0))))
 		}
@@ -407,7 +407,7 @@ func Hx_Field_type_createEnum(e *Hx_Obj_go_haxe_hxenum, constr string, params__i
 		_hx_tmp_1 = constr
 		var i int32
 		_ = i
-		i = (Hx_Array_IndexOf[string](_hx_tmp_0, _hx_tmp_1, HxNullable[int32]{}))
+		i = (Hx_Array_IndexOf[string](_hx_tmp_0, _hx_tmp_1, HxDefault[HxNullable[int32]]()))
 		if i < 0 {
 			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Unknown constructor ", constr), " for enum "), e1.Hx_Field_name)))))
 		}
@@ -668,11 +668,11 @@ func Hx_Field_type_enumEq(a any, b any) bool {
 	var fast int32
 	_ = fast
 	fast = HxEnumEqFast(a, b)
-	if fast >= 0 {
-		return (fast == 1)
-	} else {
+	if fast == -1 {
 		return Hx_Field_go_haxe_hxdynamic_equals(a, b)
 	}
+
+	return (fast == 1)
 }
 
 func Hx_Field_type_enumConstructor(e Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue) string {

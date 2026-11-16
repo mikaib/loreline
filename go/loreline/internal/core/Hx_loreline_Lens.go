@@ -201,7 +201,7 @@ func (this *Hx_Obj_loreline_funclorscript) Hx_New(_hx_reserved_func *Hx_Obj_lore
 											{
 												var c int32
 												_ = c
-												c = _g.(Hx_Enum_loreline_lorscript_errordef_EInvalidChar).Hx_Field_c
+												c = ((Hx_Enum_loreline_lorscript_errordef)(_g)).(Hx_Enum_loreline_lorscript_errordef_EInvalidChar).Hx_Field_c
 												tmp = ("Invalid character: " + Hx_Field_go_haxe_hxdynamic_toString(c))
 											}
 
@@ -209,7 +209,7 @@ func (this *Hx_Obj_loreline_funclorscript) Hx_New(_hx_reserved_func *Hx_Obj_lore
 											{
 												var s string
 												_ = s
-												s = _g.(Hx_Enum_loreline_lorscript_errordef_EUnexpected).Hx_Field_s
+												s = ((Hx_Enum_loreline_lorscript_errordef)(_g)).(Hx_Enum_loreline_lorscript_errordef_EUnexpected).Hx_Field_s
 												tmp = Hx_Field_go_haxe_hxstring_concat("Unexpected: ", s)
 											}
 
@@ -227,7 +227,7 @@ func (this *Hx_Obj_loreline_funclorscript) Hx_New(_hx_reserved_func *Hx_Obj_lore
 											{
 												var msg string
 												_ = msg
-												msg = _g.(Hx_Enum_loreline_lorscript_errordef_EInvalidPreprocessor).Hx_Field_msg
+												msg = ((Hx_Enum_loreline_lorscript_errordef)(_g)).(Hx_Enum_loreline_lorscript_errordef_EInvalidPreprocessor).Hx_Field_msg
 												tmp = Hx_Field_go_haxe_hxstring_concat("Invalid preprocessor: ", msg)
 											}
 
@@ -235,7 +235,7 @@ func (this *Hx_Obj_loreline_funclorscript) Hx_New(_hx_reserved_func *Hx_Obj_lore
 											{
 												var v string
 												_ = v
-												v = _g.(Hx_Enum_loreline_lorscript_errordef_EUnknownVariable).Hx_Field_v
+												v = ((Hx_Enum_loreline_lorscript_errordef)(_g)).(Hx_Enum_loreline_lorscript_errordef_EUnknownVariable).Hx_Field_v
 												tmp = Hx_Field_go_haxe_hxstring_concat("Unknown variable: ", v)
 											}
 
@@ -243,7 +243,7 @@ func (this *Hx_Obj_loreline_funclorscript) Hx_New(_hx_reserved_func *Hx_Obj_lore
 											{
 												var v string
 												_ = v
-												v = _g.(Hx_Enum_loreline_lorscript_errordef_EInvalidIterator).Hx_Field_v
+												v = ((Hx_Enum_loreline_lorscript_errordef)(_g)).(Hx_Enum_loreline_lorscript_errordef_EInvalidIterator).Hx_Field_v
 												tmp = Hx_Field_go_haxe_hxstring_concat("Invalid iterator: ", v)
 											}
 
@@ -251,7 +251,7 @@ func (this *Hx_Obj_loreline_funclorscript) Hx_New(_hx_reserved_func *Hx_Obj_lore
 											{
 												var op string
 												_ = op
-												op = _g.(Hx_Enum_loreline_lorscript_errordef_EInvalidOp).Hx_Field_op
+												op = ((Hx_Enum_loreline_lorscript_errordef)(_g)).(Hx_Enum_loreline_lorscript_errordef_EInvalidOp).Hx_Field_op
 												tmp = Hx_Field_go_haxe_hxstring_concat("Invalid operator: ", op)
 											}
 
@@ -259,7 +259,7 @@ func (this *Hx_Obj_loreline_funclorscript) Hx_New(_hx_reserved_func *Hx_Obj_lore
 											{
 												var f string
 												_ = f
-												f = _g.(Hx_Enum_loreline_lorscript_errordef_EInvalidAccess).Hx_Field_f
+												f = ((Hx_Enum_loreline_lorscript_errordef)(_g)).(Hx_Enum_loreline_lorscript_errordef_EInvalidAccess).Hx_Field_f
 												tmp = Hx_Field_go_haxe_hxstring_concat("Invalid access: ", f)
 											}
 
@@ -267,7 +267,7 @@ func (this *Hx_Obj_loreline_funclorscript) Hx_New(_hx_reserved_func *Hx_Obj_lore
 											{
 												var msg string
 												_ = msg
-												msg = _g.(Hx_Enum_loreline_lorscript_errordef_ECustom).Hx_Field_msg
+												msg = ((Hx_Enum_loreline_lorscript_errordef)(_g)).(Hx_Enum_loreline_lorscript_errordef_ECustom).Hx_Field_msg
 												tmp = msg
 											}
 
@@ -508,55 +508,55 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_lens() {
 }
 
 type Hx_Obj_VTable_loreline_lens interface {
+	Hx_Field_findCallArgument(node *Hx_Obj_loreline_node) any
+	Hx_Field_findBeatByPathFromNode(path string, node *Hx_Obj_loreline_node) *Hx_Obj_loreline_nbeatdecl
+	Hx_Field_findCharacterFromDialogue(dialogue *Hx_Obj_loreline_ndialoguestatement) *Hx_Obj_loreline_ncharacterdecl
+	Hx_Field_findOutboundBeats(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
+	Hx_Field_getFuncLorscript(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl) *Hx_Obj_loreline_funclorscript
+	Hx_Field_getLorscriptCompletion(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl, pos *Hx_Obj_loreline_position) *Hx_Obj_loreline_lorscriptcompletion
 	Hx_Field_getNodeAtPosition(pos *Hx_Obj_loreline_position) *Hx_Obj_loreline_node
+	Hx_Field_findStateField(access *Hx_Obj_loreline_naccess) *Hx_Obj_loreline_nobjectfield
+	Hx_Field_findModifiedCharacterFields(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
+	Hx_Field_resolveLorscriptAccess(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl, expr any) *Hx_Obj_loreline_node
 	Hx_Field_getNodeFilePath(node *Hx_Obj_loreline_node, rootPath string) string
+	Hx_Field_findBeatFromAccess(access *Hx_Obj_loreline_naccess) *Hx_Obj_loreline_nbeatdecl
+	Hx_Field_getVisibleStateFields(fromNode *Hx_Obj_loreline_node) HxArray[*Hx_Obj_loreline_nobjectfield]
+	Hx_Field_resolveAccessInFunction(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl, pos *Hx_Obj_loreline_position) *Hx_Obj_loreline_node
+	Hx_Field_findFunctionByNameFromNode(name string, node *Hx_Obj_loreline_node) *Hx_Obj_loreline_nfunctiondecl
+	Hx_Field_getNodeById(id Hx_Typedef_haxe__int64___int64) *Hx_Obj_loreline_node
+	Hx_Field_getParentNode(node *Hx_Obj_loreline_node) *Hx_Obj_loreline_node
+	Hx_Field_getFirstParentOfType(node *Hx_Obj_loreline_node, _hx_reserved_type *Hx_Obj_go_haxe_hxclass) any
 	Hx_Field_getNodeRelativeFilePath(node *Hx_Obj_loreline_node) string
 	Hx_Field_isTopLevelNode(node *Hx_Obj_loreline_node) bool
-	Hx_Field_findCharacterFromDialogue(dialogue *Hx_Obj_loreline_ndialoguestatement) *Hx_Obj_loreline_ncharacterdecl
-	Hx_Field_getVisibleCharacters() HxArray[*Hx_Obj_loreline_ncharacterdecl]
-	Hx_Field_getLorscriptExpr(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl, pos *Hx_Obj_loreline_position) any
-	Hx_Field_getNodeById(id Hx_Typedef_haxe__int64___int64) *Hx_Obj_loreline_node
-	Hx_Field_getWhenWarnings(when *Hx_Obj_loreline_nwhenstatement) HxArray[any]
-	Hx_Field_getVisibleStateFields(fromNode *Hx_Obj_loreline_node) HxArray[*Hx_Obj_loreline_nobjectfield]
-	Hx_Field_traverse(node *Hx_Obj_loreline_node, callback func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node) bool)
-	Hx_Field_getFuncLorscript(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl) *Hx_Obj_loreline_funclorscript
-	Hx_Field_getNodesOfType(nodeType *Hx_Obj_go_haxe_hxclass, includeImported__isOptional any) HxArray[any]
-	Hx_Field_getFirstParentOfType(node *Hx_Obj_loreline_node, _hx_reserved_type *Hx_Obj_go_haxe_hxclass) any
-	Hx_Field_findBeatParamFromAccess(access *Hx_Obj_loreline_naccess) any
-	Hx_Field_findTopLevelBeatFromNode(node *Hx_Obj_loreline_node) *Hx_Obj_loreline_nbeatdecl
-	Hx_Field_findReadStateFields(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
-	Hx_Field_isLorscriptExpr(input any) bool
-	Hx_Field_initialize()
-	Hx_Field_getDialogueSpeakers(node *Hx_Obj_loreline_node) HxArray[string]
-	Hx_Field__getImportedPaths(rootPath string, script *Hx_Obj_loreline_script, result HxArray[string], used Hx_Typedef_map) HxArray[string]
-	Hx_Field_getAllTags() HxArray[string]
-	Hx_Field_findReferencesToBeat(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
-	Hx_Field_getLorscriptCompletion(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl, pos *Hx_Obj_loreline_position) *Hx_Obj_loreline_lorscriptcompletion
-	Hx_Field_getNodeAncestorFilePaths(node *Hx_Obj_loreline_node) HxArray[string]
-	Hx_Field_resolveArrayAccess(access *Hx_Obj_loreline_narrayaccess) *Hx_Obj_loreline_node
-	Hx_Field_findBeatFromAccess(access *Hx_Obj_loreline_naccess) *Hx_Obj_loreline_nbeatdecl
-	Hx_Field_findBeatFromTransition(transition *Hx_Obj_loreline_ntransition) *Hx_Obj_loreline_nbeatdecl
-	Hx_Field_findCharacterByNameFromNode(name string, node *Hx_Obj_loreline_node) *Hx_Obj_loreline_ncharacterdecl
-	Hx_Field_findModifiedStateFields(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
-	Hx_Field_findReadCharacterFields(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
-	Hx_Field_getParentNode(node *Hx_Obj_loreline_node) *Hx_Obj_loreline_node
-	Hx_Field_resolveAccess(access *Hx_Obj_loreline_naccess) *Hx_Obj_loreline_node
-	Hx_Field_findCallArgument(node *Hx_Obj_loreline_node) any
-	Hx_Field_findBeatByNameFromNode(name string, node *Hx_Obj_loreline_node) *Hx_Obj_loreline_nbeatdecl
-	Hx_Field_findStateField(access *Hx_Obj_loreline_naccess) *Hx_Obj_loreline_nobjectfield
-	Hx_Field_resolveLorscriptAccess(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl, expr any) *Hx_Obj_loreline_node
-	Hx_Field_getImportedPaths(rootPath string) HxArray[string]
-	Hx_Field_findFunctionByNameFromNode(name string, node *Hx_Obj_loreline_node) *Hx_Obj_loreline_nfunctiondecl
-	Hx_Field_getVisibleBeats(fromNode *Hx_Obj_loreline_node) HxArray[*Hx_Obj_loreline_nbeatdecl]
-	Hx_Field_findOutboundBeats(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
-	Hx_Field_findBeatCharacters(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
-	Hx_Field_findModifiedCharacterFields(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
-	Hx_Field_getClosestNodeAtOrBeforePosition(pos *Hx_Obj_loreline_position) *Hx_Obj_loreline_node
-	Hx_Field_findBeatFromInsertion(insertion *Hx_Obj_loreline_ninsertion) *Hx_Obj_loreline_nbeatdecl
-	Hx_Field_findBeatByPathFromNode(path string, node *Hx_Obj_loreline_node) *Hx_Obj_loreline_nbeatdecl
 	Hx_Field_getVisibleFunctions() HxArray[*Hx_Obj_loreline_nfunctiondecl]
+	Hx_Field_findReferencesToBeat(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
+	Hx_Field_initialize()
+	Hx_Field_resolveAccess(access *Hx_Obj_loreline_naccess) *Hx_Obj_loreline_node
+	Hx_Field_findTopLevelBeatFromNode(node *Hx_Obj_loreline_node) *Hx_Obj_loreline_nbeatdecl
+	Hx_Field_getWhenWarnings(when *Hx_Obj_loreline_nwhenstatement) HxArray[any]
+	Hx_Field_findModifiedStateFields(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
+	Hx_Field_getLorscriptExpr(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl, pos *Hx_Obj_loreline_position) any
+	Hx_Field_isLorscriptExpr(input any) bool
+	Hx_Field_getNodeAncestorFilePaths(node *Hx_Obj_loreline_node) HxArray[string]
+	Hx_Field__getImportedPaths(rootPath string, script *Hx_Obj_loreline_script, result HxArray[string], used Hx_Typedef_map) HxArray[string]
+	Hx_Field_findBeatParamFromAccess(access *Hx_Obj_loreline_naccess) any
+	Hx_Field_findBeatByNameFromNode(name string, node *Hx_Obj_loreline_node) *Hx_Obj_loreline_nbeatdecl
+	Hx_Field_findCharacterByNameFromNode(name string, node *Hx_Obj_loreline_node) *Hx_Obj_loreline_ncharacterdecl
+	Hx_Field_findBeatCharacters(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
+	Hx_Field_findReadCharacterFields(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
+	Hx_Field_getClosestNodeAtOrBeforePosition(pos *Hx_Obj_loreline_position) *Hx_Obj_loreline_node
+	Hx_Field_getImportedPaths(rootPath string) HxArray[string]
+	Hx_Field_getVisibleCharacters() HxArray[*Hx_Obj_loreline_ncharacterdecl]
+	Hx_Field_getVisibleBeats(fromNode *Hx_Obj_loreline_node) HxArray[*Hx_Obj_loreline_nbeatdecl]
+	Hx_Field_getAllTags() HxArray[string]
 	Hx_Field_countTags() Hx_Typedef_map
-	Hx_Field_resolveAccessInFunction(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl, pos *Hx_Obj_loreline_position) *Hx_Obj_loreline_node
+	Hx_Field_traverse(node *Hx_Obj_loreline_node, callback func(node *Hx_Obj_loreline_node, parent *Hx_Obj_loreline_node) bool)
+	Hx_Field_getNodesOfType(nodeType *Hx_Obj_go_haxe_hxclass, includeImported__isOptional any) HxArray[any]
+	Hx_Field_findBeatFromTransition(transition *Hx_Obj_loreline_ntransition) *Hx_Obj_loreline_nbeatdecl
+	Hx_Field_findBeatFromInsertion(insertion *Hx_Obj_loreline_ninsertion) *Hx_Obj_loreline_nbeatdecl
+	Hx_Field_findReadStateFields(beatDecl *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_reference]
+	Hx_Field_getDialogueSpeakers(node *Hx_Obj_loreline_node) HxArray[string]
+	Hx_Field_resolveArrayAccess(access *Hx_Obj_loreline_narrayaccess) *Hx_Obj_loreline_node
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -889,12 +889,12 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getDialogueSpeakers(node *Hx_Obj_lore
 			var _hx_tmp_1 bool
 			_ = _hx_tmp_1
 			if dialogue.Hx_Field_character != HxStringNull {
-				_hx_tmp_1 = !func() func(_hx_param_key string) bool {
+				_hx_tmp_1 = !func() func(key string) bool {
 					var _hx_closure_src_478 func(_hx_param_key any) bool
 					_ = _hx_closure_src_478
 					_hx_closure_src_478 = seen.VTable.Hx_Field_exists
-					return func(_hx_param_key string) bool {
-						return _hx_closure_src_478(((any)(_hx_param_key)))
+					return func(key string) bool {
+						return _hx_closure_src_478(((any)(key)))
 					}
 				}()(dialogue.Hx_Field_character)
 			} else {
@@ -902,12 +902,12 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getDialogueSpeakers(node *Hx_Obj_lore
 			}
 
 			if _hx_tmp_1 {
-				func() func(_hx_param_key string, _hx_param_value bool) {
+				func() func(key string, value bool) {
 					var _hx_closure_src_479 func(_hx_param_key any, _hx_param_value any)
 					_ = _hx_closure_src_479
 					_hx_closure_src_479 = seen.VTable.Hx_Field_set
-					return func(_hx_param_key string, _hx_param_value bool) {
-						_hx_closure_src_479(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+					return func(key string, value bool) {
+						_hx_closure_src_479(((any)(key)), ((any)(value)))
 					}
 				}()(dialogue.Hx_Field_character, true)
 				_ = (Hx_Array_Push[string](speakers, dialogue.Hx_Field_character))
@@ -1238,7 +1238,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getNodeFilePath(node *Hx_Obj_loreline
 		if _g.Hx_Field_enumIndex() == 0 {
 			var text string
 			_ = text
-			text = _g.(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
+			text = ((Hx_Enum_loreline_stringparttype)(_g)).(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
 			importPath = text
 		} else {
 			importPath = ""
@@ -1592,7 +1592,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getNodeAncestorFilePaths(node *Hx_Obj
 		if _g.Hx_Field_enumIndex() == 0 {
 			var text string
 			_ = text
-			text = _g.(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
+			text = ((Hx_Enum_loreline_stringparttype)(_g)).(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
 			importPath = text
 		} else {
 			importPath = ""
@@ -1801,7 +1801,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getNodeAncestorFilePaths(node *Hx_Obj
 					var _hx_tmp_11 string
 					_ = _hx_tmp_11
 					_hx_tmp_11 = _hx_tmp_10
-					_hx_tmp_9 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_11, 0, HxNullable[int32]{}))
+					_hx_tmp_9 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_11, 0, HxDefault[HxNullable[int32]]()))
 				}
 
 				tmp = _hx_tmp_9
@@ -1910,7 +1910,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getNodeAncestorFilePaths(node *Hx_Obj
 						var _hx_tmp_18 string
 						_ = _hx_tmp_18
 						_hx_tmp_18 = _hx_tmp_17
-						_hx_tmp_16 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_18, 0, HxNullable[int32]{}))
+						_hx_tmp_16 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_18, 0, HxDefault[HxNullable[int32]]()))
 					}
 
 					tmp = _hx_tmp_16
@@ -2007,7 +2007,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getNodeRelativeFilePath(node *Hx_Obj_
 		if _g.Hx_Field_enumIndex() == 0 {
 			var text string
 			_ = text
-			text = _g.(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
+			text = ((Hx_Enum_loreline_stringparttype)(_g)).(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
 			importPath = text
 		} else {
 			importPath = ""
@@ -2212,7 +2212,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getNodeRelativeFilePath(node *Hx_Obj_
 				var _hx_tmp_10 string
 				_ = _hx_tmp_10
 				_hx_tmp_10 = path
-				return (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_10, 0, HxNullable[int32]{}))
+				return (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_10, 0, HxDefault[HxNullable[int32]]()))
 			}
 		} else {
 			var tmp_tmp_1 bool
@@ -2314,7 +2314,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getNodeRelativeFilePath(node *Hx_Obj_
 					var _hx_tmp_15 string
 					_ = _hx_tmp_15
 					_hx_tmp_15 = path
-					return (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_15, 0, HxNullable[int32]{}))
+					return (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_15, 0, HxDefault[HxNullable[int32]]()))
 				}
 			} else {
 				return path
@@ -2572,7 +2572,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field__getImportedPaths(rootPath string, sc
 				if tmp__g_1.Hx_Field_enumIndex() == 0 {
 					var text string
 					_ = text
-					text = tmp__g_1.(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
+					text = ((Hx_Enum_loreline_stringparttype)(tmp__g_1)).(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
 					importPath = text
 				} else {
 					importPath = ""
@@ -2852,20 +2852,20 @@ func (this *Hx_Obj_loreline_lens) Hx_Field__getImportedPaths(rootPath string, sc
 					importPath = Hx_Field_go_haxe_hxstring_concat(importPath, ext1)
 				}
 
-				if !func() func(_hx_param_key string) bool {
+				if !func() func(key string) bool {
 					var _hx_closure_src_484 func(_hx_param_key any) bool
 					_ = _hx_closure_src_484
 					_hx_closure_src_484 = used.VTable.Hx_Field_exists
-					return func(_hx_param_key string) bool {
-						return _hx_closure_src_484(((any)(_hx_param_key)))
+					return func(key string) bool {
+						return _hx_closure_src_484(((any)(key)))
 					}
 				}()(importPath) {
-					func() func(_hx_param_key string, _hx_param_value bool) {
+					func() func(key string, value bool) {
 						var _hx_closure_src_485 func(_hx_param_key any, _hx_param_value any)
 						_ = _hx_closure_src_485
 						_hx_closure_src_485 = used.VTable.Hx_Field_set
-						return func(_hx_param_key string, _hx_param_value bool) {
-							_hx_closure_src_485(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+						return func(key string, value bool) {
+							_hx_closure_src_485(((any)(key)), ((any)(value)))
 						}
 					}()(importPath, true)
 					_ = (Hx_Array_Push[string](result, importPath))
@@ -3151,7 +3151,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_resolveAccess(access *Hx_Obj_loreline
 								if tmp__g_1.Hx_Field_enumIndex() == 4 {
 									var style int32
 									_ = style
-									style = tmp__g_1.(Hx_Enum_loreline_literaltype_Object).Hx_Field_style
+									style = ((Hx_Enum_loreline_literaltype)(tmp__g_1)).(Hx_Enum_loreline_literaltype_Object).Hx_Field_style
 									{
 										var fields HxArray[*Hx_Obj_loreline_nobjectfield]
 										_ = fields
@@ -3614,7 +3614,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_findCallArgument(node *Hx_Obj_lorelin
 							_hx_tmp_1 = child.VTable.(interface{ Hx_As_Hx_Obj_loreline_nexpr() *Hx_Obj_loreline_nexpr }).Hx_As_Hx_Obj_loreline_nexpr()
 							var index int32
 							_ = index
-							index = (Hx_Array_IndexOf[*Hx_Obj_loreline_nexpr](_hx_tmp_0, _hx_tmp_1, HxNullable[int32]{}))
+							index = (Hx_Array_IndexOf[*Hx_Obj_loreline_nexpr](_hx_tmp_0, _hx_tmp_1, HxDefault[HxNullable[int32]]()))
 							if index != -1 {
 								return any(map[string]any{"owner": ((any)(parent)), "index": ((any)(index))})
 							}
@@ -3637,7 +3637,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_findCallArgument(node *Hx_Obj_lorelin
 							_hx_tmp_3 = child.VTable.(interface{ Hx_As_Hx_Obj_loreline_nexpr() *Hx_Obj_loreline_nexpr }).Hx_As_Hx_Obj_loreline_nexpr()
 							var index int32
 							_ = index
-							index = (Hx_Array_IndexOf[*Hx_Obj_loreline_nexpr](_hx_tmp_2, _hx_tmp_3, HxNullable[int32]{}))
+							index = (Hx_Array_IndexOf[*Hx_Obj_loreline_nexpr](_hx_tmp_2, _hx_tmp_3, HxDefault[HxNullable[int32]]()))
 							if index != -1 {
 								return any(map[string]any{"owner": ((any)(parent)), "index": ((any)(index))})
 							}
@@ -3662,7 +3662,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_findCallArgument(node *Hx_Obj_lorelin
 							_hx_tmp_5 = child.VTable.(interface{ Hx_As_Hx_Obj_loreline_nexpr() *Hx_Obj_loreline_nexpr }).Hx_As_Hx_Obj_loreline_nexpr()
 							var index int32
 							_ = index
-							index = (Hx_Array_IndexOf[*Hx_Obj_loreline_nexpr](_hx_tmp_4, _hx_tmp_5, HxNullable[int32]{}))
+							index = (Hx_Array_IndexOf[*Hx_Obj_loreline_nexpr](_hx_tmp_4, _hx_tmp_5, HxDefault[HxNullable[int32]]()))
 							if index != -1 {
 								return any(map[string]any{"owner": ((any)(parent)), "index": ((any)(index))})
 							}
@@ -3687,7 +3687,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_findCallArgument(node *Hx_Obj_lorelin
 							_hx_tmp_7 = child.VTable.(interface{ Hx_As_Hx_Obj_loreline_nexpr() *Hx_Obj_loreline_nexpr }).Hx_As_Hx_Obj_loreline_nexpr()
 							var index int32
 							_ = index
-							index = (Hx_Array_IndexOf[*Hx_Obj_loreline_nexpr](_hx_tmp_6, _hx_tmp_7, HxNullable[int32]{}))
+							index = (Hx_Array_IndexOf[*Hx_Obj_loreline_nexpr](_hx_tmp_6, _hx_tmp_7, HxDefault[HxNullable[int32]]()))
 							if index != -1 {
 								return any(map[string]any{"owner": ((any)(parent)), "index": ((any)(index))})
 							}
@@ -3826,7 +3826,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_isTopLevelNode(node *Hx_Obj_loreline_
 		var _hx_tmp_1 *Hx_Obj_loreline_astnode
 		_ = _hx_tmp_1
 		_hx_tmp_1 = astNode
-		return ((Hx_Array_IndexOf[*Hx_Obj_loreline_astnode](_hx_tmp_0, _hx_tmp_1, HxNullable[int32]{})) != -1)
+		return ((Hx_Array_IndexOf[*Hx_Obj_loreline_astnode](_hx_tmp_0, _hx_tmp_1, HxDefault[HxNullable[int32]]())) != -1)
 	}
 
 	return false
@@ -4307,12 +4307,12 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getWhenWarnings(when *Hx_Obj_loreline
 						var key string
 						_ = key
 						key = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_16, (value).Value)
-						if func() func(_hx_param_key string) bool {
+						if func() func(key string) bool {
 							var _hx_closure_src_497 func(_hx_param_key any) bool
 							_ = _hx_closure_src_497
 							_hx_closure_src_497 = comparedValues.VTable.Hx_Field_exists
-							return func(_hx_param_key string) bool {
-								return _hx_closure_src_497(((any)(_hx_param_key)))
+							return func(key string) bool {
+								return _hx_closure_src_497(((any)(key)))
 							}
 						}()(key) {
 							var _hx_tmp_17 HxArray[any]
@@ -4326,12 +4326,12 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getWhenWarnings(when *Hx_Obj_loreline
 							break
 						}
 
-						func() func(_hx_param_key string, _hx_param_value bool) {
+						func() func(key string, value bool) {
 							var _hx_closure_src_498 func(_hx_param_key any, _hx_param_value any)
 							_ = _hx_closure_src_498
 							_hx_closure_src_498 = comparedValues.VTable.Hx_Field_set
-							return func(_hx_param_key string, _hx_param_value bool) {
-								_hx_closure_src_498(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+							return func(key string, value bool) {
+								_hx_closure_src_498(((any)(key)), ((any)(value)))
 							}
 						}()(key, true)
 					}
@@ -4715,8 +4715,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getVisibleBeats(fromNode *Hx_Obj_lore
 						_hx_tmp_2 = ((*Hx_Obj_go_haxe_hxclass)(Hx_Obj_loreline_nbeatdecl_RTTI))
 						var hx_nullable_f202 HxNullable[bool]
 						_ = hx_nullable_f202
-						hx_nullable_f202 = HxNullable[bool]{}
-
+						hx_nullable_f202 = HxDefault[HxNullable[bool]]()
 						var _hx_tmp_3 any
 						_ = _hx_tmp_3
 						if (hx_nullable_f202).Valid == true {
@@ -4767,20 +4766,20 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getVisibleBeats(fromNode *Hx_Obj_lore
 							_ = child
 							child = _g1.Get(tmp__g_1)
 							tmp__g_1++
-							if !func() func(_hx_param_key string) bool {
+							if !func() func(key string) bool {
 								var _hx_closure_src_506 func(_hx_param_key any) bool
 								_ = _hx_closure_src_506
 								_hx_closure_src_506 = seenBeats.VTable.Hx_Field_exists
-								return func(_hx_param_key string) bool {
-									return _hx_closure_src_506(((any)(_hx_param_key)))
+								return func(key string) bool {
+									return _hx_closure_src_506(((any)(key)))
 								}
 							}()(child.Hx_Field_name) {
-								func() func(_hx_param_key string, _hx_param_value bool) {
+								func() func(key string, value bool) {
 									var _hx_closure_src_507 func(_hx_param_key any, _hx_param_value any)
 									_ = _hx_closure_src_507
 									_hx_closure_src_507 = seenBeats.VTable.Hx_Field_set
-									return func(_hx_param_key string, _hx_param_value bool) {
-										_hx_closure_src_507(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+									return func(key string, value bool) {
+										_hx_closure_src_507(((any)(key)), ((any)(value)))
 									}
 								}()(child.Hx_Field_name, true)
 								_ = (Hx_Array_Push[*Hx_Obj_loreline_nbeatdecl](beats, child))
@@ -4813,20 +4812,20 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getVisibleBeats(fromNode *Hx_Obj_lore
 					beat = node.VTable.(interface {
 						Hx_As_Hx_Obj_loreline_nbeatdecl() *Hx_Obj_loreline_nbeatdecl
 					}).Hx_As_Hx_Obj_loreline_nbeatdecl()
-					if !func() func(_hx_param_key string) bool {
+					if !func() func(key string) bool {
 						var _hx_closure_src_509 func(_hx_param_key any) bool
 						_ = _hx_closure_src_509
 						_hx_closure_src_509 = seenBeats.VTable.Hx_Field_exists
-						return func(_hx_param_key string) bool {
-							return _hx_closure_src_509(((any)(_hx_param_key)))
+						return func(key string) bool {
+							return _hx_closure_src_509(((any)(key)))
 						}
 					}()(beat.Hx_Field_name) {
-						func() func(_hx_param_key string, _hx_param_value bool) {
+						func() func(key string, value bool) {
 							var _hx_closure_src_510 func(_hx_param_key any, _hx_param_value any)
 							_ = _hx_closure_src_510
 							_hx_closure_src_510 = seenBeats.VTable.Hx_Field_set
-							return func(_hx_param_key string, _hx_param_value bool) {
-								_hx_closure_src_510(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+							return func(key string, value bool) {
+								_hx_closure_src_510(((any)(key)), ((any)(value)))
 							}
 						}()(beat.Hx_Field_name, true)
 						_ = (Hx_Array_Push[*Hx_Obj_loreline_nbeatdecl](beats, beat))
@@ -4886,12 +4885,12 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getAllTags() HxArray[string] {
 					var key string
 					_ = key
 					key = Hx_Field_stringtools_trim(comment.Hx_Field_content)
-					func() func(_hx_param_key string, _hx_param_value bool) {
+					func() func(key string, value bool) {
 						var _hx_closure_src_511 func(_hx_param_key any, _hx_param_value any)
 						_ = _hx_closure_src_511
 						_hx_closure_src_511 = tags.VTable.Hx_Field_set
-						return func(_hx_param_key string, _hx_param_value bool) {
-							_hx_closure_src_511(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+						return func(key string, value bool) {
+							_hx_closure_src_511(((any)(key)), ((any)(value)))
 						}
 					}()(key, true)
 				}
@@ -4976,18 +4975,18 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_countTags() Hx_Typedef_map {
 					text = Hx_Field_stringtools_trim(comment.Hx_Field_content)
 					var prevCount HxNullable[int32]
 					_ = prevCount
-					prevCount = func() func(_hx_param_key string) HxNullable[int32] {
+					prevCount = func() func(key string) HxNullable[int32] {
 						var _hx_closure_src_512 func(_hx_param_key any) any
 						_ = _hx_closure_src_512
 						_hx_closure_src_512 = tags.VTable.Hx_Field_get
-						return func(_hx_param_key string) HxNullable[int32] {
+						return func(key string) HxNullable[int32] {
 							var hx_nullable_t56 any
 							_ = hx_nullable_t56
-							hx_nullable_t56 = _hx_closure_src_512(((any)(_hx_param_key)))
+							hx_nullable_t56 = _hx_closure_src_512(((any)(key)))
 							var _hx_tmp_2 HxNullable[int32]
 							_ = _hx_tmp_2
 							if hx_nullable_t56 == nil {
-								_hx_tmp_2 = HxNullable[int32]{}
+								_hx_tmp_2 = HxDefault[HxNullable[int32]]()
 							} else {
 								_hx_tmp_2 = HxNullable[int32]{Value: ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(hx_nullable_t56))), Valid: true}
 							}
@@ -5006,12 +5005,12 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_countTags() Hx_Typedef_map {
 					var prevCount1 int32
 					_ = prevCount1
 					prevCount1 = _hx_tmp_3
-					func() func(_hx_param_key string, _hx_param_value int32) {
+					func() func(key string, value int32) {
 						var _hx_closure_src_513 func(_hx_param_key any, _hx_param_value any)
 						_ = _hx_closure_src_513
 						_hx_closure_src_513 = tags.VTable.Hx_Field_set
-						return func(_hx_param_key string, _hx_param_value int32) {
-							_hx_closure_src_513(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+						return func(key string, value int32) {
+							_hx_closure_src_513(((any)(key)), ((any)(value)))
 						}
 					}()(text, (prevCount1 + 1))
 				}
@@ -5271,7 +5270,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_findOutboundBeats(beatDecl *Hx_Obj_lo
 			_ = _hx_tmp_7
 			_hx_tmp_7 = _g_index
 			if _hx_tmp_7 < HxMakeArrayView[any](HxMakeArrayView[*Hx_Obj_loreline_reference](_g_map.Hx_Field__values)).Len() {
-				_hx_tmp_6 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(HxMakeArrayView[any](HxMakeArrayView[*Hx_Obj_loreline_reference](_g_map.Hx_Field__values)).Get(_g_index), ((any)(nil))))))
+				_hx_tmp_6 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(HxMakeArrayView[any](HxMakeArrayView[*Hx_Obj_loreline_reference](_g_map.Hx_Field__values)).Get(_g_index), HxDefault[any]()))))
 			} else {
 				_hx_tmp_6 = false
 			}
@@ -5315,7 +5314,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_findOutboundBeats(beatDecl *Hx_Obj_lo
 				_ = _hx_tmp_11
 				_hx_tmp_11 = _g_index
 				if _hx_tmp_11 < HxMakeArrayView[any](HxMakeArrayView[*Hx_Obj_loreline_reference](_g_map.Hx_Field__values)).Len() {
-					_hx_tmp_10 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(HxMakeArrayView[any](HxMakeArrayView[*Hx_Obj_loreline_reference](_g_map.Hx_Field__values)).Get(_g_index), ((any)(nil))))))
+					_hx_tmp_10 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(HxMakeArrayView[any](HxMakeArrayView[*Hx_Obj_loreline_reference](_g_map.Hx_Field__values)).Get(_g_index), HxDefault[any]()))))
 				} else {
 					_hx_tmp_10 = false
 				}
@@ -5511,12 +5510,12 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_findModifiedStateFields(beatDecl *Hx_
 								}
 								return nil
 							})())
-							func() func(_hx_param_key string, _hx_param_value *Hx_Obj_loreline_reference) {
+							func() func(key string, value *Hx_Obj_loreline_reference) {
 								var _hx_closure_src_520 func(_hx_param_key any, _hx_param_value any)
 								_ = _hx_closure_src_520
 								_hx_closure_src_520 = modifiedFields.VTable.Hx_Field_set
-								return func(_hx_param_key string, _hx_param_value *Hx_Obj_loreline_reference) {
-									_hx_closure_src_520(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+								return func(key string, value *Hx_Obj_loreline_reference) {
+									_hx_closure_src_520(((any)(key)), ((any)(value)))
 								}
 							}()(key, value)
 						}
@@ -5692,12 +5691,12 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_findReadStateFields(beatDecl *Hx_Obj_
 							}
 							return nil
 						})())
-						func() func(_hx_param_key string, _hx_param_value *Hx_Obj_loreline_reference) {
+						func() func(key string, value *Hx_Obj_loreline_reference) {
 							var _hx_closure_src_522 func(_hx_param_key any, _hx_param_value any)
 							_ = _hx_closure_src_522
 							_hx_closure_src_522 = readFields.VTable.Hx_Field_set
-							return func(_hx_param_key string, _hx_param_value *Hx_Obj_loreline_reference) {
-								_hx_closure_src_522(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+							return func(key string, value *Hx_Obj_loreline_reference) {
+								_hx_closure_src_522(((any)(key)), ((any)(value)))
 							}
 						}()(key, value)
 					}
@@ -5948,7 +5947,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_findBeatCharacters(beatDecl *Hx_Obj_l
 			_ = _hx_tmp_5
 			_hx_tmp_5 = _g_index
 			if _hx_tmp_5 < HxMakeArrayView[any](HxMakeArrayView[*Hx_Obj_loreline_reference](_g_map.Hx_Field__values)).Len() {
-				_hx_tmp_4 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(HxMakeArrayView[any](HxMakeArrayView[*Hx_Obj_loreline_reference](_g_map.Hx_Field__values)).Get(_g_index), ((any)(nil))))))
+				_hx_tmp_4 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(HxMakeArrayView[any](HxMakeArrayView[*Hx_Obj_loreline_reference](_g_map.Hx_Field__values)).Get(_g_index), HxDefault[any]()))))
 			} else {
 				_hx_tmp_4 = false
 			}
@@ -5992,7 +5991,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_findBeatCharacters(beatDecl *Hx_Obj_l
 				_ = _hx_tmp_9
 				_hx_tmp_9 = _g_index
 				if _hx_tmp_9 < HxMakeArrayView[any](HxMakeArrayView[*Hx_Obj_loreline_reference](_g_map.Hx_Field__values)).Len() {
-					_hx_tmp_8 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(HxMakeArrayView[any](HxMakeArrayView[*Hx_Obj_loreline_reference](_g_map.Hx_Field__values)).Get(_g_index), ((any)(nil))))))
+					_hx_tmp_8 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(HxMakeArrayView[any](HxMakeArrayView[*Hx_Obj_loreline_reference](_g_map.Hx_Field__values)).Get(_g_index), HxDefault[any]()))))
 				} else {
 					_hx_tmp_8 = false
 				}
@@ -6425,7 +6424,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_resolveLorscriptAccess(_hx_reserved_f
 			{
 				var name string
 				_ = name
-				name = _g.(Hx_Enum_loreline_lorscript_exprdef_EIdent).Hx_Field_v
+				name = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EIdent).Hx_Field_v
 				{
 					var stateField *Hx_Obj_loreline_node
 					_ = stateField
@@ -6546,10 +6545,10 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_resolveLorscriptAccess(_hx_reserved_f
 			{
 				var e any
 				_ = e
-				e = _g.(Hx_Enum_loreline_lorscript_exprdef_EField).Hx_Field_e
+				e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EField).Hx_Field_e
 				var f string
 				_ = f
-				f = _g.(Hx_Enum_loreline_lorscript_exprdef_EField).Hx_Field_f
+				f = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EField).Hx_Field_f
 				{
 					var _hx_tmp_5 *Hx_Obj_loreline_node
 					_ = _hx_tmp_5
@@ -6641,7 +6640,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_resolveLorscriptAccess(_hx_reserved_f
 											if tmp__g_2.Hx_Field_enumIndex() == 4 {
 												var style int32
 												_ = style
-												style = tmp__g_2.(Hx_Enum_loreline_literaltype_Object).Hx_Field_style
+												style = ((Hx_Enum_loreline_literaltype)(tmp__g_2)).(Hx_Enum_loreline_literaltype_Object).Hx_Field_style
 												{
 													var fields HxArray[*Hx_Obj_loreline_nobjectfield]
 													_ = fields
@@ -6692,10 +6691,10 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_resolveLorscriptAccess(_hx_reserved_f
 			{
 				var e any
 				_ = e
-				e = _g.(Hx_Enum_loreline_lorscript_exprdef_EArray).Hx_Field_e
+				e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EArray).Hx_Field_e
 				var index any
 				_ = index
-				index = _g.(Hx_Enum_loreline_lorscript_exprdef_EArray).Hx_Field_index
+				index = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EArray).Hx_Field_index
 			}
 
 		default:
@@ -6758,7 +6757,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getLorscriptCompletion(_hx_reserved_f
 		var _hx_tmp_3 string
 		_ = _hx_tmp_3
 		_hx_tmp_3 = _hx_tmp_2
-		_hx_tmp_1 = (Hx_Field_go_haxe_hxstring_substring(_hx_tmp_3, 0, HxNullable[int32]{}))
+		_hx_tmp_1 = (Hx_Field_go_haxe_hxstring_substring(_hx_tmp_3, 0, HxDefault[HxNullable[int32]]()))
 	}
 
 	var truncated string
@@ -6772,7 +6771,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getLorscriptCompletion(_hx_reserved_f
 	_hx_tmp_4 = truncated
 	var startIndex int32
 	_ = startIndex
-	startIndex = ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_4, "{", HxNullable[int32]{})) + 1)
+	startIndex = ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_4, "{", HxDefault[HxNullable[int32]]())) + 1)
 	var _hx_tmp_5 string
 	_ = _hx_tmp_5
 	if (HxNullable[int32]{Value: fullLen, Valid: true}).Valid != false {
@@ -6802,7 +6801,7 @@ func (this *Hx_Obj_loreline_lens) Hx_Field_getLorscriptCompletion(_hx_reserved_f
 		var _hx_tmp_13 int32
 		_ = _hx_tmp_13
 		_hx_tmp_13 = _hx_tmp_11
-		_hx_tmp_5 = (Hx_Field_go_haxe_hxstring_substring(_hx_tmp_12, _hx_tmp_13, HxNullable[int32]{}))
+		_hx_tmp_5 = (Hx_Field_go_haxe_hxstring_substring(_hx_tmp_12, _hx_tmp_13, HxDefault[HxNullable[int32]]()))
 	}
 
 	truncated = _hx_tmp_5
@@ -6968,7 +6967,7 @@ func Hx_Field_loreline_lens_topLevelClauses(expr *Hx_Obj_loreline_nexpr) HxArray
 
 func Hx_Field_loreline_lens_comparedValue(expr *Hx_Obj_loreline_nexpr) HxNullable[string] {
 	if !Hx_Field_std_isOfType(expr, Hx_Obj_loreline_nbinary_RTTI) {
-		return HxNullable[string]{Value: HxStringNull}
+		return HxDefault[HxNullable[string]]()
 	}
 
 	var binary *Hx_Obj_loreline_nbinary
@@ -6983,7 +6982,7 @@ func Hx_Field_loreline_lens_comparedValue(expr *Hx_Obj_loreline_nexpr) HxNullabl
 
 	default:
 		{
-			return HxNullable[string]{Value: HxStringNull}
+			return HxDefault[HxNullable[string]]()
 		}
 	}
 
@@ -7023,7 +7022,7 @@ func Hx_Field_loreline_lens_comparedValue(expr *Hx_Obj_loreline_nexpr) HxNullabl
 	}
 
 	if _hx_tmp_2 {
-		return HxNullable[string]{Value: HxStringNull}
+		return HxDefault[HxNullable[string]]()
 	}
 
 	var printer *Hx_Obj_loreline_printer

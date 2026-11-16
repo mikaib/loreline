@@ -168,7 +168,7 @@ func Hx_Field_loreline_astutils_addQuotes(node *Hx_Obj_loreline_astnode) {
 							if tmp__g1_1.Hx_Field_enumIndex() == 0 {
 								var text string
 								_ = text
-								text = tmp__g1_1.(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
+								text = ((Hx_Enum_loreline_stringparttype)(tmp__g1_1)).(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
 								var tmp string
 								_ = tmp
 								tmp = Hx_Field_loreline_astutils_unquotedRawToQuotedRaw(text)
@@ -220,7 +220,7 @@ func Hx_Field_loreline_astutils_removeQuotes(node *Hx_Obj_loreline_astnode) {
 							if _g2.Hx_Field_enumIndex() == 0 {
 								var text string
 								_ = text
-								text = _g2.(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
+								text = ((Hx_Enum_loreline_stringparttype)(_g2)).(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
 								fullText = Hx_Field_go_haxe_hxstring_concat(fullText, text)
 							}
 						}
@@ -251,7 +251,7 @@ func Hx_Field_loreline_astutils_removeQuotes(node *Hx_Obj_loreline_astnode) {
 								if tmp__g1_1.Hx_Field_enumIndex() == 0 {
 									var text string
 									_ = text
-									text = tmp__g1_1.(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
+									text = ((Hx_Enum_loreline_stringparttype)(tmp__g1_1)).(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
 									var tmp string
 									_ = tmp
 									tmp = Hx_Field_loreline_astutils_quotedRawToUnquotedRaw(text)
@@ -764,12 +764,12 @@ func Hx_Field_loreline_astutils_insertLocalizationKeys(content string, node *Hx_
 						c = _g1.Get(_g)
 						_g++
 						if c.Hx_Field_isHash {
-							func() func(_hx_param_key string, _hx_param_value bool) {
+							func() func(key string, value bool) {
 								var _hx_closure_src_451 func(_hx_param_key any, _hx_param_value any)
 								_ = _hx_closure_src_451
 								_hx_closure_src_451 = existingIds.VTable.Hx_Field_set
-								return func(_hx_param_key string, _hx_param_value bool) {
-									_hx_closure_src_451(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+								return func(key string, value bool) {
+									_hx_closure_src_451(((any)(key)), ((any)(value)))
 								}
 							}()(c.Hx_Field_content, true)
 						}
@@ -796,12 +796,12 @@ func Hx_Field_loreline_astutils_insertLocalizationKeys(content string, node *Hx_
 						c = _g1.Get(_g)
 						_g++
 						if c.Hx_Field_isHash {
-							func() func(_hx_param_key string, _hx_param_value bool) {
+							func() func(key string, value bool) {
 								var _hx_closure_src_452 func(_hx_param_key any, _hx_param_value any)
 								_ = _hx_closure_src_452
 								_hx_closure_src_452 = existingIds.VTable.Hx_Field_set
-								return func(_hx_param_key string, _hx_param_value bool) {
-									_hx_closure_src_452(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+								return func(key string, value bool) {
+									_hx_closure_src_452(((any)(key)), ((any)(value)))
 								}
 							}()(c.Hx_Field_content, true)
 						}
@@ -898,24 +898,24 @@ func Hx_Field_loreline_astutils_insertLocalizationKeys(content string, node *Hx_
 					_hx_tmp_9 = rng
 					id = Hx_Field_loreline_astutils_randomId(_hx_tmp_9, (7 + Hx_Field_std_int((((float64)(iterations)) * float64(0.01)))))
 					iterations++
-					if !(func() func(_hx_param_key string) bool {
+					if !(func() func(key string) bool {
 						var _hx_closure_src_453 func(_hx_param_key any) bool
 						_ = _hx_closure_src_453
 						_hx_closure_src_453 = existingIds.VTable.Hx_Field_exists
-						return func(_hx_param_key string) bool {
-							return _hx_closure_src_453(((any)(_hx_param_key)))
+						return func(key string) bool {
+							return _hx_closure_src_453(((any)(key)))
 						}
 					}()(id)) {
 						break
 					}
 				}
 
-				func() func(_hx_param_key string, _hx_param_value bool) {
+				func() func(key string, value bool) {
 					var _hx_closure_src_454 func(_hx_param_key any, _hx_param_value any)
 					_ = _hx_closure_src_454
 					_hx_closure_src_454 = existingIds.VTable.Hx_Field_set
-					return func(_hx_param_key string, _hx_param_value bool) {
-						_hx_closure_src_454(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+					return func(key string, value bool) {
+						_hx_closure_src_454(((any)(key)), ((any)(value)))
 					}
 				}()(id, true)
 				var _hx_tmp_10 HxArray[any]
@@ -965,7 +965,7 @@ func Hx_Field_loreline_astutils_insertLocalizationKeys(content string, node *Hx_
 				var _hx_tmp_15 HxNullable[int32]
 				_ = _hx_tmp_15
 				if hx_nullable_t54 == nil {
-					_hx_tmp_15 = HxNullable[int32]{}
+					_hx_tmp_15 = HxDefault[HxNullable[int32]]()
 				} else {
 					_hx_tmp_15 = HxNullable[int32]{Value: ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(hx_nullable_t54))), Valid: true}
 				}
@@ -984,7 +984,7 @@ func Hx_Field_loreline_astutils_insertLocalizationKeys(content string, node *Hx_
 					var _hx_tmp_18 string
 					_ = _hx_tmp_18
 					_hx_tmp_18 = _hx_tmp_17
-					_hx_tmp_16 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_18, 0, HxNullable[int32]{}))
+					_hx_tmp_16 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_18, 0, HxDefault[HxNullable[int32]]()))
 				}
 
 				var result1 string
@@ -995,8 +995,7 @@ func Hx_Field_loreline_astutils_insertLocalizationKeys(content string, node *Hx_
 				pos = ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(Hx_Field_go_haxe_hxdynamic_getField(ins, "offset"))))
 				var len1 HxNullable[int32]
 				_ = len1
-				len1 = HxNullable[int32]{}
-
+				len1 = HxDefault[HxNullable[int32]]()
 				var _hx_tmp_19 string
 				_ = _hx_tmp_19
 				_hx_tmp_19 = result1
@@ -1017,7 +1016,7 @@ func Hx_Field_loreline_astutils_insertLocalizationKeys(content string, node *Hx_
 					var _hx_tmp_24 int32
 					_ = _hx_tmp_24
 					_hx_tmp_24 = _hx_tmp_22
-					_hx_tmp_20 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_23, _hx_tmp_24, HxNullable[int32]{}))
+					_hx_tmp_20 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_23, _hx_tmp_24, HxDefault[HxNullable[int32]]()))
 				}
 
 				result = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_19, (_hx_tmp_20))
@@ -1194,7 +1193,7 @@ func Hx_Field_loreline_astutils_removeLocalizationKeys(content string, node *Hx_
 			var _hx_tmp_9 HxNullable[int32]
 			_ = _hx_tmp_9
 			if hx_nullable_t55 == nil {
-				_hx_tmp_9 = HxNullable[int32]{}
+				_hx_tmp_9 = HxDefault[HxNullable[int32]]()
 			} else {
 				_hx_tmp_9 = HxNullable[int32]{Value: ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(hx_nullable_t55))), Valid: true}
 			}
@@ -1213,7 +1212,7 @@ func Hx_Field_loreline_astutils_removeLocalizationKeys(content string, node *Hx_
 				var _hx_tmp_12 string
 				_ = _hx_tmp_12
 				_hx_tmp_12 = _hx_tmp_11
-				_hx_tmp_10 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_12, 0, HxNullable[int32]{}))
+				_hx_tmp_10 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_12, 0, HxDefault[HxNullable[int32]]()))
 			}
 
 			var result1 string
@@ -1224,8 +1223,7 @@ func Hx_Field_loreline_astutils_removeLocalizationKeys(content string, node *Hx_
 			pos = ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(Hx_Field_go_haxe_hxdynamic_getField(r, "end"))))
 			var len1 HxNullable[int32]
 			_ = len1
-			len1 = HxNullable[int32]{}
-
+			len1 = HxDefault[HxNullable[int32]]()
 			var _hx_tmp_13 string
 			_ = _hx_tmp_13
 			_hx_tmp_13 = result1
@@ -1246,7 +1244,7 @@ func Hx_Field_loreline_astutils_removeLocalizationKeys(content string, node *Hx_
 				var _hx_tmp_18 int32
 				_ = _hx_tmp_18
 				_hx_tmp_18 = _hx_tmp_16
-				_hx_tmp_14 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_17, _hx_tmp_18, HxNullable[int32]{}))
+				_hx_tmp_14 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_17, _hx_tmp_18, HxDefault[HxNullable[int32]]()))
 			}
 
 			result = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_13, (_hx_tmp_14))
@@ -1488,12 +1486,12 @@ func Hx_Field_loreline_astutils_extractTranslations(node *Hx_Obj_loreline_astnod
 			_ = hashId
 			hashId = Hx_Field_loreline_astutils_findHashComment(astNode, str)
 			if (hashId).Valid != false {
-				func() func(_hx_param_key string, _hx_param_value *Hx_Obj_loreline_nstringliteral) {
+				func() func(key string, value *Hx_Obj_loreline_nstringliteral) {
 					var _hx_closure_src_455 func(_hx_param_key any, _hx_param_value any)
 					_ = _hx_closure_src_455
 					_hx_closure_src_455 = result.VTable.Hx_Field_set
-					return func(_hx_param_key string, _hx_param_value *Hx_Obj_loreline_nstringliteral) {
-						_hx_closure_src_455(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+					return func(key string, value *Hx_Obj_loreline_nstringliteral) {
+						_hx_closure_src_455(((any)(key)), ((any)(value)))
 					}
 				}()((hashId).Value, str)
 			}
@@ -1711,13 +1709,13 @@ func Hx_Field_loreline_astutils_collectHashIds(content string, out__isOptional a
 					if _g1.Hx_Field_enumIndex() == 54 {
 						var c string
 						_ = c
-						c = _g1.(Hx_Enum_loreline_tokentype_CommentHash).Hx_Field_content
-						func() func(_hx_param_key string, _hx_param_value bool) {
+						c = ((Hx_Enum_loreline_tokentype)(_g1)).(Hx_Enum_loreline_tokentype_CommentHash).Hx_Field_content
+						func() func(key string, value bool) {
 							var _hx_closure_src_456 func(_hx_param_key any, _hx_param_value any)
 							_ = _hx_closure_src_456
 							_hx_closure_src_456 = out.VTable.Hx_Field_set
-							return func(_hx_param_key string, _hx_param_value bool) {
-								_hx_closure_src_456(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+							return func(key string, value bool) {
+								_hx_closure_src_456(((any)(key)), ((any)(value)))
 							}
 						}()(c, true)
 					}
@@ -1850,12 +1848,12 @@ func Hx_Field_loreline_astutils_generateTranslationFile(sourceScript *Hx_Obj_lor
 			var _hx_tmp_3 bool
 			_ = _hx_tmp_3
 			if existingTranslations != nil {
-				_hx_tmp_3 = func() func(_hx_param_key string) bool {
+				_hx_tmp_3 = func() func(key string) bool {
 					var _hx_closure_src_464 func(_hx_param_key any) bool
 					_ = _hx_closure_src_464
 					_hx_closure_src_464 = existingTranslations.VTable.Hx_Field_exists
-					return func(_hx_param_key string) bool {
-						return _hx_closure_src_464(((any)(_hx_param_key)))
+					return func(key string) bool {
+						return _hx_closure_src_464(((any)(key)))
 					}
 				}()(Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_getField(entry, "id")))
 			} else {
@@ -1870,14 +1868,14 @@ func Hx_Field_loreline_astutils_generateTranslationFile(sourceScript *Hx_Obj_lor
 					return func(x string) {
 						_hx_closure_src_465(((any)(x)))
 					}
-				}()(printer.VTable.Hx_Field_printStringLiteralAsText(func() func(_hx_param_key string) *Hx_Obj_loreline_nstringliteral {
+				}()(printer.VTable.Hx_Field_printStringLiteralAsText(func() func(key string) *Hx_Obj_loreline_nstringliteral {
 					var _hx_closure_src_466 func(_hx_param_key any) any
 					_ = _hx_closure_src_466
 					_hx_closure_src_466 = existingTranslations.VTable.Hx_Field_get
-					return func(_hx_param_key string) *Hx_Obj_loreline_nstringliteral {
+					return func(key string) *Hx_Obj_loreline_nstringliteral {
 						var hx_dyncast_127 any
 						_ = hx_dyncast_127
-						hx_dyncast_127 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_466(((any)(_hx_param_key))), "Hx_Obj_loreline_nstringliteral")
+						hx_dyncast_127 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_466(((any)(key))), "Hx_Obj_loreline_nstringliteral")
 						var _hx_tmp_4 *Hx_Obj_loreline_nstringliteral
 						_ = _hx_tmp_4
 						if hx_dyncast_127 != nil {
@@ -2146,14 +2144,14 @@ func Hx_Field_loreline_astutils_canSafelyRemoveQuotes(text string) bool {
 	var _hx_tmp_0 string
 	_ = _hx_tmp_0
 	_hx_tmp_0 = text
-	if (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, "\n", HxNullable[int32]{})) != -1 {
+	if (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, "\n", HxDefault[HxNullable[int32]]())) != -1 {
 		return false
 	}
 
 	var _hx_tmp_1 string
 	_ = _hx_tmp_1
 	_hx_tmp_1 = text
-	if (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_1, "{", HxNullable[int32]{})) != -1 {
+	if (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_1, "{", HxDefault[HxNullable[int32]]())) != -1 {
 		return false
 	}
 
@@ -2425,7 +2423,7 @@ func Hx_Field_loreline_astutils_canSafelyRemoveQuotes(text string) bool {
 	_hx_tmp_29 = text
 	var colonIdx int32
 	_ = colonIdx
-	colonIdx = (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_29, ":", HxNullable[int32]{}))
+	colonIdx = (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_29, ":", HxDefault[HxNullable[int32]]()))
 	if colonIdx > 0 {
 		var allIdentChars bool
 		_ = allIdentChars
@@ -2748,7 +2746,7 @@ func Hx_Field_loreline_astutils_reindentCode(code string, oldIndent string, newI
 				var _hx_tmp_2 int32
 				_ = _hx_tmp_2
 				_hx_tmp_2 = pos
-				if !(Hx_Field_stringtools_startsWith((Hx_Field_go_haxe_hxstring_substr(_hx_tmp_1, _hx_tmp_2, HxNullable[int32]{})), oldIndent)) {
+				if !(Hx_Field_stringtools_startsWith((Hx_Field_go_haxe_hxstring_substr(_hx_tmp_1, _hx_tmp_2, HxDefault[HxNullable[int32]]())), oldIndent)) {
 					break
 				}
 
@@ -2798,7 +2796,7 @@ func Hx_Field_loreline_astutils_reindentCode(code string, oldIndent string, newI
 				return func(x string) {
 					_hx_closure_src_472(((any)(x)))
 				}
-			}()((Hx_Field_go_haxe_hxstring_substr(_hx_tmp_5, _hx_tmp_6, HxNullable[int32]{})))
+			}()((Hx_Field_go_haxe_hxstring_substr(_hx_tmp_5, _hx_tmp_6, HxDefault[HxNullable[int32]]())))
 		}
 	}
 
@@ -2839,7 +2837,7 @@ func Hx_Field_loreline_astutils_getStringEndLine(str *Hx_Obj_loreline_nstringlit
 					if tmp__g_1.Hx_Field_enumIndex() == 0 {
 						var text string
 						_ = text
-						text = tmp__g_1.(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
+						text = ((Hx_Enum_loreline_stringparttype)(tmp__g_1)).(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
 						{
 							var i int32
 							_ = i
@@ -2995,7 +2993,7 @@ func Hx_Field_loreline_astutils_findHashComment(node *Hx_Obj_loreline_astnode, s
 			}
 		}
 
-		return HxNullable[string]{Value: HxStringNull}
+		return HxDefault[HxNullable[string]]()
 	}
 }
 
@@ -3123,7 +3121,7 @@ func Hx_Field_loreline_astutils_randomId(rng *Hx_Obj_loreline_random, length int
 		var _hx_tmp_16 int32
 		_ = _hx_tmp_16
 		_hx_tmp_16 = (pos + 1)
-		result = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_12, (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_15, _hx_tmp_16, HxNullable[int32]{})))
+		result = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_12, (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_15, _hx_tmp_16, HxDefault[HxNullable[int32]]())))
 	}
 
 	return result

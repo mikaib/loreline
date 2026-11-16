@@ -623,7 +623,7 @@ func Hx_Field_haxe_rtti_typeapi_typeInfos(t Hx_Enum_haxe_rtti_typetree) any {
 		{
 			var c any
 			_ = c
-			c = t.(Hx_Enum_haxe_rtti_typetree_TClassdecl).Hx_Field_c
+			c = ((Hx_Enum_haxe_rtti_typetree)(t)).(Hx_Enum_haxe_rtti_typetree_TClassdecl).Hx_Field_c
 			inf = c
 		}
 
@@ -631,7 +631,7 @@ func Hx_Field_haxe_rtti_typeapi_typeInfos(t Hx_Enum_haxe_rtti_typetree) any {
 		{
 			var e any
 			_ = e
-			e = t.(Hx_Enum_haxe_rtti_typetree_TEnumdecl).Hx_Field_e
+			e = ((Hx_Enum_haxe_rtti_typetree)(t)).(Hx_Enum_haxe_rtti_typetree_TEnumdecl).Hx_Field_e
 			inf = e
 		}
 
@@ -639,7 +639,7 @@ func Hx_Field_haxe_rtti_typeapi_typeInfos(t Hx_Enum_haxe_rtti_typetree) any {
 		{
 			var t1 any
 			_ = t1
-			t1 = t.(Hx_Enum_haxe_rtti_typetree_TTypedecl).Hx_Field_t
+			t1 = ((Hx_Enum_haxe_rtti_typetree)(t)).(Hx_Enum_haxe_rtti_typetree_TTypedecl).Hx_Field_t
 			inf = t1
 		}
 
@@ -647,7 +647,7 @@ func Hx_Field_haxe_rtti_typeapi_typeInfos(t Hx_Enum_haxe_rtti_typetree) any {
 		{
 			var a any
 			_ = a
-			a = t.(Hx_Enum_haxe_rtti_typetree_TAbstractdecl).Hx_Field_a
+			a = ((Hx_Enum_haxe_rtti_typetree)(t)).(Hx_Enum_haxe_rtti_typetree_TAbstractdecl).Hx_Field_a
 			inf = a
 		}
 
@@ -728,11 +728,11 @@ func Hx_Field_haxe_rtti_typeapi_rightsEq(r1 Hx_Enum_haxe_rtti_rights, r2 Hx_Enum
 	if r1.Hx_Field_enumIndex() == 2 {
 		var m1 string
 		_ = m1
-		m1 = r1.(Hx_Enum_haxe_rtti_rights_RCall).Hx_Field_m
+		m1 = ((Hx_Enum_haxe_rtti_rights)(r1)).(Hx_Enum_haxe_rtti_rights_RCall).Hx_Field_m
 		if r2.Hx_Field_enumIndex() == 2 {
 			var m2 string
 			_ = m2
-			m2 = r2.(Hx_Enum_haxe_rtti_rights_RCall).Hx_Field_m
+			m2 = ((Hx_Enum_haxe_rtti_rights)(r2)).(Hx_Enum_haxe_rtti_rights_RCall).Hx_Field_m
 			return (m1 == m2)
 		}
 	}
@@ -751,17 +751,17 @@ func Hx_Field_haxe_rtti_typeapi_typeEq(t1 Hx_Enum_haxe_rtti_ctype, t2 Hx_Enum_ha
 		{
 			var name Hx_Typedef_haxe_rtti_path
 			_ = name
-			name = t1.(Hx_Enum_haxe_rtti_ctype_CEnum).Hx_Field_name
+			name = ((Hx_Enum_haxe_rtti_ctype)(t1)).(Hx_Enum_haxe_rtti_ctype_CEnum).Hx_Field_name
 			var params HxArray[Hx_Enum_haxe_rtti_ctype]
 			_ = params
-			params = t1.(Hx_Enum_haxe_rtti_ctype_CEnum).Hx_Field_params
+			params = ((Hx_Enum_haxe_rtti_ctype)(t1)).(Hx_Enum_haxe_rtti_ctype_CEnum).Hx_Field_params
 			if t2.Hx_Field_enumIndex() == 1 {
 				var name2 Hx_Typedef_haxe_rtti_path
 				_ = name2
-				name2 = t2.(Hx_Enum_haxe_rtti_ctype_CEnum).Hx_Field_name
+				name2 = ((Hx_Enum_haxe_rtti_ctype)(t2)).(Hx_Enum_haxe_rtti_ctype_CEnum).Hx_Field_name
 				var params2 HxArray[Hx_Enum_haxe_rtti_ctype]
 				_ = params2
-				params2 = t2.(Hx_Enum_haxe_rtti_ctype_CEnum).Hx_Field_params
+				params2 = ((Hx_Enum_haxe_rtti_ctype)(t2)).(Hx_Enum_haxe_rtti_ctype_CEnum).Hx_Field_params
 				var _hx_tmp_0 bool
 				_ = _hx_tmp_0
 				if name == name2 {
@@ -806,17 +806,17 @@ func Hx_Field_haxe_rtti_typeapi_typeEq(t1 Hx_Enum_haxe_rtti_ctype, t2 Hx_Enum_ha
 		{
 			var name Hx_Typedef_haxe_rtti_path
 			_ = name
-			name = t1.(Hx_Enum_haxe_rtti_ctype_CClass).Hx_Field_name
+			name = ((Hx_Enum_haxe_rtti_ctype)(t1)).(Hx_Enum_haxe_rtti_ctype_CClass).Hx_Field_name
 			var params HxArray[Hx_Enum_haxe_rtti_ctype]
 			_ = params
-			params = t1.(Hx_Enum_haxe_rtti_ctype_CClass).Hx_Field_params
+			params = ((Hx_Enum_haxe_rtti_ctype)(t1)).(Hx_Enum_haxe_rtti_ctype_CClass).Hx_Field_params
 			if t2.Hx_Field_enumIndex() == 2 {
 				var name2 Hx_Typedef_haxe_rtti_path
 				_ = name2
-				name2 = t2.(Hx_Enum_haxe_rtti_ctype_CClass).Hx_Field_name
+				name2 = ((Hx_Enum_haxe_rtti_ctype)(t2)).(Hx_Enum_haxe_rtti_ctype_CClass).Hx_Field_name
 				var params2 HxArray[Hx_Enum_haxe_rtti_ctype]
 				_ = params2
-				params2 = t2.(Hx_Enum_haxe_rtti_ctype_CClass).Hx_Field_params
+				params2 = ((Hx_Enum_haxe_rtti_ctype)(t2)).(Hx_Enum_haxe_rtti_ctype_CClass).Hx_Field_params
 				var _hx_tmp_1 bool
 				_ = _hx_tmp_1
 				if name == name2 {
@@ -861,17 +861,17 @@ func Hx_Field_haxe_rtti_typeapi_typeEq(t1 Hx_Enum_haxe_rtti_ctype, t2 Hx_Enum_ha
 		{
 			var name Hx_Typedef_haxe_rtti_path
 			_ = name
-			name = t1.(Hx_Enum_haxe_rtti_ctype_CTypedef).Hx_Field_name
+			name = ((Hx_Enum_haxe_rtti_ctype)(t1)).(Hx_Enum_haxe_rtti_ctype_CTypedef).Hx_Field_name
 			var params HxArray[Hx_Enum_haxe_rtti_ctype]
 			_ = params
-			params = t1.(Hx_Enum_haxe_rtti_ctype_CTypedef).Hx_Field_params
+			params = ((Hx_Enum_haxe_rtti_ctype)(t1)).(Hx_Enum_haxe_rtti_ctype_CTypedef).Hx_Field_params
 			if t2.Hx_Field_enumIndex() == 3 {
 				var name2 Hx_Typedef_haxe_rtti_path
 				_ = name2
-				name2 = t2.(Hx_Enum_haxe_rtti_ctype_CTypedef).Hx_Field_name
+				name2 = ((Hx_Enum_haxe_rtti_ctype)(t2)).(Hx_Enum_haxe_rtti_ctype_CTypedef).Hx_Field_name
 				var params2 HxArray[Hx_Enum_haxe_rtti_ctype]
 				_ = params2
-				params2 = t2.(Hx_Enum_haxe_rtti_ctype_CTypedef).Hx_Field_params
+				params2 = ((Hx_Enum_haxe_rtti_ctype)(t2)).(Hx_Enum_haxe_rtti_ctype_CTypedef).Hx_Field_params
 				var _hx_tmp_2 bool
 				_ = _hx_tmp_2
 				if name == name2 {
@@ -916,17 +916,17 @@ func Hx_Field_haxe_rtti_typeapi_typeEq(t1 Hx_Enum_haxe_rtti_ctype, t2 Hx_Enum_ha
 		{
 			var args HxArray[any]
 			_ = args
-			args = t1.(Hx_Enum_haxe_rtti_ctype_CFunction).Hx_Field_args
+			args = ((Hx_Enum_haxe_rtti_ctype)(t1)).(Hx_Enum_haxe_rtti_ctype_CFunction).Hx_Field_args
 			var ret Hx_Enum_haxe_rtti_ctype
 			_ = ret
-			ret = t1.(Hx_Enum_haxe_rtti_ctype_CFunction).Hx_Field_ret
+			ret = ((Hx_Enum_haxe_rtti_ctype)(t1)).(Hx_Enum_haxe_rtti_ctype_CFunction).Hx_Field_ret
 			if t2.Hx_Field_enumIndex() == 4 {
 				var args2 HxArray[any]
 				_ = args2
-				args2 = t2.(Hx_Enum_haxe_rtti_ctype_CFunction).Hx_Field_args
+				args2 = ((Hx_Enum_haxe_rtti_ctype)(t2)).(Hx_Enum_haxe_rtti_ctype_CFunction).Hx_Field_args
 				var ret2 Hx_Enum_haxe_rtti_ctype
 				_ = ret2
-				ret2 = t2.(Hx_Enum_haxe_rtti_ctype_CFunction).Hx_Field_ret
+				ret2 = ((Hx_Enum_haxe_rtti_ctype)(t2)).(Hx_Enum_haxe_rtti_ctype_CFunction).Hx_Field_ret
 				var _hx_tmp_3 bool
 				_ = _hx_tmp_3
 				if Hx_Field_haxe_rtti_typeapi_leq(func(a any, b any) bool {
@@ -990,11 +990,11 @@ func Hx_Field_haxe_rtti_typeapi_typeEq(t1 Hx_Enum_haxe_rtti_ctype, t2 Hx_Enum_ha
 		{
 			var fields HxArray[any]
 			_ = fields
-			fields = t1.(Hx_Enum_haxe_rtti_ctype_CAnonymous).Hx_Field_fields
+			fields = ((Hx_Enum_haxe_rtti_ctype)(t1)).(Hx_Enum_haxe_rtti_ctype_CAnonymous).Hx_Field_fields
 			if t2.Hx_Field_enumIndex() == 5 {
 				var fields2 HxArray[any]
 				_ = fields2
-				fields2 = t2.(Hx_Enum_haxe_rtti_ctype_CAnonymous).Hx_Field_fields
+				fields2 = ((Hx_Enum_haxe_rtti_ctype)(t2)).(Hx_Enum_haxe_rtti_ctype_CAnonymous).Hx_Field_fields
 				return Hx_Field_haxe_rtti_typeapi_leq(func(a any, b any) bool {
 					return Hx_Field_haxe_rtti_typeapi_fieldEq(a, b)
 				}, fields, fields2)
@@ -1005,11 +1005,11 @@ func Hx_Field_haxe_rtti_typeapi_typeEq(t1 Hx_Enum_haxe_rtti_ctype, t2 Hx_Enum_ha
 		{
 			var t Hx_Enum_haxe_rtti_ctype
 			_ = t
-			t = t1.(Hx_Enum_haxe_rtti_ctype_CDynamic).Hx_Field_t
+			t = ((Hx_Enum_haxe_rtti_ctype)(t1)).(Hx_Enum_haxe_rtti_ctype_CDynamic).Hx_Field_t
 			if t2.Hx_Field_enumIndex() == 6 {
 				var t21 Hx_Enum_haxe_rtti_ctype
 				_ = t21
-				t21 = t2.(Hx_Enum_haxe_rtti_ctype_CDynamic).Hx_Field_t
+				t21 = ((Hx_Enum_haxe_rtti_ctype)(t2)).(Hx_Enum_haxe_rtti_ctype_CDynamic).Hx_Field_t
 				if (t == nil) != (t21 == nil) {
 					return false
 				}
@@ -1030,17 +1030,17 @@ func Hx_Field_haxe_rtti_typeapi_typeEq(t1 Hx_Enum_haxe_rtti_ctype, t2 Hx_Enum_ha
 		{
 			var name Hx_Typedef_haxe_rtti_path
 			_ = name
-			name = t1.(Hx_Enum_haxe_rtti_ctype_CAbstract).Hx_Field_name
+			name = ((Hx_Enum_haxe_rtti_ctype)(t1)).(Hx_Enum_haxe_rtti_ctype_CAbstract).Hx_Field_name
 			var params HxArray[Hx_Enum_haxe_rtti_ctype]
 			_ = params
-			params = t1.(Hx_Enum_haxe_rtti_ctype_CAbstract).Hx_Field_params
+			params = ((Hx_Enum_haxe_rtti_ctype)(t1)).(Hx_Enum_haxe_rtti_ctype_CAbstract).Hx_Field_params
 			if t2.Hx_Field_enumIndex() == 7 {
 				var name2 Hx_Typedef_haxe_rtti_path
 				_ = name2
-				name2 = t2.(Hx_Enum_haxe_rtti_ctype_CAbstract).Hx_Field_name
+				name2 = ((Hx_Enum_haxe_rtti_ctype)(t2)).(Hx_Enum_haxe_rtti_ctype_CAbstract).Hx_Field_name
 				var params2 HxArray[Hx_Enum_haxe_rtti_ctype]
 				_ = params2
-				params2 = t2.(Hx_Enum_haxe_rtti_ctype_CAbstract).Hx_Field_params
+				params2 = ((Hx_Enum_haxe_rtti_ctype)(t2)).(Hx_Enum_haxe_rtti_ctype_CAbstract).Hx_Field_params
 				var _hx_tmp_12 bool
 				_ = _hx_tmp_12
 				if name == name2 {
@@ -1173,14 +1173,14 @@ func Hx_Field_haxe_rtti_typeapi_fieldEq(f1 any, f2 any) bool {
 
 	var _hx_tmp_6 bool
 	_ = _hx_tmp_6
-	_hx_tmp_6 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(f1, "params"), ((any)(nil))))))
-	if _hx_tmp_6 != ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(f2, "params"), ((any)(nil)))))) {
+	_hx_tmp_6 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(f1, "params"), HxDefault[any]()))))
+	if _hx_tmp_6 != ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(f2, "params"), HxDefault[any]())))) {
 		return false
 	}
 
 	var _hx_tmp_7 bool
 	_ = _hx_tmp_7
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(f1, "params"), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(f1, "params"), HxDefault[any]()))) {
 		var _hx_tmp_9 any
 		_ = _hx_tmp_9
 		_hx_tmp_9 = Hx_Field_go_haxe_hxdynamic_getField(Hx_Field_go_haxe_hxdynamic_getField(f1, "params"), "join")
@@ -1225,14 +1225,14 @@ func Hx_Field_haxe_rtti_typeapi_constructorEq(c1 any, c2 any) bool {
 
 	var _hx_tmp_2 bool
 	_ = _hx_tmp_2
-	_hx_tmp_2 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(c1, "args"), ((any)(nil))))))
-	if _hx_tmp_2 != ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(c2, "args"), ((any)(nil)))))) {
+	_hx_tmp_2 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(c1, "args"), HxDefault[any]()))))
+	if _hx_tmp_2 != ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(c2, "args"), HxDefault[any]())))) {
 		return false
 	}
 
 	var _hx_tmp_3 bool
 	_ = _hx_tmp_3
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(c1, "args"), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(c1, "args"), HxDefault[any]()))) {
 		var _hx_tmp_4 func(a any, b any) bool
 		_ = _hx_tmp_4
 		_hx_tmp_4 = func(a any, b any) bool {
@@ -1381,10 +1381,10 @@ func Hx_Field_haxe_rtti_ctypetools_toString(t Hx_Enum_haxe_rtti_ctype) string {
 		{
 			var name Hx_Typedef_haxe_rtti_path
 			_ = name
-			name = t.(Hx_Enum_haxe_rtti_ctype_CEnum).Hx_Field_name
+			name = ((Hx_Enum_haxe_rtti_ctype)(t)).(Hx_Enum_haxe_rtti_ctype_CEnum).Hx_Field_name
 			var params HxArray[Hx_Enum_haxe_rtti_ctype]
 			_ = params
-			params = t.(Hx_Enum_haxe_rtti_ctype_CEnum).Hx_Field_params
+			params = ((Hx_Enum_haxe_rtti_ctype)(t)).(Hx_Enum_haxe_rtti_ctype_CEnum).Hx_Field_params
 			return Hx_Field_haxe_rtti_ctypetools_nameWithParams(Hx_Field_go_haxe_hxdynamic_toString(name), params)
 		}
 
@@ -1392,10 +1392,10 @@ func Hx_Field_haxe_rtti_ctypetools_toString(t Hx_Enum_haxe_rtti_ctype) string {
 		{
 			var name Hx_Typedef_haxe_rtti_path
 			_ = name
-			name = t.(Hx_Enum_haxe_rtti_ctype_CClass).Hx_Field_name
+			name = ((Hx_Enum_haxe_rtti_ctype)(t)).(Hx_Enum_haxe_rtti_ctype_CClass).Hx_Field_name
 			var params HxArray[Hx_Enum_haxe_rtti_ctype]
 			_ = params
-			params = t.(Hx_Enum_haxe_rtti_ctype_CClass).Hx_Field_params
+			params = ((Hx_Enum_haxe_rtti_ctype)(t)).(Hx_Enum_haxe_rtti_ctype_CClass).Hx_Field_params
 			return Hx_Field_haxe_rtti_ctypetools_nameWithParams(Hx_Field_go_haxe_hxdynamic_toString(name), params)
 		}
 
@@ -1403,10 +1403,10 @@ func Hx_Field_haxe_rtti_ctypetools_toString(t Hx_Enum_haxe_rtti_ctype) string {
 		{
 			var name Hx_Typedef_haxe_rtti_path
 			_ = name
-			name = t.(Hx_Enum_haxe_rtti_ctype_CTypedef).Hx_Field_name
+			name = ((Hx_Enum_haxe_rtti_ctype)(t)).(Hx_Enum_haxe_rtti_ctype_CTypedef).Hx_Field_name
 			var params HxArray[Hx_Enum_haxe_rtti_ctype]
 			_ = params
-			params = t.(Hx_Enum_haxe_rtti_ctype_CTypedef).Hx_Field_params
+			params = ((Hx_Enum_haxe_rtti_ctype)(t)).(Hx_Enum_haxe_rtti_ctype_CTypedef).Hx_Field_params
 			return Hx_Field_haxe_rtti_ctypetools_nameWithParams(Hx_Field_go_haxe_hxdynamic_toString(name), params)
 		}
 
@@ -1414,10 +1414,10 @@ func Hx_Field_haxe_rtti_ctypetools_toString(t Hx_Enum_haxe_rtti_ctype) string {
 		{
 			var args HxArray[any]
 			_ = args
-			args = t.(Hx_Enum_haxe_rtti_ctype_CFunction).Hx_Field_args
+			args = ((Hx_Enum_haxe_rtti_ctype)(t)).(Hx_Enum_haxe_rtti_ctype_CFunction).Hx_Field_args
 			var ret Hx_Enum_haxe_rtti_ctype
 			_ = ret
-			ret = t.(Hx_Enum_haxe_rtti_ctype_CFunction).Hx_Field_ret
+			ret = ((Hx_Enum_haxe_rtti_ctype)(t)).(Hx_Enum_haxe_rtti_ctype_CFunction).Hx_Field_ret
 			if Hx_Field_go_haxe_hxdynamic_getArrayLength(args) == 0 {
 				return Hx_Field_go_haxe_hxstring_concat("Void -> ", Hx_Field_haxe_rtti_ctypetools_toString(ret))
 			} else {
@@ -1464,7 +1464,7 @@ func Hx_Field_haxe_rtti_ctypetools_toString(t Hx_Enum_haxe_rtti_ctype) string {
 		{
 			var fields HxArray[any]
 			_ = fields
-			fields = t.(Hx_Enum_haxe_rtti_ctype_CAnonymous).Hx_Field_fields
+			fields = ((Hx_Enum_haxe_rtti_ctype)(t)).(Hx_Enum_haxe_rtti_ctype_CAnonymous).Hx_Field_fields
 			var f func(_hx_carg0 any) string
 			_ = f
 			f = Hx_Field_haxe_rtti_ctypetools_classField
@@ -1504,7 +1504,7 @@ func Hx_Field_haxe_rtti_ctypetools_toString(t Hx_Enum_haxe_rtti_ctype) string {
 		{
 			var d Hx_Enum_haxe_rtti_ctype
 			_ = d
-			d = t.(Hx_Enum_haxe_rtti_ctype_CDynamic).Hx_Field_t
+			d = ((Hx_Enum_haxe_rtti_ctype)(t)).(Hx_Enum_haxe_rtti_ctype_CDynamic).Hx_Field_t
 			if d == nil {
 				return "Dynamic"
 			} else {
@@ -1516,10 +1516,10 @@ func Hx_Field_haxe_rtti_ctypetools_toString(t Hx_Enum_haxe_rtti_ctype) string {
 		{
 			var name Hx_Typedef_haxe_rtti_path
 			_ = name
-			name = t.(Hx_Enum_haxe_rtti_ctype_CAbstract).Hx_Field_name
+			name = ((Hx_Enum_haxe_rtti_ctype)(t)).(Hx_Enum_haxe_rtti_ctype_CAbstract).Hx_Field_name
 			var params HxArray[Hx_Enum_haxe_rtti_ctype]
 			_ = params
-			params = t.(Hx_Enum_haxe_rtti_ctype_CAbstract).Hx_Field_params
+			params = ((Hx_Enum_haxe_rtti_ctype)(t)).(Hx_Enum_haxe_rtti_ctype_CAbstract).Hx_Field_params
 			return Hx_Field_haxe_rtti_ctypetools_nameWithParams(Hx_Field_go_haxe_hxdynamic_toString(name), params)
 		}
 

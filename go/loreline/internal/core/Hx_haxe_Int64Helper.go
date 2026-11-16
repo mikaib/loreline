@@ -198,55 +198,39 @@ func Hx_Field_haxe_int64helper_fromFloat(f float64) Hx_Typedef_haxe__int64___int
 	var rest float64
 	_ = rest
 	rest = _hx_tmp_2
-	var _v int32
-	_ = _v
-	_v = 0
+	var high float64
+	_ = high
+	high = Hx_Field_math_ffloor(((float64)((rest / float64(4294967296.)))))
+	var low float64
+	_ = low
+	low = (rest - (high * float64(4294967296.)))
+	if low >= float64(2147483648.) {
+		low = (low - float64(4294967296.))
+	}
+
+	var high1 int32
+	_ = high1
+	high1 = Hx_Field_std_int(high)
+	var low1 int32
+	_ = low1
+	low1 = Hx_Field_std_int(low)
+	var h int64
+	_ = h
+	h = int64(high1)
+	var l int64
+	_ = l
+	l = int64(low1)
+	var _hx_tmp_3 int64
+	_ = _hx_tmp_3
+	_hx_tmp_3 = h
 	var result Hx_Typedef_haxe__int64___int64
 	_ = result
-	result = ((Hx_Typedef_haxe__int64___int64)(_v))
-	var i int32
-	_ = i
-	i = 0
-	for rest >= ((float64)(1)) {
-		var curr float64
-		_ = curr
-		curr = math.Mod(rest, ((float64)(2)))
-		rest = (rest / ((float64)(2)))
-		if curr >= ((float64)(1)) {
-			var tmp__v_1 int32
-			_ = tmp__v_1
-			tmp__v_1 = 1
-			var a Hx_Typedef_haxe__int64___int64
-			_ = a
-			a = ((Hx_Typedef_haxe__int64___int64)(tmp__v_1))
-			var _hx_tmp_3 int64
-			_ = _hx_tmp_3
-			_hx_tmp_3 = ((int64)(result))
-			var _hx_tmp_4 Hx_Typedef_haxe__int64___int64
-			_ = _hx_tmp_4
-			if (i <= 0) || (i >= 64) {
-				_hx_tmp_4 = a
-			} else {
-				var _hx_tmp_5 int64
-				_ = _hx_tmp_5
-				_hx_tmp_5 = ((int64)(a))
-				var _hx_tmp_6 int64
-				_ = _hx_tmp_6
-				_hx_tmp_6 = _hx_tmp_5
-				_hx_tmp_4 = ((Hx_Typedef_haxe__int64___int64)((_hx_tmp_6 << int64(i))))
-			}
-
-			result = ((Hx_Typedef_haxe__int64___int64)((_hx_tmp_3 + ((int64)((_hx_tmp_4))))))
-		}
-
-		i++
-	}
-
+	result = ((Hx_Typedef_haxe__int64___int64)(((_hx_tmp_3 << int64(((int32)(32)))) | (l & Hx_Field_haxe__int64_int64_impl__MASK))))
 	if neg {
-		result = ((Hx_Typedef_haxe__int64___int64)(Hx_Field_haxe__int64_int64_impl__neg(result)))
+		return ((Hx_Typedef_haxe__int64___int64)(Hx_Field_haxe__int64_int64_impl__neg(result)))
+	} else {
+		return result
 	}
-
-	return result
 }
 
 func Hx_Field_haxe_int64helper_toFloat(x Hx_Typedef_haxe__int64___int64) float64 {

@@ -88,8 +88,7 @@ func Hx_Field_go__chan_chan_impl___hx_new(length__isOptional any) chan any {
 		if (length).Valid == false {
 			var hx_nullable_t0 HxNullable[int32]
 			_ = hx_nullable_t0
-			hx_nullable_t0 = HxNullable[int32]{}
-
+			hx_nullable_t0 = HxDefault[HxNullable[int32]]()
 			length = HxNullable[int32]{Value: (hx_nullable_t0).Value, Valid: (hx_nullable_t0).Valid}
 		}
 

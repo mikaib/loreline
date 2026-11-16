@@ -54,13 +54,13 @@ func (this *Hx_Obj_haxe_io_path) Hx_New(path string) {
 		_hx_tmp_0 = path
 		var c1 int32
 		_ = c1
-		c1 = (Hx_Field_go_haxe_hxstring_lastIndexOf(_hx_tmp_0, "/", HxNullable[int32]{}))
+		c1 = (Hx_Field_go_haxe_hxstring_lastIndexOf(_hx_tmp_0, "/", HxDefault[HxNullable[int32]]()))
 		var _hx_tmp_1 string
 		_ = _hx_tmp_1
 		_hx_tmp_1 = path
 		var c2 int32
 		_ = c2
-		c2 = (Hx_Field_go_haxe_hxstring_lastIndexOf(_hx_tmp_1, "\\", HxNullable[int32]{}))
+		c2 = (Hx_Field_go_haxe_hxstring_lastIndexOf(_hx_tmp_1, "\\", HxDefault[HxNullable[int32]]()))
 		if c1 < c2 {
 			var _hx_tmp_2 string
 			_ = _hx_tmp_2
@@ -72,7 +72,7 @@ func (this *Hx_Obj_haxe_io_path) Hx_New(path string) {
 			var _hx_tmp_4 int32
 			_ = _hx_tmp_4
 			_hx_tmp_4 = (c2 + 1)
-			path = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_3, _hx_tmp_4, HxNullable[int32]{}))
+			path = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_3, _hx_tmp_4, HxDefault[HxNullable[int32]]()))
 			this.Hx_Field_backslash = true
 		} else {
 			if c2 < c1 {
@@ -86,9 +86,9 @@ func (this *Hx_Obj_haxe_io_path) Hx_New(path string) {
 				var _hx_tmp_7 int32
 				_ = _hx_tmp_7
 				_hx_tmp_7 = (c1 + 1)
-				path = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_6, _hx_tmp_7, HxNullable[int32]{}))
+				path = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_6, _hx_tmp_7, HxDefault[HxNullable[int32]]()))
 			} else {
-				this.Hx_Field_dir = HxNullable[string]{Value: HxStringNull}
+				this.Hx_Field_dir = HxDefault[HxNullable[string]]()
 			}
 		}
 
@@ -97,7 +97,7 @@ func (this *Hx_Obj_haxe_io_path) Hx_New(path string) {
 		_hx_tmp_8 = path
 		var cp int32
 		_ = cp
-		cp = (Hx_Field_go_haxe_hxstring_lastIndexOf(_hx_tmp_8, ".", HxNullable[int32]{}))
+		cp = (Hx_Field_go_haxe_hxstring_lastIndexOf(_hx_tmp_8, ".", HxDefault[HxNullable[int32]]()))
 		if cp != -1 {
 			var _hx_tmp_9 string
 			_ = _hx_tmp_9
@@ -105,14 +105,13 @@ func (this *Hx_Obj_haxe_io_path) Hx_New(path string) {
 			var _hx_tmp_10 int32
 			_ = _hx_tmp_10
 			_hx_tmp_10 = (cp + 1)
-			this.Hx_Field_ext = HxNullableString((Hx_Field_go_haxe_hxstring_substr(_hx_tmp_9, _hx_tmp_10, HxNullable[int32]{})))
+			this.Hx_Field_ext = HxNullableString((Hx_Field_go_haxe_hxstring_substr(_hx_tmp_9, _hx_tmp_10, HxDefault[HxNullable[int32]]())))
 			var _hx_tmp_11 string
 			_ = _hx_tmp_11
 			_hx_tmp_11 = path
 			this.Hx_Field_file = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_11, 0, HxNullable[int32]{Value: cp, Valid: true}))
 		} else {
-			this.Hx_Field_ext = HxNullable[string]{Value: HxStringNull}
-
+			this.Hx_Field_ext = HxDefault[HxNullable[string]]()
 			this.Hx_Field_file = path
 		}
 	}
@@ -213,8 +212,7 @@ func Hx_Field_haxe_io_path_withoutExtension(path string) string {
 	var s *Hx_Obj_haxe_io_path
 	_ = s
 	s = Hx_Obj_haxe_io_path_CreateInstance(path)
-	s.Hx_Field_ext = HxNullable[string]{Value: HxStringNull}
-
+	s.Hx_Field_ext = HxDefault[HxNullable[string]]()
 	return s.VTable.Hx_Field_toString()
 }
 
@@ -222,8 +220,7 @@ func Hx_Field_haxe_io_path_withoutDirectory(path string) string {
 	var s *Hx_Obj_haxe_io_path
 	_ = s
 	s = Hx_Obj_haxe_io_path_CreateInstance(path)
-	s.Hx_Field_dir = HxNullable[string]{Value: HxStringNull}
-
+	s.Hx_Field_dir = HxDefault[HxNullable[string]]()
 	return s.VTable.Hx_Field_toString()
 }
 
@@ -519,13 +516,13 @@ func Hx_Field_haxe_io_path_addTrailingSlash(path string) string {
 	_hx_tmp_0 = path
 	var c1 int32
 	_ = c1
-	c1 = (Hx_Field_go_haxe_hxstring_lastIndexOf(_hx_tmp_0, "/", HxNullable[int32]{}))
+	c1 = (Hx_Field_go_haxe_hxstring_lastIndexOf(_hx_tmp_0, "/", HxDefault[HxNullable[int32]]()))
 	var _hx_tmp_1 string
 	_ = _hx_tmp_1
 	_hx_tmp_1 = path
 	var c2 int32
 	_ = c2
-	c2 = (Hx_Field_go_haxe_hxstring_lastIndexOf(_hx_tmp_1, "\\", HxNullable[int32]{}))
+	c2 = (Hx_Field_go_haxe_hxstring_lastIndexOf(_hx_tmp_1, "\\", HxDefault[HxNullable[int32]]()))
 	if c1 < c2 {
 		var _hx_tmp_2 int32
 		_ = _hx_tmp_2

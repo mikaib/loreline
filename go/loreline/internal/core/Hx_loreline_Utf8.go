@@ -94,8 +94,7 @@ func Hx_Field_loreline_utf8_uSubstr(str string, pos int32, _hx_reserved_len__isO
 		if (_hx_reserved_len).Valid == false {
 			var hx_nullable_t21 HxNullable[int32]
 			_ = hx_nullable_t21
-			hx_nullable_t21 = HxNullable[int32]{}
-
+			hx_nullable_t21 = HxDefault[HxNullable[int32]]()
 			_hx_reserved_len = HxNullable[int32]{Value: (hx_nullable_t21).Value, Valid: (hx_nullable_t21).Valid}
 		}
 
@@ -108,7 +107,7 @@ func Hx_Field_loreline_utf8_uSubstr(str string, pos int32, _hx_reserved_len__isO
 			var _hx_tmp_1 int32
 			_ = _hx_tmp_1
 			_hx_tmp_1 = pos
-			return (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_0, _hx_tmp_1, HxNullable[int32]{}))
+			return (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_0, _hx_tmp_1, HxDefault[HxNullable[int32]]()))
 		}
 	}
 }
@@ -126,8 +125,7 @@ func Hx_Field_loreline_utf8_uSubstring(str string, startIndex int32, endIndex__i
 		if (endIndex).Valid == false {
 			var hx_nullable_t22 HxNullable[int32]
 			_ = hx_nullable_t22
-			hx_nullable_t22 = HxNullable[int32]{}
-
+			hx_nullable_t22 = HxDefault[HxNullable[int32]]()
 			endIndex = HxNullable[int32]{Value: (hx_nullable_t22).Value, Valid: (hx_nullable_t22).Valid}
 		}
 
@@ -140,7 +138,7 @@ func Hx_Field_loreline_utf8_uSubstring(str string, startIndex int32, endIndex__i
 			var _hx_tmp_1 int32
 			_ = _hx_tmp_1
 			_hx_tmp_1 = startIndex
-			return (Hx_Field_go_haxe_hxstring_substring(_hx_tmp_0, _hx_tmp_1, HxNullable[int32]{}))
+			return (Hx_Field_go_haxe_hxstring_substring(_hx_tmp_0, _hx_tmp_1, HxDefault[HxNullable[int32]]()))
 		}
 	}
 }
@@ -169,8 +167,7 @@ func Hx_Field_loreline_utf8_uIndexOf(str string, substr string, startIndex__isOp
 		if (startIndex).Valid == false {
 			var hx_nullable_t23 HxNullable[int32]
 			_ = hx_nullable_t23
-			hx_nullable_t23 = HxNullable[int32]{}
-
+			hx_nullable_t23 = HxDefault[HxNullable[int32]]()
 			startIndex = HxNullable[int32]{Value: (hx_nullable_t23).Value, Valid: (hx_nullable_t23).Valid}
 		}
 
@@ -191,8 +188,7 @@ func Hx_Field_loreline_utf8_uLastIndexOf(str string, substr string, startIndex__
 		if (startIndex).Valid == false {
 			var hx_nullable_t24 HxNullable[int32]
 			_ = hx_nullable_t24
-			hx_nullable_t24 = HxNullable[int32]{}
-
+			hx_nullable_t24 = HxDefault[HxNullable[int32]]()
 			startIndex = HxNullable[int32]{Value: (hx_nullable_t24).Value, Valid: (hx_nullable_t24).Valid}
 		}
 

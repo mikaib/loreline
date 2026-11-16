@@ -491,12 +491,12 @@ func Hx_Field_sys_environment() Hx_Typedef_map {
 			var value string
 			_ = value
 			value = (Hx_Array_Join[string](parts, "="))
-			func() func(_hx_param_key string, _hx_param_value string) {
+			func() func(key string, value string) {
 				var _hx_closure_src_437 func(_hx_param_key any, _hx_param_value any)
 				_ = _hx_closure_src_437
 				_hx_closure_src_437 = em.VTable.Hx_Field_set
-				return func(_hx_param_key string, _hx_param_value string) {
-					_hx_closure_src_437(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+				return func(key string, value string) {
+					_hx_closure_src_437(((any)(key)), ((any)(value)))
 				}
 			}()(name, value)
 		}

@@ -82,7 +82,7 @@ func Hx_Field_loreline_json_stringify(value any, pretty__isOptional any) string 
 		if pretty {
 			_hx_tmp_2 = HxNullableString("  ")
 		} else {
-			_hx_tmp_2 = HxNullable[string]{Value: HxStringNull}
+			_hx_tmp_2 = HxDefault[HxNullable[string]]()
 		}
 
 		return Hx_Field_haxe_format_jsonprinter_print(_hx_tmp_0, _hx_tmp_1, _hx_tmp_2)

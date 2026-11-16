@@ -9,9 +9,9 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_random() {
 }
 
 type Hx_Obj_VTable_loreline_random interface {
+	Hx_Field_reset(initialSeed__isOptional any)
 	Hx_Field_next() float64
 	Hx_Field_between(min int32, max int32) int32
-	Hx_Field_reset(initialSeed__isOptional any)
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -49,8 +49,7 @@ func (this *Hx_Obj_loreline_random) Hx_New(seed__isOptional any) {
 			if (seed).Valid == false {
 				var hx_nullable_t53 HxNullable[float64]
 				_ = hx_nullable_t53
-				hx_nullable_t53 = HxNullable[float64]{}
-
+				hx_nullable_t53 = HxDefault[HxNullable[float64]]()
 				seed = HxNullable[float64]{Value: (hx_nullable_t53).Value, Valid: (hx_nullable_t53).Valid}
 			}
 
@@ -62,11 +61,11 @@ func (this *Hx_Obj_loreline_random) Hx_New(seed__isOptional any) {
 
 				var _hx_tmp_0 float64
 				_ = _hx_tmp_0
-				_hx_tmp_0 = (seed).Value
+				_hx_tmp_0 = ((float64)((seed).Value))
 				(seed).Value = (_hx_tmp_0 + (Hx_Field_math_random() * ((float64)(100000))))
 				var _hx_tmp_1 float64
 				_ = _hx_tmp_1
-				_hx_tmp_1 = (seed).Value
+				_hx_tmp_1 = ((float64)((seed).Value))
 				(seed).Value = (_hx_tmp_1 + (Hx_Field_sys_cpuTime() * ((float64)(10000))))
 			}
 
@@ -146,8 +145,7 @@ func (this *Hx_Obj_loreline_random) Hx_Field_reset(initialSeed__isOptional any) 
 		if (initialSeed).Valid == false {
 			var hx_nullable_t52 HxNullable[float64]
 			_ = hx_nullable_t52
-			hx_nullable_t52 = HxNullable[float64]{}
-
+			hx_nullable_t52 = HxDefault[HxNullable[float64]]()
 			initialSeed = HxNullable[float64]{Value: (hx_nullable_t52).Value, Valid: (hx_nullable_t52).Valid}
 		}
 

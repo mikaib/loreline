@@ -110,8 +110,7 @@ func Hx_Field_loreline_utf8vector_uSubstr(v HxArray[int32], pos int32, _hx_reser
 		if (_hx_reserved_len).Valid == false {
 			var hx_nullable_t25 HxNullable[int32]
 			_ = hx_nullable_t25
-			hx_nullable_t25 = HxNullable[int32]{}
-
+			hx_nullable_t25 = HxDefault[HxNullable[int32]]()
 			_hx_reserved_len = HxNullable[int32]{Value: (hx_nullable_t25).Value, Valid: (hx_nullable_t25).Valid}
 		}
 
@@ -152,8 +151,7 @@ func Hx_Field_loreline_utf8vector_uSubstring(v HxArray[int32], startIndex int32,
 		if (endIndex).Valid == false {
 			var hx_nullable_t26 HxNullable[int32]
 			_ = hx_nullable_t26
-			hx_nullable_t26 = HxNullable[int32]{}
-
+			hx_nullable_t26 = HxDefault[HxNullable[int32]]()
 			endIndex = HxNullable[int32]{Value: (hx_nullable_t26).Value, Valid: (hx_nullable_t26).Valid}
 		}
 
@@ -210,8 +208,7 @@ func Hx_Field_loreline_utf8vector_uIndexOf(v HxArray[int32], substr string, star
 		if (startIndex).Valid == false {
 			var hx_nullable_t27 HxNullable[int32]
 			_ = hx_nullable_t27
-			hx_nullable_t27 = HxNullable[int32]{}
-
+			hx_nullable_t27 = HxDefault[HxNullable[int32]]()
 			startIndex = HxNullable[int32]{Value: (hx_nullable_t27).Value, Valid: (hx_nullable_t27).Valid}
 		}
 

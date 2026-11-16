@@ -181,80 +181,80 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_parser() {
 }
 
 type Hx_Obj_VTable_loreline_parser interface {
-	Hx_Field_prevIdentifier() *Hx_Obj_loreline_token
-	Hx_Field_isAtEnd() bool
-	Hx_Field_parseIfStatement() *Hx_Obj_loreline_nifstatement
-	Hx_Field_parseStringTag(closing bool, start int32, length int32, content string, quotes int32, attachments HxArray[Hx_Enum_loreline_lstringattachment]) *Hx_Obj_loreline_nstringpart
-	Hx_Field_parseCallArguments() HxArray[*Hx_Obj_loreline_nexpr]
-	Hx_Field_parseConditionExpression() *Hx_Obj_loreline_nexpr
-	Hx_Field_checkIdentifier() bool
-	Hx_Field_currentPos() *Hx_Obj_loreline_position
-	Hx_Field_wrapInRootBeat(node *Hx_Obj_loreline_astnode) *Hx_Obj_loreline_nbeatdecl
-	Hx_Field_parseMultiplicative() *Hx_Obj_loreline_nexpr
-	Hx_Field_match(_hx_reserved_type Hx_Enum_loreline_tokentype, advanceLineBreaks__isOptional any) bool
-	Hx_Field_checkBlockStart() bool
+	Hx_Field_check(_hx_reserved_type Hx_Enum_loreline_tokentype) bool
+	Hx_Field_parseImport() *Hx_Obj_loreline_nimportstatement
+	Hx_Field_parseEquality() *Hx_Obj_loreline_nexpr
+	Hx_Field_parseStringLiteral() *Hx_Obj_loreline_nstringliteral
 	Hx_Field_parseCharacterDecl() *Hx_Obj_loreline_ncharacterdecl
-	Hx_Field_parseBeatCall() *Hx_Obj_loreline_nbeatcall
-	Hx_Field_makeStringPartPosition(stringStart *Hx_Obj_loreline_position, content string, offset int32) *Hx_Obj_loreline_position
+	Hx_Field_parseWhenStatement() *Hx_Obj_loreline_nwhenstatement
+	Hx_Field_parseFunction() *Hx_Obj_loreline_nfunctiondecl
+	Hx_Field_expectIdentifier() string
 	Hx_Field_parseStringInterpolation(braces bool, inTag bool, tokens Hx_Typedef_loreline_tokens, start int32, length int32, content string) *Hx_Obj_loreline_nstringpart
 	Hx_Field_peek() *Hx_Obj_loreline_token
-	Hx_Field_parseBeatDecl() *Hx_Obj_loreline_nbeatdecl
-	Hx_Field_parseChoiceOption(blockEnd Hx_Enum_loreline_tokentype) *Hx_Obj_loreline_nchoiceoption
-	Hx_Field_parseComparison() *Hx_Obj_loreline_nexpr
-	Hx_Field_parseObjectLiteral() *Hx_Obj_loreline_nexpr
-	Hx_Field_takeConditionParens(condition *Hx_Obj_loreline_nexpr) int32
-	Hx_Field_currentTokenTypeToString() string
-	Hx_Field_parseTextStatement() *Hx_Obj_loreline_ntextstatement
-	Hx_Field_isKnownNodeStart() bool
-	Hx_Field_makeAccess(pos *Hx_Obj_loreline_position, target *Hx_Obj_loreline_nexpr, name string, namePos *Hx_Obj_loreline_position) *Hx_Obj_loreline_naccess
-	Hx_Field_parsePostfix(startPos *Hx_Obj_loreline_position, expr *Hx_Obj_loreline_nexpr) *Hx_Obj_loreline_nexpr
-	Hx_Field_parse() *Hx_Obj_loreline_script
-	Hx_Field_prevNonWhitespaceOrComment() *Hx_Obj_loreline_token
-	Hx_Field_attachElseComments(node any, elseToken *Hx_Obj_loreline_token) any
-	Hx_Field_parseImport() *Hx_Obj_loreline_nimportstatement
-	Hx_Field_parseAlternative() *Hx_Obj_loreline_nalternative
-	Hx_Field_parseFunction() *Hx_Obj_loreline_nfunctiondecl
-	Hx_Field_prevWithType(_hx_reserved_type Hx_Enum_loreline_tokentype) *Hx_Obj_loreline_token
-	Hx_Field_parseBlockStart() *Hx_Obj_loreline_token
-	Hx_Field_parseWhenRule() *Hx_Obj_loreline_nwhenrule
-	Hx_Field_check(_hx_reserved_type Hx_Enum_loreline_tokentype) bool
-	Hx_Field_parseTransition() *Hx_Obj_loreline_ntransition
-	Hx_Field_parseInsertion() *Hx_Obj_loreline_ninsertion
-	Hx_Field_parseIdentifierExpression(startPos *Hx_Obj_loreline_position, name string) *Hx_Obj_loreline_nexpr
-	Hx_Field_advance(advanceLineBreaks__isOptional any) *Hx_Obj_loreline_token
-	Hx_Field_parseChoiceStatement() *Hx_Obj_loreline_nchoicestatement
-	Hx_Field_parseExpressionStatement() *Hx_Obj_loreline_astnode
-	Hx_Field_parseUnary() *Hx_Obj_loreline_nexpr
-	Hx_Field_expectIdentifier() string
-	Hx_Field_attachComments(node any) any
-	Hx_Field_nextNodeId(step int32) Hx_Typedef_haxe__int64___int64
-	Hx_Field_nextNonWhitespaceOrComment() *Hx_Obj_loreline_token
-	Hx_Field_parseTernary() *Hx_Obj_loreline_nexpr
-	Hx_Field_nextNonLineBreakOrComment() *Hx_Obj_loreline_token
-	Hx_Field_parseWhenStatement() *Hx_Obj_loreline_nwhenstatement
 	Hx_Field_parseLogicalOr() *Hx_Obj_loreline_nexpr
-	Hx_Field_parseLogicalAnd() *Hx_Obj_loreline_nexpr
+	Hx_Field_parseMultiplicative() *Hx_Obj_loreline_nexpr
 	Hx_Field_parsePrimary() *Hx_Obj_loreline_nexpr
-	Hx_Field_isAtLineBreak() bool
+	Hx_Field_parseObjectLiteral() *Hx_Obj_loreline_nexpr
 	Hx_Field_synchronize()
-	Hx_Field_checkString() bool
-	Hx_Field_isComment(_hx_reserved_type Hx_Enum_loreline_tokentype) bool
-	Hx_Field_parseNode(topLevel__isOptional any) *Hx_Obj_loreline_astnode
-	Hx_Field_parseStatementBlock(statements HxArray[*Hx_Obj_loreline_astnode]) int32
-	Hx_Field_parseStateDecl(temporary bool) *Hx_Obj_loreline_nstatedecl
-	Hx_Field_parseExpression() *Hx_Obj_loreline_nexpr
-	Hx_Field_addError(_hx_reserved_error *Hx_Obj_loreline_parseerror) *Hx_Obj_loreline_parseerror
-	Hx_Field_parseObjectField() *Hx_Obj_loreline_nobjectfield
-	Hx_Field_parseEquality() *Hx_Obj_loreline_nexpr
-	Hx_Field_parseArrayLiteral() *Hx_Obj_loreline_nexpr
-	Hx_Field_expect(_hx_reserved_type Hx_Enum_loreline_tokentype) *Hx_Obj_loreline_token
+	Hx_Field_prevWithType(_hx_reserved_type Hx_Enum_loreline_tokentype) *Hx_Obj_loreline_token
+	Hx_Field_isAtEnd() bool
+	Hx_Field_parseBeatCall() *Hx_Obj_loreline_nbeatcall
+	Hx_Field_parseIdentifierExpression(startPos *Hx_Obj_loreline_position, name string) *Hx_Obj_loreline_nexpr
+	Hx_Field_match(_hx_reserved_type Hx_Enum_loreline_tokentype, advanceLineBreaks__isOptional any) bool
 	Hx_Field_getErrors() HxArray[*Hx_Obj_loreline_parseerror]
-	Hx_Field_previous() *Hx_Obj_loreline_token
-	Hx_Field_parseDialogueStatement() *Hx_Obj_loreline_ndialoguestatement
-	Hx_Field_isExpressionStart() bool
-	Hx_Field_parseAdditive() *Hx_Obj_loreline_nexpr
-	Hx_Field_parseStringLiteral() *Hx_Obj_loreline_nstringliteral
+	Hx_Field_nextNonWhitespaceOrComment() *Hx_Obj_loreline_token
+	Hx_Field_parseAlternative() *Hx_Obj_loreline_nalternative
+	Hx_Field_advance(advanceLineBreaks__isOptional any) *Hx_Obj_loreline_token
+	Hx_Field_currentPos() *Hx_Obj_loreline_position
+	Hx_Field_parseStateDecl(temporary bool) *Hx_Obj_loreline_nstatedecl
+	Hx_Field_parseChoiceOption(blockEnd Hx_Enum_loreline_tokentype) *Hx_Obj_loreline_nchoiceoption
+	Hx_Field_parseLogicalAnd() *Hx_Obj_loreline_nexpr
+	Hx_Field_parsePostfix(startPos *Hx_Obj_loreline_position, expr *Hx_Obj_loreline_nexpr) *Hx_Obj_loreline_nexpr
+	Hx_Field_expect(_hx_reserved_type Hx_Enum_loreline_tokentype) *Hx_Obj_loreline_token
+	Hx_Field_nextNodeId(step int32) Hx_Typedef_haxe__int64___int64
+	Hx_Field_parseIfStatement() *Hx_Obj_loreline_nifstatement
+	Hx_Field_checkIdentifier() bool
+	Hx_Field_checkString() bool
+	Hx_Field_parseNode(topLevel__isOptional any) *Hx_Obj_loreline_astnode
+	Hx_Field_wrapInRootBeat(node *Hx_Obj_loreline_astnode) *Hx_Obj_loreline_nbeatdecl
+	Hx_Field_parseStatementBlock(statements HxArray[*Hx_Obj_loreline_astnode]) int32
+	Hx_Field_parseConditionExpression() *Hx_Obj_loreline_nexpr
+	Hx_Field_attachComments(node any) any
+	Hx_Field_nextNonLineBreakOrComment() *Hx_Obj_loreline_token
+	Hx_Field_parseBlockStart() *Hx_Obj_loreline_token
+	Hx_Field_parseTernary() *Hx_Obj_loreline_nexpr
 	Hx_Field_requiresNewLine() bool
+	Hx_Field_parseChoiceStatement() *Hx_Obj_loreline_nchoicestatement
+	Hx_Field_parseWhenRule() *Hx_Obj_loreline_nwhenrule
+	Hx_Field_parseExpressionStatement() *Hx_Obj_loreline_astnode
+	Hx_Field_parseTransition() *Hx_Obj_loreline_ntransition
+	Hx_Field_parseComparison() *Hx_Obj_loreline_nexpr
+	Hx_Field_isAtLineBreak() bool
+	Hx_Field_addError(_hx_reserved_error *Hx_Obj_loreline_parseerror) *Hx_Obj_loreline_parseerror
+	Hx_Field_makeStringPartPosition(stringStart *Hx_Obj_loreline_position, content string, offset int32) *Hx_Obj_loreline_position
+	Hx_Field_parse() *Hx_Obj_loreline_script
+	Hx_Field_currentTokenTypeToString() string
+	Hx_Field_checkBlockStart() bool
+	Hx_Field_parseUnary() *Hx_Obj_loreline_nexpr
+	Hx_Field_attachElseComments(node any, elseToken *Hx_Obj_loreline_token) any
+	Hx_Field_isComment(_hx_reserved_type Hx_Enum_loreline_tokentype) bool
+	Hx_Field_parseDialogueStatement() *Hx_Obj_loreline_ndialoguestatement
+	Hx_Field_isKnownNodeStart() bool
+	Hx_Field_parseInsertion() *Hx_Obj_loreline_ninsertion
+	Hx_Field_parseExpression() *Hx_Obj_loreline_nexpr
+	Hx_Field_prevIdentifier() *Hx_Obj_loreline_token
+	Hx_Field_prevNonWhitespaceOrComment() *Hx_Obj_loreline_token
+	Hx_Field_parseObjectField() *Hx_Obj_loreline_nobjectfield
+	Hx_Field_parseBeatDecl() *Hx_Obj_loreline_nbeatdecl
+	Hx_Field_isExpressionStart() bool
+	Hx_Field_parseArrayLiteral() *Hx_Obj_loreline_nexpr
+	Hx_Field_parseCallArguments() HxArray[*Hx_Obj_loreline_nexpr]
+	Hx_Field_parseTextStatement() *Hx_Obj_loreline_ntextstatement
+	Hx_Field_parseStringTag(closing bool, start int32, length int32, content string, quotes int32, attachments HxArray[Hx_Enum_loreline_lstringattachment]) *Hx_Obj_loreline_nstringpart
+	Hx_Field_takeConditionParens(condition *Hx_Obj_loreline_nexpr) int32
+	Hx_Field_parseAdditive() *Hx_Obj_loreline_nexpr
+	Hx_Field_makeAccess(pos *Hx_Obj_loreline_position, target *Hx_Obj_loreline_nexpr, name string, namePos *Hx_Obj_loreline_position) *Hx_Obj_loreline_naccess
+	Hx_Field_previous() *Hx_Obj_loreline_token
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -592,7 +592,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_advance(advanceLineBreaks__isOption
 						{
 							var content string
 							_ = content
-							content = _g.(Hx_Enum_loreline_tokentype_CommentLine).Hx_Field_content
+							content = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_CommentLine).Hx_Field_content
 							{
 								if this.Hx_Field_pendingComments == nil {
 									this.Hx_Field_pendingComments = HxMakeArray[*Hx_Obj_loreline_comment]()
@@ -609,7 +609,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_advance(advanceLineBreaks__isOption
 						{
 							var content string
 							_ = content
-							content = _g.(Hx_Enum_loreline_tokentype_CommentMultiLine).Hx_Field_content
+							content = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_CommentMultiLine).Hx_Field_content
 							{
 								if this.Hx_Field_pendingComments == nil {
 									this.Hx_Field_pendingComments = HxMakeArray[*Hx_Obj_loreline_comment]()
@@ -626,7 +626,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_advance(advanceLineBreaks__isOption
 						{
 							var content string
 							_ = content
-							content = _g.(Hx_Enum_loreline_tokentype_CommentHash).Hx_Field_content
+							content = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_CommentHash).Hx_Field_content
 							{
 								if this.Hx_Field_pendingComments == nil {
 									this.Hx_Field_pendingComments = HxMakeArray[*Hx_Obj_loreline_comment]()
@@ -850,7 +850,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_currentTokenTypeToString() string {
 		if tmp != nil {
 			return Hx_Field_loreline_tokentypehelpers_toCodeString(tmp)
 		} else {
-			return (HxNullable[string]{Value: HxStringNull}).Value
+			return (HxDefault[HxNullable[string]]()).Value
 		}
 	}
 
@@ -876,10 +876,10 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_checkString() bool {
 	if _g.Hx_Field_enumIndex() == 16 {
 		var s int32
 		_ = s
-		s = _g.(Hx_Enum_loreline_tokentype_LString).Hx_Field_quotes
+		s = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_LString).Hx_Field_quotes
 		var attachments string
 		_ = attachments
-		attachments = _g.(Hx_Enum_loreline_tokentype_LString).Hx_Field_s
+		attachments = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_LString).Hx_Field_s
 		return true
 	} else {
 		return false
@@ -972,7 +972,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseNode(topLevel__isOptional any)
 					{
 						var content string
 						_ = content
-						content = _g.(Hx_Enum_loreline_tokentype_CommentLine).Hx_Field_content
+						content = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_CommentLine).Hx_Field_content
 						tmp3 = content
 					}
 
@@ -980,7 +980,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseNode(topLevel__isOptional any)
 					{
 						var content string
 						_ = content
-						content = _g.(Hx_Enum_loreline_tokentype_CommentMultiLine).Hx_Field_content
+						content = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_CommentMultiLine).Hx_Field_content
 						tmp3 = content
 					}
 
@@ -988,7 +988,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseNode(topLevel__isOptional any)
 					{
 						var content string
 						_ = content
-						content = _g.(Hx_Enum_loreline_tokentype_CommentHash).Hx_Field_content
+						content = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_CommentHash).Hx_Field_content
 						tmp3 = content
 					}
 
@@ -1489,10 +1489,10 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseImport() *Hx_Obj_loreline_nimp
 	if _g.Hx_Field_enumIndex() == 16 {
 		var q int32
 		_ = q
-		q = _g.(Hx_Enum_loreline_tokentype_LString).Hx_Field_quotes
+		q = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_LString).Hx_Field_quotes
 		var s string
 		_ = s
-		s = _g.(Hx_Enum_loreline_tokentype_LString).Hx_Field_s
+		s = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_LString).Hx_Field_s
 		quotes = q
 		rawImportPath = s
 	} else {
@@ -1963,14 +1963,14 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseImport() *Hx_Obj_loreline_nimp
 		importPath = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_20, _hx_tmp_21)
 	}
 
-	if func() func(_hx_param_key string) bool {
+	if func() func(key string) bool {
 		var _hx_closure_src_692 func(_hx_param_key any) bool
 		_ = _hx_closure_src_692
 		_hx_closure_src_692 = this.Hx_Field_context.Hx_Field_imported.VTable.(interface {
 			Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 		}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_exists
-		return func(_hx_param_key string) bool {
-			return _hx_closure_src_692(((any)(_hx_param_key)))
+		return func(key string) bool {
+			return _hx_closure_src_692(((any)(key)))
 		}
 	}()(importPath) {
 		this.VTable.Hx_Field_advance(nil)
@@ -2003,28 +2003,28 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseImport() *Hx_Obj_loreline_nimp
 
 	var importedTokens Hx_Typedef_loreline_tokens
 	_ = importedTokens
-	importedTokens = func() func(_hx_param_key string) Hx_Typedef_loreline_tokens {
+	importedTokens = func() func(key string) Hx_Typedef_loreline_tokens {
 		var _hx_closure_src_694 func(_hx_param_key any) any
 		_ = _hx_closure_src_694
 		_hx_closure_src_694 = this.Hx_Field_context.Hx_Field_imports.VTable.(interface {
 			Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 		}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_get
-		return func(_hx_param_key string) Hx_Typedef_loreline_tokens {
-			return HxAnyToTypedArray[*Hx_Obj_loreline_token](_hx_closure_src_694(((any)(_hx_param_key))))
+		return func(key string) Hx_Typedef_loreline_tokens {
+			return HxAnyToTypedArray[*Hx_Obj_loreline_token](_hx_closure_src_694(((any)(key))))
 		}
 	}()(importPath)
 	if importedTokens == nil {
 		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_parseerror_CreateInstance(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Failed to import file at path ", importPath), " ("), rawImportPath), ")"), this.VTable.Hx_Field_currentPos())))))
 	}
 
-	func() func(_hx_param_key string, _hx_param_value bool) {
+	func() func(key string, value bool) {
 		var _hx_closure_src_695 func(_hx_param_key any, _hx_param_value any)
 		_ = _hx_closure_src_695
 		_hx_closure_src_695 = this.Hx_Field_context.Hx_Field_imported.VTable.(interface {
 			Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 		}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_set
-		return func(_hx_param_key string, _hx_param_value bool) {
-			_hx_closure_src_695(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+		return func(key string, value bool) {
+			_hx_closure_src_695(((any)(key)), ((any)(value)))
 		}
 	}()(importPath, true)
 	var tempParser *Hx_Obj_loreline_parser
@@ -2078,7 +2078,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseDialogueStatement() *Hx_Obj_lo
 	if _g.Hx_Field_enumIndex() == 20 {
 		var name string
 		_ = name
-		name = _g.(Hx_Enum_loreline_tokentype_Identifier).Hx_Field_name
+		name = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_Identifier).Hx_Field_name
 		tmp = name
 	} else {
 		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_parseerror_CreateInstance("Expected character name", this.VTable.Hx_Field_currentPos())))))
@@ -3569,7 +3569,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseWhenStatement() *Hx_Obj_loreli
 	startPos = this.VTable.Hx_Field_currentPos()
 	var whenNode *Hx_Obj_loreline_nwhenstatement
 	_ = whenNode
-	whenNode = Hx_Obj_loreline_nwhenstatement_CreateInstance(this.VTable.Hx_Field_nextNodeId(((int32)(2))), startPos, HxNullable[string]{Value: HxStringNull}, HxMakeArray[*Hx_Obj_loreline_nwhenrule](), nil, nil)
+	whenNode = Hx_Obj_loreline_nwhenstatement_CreateInstance(this.VTable.Hx_Field_nextNodeId(((int32)(2))), startPos, HxDefault[HxNullable[string]](), HxMakeArray[*Hx_Obj_loreline_nwhenrule](), nil, nil)
 	var whenToken *Hx_Obj_loreline_token
 	_ = whenToken
 	whenToken = this.Hx_Field_tokens.Get(this.Hx_Field_current)
@@ -3581,7 +3581,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseWhenStatement() *Hx_Obj_loreli
 		if _g.Hx_Field_enumIndex() == 20 {
 			var name string
 			_ = name
-			name = _g.(Hx_Enum_loreline_tokentype_Identifier).Hx_Field_name
+			name = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_Identifier).Hx_Field_name
 			if this.Hx_Field_tokens.Get(this.Hx_Field_current).Hx_Field_pos.Hx_Field_line == whenToken.Hx_Field_pos.Hx_Field_line {
 				whenNode.Hx_Field_strategy = HxNullableString(name)
 				whenNode.Hx_Field_strategyPos = this.Hx_Field_tokens.Get(this.Hx_Field_current).Hx_Field_pos
@@ -4404,7 +4404,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseTransition() *Hx_Obj_loreline_
 			var _hx_tmp_3 HxArray[*Hx_Obj_loreline_nexpr]
 			_ = _hx_tmp_3
 			_hx_tmp_3 = callArgs
-			node.Hx_Field_args = (Hx_Array_Slice[*Hx_Obj_loreline_nexpr](_hx_tmp_3, 1, HxNullable[int32]{}))
+			node.Hx_Field_args = (Hx_Array_Slice[*Hx_Obj_loreline_nexpr](_hx_tmp_3, 1, HxDefault[HxNullable[int32]]()))
 		}
 
 		return func() func(node *Hx_Obj_loreline_ntransition) *Hx_Obj_loreline_ntransition {
@@ -4507,7 +4507,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseInsertion() *Hx_Obj_loreline_n
 			var _hx_tmp_1 HxArray[*Hx_Obj_loreline_nexpr]
 			_ = _hx_tmp_1
 			_hx_tmp_1 = callArgs
-			node.Hx_Field_args = (Hx_Array_Slice[*Hx_Obj_loreline_nexpr](_hx_tmp_1, 1, HxNullable[int32]{}))
+			node.Hx_Field_args = (Hx_Array_Slice[*Hx_Obj_loreline_nexpr](_hx_tmp_1, 1, HxDefault[HxNullable[int32]]()))
 		}
 
 		return func() func(node *Hx_Obj_loreline_ninsertion) *Hx_Obj_loreline_ninsertion {
@@ -4604,7 +4604,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseBeatCall() *Hx_Obj_loreline_nb
 		var _hx_tmp_1 HxArray[*Hx_Obj_loreline_nexpr]
 		_ = _hx_tmp_1
 		_hx_tmp_1 = callArgs
-		node.Hx_Field_args = (Hx_Array_Slice[*Hx_Obj_loreline_nexpr](_hx_tmp_1, 1, HxNullable[int32]{}))
+		node.Hx_Field_args = (Hx_Array_Slice[*Hx_Obj_loreline_nexpr](_hx_tmp_1, 1, HxDefault[HxNullable[int32]]()))
 	}
 
 	return func() func(node *Hx_Obj_loreline_nbeatcall) *Hx_Obj_loreline_nbeatcall {
@@ -4640,16 +4640,16 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseFunction() *Hx_Obj_loreline_nf
 	if _g.Hx_Field_enumIndex() == 15 {
 		var name HxNullable[string]
 		_ = name
-		name = _g.(Hx_Enum_loreline_tokentype_Function).Hx_Field_name
+		name = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_Function).Hx_Field_name
 		var args HxArray[string]
 		_ = args
-		args = _g.(Hx_Enum_loreline_tokentype_Function).Hx_Field_args
+		args = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_Function).Hx_Field_args
 		var code string
 		_ = code
-		code = _g.(Hx_Enum_loreline_tokentype_Function).Hx_Field_code
+		code = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_Function).Hx_Field_code
 		var external bool
 		_ = external
-		external = _g.(Hx_Enum_loreline_tokentype_Function).Hx_Field_external
+		external = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_Function).Hx_Field_external
 		this.VTable.Hx_Field_advance(nil)
 		return func() func(node *Hx_Obj_loreline_nfunctiondecl) *Hx_Obj_loreline_nfunctiondecl {
 			var _hx_closure_src_719 func(node any) any
@@ -5376,7 +5376,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parsePrimary() *Hx_Obj_loreline_nex
 		{
 			var n float64
 			_ = n
-			n = _g.(Hx_Enum_loreline_tokentype_LNumber).Hx_Field_n
+			n = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_LNumber).Hx_Field_n
 			this.VTable.Hx_Field_advance(nil)
 			return (func() *Hx_Obj_loreline_nexpr {
 				_hx_up := func() func(node *Hx_Obj_loreline_nliteral) *Hx_Obj_loreline_nliteral {
@@ -5411,7 +5411,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parsePrimary() *Hx_Obj_loreline_nex
 		{
 			var b bool
 			_ = b
-			b = _g.(Hx_Enum_loreline_tokentype_LBoolean).Hx_Field_b
+			b = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_LBoolean).Hx_Field_b
 			this.VTable.Hx_Field_advance(nil)
 			return (func() *Hx_Obj_loreline_nexpr {
 				_hx_up := func() func(node *Hx_Obj_loreline_nliteral) *Hx_Obj_loreline_nliteral {
@@ -5478,7 +5478,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parsePrimary() *Hx_Obj_loreline_nex
 		{
 			var name string
 			_ = name
-			name = _g.(Hx_Enum_loreline_tokentype_Identifier).Hx_Field_name
+			name = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_Identifier).Hx_Field_name
 			if (this.VTable.Hx_Field_peek().Hx_Field_type == Hx_Enum_loreline_tokentype_Colon{}) {
 				var fields HxArray[*Hx_Obj_loreline_nobjectfield]
 				_ = fields
@@ -5543,13 +5543,13 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseStringLiteral() *Hx_Obj_loreli
 	if _g.Hx_Field_enumIndex() == 16 {
 		var quotes int32
 		_ = quotes
-		quotes = _g.(Hx_Enum_loreline_tokentype_LString).Hx_Field_quotes
+		quotes = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_LString).Hx_Field_quotes
 		var content string
 		_ = content
-		content = _g.(Hx_Enum_loreline_tokentype_LString).Hx_Field_s
+		content = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_LString).Hx_Field_s
 		var attachments HxArray[Hx_Enum_loreline_lstringattachment]
 		_ = attachments
-		attachments = _g.(Hx_Enum_loreline_tokentype_LString).Hx_Field_attachments
+		attachments = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_LString).Hx_Field_attachments
 		var _hx_tmp_0 *Hx_Obj_loreline_position
 		_ = _hx_tmp_0
 		if quotes != ((int32)(0)) {
@@ -5670,19 +5670,19 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseStringLiteral() *Hx_Obj_loreli
 						{
 							var braces bool
 							_ = braces
-							braces = tmp__g_1.(Hx_Enum_loreline_lstringattachment_Interpolation).Hx_Field_braces
+							braces = ((Hx_Enum_loreline_lstringattachment)(tmp__g_1)).(Hx_Enum_loreline_lstringattachment_Interpolation).Hx_Field_braces
 							var inTag bool
 							_ = inTag
-							inTag = tmp__g_1.(Hx_Enum_loreline_lstringattachment_Interpolation).Hx_Field_inTag
+							inTag = ((Hx_Enum_loreline_lstringattachment)(tmp__g_1)).(Hx_Enum_loreline_lstringattachment_Interpolation).Hx_Field_inTag
 							var tokens Hx_Typedef_loreline_tokens
 							_ = tokens
-							tokens = tmp__g_1.(Hx_Enum_loreline_lstringattachment_Interpolation).Hx_Field_expr
+							tokens = ((Hx_Enum_loreline_lstringattachment)(tmp__g_1)).(Hx_Enum_loreline_lstringattachment_Interpolation).Hx_Field_expr
 							var start int32
 							_ = start
-							start = tmp__g_1.(Hx_Enum_loreline_lstringattachment_Interpolation).Hx_Field_start
+							start = ((Hx_Enum_loreline_lstringattachment)(tmp__g_1)).(Hx_Enum_loreline_lstringattachment_Interpolation).Hx_Field_start
 							var length int32
 							_ = length
-							length = tmp__g_1.(Hx_Enum_loreline_lstringattachment_Interpolation).Hx_Field_length
+							length = ((Hx_Enum_loreline_lstringattachment)(tmp__g_1)).(Hx_Enum_loreline_lstringattachment_Interpolation).Hx_Field_length
 							{
 								if currentPos >= (start + length) {
 									continue
@@ -5717,7 +5717,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseStringLiteral() *Hx_Obj_loreli
 										var _hx_tmp_15 int32
 										_ = _hx_tmp_15
 										_hx_tmp_15 = _hx_tmp_13
-										_hx_tmp_11 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_14, _hx_tmp_15, HxNullable[int32]{}))
+										_hx_tmp_11 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_14, _hx_tmp_15, HxDefault[HxNullable[int32]]()))
 									}
 
 									_ = (Hx_Array_Push[*Hx_Obj_loreline_nstringpart](_hx_tmp_10, Hx_Obj_loreline_nstringpart_CreateInstance(this.VTable.Hx_Field_nextNodeId(((int32)(4))), partPos, Hx_Enum_loreline_stringparttype_Raw{_hx_tmp_11}, nil, nil)))
@@ -5735,13 +5735,13 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseStringLiteral() *Hx_Obj_loreli
 						{
 							var closing bool
 							_ = closing
-							closing = tmp__g_1.(Hx_Enum_loreline_lstringattachment_Tag).Hx_Field_closing
+							closing = ((Hx_Enum_loreline_lstringattachment)(tmp__g_1)).(Hx_Enum_loreline_lstringattachment_Tag).Hx_Field_closing
 							var start int32
 							_ = start
-							start = tmp__g_1.(Hx_Enum_loreline_lstringattachment_Tag).Hx_Field_start
+							start = ((Hx_Enum_loreline_lstringattachment)(tmp__g_1)).(Hx_Enum_loreline_lstringattachment_Tag).Hx_Field_start
 							var length int32
 							_ = length
-							length = tmp__g_1.(Hx_Enum_loreline_lstringattachment_Tag).Hx_Field_length
+							length = ((Hx_Enum_loreline_lstringattachment)(tmp__g_1)).(Hx_Enum_loreline_lstringattachment_Tag).Hx_Field_length
 							{
 								if currentPos >= (start + length) {
 									continue
@@ -5776,7 +5776,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseStringLiteral() *Hx_Obj_loreli
 										var _hx_tmp_22 int32
 										_ = _hx_tmp_22
 										_hx_tmp_22 = _hx_tmp_20
-										_hx_tmp_18 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_21, _hx_tmp_22, HxNullable[int32]{}))
+										_hx_tmp_18 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_21, _hx_tmp_22, HxDefault[HxNullable[int32]]()))
 									}
 
 									_ = (Hx_Array_Push[*Hx_Obj_loreline_nstringpart](_hx_tmp_17, Hx_Obj_loreline_nstringpart_CreateInstance(this.VTable.Hx_Field_nextNodeId(((int32)(4))), partPos, Hx_Enum_loreline_stringparttype_Raw{_hx_tmp_18}, nil, nil)))
@@ -5805,8 +5805,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseStringLiteral() *Hx_Obj_loreli
 			partPos.Hx_Field_length = (int32(utf8.RuneCountInString(content)) - currentPos)
 			var _hx_reserved_len HxNullable[int32]
 			_ = _hx_reserved_len
-			_hx_reserved_len = HxNullable[int32]{}
-
+			_hx_reserved_len = HxDefault[HxNullable[int32]]()
 			var _hx_tmp_25 HxArray[*Hx_Obj_loreline_nstringpart]
 			_ = _hx_tmp_25
 			_hx_tmp_25 = parts
@@ -5827,7 +5826,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseStringLiteral() *Hx_Obj_loreli
 				var _hx_tmp_30 int32
 				_ = _hx_tmp_30
 				_hx_tmp_30 = _hx_tmp_28
-				_hx_tmp_26 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_29, _hx_tmp_30, HxNullable[int32]{}))
+				_hx_tmp_26 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_29, _hx_tmp_30, HxDefault[HxNullable[int32]]()))
 			}
 
 			_ = (Hx_Array_Push[*Hx_Obj_loreline_nstringpart](_hx_tmp_25, Hx_Obj_loreline_nstringpart_CreateInstance(this.VTable.Hx_Field_nextNodeId(((int32)(4))), partPos, Hx_Enum_loreline_stringparttype_Raw{_hx_tmp_26}, nil, nil)))
@@ -5966,7 +5965,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_makeAccess(pos *Hx_Obj_loreline_pos
 				if namePos != nil {
 					_hx_tmp_3 = HxNullable[int32]{Value: namePos.Hx_Field_length, Valid: true}
 				} else {
-					_hx_tmp_3 = HxNullable[int32]{}
+					_hx_tmp_3 = HxDefault[HxNullable[int32]]()
 				}
 
 				var length HxNullable[int32]
@@ -6116,7 +6115,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseStringInterpolation(braces boo
 					{
 						var name string
 						_ = name
-						name = _g.(Hx_Enum_loreline_tokentype_Identifier).Hx_Field_name
+						name = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_Identifier).Hx_Field_name
 						{
 							if target == nil {
 								target = (func() *Hx_Obj_loreline_nexpr {
@@ -6820,10 +6819,10 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseStringTag(closing bool, start 
 					{
 						var aStart int32
 						_ = aStart
-						aStart = tmp__g1_1.(Hx_Enum_loreline_lstringattachment_Interpolation).Hx_Field_start
+						aStart = ((Hx_Enum_loreline_lstringattachment)(tmp__g1_1)).(Hx_Enum_loreline_lstringattachment_Interpolation).Hx_Field_start
 						var aLength int32
 						_ = aLength
-						aLength = tmp__g1_1.(Hx_Enum_loreline_lstringattachment_Interpolation).Hx_Field_length
+						aLength = ((Hx_Enum_loreline_lstringattachment)(tmp__g1_1)).(Hx_Enum_loreline_lstringattachment_Interpolation).Hx_Field_length
 						{
 							var aEnd int32
 							_ = aEnd
@@ -6888,7 +6887,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseStringTag(closing bool, start 
 			var _hx_tmp_16 int32
 			_ = _hx_tmp_16
 			_hx_tmp_16 = _hx_tmp_14
-			_hx_tmp_8 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_15, _hx_tmp_16, HxNullable[int32]{}))
+			_hx_tmp_8 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_15, _hx_tmp_16, HxDefault[HxNullable[int32]]()))
 		}
 
 		return Hx_Obj_loreline_nstringpart_CreateInstance(tagId, pos, Hx_Enum_loreline_stringparttype_Tag{_hx_tmp_6, func() func(node *Hx_Obj_loreline_nstringliteral) *Hx_Obj_loreline_nstringliteral {
@@ -6967,16 +6966,16 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseStringTag(closing bool, start 
 					{
 						var braces bool
 						_ = braces
-						braces = tmp__g1_1.(Hx_Enum_loreline_lstringattachment_Interpolation).Hx_Field_braces
+						braces = ((Hx_Enum_loreline_lstringattachment)(tmp__g1_1)).(Hx_Enum_loreline_lstringattachment_Interpolation).Hx_Field_braces
 						var tokens Hx_Typedef_loreline_tokens
 						_ = tokens
-						tokens = tmp__g1_1.(Hx_Enum_loreline_lstringattachment_Interpolation).Hx_Field_expr
+						tokens = ((Hx_Enum_loreline_lstringattachment)(tmp__g1_1)).(Hx_Enum_loreline_lstringattachment_Interpolation).Hx_Field_expr
 						var aStart int32
 						_ = aStart
-						aStart = tmp__g1_1.(Hx_Enum_loreline_lstringattachment_Interpolation).Hx_Field_start
+						aStart = ((Hx_Enum_loreline_lstringattachment)(tmp__g1_1)).(Hx_Enum_loreline_lstringattachment_Interpolation).Hx_Field_start
 						var aLength int32
 						_ = aLength
-						aLength = tmp__g1_1.(Hx_Enum_loreline_lstringattachment_Interpolation).Hx_Field_length
+						aLength = ((Hx_Enum_loreline_lstringattachment)(tmp__g1_1)).(Hx_Enum_loreline_lstringattachment_Interpolation).Hx_Field_length
 						{
 							var aEnd int32
 							_ = aEnd
@@ -7011,7 +7010,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseStringTag(closing bool, start 
 										var _hx_tmp_24 int32
 										_ = _hx_tmp_24
 										_hx_tmp_24 = _hx_tmp_22
-										_hx_tmp_20 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_23, _hx_tmp_24, HxNullable[int32]{}))
+										_hx_tmp_20 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_23, _hx_tmp_24, HxDefault[HxNullable[int32]]()))
 									}
 
 									_ = (Hx_Array_Push[*Hx_Obj_loreline_nstringpart](_hx_tmp_19, Hx_Obj_loreline_nstringpart_CreateInstance(this.VTable.Hx_Field_nextNodeId(((int32)(4))), partPos, Hx_Enum_loreline_stringparttype_Raw{_hx_tmp_20}, nil, nil)))
@@ -7041,8 +7040,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseStringTag(closing bool, start 
 	if currentPos < innerEnd {
 		var _hx_reserved_len HxNullable[int32]
 		_ = _hx_reserved_len
-		_hx_reserved_len = HxNullable[int32]{}
-
+		_hx_reserved_len = HxDefault[HxNullable[int32]]()
 		var _hx_tmp_25 *Hx_Obj_loreline_position
 		_ = _hx_tmp_25
 		_hx_tmp_25 = pos
@@ -7063,7 +7061,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseStringTag(closing bool, start 
 			var _hx_tmp_30 int32
 			_ = _hx_tmp_30
 			_hx_tmp_30 = _hx_tmp_28
-			_hx_tmp_26 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_29, _hx_tmp_30, HxNullable[int32]{}))
+			_hx_tmp_26 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_29, _hx_tmp_30, HxDefault[HxNullable[int32]]()))
 		}
 
 		var partPos *Hx_Obj_loreline_position
@@ -7094,7 +7092,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parseStringTag(closing bool, start 
 			var _hx_tmp_36 int32
 			_ = _hx_tmp_36
 			_hx_tmp_36 = _hx_tmp_34
-			_hx_tmp_32 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_35, _hx_tmp_36, HxNullable[int32]{}))
+			_hx_tmp_32 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_35, _hx_tmp_36, HxDefault[HxNullable[int32]]()))
 		}
 
 		_ = (Hx_Array_Push[*Hx_Obj_loreline_nstringpart](_hx_tmp_31, Hx_Obj_loreline_nstringpart_CreateInstance(this.VTable.Hx_Field_nextNodeId(((int32)(4))), partPos, Hx_Enum_loreline_stringparttype_Raw{_hx_tmp_32}, nil, nil)))
@@ -7141,8 +7139,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_parsePostfix(startPos *Hx_Obj_lorel
 		if (this.VTable.Hx_Field_match(Hx_Enum_loreline_tokentype_Dot{}, false)) {
 			var prop HxNullable[string]
 			_ = prop
-			prop = HxNullable[string]{Value: HxStringNull}
-
+			prop = HxDefault[HxNullable[string]]()
 			var propPos *Hx_Obj_loreline_position
 			_ = propPos
 			propPos = this.VTable.Hx_Field_currentPos()
@@ -7943,7 +7940,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_checkIdentifier() bool {
 	if _g.Hx_Field_enumIndex() == 20 {
 		var name string
 		_ = name
-		name = _g.(Hx_Enum_loreline_tokentype_Identifier).Hx_Field_name
+		name = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_Identifier).Hx_Field_name
 		return true
 	} else {
 		return false
@@ -7957,7 +7954,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_expectIdentifier() string {
 	if _g.Hx_Field_enumIndex() == 20 {
 		var name string
 		_ = name
-		name = _g.(Hx_Enum_loreline_tokentype_Identifier).Hx_Field_name
+		name = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_Identifier).Hx_Field_name
 		this.VTable.Hx_Field_advance(nil)
 		return name
 	} else {
@@ -8015,7 +8012,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_attachComments(node any) any {
 			_ = comment
 			comment = this.Hx_Field_pendingComments.Get(i)
 			if comment.Hx_Field_pos.Hx_Field_line < nodeStart.Hx_Field_line {
-				if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(node, "leadingComments"), ((any)(nil))))) {
+				if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(node, "leadingComments"), HxDefault[any]()))) {
 					var _hx_tmp_3 any
 					_ = _hx_tmp_3
 					_hx_tmp_3 = node
@@ -8036,7 +8033,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_attachComments(node any) any {
 				}
 
 				if _hx_tmp_5 {
-					if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(node, "trailingComments"), ((any)(nil))))) {
+					if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(node, "trailingComments"), HxDefault[any]()))) {
 						var _hx_tmp_6 any
 						_ = _hx_tmp_6
 						_hx_tmp_6 = node
@@ -8090,7 +8087,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_attachElseComments(node any, elseTo
 				comment = _g1.Get(_g)
 				_g++
 				if comment.Hx_Field_pos.Hx_Field_line < nodeStart.Hx_Field_line {
-					if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(node, "elseLeadingComments"), ((any)(nil))))) {
+					if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(node, "elseLeadingComments"), HxDefault[any]()))) {
 						var _hx_tmp_1 any
 						_ = _hx_tmp_1
 						_hx_tmp_1 = node
@@ -8103,7 +8100,7 @@ func (this *Hx_Obj_loreline_parser) Hx_Field_attachElseComments(node any, elseTo
 					Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_2, HxMakeArray[any](comment).Dyn())
 				} else {
 					if comment.Hx_Field_pos.Hx_Field_line == nodeStart.Hx_Field_line {
-						if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(node, "elseTrailingComments"), ((any)(nil))))) {
+						if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(node, "elseTrailingComments"), HxDefault[any]()))) {
 							var _hx_tmp_3 any
 							_ = _hx_tmp_3
 							_hx_tmp_3 = node

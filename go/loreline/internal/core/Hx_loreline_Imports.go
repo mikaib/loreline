@@ -131,7 +131,7 @@ func (this *Hx_Obj_loreline_imports) Hx_New() {
 		this.Hx_Field_resolvedImports = nil
 	}
 	{
-		this.Hx_Field_done = ((Hx_Typedef_loreline_importscallback)(nil))
+		this.Hx_Field_done = HxDefault[Hx_Typedef_loreline_importscallback]()
 	}
 	{
 		this.Hx_Field_hasErrors = false
@@ -430,7 +430,7 @@ func (this *Hx_Obj_loreline_imports) Hx_Field_processImports(toImport HxArray[st
 	var _hx_tmp_0 bool
 	_ = _hx_tmp_0
 	if this.Hx_Field_pendingImports == 0 {
-		_hx_tmp_0 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(this.Hx_Field_done)), ((any)(nil))))))
+		_hx_tmp_0 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(this.Hx_Field_done)), HxDefault[any]()))))
 	} else {
 		_hx_tmp_0 = false
 	}
@@ -513,12 +513,12 @@ func (this *Hx_Obj_loreline_imports) Hx_Field_handleItemInLoop(item string, loop
 							})())
 						}
 
-						func() func(_hx_param_key string, _hx_param_value Hx_Typedef_loreline_tokens) {
+						func() func(key string, value Hx_Typedef_loreline_tokens) {
 							var _hx_closure_src_688 func(_hx_param_key any, _hx_param_value any)
 							_ = _hx_closure_src_688
 							_hx_closure_src_688 = resolvedImports.VTable.Hx_Field_set
-							return func(_hx_param_key string, _hx_param_value Hx_Typedef_loreline_tokens) {
-								_hx_closure_src_688(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+							return func(key string, value Hx_Typedef_loreline_tokens) {
+								_hx_closure_src_688(((any)(key)), ((any)(value)))
 							}
 						}()(item, tokens)
 						_gthis.VTable.Hx_Field_extractImports(Hx_Field_haxe_io_path_directory(item), tokens, toImport, visitedImports)
@@ -538,7 +538,7 @@ func (this *Hx_Obj_loreline_imports) Hx_Field_handleItemInLoop(item string, loop
 		var _hx_tmp_3 bool
 		_ = _hx_tmp_3
 		if loopInfo.Hx_Field_finished && (_gthis.Hx_Field_pendingImports == 0) {
-			_hx_tmp_3 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(_gthis.Hx_Field_done)), ((any)(nil))))))
+			_hx_tmp_3 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(_gthis.Hx_Field_done)), HxDefault[any]()))))
 		} else {
 			_hx_tmp_3 = false
 		}
@@ -566,7 +566,7 @@ func (this *Hx_Obj_loreline_imports) Hx_Field_extractImports(cwd string, tokens 
 			if _g.Hx_Field_enumIndex() == 16 {
 				var s string
 				_ = s
-				s = _g.(Hx_Enum_loreline_tokentype_LString).Hx_Field_s
+				s = ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_LString).Hx_Field_s
 				{
 					var path string
 					_ = path
@@ -845,21 +845,21 @@ func (this *Hx_Obj_loreline_imports) Hx_Field_extractImports(cwd string, tokens 
 						path = Hx_Field_go_haxe_hxstring_concat(path, this.Hx_Field_ext)
 					}
 
-					if !func() func(_hx_param_key string) bool {
+					if !func() func(key string) bool {
 						var _hx_closure_src_689 func(_hx_param_key any) bool
 						_ = _hx_closure_src_689
 						_hx_closure_src_689 = visitedImports.VTable.Hx_Field_exists
-						return func(_hx_param_key string) bool {
-							return _hx_closure_src_689(((any)(_hx_param_key)))
+						return func(key string) bool {
+							return _hx_closure_src_689(((any)(key)))
 						}
 					}()(path) {
 						this.Hx_Field_pendingImports++
-						func() func(_hx_param_key string, _hx_param_value bool) {
+						func() func(key string, value bool) {
 							var _hx_closure_src_690 func(_hx_param_key any, _hx_param_value any)
 							_ = _hx_closure_src_690
 							_hx_closure_src_690 = visitedImports.VTable.Hx_Field_set
-							return func(_hx_param_key string, _hx_param_value bool) {
-								_hx_closure_src_690(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+							return func(key string, value bool) {
+								_hx_closure_src_690(((any)(key)), ((any)(value)))
 							}
 						}()(path, true)
 						_ = (Hx_Array_Push[string](toImport, path))
@@ -1772,7 +1772,7 @@ func Hx_Field_loreline_imports_stripLorExtension(path string) string {
 			var _hx_tmp_8 string
 			_ = _hx_tmp_8
 			_hx_tmp_8 = path
-			return (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_8, 0, HxNullable[int32]{}))
+			return (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_8, 0, HxDefault[HxNullable[int32]]()))
 		}
 	}
 
@@ -1875,7 +1875,7 @@ func Hx_Field_loreline_imports_stripLorExtension(path string) string {
 			var _hx_tmp_13 string
 			_ = _hx_tmp_13
 			_hx_tmp_13 = path
-			return (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_13, 0, HxNullable[int32]{}))
+			return (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_13, 0, HxDefault[HxNullable[int32]]()))
 		}
 	}
 

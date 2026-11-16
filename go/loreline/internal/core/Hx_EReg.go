@@ -10,6 +10,7 @@ func Hx_StaticInit_Hx_Obj_VTable_ereg() {
 }
 
 type Hx_Obj_VTable_ereg interface {
+	Hx_Field_matched(n int32) string
 	Hx_Field_matchedNum() int32
 	Hx_Field_split(s string) HxArray[string]
 	Hx_Field_replace(s string, by string) string
@@ -17,13 +18,12 @@ type Hx_Obj_VTable_ereg interface {
 	Hx_Field_byteSub(s string, a int32, b int32) string
 	Hx_Field_byteFrom(s string, a int32) string
 	Hx_Field_byteLen(s string) int32
-	Hx_Field_charToByte(s string, pos int32) int32
-	Hx_Field_matched(n int32) string
+	Hx_Field_match(s string) bool
+	Hx_Field_matchedLeft() string
 	Hx_Field_matchedRight() string
 	Hx_Field_matchedPos() any
 	Hx_Field_matchSub(s string, pos int32, _hx_reserved_len__isOptional any) bool
-	Hx_Field_match(s string) bool
-	Hx_Field_matchedLeft() string
+	Hx_Field_charToByte(s string, pos int32) int32
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -60,28 +60,28 @@ func (this *Hx_Obj_ereg) Hx_New(r string, opt string) {
 			var _hx_tmp_0 string
 			_ = _hx_tmp_0
 			_hx_tmp_0 = opt
-			if (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, "i", HxNullable[int32]{})) != -1 {
+			if (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, "i", HxDefault[HxNullable[int32]]())) != -1 {
 				flags = Hx_Field_go_haxe_hxstring_concat(flags, "i")
 			}
 
 			var _hx_tmp_1 string
 			_ = _hx_tmp_1
 			_hx_tmp_1 = opt
-			if (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_1, "m", HxNullable[int32]{})) != -1 {
+			if (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_1, "m", HxDefault[HxNullable[int32]]())) != -1 {
 				flags = Hx_Field_go_haxe_hxstring_concat(flags, "m")
 			}
 
 			var _hx_tmp_2 string
 			_ = _hx_tmp_2
 			_hx_tmp_2 = opt
-			if (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_2, "s", HxNullable[int32]{})) != -1 {
+			if (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_2, "s", HxDefault[HxNullable[int32]]())) != -1 {
 				flags = Hx_Field_go_haxe_hxstring_concat(flags, "s")
 			}
 
 			var _hx_tmp_3 string
 			_ = _hx_tmp_3
 			_hx_tmp_3 = opt
-			this.Hx_Field_global = ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_3, "g", HxNullable[int32]{})) != -1)
+			this.Hx_Field_global = ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_3, "g", HxDefault[HxNullable[int32]]())) != -1)
 		}
 
 		var _hx_tmp_4 string
@@ -435,7 +435,7 @@ func (this *Hx_Obj_ereg) Hx_Field_matchSub(s string, pos int32, _hx_reserved_len
 					_hx_tmp_6 = tmp_i_1
 					var _hx_tmp_7 int
 					_ = _hx_tmp_7
-					_hx_tmp_7 = _hx_tmp_5.Get(_hx_tmp_6)
+					_hx_tmp_7 = ((int)(_hx_tmp_5.Get(_hx_tmp_6)))
 					_hx_tmp_5.Set(_hx_tmp_6, (_hx_tmp_7 + int(_hx_reserved_byte)))
 				}
 			}

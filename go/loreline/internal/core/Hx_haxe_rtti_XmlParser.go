@@ -7,36 +7,36 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_rtti_xmlparser() {
 }
 
 type Hx_Obj_VTable_haxe_rtti_xmlparser interface {
-	Hx_Field_sortFields(a HxArray[any])
+	Hx_Field_mergeRights(f1 any, f2 any) bool
+	Hx_Field_mergeAbstracts(a any, a2 any) bool
 	Hx_Field_mkRights(r string) Hx_Enum_haxe_rtti_rights
-	Hx_Field_mergeFields(f any, f2 any) bool
-	Hx_Field_mkTypeParams(p string) Hx_Typedef_haxe_rtti_typeparams
 	Hx_Field_xclass(x *Hx_Obj_xml) any
 	Hx_Field_xenumfield(x *Hx_Obj_xml) any
-	Hx_Field_process(x *Hx_Obj_xml, platform string)
-	Hx_Field_mergeEnums(e any, e2 any) bool
-	Hx_Field_xoverloads(x *Hx_Obj_xml) HxArray[any]
-	Hx_Field_xabstract(x *Hx_Obj_xml) any
-	Hx_Field_xtypeparams(x *Hx_Obj_xml) HxArray[Hx_Enum_haxe_rtti_ctype]
-	Hx_Field_mergeRights(f1 any, f2 any) bool
-	Hx_Field_xpath(x *Hx_Obj_xml) any
-	Hx_Field_xenum(x *Hx_Obj_xml) any
-	Hx_Field_xtype(x *Hx_Obj_xml) Hx_Enum_haxe_rtti_ctype
-	Hx_Field_newField(c any, f any)
-	Hx_Field_mergeTypedefs(t any, t2 any) bool
-	Hx_Field_mkPath(p string) Hx_Typedef_haxe_rtti_path
-	Hx_Field_xerror(c *Hx_Obj_xml) any
-	Hx_Field_xroot(x *Hx_Obj_xml)
 	Hx_Field_xtypedef(x *Hx_Obj_xml) any
-	Hx_Field_mergeClasses(c any, c2 any) bool
-	Hx_Field_mergeAbstracts(a any, a2 any) bool
-	Hx_Field_processElement(x *Hx_Obj_xml) Hx_Enum_haxe_rtti_typetree
-	Hx_Field_xmeta(x *Hx_Obj_xml) HxArray[any]
-	Hx_Field_mergeDoc(f1 any, f2 any) bool
-	Hx_Field_merge(t Hx_Enum_haxe_rtti_typetree)
-	Hx_Field_xclassfield(x *Hx_Obj_xml, defPublic__isOptional any) any
+	Hx_Field_xtype(x *Hx_Obj_xml) Hx_Enum_haxe_rtti_ctype
 	Hx_Field_defplat() HxArray[string]
+	Hx_Field_sortFields(a HxArray[any])
+	Hx_Field_mergeFields(f any, f2 any) bool
+	Hx_Field_processElement(x *Hx_Obj_xml) Hx_Enum_haxe_rtti_typetree
+	Hx_Field_xabstract(x *Hx_Obj_xml) any
+	Hx_Field_newField(c any, f any)
+	Hx_Field_mergeEnums(e any, e2 any) bool
+	Hx_Field_xerror(c *Hx_Obj_xml) any
+	Hx_Field_xenum(x *Hx_Obj_xml) any
 	Hx_Field_sort(l__isOptional any)
+	Hx_Field_mergeClasses(c any, c2 any) bool
+	Hx_Field_xroot(x *Hx_Obj_xml)
+	Hx_Field_xclassfield(x *Hx_Obj_xml, defPublic__isOptional any) any
+	Hx_Field_process(x *Hx_Obj_xml, platform string)
+	Hx_Field_xoverloads(x *Hx_Obj_xml) HxArray[any]
+	Hx_Field_mergeTypedefs(t any, t2 any) bool
+	Hx_Field_mkTypeParams(p string) Hx_Typedef_haxe_rtti_typeparams
+	Hx_Field_xpath(x *Hx_Obj_xml) any
+	Hx_Field_mergeDoc(f1 any, f2 any) bool
+	Hx_Field_xmeta(x *Hx_Obj_xml) HxArray[any]
+	Hx_Field_xtypeparams(x *Hx_Obj_xml) HxArray[Hx_Enum_haxe_rtti_ctype]
+	Hx_Field_merge(t Hx_Enum_haxe_rtti_typetree)
+	Hx_Field_mkPath(p string) Hx_Typedef_haxe_rtti_path
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -123,7 +123,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_sort(l__isOptional any) {
 			if e1.Hx_Field_enumIndex() == 0 {
 				var p string
 				_ = p
-				p = e1.(Hx_Enum_haxe_rtti_typetree_TPackage).Hx_Field_name
+				p = ((Hx_Enum_haxe_rtti_typetree)(e1)).(Hx_Enum_haxe_rtti_typetree_TPackage).Hx_Field_name
 				n1 = Hx_Field_go_haxe_hxstring_concat(" ", p)
 			} else {
 				n1 = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_getField(Hx_Field_haxe_rtti_typeapi_typeInfos(e1), "path"))
@@ -134,7 +134,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_sort(l__isOptional any) {
 			if e2.Hx_Field_enumIndex() == 0 {
 				var p string
 				_ = p
-				p = e2.(Hx_Enum_haxe_rtti_typetree_TPackage).Hx_Field_name
+				p = ((Hx_Enum_haxe_rtti_typetree)(e2)).(Hx_Enum_haxe_rtti_typetree_TPackage).Hx_Field_name
 				n2 = Hx_Field_go_haxe_hxstring_concat(" ", p)
 			} else {
 				n2 = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_getField(Hx_Field_haxe_rtti_typeapi_typeInfos(e2), "path"))
@@ -167,7 +167,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_sort(l__isOptional any) {
 					{
 						var l HxArray[Hx_Enum_haxe_rtti_typetree]
 						_ = l
-						l = x.(Hx_Enum_haxe_rtti_typetree_TPackage).Hx_Field_subs
+						l = ((Hx_Enum_haxe_rtti_typetree)(x)).(Hx_Enum_haxe_rtti_typetree_TPackage).Hx_Field_subs
 						this.VTable.Hx_Field_sort(((any)(l)))
 					}
 
@@ -175,7 +175,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_sort(l__isOptional any) {
 					{
 						var c any
 						_ = c
-						c = x.(Hx_Enum_haxe_rtti_typetree_TClassdecl).Hx_Field_c
+						c = ((Hx_Enum_haxe_rtti_typetree)(x)).(Hx_Enum_haxe_rtti_typetree_TClassdecl).Hx_Field_c
 						{
 							this.VTable.Hx_Field_sortFields(HxAnyToArray(Hx_Field_go_haxe_hxdynamic_getField(c, "fields")))
 							this.VTable.Hx_Field_sortFields(HxAnyToArray(Hx_Field_go_haxe_hxdynamic_getField(c, "statics")))
@@ -669,7 +669,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_mergeTypedefs(t any, t2 any) bo
 	var _hx_tmp_2 string
 	_ = _hx_tmp_2
 	_hx_tmp_2 = this.Hx_Field_curplatform
-	func() func(_hx_param_key string, _hx_param_value Hx_Enum_haxe_rtti_ctype) {
+	func() func(key string, value Hx_Enum_haxe_rtti_ctype) {
 		var hx_dyncast_51 any
 		_ = hx_dyncast_51
 		hx_dyncast_51 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_getField(t, "types"), "Hx_Obj_haxe_imap")
@@ -686,8 +686,8 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_mergeTypedefs(t any, t2 any) bo
 		_hx_closure_src_387 = _hx_tmp_1.VTable.(interface {
 			Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 		}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_set
-		return func(_hx_param_key string, _hx_param_value Hx_Enum_haxe_rtti_ctype) {
-			_hx_closure_src_387(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+		return func(key string, value Hx_Enum_haxe_rtti_ctype) {
+			_hx_closure_src_387(((any)(key)), ((any)(value)))
 		}
 	}()(_hx_tmp_2, func() Hx_Enum_haxe_rtti_ctype {
 		_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(Hx_Field_go_haxe_hxdynamic_getField(t2, "type"))
@@ -871,10 +871,10 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_merge(t Hx_Enum_haxe_rtti_typet
 					if pk.Hx_Field_enumIndex() == 0 {
 						var pname string
 						_ = pname
-						pname = pk.(Hx_Enum_haxe_rtti_typetree_TPackage).Hx_Field_name
+						pname = ((Hx_Enum_haxe_rtti_typetree)(pk)).(Hx_Enum_haxe_rtti_typetree_TPackage).Hx_Field_name
 						var subs HxArray[Hx_Enum_haxe_rtti_typetree]
 						_ = subs
-						subs = pk.(Hx_Enum_haxe_rtti_typetree_TPackage).Hx_Field_subs
+						subs = ((Hx_Enum_haxe_rtti_typetree)(pk)).(Hx_Enum_haxe_rtti_typetree_TPackage).Hx_Field_subs
 						if pname == p {
 							found = true
 							cur = ((Hx_Typedef_haxe_rtti_typeroot)(subs))
@@ -994,11 +994,11 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_merge(t Hx_Enum_haxe_rtti_typet
 						{
 							var c any
 							_ = c
-							c = ct.(Hx_Enum_haxe_rtti_typetree_TClassdecl).Hx_Field_c
+							c = ((Hx_Enum_haxe_rtti_typetree)(ct)).(Hx_Enum_haxe_rtti_typetree_TClassdecl).Hx_Field_c
 							if t.Hx_Field_enumIndex() == 1 {
 								var c2 any
 								_ = c2
-								c2 = t.(Hx_Enum_haxe_rtti_typetree_TClassdecl).Hx_Field_c
+								c2 = ((Hx_Enum_haxe_rtti_typetree)(t)).(Hx_Enum_haxe_rtti_typetree_TClassdecl).Hx_Field_c
 								if this.VTable.Hx_Field_mergeClasses(c, c2) {
 									return
 								}
@@ -1011,11 +1011,11 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_merge(t Hx_Enum_haxe_rtti_typet
 						{
 							var e any
 							_ = e
-							e = ct.(Hx_Enum_haxe_rtti_typetree_TEnumdecl).Hx_Field_e
+							e = ((Hx_Enum_haxe_rtti_typetree)(ct)).(Hx_Enum_haxe_rtti_typetree_TEnumdecl).Hx_Field_e
 							if t.Hx_Field_enumIndex() == 2 {
 								var e2 any
 								_ = e2
-								e2 = t.(Hx_Enum_haxe_rtti_typetree_TEnumdecl).Hx_Field_e
+								e2 = ((Hx_Enum_haxe_rtti_typetree)(t)).(Hx_Enum_haxe_rtti_typetree_TEnumdecl).Hx_Field_e
 								if this.VTable.Hx_Field_mergeEnums(e, e2) {
 									return
 								}
@@ -1028,11 +1028,11 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_merge(t Hx_Enum_haxe_rtti_typet
 						{
 							var td any
 							_ = td
-							td = ct.(Hx_Enum_haxe_rtti_typetree_TTypedecl).Hx_Field_t
+							td = ((Hx_Enum_haxe_rtti_typetree)(ct)).(Hx_Enum_haxe_rtti_typetree_TTypedecl).Hx_Field_t
 							if t.Hx_Field_enumIndex() == 3 {
 								var td2 any
 								_ = td2
-								td2 = t.(Hx_Enum_haxe_rtti_typetree_TTypedecl).Hx_Field_t
+								td2 = ((Hx_Enum_haxe_rtti_typetree)(t)).(Hx_Enum_haxe_rtti_typetree_TTypedecl).Hx_Field_t
 								if this.VTable.Hx_Field_mergeTypedefs(td, td2) {
 									return
 								}
@@ -1043,11 +1043,11 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_merge(t Hx_Enum_haxe_rtti_typet
 						{
 							var a any
 							_ = a
-							a = ct.(Hx_Enum_haxe_rtti_typetree_TAbstractdecl).Hx_Field_a
+							a = ((Hx_Enum_haxe_rtti_typetree)(ct)).(Hx_Enum_haxe_rtti_typetree_TAbstractdecl).Hx_Field_a
 							if t.Hx_Field_enumIndex() == 4 {
 								var a2 any
 								_ = a2
-								a2 = t.(Hx_Enum_haxe_rtti_typetree_TAbstractdecl).Hx_Field_a
+								a2 = ((Hx_Enum_haxe_rtti_typetree)(t)).(Hx_Enum_haxe_rtti_typetree_TAbstractdecl).Hx_Field_a
 								if this.VTable.Hx_Field_mergeAbstracts(a, a2) {
 									return
 								}
@@ -1430,8 +1430,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xclass(x *Hx_Obj_xml) any {
 	_ = csuper
 	var doc HxNullable[string]
 	_ = doc
-	doc = HxNullable[string]{Value: HxStringNull}
-
+	doc = HxDefault[HxNullable[string]]()
 	var tdynamic Hx_Enum_haxe_rtti_ctype
 	_ = tdynamic
 	var interfaces HxArray[any]
@@ -1564,7 +1563,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xclass(x *Hx_Obj_xml) any {
 	if Hx_Field_haxe_xml__access_hasattribaccess_impl__resolve(x, "file") {
 		_hx_tmp_9 = HxNullableString(Hx_Field_haxe_xml__access_attribaccess_impl__resolve(x, "file"))
 	} else {
-		_hx_tmp_9 = HxNullable[string]{Value: HxStringNull}
+		_hx_tmp_9 = HxDefault[HxNullable[string]]()
 	}
 
 	var hx_nullable_f185 HxNullable[string]
@@ -1669,8 +1668,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xclassfield(x *Hx_Obj_xml, defP
 		t = this.VTable.Hx_Field_xtype(_hx_tmp_1)
 		var doc HxNullable[string]
 		_ = doc
-		doc = HxNullable[string]{Value: HxStringNull}
-
+		doc = HxDefault[HxNullable[string]]()
 		var meta HxArray[any]
 		_ = meta
 		meta = HxMakeArray[any]().Dyn()
@@ -1783,7 +1781,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xclassfield(x *Hx_Obj_xml, defP
 		if Hx_Field_haxe_xml__access_hasattribaccess_impl__resolve(x, "line") {
 			_hx_tmp_11 = Hx_Field_std_parseInt(Hx_Field_haxe_xml__access_attribaccess_impl__resolve(x, "line"))
 		} else {
-			_hx_tmp_11 = HxNullable[int32]{}
+			_hx_tmp_11 = HxDefault[HxNullable[int32]]()
 		}
 
 		var hx_nullable_f187 HxNullable[int32]
@@ -1846,7 +1844,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xclassfield(x *Hx_Obj_xml, defP
 		if Hx_Field_haxe_xml__access_hasattribaccess_impl__resolve(x, "expr") {
 			_hx_tmp_20 = HxNullableString(Hx_Field_haxe_xml__access_attribaccess_impl__resolve(x, "expr"))
 		} else {
-			_hx_tmp_20 = HxNullable[string]{Value: HxStringNull}
+			_hx_tmp_20 = HxDefault[HxNullable[string]]()
 		}
 
 		var hx_nullable_f189 HxNullable[string]
@@ -1870,8 +1868,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xenum(x *Hx_Obj_xml) any {
 	cl = HxMakeArray[any]().Dyn()
 	var doc HxNullable[string]
 	_ = doc
-	doc = HxNullable[string]{Value: HxStringNull}
-
+	doc = HxDefault[HxNullable[string]]()
 	var meta HxArray[any]
 	_ = meta
 	meta = HxMakeArray[any]().Dyn()
@@ -1948,7 +1945,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xenum(x *Hx_Obj_xml) any {
 	if Hx_Field_haxe_xml__access_hasattribaccess_impl__resolve(x, "file") {
 		_hx_tmp_4 = HxNullableString(Hx_Field_haxe_xml__access_attribaccess_impl__resolve(x, "file"))
 	} else {
-		_hx_tmp_4 = HxNullable[string]{Value: HxStringNull}
+		_hx_tmp_4 = HxDefault[HxNullable[string]]()
 	}
 
 	var hx_nullable_f190 HxNullable[string]
@@ -2076,7 +2073,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xenumfield(x *Hx_Obj_xml) any {
 					var _hx_tmp_6 string
 					_ = _hx_tmp_6
 					_hx_tmp_6 = c
-					c = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_6, 1, HxNullable[int32]{}))
+					c = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_6, 1, HxDefault[HxNullable[int32]]()))
 				}
 
 				var _hx_tmp_7 HxArray[any]
@@ -2149,8 +2146,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xenumfield(x *Hx_Obj_xml) any {
 func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xabstract(x *Hx_Obj_xml) any {
 	var doc HxNullable[string]
 	_ = doc
-	doc = HxNullable[string]{Value: HxStringNull}
-
+	doc = HxDefault[HxNullable[string]]()
 	var impl any
 	_ = impl
 	var athis Hx_Enum_haxe_rtti_ctype
@@ -2255,7 +2251,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xabstract(x *Hx_Obj_xml) any {
 							if Hx_Field_haxe_xml__access_hasattribaccess_impl__resolve(t, "field") {
 								_hx_tmp_8 = HxNullableString(Hx_Field_haxe_xml__access_attribaccess_impl__resolve(t, "field"))
 							} else {
-								_hx_tmp_8 = HxNullable[string]{Value: HxStringNull}
+								_hx_tmp_8 = HxDefault[HxNullable[string]]()
 							}
 
 							var hx_nullable_f192 HxNullable[string]
@@ -2348,7 +2344,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xabstract(x *Hx_Obj_xml) any {
 							if Hx_Field_haxe_xml__access_hasattribaccess_impl__resolve(t, "field") {
 								_hx_tmp_15 = HxNullableString(Hx_Field_haxe_xml__access_attribaccess_impl__resolve(t, "field"))
 							} else {
-								_hx_tmp_15 = HxNullable[string]{Value: HxStringNull}
+								_hx_tmp_15 = HxDefault[HxNullable[string]]()
 							}
 
 							var hx_nullable_f193 HxNullable[string]
@@ -2380,7 +2376,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xabstract(x *Hx_Obj_xml) any {
 	if Hx_Field_haxe_xml__access_hasattribaccess_impl__resolve(x, "file") {
 		_hx_tmp_17 = HxNullableString(Hx_Field_haxe_xml__access_attribaccess_impl__resolve(x, "file"))
 	} else {
-		_hx_tmp_17 = HxNullable[string]{Value: HxStringNull}
+		_hx_tmp_17 = HxDefault[HxNullable[string]]()
 	}
 
 	var hx_nullable_f194 HxNullable[string]
@@ -2428,8 +2424,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xabstract(x *Hx_Obj_xml) any {
 func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xtypedef(x *Hx_Obj_xml) any {
 	var doc HxNullable[string]
 	_ = doc
-	doc = HxNullable[string]{Value: HxStringNull}
-
+	doc = HxDefault[HxNullable[string]]()
 	var t Hx_Enum_haxe_rtti_ctype
 	_ = t
 	var meta HxArray[any]
@@ -2504,12 +2499,12 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xtypedef(x *Hx_Obj_xml) any {
 	_ = types
 	types = Hx_Obj_haxe_ds_stringmap_CreateInstance()
 	if this.Hx_Field_curplatform != HxStringNull {
-		func() func(_hx_param_key string, _hx_param_value Hx_Enum_haxe_rtti_ctype) {
+		func() func(key string, value Hx_Enum_haxe_rtti_ctype) {
 			var _hx_closure_src_388 func(_hx_param_key any, _hx_param_value any)
 			_ = _hx_closure_src_388
 			_hx_closure_src_388 = types.VTable.Hx_Field_set
-			return func(_hx_param_key string, _hx_param_value Hx_Enum_haxe_rtti_ctype) {
-				_hx_closure_src_388(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+			return func(key string, value Hx_Enum_haxe_rtti_ctype) {
+				_hx_closure_src_388(((any)(key)), ((any)(value)))
 			}
 		}()(this.Hx_Field_curplatform, t)
 	}
@@ -2519,7 +2514,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xtypedef(x *Hx_Obj_xml) any {
 	if Hx_Field_haxe_xml__access_hasattribaccess_impl__resolve(x, "file") {
 		_hx_tmp_3 = HxNullableString(Hx_Field_haxe_xml__access_attribaccess_impl__resolve(x, "file"))
 	} else {
-		_hx_tmp_3 = HxNullable[string]{Value: HxStringNull}
+		_hx_tmp_3 = HxDefault[HxNullable[string]]()
 	}
 
 	var hx_nullable_f196 HxNullable[string]
@@ -2754,12 +2749,12 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xtype(x *Hx_Obj_xml) Hx_Enum_ha
 						if hx_nullable_i47 >= 0 && hx_nullable_i47 < hx_nullable_a46.Len() {
 							_hx_tmp_14 = HxNullable[string]{Value: hx_nullable_a46.Get(hx_nullable_i47), Valid: true}
 						} else {
-							_hx_tmp_14 = HxNullable[string]{Value: HxStringNull}
+							_hx_tmp_14 = HxDefault[HxNullable[string]]()
 						}
 
 						_hx_tmp_11 = _hx_tmp_14
 					} else {
-						_hx_tmp_11 = HxNullable[string]{Value: HxStringNull}
+						_hx_tmp_11 = HxDefault[HxNullable[string]]()
 					}
 
 					var a HxNullable[string]
@@ -2774,7 +2769,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xtype(x *Hx_Obj_xml) Hx_Enum_ha
 						var _hx_tmp_15 string
 						_ = _hx_tmp_15
 						_hx_tmp_15 = a.Value
-						a = HxNullableString((Hx_Field_go_haxe_hxstring_substr(_hx_tmp_15, 1, HxNullable[int32]{})))
+						a = HxNullableString((Hx_Field_go_haxe_hxstring_substr(_hx_tmp_15, 1, HxDefault[HxNullable[int32]]())))
 					}
 
 					var _hx_tmp_16 HxNullable[string]
@@ -2794,7 +2789,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xtype(x *Hx_Obj_xml) Hx_Enum_ha
 					}
 
 					if _hx_tmp_17 {
-						_hx_tmp_16 = HxNullable[string]{Value: HxStringNull}
+						_hx_tmp_16 = HxDefault[HxNullable[string]]()
 					} else {
 						var hx_nullable_a48 HxArray[string]
 						_ = hx_nullable_a48
@@ -2811,7 +2806,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xtype(x *Hx_Obj_xml) Hx_Enum_ha
 						if hx_nullable_i49 >= 0 && hx_nullable_i49 < hx_nullable_a48.Len() {
 							_hx_tmp_21 = HxNullable[string]{Value: hx_nullable_a48.Get(hx_nullable_i49), Valid: true}
 						} else {
-							_hx_tmp_21 = HxNullable[string]{Value: HxStringNull}
+							_hx_tmp_21 = HxDefault[HxNullable[string]]()
 						}
 
 						_hx_tmp_16 = _hx_tmp_21
@@ -2851,7 +2846,7 @@ func (this *Hx_Obj_haxe_rtti_xmlparser) Hx_Field_xtype(x *Hx_Obj_xml) Hx_Enum_ha
 					}
 
 					if _hx_tmp_27 {
-						_hx_tmp_26 = HxNullable[string]{Value: HxStringNull}
+						_hx_tmp_26 = HxDefault[HxNullable[string]]()
 					} else {
 						_hx_tmp_26 = v
 					}

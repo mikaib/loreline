@@ -9,60 +9,60 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_printer() {
 }
 
 type Hx_Obj_VTable_loreline_printer interface {
-	Hx_Field_printDialogueStatement(dialogue *Hx_Obj_loreline_ndialoguestatement)
-	Hx_Field_needsEmptyLines(node *Hx_Obj_loreline_astnode) bool
-	Hx_Field_printBeatCall(call *Hx_Obj_loreline_nbeatcall)
 	Hx_Field_tab() *Hx_Obj_loreline_printer
-	Hx_Field_printOperand(expr *Hx_Obj_loreline_nexpr, minPrecedence int32)
-	Hx_Field_printTextStatement(text *Hx_Obj_loreline_ntextstatement)
-	Hx_Field_printTargetExprAndArgs(targetExpr *Hx_Obj_loreline_nexpr, args HxArray[*Hx_Obj_loreline_nexpr])
-	Hx_Field_printAssignment(assign *Hx_Obj_loreline_nassign)
-	Hx_Field_getOperator(op Hx_Enum_loreline_tokentype) string
-	Hx_Field_printStringLiteralAsReference(str *Hx_Obj_loreline_nstringliteral) string
-	Hx_Field_indent()
-	Hx_Field__writeln(s__isOptional any) *Hx_Obj_loreline_printer
-	Hx_Field_printCharacterDecl(char *Hx_Obj_loreline_ncharacterdecl)
-	Hx_Field_printFunctionDecl(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl)
-	Hx_Field_printInsertion(insert *Hx_Obj_loreline_ninsertion)
-	Hx_Field_writeRawWithContinuation(text string, stripIndent bool)
-	Hx_Field_write(s string) *Hx_Obj_loreline_printer
-	Hx_Field_printBeatDecl(beat *Hx_Obj_loreline_nbeatdecl)
-	Hx_Field_printChoiceOption(option *Hx_Obj_loreline_nchoiceoption)
-	Hx_Field_printTransition(trans *Hx_Obj_loreline_ntransition, sameLine bool)
-	Hx_Field_printAccess(access *Hx_Obj_loreline_naccess)
-	Hx_Field_clear()
-	Hx_Field_unindent()
-	Hx_Field_printNode(node *Hx_Obj_loreline_node, sameLine__isOptional any)
 	Hx_Field_printImport(imp *Hx_Obj_loreline_nimportstatement)
-	Hx_Field_printStateDecl(state *Hx_Obj_loreline_nstatedecl)
-	Hx_Field_printChoiceStatement(choice *Hx_Obj_loreline_nchoicestatement)
-	Hx_Field_printWhenRule(rule *Hx_Obj_loreline_nwhenrule)
-	Hx_Field_writeUnquotedRaw(text string)
+	Hx_Field_printInsertion(insert *Hx_Obj_loreline_ninsertion)
+	Hx_Field__writeln(s__isOptional any) *Hx_Obj_loreline_printer
 	Hx_Field_space() *Hx_Obj_loreline_printer
-	Hx_Field_printHashTrailingComments(node *Hx_Obj_loreline_astnode)
-	Hx_Field_printScript(script *Hx_Obj_loreline_script)
-	Hx_Field_printImportStatement(imp *Hx_Obj_loreline_nimportstatement)
-	Hx_Field_printStringLiteral(str *Hx_Obj_loreline_nstringliteral)
-	Hx_Field_printLiteral(lit *Hx_Obj_loreline_nliteral)
-	Hx_Field_printArrayAccess(access *Hx_Obj_loreline_narrayaccess)
-	Hx_Field_printCall(call *Hx_Obj_loreline_ncall)
-	Hx_Field__line(s string) *Hx_Obj_loreline_printer
-	Hx_Field_printWhenStatement(when *Hx_Obj_loreline_nwhenstatement)
-	Hx_Field_printIfStatement(ifStmt *Hx_Obj_loreline_nifstatement, isElseIf__isOptional any)
-	Hx_Field_writeQuotedRaw(text string)
-	Hx_Field_printUnary(unary *Hx_Obj_loreline_nunary)
-	Hx_Field_printTernary(ternary *Hx_Obj_loreline_nternary)
-	Hx_Field_isSimpleInterpolationExpr(expr *Hx_Obj_loreline_nexpr) bool
-	Hx_Field_hasRealNewlines(node *Hx_Obj_loreline_node) bool
-	Hx_Field_toString() string
-	Hx_Field_printStringLiteralAsText(str *Hx_Obj_loreline_nstringliteral) string
-	Hx_Field_print(node *Hx_Obj_loreline_node) string
-	Hx_Field_printLeadingComments(node *Hx_Obj_loreline_astnode)
-	Hx_Field_printTrailingComments(node *Hx_Obj_loreline_astnode)
-	Hx_Field_printAlternative(alt *Hx_Obj_loreline_nalternative)
+	Hx_Field_needsEmptyLines(node *Hx_Obj_loreline_astnode) bool
+	Hx_Field_printTargetExprAndArgs(targetExpr *Hx_Obj_loreline_nexpr, args HxArray[*Hx_Obj_loreline_nexpr])
+	Hx_Field_writeUnquotedRaw(text string)
 	Hx_Field_printBinary(binary *Hx_Obj_loreline_nbinary)
 	Hx_Field_printInLineExpression(expr *Hx_Obj_loreline_nexpr, parens bool)
+	Hx_Field_printStringLiteralAsText(str *Hx_Obj_loreline_nstringliteral) string
+	Hx_Field_clear()
+	Hx_Field_unindent()
+	Hx_Field_print(node *Hx_Obj_loreline_node) string
+	Hx_Field_printBeatDecl(beat *Hx_Obj_loreline_nbeatdecl)
+	Hx_Field_printWhenStatement(when *Hx_Obj_loreline_nwhenstatement)
+	Hx_Field_printAccess(access *Hx_Obj_loreline_naccess)
+	Hx_Field_printArrayAccess(access *Hx_Obj_loreline_narrayaccess)
+	Hx_Field_printTrailingComments(node *Hx_Obj_loreline_astnode)
+	Hx_Field_printDialogueStatement(dialogue *Hx_Obj_loreline_ndialoguestatement)
+	Hx_Field_printUnary(unary *Hx_Obj_loreline_nunary)
+	Hx_Field_printTernary(ternary *Hx_Obj_loreline_nternary)
+	Hx_Field_hasRealNewlines(node *Hx_Obj_loreline_node) bool
+	Hx_Field_getOperator(op Hx_Enum_loreline_tokentype) string
+	Hx_Field_toString() string
+	Hx_Field_printNode(node *Hx_Obj_loreline_node, sameLine__isOptional any)
+	Hx_Field_printLeadingComments(node *Hx_Obj_loreline_astnode)
+	Hx_Field_printFunctionDecl(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl)
+	Hx_Field_printChoiceStatement(choice *Hx_Obj_loreline_nchoicestatement)
+	Hx_Field_writeRawWithContinuation(text string, stripIndent bool)
+	Hx_Field_printCall(call *Hx_Obj_loreline_ncall)
+	Hx_Field_write(s string) *Hx_Obj_loreline_printer
+	Hx_Field_printOperand(expr *Hx_Obj_loreline_nexpr, minPrecedence int32)
+	Hx_Field_printScript(script *Hx_Obj_loreline_script)
+	Hx_Field_printTransition(trans *Hx_Obj_loreline_ntransition, sameLine bool)
+	Hx_Field_writeQuotedRaw(text string)
+	Hx_Field_printLiteral(lit *Hx_Obj_loreline_nliteral)
+	Hx_Field_printAssignment(assign *Hx_Obj_loreline_nassign)
+	Hx_Field_isSimpleInterpolationExpr(expr *Hx_Obj_loreline_nexpr) bool
+	Hx_Field_indent()
+	Hx_Field__line(s string) *Hx_Obj_loreline_printer
+	Hx_Field_printStateDecl(state *Hx_Obj_loreline_nstatedecl)
+	Hx_Field_printTextStatement(text *Hx_Obj_loreline_ntextstatement)
+	Hx_Field_printImportStatement(imp *Hx_Obj_loreline_nimportstatement)
+	Hx_Field_printChoiceOption(option *Hx_Obj_loreline_nchoiceoption)
+	Hx_Field_printBeatCall(call *Hx_Obj_loreline_nbeatcall)
 	Hx_Field_newline() *Hx_Obj_loreline_printer
+	Hx_Field_printStringLiteralAsReference(str *Hx_Obj_loreline_nstringliteral) string
+	Hx_Field_printHashTrailingComments(node *Hx_Obj_loreline_astnode)
+	Hx_Field_printCharacterDecl(char *Hx_Obj_loreline_ncharacterdecl)
+	Hx_Field_printWhenRule(rule *Hx_Obj_loreline_nwhenrule)
+	Hx_Field_printIfStatement(ifStmt *Hx_Obj_loreline_nifstatement, isElseIf__isOptional any)
+	Hx_Field_printAlternative(alt *Hx_Obj_loreline_nalternative)
+	Hx_Field_printStringLiteral(str *Hx_Obj_loreline_nstringliteral)
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -447,7 +447,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printStringLiteralAsText(str *Hx_O
 					{
 						var text string
 						_ = text
-						text = _g2.(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
+						text = ((Hx_Enum_loreline_stringparttype)(_g2)).(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
 						if str.Hx_Field_quotes == ((int32)(1)) {
 							this.VTable.Hx_Field_writeQuotedRaw(text)
 						} else {
@@ -459,7 +459,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printStringLiteralAsText(str *Hx_O
 					{
 						var expr *Hx_Obj_loreline_nexpr
 						_ = expr
-						expr = _g2.(Hx_Enum_loreline_stringparttype_Expr).Hx_Field_expr
+						expr = ((Hx_Enum_loreline_stringparttype)(_g2)).(Hx_Enum_loreline_stringparttype_Expr).Hx_Field_expr
 						{
 							var canBeSimple bool
 							_ = canBeSimple
@@ -489,10 +489,10 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printStringLiteralAsText(str *Hx_O
 					{
 						var closing bool
 						_ = closing
-						closing = _g2.(Hx_Enum_loreline_stringparttype_Tag).Hx_Field_closing
+						closing = ((Hx_Enum_loreline_stringparttype)(_g2)).(Hx_Enum_loreline_stringparttype_Tag).Hx_Field_closing
 						var content *Hx_Obj_loreline_nstringliteral
 						_ = content
-						content = _g2.(Hx_Enum_loreline_stringparttype_Tag).Hx_Field_expr
+						content = ((Hx_Enum_loreline_stringparttype)(_g2)).(Hx_Enum_loreline_stringparttype_Tag).Hx_Field_expr
 						{
 							var _hx_tmp_2 string
 							_ = _hx_tmp_2
@@ -2238,7 +2238,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_needsEmptyLines(node *Hx_Obj_lorel
 		}
 		return nil
 	})())
-	return ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, "\n\n", HxNullable[int32]{})) != -1)
+	return ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, "\n\n", HxDefault[HxNullable[int32]]())) != -1)
 }
 
 func (this *Hx_Obj_loreline_printer) Hx_Field_printTransition(trans *Hx_Obj_loreline_ntransition, sameLine bool) {
@@ -2435,7 +2435,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printStringLiteral(str *Hx_Obj_lor
 					{
 						var text string
 						_ = text
-						text = _g2.(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
+						text = ((Hx_Enum_loreline_stringparttype)(_g2)).(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
 						if surroundWithQuotes {
 							this.VTable.Hx_Field_writeQuotedRaw(text)
 						} else {
@@ -2447,7 +2447,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printStringLiteral(str *Hx_Obj_lor
 					{
 						var expr *Hx_Obj_loreline_nexpr
 						_ = expr
-						expr = _g2.(Hx_Enum_loreline_stringparttype_Expr).Hx_Field_expr
+						expr = ((Hx_Enum_loreline_stringparttype)(_g2)).(Hx_Enum_loreline_stringparttype_Expr).Hx_Field_expr
 						{
 							var canBeSimple bool
 							_ = canBeSimple
@@ -2477,10 +2477,10 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printStringLiteral(str *Hx_Obj_lor
 					{
 						var closing bool
 						_ = closing
-						closing = _g2.(Hx_Enum_loreline_stringparttype_Tag).Hx_Field_closing
+						closing = ((Hx_Enum_loreline_stringparttype)(_g2)).(Hx_Enum_loreline_stringparttype_Tag).Hx_Field_closing
 						var content *Hx_Obj_loreline_nstringliteral
 						_ = content
-						content = _g2.(Hx_Enum_loreline_stringparttype_Tag).Hx_Field_expr
+						content = ((Hx_Enum_loreline_stringparttype)(_g2)).(Hx_Enum_loreline_stringparttype_Tag).Hx_Field_expr
 						{
 							var _hx_tmp_2 string
 							_ = _hx_tmp_2
@@ -2529,7 +2529,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_writeQuotedRaw(text string) {
 	var _hx_tmp_0 string
 	_ = _hx_tmp_0
 	_hx_tmp_0 = text
-	if (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, "\n", HxNullable[int32]{})) == -1 {
+	if (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, "\n", HxDefault[HxNullable[int32]]())) == -1 {
 		this.VTable.Hx_Field_write(text)
 		return
 	}
@@ -2604,7 +2604,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_writeQuotedRaw(text string) {
 					var _hx_tmp_6 string
 					_ = _hx_tmp_6
 					_hx_tmp_6 = _hx_tmp_5
-					_hx_tmp_4 = (Hx_Field_go_haxe_hxstring_substring(_hx_tmp_6, 0, HxNullable[int32]{}))
+					_hx_tmp_4 = (Hx_Field_go_haxe_hxstring_substring(_hx_tmp_6, 0, HxDefault[HxNullable[int32]]()))
 				}
 
 				line = _hx_tmp_4
@@ -2643,7 +2643,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_writeRawWithContinuation(text stri
 	var _hx_tmp_0 string
 	_ = _hx_tmp_0
 	_hx_tmp_0 = text
-	if (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, "\n", HxNullable[int32]{})) == -1 {
+	if (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, "\n", HxDefault[HxNullable[int32]]())) == -1 {
 		this.VTable.Hx_Field_write(text)
 		return
 	}
@@ -2719,7 +2719,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_writeRawWithContinuation(text stri
 					var _hx_tmp_6 string
 					_ = _hx_tmp_6
 					_hx_tmp_6 = _hx_tmp_5
-					_hx_tmp_4 = (Hx_Field_go_haxe_hxstring_substring(_hx_tmp_6, 0, HxNullable[int32]{}))
+					_hx_tmp_4 = (Hx_Field_go_haxe_hxstring_substring(_hx_tmp_6, 0, HxDefault[HxNullable[int32]]()))
 				}
 
 				line = _hx_tmp_4
@@ -2777,8 +2777,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_writeRawWithContinuation(text stri
 				if j > 0 {
 					var endIndex HxNullable[int32]
 					_ = endIndex
-					endIndex = HxNullable[int32]{}
-
+					endIndex = HxDefault[HxNullable[int32]]()
 					var _hx_tmp_10 string
 					_ = _hx_tmp_10
 					if (endIndex).Valid != false {
@@ -2796,7 +2795,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_writeRawWithContinuation(text stri
 						var _hx_tmp_14 int32
 						_ = _hx_tmp_14
 						_hx_tmp_14 = _hx_tmp_12
-						_hx_tmp_10 = (Hx_Field_go_haxe_hxstring_substring(_hx_tmp_13, _hx_tmp_14, HxNullable[int32]{}))
+						_hx_tmp_10 = (Hx_Field_go_haxe_hxstring_substring(_hx_tmp_13, _hx_tmp_14, HxDefault[HxNullable[int32]]()))
 					}
 
 					line = _hx_tmp_10
@@ -2998,7 +2997,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printLiteral(lit *Hx_Obj_loreline_
 			{
 				var style int32
 				_ = style
-				style = _g.(Hx_Enum_loreline_literaltype_Object).Hx_Field_style
+				style = ((Hx_Enum_loreline_literaltype)(_g)).(Hx_Enum_loreline_literaltype_Object).Hx_Field_style
 				{
 					if style == ((int32)(1)) {
 						this.VTable.Hx_Field_write("{")
@@ -3258,7 +3257,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_printUnary(unary *Hx_Obj_loreline_
 		_ = _g
 		_g = unary.Hx_Field_op
 		if _g.Hx_Field_enumIndex() == 40 {
-			if _g.(Hx_Enum_loreline_tokentype_OpNot).Hx_Field_word == true {
+			if ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_OpNot).Hx_Field_word == true {
 				this.VTable.Hx_Field_write(" ")
 			}
 		}
@@ -3438,11 +3437,11 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_hasRealNewlines(node *Hx_Obj_lorel
 					if _g2.Hx_Field_enumIndex() == 0 {
 						var text string
 						_ = text
-						text = _g2.(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
+						text = ((Hx_Enum_loreline_stringparttype)(_g2)).(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
 						var _hx_tmp_1 string
 						_ = _hx_tmp_1
 						_hx_tmp_1 = text
-						if (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_1, "\n", HxNullable[int32]{})) != -1 {
+						if (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_1, "\n", HxDefault[HxNullable[int32]]())) != -1 {
 							return true
 						}
 					}
@@ -3515,7 +3514,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_getOperator(op Hx_Enum_loreline_to
 		{
 			var word bool
 			_ = word
-			word = op.(Hx_Enum_loreline_tokentype_OpEquals).Hx_Field_word
+			word = ((Hx_Enum_loreline_tokentype)(op)).(Hx_Enum_loreline_tokentype_OpEquals).Hx_Field_word
 			if word {
 				return "is"
 			} else {
@@ -3527,7 +3526,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_getOperator(op Hx_Enum_loreline_to
 		{
 			var word bool
 			_ = word
-			word = op.(Hx_Enum_loreline_tokentype_OpNotEquals).Hx_Field_word
+			word = ((Hx_Enum_loreline_tokentype)(op)).(Hx_Enum_loreline_tokentype_OpNotEquals).Hx_Field_word
 			if word {
 				return "is not"
 			} else {
@@ -3557,7 +3556,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_getOperator(op Hx_Enum_loreline_to
 
 	case 38:
 		{
-			if op.(Hx_Enum_loreline_tokentype_OpAnd).Hx_Field_word {
+			if ((Hx_Enum_loreline_tokentype)(op)).(Hx_Enum_loreline_tokentype_OpAnd).Hx_Field_word {
 				return "and"
 			} else {
 				return "&&"
@@ -3566,7 +3565,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_getOperator(op Hx_Enum_loreline_to
 
 	case 39:
 		{
-			if op.(Hx_Enum_loreline_tokentype_OpOr).Hx_Field_word {
+			if ((Hx_Enum_loreline_tokentype)(op)).(Hx_Enum_loreline_tokentype_OpOr).Hx_Field_word {
 				return "or"
 			} else {
 				return "||"
@@ -3577,7 +3576,7 @@ func (this *Hx_Obj_loreline_printer) Hx_Field_getOperator(op Hx_Enum_loreline_to
 		{
 			var word bool
 			_ = word
-			word = op.(Hx_Enum_loreline_tokentype_OpNot).Hx_Field_word
+			word = ((Hx_Enum_loreline_tokentype)(op)).(Hx_Enum_loreline_tokentype_OpNot).Hx_Field_word
 			if word {
 				return "not"
 			} else {
@@ -3660,7 +3659,7 @@ func Hx_Field_loreline_printer_isWordNotAfterIs(binary *Hx_Obj_loreline_nbinary)
 		_ = _g
 		_g = binary.Hx_Field_op
 		if _g.Hx_Field_enumIndex() == 32 {
-			if _g.(Hx_Enum_loreline_tokentype_OpEquals).Hx_Field_word != true {
+			if ((Hx_Enum_loreline_tokentype)(_g)).(Hx_Enum_loreline_tokentype_OpEquals).Hx_Field_word != true {
 				return false
 			}
 		} else {
@@ -3691,7 +3690,7 @@ func Hx_Field_loreline_printer_isWordNotAfterIs(binary *Hx_Obj_loreline_nbinary)
 	var _hx_tmp_1 bool
 	_ = _hx_tmp_1
 	if _g1.Hx_Field_enumIndex() == 40 {
-		_hx_tmp_1 = (_g1.(Hx_Enum_loreline_tokentype_OpNot).Hx_Field_word == true)
+		_hx_tmp_1 = (((Hx_Enum_loreline_tokentype)(_g1)).(Hx_Enum_loreline_tokentype_OpNot).Hx_Field_word == true)
 	} else {
 		_hx_tmp_1 = false
 	}

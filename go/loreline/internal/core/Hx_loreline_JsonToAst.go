@@ -1181,7 +1181,7 @@ func Hx_Field_loreline_jsontoast_whenStatementFromJson(json any) *Hx_Obj_lorelin
 	var _hx_tmp_2 HxNullable[string]
 	_ = _hx_tmp_2
 	if hx_nullable_t29 == nil {
-		_hx_tmp_2 = HxNullable[string]{Value: HxStringNull}
+		_hx_tmp_2 = HxDefault[HxNullable[string]]()
 	} else {
 		_hx_tmp_2 = HxNullable[string]{Value: Hx_Field_go_haxe_hxdynamic_toString(hx_nullable_t29), Valid: true}
 	}
@@ -1856,7 +1856,7 @@ func Hx_Field_loreline_jsontoast_functionDeclFromJson(json any) *Hx_Obj_loreline
 	var _hx_tmp_0 HxNullable[string]
 	_ = _hx_tmp_0
 	if hx_nullable_t30 == nil {
-		_hx_tmp_0 = HxNullable[string]{Value: HxStringNull}
+		_hx_tmp_0 = HxDefault[HxNullable[string]]()
 	} else {
 		_hx_tmp_0 = HxNullable[string]{Value: Hx_Field_go_haxe_hxdynamic_toString(hx_nullable_t30), Valid: true}
 	}
@@ -2228,7 +2228,7 @@ func Hx_Field_loreline_jsontoast_positionFromJson(json any) *Hx_Obj_loreline_pos
 
 func Hx_Field_loreline_jsontoast_extractComments(json any) any {
 	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(json, "comments"), nil))) {
-		return any(map[string]any{"leading": ((any)(nil)), "trailing": ((any)(nil))})
+		return any(map[string]any{"leading": HxDefault[any](), "trailing": HxDefault[any]()})
 	}
 
 	var leading HxArray[*Hx_Obj_loreline_comment]
@@ -2448,31 +2448,31 @@ func Hx_Field_loreline_jsontoast_tokenTypeFromString(s string) Hx_Enum_loreline_
 				var _hx_tmp_0 string
 				_ = _hx_tmp_0
 				_hx_tmp_0 = s
-				return Hx_Enum_loreline_tokentype_OpNotEquals{((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, "true", HxNullable[int32]{})) != -1)}
+				return Hx_Enum_loreline_tokentype_OpNotEquals{((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, "true", HxDefault[HxNullable[int32]]())) != -1)}
 			} else {
 				if Hx_Field_stringtools_startsWith(s, "OpEquals") {
 					var _hx_tmp_1 string
 					_ = _hx_tmp_1
 					_hx_tmp_1 = s
-					return Hx_Enum_loreline_tokentype_OpEquals{((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_1, "true", HxNullable[int32]{})) != -1)}
+					return Hx_Enum_loreline_tokentype_OpEquals{((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_1, "true", HxDefault[HxNullable[int32]]())) != -1)}
 				} else {
 					if Hx_Field_stringtools_startsWith(s, "OpNot") {
 						var _hx_tmp_2 string
 						_ = _hx_tmp_2
 						_hx_tmp_2 = s
-						return Hx_Enum_loreline_tokentype_OpNot{((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_2, "true", HxNullable[int32]{})) != -1)}
+						return Hx_Enum_loreline_tokentype_OpNot{((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_2, "true", HxDefault[HxNullable[int32]]())) != -1)}
 					} else {
 						if Hx_Field_stringtools_startsWith(s, "OpAnd") {
 							var _hx_tmp_3 string
 							_ = _hx_tmp_3
 							_hx_tmp_3 = s
-							return Hx_Enum_loreline_tokentype_OpAnd{((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_3, "true", HxNullable[int32]{})) != -1)}
+							return Hx_Enum_loreline_tokentype_OpAnd{((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_3, "true", HxDefault[HxNullable[int32]]())) != -1)}
 						} else {
 							if Hx_Field_stringtools_startsWith(s, "OpOr") {
 								var _hx_tmp_4 string
 								_ = _hx_tmp_4
 								_hx_tmp_4 = s
-								return Hx_Enum_loreline_tokentype_OpOr{((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_4, "true", HxNullable[int32]{})) != -1)}
+								return Hx_Enum_loreline_tokentype_OpOr{((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_4, "true", HxDefault[HxNullable[int32]]())) != -1)}
 							} else {
 								panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Unknown operator: ", s)))))
 							}

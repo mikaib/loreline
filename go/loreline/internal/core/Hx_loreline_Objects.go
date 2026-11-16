@@ -280,7 +280,7 @@ func Hx_Field_loreline_objects_removeField(interpreter *Hx_Obj_loreline_interpre
 		return _hx_tmp_0.VTable.Hx_Field_lorelineRemove(interpreter, name)
 	} else {
 		if Hx_Field_std_isOfType(fields, Hx_Obj_haxe_ds_stringmap_RTTI) {
-			return func() func(_hx_param_key string) bool {
+			return func() func(key string) bool {
 				var hx_dyncast_41 any
 				_ = hx_dyncast_41
 				hx_dyncast_41 = Hx_Field_go_haxe_hxdynamic_castClass(fields, "Hx_Obj_haxe_ds_stringmap")
@@ -297,8 +297,8 @@ func Hx_Field_loreline_objects_removeField(interpreter *Hx_Obj_loreline_interpre
 				var _hx_closure_src_194 func(_hx_param_key any) bool
 				_ = _hx_closure_src_194
 				_hx_closure_src_194 = _hx_tmp_1.VTable.Hx_Field_remove
-				return func(_hx_param_key string) bool {
-					return _hx_closure_src_194(((any)(_hx_param_key)))
+				return func(key string) bool {
+					return _hx_closure_src_194(((any)(key)))
 				}
 			}()(name)
 		} else {
@@ -323,7 +323,7 @@ func Hx_Field_loreline_objects_fieldExists(interpreter *Hx_Obj_loreline_interpre
 		return _hx_tmp_0.VTable.Hx_Field_lorelineExists(interpreter, name)
 	} else {
 		if Hx_Field_std_isOfType(fields, Hx_Obj_haxe_ds_stringmap_RTTI) {
-			return func() func(_hx_param_key string) bool {
+			return func() func(key string) bool {
 				var hx_dyncast_43 any
 				_ = hx_dyncast_43
 				hx_dyncast_43 = Hx_Field_go_haxe_hxdynamic_castClass(fields, "Hx_Obj_haxe_ds_stringmap")
@@ -340,8 +340,8 @@ func Hx_Field_loreline_objects_fieldExists(interpreter *Hx_Obj_loreline_interpre
 				var _hx_closure_src_195 func(_hx_param_key any) bool
 				_ = _hx_closure_src_195
 				_hx_closure_src_195 = _hx_tmp_1.VTable.Hx_Field_exists
-				return func(_hx_param_key string) bool {
-					return _hx_closure_src_195(((any)(_hx_param_key)))
+				return func(key string) bool {
+					return _hx_closure_src_195(((any)(key)))
 				}
 			}()(name)
 		} else {
@@ -403,15 +403,14 @@ func Hx_Field_loreline_objects_createFields(interpreter__isOptional any, _hx_res
 		if (_hx_reserved_type).Valid == false {
 			var hx_nullable_t33 HxNullable[string]
 			_ = hx_nullable_t33
-			hx_nullable_t33 = HxNullable[string]{Value: HxStringNull}
-
+			hx_nullable_t33 = HxDefault[HxNullable[string]]()
 			_hx_reserved_type = HxNullable[string]{Value: (hx_nullable_t33).Value, Valid: (hx_nullable_t33).Valid}
 		}
 
 		var _hx_tmp_0 bool
 		_ = _hx_tmp_0
 		if interpreter != nil {
-			_hx_tmp_0 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(interpreter.Hx_Field_customCreateFields)), ((any)(nil))))))
+			_hx_tmp_0 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(interpreter.Hx_Field_customCreateFields)), HxDefault[any]()))))
 		} else {
 			_hx_tmp_0 = false
 		}

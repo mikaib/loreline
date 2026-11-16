@@ -604,7 +604,7 @@ func Hx_Field_lambda_count(it any, pred__isOptional any) int32 {
 		var n int32
 		_ = n
 		n = 0
-		if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(((any)(pred)), ((any)(nil))))) {
+		if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(((any)(pred)), HxDefault[any]()))) {
 			var _hx_tmp_0 any
 			_ = _hx_tmp_0
 			_hx_tmp_0 = Hx_Field_go_haxe_hxdynamic_getField(it, "iterator")

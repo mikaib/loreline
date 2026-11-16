@@ -89,7 +89,7 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EVar).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EVar).Hx_Field_e
 			if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(e, nil))) {
 				f(e)
 			}
@@ -99,7 +99,7 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EParent).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EParent).Hx_Field_e
 			f(e)
 		}
 
@@ -107,7 +107,7 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var el HxArray[any]
 			_ = el
-			el = _g.(Hx_Enum_loreline_lorscript_exprdef_EBlock).Hx_Field_e
+			el = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EBlock).Hx_Field_e
 			{
 				var _g1 int32
 				_ = _g1
@@ -133,7 +133,7 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EField).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EField).Hx_Field_e
 			f(e)
 		}
 
@@ -141,10 +141,10 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var e1 any
 			_ = e1
-			e1 = _g.(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_e1
+			e1 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_e1
 			var e2 any
 			_ = e2
-			e2 = _g.(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_e2
+			e2 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_e2
 			{
 				f(e1)
 				f(e2)
@@ -155,7 +155,7 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EUnop).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EUnop).Hx_Field_e
 			f(e)
 		}
 
@@ -163,10 +163,10 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_ECall).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ECall).Hx_Field_e
 			var args HxArray[any]
 			_ = args
-			args = _g.(Hx_Enum_loreline_lorscript_exprdef_ECall).Hx_Field_params
+			args = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ECall).Hx_Field_params
 			{
 				f(e)
 				{
@@ -195,13 +195,13 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var c any
 			_ = c
-			c = _g.(Hx_Enum_loreline_lorscript_exprdef_EIf).Hx_Field_cond
+			c = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EIf).Hx_Field_cond
 			var e1 any
 			_ = e1
-			e1 = _g.(Hx_Enum_loreline_lorscript_exprdef_EIf).Hx_Field_e1
+			e1 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EIf).Hx_Field_e1
 			var e2 any
 			_ = e2
-			e2 = _g.(Hx_Enum_loreline_lorscript_exprdef_EIf).Hx_Field_e2
+			e2 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EIf).Hx_Field_e2
 			{
 				f(c)
 				f(e1)
@@ -215,10 +215,10 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var c any
 			_ = c
-			c = _g.(Hx_Enum_loreline_lorscript_exprdef_EWhile).Hx_Field_cond
+			c = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EWhile).Hx_Field_cond
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EWhile).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EWhile).Hx_Field_e
 			{
 				f(c)
 				f(e)
@@ -229,10 +229,10 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var it any
 			_ = it
-			it = _g.(Hx_Enum_loreline_lorscript_exprdef_EFor).Hx_Field_it
+			it = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EFor).Hx_Field_it
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EFor).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EFor).Hx_Field_e
 			{
 				f(it)
 				f(e)
@@ -247,7 +247,7 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EFunction).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EFunction).Hx_Field_e
 			f(e)
 		}
 
@@ -255,7 +255,7 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EReturn).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EReturn).Hx_Field_e
 			if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(e, nil))) {
 				f(e)
 			}
@@ -265,10 +265,10 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EArray).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EArray).Hx_Field_e
 			var i any
 			_ = i
-			i = _g.(Hx_Enum_loreline_lorscript_exprdef_EArray).Hx_Field_index
+			i = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EArray).Hx_Field_index
 			{
 				f(e)
 				f(i)
@@ -279,7 +279,7 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var el HxArray[any]
 			_ = el
-			el = _g.(Hx_Enum_loreline_lorscript_exprdef_EArrayDecl).Hx_Field_e
+			el = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EArrayDecl).Hx_Field_e
 			{
 				var _g1 int32
 				_ = _g1
@@ -305,7 +305,7 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var el HxArray[any]
 			_ = el
-			el = _g.(Hx_Enum_loreline_lorscript_exprdef_ENew).Hx_Field_params
+			el = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ENew).Hx_Field_params
 			{
 				var _g1 int32
 				_ = _g1
@@ -331,7 +331,7 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EThrow).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EThrow).Hx_Field_e
 			f(e)
 		}
 
@@ -339,10 +339,10 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_ETry).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ETry).Hx_Field_e
 			var c any
 			_ = c
-			c = _g.(Hx_Enum_loreline_lorscript_exprdef_ETry).Hx_Field_ecatch
+			c = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ETry).Hx_Field_ecatch
 			{
 				f(e)
 				f(c)
@@ -353,7 +353,7 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var fl HxArray[any]
 			_ = fl
-			fl = _g.(Hx_Enum_loreline_lorscript_exprdef_EObject).Hx_Field_fl
+			fl = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EObject).Hx_Field_fl
 			{
 				var _g1 int32
 				_ = _g1
@@ -379,13 +379,13 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var c any
 			_ = c
-			c = _g.(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_cond
+			c = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_cond
 			var e1 any
 			_ = e1
-			e1 = _g.(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_e1
+			e1 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_e1
 			var e2 any
 			_ = e2
-			e2 = _g.(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_e2
+			e2 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_e2
 			{
 				f(c)
 				f(e1)
@@ -397,13 +397,13 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_ESwitch).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ESwitch).Hx_Field_e
 			var cases HxArray[any]
 			_ = cases
-			cases = _g.(Hx_Enum_loreline_lorscript_exprdef_ESwitch).Hx_Field_cases
+			cases = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ESwitch).Hx_Field_cases
 			var def any
 			_ = def
-			def = _g.(Hx_Enum_loreline_lorscript_exprdef_ESwitch).Hx_Field_defaultExpr
+			def = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ESwitch).Hx_Field_defaultExpr
 			{
 				f(e)
 				{
@@ -459,10 +459,10 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var c any
 			_ = c
-			c = _g.(Hx_Enum_loreline_lorscript_exprdef_EDoWhile).Hx_Field_cond
+			c = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EDoWhile).Hx_Field_cond
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EDoWhile).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EDoWhile).Hx_Field_e
 			{
 				f(c)
 				f(e)
@@ -473,13 +473,13 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var name string
 			_ = name
-			name = _g.(Hx_Enum_loreline_lorscript_exprdef_EMeta).Hx_Field_name
+			name = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EMeta).Hx_Field_name
 			var args HxArray[any]
 			_ = args
-			args = _g.(Hx_Enum_loreline_lorscript_exprdef_EMeta).Hx_Field_args
+			args = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EMeta).Hx_Field_args
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EMeta).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EMeta).Hx_Field_e
 			{
 				if args != nil {
 					var tmp__g_1 int32
@@ -509,7 +509,7 @@ func Hx_Field_loreline_lorscript_tools_iter(e any, f func(_hx_carg0 any)) {
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_ECheckType).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ECheckType).Hx_Field_e
 			f(e)
 		}
 
@@ -558,13 +558,13 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var n string
 			_ = n
-			n = _g.(Hx_Enum_loreline_lorscript_exprdef_EVar).Hx_Field_n
+			n = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EVar).Hx_Field_n
 			var t Hx_Enum_loreline_lorscript_ctype
 			_ = t
-			t = _g.(Hx_Enum_loreline_lorscript_exprdef_EVar).Hx_Field_t
+			t = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EVar).Hx_Field_t
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EVar).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EVar).Hx_Field_e
 			var _hx_tmp_0 string
 			_ = _hx_tmp_0
 			_hx_tmp_0 = n
@@ -586,7 +586,7 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EParent).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EParent).Hx_Field_e
 			edef = Hx_Enum_loreline_lorscript_exprdef_EParent{f(e)}
 		}
 
@@ -594,7 +594,7 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var el HxArray[any]
 			_ = el
-			el = _g.(Hx_Enum_loreline_lorscript_exprdef_EBlock).Hx_Field_e
+			el = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EBlock).Hx_Field_e
 			var _g1 HxArray[any]
 			_ = _g1
 			_g1 = HxMakeArray[any]().Dyn()
@@ -628,10 +628,10 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EField).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EField).Hx_Field_e
 			var fi string
 			_ = fi
-			fi = _g.(Hx_Enum_loreline_lorscript_exprdef_EField).Hx_Field_f
+			fi = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EField).Hx_Field_f
 			edef = Hx_Enum_loreline_lorscript_exprdef_EField{f(e), fi}
 		}
 
@@ -639,13 +639,13 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var op string
 			_ = op
-			op = _g.(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_op
+			op = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_op
 			var e1 any
 			_ = e1
-			e1 = _g.(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_e1
+			e1 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_e1
 			var e2 any
 			_ = e2
-			e2 = _g.(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_e2
+			e2 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_e2
 			var _hx_tmp_5 string
 			_ = _hx_tmp_5
 			_hx_tmp_5 = op
@@ -659,13 +659,13 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var op string
 			_ = op
-			op = _g.(Hx_Enum_loreline_lorscript_exprdef_EUnop).Hx_Field_op
+			op = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EUnop).Hx_Field_op
 			var pre bool
 			_ = pre
-			pre = _g.(Hx_Enum_loreline_lorscript_exprdef_EUnop).Hx_Field_prefix
+			pre = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EUnop).Hx_Field_prefix
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EUnop).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EUnop).Hx_Field_e
 			var _hx_tmp_7 string
 			_ = _hx_tmp_7
 			_hx_tmp_7 = op
@@ -679,10 +679,10 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_ECall).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ECall).Hx_Field_e
 			var args HxArray[any]
 			_ = args
-			args = _g.(Hx_Enum_loreline_lorscript_exprdef_ECall).Hx_Field_params
+			args = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ECall).Hx_Field_params
 			var edef1 any
 			_ = edef1
 			edef1 = f(e)
@@ -719,13 +719,13 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var c any
 			_ = c
-			c = _g.(Hx_Enum_loreline_lorscript_exprdef_EIf).Hx_Field_cond
+			c = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EIf).Hx_Field_cond
 			var e1 any
 			_ = e1
-			e1 = _g.(Hx_Enum_loreline_lorscript_exprdef_EIf).Hx_Field_e1
+			e1 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EIf).Hx_Field_e1
 			var e2 any
 			_ = e2
-			e2 = _g.(Hx_Enum_loreline_lorscript_exprdef_EIf).Hx_Field_e2
+			e2 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EIf).Hx_Field_e2
 			var _hx_tmp_11 any
 			_ = _hx_tmp_11
 			_hx_tmp_11 = f(c)
@@ -747,10 +747,10 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var c any
 			_ = c
-			c = _g.(Hx_Enum_loreline_lorscript_exprdef_EWhile).Hx_Field_cond
+			c = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EWhile).Hx_Field_cond
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EWhile).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EWhile).Hx_Field_e
 			var _hx_tmp_14 any
 			_ = _hx_tmp_14
 			_hx_tmp_14 = f(c)
@@ -761,13 +761,13 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var v string
 			_ = v
-			v = _g.(Hx_Enum_loreline_lorscript_exprdef_EFor).Hx_Field_v
+			v = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EFor).Hx_Field_v
 			var it any
 			_ = it
-			it = _g.(Hx_Enum_loreline_lorscript_exprdef_EFor).Hx_Field_it
+			it = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EFor).Hx_Field_it
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EFor).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EFor).Hx_Field_e
 			var _hx_tmp_15 string
 			_ = _hx_tmp_15
 			_hx_tmp_15 = v
@@ -793,16 +793,16 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var args HxArray[any]
 			_ = args
-			args = _g.(Hx_Enum_loreline_lorscript_exprdef_EFunction).Hx_Field_args
+			args = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EFunction).Hx_Field_args
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EFunction).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EFunction).Hx_Field_e
 			var name HxNullable[string]
 			_ = name
-			name = _g.(Hx_Enum_loreline_lorscript_exprdef_EFunction).Hx_Field_name
+			name = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EFunction).Hx_Field_name
 			var t Hx_Enum_loreline_lorscript_ctype
 			_ = t
-			t = _g.(Hx_Enum_loreline_lorscript_exprdef_EFunction).Hx_Field_ret
+			t = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EFunction).Hx_Field_ret
 			var _hx_tmp_17 HxArray[any]
 			_ = _hx_tmp_17
 			_hx_tmp_17 = args
@@ -813,7 +813,7 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EReturn).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EReturn).Hx_Field_e
 			var _hx_tmp_18 any
 			_ = _hx_tmp_18
 			if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(e, nil))) {
@@ -829,10 +829,10 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EArray).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EArray).Hx_Field_e
 			var i any
 			_ = i
-			i = _g.(Hx_Enum_loreline_lorscript_exprdef_EArray).Hx_Field_index
+			i = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EArray).Hx_Field_index
 			var _hx_tmp_19 any
 			_ = _hx_tmp_19
 			_hx_tmp_19 = f(e)
@@ -843,7 +843,7 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var el HxArray[any]
 			_ = el
-			el = _g.(Hx_Enum_loreline_lorscript_exprdef_EArrayDecl).Hx_Field_e
+			el = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EArrayDecl).Hx_Field_e
 			var _g1 HxArray[any]
 			_ = _g1
 			_g1 = HxMakeArray[any]().Dyn()
@@ -877,10 +877,10 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var cl string
 			_ = cl
-			cl = _g.(Hx_Enum_loreline_lorscript_exprdef_ENew).Hx_Field_cl
+			cl = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ENew).Hx_Field_cl
 			var el HxArray[any]
 			_ = el
-			el = _g.(Hx_Enum_loreline_lorscript_exprdef_ENew).Hx_Field_params
+			el = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ENew).Hx_Field_params
 			var _g1 HxArray[any]
 			_ = _g1
 			_g1 = HxMakeArray[any]().Dyn()
@@ -914,7 +914,7 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EThrow).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EThrow).Hx_Field_e
 			edef = Hx_Enum_loreline_lorscript_exprdef_EThrow{f(e)}
 		}
 
@@ -922,16 +922,16 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_ETry).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ETry).Hx_Field_e
 			var v string
 			_ = v
-			v = _g.(Hx_Enum_loreline_lorscript_exprdef_ETry).Hx_Field_v
+			v = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ETry).Hx_Field_v
 			var t Hx_Enum_loreline_lorscript_ctype
 			_ = t
-			t = _g.(Hx_Enum_loreline_lorscript_exprdef_ETry).Hx_Field_t
+			t = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ETry).Hx_Field_t
 			var c any
 			_ = c
-			c = _g.(Hx_Enum_loreline_lorscript_exprdef_ETry).Hx_Field_ecatch
+			c = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ETry).Hx_Field_ecatch
 			var _hx_tmp_24 any
 			_ = _hx_tmp_24
 			_hx_tmp_24 = f(e)
@@ -948,7 +948,7 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var fl HxArray[any]
 			_ = fl
-			fl = _g.(Hx_Enum_loreline_lorscript_exprdef_EObject).Hx_Field_fl
+			fl = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EObject).Hx_Field_fl
 			var _g1 HxArray[any]
 			_ = _g1
 			_g1 = HxMakeArray[any]().Dyn()
@@ -985,13 +985,13 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var c any
 			_ = c
-			c = _g.(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_cond
+			c = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_cond
 			var e1 any
 			_ = e1
-			e1 = _g.(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_e1
+			e1 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_e1
 			var e2 any
 			_ = e2
-			e2 = _g.(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_e2
+			e2 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_e2
 			var _hx_tmp_30 any
 			_ = _hx_tmp_30
 			_hx_tmp_30 = f(c)
@@ -1005,13 +1005,13 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_ESwitch).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ESwitch).Hx_Field_e
 			var cases HxArray[any]
 			_ = cases
-			cases = _g.(Hx_Enum_loreline_lorscript_exprdef_ESwitch).Hx_Field_cases
+			cases = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ESwitch).Hx_Field_cases
 			var def any
 			_ = def
-			def = _g.(Hx_Enum_loreline_lorscript_exprdef_ESwitch).Hx_Field_defaultExpr
+			def = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ESwitch).Hx_Field_defaultExpr
 			var edef1 any
 			_ = edef1
 			edef1 = f(e)
@@ -1094,10 +1094,10 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var c any
 			_ = c
-			c = _g.(Hx_Enum_loreline_lorscript_exprdef_EDoWhile).Hx_Field_cond
+			c = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EDoWhile).Hx_Field_cond
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EDoWhile).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EDoWhile).Hx_Field_e
 			var _hx_tmp_40 any
 			_ = _hx_tmp_40
 			_hx_tmp_40 = f(c)
@@ -1108,13 +1108,13 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var name string
 			_ = name
-			name = _g.(Hx_Enum_loreline_lorscript_exprdef_EMeta).Hx_Field_name
+			name = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EMeta).Hx_Field_name
 			var args HxArray[any]
 			_ = args
-			args = _g.(Hx_Enum_loreline_lorscript_exprdef_EMeta).Hx_Field_args
+			args = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EMeta).Hx_Field_args
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EMeta).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EMeta).Hx_Field_e
 			var edef1 HxArray[any]
 			_ = edef1
 			if args == nil {
@@ -1162,10 +1162,10 @@ func Hx_Field_loreline_lorscript_tools_map(e any, f func(_hx_carg0 any) any) any
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_ECheckType).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ECheckType).Hx_Field_e
 			var t Hx_Enum_loreline_lorscript_ctype
 			_ = t
-			t = _g.(Hx_Enum_loreline_lorscript_exprdef_ECheckType).Hx_Field_t
+			t = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ECheckType).Hx_Field_t
 			edef = Hx_Enum_loreline_lorscript_exprdef_ECheckType{f(e), t}
 		}
 

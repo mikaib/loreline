@@ -164,7 +164,7 @@ func Hx_Field_loreline_translation_xlifftranslation_toLoreline(content string, l
 	if xliff.VTable.Hx_Field_exists("trgLang") {
 		_hx_tmp_4 = xliff.VTable.Hx_Field_get("trgLang")
 	} else {
-		_hx_tmp_4 = HxNullable[string]{Value: HxStringNull}
+		_hx_tmp_4 = HxDefault[HxNullable[string]]()
 	}
 
 	var xliffTrgLang HxNullable[string]
@@ -226,7 +226,7 @@ func Hx_Field_loreline_translation_xlifftranslation_toLoreline(content string, l
 				if file.VTable.Hx_Field_exists("target-language") {
 					_hx_tmp_9 = file.VTable.Hx_Field_get("target-language")
 				} else {
-					_hx_tmp_9 = HxNullable[string]{Value: HxStringNull}
+					_hx_tmp_9 = HxDefault[HxNullable[string]]()
 				}
 
 				var fileTrgLang HxNullable[string]
@@ -499,7 +499,7 @@ func Hx_Field_loreline_translation_xlifftranslation_localeMatches(fileLocale str
 	_hx_tmp_0 = fileLow
 	var dash int32
 	_ = dash
-	dash = (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, "-", HxNullable[int32]{}))
+	dash = (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, "-", HxDefault[HxNullable[int32]]()))
 	var _hx_tmp_1 string
 	_ = _hx_tmp_1
 	if dash < 0 {
@@ -522,7 +522,7 @@ func Hx_Field_loreline_translation_xlifftranslation_localeMatches(fileLocale str
 			var _hx_tmp_6 string
 			_ = _hx_tmp_6
 			_hx_tmp_6 = _hx_tmp_5
-			_hx_tmp_2 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_6, 0, HxNullable[int32]{}))
+			_hx_tmp_2 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_6, 0, HxDefault[HxNullable[int32]]()))
 		}
 
 		_hx_tmp_1 = _hx_tmp_2
@@ -536,7 +536,7 @@ func Hx_Field_loreline_translation_xlifftranslation_localeMatches(fileLocale str
 	_hx_tmp_7 = reqLow
 	var dash1 int32
 	_ = dash1
-	dash1 = (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_7, "-", HxNullable[int32]{}))
+	dash1 = (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_7, "-", HxDefault[HxNullable[int32]]()))
 	var _hx_tmp_8 string
 	_ = _hx_tmp_8
 	if dash1 < 0 {
@@ -559,7 +559,7 @@ func Hx_Field_loreline_translation_xlifftranslation_localeMatches(fileLocale str
 			var _hx_tmp_13 string
 			_ = _hx_tmp_13
 			_hx_tmp_13 = _hx_tmp_12
-			_hx_tmp_9 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_13, 0, HxNullable[int32]{}))
+			_hx_tmp_9 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_13, 0, HxDefault[HxNullable[int32]]()))
 		}
 
 		_hx_tmp_8 = _hx_tmp_9
@@ -577,7 +577,7 @@ func Hx_Field_loreline_translation_xlifftranslation_primarySubtag(s string) stri
 	_hx_tmp_0 = s
 	var dash int32
 	_ = dash
-	dash = (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, "-", HxNullable[int32]{}))
+	dash = (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, "-", HxDefault[HxNullable[int32]]()))
 	if dash < 0 {
 		return s
 	}
@@ -591,7 +591,7 @@ func Hx_Field_loreline_translation_xlifftranslation_primarySubtag(s string) stri
 		var _hx_tmp_2 string
 		_ = _hx_tmp_2
 		_hx_tmp_2 = s
-		return (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_2, 0, HxNullable[int32]{}))
+		return (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_2, 0, HxDefault[HxNullable[int32]]()))
 	}
 }
 
@@ -827,12 +827,12 @@ func Hx_Field_loreline_translation_xlifftranslation_fromScript(script *Hx_Obj_lo
 			var _hx_tmp_3 bool
 			_ = _hx_tmp_3
 			if existing != nil {
-				_hx_tmp_3 = func() func(_hx_param_key string) bool {
+				_hx_tmp_3 = func() func(key string) bool {
 					var _hx_closure_src_818 func(_hx_param_key any) bool
 					_ = _hx_closure_src_818
 					_hx_closure_src_818 = existing.VTable.Hx_Field_exists
-					return func(_hx_param_key string) bool {
-						return _hx_closure_src_818(((any)(_hx_param_key)))
+					return func(key string) bool {
+						return _hx_closure_src_818(((any)(key)))
 					}
 				}()(Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_getField(entry, "id")))
 			} else {
@@ -840,14 +840,14 @@ func Hx_Field_loreline_translation_xlifftranslation_fromScript(script *Hx_Obj_lo
 			}
 
 			if _hx_tmp_3 {
-				_hx_tmp_2 = printer.VTable.Hx_Field_printStringLiteralAsText(func() func(_hx_param_key string) *Hx_Obj_loreline_nstringliteral {
+				_hx_tmp_2 = printer.VTable.Hx_Field_printStringLiteralAsText(func() func(key string) *Hx_Obj_loreline_nstringliteral {
 					var _hx_closure_src_819 func(_hx_param_key any) any
 					_ = _hx_closure_src_819
 					_hx_closure_src_819 = existing.VTable.Hx_Field_get
-					return func(_hx_param_key string) *Hx_Obj_loreline_nstringliteral {
+					return func(key string) *Hx_Obj_loreline_nstringliteral {
 						var hx_dyncast_368 any
 						_ = hx_dyncast_368
-						hx_dyncast_368 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_819(((any)(_hx_param_key))), "Hx_Obj_loreline_nstringliteral")
+						hx_dyncast_368 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_819(((any)(key))), "Hx_Obj_loreline_nstringliteral")
 						var _hx_tmp_4 *Hx_Obj_loreline_nstringliteral
 						_ = _hx_tmp_4
 						if hx_dyncast_368 != nil {

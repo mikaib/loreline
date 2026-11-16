@@ -9,24 +9,24 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_io_input() {
 }
 
 type Hx_Obj_VTable_haxe_io_input interface {
-	Hx_Field_readByte() int32
-	Hx_Field_read(nbytes int32) *Hx_Obj_haxe_io_bytes
-	Hx_Field_readUntil(end int32) string
-	Hx_Field_readLine() string
-	Hx_Field_readDouble() float64
-	Hx_Field_set_bigEndian(b bool) bool
-	Hx_Field_readUInt16() int32
-	Hx_Field_readUInt24() int32
-	Hx_Field_readString(_hx_reserved_len int32, encoding__isOptional any) string
-	Hx_Field_readBytes(s *Hx_Obj_haxe_io_bytes, pos int32, _hx_reserved_len int32) int32
-	Hx_Field_close()
 	Hx_Field_readAll(bufsize__isOptional any) *Hx_Obj_haxe_io_bytes
 	Hx_Field_readFloat() float64
-	Hx_Field_readInt8() int32
-	Hx_Field_readInt16() int32
-	Hx_Field_readInt32() int32
-	Hx_Field_readFullBytes(s *Hx_Obj_haxe_io_bytes, pos int32, _hx_reserved_len int32)
+	Hx_Field_readDouble() float64
 	Hx_Field_readInt24() int32
+	Hx_Field_readInt32() int32
+	Hx_Field_read(nbytes int32) *Hx_Obj_haxe_io_bytes
+	Hx_Field_readLine() string
+	Hx_Field_readUInt16() int32
+	Hx_Field_readString(_hx_reserved_len int32, encoding__isOptional any) string
+	Hx_Field_readBytes(s *Hx_Obj_haxe_io_bytes, pos int32, _hx_reserved_len int32) int32
+	Hx_Field_set_bigEndian(b bool) bool
+	Hx_Field_readInt16() int32
+	Hx_Field_readUInt24() int32
+	Hx_Field_readByte() int32
+	Hx_Field_close()
+	Hx_Field_readFullBytes(s *Hx_Obj_haxe_io_bytes, pos int32, _hx_reserved_len int32)
+	Hx_Field_readUntil(end int32) string
+	Hx_Field_readInt8() int32
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -147,8 +147,7 @@ func (this *Hx_Obj_haxe_io_input) Hx_Field_readAll(bufsize__isOptional any) *Hx_
 		if (bufsize).Valid == false {
 			var hx_nullable_t50 HxNullable[int32]
 			_ = hx_nullable_t50
-			hx_nullable_t50 = HxNullable[int32]{}
-
+			hx_nullable_t50 = HxDefault[HxNullable[int32]]()
 			bufsize = HxNullable[int32]{Value: (hx_nullable_t50).Value, Valid: (hx_nullable_t50).Valid}
 		}
 

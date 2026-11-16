@@ -75,7 +75,7 @@ func Hx_Field_haxe_log_formatOutput(v any, infos any) string {
 	var pstr string
 	_ = pstr
 	pstr = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_add(_hx_tmp_0, Hx_Field_go_haxe_hxdynamic_getField(infos, "lineNumber")))
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(infos, "customParams"), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(infos, "customParams"), HxDefault[any]()))) {
 		var _g int32
 		_ = _g
 		_g = 0

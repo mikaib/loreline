@@ -302,12 +302,12 @@ func Hx_Field_loreline_translation_potranslation_fromScript(script *Hx_Obj_lorel
 			var _hx_tmp_3 bool
 			_ = _hx_tmp_3
 			if existing != nil {
-				_hx_tmp_3 = func() func(_hx_param_key string) bool {
+				_hx_tmp_3 = func() func(key string) bool {
 					var _hx_closure_src_796 func(_hx_param_key any) bool
 					_ = _hx_closure_src_796
 					_hx_closure_src_796 = existing.VTable.Hx_Field_exists
-					return func(_hx_param_key string) bool {
-						return _hx_closure_src_796(((any)(_hx_param_key)))
+					return func(key string) bool {
+						return _hx_closure_src_796(((any)(key)))
 					}
 				}()(Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_getField(entry, "id")))
 			} else {
@@ -315,14 +315,14 @@ func Hx_Field_loreline_translation_potranslation_fromScript(script *Hx_Obj_lorel
 			}
 
 			if _hx_tmp_3 {
-				_hx_tmp_2 = printer.VTable.Hx_Field_printStringLiteralAsText(func() func(_hx_param_key string) *Hx_Obj_loreline_nstringliteral {
+				_hx_tmp_2 = printer.VTable.Hx_Field_printStringLiteralAsText(func() func(key string) *Hx_Obj_loreline_nstringliteral {
 					var _hx_closure_src_797 func(_hx_param_key any) any
 					_ = _hx_closure_src_797
 					_hx_closure_src_797 = existing.VTable.Hx_Field_get
-					return func(_hx_param_key string) *Hx_Obj_loreline_nstringliteral {
+					return func(key string) *Hx_Obj_loreline_nstringliteral {
 						var hx_dyncast_362 any
 						_ = hx_dyncast_362
-						hx_dyncast_362 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_797(((any)(_hx_param_key))), "Hx_Obj_loreline_nstringliteral")
+						hx_dyncast_362 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_797(((any)(key))), "Hx_Obj_loreline_nstringliteral")
 						var _hx_tmp_4 *Hx_Obj_loreline_nstringliteral
 						_ = _hx_tmp_4
 						if hx_dyncast_362 != nil {
@@ -490,7 +490,7 @@ func Hx_Field_loreline_translation_potranslation_parse(content string) HxArray[*
 				var _hx_tmp_5 string
 				_ = _hx_tmp_5
 				_hx_tmp_5 = _hx_tmp_4
-				_hx_tmp_3 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_5, 0, HxNullable[int32]{}))
+				_hx_tmp_3 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_5, 0, HxDefault[HxNullable[int32]]()))
 			}
 
 			line = _hx_tmp_3
@@ -531,8 +531,7 @@ func Hx_Field_loreline_translation_potranslation_parse(content string) HxArray[*
 		} else {
 			var tmp__hx_reserved_len_1 HxNullable[int32]
 			_ = tmp__hx_reserved_len_1
-			tmp__hx_reserved_len_1 = HxNullable[int32]{}
-
+			tmp__hx_reserved_len_1 = HxDefault[HxNullable[int32]]()
 			var _hx_tmp_7 string
 			_ = _hx_tmp_7
 			if (tmp__hx_reserved_len_1).Valid != false {
@@ -550,7 +549,7 @@ func Hx_Field_loreline_translation_potranslation_parse(content string) HxArray[*
 				var _hx_tmp_11 int32
 				_ = _hx_tmp_11
 				_hx_tmp_11 = _hx_tmp_9
-				_hx_tmp_7 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_10, _hx_tmp_11, HxNullable[int32]{}))
+				_hx_tmp_7 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_10, _hx_tmp_11, HxDefault[HxNullable[int32]]()))
 			}
 
 			trimmed = _hx_tmp_7
@@ -663,7 +662,7 @@ func Hx_Field_loreline_translation_potranslation_parse(content string) HxArray[*
 					var _hx_tmp_20 string
 					_ = _hx_tmp_20
 					_hx_tmp_20 = _hx_tmp_19
-					_hx_tmp_18 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_20, 0, HxNullable[int32]{}))
+					_hx_tmp_18 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_20, 0, HxDefault[HxNullable[int32]]()))
 				}
 
 				next = _hx_tmp_18
@@ -704,8 +703,7 @@ func Hx_Field_loreline_translation_potranslation_parse(content string) HxArray[*
 			} else {
 				var tmp__hx_reserved_len_2 HxNullable[int32]
 				_ = tmp__hx_reserved_len_2
-				tmp__hx_reserved_len_2 = HxNullable[int32]{}
-
+				tmp__hx_reserved_len_2 = HxDefault[HxNullable[int32]]()
 				var _hx_tmp_22 string
 				_ = _hx_tmp_22
 				if (tmp__hx_reserved_len_2).Valid != false {
@@ -723,7 +721,7 @@ func Hx_Field_loreline_translation_potranslation_parse(content string) HxArray[*
 					var _hx_tmp_26 int32
 					_ = _hx_tmp_26
 					_hx_tmp_26 = _hx_tmp_24
-					_hx_tmp_22 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_25, _hx_tmp_26, HxNullable[int32]{}))
+					_hx_tmp_22 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_25, _hx_tmp_26, HxDefault[HxNullable[int32]]()))
 				}
 
 				nextTrim = _hx_tmp_22
@@ -838,7 +836,7 @@ func Hx_Field_loreline_translation_potranslation_readKeyword(line string) string
 		var _hx_tmp_2 string
 		_ = _hx_tmp_2
 		_hx_tmp_2 = line
-		return (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_2, 0, HxNullable[int32]{}))
+		return (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_2, 0, HxDefault[HxNullable[int32]]()))
 	}
 }
 
@@ -1008,8 +1006,7 @@ func Hx_Field_loreline_translation_potranslation_trimLeft(s string) string {
 	} else {
 		var tmp__hx_reserved_len_1 HxNullable[int32]
 		_ = tmp__hx_reserved_len_1
-		tmp__hx_reserved_len_1 = HxNullable[int32]{}
-
+		tmp__hx_reserved_len_1 = HxDefault[HxNullable[int32]]()
 		if (tmp__hx_reserved_len_1).Valid != false {
 			return (Hx_Field_go_haxe_hxstring_substr(s, i, tmp__hx_reserved_len_1))
 		} else {
@@ -1019,7 +1016,7 @@ func Hx_Field_loreline_translation_potranslation_trimLeft(s string) string {
 			var _hx_tmp_2 int32
 			_ = _hx_tmp_2
 			_hx_tmp_2 = i
-			return (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_1, _hx_tmp_2, HxNullable[int32]{}))
+			return (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_1, _hx_tmp_2, HxDefault[HxNullable[int32]]()))
 		}
 	}
 }

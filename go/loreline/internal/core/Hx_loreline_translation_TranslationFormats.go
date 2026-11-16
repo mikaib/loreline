@@ -136,12 +136,12 @@ func Hx_Init_Hx_Field_loreline_translation_translationformats_enabled() Hx_Typed
 }
 
 func Hx_Field_loreline_translation_translationformats_translationFormat(name string, value bool) {
-	func() func(_hx_param_key string, _hx_param_value bool) {
+	func() func(key string, value bool) {
 		var _hx_closure_src_840 func(_hx_param_key any, _hx_param_value any)
 		_ = _hx_closure_src_840
 		_hx_closure_src_840 = Hx_Field_loreline_translation_translationformats_enabled.VTable.Hx_Field_set
-		return func(_hx_param_key string, _hx_param_value bool) {
-			_hx_closure_src_840(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+		return func(key string, value bool) {
+			_hx_closure_src_840(((any)(key)), ((any)(value)))
 		}
 	}()(name, value)
 }
@@ -168,18 +168,18 @@ func Hx_Field_loreline_translation_translationformats_anyEnabled() bool {
 			_g++
 			var hx_cmp_23 HxNullable[bool]
 			_ = hx_cmp_23
-			hx_cmp_23 = func() func(_hx_param_key string) HxNullable[bool] {
+			hx_cmp_23 = func() func(key string) HxNullable[bool] {
 				var _hx_closure_src_842 func(_hx_param_key any) any
 				_ = _hx_closure_src_842
 				_hx_closure_src_842 = Hx_Field_loreline_translation_translationformats_enabled.VTable.Hx_Field_get
-				return func(_hx_param_key string) HxNullable[bool] {
+				return func(key string) HxNullable[bool] {
 					var hx_nullable_t71 any
 					_ = hx_nullable_t71
-					hx_nullable_t71 = _hx_closure_src_842(((any)(_hx_param_key)))
+					hx_nullable_t71 = _hx_closure_src_842(((any)(key)))
 					var _hx_tmp_1 HxNullable[bool]
 					_ = _hx_tmp_1
 					if hx_nullable_t71 == nil {
-						_hx_tmp_1 = HxNullable[bool]{}
+						_hx_tmp_1 = HxDefault[HxNullable[bool]]()
 					} else {
 						_hx_tmp_1 = HxNullable[bool]{Value: ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(hx_nullable_t71))), Valid: true}
 					}
@@ -206,9 +206,9 @@ func Hx_Field_loreline_translation_translationformats_anyEnabled() bool {
 
 func Hx_Field_loreline_translation_translationformats_wrap(underlying Hx_Typedef_loreline_importsfilehandler, locale string) *Hx_Obj_loreline_translation_wrappedfilehandler {
 	if !Hx_Field_loreline_translation_translationformats_anyEnabled() {
-		return Hx_Obj_loreline_translation_wrappedfilehandler_CreateInstance(underlying, ((func() *Hx_Obj_loreline_error)(func() *Hx_Obj_loreline_error {
+		return Hx_Obj_loreline_translation_wrappedfilehandler_CreateInstance(underlying, func() *Hx_Obj_loreline_error {
 			return nil
-		})))
+		})
 	}
 
 	var captured *Hx_Obj_loreline_error
@@ -234,18 +234,18 @@ func Hx_Field_loreline_translation_translationformats_wrap(underlying Hx_Typedef
 		f = Hx_Field_loreline_translation_translationformats_formats.Get(index)
 		var hx_cmp_24 HxNullable[bool]
 		_ = hx_cmp_24
-		hx_cmp_24 = func() func(_hx_param_key string) HxNullable[bool] {
+		hx_cmp_24 = func() func(key string) HxNullable[bool] {
 			var _hx_closure_src_844 func(_hx_param_key any) any
 			_ = _hx_closure_src_844
 			_hx_closure_src_844 = Hx_Field_loreline_translation_translationformats_enabled.VTable.Hx_Field_get
-			return func(_hx_param_key string) HxNullable[bool] {
+			return func(key string) HxNullable[bool] {
 				var hx_nullable_t73 any
 				_ = hx_nullable_t73
-				hx_nullable_t73 = _hx_closure_src_844(((any)(_hx_param_key)))
+				hx_nullable_t73 = _hx_closure_src_844(((any)(key)))
 				var _hx_tmp_1 HxNullable[bool]
 				_ = _hx_tmp_1
 				if hx_nullable_t73 == nil {
-					_hx_tmp_1 = HxNullable[bool]{}
+					_hx_tmp_1 = HxDefault[HxNullable[bool]]()
 				} else {
 					_hx_tmp_1 = HxNullable[bool]{Value: ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(hx_nullable_t73))), Valid: true}
 				}
@@ -446,7 +446,7 @@ func Hx_Field_loreline_translation_translationformats_wrap(underlying Hx_Typedef
 				var _hx_tmp_16 string
 				_ = _hx_tmp_16
 				_hx_tmp_16 = _hx_tmp_15
-				_hx_tmp_14 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_16, 0, HxNullable[int32]{}))
+				_hx_tmp_14 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_16, 0, HxDefault[HxNullable[int32]]()))
 			}
 
 			var withoutLorExt string
@@ -500,7 +500,7 @@ func Hx_Field_loreline_translation_translationformats_wrap(underlying Hx_Typedef
 					var _hx_tmp_25 int32
 					_ = _hx_tmp_25
 					_hx_tmp_25 = _hx_tmp_23
-					_hx_tmp_17 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_24, _hx_tmp_25, HxNullable[int32]{}))
+					_hx_tmp_17 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_24, _hx_tmp_25, HxDefault[HxNullable[int32]]()))
 				}
 
 				stem1 = ((_hx_tmp_17) == localeSuffix)
@@ -525,7 +525,7 @@ func Hx_Field_loreline_translation_translationformats_wrap(underlying Hx_Typedef
 					var _hx_tmp_29 string
 					_ = _hx_tmp_29
 					_hx_tmp_29 = _hx_tmp_28
-					_hx_tmp_27 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_29, 0, HxNullable[int32]{}))
+					_hx_tmp_27 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_29, 0, HxDefault[HxNullable[int32]]()))
 				}
 
 				stem = _hx_tmp_27
@@ -536,9 +536,9 @@ func Hx_Field_loreline_translation_translationformats_wrap(underlying Hx_Typedef
 			tryNext(stem, true, 0, cb)
 		})
 	}))
-	return Hx_Obj_loreline_translation_wrappedfilehandler_CreateInstance(wrapped, ((func() *Hx_Obj_loreline_error)(func() *Hx_Obj_loreline_error {
+	return Hx_Obj_loreline_translation_wrappedfilehandler_CreateInstance(wrapped, func() *Hx_Obj_loreline_error {
 		return captured
-	})))
+	})
 }
 
 func Hx_Field_loreline_translation_translationformats_endsWith(s string, suffix string) bool {
@@ -584,7 +584,7 @@ func Hx_Field_loreline_translation_translationformats_endsWith(s string, suffix 
 		var _hx_tmp_8 int32
 		_ = _hx_tmp_8
 		_hx_tmp_8 = _hx_tmp_6
-		_hx_tmp_0 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_7, _hx_tmp_8, HxNullable[int32]{}))
+		_hx_tmp_0 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_7, _hx_tmp_8, HxDefault[HxNullable[int32]]()))
 	}
 
 	return ((_hx_tmp_0) == suffix)

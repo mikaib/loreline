@@ -10,64 +10,64 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_functions() {
 }
 
 type Hx_Obj_VTable_loreline_functions interface {
-	Hx_Field_beat_visits(name__isOptional any) int32
 	Hx_Field_array_has(array any, value any) bool
-	Hx_Field_string_index(text string, needle string) int32
-	Hx_Field_array_index(array any, value any) int32
-	Hx_Field_ceil(n float64) int32
-	Hx_Field_string_ends(text string, suffix string) bool
-	Hx_Field_array_join(array any, sep string) string
-	Hx_Field_random(min int32, max int32) int32
-	Hx_Field_seed_random(seed__isOptional any) any
-	Hx_Field_string_starts(text string, prefix string) bool
-	Hx_Field_abs(n float64) float64
-	Hx_Field_random_float(min float64, max float64) float64
-	Hx_Field_string_repeat(text string, count int32) string
-	Hx_Field_rng() float64
-	Hx_Field_array_remove(array any, value any) bool
-	Hx_Field_max(a float64, b float64) float64
-	Hx_Field_bindAll(target Hx_Typedef_map)
-	Hx_Field_string_(value any) any
-	Hx_Field_string_contains(text string, needle string) bool
-	Hx_Field_clamp(v float64, lo float64, hi float64) float64
-	Hx_Field_string_upper(text string) string
-	Hx_Field_map_copy(_hx_reserved_map any) any
-	Hx_Field_choices() HxArray[any]
-	Hx_Field_round(n float64) int32
-	Hx_Field_bool(value any) bool
-	Hx_Field_string_length(text string) int32
-	Hx_Field_string_replace(text string, from string, to string) string
-	Hx_Field_string_trim(text string) string
-	Hx_Field_plural(count any, singular string, plural_form string) string
-	Hx_Field_chance(n int32) bool
-	Hx_Field_array_add(array any, value any) any
-	Hx_Field_array_copy(array any) any
-	Hx_Field_current_beat() any
-	Hx_Field_string_lower(text string) string
-	Hx_Field_array_length(array any) int32
-	Hx_Field_array_pop(array any) any
-	Hx_Field_array_shift(array any) any
-	Hx_Field_array_pick(array any) any
-	Hx_Field_map_has(_hx_reserved_map any, key string) bool
-	Hx_Field_map_remove(_hx_reserved_map any, key string) bool
-	Hx_Field_has_beat(name any) bool
-	Hx_Field_floor(n float64) int32
-	Hx_Field_pow(base float64, exp float64) float64
-	Hx_Field_wait(seconds float64) *Hx_Obj_loreline_async
-	Hx_Field_float_(value any) any
-	Hx_Field_array_prepend(array any, value any) any
-	Hx_Field_choices_disabled() HxArray[any]
-	Hx_Field_string_split(text string, sep string) HxArray[string]
-	Hx_Field_map_get(_hx_reserved_map any, key string) any
-	Hx_Field_choices_all() HxArray[any]
-	Hx_Field_min(a float64, b float64) float64
-	Hx_Field_string_sub(text string, start any, _hx_reserved_len any) string
-	Hx_Field_array_reverse(array any) any
-	Hx_Field_map_keys(_hx_reserved_map any) HxArray[string]
-	Hx_Field_map_set(_hx_reserved_map any, key string, value any) any
-	Hx_Field_array_sort(array any) any
 	Hx_Field_array_shuffle(array any) any
+	Hx_Field_map_copy(_hx_reserved_map any) any
+	Hx_Field_wait(seconds float64) *Hx_Obj_loreline_async
+	Hx_Field_string_replace(text string, from string, to string) string
+	Hx_Field_abs(n float64) float64
+	Hx_Field_rng() float64
+	Hx_Field_random(min int32, max int32) int32
+	Hx_Field_bool(value any) bool
+	Hx_Field_array_length(array any) int32
+	Hx_Field_string_split(text string, sep string) HxArray[string]
+	Hx_Field_string_trim(text string) string
+	Hx_Field_string_repeat(text string, count int32) string
+	Hx_Field_map_keys(_hx_reserved_map any) HxArray[string]
+	Hx_Field_array_add(array any, value any) any
+	Hx_Field_floor(n float64) int32
+	Hx_Field_string_starts(text string, prefix string) bool
+	Hx_Field_random_float(min float64, max float64) float64
+	Hx_Field_string_lower(text string) string
+	Hx_Field_array_sort(array any) any
+	Hx_Field_array_reverse(array any) any
+	Hx_Field_array_join(array any, sep string) string
+	Hx_Field_map_has(_hx_reserved_map any, key string) bool
+	Hx_Field_current_beat() any
+	Hx_Field_array_pop(array any) any
+	Hx_Field_has_beat(name any) bool
+	Hx_Field_choices() HxArray[any]
+	Hx_Field_choices_disabled() HxArray[any]
+	Hx_Field_string_length(text string) int32
+	Hx_Field_array_pick(array any) any
+	Hx_Field_string_index(text string, needle string) int32
+	Hx_Field_plural(count any, singular string, plural_form string) string
+	Hx_Field_array_prepend(array any, value any) any
+	Hx_Field_map_set(_hx_reserved_map any, key string, value any) any
+	Hx_Field_ceil(n float64) int32
+	Hx_Field_string_upper(text string) string
+	Hx_Field_array_remove(array any, value any) bool
+	Hx_Field_map_get(_hx_reserved_map any, key string) any
+	Hx_Field_bindAll(target Hx_Typedef_map)
+	Hx_Field_round(n float64) int32
+	Hx_Field_min(a float64, b float64) float64
 	Hx_Field_map_length(_hx_reserved_map any) int32
+	Hx_Field_beat_visits(name__isOptional any) int32
+	Hx_Field_pow(base float64, exp float64) float64
+	Hx_Field_seed_random(seed__isOptional any) any
+	Hx_Field_string_(value any) any
+	Hx_Field_array_copy(array any) any
+	Hx_Field_chance(n int32) bool
+	Hx_Field_string_sub(text string, start any, _hx_reserved_len any) string
+	Hx_Field_map_remove(_hx_reserved_map any, key string) bool
+	Hx_Field_float_(value any) any
+	Hx_Field_string_contains(text string, needle string) bool
+	Hx_Field_string_ends(text string, suffix string) bool
+	Hx_Field_array_index(array any, value any) int32
+	Hx_Field_choices_all() HxArray[any]
+	Hx_Field_max(a float64, b float64) float64
+	Hx_Field_clamp(v float64, lo float64, hi float64) float64
+	Hx_Field_array_shift(array any) any
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -262,8 +262,7 @@ func (this *Hx_Obj_loreline_functions) Hx_Field_seed_random(seed__isOptional any
 		if (seed).Valid == false {
 			var hx_nullable_t57 HxNullable[float64]
 			_ = hx_nullable_t57
-			hx_nullable_t57 = HxNullable[float64]{}
-
+			hx_nullable_t57 = HxDefault[HxNullable[float64]]()
 			seed = HxNullable[float64]{Value: (hx_nullable_t57).Value, Valid: (hx_nullable_t57).Valid}
 		}
 
@@ -373,7 +372,7 @@ func (this *Hx_Obj_loreline_functions) Hx_Field_string_contains(text string, nee
 	var _hx_tmp_1 string
 	_ = _hx_tmp_1
 	_hx_tmp_1 = needle
-	return ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, _hx_tmp_1, HxNullable[int32]{})) != -1)
+	return ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, _hx_tmp_1, HxDefault[HxNullable[int32]]())) != -1)
 }
 
 func (this *Hx_Obj_loreline_functions) Hx_Field_string_replace(text string, from string, to string) string {
@@ -395,7 +394,7 @@ func (this *Hx_Obj_loreline_functions) Hx_Field_string_index(text string, needle
 	var _hx_tmp_1 string
 	_ = _hx_tmp_1
 	_hx_tmp_1 = needle
-	return (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, _hx_tmp_1, HxNullable[int32]{}))
+	return (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, _hx_tmp_1, HxDefault[HxNullable[int32]]()))
 }
 
 func (this *Hx_Obj_loreline_functions) Hx_Field_string_sub(text string, start any, _hx_reserved_len any) string {
@@ -918,14 +917,14 @@ func (this *Hx_Obj_loreline_functions) Hx_Field_has_beat(name any) bool {
 		i--
 	}
 
-	return func() func(_hx_param_key string) bool {
+	return func() func(key string) bool {
 		var _hx_closure_src_535 func(_hx_param_key any) bool
 		_ = _hx_closure_src_535
 		_hx_closure_src_535 = this.Hx_Field_interpreter.Hx_Field_context.Hx_Field_topLevelBeats.VTable.(interface {
 			Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 		}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_exists
-		return func(_hx_param_key string) bool {
-			return _hx_closure_src_535(((any)(_hx_param_key)))
+		return func(key string) bool {
+			return _hx_closure_src_535(((any)(key)))
 		}
 	}()(nameStr)
 }

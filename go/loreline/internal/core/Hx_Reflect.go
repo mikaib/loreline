@@ -96,7 +96,7 @@ func Hx_Field_reflect_hasField(o any, field string) bool {
 	var _hx_tmp_1 string
 	_ = _hx_tmp_1
 	_hx_tmp_1 = field
-	return ((Hx_Array_IndexOf[string](_hx_tmp_0, _hx_tmp_1, HxNullable[int32]{})) != -1)
+	return ((Hx_Array_IndexOf[string](_hx_tmp_0, _hx_tmp_1, HxDefault[HxNullable[int32]]())) != -1)
 }
 
 func Hx_Field_reflect_field(o any, field string) any {
@@ -273,7 +273,7 @@ func Hx_Field_reflect_fields(o any) HxArray[string] {
 		if t.Hx_Field_enumIndex() == 7 {
 			var c *Hx_Obj_go_haxe_hxclass
 			_ = c
-			c = t.(Hx_Enum_valuetype_TClass).Hx_Field_c
+			c = ((Hx_Enum_valuetype)(t)).(Hx_Enum_valuetype_TClass).Hx_Field_c
 			var _g HxArray[string]
 			_ = _g
 			_g = HxMakeArray[string]()

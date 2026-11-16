@@ -196,25 +196,25 @@ func Hx_StaticInit_Hx_Obj_VTable_xml() {
 }
 
 type Hx_Obj_VTable_xml interface {
-	Hx_Field_get(att string) HxNullable[string]
-	Hx_Field_remove(att string)
-	Hx_Field_insertChild(x *Hx_Obj_xml, pos int32)
 	Hx_Field_set_nodeValue(v string) string
+	Hx_Field_set(att string, value string)
+	Hx_Field_exists(att string) bool
+	Hx_Field_firstChild() *Hx_Obj_xml
+	Hx_Field_set_nodeName(v string) string
+	Hx_Field_get(att string) HxNullable[string]
+	Hx_Field_iterator() any
 	Hx_Field_elements() any
+	Hx_Field_elementsNamed(name string) any
+	Hx_Field_addChild(x *Hx_Obj_xml)
+	Hx_Field_toString() string
+	Hx_Field_ensureElementType()
+	Hx_Field_get_nodeName() string
+	Hx_Field_remove(att string)
+	Hx_Field_attributes() any
+	Hx_Field_firstElement() *Hx_Obj_xml
 	Hx_Field_removeChild(x *Hx_Obj_xml) bool
 	Hx_Field_get_nodeValue() string
-	Hx_Field_exists(att string) bool
-	Hx_Field_attributes() any
-	Hx_Field_iterator() any
-	Hx_Field_elementsNamed(name string) any
-	Hx_Field_toString() string
-	Hx_Field_get_nodeName() string
-	Hx_Field_set(att string, value string)
-	Hx_Field_firstChild() *Hx_Obj_xml
-	Hx_Field_firstElement() *Hx_Obj_xml
-	Hx_Field_addChild(x *Hx_Obj_xml)
-	Hx_Field_ensureElementType()
-	Hx_Field_set_nodeName(v string) string
+	Hx_Field_insertChild(x *Hx_Obj_xml, pos int32)
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -383,20 +383,20 @@ func (this *Hx_Obj_xml) Hx_Field_get(att string) HxNullable[string] {
 		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(this.Hx_Field_nodeType))))))
 	}
 
-	return func() func(_hx_param_key string) HxNullable[string] {
+	return func() func(key string) HxNullable[string] {
 		var _hx_closure_src_372 func(_hx_param_key any) any
 		_ = _hx_closure_src_372
 		_hx_closure_src_372 = this.Hx_Field_attributeMap.VTable.(interface {
 			Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 		}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_get
-		return func(_hx_param_key string) HxNullable[string] {
+		return func(key string) HxNullable[string] {
 			var hx_nullable_t45 any
 			_ = hx_nullable_t45
-			hx_nullable_t45 = _hx_closure_src_372(((any)(_hx_param_key)))
+			hx_nullable_t45 = _hx_closure_src_372(((any)(key)))
 			var _hx_tmp_0 HxNullable[string]
 			_ = _hx_tmp_0
 			if hx_nullable_t45 == nil {
-				_hx_tmp_0 = HxNullable[string]{Value: HxStringNull}
+				_hx_tmp_0 = HxDefault[HxNullable[string]]()
 			} else {
 				_hx_tmp_0 = HxNullable[string]{Value: Hx_Field_go_haxe_hxdynamic_toString(hx_nullable_t45), Valid: true}
 			}
@@ -411,14 +411,14 @@ func (this *Hx_Obj_xml) Hx_Field_set(att string, value string) {
 		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(this.Hx_Field_nodeType))))))
 	}
 
-	func() func(_hx_param_key string, _hx_param_value string) {
+	func() func(key string, value string) {
 		var _hx_closure_src_373 func(_hx_param_key any, _hx_param_value any)
 		_ = _hx_closure_src_373
 		_hx_closure_src_373 = this.Hx_Field_attributeMap.VTable.(interface {
 			Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 		}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_set
-		return func(_hx_param_key string, _hx_param_value string) {
-			_hx_closure_src_373(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+		return func(key string, value string) {
+			_hx_closure_src_373(((any)(key)), ((any)(value)))
 		}
 	}()(att, value)
 }
@@ -428,14 +428,14 @@ func (this *Hx_Obj_xml) Hx_Field_remove(att string) {
 		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(this.Hx_Field_nodeType))))))
 	}
 
-	func() func(_hx_param_key string) bool {
+	func() func(key string) bool {
 		var _hx_closure_src_374 func(_hx_param_key any) bool
 		_ = _hx_closure_src_374
 		_hx_closure_src_374 = this.Hx_Field_attributeMap.VTable.(interface {
 			Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 		}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_remove
-		return func(_hx_param_key string) bool {
-			return _hx_closure_src_374(((any)(_hx_param_key)))
+		return func(key string) bool {
+			return _hx_closure_src_374(((any)(key)))
 		}
 	}()(att)
 }
@@ -445,14 +445,14 @@ func (this *Hx_Obj_xml) Hx_Field_exists(att string) bool {
 		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Field_go_haxe_hxstring_concat("Bad node type, expected Element but found ", Hx_Field__xml_xmltype_impl__toString(this.Hx_Field_nodeType))))))
 	}
 
-	return func() func(_hx_param_key string) bool {
+	return func() func(key string) bool {
 		var _hx_closure_src_375 func(_hx_param_key any) bool
 		_ = _hx_closure_src_375
 		_hx_closure_src_375 = this.Hx_Field_attributeMap.VTable.(interface {
 			Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 		}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_exists
-		return func(_hx_param_key string) bool {
-			return _hx_closure_src_375(((any)(_hx_param_key)))
+		return func(key string) bool {
+			return _hx_closure_src_375(((any)(key)))
 		}
 	}()(att)
 }

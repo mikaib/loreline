@@ -267,7 +267,7 @@ func Hx_Field_stringtools_contains(s string, value string) bool {
 	var _hx_tmp_1 string
 	_ = _hx_tmp_1
 	_hx_tmp_1 = value
-	return ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, _hx_tmp_1, HxNullable[int32]{})) != -1)
+	return ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, _hx_tmp_1, HxDefault[HxNullable[int32]]())) != -1)
 }
 
 func Hx_Field_stringtools_startsWith(s string, start string) bool {
@@ -591,8 +591,7 @@ func Hx_Field_stringtools_hex(n int32, digits__isOptional any) string {
 		if (digits).Valid == false {
 			var hx_nullable_t5 HxNullable[int32]
 			_ = hx_nullable_t5
-			hx_nullable_t5 = HxNullable[int32]{}
-
+			hx_nullable_t5 = HxDefault[HxNullable[int32]]()
 			digits = HxNullable[int32]{Value: (hx_nullable_t5).Value, Valid: (hx_nullable_t5).Valid}
 		}
 
@@ -604,7 +603,10 @@ func Hx_Field_stringtools_hex(n int32, digits__isOptional any) string {
 		hexChars = "0123456789ABCDEF"
 		for {
 			s = Hx_Field_go_haxe_hxstring_concat((Hx_Field_go_haxe_hxstring_charAt(hexChars, (n & 15))), s)
-			n = ((int32)((((uint32)(n)) >> 4)))
+			var _hx_tmp_0 int32
+			_ = _hx_tmp_0
+			_hx_tmp_0 = n
+			n = ((int32)((((uint32)(_hx_tmp_0)) >> 4)))
 			if !(n > 0) {
 				break
 			}
@@ -679,7 +681,7 @@ func Hx_Field_stringtools_quoteWinArg(argument string, escapeMetaCharacters bool
 		var _hx_tmp_3 string
 		_ = _hx_tmp_3
 		_hx_tmp_3 = argument1
-		if (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_3, " ", HxNullable[int32]{})) != -1 {
+		if (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_3, " ", HxDefault[HxNullable[int32]]())) != -1 {
 			_hx_tmp_2 = true
 		} else {
 			var _hx_tmp_4 string
@@ -688,7 +690,7 @@ func Hx_Field_stringtools_quoteWinArg(argument string, escapeMetaCharacters bool
 			var _hx_tmp_5 string
 			_ = _hx_tmp_5
 			_hx_tmp_5 = _hx_tmp_4
-			_hx_tmp_2 = ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_5, "\t", HxNullable[int32]{})) != -1)
+			_hx_tmp_2 = ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_5, "\t", HxDefault[HxNullable[int32]]())) != -1)
 		}
 
 		if _hx_tmp_2 {
@@ -706,7 +708,7 @@ func Hx_Field_stringtools_quoteWinArg(argument string, escapeMetaCharacters bool
 			var _hx_tmp_7 string
 			_ = _hx_tmp_7
 			_hx_tmp_7 = _hx_tmp_6
-			_hx_tmp_0 = ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_7, "/", HxNullable[int32]{})) > 0)
+			_hx_tmp_0 = ((Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_7, "/", HxDefault[HxNullable[int32]]())) > 0)
 		}
 
 		var needquote bool
@@ -895,7 +897,7 @@ func Hx_Field_stringtools_quoteWinArg(argument string, escapeMetaCharacters bool
 				var _hx_tmp_11 int32
 				_ = _hx_tmp_11
 				_hx_tmp_11 = (c).Value
-				if (Hx_Array_IndexOf[int32](_hx_tmp_10, _hx_tmp_11, HxNullable[int32]{})) >= 0 {
+				if (Hx_Array_IndexOf[int32](_hx_tmp_10, _hx_tmp_11, HxDefault[HxNullable[int32]]())) >= 0 {
 					result.VTable.Hx_Field_addChar(94)
 				}
 

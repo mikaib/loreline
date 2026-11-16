@@ -130,7 +130,7 @@ func (this *Hx_Obj_loreline_lib_golibrary) Hx_Field_parse(source string, path st
 							}()
 							var hx_dyncast_379 any
 							_ = hx_dyncast_379
-							hx_dyncast_379 = Hx_Field_go_haxe_hxdynamic_castClass(((any)(nil)), "Hx_Obj_loreline_lib_goscript")
+							hx_dyncast_379 = Hx_Field_go_haxe_hxdynamic_castClass(HxDefault[any](), "Hx_Obj_loreline_lib_goscript")
 							var _hx_tmp_7 *Hx_Obj_loreline_lib_goscript
 							_ = _hx_tmp_7
 							if hx_dyncast_379 != nil {
@@ -180,7 +180,7 @@ func (this *Hx_Obj_loreline_lib_golibrary) Hx_Field_parse(source string, path st
 
 					var hx_dyncast_377 any
 					_ = hx_dyncast_377
-					hx_dyncast_377 = Hx_Field_go_haxe_hxdynamic_castClass(((any)(nil)), "Hx_Obj_loreline_lib_goscript")
+					hx_dyncast_377 = Hx_Field_go_haxe_hxdynamic_castClass(HxDefault[any](), "Hx_Obj_loreline_lib_goscript")
 					var _hx_tmp_4 *Hx_Obj_loreline_lib_goscript
 					_ = _hx_tmp_4
 					if hx_dyncast_377 != nil {
@@ -224,7 +224,7 @@ func (this *Hx_Obj_loreline_lib_golibrary) Hx_Field_parse(source string, path st
 					Err    error
 					Script *Hx_Obj_loreline_lib_goscript
 				}{func() error {
-					_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(((any)(nil)))
+					_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(HxDefault[any]())
 					if _hx_d == nil {
 						var _hx_z error
 						return _hx_z
@@ -275,7 +275,7 @@ func (this *Hx_Obj_loreline_lib_golibrary) Hx_Field_scriptFromJson(json string) 
 							}()
 							var hx_dyncast_381 any
 							_ = hx_dyncast_381
-							hx_dyncast_381 = Hx_Field_go_haxe_hxdynamic_castClass(((any)(nil)), "Hx_Obj_loreline_lib_goscript")
+							hx_dyncast_381 = Hx_Field_go_haxe_hxdynamic_castClass(HxDefault[any](), "Hx_Obj_loreline_lib_goscript")
 							var _hx_tmp_2 *Hx_Obj_loreline_lib_goscript
 							_ = _hx_tmp_2
 							if hx_dyncast_381 != nil {
@@ -317,7 +317,7 @@ func (this *Hx_Obj_loreline_lib_golibrary) Hx_Field_scriptFromJson(json string) 
 					Err    error
 					Script *Hx_Obj_loreline_lib_goscript
 				}{func() error {
-					_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(((any)(nil)))
+					_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(HxDefault[any]())
 					if _hx_d == nil {
 						var _hx_z error
 						return _hx_z
@@ -368,7 +368,7 @@ func (this *Hx_Obj_loreline_lib_golibrary) Hx_Field_nodeFromJson(json string) st
 							}()
 							var hx_dyncast_383 any
 							_ = hx_dyncast_383
-							hx_dyncast_383 = Hx_Field_go_haxe_hxdynamic_castClass(((any)(nil)), "Hx_Obj_loreline_lib_gonode")
+							hx_dyncast_383 = Hx_Field_go_haxe_hxdynamic_castClass(HxDefault[any](), "Hx_Obj_loreline_lib_gonode")
 							var _hx_tmp_2 *Hx_Obj_loreline_lib_gonode
 							_ = _hx_tmp_2
 							if hx_dyncast_383 != nil {
@@ -410,7 +410,7 @@ func (this *Hx_Obj_loreline_lib_golibrary) Hx_Field_nodeFromJson(json string) st
 					Err  error
 					Node *Hx_Obj_loreline_lib_gonode
 				}{func() error {
-					_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(((any)(nil)))
+					_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(HxDefault[any]())
 					if _hx_d == nil {
 						var _hx_z error
 						return _hx_z
@@ -469,7 +469,7 @@ func (this *Hx_Obj_loreline_lib_golibrary) Hx_Field_loadLocale(locale string, sc
 							}()
 							var hx_dyncast_386 any
 							_ = hx_dyncast_386
-							hx_dyncast_386 = Hx_Field_go_haxe_hxdynamic_castClass(((any)(nil)), "Hx_Obj_loreline_lib_gotranslations")
+							hx_dyncast_386 = Hx_Field_go_haxe_hxdynamic_castClass(HxDefault[any](), "Hx_Obj_loreline_lib_gotranslations")
 							var _hx_tmp_8 *Hx_Obj_loreline_lib_gotranslations
 							_ = _hx_tmp_8
 							if hx_dyncast_386 != nil {
@@ -522,7 +522,7 @@ func (this *Hx_Obj_loreline_lib_golibrary) Hx_Field_loadLocale(locale string, sc
 
 					var hx_dyncast_384 any
 					_ = hx_dyncast_384
-					hx_dyncast_384 = Hx_Field_go_haxe_hxdynamic_castClass(((any)(nil)), "Hx_Obj_loreline_lib_gotranslations")
+					hx_dyncast_384 = Hx_Field_go_haxe_hxdynamic_castClass(HxDefault[any](), "Hx_Obj_loreline_lib_gotranslations")
 					var _hx_tmp_5 *Hx_Obj_loreline_lib_gotranslations
 					_ = _hx_tmp_5
 					if hx_dyncast_384 != nil {
@@ -566,7 +566,7 @@ func (this *Hx_Obj_loreline_lib_golibrary) Hx_Field_loadLocale(locale string, sc
 					Err          error
 					Translations *Hx_Obj_loreline_lib_gotranslations
 				}{func() error {
-					_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(((any)(nil)))
+					_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(HxDefault[any]())
 					if _hx_d == nil {
 						var _hx_z error
 						return _hx_z
@@ -666,7 +666,7 @@ func Hx_Field_loreline_lib_golibrary_emptyToNull(value string) string {
 }
 
 func Hx_Field_loreline_lib_golibrary_fileHandler(readFile func(_hx_carg0 string) string) Hx_Typedef_loreline_importsfilehandler {
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(((any)(readFile)), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(((any)(readFile)), HxDefault[any]()))) {
 		return nil
 	} else {
 		return ((Hx_Typedef_loreline_importsfilehandler)(func(path string, callback func(data string)) {

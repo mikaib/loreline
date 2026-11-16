@@ -439,55 +439,55 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_lorscript_parser() {
 }
 
 type Hx_Obj_VTable_loreline_lorscript_parser interface {
-	Hx_Field_tokenComment(op string, char int32) Hx_Enum_loreline_lorscript_token
-	Hx_Field_constString(c Hx_Enum_loreline_lorscript_const) string
-	Hx_Field_push(tk Hx_Enum_loreline_lorscript_token)
-	Hx_Field_pmin(e any) int32
-	Hx_Field_parseFullExpr(exprs HxArray[any])
-	Hx_Field_parseObject(p1 HxNullable[int32]) any
-	Hx_Field_parseFunctionArgs() HxArray[any]
-	Hx_Field_readString(until int32) string
-	Hx_Field_token() Hx_Enum_loreline_lorscript_token
-	Hx_Field__token() Hx_Enum_loreline_lorscript_token
-	Hx_Field_ensure(tk Hx_Enum_loreline_lorscript_token)
-	Hx_Field_isBlock(e any) bool
-	Hx_Field_parseExprList(etk Hx_Enum_loreline_lorscript_token) HxArray[any]
 	Hx_Field_evalPreproCond(e any) bool
 	Hx_Field_tokenString(t Hx_Enum_loreline_lorscript_token) string
-	Hx_Field_ensureToken(tk Hx_Enum_loreline_lorscript_token)
-	Hx_Field_expr(e any) Hx_Enum_loreline_lorscript_exprdef
-	Hx_Field_parseType() Hx_Enum_loreline_lorscript_ctype
-	Hx_Field_parseField() any
-	Hx_Field_pmax(e any) int32
-	Hx_Field_parseModuleDecl() Hx_Enum_loreline_lorscript_moduledecl
-	Hx_Field_preprocess(id string) Hx_Enum_loreline_lorscript_token
-	Hx_Field_parseMetaArgs() HxArray[any]
-	Hx_Field_parseFunctionDecl() any
-	Hx_Field_parseModule(content string, origin__isOptional any, position__isOptional any) HxArray[Hx_Enum_loreline_lorscript_moduledecl]
-	Hx_Field_readChar() int32
-	Hx_Field_preprocValue(id string) any
-	Hx_Field_parsePreproCond() any
-	Hx_Field_skipTokens()
-	Hx_Field_parseStructure(id string) any
-	Hx_Field_invalidChar(c int32)
-	Hx_Field_unexpected(tk Hx_Enum_loreline_lorscript_token) any
 	Hx_Field_maybe(tk Hx_Enum_loreline_lorscript_token) bool
+	Hx_Field_parseStructure(id string) any
+	Hx_Field_parseMetadata() HxArray[any]
+	Hx_Field_parseParams() any
+	Hx_Field_parseField() any
+	Hx_Field_parsePreproCond() any
+	Hx_Field_preprocess(id string) Hx_Enum_loreline_lorscript_token
 	Hx_Field_getIdent() string
+	Hx_Field_expr(e any) Hx_Enum_loreline_lorscript_exprdef
+	Hx_Field_pmin(e any) int32
 	Hx_Field_mapCompr(tmp string, e any) any
-	Hx_Field_makeUnop(op string, e any) any
-	Hx_Field_makeBinop(op string, e1 any, e any) any
 	Hx_Field_parseExprNext(e1 any) any
-	Hx_Field_get_currentPos() int32
+	Hx_Field_tokenComment(op string, char int32) Hx_Enum_loreline_lorscript_token
+	Hx_Field_parseString(s string, origin__isOptional any, position__isOptional any) any
+	Hx_Field_push(tk Hx_Enum_loreline_lorscript_token)
+	Hx_Field_ensure(tk Hx_Enum_loreline_lorscript_token)
+	Hx_Field_parseFullExpr(exprs HxArray[any])
+	Hx_Field_skipTokens()
+	Hx_Field_invalidChar(c int32)
+	Hx_Field_ensureToken(tk Hx_Enum_loreline_lorscript_token)
+	Hx_Field_pmax(e any) int32
+	Hx_Field_mk(e Hx_Enum_loreline_lorscript_exprdef, pmin__isOptional any, pmax__isOptional any) any
+	Hx_Field_isBlock(e any) bool
+	Hx_Field_parseTypeNext(t Hx_Enum_loreline_lorscript_ctype) Hx_Enum_loreline_lorscript_ctype
+	Hx_Field_preprocValue(id string) any
+	Hx_Field_parseFunctionArgs() HxArray[any]
+	Hx_Field_parseFunctionDecl() any
+	Hx_Field_readString(until int32) string
+	Hx_Field_token() Hx_Enum_loreline_lorscript_token
+	Hx_Field_constString(c Hx_Enum_loreline_lorscript_const) string
 	Hx_Field_error(err Hx_Enum_loreline_lorscript_errordef, pmin int32, pmax int32)
 	Hx_Field_initParser(origin string, pos int32)
-	Hx_Field_parseString(s string, origin__isOptional any, position__isOptional any) any
-	Hx_Field_mk(e Hx_Enum_loreline_lorscript_exprdef, pmin__isOptional any, pmax__isOptional any) any
-	Hx_Field_parseTypeNext(t Hx_Enum_loreline_lorscript_ctype) Hx_Enum_loreline_lorscript_ctype
-	Hx_Field_parseParams() any
 	Hx_Field_parseExpr() any
-	Hx_Field_parseLambda(args HxArray[any], pmin HxNullable[int32]) any
+	Hx_Field_makeBinop(op string, e1 any, e any) any
+	Hx_Field_parseType() Hx_Enum_loreline_lorscript_ctype
+	Hx_Field_parseExprList(etk Hx_Enum_loreline_lorscript_token) HxArray[any]
+	Hx_Field_parseModule(content string, origin__isOptional any, position__isOptional any) HxArray[Hx_Enum_loreline_lorscript_moduledecl]
+	Hx_Field_parseModuleDecl() Hx_Enum_loreline_lorscript_moduledecl
+	Hx_Field_get_currentPos() int32
+	Hx_Field_unexpected(tk Hx_Enum_loreline_lorscript_token) any
+	Hx_Field_parseMetaArgs() HxArray[any]
+	Hx_Field_makeUnop(op string, e any) any
 	Hx_Field_parsePath() HxArray[string]
-	Hx_Field_parseMetadata() HxArray[any]
+	Hx_Field_readChar() int32
+	Hx_Field__token() Hx_Enum_loreline_lorscript_token
+	Hx_Field_parseObject(p1 HxNullable[int32]) any
+	Hx_Field_parseLambda(args HxArray[any], pmin HxNullable[int32]) any
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -656,25 +656,25 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_New() {
 						_ = x
 						x = _g2.Get(tmp__g1_1)
 						tmp__g1_1++
-						func() func(_hx_param_key string, _hx_param_value int32) {
+						func() func(key string, value int32) {
 							var _hx_closure_src_327 func(_hx_param_key any, _hx_param_value any)
 							_ = _hx_closure_src_327
 							_hx_closure_src_327 = this.Hx_Field_opPriority.VTable.(interface {
 								Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 							}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_set
-							return func(_hx_param_key string, _hx_param_value int32) {
-								_hx_closure_src_327(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+							return func(key string, value int32) {
+								_hx_closure_src_327(((any)(key)), ((any)(value)))
 							}
 						}()(x, i)
 						if i == 9 {
-							func() func(_hx_param_key string, _hx_param_value bool) {
+							func() func(key string, value bool) {
 								var _hx_closure_src_328 func(_hx_param_key any, _hx_param_value any)
 								_ = _hx_closure_src_328
 								_hx_closure_src_328 = this.Hx_Field_opRightAssoc.VTable.(interface {
 									Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 								}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_set
-								return func(_hx_param_key string, _hx_param_value bool) {
-									_hx_closure_src_328(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+								return func(key string, value bool) {
+									_hx_closure_src_328(((any)(key)), ((any)(value)))
 								}
 							}()(x, true)
 						}
@@ -699,14 +699,14 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_New() {
 					_hx_tmp_13 = -2
 				}
 
-				func() func(_hx_param_key string, _hx_param_value int32) {
+				func() func(key string, value int32) {
 					var _hx_closure_src_329 func(_hx_param_key any, _hx_param_value any)
 					_ = _hx_closure_src_329
 					_hx_closure_src_329 = this.Hx_Field_opPriority.VTable.(interface {
 						Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 					}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_set
-					return func(_hx_param_key string, _hx_param_value int32) {
-						_hx_closure_src_329(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+					return func(key string, value int32) {
+						_hx_closure_src_329(((any)(key)), ((any)(value)))
 					}
 				}()(_hx_tmp_12, _hx_tmp_13)
 			}
@@ -726,14 +726,14 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_New() {
 					_hx_tmp_15 = -2
 				}
 
-				func() func(_hx_param_key string, _hx_param_value int32) {
+				func() func(key string, value int32) {
 					var _hx_closure_src_330 func(_hx_param_key any, _hx_param_value any)
 					_ = _hx_closure_src_330
 					_hx_closure_src_330 = this.Hx_Field_opPriority.VTable.(interface {
 						Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 					}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_set
-					return func(_hx_param_key string, _hx_param_value int32) {
-						_hx_closure_src_330(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+					return func(key string, value int32) {
+						_hx_closure_src_330(((any)(key)), ((any)(value)))
 					}
 				}()(_hx_tmp_14, _hx_tmp_15)
 			}
@@ -753,14 +753,14 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_New() {
 					_hx_tmp_17 = -2
 				}
 
-				func() func(_hx_param_key string, _hx_param_value int32) {
+				func() func(key string, value int32) {
 					var _hx_closure_src_331 func(_hx_param_key any, _hx_param_value any)
 					_ = _hx_closure_src_331
 					_hx_closure_src_331 = this.Hx_Field_opPriority.VTable.(interface {
 						Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 					}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_set
-					return func(_hx_param_key string, _hx_param_value int32) {
-						_hx_closure_src_331(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+					return func(key string, value int32) {
+						_hx_closure_src_331(((any)(key)), ((any)(value)))
 					}
 				}()(_hx_tmp_16, _hx_tmp_17)
 			}
@@ -780,14 +780,14 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_New() {
 					_hx_tmp_19 = -2
 				}
 
-				func() func(_hx_param_key string, _hx_param_value int32) {
+				func() func(key string, value int32) {
 					var _hx_closure_src_332 func(_hx_param_key any, _hx_param_value any)
 					_ = _hx_closure_src_332
 					_hx_closure_src_332 = this.Hx_Field_opPriority.VTable.(interface {
 						Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 					}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_set
-					return func(_hx_param_key string, _hx_param_value int32) {
-						_hx_closure_src_332(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+					return func(key string, value int32) {
+						_hx_closure_src_332(((any)(key)), ((any)(value)))
 					}
 				}()(_hx_tmp_18, _hx_tmp_19)
 			}
@@ -972,8 +972,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseString(s string, ori
 
 			var pmax HxNullable[int32]
 			_ = pmax
-			pmax = HxNullable[int32]{}
-
+			pmax = HxDefault[HxNullable[int32]]()
 			if e == nil {
 				return nil
 			} else {
@@ -1092,7 +1091,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_getIdent() string {
 	if tk.Hx_Field_enumIndex() == 2 {
 		var id string
 		_ = id
-		id = tk.(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s
+		id = ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s
 		return id
 	} else {
 		this.VTable.Hx_Field_unexpected(tk)
@@ -1148,16 +1147,14 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_mk(e Hx_Enum_loreline_lor
 		if (pmin).Valid == false {
 			var hx_nullable_t35 HxNullable[int32]
 			_ = hx_nullable_t35
-			hx_nullable_t35 = HxNullable[int32]{}
-
+			hx_nullable_t35 = HxDefault[HxNullable[int32]]()
 			pmin = HxNullable[int32]{Value: (hx_nullable_t35).Value, Valid: (hx_nullable_t35).Valid}
 		}
 
 		if (pmax).Valid == false {
 			var hx_nullable_t34 HxNullable[int32]
 			_ = hx_nullable_t34
-			hx_nullable_t34 = HxNullable[int32]{}
-
+			hx_nullable_t34 = HxDefault[HxNullable[int32]]()
 			pmax = HxNullable[int32]{Value: (hx_nullable_t34).Value, Valid: (hx_nullable_t34).Valid}
 		}
 
@@ -1222,10 +1219,10 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_isBlock(e any) bool {
 		{
 			var t Hx_Enum_loreline_lorscript_ctype
 			_ = t
-			t = _g.(Hx_Enum_loreline_lorscript_exprdef_EVar).Hx_Field_t
+			t = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EVar).Hx_Field_t
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EVar).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EVar).Hx_Field_e
 			if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(e, nil))) {
 				return this.VTable.Hx_Field_isBlock(e)
 			} else {
@@ -1250,7 +1247,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_isBlock(e any) bool {
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_e2
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_e2
 			return this.VTable.Hx_Field_isBlock(e)
 		}
 
@@ -1258,10 +1255,10 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_isBlock(e any) bool {
 		{
 			var prefix bool
 			_ = prefix
-			prefix = _g.(Hx_Enum_loreline_lorscript_exprdef_EUnop).Hx_Field_prefix
+			prefix = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EUnop).Hx_Field_prefix
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EUnop).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EUnop).Hx_Field_e
 			var _hx_tmp_0 bool
 			_ = _hx_tmp_0
 			if !prefix {
@@ -1277,10 +1274,10 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_isBlock(e any) bool {
 		{
 			var e1 any
 			_ = e1
-			e1 = _g.(Hx_Enum_loreline_lorscript_exprdef_EIf).Hx_Field_e1
+			e1 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EIf).Hx_Field_e1
 			var e2 any
 			_ = e2
-			e2 = _g.(Hx_Enum_loreline_lorscript_exprdef_EIf).Hx_Field_e2
+			e2 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EIf).Hx_Field_e2
 			if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(e2, nil))) {
 				return this.VTable.Hx_Field_isBlock(e2)
 			} else {
@@ -1292,7 +1289,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_isBlock(e any) bool {
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EWhile).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EWhile).Hx_Field_e
 			return this.VTable.Hx_Field_isBlock(e)
 		}
 
@@ -1300,7 +1297,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_isBlock(e any) bool {
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EFor).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EFor).Hx_Field_e
 			return this.VTable.Hx_Field_isBlock(e)
 		}
 
@@ -1308,7 +1305,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_isBlock(e any) bool {
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EFunction).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EFunction).Hx_Field_e
 			return this.VTable.Hx_Field_isBlock(e)
 		}
 
@@ -1316,7 +1313,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_isBlock(e any) bool {
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EReturn).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EReturn).Hx_Field_e
 			var _hx_tmp_1 bool
 			_ = _hx_tmp_1
 			if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(e, nil))) {
@@ -1332,7 +1329,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_isBlock(e any) bool {
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_ETry).Hx_Field_ecatch
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ETry).Hx_Field_ecatch
 			return this.VTable.Hx_Field_isBlock(e)
 		}
 
@@ -1350,7 +1347,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_isBlock(e any) bool {
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EDoWhile).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EDoWhile).Hx_Field_e
 			return this.VTable.Hx_Field_isBlock(e)
 		}
 
@@ -1358,7 +1355,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_isBlock(e any) bool {
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EMeta).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EMeta).Hx_Field_e
 			return this.VTable.Hx_Field_isBlock(e)
 		}
 
@@ -1425,14 +1422,13 @@ hx_label_0:
 		tk = this.VTable.Hx_Field_token()
 		var id HxNullable[string]
 		_ = id
-		id = HxNullable[string]{Value: HxStringNull}
-
+		id = HxDefault[HxNullable[string]]()
 		switch tk.Hx_Field_enumIndex() {
 		case 1:
 			{
 				var c Hx_Enum_loreline_lorscript_const
 				_ = c
-				c = tk.(Hx_Enum_loreline_lorscript_token_TConst).Hx_Field_c
+				c = ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TConst).Hx_Field_c
 				{
 					if !this.Hx_Field_allowJSON {
 						this.VTable.Hx_Field_unexpected(tk)
@@ -1441,7 +1437,7 @@ hx_label_0:
 					if c.Hx_Field_enumIndex() == 2 {
 						var s string
 						_ = s
-						s = c.(Hx_Enum_loreline_lorscript_const_CString).Hx_Field_s
+						s = ((Hx_Enum_loreline_lorscript_const)(c)).(Hx_Enum_loreline_lorscript_const_CString).Hx_Field_s
 						id = HxNullableString(s)
 					} else {
 						this.VTable.Hx_Field_unexpected(tk)
@@ -1453,7 +1449,7 @@ hx_label_0:
 			{
 				var i string
 				_ = i
-				i = tk.(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s
+				i = ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s
 				id = HxNullableString(i)
 			}
 
@@ -1520,8 +1516,7 @@ hx_label_0:
 	pmin = p1
 	var pmax HxNullable[int32]
 	_ = pmax
-	pmax = HxNullable[int32]{}
-
+	pmax = HxDefault[HxNullable[int32]]()
 	var tmp any
 	_ = tmp
 	if e == nil {
@@ -1578,19 +1573,17 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 		{
 			var c Hx_Enum_loreline_lorscript_const
 			_ = c
-			c = tk.(Hx_Enum_loreline_lorscript_token_TConst).Hx_Field_c
+			c = ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TConst).Hx_Field_c
 			var e Hx_Enum_loreline_lorscript_exprdef
 			_ = e
 			e = Hx_Enum_loreline_lorscript_exprdef_EConst{c}
 
 			var pmin HxNullable[int32]
 			_ = pmin
-			pmin = HxNullable[int32]{}
-
+			pmin = HxDefault[HxNullable[int32]]()
 			var pmax HxNullable[int32]
 			_ = pmax
-			pmax = HxNullable[int32]{}
-
+			pmax = HxDefault[HxNullable[int32]]()
 			var tmp any
 			_ = tmp
 			if e == nil {
@@ -1639,7 +1632,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 		{
 			var id string
 			_ = id
-			id = tk.(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s
+			id = ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s
 			var e any
 			_ = e
 			e = this.VTable.Hx_Field_parseStructure(id)
@@ -1650,12 +1643,10 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 
 				var pmin HxNullable[int32]
 				_ = pmin
-				pmin = HxNullable[int32]{}
-
+				pmin = HxDefault[HxNullable[int32]]()
 				var pmax HxNullable[int32]
 				_ = pmax
-				pmax = HxNullable[int32]{}
-
+				pmax = HxDefault[HxNullable[int32]]()
 				if e1 == nil {
 					e = nil
 				} else {
@@ -1703,7 +1694,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 		{
 			var op string
 			_ = op
-			op = tk.(Hx_Enum_loreline_lorscript_token_TOp).Hx_Field_s
+			op = ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TOp).Hx_Field_s
 			if op == "-" {
 				var start int32
 				_ = start
@@ -1728,13 +1719,13 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 				if _g.Hx_Field_enumIndex() == 0 {
 					var _gc Hx_Enum_loreline_lorscript_const
 					_ = _gc
-					_gc = _g.(Hx_Enum_loreline_lorscript_exprdef_EConst).Hx_Field_c
+					_gc = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EConst).Hx_Field_c
 					switch _gc.Hx_Field_enumIndex() {
 					case 0:
 						{
 							var i int32
 							_ = i
-							i = _gc.(Hx_Enum_loreline_lorscript_const_CInt).Hx_Field_v
+							i = ((Hx_Enum_loreline_lorscript_const)(_gc)).(Hx_Enum_loreline_lorscript_const_CInt).Hx_Field_v
 							var e1 Hx_Enum_loreline_lorscript_exprdef
 							_ = e1
 							e1 = Hx_Enum_loreline_lorscript_exprdef_EConst{Hx_Enum_loreline_lorscript_const_CInt{-i}}
@@ -1799,7 +1790,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 						{
 							var f float64
 							_ = f
-							f = _gc.(Hx_Enum_loreline_lorscript_const_CFloat).Hx_Field_f
+							f = ((Hx_Enum_loreline_lorscript_const)(_gc)).(Hx_Enum_loreline_lorscript_const_CFloat).Hx_Field_f
 							var e1 Hx_Enum_loreline_lorscript_exprdef
 							_ = e1
 							e1 = Hx_Enum_loreline_lorscript_exprdef_EConst{Hx_Enum_loreline_lorscript_const_CFloat{-f}}
@@ -1872,20 +1863,20 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 
 			var hx_cmp_5 HxNullable[int32]
 			_ = hx_cmp_5
-			hx_cmp_5 = func() func(_hx_param_key string) HxNullable[int32] {
+			hx_cmp_5 = func() func(key string) HxNullable[int32] {
 				var _hx_closure_src_310 func(_hx_param_key any) any
 				_ = _hx_closure_src_310
 				_hx_closure_src_310 = this.Hx_Field_opPriority.VTable.(interface {
 					Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 				}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_get
-				return func(_hx_param_key string) HxNullable[int32] {
+				return func(key string) HxNullable[int32] {
 					var hx_nullable_t37 any
 					_ = hx_nullable_t37
-					hx_nullable_t37 = _hx_closure_src_310(((any)(_hx_param_key)))
+					hx_nullable_t37 = _hx_closure_src_310(((any)(key)))
 					var _hx_tmp_14 HxNullable[int32]
 					_ = _hx_tmp_14
 					if hx_nullable_t37 == nil {
-						_hx_tmp_14 = HxNullable[int32]{}
+						_hx_tmp_14 = HxDefault[HxNullable[int32]]()
 					} else {
 						_hx_tmp_14 = HxNullable[int32]{Value: ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(hx_nullable_t37))), Valid: true}
 					}
@@ -1939,8 +1930,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 
 				var pmax HxNullable[int32]
 				_ = pmax
-				pmax = HxNullable[int32]{}
-
+				pmax = HxDefault[HxNullable[int32]]()
 				var e1 any
 				_ = e1
 				if e == nil {
@@ -1990,7 +1980,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 				_hx_tmp_21 = e1
 				var e2 Hx_Enum_loreline_lorscript_exprdef
 				_ = e2
-				e2 = Hx_Enum_loreline_lorscript_exprdef_EFunction{_hx_tmp_20, _hx_tmp_21, HxNullable[string]{Value: HxStringNull}, nil}
+				e2 = Hx_Enum_loreline_lorscript_exprdef_EFunction{_hx_tmp_20, _hx_tmp_21, HxDefault[HxNullable[string]](), nil}
 
 				var pmin1 HxNullable[int32]
 				_ = pmin1
@@ -1998,8 +1988,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 
 				var pmax1 HxNullable[int32]
 				_ = pmax1
-				pmax1 = HxNullable[int32]{}
-
+				pmax1 = HxDefault[HxNullable[int32]]()
 				if e2 == nil {
 					return nil
 				} else {
@@ -2124,7 +2113,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 					if _g.Hx_Field_enumIndex() == 1 {
 						var v string
 						_ = v
-						v = _g.(Hx_Enum_loreline_lorscript_exprdef_EIdent).Hx_Field_v
+						v = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EIdent).Hx_Field_v
 						var _hx_tmp_28 HxArray[any]
 						_ = _hx_tmp_28
 						_hx_tmp_28 = HxMakeArray[any](any(map[string]any{"name": ((any)(v))})).Dyn()
@@ -2220,7 +2209,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 							if _g.Hx_Field_enumIndex() == 1 {
 								var v string
 								_ = v
-								v = _g.(Hx_Enum_loreline_lorscript_exprdef_EIdent).Hx_Field_v
+								v = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EIdent).Hx_Field_v
 								var _hx_tmp_33 HxArray[any]
 								_ = _hx_tmp_33
 								_hx_tmp_33 = HxMakeArray[any](any(map[string]any{"name": ((any)(v)), "t": ((any)(t))})).Dyn()
@@ -2258,7 +2247,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 				{
 					var c Hx_Enum_loreline_lorscript_const
 					_ = c
-					c = tk.(Hx_Enum_loreline_lorscript_token_TConst).Hx_Field_c
+					c = ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TConst).Hx_Field_c
 					if this.Hx_Field_allowJSON {
 						if c.Hx_Field_enumIndex() == 2 {
 							var tk2 Hx_Enum_loreline_lorscript_token
@@ -2325,8 +2314,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 
 					var pmax HxNullable[int32]
 					_ = pmax
-					pmax = HxNullable[int32]{}
-
+					pmax = HxDefault[HxNullable[int32]]()
 					var tmp any
 					_ = tmp
 					if e == nil {
@@ -2406,8 +2394,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 
 			var pmax HxNullable[int32]
 			_ = pmax
-			pmax = HxNullable[int32]{}
-
+			pmax = HxDefault[HxNullable[int32]]()
 			if e == nil {
 				return nil
 			} else {
@@ -2509,8 +2496,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 
 						var pmax HxNullable[int32]
 						_ = pmax
-						pmax = HxNullable[int32]{}
-
+						pmax = HxDefault[HxNullable[int32]]()
 						var e1 any
 						_ = e1
 						if e == nil {
@@ -2562,8 +2548,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 
 						var pmax1 HxNullable[int32]
 						_ = pmax1
-						pmax1 = HxNullable[int32]{}
-
+						pmax1 = HxDefault[HxNullable[int32]]()
 						var e3 any
 						_ = e3
 						if e2 == nil {
@@ -2618,8 +2603,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 
 						var pmax2 HxNullable[int32]
 						_ = pmax2
-						pmax2 = HxNullable[int32]{}
-
+						pmax2 = HxDefault[HxNullable[int32]]()
 						var e6 any
 						_ = e6
 						if e5 == nil {
@@ -2671,8 +2655,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 
 						var pmax3 HxNullable[int32]
 						_ = pmax3
-						pmax3 = HxNullable[int32]{}
-
+						pmax3 = HxDefault[HxNullable[int32]]()
 						var e8 any
 						_ = e8
 						if e7 == nil {
@@ -2736,8 +2719,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 
 						var pmax HxNullable[int32]
 						_ = pmax
-						pmax = HxNullable[int32]{}
-
+						pmax = HxDefault[HxNullable[int32]]()
 						var e1 any
 						_ = e1
 						if e == nil {
@@ -2789,8 +2771,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 
 						var pmax1 HxNullable[int32]
 						_ = pmax1
-						pmax1 = HxNullable[int32]{}
-
+						pmax1 = HxDefault[HxNullable[int32]]()
 						var e3 any
 						_ = e3
 						if e2 == nil {
@@ -2845,8 +2826,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 
 						var pmax2 HxNullable[int32]
 						_ = pmax2
-						pmax2 = HxNullable[int32]{}
-
+						pmax2 = HxDefault[HxNullable[int32]]()
 						var e6 any
 						_ = e6
 						if e5 == nil {
@@ -2898,8 +2878,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 
 						var pmax3 HxNullable[int32]
 						_ = pmax3
-						pmax3 = HxNullable[int32]{}
-
+						pmax3 = HxDefault[HxNullable[int32]]()
 						var e8 any
 						_ = e8
 						if e7 == nil {
@@ -2963,8 +2942,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 
 						var pmax HxNullable[int32]
 						_ = pmax
-						pmax = HxNullable[int32]{}
-
+						pmax = HxDefault[HxNullable[int32]]()
 						var e1 any
 						_ = e1
 						if e == nil {
@@ -3016,8 +2994,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 
 						var pmax1 HxNullable[int32]
 						_ = pmax1
-						pmax1 = HxNullable[int32]{}
-
+						pmax1 = HxDefault[HxNullable[int32]]()
 						var e3 any
 						_ = e3
 						if e2 == nil {
@@ -3072,8 +3049,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 
 						var pmax2 HxNullable[int32]
 						_ = pmax2
-						pmax2 = HxNullable[int32]{}
-
+						pmax2 = HxDefault[HxNullable[int32]]()
 						var e6 any
 						_ = e6
 						if e5 == nil {
@@ -3125,8 +3101,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 
 						var pmax3 HxNullable[int32]
 						_ = pmax3
-						pmax3 = HxNullable[int32]{}
-
+						pmax3 = HxDefault[HxNullable[int32]]()
 						var e8 any
 						_ = e8
 						if e7 == nil {
@@ -3187,8 +3162,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 
 			var pmax HxNullable[int32]
 			_ = pmax
-			pmax = HxNullable[int32]{}
-
+			pmax = HxDefault[HxNullable[int32]]()
 			var tmp any
 			_ = tmp
 			if e == nil {
@@ -3237,7 +3211,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 		{
 			var id string
 			_ = id
-			id = tk.(Hx_Enum_loreline_lorscript_token_TMeta).Hx_Field_s
+			id = ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TMeta).Hx_Field_s
 			if this.Hx_Field_allowMetadata {
 				var args HxArray[any]
 				_ = args
@@ -3258,8 +3232,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExpr() any {
 
 				var pmax HxNullable[int32]
 				_ = pmax
-				pmax = HxNullable[int32]{}
-
+				pmax = HxDefault[HxNullable[int32]]()
 				if e == nil {
 					return nil
 				} else {
@@ -3383,8 +3356,7 @@ hx_label_0:
 	pmin1 = pmin
 	var pmax HxNullable[int32]
 	_ = pmax
-	pmax = HxNullable[int32]{}
-
+	pmax = HxDefault[HxNullable[int32]]()
 	var e1 any
 	_ = e1
 	if e == nil {
@@ -3434,15 +3406,14 @@ hx_label_0:
 	_hx_tmp_7 = e1
 	var e2 Hx_Enum_loreline_lorscript_exprdef
 	_ = e2
-	e2 = Hx_Enum_loreline_lorscript_exprdef_EFunction{_hx_tmp_6, _hx_tmp_7, HxNullable[string]{Value: HxStringNull}, nil}
+	e2 = Hx_Enum_loreline_lorscript_exprdef_EFunction{_hx_tmp_6, _hx_tmp_7, HxDefault[HxNullable[string]](), nil}
 
 	var pmin2 HxNullable[int32]
 	_ = pmin2
 	pmin2 = pmin
 	var pmax1 HxNullable[int32]
 	_ = pmax1
-	pmax1 = HxNullable[int32]{}
-
+	pmax1 = HxDefault[HxNullable[int32]]()
 	if e2 == nil {
 		return nil
 	} else {
@@ -3565,7 +3536,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_mapCompr(tmp string, e an
 		{
 			var e2 any
 			_ = e2
-			e2 = _g.(Hx_Enum_loreline_lorscript_exprdef_EParent).Hx_Field_e
+			e2 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EParent).Hx_Field_e
 			edef = Hx_Enum_loreline_lorscript_exprdef_EParent{this.VTable.Hx_Field_mapCompr(tmp, e2)}
 		}
 
@@ -3573,7 +3544,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_mapCompr(tmp string, e an
 		{
 			var _ge HxArray[any]
 			_ = _ge
-			_ge = _g.(Hx_Enum_loreline_lorscript_exprdef_EBlock).Hx_Field_e
+			_ge = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EBlock).Hx_Field_e
 			if Hx_Field_go_haxe_hxdynamic_getArrayLength(_ge) == 1 {
 				var e any
 				_ = e
@@ -3729,13 +3700,13 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_mapCompr(tmp string, e an
 		{
 			var cond any
 			_ = cond
-			cond = _g.(Hx_Enum_loreline_lorscript_exprdef_EIf).Hx_Field_cond
+			cond = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EIf).Hx_Field_cond
 			var e1 any
 			_ = e1
-			e1 = _g.(Hx_Enum_loreline_lorscript_exprdef_EIf).Hx_Field_e1
+			e1 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EIf).Hx_Field_e1
 			var e2 any
 			_ = e2
-			e2 = _g.(Hx_Enum_loreline_lorscript_exprdef_EIf).Hx_Field_e2
+			e2 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EIf).Hx_Field_e2
 			if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(e2, nil))) {
 				var _hx_tmp_11 any
 				_ = _hx_tmp_11
@@ -3891,10 +3862,10 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_mapCompr(tmp string, e an
 		{
 			var cond any
 			_ = cond
-			cond = _g.(Hx_Enum_loreline_lorscript_exprdef_EWhile).Hx_Field_cond
+			cond = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EWhile).Hx_Field_cond
 			var e2 any
 			_ = e2
-			e2 = _g.(Hx_Enum_loreline_lorscript_exprdef_EWhile).Hx_Field_e
+			e2 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EWhile).Hx_Field_e
 			var _hx_tmp_23 any
 			_ = _hx_tmp_23
 			_hx_tmp_23 = cond
@@ -3905,13 +3876,13 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_mapCompr(tmp string, e an
 		{
 			var v string
 			_ = v
-			v = _g.(Hx_Enum_loreline_lorscript_exprdef_EFor).Hx_Field_v
+			v = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EFor).Hx_Field_v
 			var it any
 			_ = it
-			it = _g.(Hx_Enum_loreline_lorscript_exprdef_EFor).Hx_Field_it
+			it = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EFor).Hx_Field_it
 			var e2 any
 			_ = e2
-			e2 = _g.(Hx_Enum_loreline_lorscript_exprdef_EFor).Hx_Field_e
+			e2 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EFor).Hx_Field_e
 			var _hx_tmp_24 string
 			_ = _hx_tmp_24
 			_hx_tmp_24 = v
@@ -3925,10 +3896,10 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_mapCompr(tmp string, e an
 		{
 			var cond any
 			_ = cond
-			cond = _g.(Hx_Enum_loreline_lorscript_exprdef_EDoWhile).Hx_Field_cond
+			cond = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EDoWhile).Hx_Field_cond
 			var e2 any
 			_ = e2
-			e2 = _g.(Hx_Enum_loreline_lorscript_exprdef_EDoWhile).Hx_Field_e
+			e2 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EDoWhile).Hx_Field_e
 			var _hx_tmp_26 any
 			_ = _hx_tmp_26
 			_hx_tmp_26 = cond
@@ -4174,13 +4145,13 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_makeUnop(op string, e any
 		{
 			var bop string
 			_ = bop
-			bop = _g.(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_op
+			bop = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_op
 			var e1 any
 			_ = e1
-			e1 = _g.(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_e1
+			e1 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_e1
 			var e2 any
 			_ = e2
-			e2 = _g.(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_e2
+			e2 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_e2
 			var _hx_tmp_1 string
 			_ = _hx_tmp_1
 			_hx_tmp_1 = bop
@@ -4256,13 +4227,13 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_makeUnop(op string, e any
 		{
 			var e1 any
 			_ = e1
-			e1 = _g.(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_cond
+			e1 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_cond
 			var e2 any
 			_ = e2
-			e2 = _g.(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_e1
+			e2 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_e1
 			var e3 any
 			_ = e3
-			e3 = _g.(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_e2
+			e3 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_e2
 			var e Hx_Enum_loreline_lorscript_exprdef
 			_ = e
 			e = Hx_Enum_loreline_lorscript_exprdef_ETernary{this.VTable.Hx_Field_makeUnop(op, e1), e2, e3}
@@ -4496,31 +4467,31 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_makeBinop(op string, e1 a
 		{
 			var op2 string
 			_ = op2
-			op2 = _g.(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_op
+			op2 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_op
 			var e2 any
 			_ = e2
-			e2 = _g.(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_e1
+			e2 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_e1
 			var e3 any
 			_ = e3
-			e3 = _g.(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_e2
+			e3 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_e2
 			var _hx_tmp_6 bool
 			_ = _hx_tmp_6
 			var hx_cmp_6 HxNullable[int32]
 			_ = hx_cmp_6
-			hx_cmp_6 = func() func(_hx_param_key string) HxNullable[int32] {
+			hx_cmp_6 = func() func(key string) HxNullable[int32] {
 				var _hx_closure_src_316 func(_hx_param_key any) any
 				_ = _hx_closure_src_316
 				_hx_closure_src_316 = this.Hx_Field_opPriority.VTable.(interface {
 					Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 				}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_get
-				return func(_hx_param_key string) HxNullable[int32] {
+				return func(key string) HxNullable[int32] {
 					var hx_nullable_t40 any
 					_ = hx_nullable_t40
-					hx_nullable_t40 = _hx_closure_src_316(((any)(_hx_param_key)))
+					hx_nullable_t40 = _hx_closure_src_316(((any)(key)))
 					var _hx_tmp_7 HxNullable[int32]
 					_ = _hx_tmp_7
 					if hx_nullable_t40 == nil {
-						_hx_tmp_7 = HxNullable[int32]{}
+						_hx_tmp_7 = HxDefault[HxNullable[int32]]()
 					} else {
 						_hx_tmp_7 = HxNullable[int32]{Value: ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(hx_nullable_t40))), Valid: true}
 					}
@@ -4530,20 +4501,20 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_makeBinop(op string, e1 a
 			}()(op)
 			var hx_cmp_7 HxNullable[int32]
 			_ = hx_cmp_7
-			hx_cmp_7 = func() func(_hx_param_key string) HxNullable[int32] {
+			hx_cmp_7 = func() func(key string) HxNullable[int32] {
 				var _hx_closure_src_317 func(_hx_param_key any) any
 				_ = _hx_closure_src_317
 				_hx_closure_src_317 = this.Hx_Field_opPriority.VTable.(interface {
 					Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 				}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_get
-				return func(_hx_param_key string) HxNullable[int32] {
+				return func(key string) HxNullable[int32] {
 					var hx_nullable_t41 any
 					_ = hx_nullable_t41
-					hx_nullable_t41 = _hx_closure_src_317(((any)(_hx_param_key)))
+					hx_nullable_t41 = _hx_closure_src_317(((any)(key)))
 					var _hx_tmp_8 HxNullable[int32]
 					_ = _hx_tmp_8
 					if hx_nullable_t41 == nil {
-						_hx_tmp_8 = HxNullable[int32]{}
+						_hx_tmp_8 = HxDefault[HxNullable[int32]]()
 					} else {
 						_hx_tmp_8 = HxNullable[int32]{Value: ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(hx_nullable_t41))), Valid: true}
 					}
@@ -4552,14 +4523,14 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_makeBinop(op string, e1 a
 				}
 			}()(op2)
 			if (hx_cmp_6).Valid && (hx_cmp_7).Valid && ((hx_cmp_6).Value <= (hx_cmp_7).Value) || (!(hx_cmp_6).Valid && !(hx_cmp_7).Valid) {
-				_hx_tmp_6 = !func() func(_hx_param_key string) bool {
+				_hx_tmp_6 = !func() func(key string) bool {
 					var _hx_closure_src_314 func(_hx_param_key any) bool
 					_ = _hx_closure_src_314
 					_hx_closure_src_314 = this.Hx_Field_opRightAssoc.VTable.(interface {
 						Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 					}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_exists
-					return func(_hx_param_key string) bool {
-						return _hx_closure_src_314(((any)(_hx_param_key)))
+					return func(key string) bool {
+						return _hx_closure_src_314(((any)(key)))
 					}
 				}()(op)
 			} else {
@@ -4710,21 +4681,21 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_makeBinop(op string, e1 a
 		{
 			var e2 any
 			_ = e2
-			e2 = _g.(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_cond
+			e2 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_cond
 			var e3 any
 			_ = e3
-			e3 = _g.(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_e1
+			e3 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_e1
 			var e4 any
 			_ = e4
-			e4 = _g.(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_e2
-			if func() func(_hx_param_key string) bool {
+			e4 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ETernary).Hx_Field_e2
+			if func() func(key string) bool {
 				var _hx_closure_src_315 func(_hx_param_key any) bool
 				_ = _hx_closure_src_315
 				_hx_closure_src_315 = this.Hx_Field_opRightAssoc.VTable.(interface {
 					Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 				}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_exists
-				return func(_hx_param_key string) bool {
-					return _hx_closure_src_315(((any)(_hx_param_key)))
+				return func(key string) bool {
+					return _hx_closure_src_315(((any)(key)))
 				}
 			}()(op) {
 				var tmp_e2_1 Hx_Enum_loreline_lorscript_exprdef
@@ -4948,12 +4919,10 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseStructure(id string)
 
 			var pmin HxNullable[int32]
 			_ = pmin
-			pmin = HxNullable[int32]{}
-
+			pmin = HxDefault[HxNullable[int32]]()
 			var pmax HxNullable[int32]
 			_ = pmax
-			pmax = HxNullable[int32]{}
-
+			pmax = HxDefault[HxNullable[int32]]()
 			if e == nil {
 				return nil
 			} else {
@@ -5002,12 +4971,10 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseStructure(id string)
 
 			var pmin HxNullable[int32]
 			_ = pmin
-			pmin = HxNullable[int32]{}
-
+			pmin = HxDefault[HxNullable[int32]]()
 			var pmax HxNullable[int32]
 			_ = pmax
-			pmax = HxNullable[int32]{}
-
+			pmax = HxDefault[HxNullable[int32]]()
 			if e == nil {
 				return nil
 			} else {
@@ -5057,7 +5024,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseStructure(id string)
 			_ = tk
 			tk = this.VTable.Hx_Field_token()
 			if tk.Hx_Field_enumIndex() == 2 {
-				if tk.(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s != "while" {
+				if ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s != "while" {
 					this.VTable.Hx_Field_unexpected(tk)
 				}
 			} else {
@@ -5247,12 +5214,11 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseStructure(id string)
 			tk = this.VTable.Hx_Field_token()
 			var name HxNullable[string]
 			_ = name
-			name = HxNullable[string]{Value: HxStringNull}
-
+			name = HxDefault[HxNullable[string]]()
 			if tk.Hx_Field_enumIndex() == 2 {
 				var id string
 				_ = id
-				id = tk.(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s
+				id = ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s
 				name = HxNullableString(id)
 			} else {
 				this.Hx_Field_tokens.VTable.Hx_Field_push(any(map[string]any{"t": ((any)(tk)), "min": ((any)(this.Hx_Field_tokenMin)), "max": ((any)(this.Hx_Field_tokenMax))}))
@@ -5532,8 +5498,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseStructure(id string)
 
 			var pmax HxNullable[int32]
 			_ = pmax
-			pmax = HxNullable[int32]{}
-
+			pmax = HxDefault[HxNullable[int32]]()
 			if e == nil {
 				return nil
 			} else {
@@ -5690,7 +5655,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseStructure(id string)
 				switch tk.Hx_Field_enumIndex() {
 				case 2:
 					{
-						switch tk.(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s {
+						switch ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s {
 						case "case":
 							{
 								var c any
@@ -5749,7 +5714,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseStructure(id string)
 
 									case 2:
 										{
-											switch tk.(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s {
+											switch ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s {
 											case "case", "default":
 												{
 													break hx_label_2
@@ -5951,7 +5916,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseStructure(id string)
 
 									case 2:
 										{
-											switch tk.(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s {
+											switch ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s {
 											case "case", "default":
 												{
 													break hx_label_3
@@ -6408,7 +6373,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseStructure(id string)
 			switch tk.Hx_Field_enumIndex() {
 			case 3:
 				{
-					if tk.(Hx_Enum_loreline_lorscript_token_TOp).Hx_Field_s == "=" {
+					if ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TOp).Hx_Field_s == "=" {
 						e = this.VTable.Hx_Field_parseExpr()
 					} else {
 						this.VTable.Hx_Field_unexpected(tk)
@@ -6585,7 +6550,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 		{
 			var op string
 			_ = op
-			op = tk.(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s
+			op = ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s
 			if op == "is" {
 				var _hx_tmp_0 string
 				_ = _hx_tmp_0
@@ -6609,7 +6574,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 		{
 			var op string
 			_ = op
-			op = tk.(Hx_Enum_loreline_lorscript_token_TOp).Hx_Field_s
+			op = ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TOp).Hx_Field_s
 			if op == "->" {
 				{
 					var _g Hx_Enum_loreline_lorscript_exprdef
@@ -6627,7 +6592,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 						{
 							var i string
 							_ = i
-							i = _g.(Hx_Enum_loreline_lorscript_exprdef_EIdent).Hx_Field_v
+							i = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EIdent).Hx_Field_v
 							var eret any
 							_ = eret
 							eret = this.VTable.Hx_Field_parseExpr()
@@ -6649,8 +6614,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 
 							var pmax HxNullable[int32]
 							_ = pmax
-							pmax = HxNullable[int32]{}
-
+							pmax = HxDefault[HxNullable[int32]]()
 							var e2 any
 							_ = e2
 							if e == nil {
@@ -6700,7 +6664,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 							_hx_tmp_7 = e2
 							var e3 Hx_Enum_loreline_lorscript_exprdef
 							_ = e3
-							e3 = Hx_Enum_loreline_lorscript_exprdef_EFunction{_hx_tmp_6, _hx_tmp_7, HxNullable[string]{Value: HxStringNull}, nil}
+							e3 = Hx_Enum_loreline_lorscript_exprdef_EFunction{_hx_tmp_6, _hx_tmp_7, HxDefault[HxNullable[string]](), nil}
 
 							var _hx_tmp_8 int32
 							_ = _hx_tmp_8
@@ -6716,8 +6680,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 
 							var pmax1 HxNullable[int32]
 							_ = pmax1
-							pmax1 = HxNullable[int32]{}
-
+							pmax1 = HxDefault[HxNullable[int32]]()
 							if e3 == nil {
 								return nil
 							} else {
@@ -6763,7 +6726,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 							var _hx_tmp Hx_Enum_loreline_lorscript_exprdef
 							_ = _hx_tmp
 							_hx_tmp = func() Hx_Enum_loreline_lorscript_exprdef {
-								_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(Hx_Field_go_haxe_hxdynamic_getField(_g.(Hx_Enum_loreline_lorscript_exprdef_EParent).Hx_Field_e, "e"))
+								_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(Hx_Field_go_haxe_hxdynamic_getField(((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EParent).Hx_Field_e, "e"))
 								if _hx_d == nil {
 									var _hx_z Hx_Enum_loreline_lorscript_exprdef
 									return _hx_z
@@ -6773,7 +6736,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 							if _hx_tmp.Hx_Field_enumIndex() == 1 {
 								var i string
 								_ = i
-								i = _hx_tmp.(Hx_Enum_loreline_lorscript_exprdef_EIdent).Hx_Field_v
+								i = ((Hx_Enum_loreline_lorscript_exprdef)(_hx_tmp)).(Hx_Enum_loreline_lorscript_exprdef_EIdent).Hx_Field_v
 								var eret any
 								_ = eret
 								eret = this.VTable.Hx_Field_parseExpr()
@@ -6795,8 +6758,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 
 								var pmax HxNullable[int32]
 								_ = pmax
-								pmax = HxNullable[int32]{}
-
+								pmax = HxDefault[HxNullable[int32]]()
 								var e2 any
 								_ = e2
 								if e == nil {
@@ -6846,7 +6808,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 								_hx_tmp_17 = e2
 								var e3 Hx_Enum_loreline_lorscript_exprdef
 								_ = e3
-								e3 = Hx_Enum_loreline_lorscript_exprdef_EFunction{_hx_tmp_16, _hx_tmp_17, HxNullable[string]{Value: HxStringNull}, nil}
+								e3 = Hx_Enum_loreline_lorscript_exprdef_EFunction{_hx_tmp_16, _hx_tmp_17, HxDefault[HxNullable[string]](), nil}
 
 								var _hx_tmp_18 int32
 								_ = _hx_tmp_18
@@ -6862,8 +6824,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 
 								var pmax1 HxNullable[int32]
 								_ = pmax1
-								pmax1 = HxNullable[int32]{}
-
+								pmax1 = HxDefault[HxNullable[int32]]()
 								if e3 == nil {
 									return nil
 								} else {
@@ -6910,7 +6871,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 							var _hx_tmp Hx_Enum_loreline_lorscript_exprdef
 							_ = _hx_tmp
 							_hx_tmp = func() Hx_Enum_loreline_lorscript_exprdef {
-								_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(Hx_Field_go_haxe_hxdynamic_getField(_g.(Hx_Enum_loreline_lorscript_exprdef_ECheckType).Hx_Field_e, "e"))
+								_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(Hx_Field_go_haxe_hxdynamic_getField(((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ECheckType).Hx_Field_e, "e"))
 								if _hx_d == nil {
 									var _hx_z Hx_Enum_loreline_lorscript_exprdef
 									return _hx_z
@@ -6920,10 +6881,10 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 							if _hx_tmp.Hx_Field_enumIndex() == 1 {
 								var i string
 								_ = i
-								i = _hx_tmp.(Hx_Enum_loreline_lorscript_exprdef_EIdent).Hx_Field_v
+								i = ((Hx_Enum_loreline_lorscript_exprdef)(_hx_tmp)).(Hx_Enum_loreline_lorscript_exprdef_EIdent).Hx_Field_v
 								var t Hx_Enum_loreline_lorscript_ctype
 								_ = t
-								t = _g.(Hx_Enum_loreline_lorscript_exprdef_ECheckType).Hx_Field_t
+								t = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_ECheckType).Hx_Field_t
 								var eret any
 								_ = eret
 								eret = this.VTable.Hx_Field_parseExpr()
@@ -6945,8 +6906,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 
 								var pmax HxNullable[int32]
 								_ = pmax
-								pmax = HxNullable[int32]{}
-
+								pmax = HxDefault[HxNullable[int32]]()
 								var e2 any
 								_ = e2
 								if e == nil {
@@ -6996,7 +6956,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 								_hx_tmp_27 = e2
 								var e3 Hx_Enum_loreline_lorscript_exprdef
 								_ = e3
-								e3 = Hx_Enum_loreline_lorscript_exprdef_EFunction{_hx_tmp_26, _hx_tmp_27, HxNullable[string]{Value: HxStringNull}, nil}
+								e3 = Hx_Enum_loreline_lorscript_exprdef_EFunction{_hx_tmp_26, _hx_tmp_27, HxDefault[HxNullable[string]](), nil}
 
 								var _hx_tmp_28 int32
 								_ = _hx_tmp_28
@@ -7012,8 +6972,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 
 								var pmax1 HxNullable[int32]
 								_ = pmax1
-								pmax1 = HxNullable[int32]{}
-
+								pmax1 = HxDefault[HxNullable[int32]]()
 								if e3 == nil {
 									return nil
 								} else {
@@ -7066,20 +7025,20 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 
 			var hx_cmp_8 HxNullable[int32]
 			_ = hx_cmp_8
-			hx_cmp_8 = func() func(_hx_param_key string) HxNullable[int32] {
+			hx_cmp_8 = func() func(key string) HxNullable[int32] {
 				var _hx_closure_src_323 func(_hx_param_key any) any
 				_ = _hx_closure_src_323
 				_hx_closure_src_323 = this.Hx_Field_opPriority.VTable.(interface {
 					Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 				}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_get
-				return func(_hx_param_key string) HxNullable[int32] {
+				return func(key string) HxNullable[int32] {
 					var hx_nullable_t43 any
 					_ = hx_nullable_t43
-					hx_nullable_t43 = _hx_closure_src_323(((any)(_hx_param_key)))
+					hx_nullable_t43 = _hx_closure_src_323(((any)(key)))
 					var _hx_tmp_32 HxNullable[int32]
 					_ = _hx_tmp_32
 					if hx_nullable_t43 == nil {
-						_hx_tmp_32 = HxNullable[int32]{}
+						_hx_tmp_32 = HxDefault[HxNullable[int32]]()
 					} else {
 						_hx_tmp_32 = HxNullable[int32]{Value: ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(hx_nullable_t43))), Valid: true}
 					}
@@ -7132,8 +7091,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 
 				var pmax HxNullable[int32]
 				_ = pmax
-				pmax = HxNullable[int32]{}
-
+				pmax = HxDefault[HxNullable[int32]]()
 				var tmp any
 				_ = tmp
 				if e == nil {
@@ -7210,8 +7168,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 
 			var pmax HxNullable[int32]
 			_ = pmax
-			pmax = HxNullable[int32]{}
-
+			pmax = HxDefault[HxNullable[int32]]()
 			var tmp any
 			_ = tmp
 			if e == nil {
@@ -7279,8 +7236,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 
 			var pmax HxNullable[int32]
 			_ = pmax
-			pmax = HxNullable[int32]{}
-
+			pmax = HxDefault[HxNullable[int32]]()
 			var tmp any
 			_ = tmp
 			if e == nil {
@@ -7550,12 +7506,10 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 
 			var pmin3 HxNullable[int32]
 			_ = pmin3
-			pmin3 = HxNullable[int32]{}
-
+			pmin3 = HxDefault[HxNullable[int32]]()
 			var pmax3 HxNullable[int32]
 			_ = pmax3
-			pmax3 = HxNullable[int32]{}
-
+			pmax3 = HxDefault[HxNullable[int32]]()
 			var e8 any
 			_ = e8
 			if e7 == nil {
@@ -7753,8 +7707,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 
 			var pmax6 HxNullable[int32]
 			_ = pmax6
-			pmax6 = HxNullable[int32]{}
-
+			pmax6 = HxDefault[HxNullable[int32]]()
 			var e14 any
 			_ = e14
 			if e13 == nil {
@@ -7802,12 +7755,10 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 
 			var pmin7 HxNullable[int32]
 			_ = pmin7
-			pmin7 = HxNullable[int32]{}
-
+			pmin7 = HxDefault[HxNullable[int32]]()
 			var pmax7 HxNullable[int32]
 			_ = pmax7
-			pmax7 = HxNullable[int32]{}
-
+			pmax7 = HxDefault[HxNullable[int32]]()
 			var e16 any
 			_ = e16
 			if e15 == nil {
@@ -7867,8 +7818,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 
 			var pmax8 HxNullable[int32]
 			_ = pmax8
-			pmax8 = HxNullable[int32]{}
-
+			pmax8 = HxDefault[HxNullable[int32]]()
 			var e18 any
 			_ = e18
 			if e17 == nil {
@@ -7945,8 +7895,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseExprNext(e1 any) any
 
 			var pmax HxNullable[int32]
 			_ = pmax
-			pmax = HxNullable[int32]{}
-
+			pmax = HxDefault[HxNullable[int32]]()
 			var tmp any
 			_ = tmp
 			if e == nil {
@@ -8103,8 +8052,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseFunctionArgs() HxArr
 		for !done {
 			var name HxNullable[string]
 			_ = name
-			name = HxNullable[string]{Value: HxStringNull}
-
+			name = HxDefault[HxNullable[string]]()
 			var opt bool
 			_ = opt
 			opt = false
@@ -8116,7 +8064,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseFunctionArgs() HxArr
 			if tk.Hx_Field_enumIndex() == 2 {
 				var id string
 				_ = id
-				id = tk.(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s
+				id = ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s
 				name = HxNullableString(id)
 			} else {
 				this.VTable.Hx_Field_unexpected(tk)
@@ -8257,7 +8205,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseType() Hx_Enum_lorel
 		{
 			var v string
 			_ = v
-			v = t.(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s
+			v = ((Hx_Enum_loreline_lorscript_token)(t)).(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s
 			{
 				this.Hx_Field_tokens.VTable.Hx_Field_push(any(map[string]any{"t": ((any)(t)), "min": ((any)(this.Hx_Field_tokenMin)), "max": ((any)(this.Hx_Field_tokenMax))}))
 				this.Hx_Field_tokenMin = this.Hx_Field_oldTokenMin
@@ -8273,7 +8221,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseType() Hx_Enum_lorel
 			if t.Hx_Field_enumIndex() == 3 {
 				var op string
 				_ = op
-				op = t.(Hx_Enum_loreline_lorscript_token_TOp).Hx_Field_s
+				op = ((Hx_Enum_loreline_lorscript_token)(t)).(Hx_Enum_loreline_lorscript_token_TOp).Hx_Field_s
 				if op == "<" {
 					params = HxMakeArray[Hx_Enum_loreline_lorscript_ctype]()
 				hx_label_0:
@@ -8288,7 +8236,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseType() Hx_Enum_lorel
 							{
 								var tmp_op_1 string
 								_ = tmp_op_1
-								tmp_op_1 = t.(Hx_Enum_loreline_lorscript_token_TOp).Hx_Field_s
+								tmp_op_1 = ((Hx_Enum_loreline_lorscript_token)(t)).(Hx_Enum_loreline_lorscript_token_TOp).Hx_Field_s
 								{
 									if tmp_op_1 == ">" {
 										break hx_label_0
@@ -8311,7 +8259,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseType() Hx_Enum_lorel
 										_hx_tmp_3 = tmp_op_1
 										var _hx_tmp_2 any
 										_ = _hx_tmp_2
-										_hx_tmp_2 = ((any)(Hx_Enum_loreline_lorscript_token_TOp{(Hx_Field_go_haxe_hxstring_substr(_hx_tmp_3, 1, HxNullable[int32]{}))}))
+										_hx_tmp_2 = ((any)(Hx_Enum_loreline_lorscript_token_TOp{(Hx_Field_go_haxe_hxstring_substr(_hx_tmp_3, 1, HxDefault[HxNullable[int32]]()))}))
 										var _hx_tmp_4 int32
 										_ = _hx_tmp_4
 										_hx_tmp_4 = this.Hx_Field_tokenMax
@@ -8376,7 +8324,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseType() Hx_Enum_lorel
 					_ = _g
 					_g = _gthis.VTable.Hx_Field_token()
 					if _g.Hx_Field_enumIndex() == 3 {
-						if _g.(Hx_Enum_loreline_lorscript_token_TOp).Hx_Field_s != "->" {
+						if ((Hx_Enum_loreline_lorscript_token)(_g)).(Hx_Enum_loreline_lorscript_token_TOp).Hx_Field_s != "->" {
 							var tmp_t_1 Hx_Enum_loreline_lorscript_token
 							_ = tmp_t_1
 							tmp_t_1 = _g
@@ -8681,7 +8629,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseType() Hx_Enum_lorel
 					{
 						var _gs string
 						_ = _gs
-						_gs = t.(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s
+						_gs = ((Hx_Enum_loreline_lorscript_token)(t)).(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s
 						if _gs == "var" {
 							var name string
 							_ = name
@@ -8761,7 +8709,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseType() Hx_Enum_lorel
 					{
 						var name string
 						_ = name
-						name = t.(Hx_Enum_loreline_lorscript_token_TMeta).Hx_Field_s
+						name = ((Hx_Enum_loreline_lorscript_token)(t)).(Hx_Enum_loreline_lorscript_token_TMeta).Hx_Field_s
 						{
 							if meta == nil {
 								meta = HxMakeArray[any]().Dyn()
@@ -8809,7 +8757,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseTypeNext(t Hx_Enum_l
 	if tk.Hx_Field_enumIndex() == 3 {
 		var op string
 		_ = op
-		op = tk.(Hx_Enum_loreline_lorscript_token_TOp).Hx_Field_s
+		op = ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TOp).Hx_Field_s
 		if op != "->" {
 			{
 				this.Hx_Field_tokens.VTable.Hx_Field_push(any(map[string]any{"t": ((any)(tk)), "min": ((any)(this.Hx_Field_tokenMin)), "max": ((any)(this.Hx_Field_tokenMax))}))
@@ -8835,7 +8783,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseTypeNext(t Hx_Enum_l
 	if t2.Hx_Field_enumIndex() == 1 {
 		var args HxArray[Hx_Enum_loreline_lorscript_ctype]
 		_ = args
-		args = t2.(Hx_Enum_loreline_lorscript_ctype_CTFun).Hx_Field_args
+		args = ((Hx_Enum_loreline_lorscript_ctype)(t2)).(Hx_Enum_loreline_lorscript_ctype_CTFun).Hx_Field_args
 		(Hx_Array_Unshift[Hx_Enum_loreline_lorscript_ctype](args, t))
 		return t2
 	} else {
@@ -8951,7 +8899,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parseMetadata() HxArray[a
 		if tk.Hx_Field_enumIndex() == 16 {
 			var name string
 			_ = name
-			name = tk.(Hx_Enum_loreline_lorscript_token_TMeta).Hx_Field_s
+			name = ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TMeta).Hx_Field_s
 			var _hx_tmp_0 HxArray[any]
 			_ = _hx_tmp_0
 			_hx_tmp_0 = HxMakeArrayView[any](meta)
@@ -9038,7 +8986,7 @@ hx_label_0:
 				_ = t
 				t = this.VTable.Hx_Field_token()
 				if t.Hx_Field_enumIndex() == 2 {
-					switch t.(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s {
+					switch ((Hx_Enum_loreline_lorscript_token)(t)).(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s {
 					case "extends":
 						{
 							extend = this.VTable.Hx_Field_parseType()
@@ -9128,13 +9076,13 @@ hx_label_0:
 					{
 						var id string
 						_ = id
-						id = t.(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s
+						id = ((Hx_Enum_loreline_lorscript_token)(t)).(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s
 						_ = (Hx_Array_Push[string](path, id))
 					}
 
 				case 3:
 					{
-						if t.(Hx_Enum_loreline_lorscript_token_TOp).Hx_Field_s == "*" {
+						if ((Hx_Enum_loreline_lorscript_token)(t)).(Hx_Enum_loreline_lorscript_token_TOp).Hx_Field_s == "*" {
 							star = true
 						} else {
 							this.VTable.Hx_Field_unexpected(t)
@@ -9298,12 +9246,10 @@ hx_label_0:
 				name = this.VTable.Hx_Field_getIdent()
 				var get HxNullable[string]
 				_ = get
-				get = HxNullable[string]{Value: HxStringNull}
-
+				get = HxDefault[HxNullable[string]]()
 				var set HxNullable[string]
 				_ = set
-				set = HxNullable[string]{Value: HxStringNull}
-
+				set = HxDefault[HxNullable[string]]()
 				if (this.VTable.Hx_Field_maybe(Hx_Enum_loreline_lorscript_token_TPOpen{})) {
 					get = HxNullableString(this.VTable.Hx_Field_getIdent())
 					{
@@ -9536,17 +9482,20 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_readString(until int32) s
 							var i int32
 							_ = i
 							i = _hx_tmp_2
-							k = (k << 4)
-							var _hx_tmp_3 string
+							var _hx_tmp_3 int32
 							_ = _hx_tmp_3
-							_hx_tmp_3 = this.Hx_Field_input
-							var _hx_tmp_4 int32
+							_hx_tmp_3 = k
+							k = (_hx_tmp_3 << 4)
+							var _hx_tmp_4 string
 							_ = _hx_tmp_4
-							_hx_tmp_4 = this.Hx_Field_readPos
+							_hx_tmp_4 = this.Hx_Field_input
+							var _hx_tmp_5 int32
+							_ = _hx_tmp_5
+							_hx_tmp_5 = this.Hx_Field_readPos
 							this.Hx_Field_readPos = (this.Hx_Field_readPos + 1)
 							var char int32
 							_ = char
-							char = (Hx_Field_go_haxe_hxstring_charCodeAt(_hx_tmp_3, _hx_tmp_4)).Value
+							char = (Hx_Field_go_haxe_hxstring_charCodeAt(_hx_tmp_4, _hx_tmp_5)).Value
 							switch char {
 							case 48, 49, 50, 51, 52, 53, 54, 55, 56, 57:
 								{
@@ -9892,18 +9841,17 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field__token() Hx_Enum_loreline
 							tk = this.VTable.Hx_Field_token()
 							var pow HxNullable[int32]
 							_ = pow
-							pow = HxNullable[int32]{}
-
+							pow = HxDefault[HxNullable[int32]]()
 							switch tk.Hx_Field_enumIndex() {
 							case 1:
 								{
 									var _gc Hx_Enum_loreline_lorscript_const
 									_ = _gc
-									_gc = tk.(Hx_Enum_loreline_lorscript_token_TConst).Hx_Field_c
+									_gc = ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TConst).Hx_Field_c
 									if _gc.Hx_Field_enumIndex() == 0 {
 										var e int32
 										_ = e
-										e = _gc.(Hx_Enum_loreline_lorscript_const_CInt).Hx_Field_v
+										e = ((Hx_Enum_loreline_lorscript_const)(_gc)).(Hx_Enum_loreline_lorscript_const_CInt).Hx_Field_v
 										pow = HxNullable[int32]{Value: e, Valid: true}
 									} else {
 										this.Hx_Field_tokens.VTable.Hx_Field_push(any(map[string]any{"t": ((any)(tk)), "min": ((any)(this.Hx_Field_tokenMin)), "max": ((any)(this.Hx_Field_tokenMax))}))
@@ -9914,16 +9862,16 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field__token() Hx_Enum_loreline
 
 							case 3:
 								{
-									if tk.(Hx_Enum_loreline_lorscript_token_TOp).Hx_Field_s == "-" {
+									if ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TOp).Hx_Field_s == "-" {
 										tk = this.VTable.Hx_Field_token()
 										if tk.Hx_Field_enumIndex() == 1 {
 											var _gc Hx_Enum_loreline_lorscript_const
 											_ = _gc
-											_gc = tk.(Hx_Enum_loreline_lorscript_token_TConst).Hx_Field_c
+											_gc = ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TConst).Hx_Field_c
 											if _gc.Hx_Field_enumIndex() == 0 {
 												var e int32
 												_ = e
-												e = _gc.(Hx_Enum_loreline_lorscript_const_CInt).Hx_Field_v
+												e = ((Hx_Enum_loreline_lorscript_const)(_gc)).(Hx_Enum_loreline_lorscript_const_CInt).Hx_Field_v
 												pow = HxNullable[int32]{Value: -e, Valid: true}
 											} else {
 												this.Hx_Field_tokens.VTable.Hx_Field_push(any(map[string]any{"t": ((any)(tk)), "min": ((any)(this.Hx_Field_tokenMin)), "max": ((any)(this.Hx_Field_tokenMax))}))
@@ -10173,24 +10121,24 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field__token() Hx_Enum_loreline
 						op = Hx_Field_go_haxe_hxstring_concat(_hx_tmp_34, Hx_Field_go_haxe_hxstring_fromCharCode(char))
 						var _hx_tmp_35 bool
 						_ = _hx_tmp_35
-						if !func() func(_hx_param_key string) bool {
+						if !func() func(key string) bool {
 							var _hx_closure_src_325 func(_hx_param_key any) bool
 							_ = _hx_closure_src_325
 							_hx_closure_src_325 = this.Hx_Field_opPriority.VTable.(interface {
 								Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 							}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_exists
-							return func(_hx_param_key string) bool {
-								return _hx_closure_src_325(((any)(_hx_param_key)))
+							return func(key string) bool {
+								return _hx_closure_src_325(((any)(key)))
 							}
 						}()(op) {
-							_hx_tmp_35 = func() func(_hx_param_key string) bool {
+							_hx_tmp_35 = func() func(key string) bool {
 								var _hx_closure_src_326 func(_hx_param_key any) bool
 								_ = _hx_closure_src_326
 								_hx_closure_src_326 = this.Hx_Field_opPriority.VTable.(interface {
 									Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 								}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_exists
-								return func(_hx_param_key string) bool {
-									return _hx_closure_src_326(((any)(_hx_param_key)))
+								return func(key string) bool {
+									return _hx_closure_src_326(((any)(key)))
 								}
 							}()(pop)
 						} else {
@@ -10267,7 +10215,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parsePreproCond() any {
 		{
 			var id string
 			_ = id
-			id = tk.(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s
+			id = ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s
 			var e Hx_Enum_loreline_lorscript_exprdef
 			_ = e
 			e = Hx_Enum_loreline_lorscript_exprdef_EIdent{id}
@@ -10322,7 +10270,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_parsePreproCond() any {
 
 	case 3:
 		{
-			if tk.(Hx_Enum_loreline_lorscript_token_TOp).Hx_Field_s == "!" {
+			if ((Hx_Enum_loreline_lorscript_token)(tk)).(Hx_Enum_loreline_lorscript_token_TOp).Hx_Field_s == "!" {
 				var e Hx_Enum_loreline_lorscript_exprdef
 				_ = e
 				e = Hx_Enum_loreline_lorscript_exprdef_EUnop{"!", true, this.VTable.Hx_Field_parsePreproCond()}
@@ -10412,7 +10360,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_evalPreproCond(e any) boo
 		{
 			var id string
 			_ = id
-			id = _g.(Hx_Enum_loreline_lorscript_exprdef_EIdent).Hx_Field_v
+			id = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EIdent).Hx_Field_v
 			return ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(this.VTable.Hx_Field_preprocValue(id), nil))))
 		}
 
@@ -10420,7 +10368,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_evalPreproCond(e any) boo
 		{
 			var e any
 			_ = e
-			e = _g.(Hx_Enum_loreline_lorscript_exprdef_EParent).Hx_Field_e
+			e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EParent).Hx_Field_e
 			return this.VTable.Hx_Field_evalPreproCond(e)
 		}
 
@@ -10428,11 +10376,11 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_evalPreproCond(e any) boo
 		{
 			var _ge any
 			_ = _ge
-			_ge = _g.(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_e1
+			_ge = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_e1
 			var _ge1 any
 			_ = _ge1
-			_ge1 = _g.(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_e2
-			switch _g.(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_op {
+			_ge1 = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_e2
+			switch ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EBinop).Hx_Field_op {
 			case "&&":
 				{
 					var e1 any
@@ -10497,10 +10445,10 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_evalPreproCond(e any) boo
 
 	case 7:
 		{
-			if _g.(Hx_Enum_loreline_lorscript_exprdef_EUnop).Hx_Field_op == "!" {
+			if ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EUnop).Hx_Field_op == "!" {
 				var e any
 				_ = e
-				e = _g.(Hx_Enum_loreline_lorscript_exprdef_EUnop).Hx_Field_e
+				e = ((Hx_Enum_loreline_lorscript_exprdef)(_g)).(Hx_Enum_loreline_lorscript_exprdef_EUnop).Hx_Field_e
 				return !this.VTable.Hx_Field_evalPreproCond(e)
 			} else {
 				{
@@ -10761,7 +10709,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_constString(c Hx_Enum_lor
 		{
 			var v int32
 			_ = v
-			v = c.(Hx_Enum_loreline_lorscript_const_CInt).Hx_Field_v
+			v = ((Hx_Enum_loreline_lorscript_const)(c)).(Hx_Enum_loreline_lorscript_const_CInt).Hx_Field_v
 			return Hx_Field_std_string(v)
 		}
 
@@ -10769,7 +10717,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_constString(c Hx_Enum_lor
 		{
 			var f float64
 			_ = f
-			f = c.(Hx_Enum_loreline_lorscript_const_CFloat).Hx_Field_f
+			f = ((Hx_Enum_loreline_lorscript_const)(c)).(Hx_Enum_loreline_lorscript_const_CFloat).Hx_Field_f
 			return Hx_Field_std_string(f)
 		}
 
@@ -10777,7 +10725,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_constString(c Hx_Enum_lor
 		{
 			var s string
 			_ = s
-			s = c.(Hx_Enum_loreline_lorscript_const_CString).Hx_Field_s
+			s = ((Hx_Enum_loreline_lorscript_const)(c)).(Hx_Enum_loreline_lorscript_const_CString).Hx_Field_s
 			return s
 		}
 
@@ -10799,7 +10747,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_tokenString(t Hx_Enum_lor
 		{
 			var c Hx_Enum_loreline_lorscript_const
 			_ = c
-			c = t.(Hx_Enum_loreline_lorscript_token_TConst).Hx_Field_c
+			c = ((Hx_Enum_loreline_lorscript_token)(t)).(Hx_Enum_loreline_lorscript_token_TConst).Hx_Field_c
 			return this.VTable.Hx_Field_constString(c)
 		}
 
@@ -10807,7 +10755,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_tokenString(t Hx_Enum_lor
 		{
 			var s string
 			_ = s
-			s = t.(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s
+			s = ((Hx_Enum_loreline_lorscript_token)(t)).(Hx_Enum_loreline_lorscript_token_TId).Hx_Field_s
 			return s
 		}
 
@@ -10815,7 +10763,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_tokenString(t Hx_Enum_lor
 		{
 			var s string
 			_ = s
-			s = t.(Hx_Enum_loreline_lorscript_token_TOp).Hx_Field_s
+			s = ((Hx_Enum_loreline_lorscript_token)(t)).(Hx_Enum_loreline_lorscript_token_TOp).Hx_Field_s
 			return s
 		}
 
@@ -10883,7 +10831,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_tokenString(t Hx_Enum_lor
 		{
 			var id string
 			_ = id
-			id = t.(Hx_Enum_loreline_lorscript_token_TMeta).Hx_Field_s
+			id = ((Hx_Enum_loreline_lorscript_token)(t)).(Hx_Enum_loreline_lorscript_token_TMeta).Hx_Field_s
 			return Hx_Field_go_haxe_hxstring_concat("@", id)
 		}
 
@@ -10891,7 +10839,7 @@ func (this *Hx_Obj_loreline_lorscript_parser) Hx_Field_tokenString(t Hx_Enum_lor
 		{
 			var id string
 			_ = id
-			id = t.(Hx_Enum_loreline_lorscript_token_TPrepro).Hx_Field_s
+			id = ((Hx_Enum_loreline_lorscript_token)(t)).(Hx_Enum_loreline_lorscript_token_TPrepro).Hx_Field_s
 			return Hx_Field_go_haxe_hxstring_concat("#", id)
 		}
 

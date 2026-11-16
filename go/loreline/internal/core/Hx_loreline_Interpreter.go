@@ -691,7 +691,7 @@ func Hx_Field_loreline_runtimebeatref_beatNameOf(value any) HxNullable[string] {
 	if beat != nil {
 		return HxNullableString(beat.Hx_Field_name)
 	} else {
-		return HxNullable[string]{Value: HxStringNull}
+		return HxDefault[HxNullable[string]]()
 	}
 }
 
@@ -804,7 +804,7 @@ func Hx_Field_loreline_runtimecharacterref_characterNameOf(value any) HxNullable
 	if ref != nil {
 		return HxNullableString(ref.Hx_Field_name)
 	} else {
-		return HxNullable[string]{Value: HxStringNull}
+		return HxDefault[HxNullable[string]]()
 	}
 }
 
@@ -1448,7 +1448,7 @@ func (this *Hx_Obj_loreline_interpreteroptions) Hx_New(wrapper__isOptional any, 
 				this.Hx_Field_strictAccess = (strictAccess).Value
 			}
 
-			if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(customCreateFields)), ((any)(nil))))) {
+			if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(customCreateFields)), HxDefault[any]()))) {
 				this.Hx_Field_customCreateFields = customCreateFields
 			}
 
@@ -1505,9 +1505,9 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_interpretercontext() {
 }
 
 type Hx_Obj_VTable_loreline_interpretercontext interface {
-	Hx_Field_clearPendingFlows()
 	Hx_Field_childByKey(key string) *Hx_Obj_loreline_interpreter
 	Hx_Field_removePendingFlow(key string) any
+	Hx_Field_clearPendingFlows()
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -1632,7 +1632,7 @@ func (this *Hx_Obj_loreline_interpretercontext) Hx_New(script *Hx_Obj_loreline_s
 		if options != nil {
 			_hx_tmp_0 = HxNullable[bool]{Value: options.Hx_Field_strictAccess, Valid: true}
 		} else {
-			_hx_tmp_0 = HxNullable[bool]{}
+			_hx_tmp_0 = HxDefault[HxNullable[bool]]()
 		}
 
 		var tmp HxNullable[bool]
@@ -1751,14 +1751,14 @@ func (this *Hx_Obj_loreline_interpretercontext) Hx_Field_removePendingFlow(key s
 		return nil
 	}
 
-	func() func(_hx_param_key string) bool {
+	func() func(key string) bool {
 		var _hx_closure_src_583 func(_hx_param_key any) bool
 		_ = _hx_closure_src_583
 		_hx_closure_src_583 = this.Hx_Field_pendingRestoredFlows.VTable.(interface {
 			Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 		}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_remove
-		return func(_hx_param_key string) bool {
-			return _hx_closure_src_583(((any)(_hx_param_key)))
+		return func(key string) bool {
+			return _hx_closure_src_583(((any)(key)))
 		}
 	}()(key)
 	_ = (Hx_Array_Remove[string](this.Hx_Field_pendingRestoredKeys, key))
@@ -1784,192 +1784,192 @@ func Hx_StaticInit_Hx_Obj_VTable_loreline_interpreter() {
 }
 
 type Hx_Obj_VTable_loreline_interpreter interface {
-	Hx_Field_inferImplicitCharactersFromRootBeat()
-	Hx_Field_spawn(key string, handleDialogue__isOptional any, handleChoice__isOptional any, handleFinish__isOptional any, options__isOptional any) *Hx_Obj_loreline_interpreter
-	Hx_Field_resumeNodeBody(node *Hx_Obj_loreline_astnode, scopeLevel int32, body HxArray[*Hx_Obj_loreline_astnode], next func())
-	Hx_Field_getAlternativeVisitCount(alt *Hx_Obj_loreline_nalternative) int32
-	Hx_Field_callFunctionValue(fn any, args HxArray[any], pos *Hx_Obj_loreline_position, next func()) any
-	Hx_Field_set_translations(translations Hx_Typedef_map) Hx_Typedef_map
-	Hx_Field_attachBeforeRun()
-	Hx_Field_hostValueToRuntime(value any) any
-	Hx_Field_serializeFields(fields any, originalFields__isOptional any) any
-	Hx_Field_restoreChoiceOption(saved any, savedInsertions any, restoredInsertions Hx_Typedef_map) *Hx_Obj_loreline_choiceoption
-	Hx_Field_evalDialogue(dialogue *Hx_Obj_loreline_ndialoguestatement, next func())
-	Hx_Field_isDynamicCallForm(call *Hx_Obj_loreline_ncall) bool
-	Hx_Field_resolveBeatRefByName(name string) *Hx_Obj_loreline_runtimebeatref
-	Hx_Field_set_nextInsertionId(nextInsertionId int32) int32
-	Hx_Field_restore(saveData any)
-	Hx_Field_hostValueOf(value any) any
-	Hx_Field_resumeBeatCall(call *Hx_Obj_loreline_nbeatcall, scopeLevel int32, next func())
-	Hx_Field_playInsertedWhenRule(candidate any, next func())
-	Hx_Field_isOriginalScriptExpression(expr *Hx_Obj_loreline_nexpr) bool
-	Hx_Field_resolvesExistingBinding(name string) bool
-	Hx_Field_evaluateFunctionCall(call *Hx_Obj_loreline_ncall, next func()) any
-	Hx_Field_getStateFieldRaw(name string) any
-	Hx_Field_restoreScopeItem(savedScope any, savedInsertions any, restoredInsertions Hx_Typedef_map) *Hx_Obj_loreline_runtimescope
-	Hx_Field_getBeatVisitCount(beat *Hx_Obj_loreline_nbeatdecl) int32
-	Hx_Field_isChoiceOptionChosen(option *Hx_Obj_loreline_nchoiceoption) bool
-	Hx_Field_writeAccess(access Hx_Enum_loreline_runtimeaccess, value any)
-	Hx_Field_seedBeatParams(scope *Hx_Obj_loreline_runtimescope, beat *Hx_Obj_loreline_nbeatdecl, values HxArray[any])
-	Hx_Field_set_stringLiteralProcessors(processors HxArray[func(str *Hx_Obj_loreline_nstringliteral) *Hx_Obj_loreline_nstringliteral]) HxArray[func(str *Hx_Obj_loreline_nstringliteral) *Hx_Obj_loreline_nstringliteral]
-	Hx_Field_serializePendingDialogue(flow *Hx_Obj_loreline_interpreter) any
-	Hx_Field_resumableSpawnKeys() HxArray[string]
-	Hx_Field_serializeCharacters() any
-	Hx_Field_serializeNodeReference(node *Hx_Obj_loreline_astnode) any
-	Hx_Field_restoreCharacters(data any)
-	Hx_Field_incrementBeatVisitCount(beat *Hx_Obj_loreline_nbeatdecl)
-	Hx_Field_transitionToBeat(beat *Hx_Obj_loreline_nbeatdecl, argValues__isOptional any, capturedChain__isOptional any)
-	Hx_Field_evalNodeBody(beat *Hx_Obj_loreline_nbeatdecl, node *Hx_Obj_loreline_astnode, body HxArray[*Hx_Obj_loreline_astnode], insertion__isOptional any, argValues__isOptional any, capturedChain__isOptional any, shuffle__isOptional any, next func())
-	Hx_Field_customStrategyCandidate(when *Hx_Obj_loreline_nwhenstatement, candidates HxArray[any], strategy any) any
-	Hx_Field_snapshotOriginalValue(value any) any
-	Hx_Field_resolveAssignmentTarget(target *Hx_Obj_loreline_nexpr) Hx_Enum_loreline_runtimeaccess
-	Hx_Field_checkSpawnKey(key string)
-	Hx_Field_getWhenRuleLastPlayed(rule *Hx_Obj_loreline_nwhenrule) int32
-	Hx_Field_getTranslatedString(node *Hx_Obj_loreline_astnode, str *Hx_Obj_loreline_nstringliteral) *Hx_Obj_loreline_nstringliteral
-	Hx_Field_currentNode() *Hx_Obj_loreline_astnode
-	Hx_Field_serializeNodeStates() any
-	Hx_Field_restoreCharacter(character *Hx_Obj_loreline_runtimecharacter, data any) *Hx_Obj_loreline_runtimecharacter
-	Hx_Field_collectWhenRules(when *Hx_Obj_loreline_nwhenstatement, result HxArray[any], startIndex int32, stopAtFirst bool, owner *Hx_Obj_loreline_runtimeinsertion, next func())
-	Hx_Field_setChoiceOptionChosen(option *Hx_Obj_loreline_nchoiceoption)
-	Hx_Field_valueToString(value any) string
-	Hx_Field_serializePendingChoiceOptions(flow *Hx_Obj_loreline_interpreter, insertions any) HxArray[any]
+	Hx_Field_captureChainForBeat(beat *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_runtimescope]
 	Hx_Field_currentNodeFilePath(rootPath string) string
-	Hx_Field_restoreShuffleOrder(saved HxArray[int32], item *Hx_Obj_loreline_nblock) HxArray[int32]
-	Hx_Field_chooseWhenCandidate(when *Hx_Obj_loreline_nwhenstatement, candidates HxArray[any]) any
-	Hx_Field_evalCall(call *Hx_Obj_loreline_ncall, next func())
-	Hx_Field_get_nodeStates() *Hx_Obj_loreline_nodeidmap
-	Hx_Field_start(beatName__isOptional any)
-	Hx_Field_save() any
-	Hx_Field_hostValueToRuntimeDepth(value any, depth int32) any
-	Hx_Field_serializeInsertion(insertion *Hx_Obj_loreline_runtimeinsertion, insertions any) HxNullable[int32]
-	Hx_Field_evaluateArrayLiteral(expr HxArray[any]) any
-	Hx_Field_get_topLevelCharacters() Hx_Typedef_map
-	Hx_Field_walkResolutionScopes(scopes HxArray[*Hx_Obj_loreline_runtimescope], startIndex int32, visit func(scope *Hx_Obj_loreline_runtimescope) bool)
-	Hx_Field_resumeCall(call *Hx_Obj_loreline_ncall, scopeLevel int32, next func())
-	Hx_Field_wrapNext(cb func()) *Hx_Obj_loreline_evalnext
-	Hx_Field_initializeTopLevelState(state *Hx_Obj_loreline_nstatedecl)
-	Hx_Field_evaluateExpression(expr *Hx_Obj_loreline_nexpr) any
-	Hx_Field_getTypeName(t Hx_Enum_valuetype) string
-	Hx_Field_restoreBeatToResume(savedStack HxArray[any]) *Hx_Obj_loreline_nbeatdecl
-	Hx_Field_pop() bool
-	Hx_Field_evalShuffledItems(alt *Hx_Obj_loreline_nalternative, indices HxArray[int32], idx int32, next func())
-	Hx_Field_collectingWhenInsertion(scopeLevel int32) *Hx_Obj_loreline_runtimeinsertion
-	Hx_Field_pluralPipeProcess(str *Hx_Obj_loreline_nstringliteral) *Hx_Obj_loreline_nstringliteral
-	Hx_Field_evaluateObjectLiteral(expr HxArray[*Hx_Obj_loreline_nobjectfield]) any
-	Hx_Field_resolveAccess(access *Hx_Obj_loreline_naccess, target__isOptional any, name string) Hx_Enum_loreline_runtimeaccess
-	Hx_Field_insertionAtOrBelow(scopeLevel int32) *Hx_Obj_loreline_runtimeinsertion
-	Hx_Field_restoreBeat(beatRef any) *Hx_Obj_loreline_nbeatdecl
-	Hx_Field_evaluateBeatArgs(beat *Hx_Obj_loreline_nbeatdecl, args HxArray[*Hx_Obj_loreline_nexpr], pos *Hx_Obj_loreline_position) HxArray[any]
-	Hx_Field_presentDialogue(node *Hx_Obj_loreline_astnode, character HxNullable[string], text string, tags HxArray[*Hx_Obj_loreline_texttag], next func())
-	Hx_Field_evalAlternative(alt *Hx_Obj_loreline_nalternative, next func())
-	Hx_Field_findHashCommentId(node *Hx_Obj_loreline_astnode, str *Hx_Obj_loreline_nstringliteral) HxNullable[string]
-	Hx_Field_rawTextHasUnescapedPipe(text string) bool
-	Hx_Field_removeCurrentInsertion()
-	Hx_Field_dispose()
-	Hx_Field_getCharacter(name string) any
-	Hx_Field_setCharacterField(character string, name string, value any)
-	Hx_Field_getTopLevelStateField(name string) any
 	Hx_Field_resumeWhen(when *Hx_Obj_loreline_nwhenstatement, scopeLevel int32, next func())
-	Hx_Field_evalText(text *Hx_Obj_loreline_ntextstatement, next func())
+	Hx_Field_restoreBeat(beatRef any) *Hx_Obj_loreline_nbeatdecl
+	Hx_Field_evalChoiceOption(option *Hx_Obj_loreline_nchoiceoption, next func())
+	Hx_Field_currentNode() *Hx_Obj_loreline_astnode
+	Hx_Field_getCharacter(name string) any
+	Hx_Field_resumeIf(ifStmt *Hx_Obj_loreline_nifstatement, scopeLevel int32, next func())
+	Hx_Field_writeAccess(access Hx_Enum_loreline_runtimeaccess, value any)
+	Hx_Field_printLoreline(node *Hx_Obj_loreline_node) string
+	Hx_Field_serializeFields(fields any, originalFields__isOptional any) any
+	Hx_Field_evalInsertion(insertion *Hx_Obj_loreline_runtimeinsertion, next func())
+	Hx_Field_evaluateString(str *Hx_Obj_loreline_nstringliteral) any
+	Hx_Field_resumeChoice(choice *Hx_Obj_loreline_nchoicestatement, scopeLevel int32, next func())
+	Hx_Field_push(scope *Hx_Obj_loreline_runtimescope)
+	Hx_Field_isDynamicCallForm(call *Hx_Obj_loreline_ncall) bool
+	Hx_Field_getTypeName(t Hx_Enum_valuetype) string
+	Hx_Field_get_translations() Hx_Typedef_map
+	Hx_Field_serializeCharacter(character *Hx_Obj_loreline_runtimecharacter) any
+	Hx_Field_resumeCall(call *Hx_Obj_loreline_ncall, scopeLevel int32, next func())
+	Hx_Field_bindScriptFunction(_hx_reserved_func any)
+	Hx_Field_recordWhenRulePlayed(rule *Hx_Obj_loreline_nwhenrule)
+	Hx_Field_beatNotFoundError(name string, node *Hx_Obj_loreline_astnode) *Hx_Obj_loreline_runtimeerror
+	Hx_Field_getTranslatedString(node *Hx_Obj_loreline_astnode, str *Hx_Obj_loreline_nstringliteral) *Hx_Obj_loreline_nstringliteral
+	Hx_Field_readAccess(access Hx_Enum_loreline_runtimeaccess) any
+	Hx_Field_get_topLevelState() *Hx_Obj_loreline_runtimestate
+	Hx_Field_setStateField(name string, value any)
+	Hx_Field_serializeChoiceOption(option *Hx_Obj_loreline_choiceoption, insertions any) any
+	Hx_Field_resumeAlternative(alt *Hx_Obj_loreline_nalternative, scopeLevel int32, next func())
+	Hx_Field_refreshFunctionHelpers()
+	Hx_Field_wrapNext(cb func()) *Hx_Obj_loreline_evalnext
+	Hx_Field_initializeTopLevelCharacter(character *Hx_Obj_loreline_ncharacterdecl)
+	Hx_Field_transitionToBeat(beat *Hx_Obj_loreline_nbeatdecl, argValues__isOptional any, capturedChain__isOptional any)
+	Hx_Field_get_currentScope() *Hx_Obj_loreline_runtimescope
+	Hx_Field_set_nextInsertionId(nextInsertionId int32) int32
+	Hx_Field_initializeTopLevelFunction(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl)
+	Hx_Field_evalShuffledItems(alt *Hx_Obj_loreline_nalternative, indices HxArray[int32], idx int32, next func())
+	Hx_Field_removeCurrentInsertion()
+	Hx_Field_setCharacterField(character string, name string, value any)
+	Hx_Field_restoreValue(value any) any
+	Hx_Field_insertionAtOrBelow(scopeLevel int32) *Hx_Obj_loreline_runtimeinsertion
+	Hx_Field_serializeCharacters() any
+	Hx_Field_presentRestoredDialogue(node *Hx_Obj_loreline_astnode, next func()) bool
+	Hx_Field_getWhenRuleLastPlayed(rule *Hx_Obj_loreline_nwhenrule) int32
+	Hx_Field_serializeScope(scope *Hx_Obj_loreline_runtimescope, insertions any) any
+	Hx_Field_get_stringLiteralProcessors() HxArray[func(str *Hx_Obj_loreline_nstringliteral) *Hx_Obj_loreline_nstringliteral]
+	Hx_Field_restoreFlow(savedStack HxArray[any], savedPendingChoiceOptions HxArray[any], savedPendingDialogue any, savedChoiceEvalContext HxArray[any], savedInsertions any, restoredInsertions Hx_Typedef_map)
+	Hx_Field_resumableSpawnKeys() HxArray[string]
+	Hx_Field_eachResolutionScope(startIndex int32, visit func(scope *Hx_Obj_loreline_runtimescope) bool)
+	Hx_Field_getTopLevelStateField(name string) any
+	Hx_Field_resumeNodeBody(node *Hx_Obj_loreline_astnode, scopeLevel int32, body HxArray[*Hx_Obj_loreline_astnode], next func())
+	Hx_Field_restoreInsertion(insertionId int32, savedInsertions any, restoredInsertions Hx_Typedef_map) *Hx_Obj_loreline_runtimeinsertion
+	Hx_Field_dispose()
+	Hx_Field_setTopLevelStateField(name string, value any)
+	Hx_Field_restoreFields(target any, savedFields any) any
+	Hx_Field_registerTopLevelFunction(key string, _hx_reserved_func any)
 	Hx_Field_evalChoice(choice *Hx_Obj_loreline_nchoicestatement, next func())
-	Hx_Field_get_topLevelBeats() Hx_Typedef_map
+	Hx_Field_mostSalientCandidate(eligible HxArray[any]) any
+	Hx_Field_getAlternativeVisitCount(alt *Hx_Obj_loreline_nalternative) int32
+	Hx_Field_evalTransition(transition *Hx_Obj_loreline_ntransition)
 	Hx_Field_serializeChoiceEvalContext(flow *Hx_Obj_loreline_interpreter) HxArray[any]
 	Hx_Field_getStateField(name string) any
-	Hx_Field_serializeWhenCandidate(candidate any, insertions any) any
-	Hx_Field_restoreState(state *Hx_Obj_loreline_runtimestate, data any) *Hx_Obj_loreline_runtimestate
-	Hx_Field_evalInsertion(insertion *Hx_Obj_loreline_runtimeinsertion, next func())
-	Hx_Field_evalChoiceOption(option *Hx_Obj_loreline_nchoiceoption, next func())
-	Hx_Field_finishWhenCollection(when *Hx_Obj_loreline_nwhenstatement, candidates HxArray[any], owner *Hx_Obj_loreline_runtimeinsertion, next func())
-	Hx_Field_serializeCharacter(character *Hx_Obj_loreline_runtimecharacter) any
-	Hx_Field_initializeState(state *Hx_Obj_loreline_nstatedecl, scope *Hx_Obj_loreline_runtimescope)
-	Hx_Field_mostSalientCandidate(eligible HxArray[any]) any
-	Hx_Field_recordWhenRulePlayed(rule *Hx_Obj_loreline_nwhenrule)
-	Hx_Field_getNodeStateInt(node *Hx_Obj_loreline_astnode, field string) int32
-	Hx_Field_evalAssignment(assign *Hx_Obj_loreline_nassign, next func())
-	Hx_Field_captureChainForBeat(beat *Hx_Obj_loreline_nbeatdecl) HxArray[*Hx_Obj_loreline_runtimescope]
-	Hx_Field_stripStringIndent(content string) string
-	Hx_Field_resumeFromLevel(scopeLevel int32, next func())
-	Hx_Field_getCharacterField(character string, name string) any
-	Hx_Field_restoreNodeStates(data any)
-	Hx_Field_restoreValue(value any) any
-	Hx_Field_initializeTopLevelFunction(_hx_reserved_func *Hx_Obj_loreline_nfunctiondecl)
-	Hx_Field_evaluateCondition(expr *Hx_Obj_loreline_nexpr) bool
-	Hx_Field_resumeSpawn(key string, handleDialogue__isOptional any, handleChoice__isOptional any, handleFinish__isOptional any, options__isOptional any) *Hx_Obj_loreline_interpreter
-	Hx_Field_refreshFunctionHelpers()
-	Hx_Field_finish()
-	Hx_Field_evalBeatDecl(beat *Hx_Obj_loreline_nbeatdecl, next func())
-	Hx_Field_evalBeatRun(beat *Hx_Obj_loreline_nbeatdecl, next func(), argValues__isOptional any, capturedChain__isOptional any)
-	Hx_Field_presentRestoredDialogue(node *Hx_Obj_loreline_astnode, next func()) bool
-	Hx_Field_readAccess(access Hx_Enum_loreline_runtimeaccess) any
-	Hx_Field_initializeTopLevelBeat(beat *Hx_Obj_loreline_nbeatdecl)
-	Hx_Field_beatNotFoundError(name string, node *Hx_Obj_loreline_astnode) *Hx_Obj_loreline_runtimeerror
-	Hx_Field_transformPipeRaw(text string, countExpr *Hx_Obj_loreline_nexpr, pos *Hx_Obj_loreline_position, parts HxArray[*Hx_Obj_loreline_nstringpart])
-	Hx_Field_serializeValue(value any) any
-	Hx_Field_restoreFields(target any, savedFields any) any
-	Hx_Field_bindFunctions(functions Hx_Typedef_loreline_functionsmap)
-	Hx_Field_registerTopLevelFunction(key string, _hx_reserved_func any)
-	Hx_Field_setAlternativeVisitCount(alt *Hx_Obj_loreline_nalternative, count int32)
-	Hx_Field_get_topLevelState() *Hx_Obj_loreline_runtimestate
-	Hx_Field_serializeState(state *Hx_Obj_loreline_runtimestate) any
+	Hx_Field_restoreStack(savedStack HxArray[any], savedInsertions__isOptional any, restoredInsertions__isOptional any) bool
 	Hx_Field_restoreNode(savedNode any, savedBeatId Hx_Typedef_haxe__int64___int64, beat *Hx_Obj_loreline_nbeatdecl) *Hx_Obj_loreline_astnode
-	Hx_Field_initializeStringLiteralProcessors(processors HxArray[func(str *Hx_Obj_loreline_nstringliteral) *Hx_Obj_loreline_nstringliteral])
-	Hx_Field_evalBeatCall(call *Hx_Obj_loreline_nbeatcall, next func())
-	Hx_Field_resume()
-	Hx_Field_isRoot() bool
-	Hx_Field_setTopLevelStateField(name string, value any)
-	Hx_Field_resumeChoiceOption(option *Hx_Obj_loreline_nchoiceoption, scopeLevel int32, next func())
-	Hx_Field_resumeChoice(choice *Hx_Obj_loreline_nchoicestatement, scopeLevel int32, next func())
-	Hx_Field_resumeIf(ifStmt *Hx_Obj_loreline_nifstatement, scopeLevel int32, next func())
-	Hx_Field_initializeTopLevelCharacter(character *Hx_Obj_loreline_ncharacterdecl)
-	Hx_Field_presentChoice(choice *Hx_Obj_loreline_nchoicestatement, options HxArray[*Hx_Obj_loreline_choiceoption], next func())
-	Hx_Field_get_lens() *Hx_Obj_loreline_lens
-	Hx_Field_restoreFlow(savedStack HxArray[any], savedPendingChoiceOptions HxArray[any], savedPendingDialogue any, savedChoiceEvalContext HxArray[any], savedInsertions any, restoredInsertions Hx_Typedef_map)
-	Hx_Field_serializeBeatReference(beat *Hx_Obj_loreline_nbeatdecl) any
-	Hx_Field_resumeNode(node *Hx_Obj_loreline_astnode, scopeLevel int32, next func())
-	Hx_Field_evalNode(node *Hx_Obj_loreline_astnode, next func())
-	Hx_Field_evalChoiceOptionsAndInsertions(beat *Hx_Obj_loreline_nbeatdecl, choice *Hx_Obj_loreline_nchoicestatement, result HxArray[*Hx_Obj_loreline_choiceoption], next func(), startIndex__isOptional any, isChoiceRoot__isOptional any)
-	Hx_Field_resolveBeatRefFromNode(name string, node *Hx_Obj_loreline_node) *Hx_Obj_loreline_runtimebeatref
-	Hx_Field_stripStringComments(content string) string
-	Hx_Field_get_stringLiteralProcessors() HxArray[func(str *Hx_Obj_loreline_nstringliteral) *Hx_Obj_loreline_nstringliteral]
-	Hx_Field_get_currentScope() *Hx_Obj_loreline_runtimescope
-	Hx_Field_createChild(key string, handleDialogue Hx_Typedef_loreline_dialoguehandler, handleChoice Hx_Typedef_loreline_choicehandler, handleFinish Hx_Typedef_loreline_finishhandler, options *Hx_Obj_loreline_interpreteroptions) *Hx_Obj_loreline_interpreter
-	Hx_Field_eachResolutionScope(startIndex int32, visit func(scope *Hx_Obj_loreline_runtimescope) bool)
-	Hx_Field_setStateField(name string, value any)
-	Hx_Field_resumeAlternative(alt *Hx_Obj_loreline_nalternative, scopeLevel int32, next func())
+	Hx_Field_finish()
+	Hx_Field_callFunctionValue(fn any, args HxArray[any], pos *Hx_Obj_loreline_position, next func()) any
+	Hx_Field_valueToStringImpl(value any, seen HxArray[any]) string
+	Hx_Field_attachBeforeRun()
+	Hx_Field_getCharacterField(character string, name string) any
+	Hx_Field_hostValueOf(value any) any
+	Hx_Field_get_currentInsertion() *Hx_Obj_loreline_runtimeinsertion
+	Hx_Field_spawn(key string, handleDialogue__isOptional any, handleChoice__isOptional any, handleFinish__isOptional any, options__isOptional any) *Hx_Obj_loreline_interpreter
+	Hx_Field_evaluateBeatArgs(beat *Hx_Obj_loreline_nbeatdecl, args HxArray[*Hx_Obj_loreline_nexpr], pos *Hx_Obj_loreline_position) HxArray[any]
+	Hx_Field_collectingWhenInsertion(scopeLevel int32) *Hx_Obj_loreline_runtimeinsertion
+	Hx_Field_isWhenRuleConsumed(rule *Hx_Obj_loreline_nwhenrule) bool
+	Hx_Field_get_topLevelBeats() Hx_Typedef_map
+	Hx_Field_serializeTextTag(tag *Hx_Obj_loreline_texttag) any
+	Hx_Field_evalAssignment(assign *Hx_Obj_loreline_nassign, next func())
+	Hx_Field_evaluateCondition(expr *Hx_Obj_loreline_nexpr) bool
+	Hx_Field_resolvesExistingBinding(name string) bool
+	Hx_Field_serializeState(state *Hx_Obj_loreline_runtimestate) any
+	Hx_Field_restoreChoiceOption(saved any, savedInsertions any, restoredInsertions Hx_Typedef_map) *Hx_Obj_loreline_choiceoption
+	Hx_Field_getBeatVisitCount(beat *Hx_Obj_loreline_nbeatdecl) int32
+	Hx_Field_resolveBeatRefByName(name string) *Hx_Obj_loreline_runtimebeatref
+	Hx_Field_serializeValue(value any) any
 	Hx_Field_evalStateDecl(state *Hx_Obj_loreline_nstatedecl, next func())
-	Hx_Field_restoredOptionsMatch(choice *Hx_Obj_loreline_nchoicestatement, options HxArray[*Hx_Obj_loreline_choiceoption]) bool
+	Hx_Field_isOriginalScriptExpression(expr *Hx_Obj_loreline_nexpr) bool
+	Hx_Field_evalCall(call *Hx_Obj_loreline_ncall, next func())
+	Hx_Field_resolveAccess(access *Hx_Obj_loreline_naccess, target__isOptional any, name string) Hx_Enum_loreline_runtimeaccess
+	Hx_Field_resume()
+	Hx_Field_walkResolutionScopes(scopes HxArray[*Hx_Obj_loreline_runtimescope], startIndex int32, visit func(scope *Hx_Obj_loreline_runtimescope) bool)
+	Hx_Field_restoreState(state *Hx_Obj_loreline_runtimestate, data any) *Hx_Obj_loreline_runtimestate
+	Hx_Field_presentDialogue(node *Hx_Obj_loreline_astnode, character HxNullable[string], text string, tags HxArray[*Hx_Obj_loreline_texttag], next func())
 	Hx_Field_playWhenRule(rule *Hx_Obj_loreline_nwhenrule, next func())
-	Hx_Field_setNodeStateField(node *Hx_Obj_loreline_astnode, field string, value any)
-	Hx_Field_resolveBeatByName(name string, scopeLevel__isOptional any) *Hx_Obj_loreline_nbeatdecl
+	Hx_Field_isChoiceOptionChosen(option *Hx_Obj_loreline_nchoiceoption) bool
+	Hx_Field_isBeatCall(node *Hx_Obj_loreline_astnode, scopeLevel__isOptional any) bool
+	Hx_Field_get_nextInsertionId() int32
+	Hx_Field_inferImplicitCharactersFromRootBeat()
+	Hx_Field_resumeFromLevel(scopeLevel int32, next func())
+	Hx_Field_serializeBeatReference(beat *Hx_Obj_loreline_nbeatdecl) any
+	Hx_Field_evalBeatCall(call *Hx_Obj_loreline_nbeatcall, next func())
+	Hx_Field_transformPipeRaw(text string, countExpr *Hx_Obj_loreline_nexpr, pos *Hx_Obj_loreline_position, parts HxArray[*Hx_Obj_loreline_nstringpart])
+	Hx_Field_get_nodeStates() *Hx_Obj_loreline_nodeidmap
+	Hx_Field_createChild(key string, handleDialogue Hx_Typedef_loreline_dialoguehandler, handleChoice Hx_Typedef_loreline_choicehandler, handleFinish Hx_Typedef_loreline_finishhandler, options *Hx_Obj_loreline_interpreteroptions) *Hx_Obj_loreline_interpreter
+	Hx_Field_hostValueToRuntimeDepth(value any, depth int32) any
+	Hx_Field_serializeNodeStates() any
+	Hx_Field_resumeNode(node *Hx_Obj_loreline_astnode, scopeLevel int32, next func())
+	Hx_Field_resumeChoiceOption(option *Hx_Obj_loreline_nchoiceoption, scopeLevel int32, next func())
+	Hx_Field_presentChoice(choice *Hx_Obj_loreline_nchoicestatement, options HxArray[*Hx_Obj_loreline_choiceoption], next func())
+	Hx_Field_evalChoiceOptionsAndInsertions(beat *Hx_Obj_loreline_nbeatdecl, choice *Hx_Obj_loreline_nchoicestatement, result HxArray[*Hx_Obj_loreline_choiceoption], next func(), startIndex__isOptional any, isChoiceRoot__isOptional any)
+	Hx_Field_get_script() *Hx_Obj_loreline_script
+	Hx_Field_pop() bool
+	Hx_Field_evalAlternative(alt *Hx_Obj_loreline_nalternative, next func())
+	Hx_Field_snapshotOriginalValue(value any) any
+	Hx_Field_stripStringIndent(content string) string
+	Hx_Field_evaluateObjectLiteral(expr HxArray[*Hx_Obj_loreline_nobjectfield]) any
+	Hx_Field_flush()
+	Hx_Field_get_topLevelCharacters() Hx_Typedef_map
+	Hx_Field_start(beatName__isOptional any)
+	Hx_Field_save() any
+	Hx_Field_resumeBeatCall(call *Hx_Obj_loreline_nbeatcall, scopeLevel int32, next func())
 	Hx_Field_resolveDynamicBeatTarget(value any, node *Hx_Obj_loreline_astnode) *Hx_Obj_loreline_runtimebeatref
 	Hx_Field_resolveBeatRefFromCall(call *Hx_Obj_loreline_ncall) *Hx_Obj_loreline_runtimebeatref
-	Hx_Field_valueToStringImpl(value any, seen HxArray[any]) string
-	Hx_Field_get_nextInsertionId() int32
-	Hx_Field_seedRandom(seed__isOptional any)
-	Hx_Field_serializeScope(scope *Hx_Obj_loreline_runtimescope, insertions any) any
-	Hx_Field_isWhenRuleConsumed(rule *Hx_Obj_loreline_nwhenrule) bool
 	Hx_Field_makePluralCall(countExpr *Hx_Obj_loreline_nexpr, singular string, pluralForm string, pos *Hx_Obj_loreline_position) *Hx_Obj_loreline_ncall
-	Hx_Field_printLoreline(node *Hx_Obj_loreline_node) string
-	Hx_Field_get_strictAccess() bool
-	Hx_Field_bindScriptFunction(_hx_reserved_func any)
-	Hx_Field_flush()
-	Hx_Field_restoreStack(savedStack HxArray[any], savedInsertions__isOptional any, restoredInsertions__isOptional any) bool
-	Hx_Field_evalIf(ifStmt *Hx_Obj_loreline_nifstatement, next func())
+	Hx_Field_hostValueToRuntime(value any) any
+	Hx_Field_chooseWhenCandidate(when *Hx_Obj_loreline_nwhenstatement, candidates HxArray[any]) any
 	Hx_Field_evaluateDynamicCall(call *Hx_Obj_loreline_ncall, next func()) any
-	Hx_Field_serializeChoiceOption(option *Hx_Obj_loreline_choiceoption, insertions any) any
-	Hx_Field_push(scope *Hx_Obj_loreline_runtimescope)
-	Hx_Field_isBeatCall(node *Hx_Obj_loreline_astnode, scopeLevel__isOptional any) bool
-	Hx_Field_evalTransition(transition *Hx_Obj_loreline_ntransition)
-	Hx_Field_evaluateString(str *Hx_Obj_loreline_nstringliteral) any
-	Hx_Field_performOperation(op Hx_Enum_loreline_tokentype, left any, right any, pos *Hx_Obj_loreline_position) any
-	Hx_Field_get_script() *Hx_Obj_loreline_script
-	Hx_Field_serializeTextTag(tag *Hx_Obj_loreline_texttag) any
-	Hx_Field_get_currentInsertion() *Hx_Obj_loreline_runtimeinsertion
-	Hx_Field_resumeBeatRun(beat *Hx_Obj_loreline_nbeatdecl, scopeLevel int32, next func())
-	Hx_Field_restoreInsertion(insertionId int32, savedInsertions any, restoredInsertions Hx_Typedef_map) *Hx_Obj_loreline_runtimeinsertion
+	Hx_Field_resolveAssignmentTarget(target *Hx_Obj_loreline_nexpr) Hx_Enum_loreline_runtimeaccess
+	Hx_Field_valueToString(value any) string
 	Hx_Field_restoreWhenCandidates(saved HxArray[any], savedInsertions any, restoredInsertions Hx_Typedef_map) HxArray[any]
+	Hx_Field_initializeState(state *Hx_Obj_loreline_nstatedecl, scope *Hx_Obj_loreline_runtimescope)
+	Hx_Field_finishWhenCollection(when *Hx_Obj_loreline_nwhenstatement, candidates HxArray[any], owner *Hx_Obj_loreline_runtimeinsertion, next func())
+	Hx_Field_evaluateFunctionCall(call *Hx_Obj_loreline_ncall, next func()) any
+	Hx_Field_serializePendingChoiceOptions(flow *Hx_Obj_loreline_interpreter, insertions any) HxArray[any]
+	Hx_Field_serializePendingDialogue(flow *Hx_Obj_loreline_interpreter) any
+	Hx_Field_resumeBeatRun(beat *Hx_Obj_loreline_nbeatdecl, scopeLevel int32, next func())
+	Hx_Field_bindFunctions(functions Hx_Typedef_loreline_functionsmap)
+	Hx_Field_evalDialogue(dialogue *Hx_Obj_loreline_ndialoguestatement, next func())
+	Hx_Field_restoreCharacter(character *Hx_Obj_loreline_runtimecharacter, data any) *Hx_Obj_loreline_runtimecharacter
+	Hx_Field_initializeTopLevelState(state *Hx_Obj_loreline_nstatedecl)
+	Hx_Field_setChoiceOptionChosen(option *Hx_Obj_loreline_nchoiceoption)
+	Hx_Field_pluralPipeProcess(str *Hx_Obj_loreline_nstringliteral) *Hx_Obj_loreline_nstringliteral
+	Hx_Field_resumeSpawn(key string, handleDialogue__isOptional any, handleChoice__isOptional any, handleFinish__isOptional any, options__isOptional any) *Hx_Obj_loreline_interpreter
+	Hx_Field_restoreNodeStates(data any)
+	Hx_Field_incrementBeatVisitCount(beat *Hx_Obj_loreline_nbeatdecl)
+	Hx_Field_resolveBeatByName(name string, scopeLevel__isOptional any) *Hx_Obj_loreline_nbeatdecl
+	Hx_Field_findHashCommentId(node *Hx_Obj_loreline_astnode, str *Hx_Obj_loreline_nstringliteral) HxNullable[string]
+	Hx_Field_stripStringComments(content string) string
+	Hx_Field_set_stringLiteralProcessors(processors HxArray[func(str *Hx_Obj_loreline_nstringliteral) *Hx_Obj_loreline_nstringliteral]) HxArray[func(str *Hx_Obj_loreline_nstringliteral) *Hx_Obj_loreline_nstringliteral]
+	Hx_Field_checkSpawnKey(key string)
+	Hx_Field_serializeInsertion(insertion *Hx_Obj_loreline_runtimeinsertion, insertions any) HxNullable[int32]
+	Hx_Field_serializeWhenCandidate(candidate any, insertions any) any
+	Hx_Field_restoreShuffleOrder(saved HxArray[int32], item *Hx_Obj_loreline_nblock) HxArray[int32]
+	Hx_Field_resolveBeatRefFromNode(name string, node *Hx_Obj_loreline_node) *Hx_Obj_loreline_runtimebeatref
+	Hx_Field_rawTextHasUnescapedPipe(text string) bool
+	Hx_Field_evalNodeBody(beat *Hx_Obj_loreline_nbeatdecl, node *Hx_Obj_loreline_astnode, body HxArray[*Hx_Obj_loreline_astnode], insertion__isOptional any, argValues__isOptional any, capturedChain__isOptional any, shuffle__isOptional any, next func())
+	Hx_Field_restoredOptionsMatch(choice *Hx_Obj_loreline_nchoicestatement, options HxArray[*Hx_Obj_loreline_choiceoption]) bool
+	Hx_Field_playInsertedWhenRule(candidate any, next func())
+	Hx_Field_setNodeStateField(node *Hx_Obj_loreline_astnode, field string, value any)
+	Hx_Field_evaluateArrayLiteral(expr HxArray[any]) any
+	Hx_Field_set_translations(translations Hx_Typedef_map) Hx_Typedef_map
+	Hx_Field_seedRandom(seed__isOptional any)
+	Hx_Field_serializeNodeReference(node *Hx_Obj_loreline_astnode) any
+	Hx_Field_restoreScopeItem(savedScope any, savedInsertions any, restoredInsertions Hx_Typedef_map) *Hx_Obj_loreline_runtimescope
+	Hx_Field_restoreBeatToResume(savedStack HxArray[any]) *Hx_Obj_loreline_nbeatdecl
+	Hx_Field_evalBeatRun(beat *Hx_Obj_loreline_nbeatdecl, next func(), argValues__isOptional any, capturedChain__isOptional any)
+	Hx_Field_evalIf(ifStmt *Hx_Obj_loreline_nifstatement, next func())
+	Hx_Field_getNodeStateInt(node *Hx_Obj_loreline_astnode, field string) int32
+	Hx_Field_isRoot() bool
+	Hx_Field_restore(saveData any)
+	Hx_Field_initializeStringLiteralProcessors(processors HxArray[func(str *Hx_Obj_loreline_nstringliteral) *Hx_Obj_loreline_nstringliteral])
+	Hx_Field_initializeTopLevelBeat(beat *Hx_Obj_loreline_nbeatdecl)
+	Hx_Field_seedBeatParams(scope *Hx_Obj_loreline_runtimescope, beat *Hx_Obj_loreline_nbeatdecl, values HxArray[any])
+	Hx_Field_evalNode(node *Hx_Obj_loreline_astnode, next func())
+	Hx_Field_collectWhenRules(when *Hx_Obj_loreline_nwhenstatement, result HxArray[any], startIndex int32, stopAtFirst bool, owner *Hx_Obj_loreline_runtimeinsertion, next func())
+	Hx_Field_setAlternativeVisitCount(alt *Hx_Obj_loreline_nalternative, count int32)
+	Hx_Field_get_lens() *Hx_Obj_loreline_lens
+	Hx_Field_evalText(text *Hx_Obj_loreline_ntextstatement, next func())
 	Hx_Field_evalWhen(when *Hx_Obj_loreline_nwhenstatement, next func())
-	Hx_Field_get_translations() Hx_Typedef_map
+	Hx_Field_evaluateExpression(expr *Hx_Obj_loreline_nexpr) any
+	Hx_Field_performOperation(op Hx_Enum_loreline_tokentype, left any, right any, pos *Hx_Obj_loreline_position) any
+	Hx_Field_get_strictAccess() bool
+	Hx_Field_getStateFieldRaw(name string) any
+	Hx_Field_restoreCharacters(data any)
+	Hx_Field_evalBeatDecl(beat *Hx_Obj_loreline_nbeatdecl, next func())
+	Hx_Field_customStrategyCandidate(when *Hx_Obj_loreline_nwhenstatement, candidates HxArray[any], strategy any) any
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -2197,7 +2197,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_New(script *Hx_Obj_loreline_script, 
 				tmp = _hx_tmp_1
 				var _hx_tmp_2 func(interpreter *Hx_Obj_loreline_interpreter, _hx_reserved_type string, node *Hx_Obj_loreline_node) any
 				_ = _hx_tmp_2
-				if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(tmp)), ((any)(nil))))) {
+				if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(tmp)), HxDefault[any]()))) {
 					_hx_tmp_2 = tmp
 				} else {
 					_hx_tmp_2 = this.Hx_Field_context.Hx_Field_customCreateFields
@@ -2497,8 +2497,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_inferImplicitCharactersFromRoo
 	_hx_tmp_2 = ((*Hx_Obj_go_haxe_hxclass)(Hx_Obj_loreline_nbeatdecl_RTTI))
 	var hx_nullable_f208 HxNullable[bool]
 	_ = hx_nullable_f208
-	hx_nullable_f208 = HxNullable[bool]{}
-
+	hx_nullable_f208 = HxDefault[HxNullable[bool]]()
 	var _hx_tmp_3 any
 	_ = _hx_tmp_3
 	if (hx_nullable_f208).Valid == true {
@@ -2578,14 +2577,14 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_inferImplicitCharactersFromRoo
 				_ = name
 				name = _g3.Get(_g2)
 				_g2++
-				if func() func(_hx_param_key string) bool {
+				if func() func(key string) bool {
 					var _hx_closure_src_585 func(_hx_param_key any) bool
 					_ = _hx_closure_src_585
 					_hx_closure_src_585 = this.Hx_Field_context.Hx_Field_topLevelCharacters.VTable.(interface {
 						Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 					}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_exists
-					return func(_hx_param_key string) bool {
-						return _hx_closure_src_585(((any)(_hx_param_key)))
+					return func(key string) bool {
+						return _hx_closure_src_585(((any)(key)))
 					}
 				}()(name) {
 					continue
@@ -2614,8 +2613,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_start(beatName__isOptional any
 		if (beatName).Valid == false {
 			var hx_nullable_t58 HxNullable[string]
 			_ = hx_nullable_t58
-			hx_nullable_t58 = HxNullable[string]{Value: HxStringNull}
-
+			hx_nullable_t58 = HxDefault[HxNullable[string]]()
 			beatName = HxNullable[string]{Value: (hx_nullable_t58).Value, Valid: (hx_nullable_t58).Valid}
 		}
 
@@ -2623,16 +2621,16 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_start(beatName__isOptional any
 		var resolvedBeat *Hx_Obj_loreline_nbeatdecl
 		_ = resolvedBeat
 		if (beatName).Valid != false {
-			resolvedBeat = func() func(_hx_param_key string) *Hx_Obj_loreline_nbeatdecl {
+			resolvedBeat = func() func(key string) *Hx_Obj_loreline_nbeatdecl {
 				var _hx_closure_src_586 func(_hx_param_key any) any
 				_ = _hx_closure_src_586
 				_hx_closure_src_586 = this.Hx_Field_context.Hx_Field_topLevelBeats.VTable.(interface {
 					Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 				}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_get
-				return func(_hx_param_key string) *Hx_Obj_loreline_nbeatdecl {
+				return func(key string) *Hx_Obj_loreline_nbeatdecl {
 					var hx_dyncast_218 any
 					_ = hx_dyncast_218
-					hx_dyncast_218 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_586(((any)(_hx_param_key))), "Hx_Obj_loreline_nbeatdecl")
+					hx_dyncast_218 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_586(((any)(key))), "Hx_Obj_loreline_nbeatdecl")
 					var _hx_tmp_0 *Hx_Obj_loreline_nbeatdecl
 					_ = _hx_tmp_0
 					if hx_dyncast_218 != nil {
@@ -2765,8 +2763,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_seedRandom(seed__isOptional an
 		if (seed).Valid == false {
 			var hx_nullable_t59 HxNullable[float64]
 			_ = hx_nullable_t59
-			hx_nullable_t59 = HxNullable[float64]{}
-
+			hx_nullable_t59 = HxDefault[HxNullable[float64]]()
 			seed = HxNullable[float64]{Value: (hx_nullable_t59).Value, Valid: (hx_nullable_t59).Valid}
 		}
 
@@ -3028,7 +3025,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_serializePendingDialogue(flow 
 
 	var _hx_tmp_2 bool
 	_ = _hx_tmp_2
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(pending, "tags"), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(pending, "tags"), HxDefault[any]()))) {
 		_hx_tmp_2 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_gt(Hx_Field_go_haxe_hxdynamic_getField(Hx_Field_go_haxe_hxdynamic_getField(pending, "tags"), "length"), ((int32)(0))))))
 	} else {
 		_hx_tmp_2 = false
@@ -3203,7 +3200,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restore(saveData any) {
 	var _hx_tmp_4 HxNullable[float64]
 	_ = _hx_tmp_4
 	if hx_nullable_t60 == nil {
-		_hx_tmp_4 = HxNullable[float64]{}
+		_hx_tmp_4 = HxDefault[HxNullable[float64]]()
 	} else {
 		_hx_tmp_4 = HxNullable[float64]{Value: ((float64)(Hx_Field_go_haxe_hxdynamic_toFloat(hx_nullable_t60))), Valid: true}
 	}
@@ -3230,7 +3227,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restore(saveData any) {
 	this.VTable.Hx_Field_restoreFlow(_hx_tmp_5, _hx_tmp_6, _hx_tmp_7, _hx_tmp_8, Hx_Field_go_haxe_hxdynamic_getField(saveData, "insertions"), restoredInsertions)
 	var _hx_tmp_9 bool
 	_ = _hx_tmp_9
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(saveData, "children"), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(saveData, "children"), HxDefault[any]()))) {
 		_hx_tmp_9 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_gt(Hx_Field_go_haxe_hxdynamic_getField(Hx_Field_go_haxe_hxdynamic_getField(saveData, "children"), "length"), ((int32)(0))))))
 	} else {
 		_hx_tmp_9 = false
@@ -3267,17 +3264,17 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restore(saveData any) {
 				_g++
 				var _hx_tmp_11 bool
 				_ = _hx_tmp_11
-				if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(flow, "key"), ((any)(HxStringNull))))) {
+				if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(flow, "key"), HxDefault[any]()))) {
 					_hx_tmp_11 = true
 				} else {
-					_hx_tmp_11 = func() func(_hx_param_key string) bool {
+					_hx_tmp_11 = func() func(key string) bool {
 						var _hx_closure_src_587 func(_hx_param_key any) bool
 						_ = _hx_closure_src_587
 						_hx_closure_src_587 = this.Hx_Field_context.Hx_Field_pendingRestoredFlows.VTable.(interface {
 							Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 						}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_exists
-						return func(_hx_param_key string) bool {
-							return _hx_closure_src_587(((any)(_hx_param_key)))
+						return func(key string) bool {
+							return _hx_closure_src_587(((any)(key)))
 						}
 					}()(Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_getField(flow, "key")))
 				}
@@ -3384,7 +3381,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoreFlow(savedStack HxArray
 			var _hx_tmp_5 HxNullable[string]
 			_ = _hx_tmp_5
 			if hx_nullable_t61 == nil {
-				_hx_tmp_5 = HxNullable[string]{Value: HxStringNull}
+				_hx_tmp_5 = HxDefault[HxNullable[string]]()
 			} else {
 				_hx_tmp_5 = HxNullable[string]{Value: Hx_Field_go_haxe_hxdynamic_toString(hx_nullable_t61), Valid: true}
 			}
@@ -3397,7 +3394,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoreFlow(savedStack HxArray
 			savedPendingDialogue2 = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_getField(savedPendingDialogue, "text"))
 			var tmp HxArray[*Hx_Obj_loreline_texttag]
 			_ = tmp
-			if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(savedPendingDialogue, "tags"), ((any)(nil))))) {
+			if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(savedPendingDialogue, "tags"), HxDefault[any]()))) {
 				var _g HxArray[*Hx_Obj_loreline_texttag]
 				_ = _g
 				_g = HxMakeArray[*Hx_Obj_loreline_texttag]()
@@ -3702,7 +3699,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_createChild(key string, handle
 	handleFinish1 = handleFinish
 	var _hx_tmp_0 Hx_Typedef_loreline_dialoguehandler
 	_ = _hx_tmp_0
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(handleDialogue1)), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(handleDialogue1)), HxDefault[any]()))) {
 		_hx_tmp_0 = handleDialogue1
 	} else {
 		_hx_tmp_0 = this.Hx_Field_handleDialogue
@@ -3710,7 +3707,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_createChild(key string, handle
 
 	var _hx_tmp_1 Hx_Typedef_loreline_choicehandler
 	_ = _hx_tmp_1
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(handleChoice1)), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(handleChoice1)), HxDefault[any]()))) {
 		_hx_tmp_1 = handleChoice1
 	} else {
 		_hx_tmp_1 = this.Hx_Field_handleChoice
@@ -3718,7 +3715,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_createChild(key string, handle
 
 	var _hx_tmp_2 Hx_Typedef_loreline_finishhandler
 	_ = _hx_tmp_2
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(handleFinish1)), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(handleFinish1)), HxDefault[any]()))) {
 		_hx_tmp_2 = handleFinish1
 	} else {
 		_hx_tmp_2 = this.Hx_Field_handleFinish
@@ -3748,7 +3745,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_attachBeforeRun() {
 	var _hx_tmp_1 *Hx_Obj_loreline_interpreter
 	_ = _hx_tmp_1
 	_hx_tmp_1 = this
-	if (Hx_Array_IndexOf[*Hx_Obj_loreline_interpreter](_hx_tmp_0, _hx_tmp_1, HxNullable[int32]{})) == -1 {
+	if (Hx_Array_IndexOf[*Hx_Obj_loreline_interpreter](_hx_tmp_0, _hx_tmp_1, HxDefault[HxNullable[int32]]())) == -1 {
 		var other *Hx_Obj_loreline_interpreter
 		_ = other
 		other = this.Hx_Field_context.VTable.Hx_Field_childByKey(this.Hx_Field_key)
@@ -3763,16 +3760,16 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_attachBeforeRun() {
 func (this *Hx_Obj_loreline_interpreter) Hx_Field_getCharacter(name string) any {
 	var tmp *Hx_Obj_loreline_runtimecharacter
 	_ = tmp
-	tmp = func() func(_hx_param_key string) *Hx_Obj_loreline_runtimecharacter {
+	tmp = func() func(key string) *Hx_Obj_loreline_runtimecharacter {
 		var _hx_closure_src_588 func(_hx_param_key any) any
 		_ = _hx_closure_src_588
 		_hx_closure_src_588 = this.Hx_Field_context.Hx_Field_topLevelCharacters.VTable.(interface {
 			Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 		}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_get
-		return func(_hx_param_key string) *Hx_Obj_loreline_runtimecharacter {
+		return func(key string) *Hx_Obj_loreline_runtimecharacter {
 			var hx_dyncast_222 any
 			_ = hx_dyncast_222
-			hx_dyncast_222 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_588(((any)(_hx_param_key))), "Hx_Obj_loreline_runtimecharacter")
+			hx_dyncast_222 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_588(((any)(key))), "Hx_Obj_loreline_runtimecharacter")
 			var _hx_tmp_0 *Hx_Obj_loreline_runtimecharacter
 			_ = _hx_tmp_0
 			if hx_dyncast_222 != nil {
@@ -3796,16 +3793,16 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_getCharacter(name string) any 
 func (this *Hx_Obj_loreline_interpreter) Hx_Field_getCharacterField(character string, name string) any {
 	var tmp *Hx_Obj_loreline_runtimecharacter
 	_ = tmp
-	tmp = func() func(_hx_param_key string) *Hx_Obj_loreline_runtimecharacter {
+	tmp = func() func(key string) *Hx_Obj_loreline_runtimecharacter {
 		var _hx_closure_src_589 func(_hx_param_key any) any
 		_ = _hx_closure_src_589
 		_hx_closure_src_589 = this.Hx_Field_context.Hx_Field_topLevelCharacters.VTable.(interface {
 			Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 		}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_get
-		return func(_hx_param_key string) *Hx_Obj_loreline_runtimecharacter {
+		return func(key string) *Hx_Obj_loreline_runtimecharacter {
 			var hx_dyncast_223 any
 			_ = hx_dyncast_223
-			hx_dyncast_223 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_589(((any)(_hx_param_key))), "Hx_Obj_loreline_runtimecharacter")
+			hx_dyncast_223 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_589(((any)(key))), "Hx_Obj_loreline_runtimecharacter")
 			var _hx_tmp_0 *Hx_Obj_loreline_runtimecharacter
 			_ = _hx_tmp_0
 			if hx_dyncast_223 != nil {
@@ -3840,16 +3837,16 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_getCharacterField(character st
 func (this *Hx_Obj_loreline_interpreter) Hx_Field_setCharacterField(character string, name string, value any) {
 	var fields any
 	_ = fields
-	fields = func() func(_hx_param_key string) *Hx_Obj_loreline_runtimecharacter {
+	fields = func() func(key string) *Hx_Obj_loreline_runtimecharacter {
 		var _hx_closure_src_590 func(_hx_param_key any) any
 		_ = _hx_closure_src_590
 		_hx_closure_src_590 = this.Hx_Field_context.Hx_Field_topLevelCharacters.VTable.(interface {
 			Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 		}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_get
-		return func(_hx_param_key string) *Hx_Obj_loreline_runtimecharacter {
+		return func(key string) *Hx_Obj_loreline_runtimecharacter {
 			var hx_dyncast_224 any
 			_ = hx_dyncast_224
-			hx_dyncast_224 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_590(((any)(_hx_param_key))), "Hx_Obj_loreline_runtimecharacter")
+			hx_dyncast_224 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_590(((any)(key))), "Hx_Obj_loreline_runtimecharacter")
 			var _hx_tmp_0 *Hx_Obj_loreline_runtimecharacter
 			_ = _hx_tmp_0
 			if hx_dyncast_224 != nil {
@@ -4056,14 +4053,14 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_hostValueToRuntimeDepth(value 
 				}
 
 				if _hx_tmp_7 {
-					_hx_tmp_6 = func() func(_hx_param_key string) bool {
+					_hx_tmp_6 = func() func(key string) bool {
 						var _hx_closure_src_591 func(_hx_param_key any) bool
 						_ = _hx_closure_src_591
 						_hx_closure_src_591 = this.Hx_Field_context.Hx_Field_topLevelCharacters.VTable.(interface {
 							Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 						}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_exists
-						return func(_hx_param_key string) bool {
-							return _hx_closure_src_591(((any)(_hx_param_key)))
+						return func(key string) bool {
+							return _hx_closure_src_591(((any)(key)))
 						}
 					}()(Hx_Field_go_haxe_hxdynamic_toString(name))
 				} else {
@@ -4073,16 +4070,16 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_hostValueToRuntimeDepth(value 
 				if _hx_tmp_6 {
 					var character *Hx_Obj_loreline_runtimecharacter
 					_ = character
-					character = func() func(_hx_param_key string) *Hx_Obj_loreline_runtimecharacter {
+					character = func() func(key string) *Hx_Obj_loreline_runtimecharacter {
 						var _hx_closure_src_592 func(_hx_param_key any) any
 						_ = _hx_closure_src_592
 						_hx_closure_src_592 = this.Hx_Field_context.Hx_Field_topLevelCharacters.VTable.(interface {
 							Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 						}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_get
-						return func(_hx_param_key string) *Hx_Obj_loreline_runtimecharacter {
+						return func(key string) *Hx_Obj_loreline_runtimecharacter {
 							var hx_dyncast_225 any
 							_ = hx_dyncast_225
-							hx_dyncast_225 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_592(((any)(_hx_param_key))), "Hx_Obj_loreline_runtimecharacter")
+							hx_dyncast_225 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_592(((any)(key))), "Hx_Obj_loreline_runtimecharacter")
 							var _hx_tmp_8 *Hx_Obj_loreline_runtimecharacter
 							_ = _hx_tmp_8
 							if hx_dyncast_225 != nil {
@@ -4717,7 +4714,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_serializeWhenCandidate(candida
 		Hx_Field_go_haxe_hxdynamic_setField(result, "eligible", true)
 	}
 
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(candidate, "insertion"), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(candidate, "insertion"), HxDefault[any]()))) {
 		var _hx_tmp_1 any
 		_ = _hx_tmp_1
 		_hx_tmp_1 = result
@@ -4920,7 +4917,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_serializeNodeStates() any {
 			_ = _hx_tmp_1
 			_hx_tmp_1 = _g_index
 			if _hx_tmp_1 < HxMakeArrayView[any](HxMakeArrayView[*Hx_Obj_loreline_runtimestate](_g_map.Hx_Field__values)).Len() {
-				_hx_tmp_0 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(HxMakeArrayView[any](HxMakeArrayView[*Hx_Obj_loreline_runtimestate](_g_map.Hx_Field__values)).Get(_g_index), ((any)(nil))))))
+				_hx_tmp_0 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(HxMakeArrayView[any](HxMakeArrayView[*Hx_Obj_loreline_runtimestate](_g_map.Hx_Field__values)).Get(_g_index), HxDefault[any]()))))
 			} else {
 				_hx_tmp_0 = false
 			}
@@ -4970,7 +4967,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_serializeNodeStates() any {
 				_ = _hx_tmp_5
 				_hx_tmp_5 = _g_index
 				if _hx_tmp_5 < HxMakeArrayView[any](HxMakeArrayView[*Hx_Obj_loreline_runtimestate](_g_map.Hx_Field__values)).Len() {
-					_hx_tmp_4 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(HxMakeArrayView[any](HxMakeArrayView[*Hx_Obj_loreline_runtimestate](_g_map.Hx_Field__values)).Get(_g_index), ((any)(nil))))))
+					_hx_tmp_4 = ((bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(HxMakeArrayView[any](HxMakeArrayView[*Hx_Obj_loreline_runtimestate](_g_map.Hx_Field__values)).Get(_g_index), HxDefault[any]()))))
 				} else {
 					_hx_tmp_4 = false
 				}
@@ -5410,7 +5407,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_serializeValue(value any) any 
 						var _hx_tmp_8 *Hx_Obj_loreline_runtimescope
 						_ = _hx_tmp_8
 						_hx_tmp_8 = captured
-						if (Hx_Array_IndexOf[*Hx_Obj_loreline_runtimescope](_hx_tmp_7, _hx_tmp_8, HxNullable[int32]{})) != -1 {
+						if (Hx_Array_IndexOf[*Hx_Obj_loreline_runtimescope](_hx_tmp_7, _hx_tmp_8, HxDefault[HxNullable[int32]]())) != -1 {
 							cyclic = true
 							break
 						}
@@ -5719,7 +5716,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_resumeNodeBody(node *Hx_Obj_lo
 		var _hx_tmp_4 *Hx_Obj_loreline_astnode
 		_ = _hx_tmp_4
 		_hx_tmp_4 = currentScope.Hx_Field_head
-		index = (Hx_Array_IndexOf[*Hx_Obj_loreline_astnode](_hx_tmp_3, _hx_tmp_4, HxNullable[int32]{}))
+		index = (Hx_Array_IndexOf[*Hx_Obj_loreline_astnode](_hx_tmp_3, _hx_tmp_4, HxDefault[HxNullable[int32]]()))
 		resumeIndex = index
 		if index == -1 {
 			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_runtimeerror_CreateInstance("Failed to resolve head in scope when resuming through body", node.Hx_Field_pos)))))
@@ -6043,7 +6040,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_resumeIf(ifStmt *Hx_Obj_loreli
 	_hx_tmp_1 = currentScope.Hx_Field_head
 	var isTrue bool
 	_ = isTrue
-	isTrue = ((Hx_Array_IndexOf[*Hx_Obj_loreline_astnode](_hx_tmp_0, _hx_tmp_1, HxNullable[int32]{})) != -1)
+	isTrue = ((Hx_Array_IndexOf[*Hx_Obj_loreline_astnode](_hx_tmp_0, _hx_tmp_1, HxDefault[HxNullable[int32]]())) != -1)
 	var _hx_tmp_2 *Hx_Obj_loreline_nblock
 	_ = _hx_tmp_2
 	if isTrue {
@@ -6284,7 +6281,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_resumeWhen(when *Hx_Obj_loreli
 			var _hx_tmp_17 *Hx_Obj_loreline_astnode
 			_ = _hx_tmp_17
 			_hx_tmp_17 = currentScope.Hx_Field_head
-			if (Hx_Array_IndexOf[*Hx_Obj_loreline_astnode](_hx_tmp_16, _hx_tmp_17, HxNullable[int32]{})) != -1 {
+			if (Hx_Array_IndexOf[*Hx_Obj_loreline_astnode](_hx_tmp_16, _hx_tmp_17, HxDefault[HxNullable[int32]]())) != -1 {
 				this.VTable.Hx_Field_resumeNodeBody((func() *Hx_Obj_loreline_astnode {
 					_hx_up := rule
 					if _hx_up != nil {
@@ -6335,7 +6332,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_resumeAlternative(alt *Hx_Obj_
 			var _hx_tmp_2 *Hx_Obj_loreline_astnode
 			_ = _hx_tmp_2
 			_hx_tmp_2 = currentScope.Hx_Field_head
-			if (Hx_Array_IndexOf[*Hx_Obj_loreline_astnode](_hx_tmp_1, _hx_tmp_2, HxNullable[int32]{})) != -1 {
+			if (Hx_Array_IndexOf[*Hx_Obj_loreline_astnode](_hx_tmp_1, _hx_tmp_2, HxDefault[HxNullable[int32]]())) != -1 {
 				var order HxArray[int32]
 				_ = order
 				order = currentScope.Hx_Field_shuffle
@@ -6354,7 +6351,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_resumeAlternative(alt *Hx_Obj_
 					var _hx_tmp_7 int32
 					_ = _hx_tmp_7
 					_hx_tmp_7 = _hx_tmp_5
-					_hx_tmp_3 = (Hx_Array_IndexOf[int32](_hx_tmp_6, _hx_tmp_7, HxNullable[int32]{}))
+					_hx_tmp_3 = (Hx_Array_IndexOf[int32](_hx_tmp_6, _hx_tmp_7, HxDefault[HxNullable[int32]]()))
 				} else {
 					_hx_tmp_3 = -1
 				}
@@ -6541,7 +6538,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoreScopeItem(savedScope an
 	var beats HxArray[*Hx_Obj_loreline_nbeatdecl]
 	_ = beats
 	beats = HxMakeArray[*Hx_Obj_loreline_nbeatdecl]()
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(savedScope, "beats"), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(savedScope, "beats"), HxDefault[any]()))) {
 		var _g int32
 		_ = _g
 		_g = 0
@@ -6627,7 +6624,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoreScopeItem(savedScope an
 
 	var captured HxArray[*Hx_Obj_loreline_runtimescope]
 	_ = captured
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(savedScope, "captured"), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(savedScope, "captured"), HxDefault[any]()))) {
 		captured = HxMakeArray[*Hx_Obj_loreline_runtimescope]()
 		{
 			var _g int32
@@ -6664,7 +6661,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoreScopeItem(savedScope an
 	_ = shuffle
 	var _hx_tmp_8 bool
 	_ = _hx_tmp_8
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(savedScope, "shuffle"), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(savedScope, "shuffle"), HxDefault[any]()))) {
 		_hx_tmp_8 = Hx_Field_std_isOfType(node, Hx_Obj_loreline_nblock_RTTI)
 	} else {
 		_hx_tmp_8 = false
@@ -6683,22 +6680,22 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoreScopeItem(savedScope an
 }
 
 func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoreInsertion(insertionId int32, savedInsertions any, restoredInsertions Hx_Typedef_map) *Hx_Obj_loreline_runtimeinsertion {
-	if func() func(_hx_param_key int32) bool {
+	if func() func(key int32) bool {
 		var _hx_closure_src_611 func(_hx_param_key any) bool
 		_ = _hx_closure_src_611
 		_hx_closure_src_611 = restoredInsertions.VTable.Hx_Field_exists
-		return func(_hx_param_key int32) bool {
-			return _hx_closure_src_611(((any)(_hx_param_key)))
+		return func(key int32) bool {
+			return _hx_closure_src_611(((any)(key)))
 		}
 	}()(insertionId) {
-		return func() func(_hx_param_key int32) *Hx_Obj_loreline_runtimeinsertion {
+		return func() func(key int32) *Hx_Obj_loreline_runtimeinsertion {
 			var _hx_closure_src_612 func(_hx_param_key any) any
 			_ = _hx_closure_src_612
 			_hx_closure_src_612 = restoredInsertions.VTable.Hx_Field_get
-			return func(_hx_param_key int32) *Hx_Obj_loreline_runtimeinsertion {
+			return func(key int32) *Hx_Obj_loreline_runtimeinsertion {
 				var hx_dyncast_238 any
 				_ = hx_dyncast_238
-				hx_dyncast_238 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_612(((any)(_hx_param_key))), "Hx_Obj_loreline_runtimeinsertion")
+				hx_dyncast_238 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_612(((any)(key))), "Hx_Obj_loreline_runtimeinsertion")
 				var _hx_tmp_0 *Hx_Obj_loreline_runtimeinsertion
 				_ = _hx_tmp_0
 				if hx_dyncast_238 != nil {
@@ -6757,19 +6754,19 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoreInsertion(insertionId i
 	var insertion *Hx_Obj_loreline_runtimeinsertion
 	_ = insertion
 	insertion = Hx_Obj_loreline_runtimeinsertion_CreateInstance(insertionId, origin)
-	func() func(_hx_param_key int32, _hx_param_value *Hx_Obj_loreline_runtimeinsertion) {
+	func() func(key int32, value *Hx_Obj_loreline_runtimeinsertion) {
 		var _hx_closure_src_613 func(_hx_param_key any, _hx_param_value any)
 		_ = _hx_closure_src_613
 		_hx_closure_src_613 = restoredInsertions.VTable.Hx_Field_set
-		return func(_hx_param_key int32, _hx_param_value *Hx_Obj_loreline_runtimeinsertion) {
-			_hx_closure_src_613(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+		return func(key int32, value *Hx_Obj_loreline_runtimeinsertion) {
+			_hx_closure_src_613(((any)(key)), ((any)(value)))
 		}
 	}()(insertionId, insertion)
 	if insertionId >= this.Hx_Field_context.Hx_Field_nextInsertionId {
 		this.Hx_Field_context.Hx_Field_nextInsertionId = (insertionId + 1)
 	}
 
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(saved, "options"), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(saved, "options"), HxDefault[any]()))) {
 		insertion.Hx_Field_options = HxMakeArray[*Hx_Obj_loreline_choiceoption]()
 		{
 			var _g int32
@@ -6800,7 +6797,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoreInsertion(insertionId i
 		}
 	}
 
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(saved, "stack"), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(saved, "stack"), HxDefault[any]()))) {
 		insertion.Hx_Field_stack = HxMakeArray[*Hx_Obj_loreline_runtimescope]()
 		{
 			var _g int32
@@ -6831,7 +6828,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoreInsertion(insertionId i
 		}
 	}
 
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(saved, "parentPartialOptions"), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(saved, "parentPartialOptions"), HxDefault[any]()))) {
 		insertion.Hx_Field_parentPartialOptions = HxMakeArray[*Hx_Obj_loreline_choiceoption]()
 		{
 			var _g int32
@@ -6876,11 +6873,11 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoreInsertion(insertionId i
 		insertion.Hx_Field_kind = ((int32)(1))
 	}
 
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(saved, "rules"), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(saved, "rules"), HxDefault[any]()))) {
 		insertion.Hx_Field_rules = this.VTable.Hx_Field_restoreWhenCandidates(HxAnyToArray(Hx_Field_go_haxe_hxdynamic_getField(saved, "rules")), savedInsertions, restoredInsertions)
 	}
 
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(saved, "parentPartialRules"), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(saved, "parentPartialRules"), HxDefault[any]()))) {
 		insertion.Hx_Field_parentPartialRules = this.VTable.Hx_Field_restoreWhenCandidates(HxAnyToArray(Hx_Field_go_haxe_hxdynamic_getField(saved, "parentPartialRules")), savedInsertions, restoredInsertions)
 		var _hx_tmp_8 int32
 		_ = _hx_tmp_8
@@ -7013,7 +7010,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoreChoiceOption(saved any,
 
 	var tags HxArray[*Hx_Obj_loreline_texttag]
 	_ = tags
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(saved, "tags"), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(saved, "tags"), HxDefault[any]()))) {
 		var _g HxArray[*Hx_Obj_loreline_texttag]
 		_ = _g
 		_g = HxMakeArray[*Hx_Obj_loreline_texttag]()
@@ -7311,26 +7308,26 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoreCharacters(data any) {
 		var characterData any
 		_ = characterData
 		characterData = Hx_Field_reflect_field(data, name)
-		if func() func(_hx_param_key string) bool {
+		if func() func(key string) bool {
 			var _hx_closure_src_615 func(_hx_param_key any) bool
 			_ = _hx_closure_src_615
 			_hx_closure_src_615 = this.Hx_Field_context.Hx_Field_topLevelCharacters.VTable.(interface {
 				Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 			}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_exists
-			return func(_hx_param_key string) bool {
-				return _hx_closure_src_615(((any)(_hx_param_key)))
+			return func(key string) bool {
+				return _hx_closure_src_615(((any)(key)))
 			}
 		}()(name) {
-			this.VTable.Hx_Field_restoreCharacter(func() func(_hx_param_key string) *Hx_Obj_loreline_runtimecharacter {
+			this.VTable.Hx_Field_restoreCharacter(func() func(key string) *Hx_Obj_loreline_runtimecharacter {
 				var _hx_closure_src_616 func(_hx_param_key any) any
 				_ = _hx_closure_src_616
 				_hx_closure_src_616 = this.Hx_Field_context.Hx_Field_topLevelCharacters.VTable.(interface {
 					Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 				}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_get
-				return func(_hx_param_key string) *Hx_Obj_loreline_runtimecharacter {
+				return func(key string) *Hx_Obj_loreline_runtimecharacter {
 					var hx_dyncast_240 any
 					_ = hx_dyncast_240
-					hx_dyncast_240 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_616(((any)(_hx_param_key))), "Hx_Obj_loreline_runtimecharacter")
+					hx_dyncast_240 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_616(((any)(key))), "Hx_Obj_loreline_runtimecharacter")
 					var _hx_tmp_1 *Hx_Obj_loreline_runtimecharacter
 					_ = _hx_tmp_1
 					if hx_dyncast_240 != nil {
@@ -7348,14 +7345,14 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoreCharacters(data any) {
 			var newCharacter *Hx_Obj_loreline_runtimecharacter
 			_ = newCharacter
 			newCharacter = this.VTable.Hx_Field_restoreCharacter(nil, characterData)
-			func() func(_hx_param_key string, _hx_param_value *Hx_Obj_loreline_runtimecharacter) {
+			func() func(key string, value *Hx_Obj_loreline_runtimecharacter) {
 				var _hx_closure_src_617 func(_hx_param_key any, _hx_param_value any)
 				_ = _hx_closure_src_617
 				_hx_closure_src_617 = this.Hx_Field_context.Hx_Field_topLevelCharacters.VTable.(interface {
 					Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 				}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_set
-				return func(_hx_param_key string, _hx_param_value *Hx_Obj_loreline_runtimecharacter) {
-					_hx_closure_src_617(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+				return func(key string, value *Hx_Obj_loreline_runtimecharacter) {
+					_hx_closure_src_617(((any)(key)), ((any)(value)))
 				}
 			}()(name, newCharacter)
 		}
@@ -7449,33 +7446,33 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoreNodeStates(data any) {
 			key = Hx_Field_loreline__node_nodeid_impl__toString(parent.VTable.(interface {
 				Hx_As_Hx_Obj_loreline_astnode() *Hx_Obj_loreline_astnode
 			}).Hx_As_Hx_Obj_loreline_astnode().Hx_Field_id)
-			if !func() func(_hx_param_key string) bool {
+			if !func() func(key string) bool {
 				var _hx_closure_src_619 func(_hx_param_key any) bool
 				_ = _hx_closure_src_619
 				_hx_closure_src_619 = declarationsByNode.VTable.Hx_Field_exists
-				return func(_hx_param_key string) bool {
-					return _hx_closure_src_619(((any)(_hx_param_key)))
+				return func(key string) bool {
+					return _hx_closure_src_619(((any)(key)))
 				}
 			}()(key) {
 				var _hx_tmp_4 string
 				_ = _hx_tmp_4
 				_hx_tmp_4 = key
-				func() func(_hx_param_key string, _hx_param_value HxArray[*Hx_Obj_loreline_nstatedecl]) {
+				func() func(key string, value HxArray[*Hx_Obj_loreline_nstatedecl]) {
 					var _hx_closure_src_620 func(_hx_param_key any, _hx_param_value any)
 					_ = _hx_closure_src_620
 					_hx_closure_src_620 = declarationsByNode.VTable.Hx_Field_set
-					return func(_hx_param_key string, _hx_param_value HxArray[*Hx_Obj_loreline_nstatedecl]) {
-						_hx_closure_src_620(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+					return func(key string, value HxArray[*Hx_Obj_loreline_nstatedecl]) {
+						_hx_closure_src_620(((any)(key)), ((any)(value)))
 					}
 				}()(_hx_tmp_4, HxMakeArray[*Hx_Obj_loreline_nstatedecl]())
 			}
 
-			_ = (Hx_Array_Push[*Hx_Obj_loreline_nstatedecl](func() func(_hx_param_key string) HxArray[*Hx_Obj_loreline_nstatedecl] {
+			_ = (Hx_Array_Push[*Hx_Obj_loreline_nstatedecl](func() func(key string) HxArray[*Hx_Obj_loreline_nstatedecl] {
 				var _hx_closure_src_621 func(_hx_param_key any) any
 				_ = _hx_closure_src_621
 				_hx_closure_src_621 = declarationsByNode.VTable.Hx_Field_get
-				return func(_hx_param_key string) HxArray[*Hx_Obj_loreline_nstatedecl] {
-					return HxAnyToTypedArray[*Hx_Obj_loreline_nstatedecl](_hx_closure_src_621(((any)(_hx_param_key))))
+				return func(key string) HxArray[*Hx_Obj_loreline_nstatedecl] {
+					return HxAnyToTypedArray[*Hx_Obj_loreline_nstatedecl](_hx_closure_src_621(((any)(key))))
 				}
 			}()(key), decl))
 		}
@@ -7508,12 +7505,12 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoreNodeStates(data any) {
 			stateData = Hx_Field_reflect_field(data, idStr)
 			var declarations HxArray[*Hx_Obj_loreline_nstatedecl]
 			_ = declarations
-			declarations = func() func(_hx_param_key string) HxArray[*Hx_Obj_loreline_nstatedecl] {
+			declarations = func() func(key string) HxArray[*Hx_Obj_loreline_nstatedecl] {
 				var _hx_closure_src_622 func(_hx_param_key any) any
 				_ = _hx_closure_src_622
 				_hx_closure_src_622 = declarationsByNode.VTable.Hx_Field_get
-				return func(_hx_param_key string) HxArray[*Hx_Obj_loreline_nstatedecl] {
-					return HxAnyToTypedArray[*Hx_Obj_loreline_nstatedecl](_hx_closure_src_622(((any)(_hx_param_key))))
+				return func(key string) HxArray[*Hx_Obj_loreline_nstatedecl] {
+					return HxAnyToTypedArray[*Hx_Obj_loreline_nstatedecl](_hx_closure_src_622(((any)(key))))
 				}
 			}()(idStr)
 			var nodeState *Hx_Obj_loreline_runtimestate
@@ -7530,14 +7527,14 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoreNodeStates(data any) {
 					var _hx_tmp_8 HxNullable[string]
 					_ = _hx_tmp_8
 					if hx_nullable_t64 == nil {
-						_hx_tmp_8 = HxNullable[string]{Value: HxStringNull}
+						_hx_tmp_8 = HxDefault[HxNullable[string]]()
 					} else {
 						_hx_tmp_8 = HxNullable[string]{Value: Hx_Field_go_haxe_hxdynamic_toString(hx_nullable_t64), Valid: true}
 					}
 
 					_hx_tmp_7 = _hx_tmp_8
 				} else {
-					_hx_tmp_7 = HxNullable[string]{Value: HxStringNull}
+					_hx_tmp_7 = HxDefault[HxNullable[string]]()
 				}
 
 				if (_hx_tmp_7).Valid != false {
@@ -7550,7 +7547,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoreNodeStates(data any) {
 					var _hx_tmp_10 HxNullable[string]
 					_ = _hx_tmp_10
 					if hx_nullable_t62 == nil {
-						_hx_tmp_10 = HxNullable[string]{Value: HxStringNull}
+						_hx_tmp_10 = HxDefault[HxNullable[string]]()
 					} else {
 						_hx_tmp_10 = HxNullable[string]{Value: Hx_Field_go_haxe_hxdynamic_toString(hx_nullable_t62), Valid: true}
 					}
@@ -7704,7 +7701,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoreFields(target any, save
 		var _hx_tmp_2 HxNullable[string]
 		_ = _hx_tmp_2
 		if hx_nullable_t65 == nil {
-			_hx_tmp_2 = HxNullable[string]{Value: HxStringNull}
+			_hx_tmp_2 = HxDefault[HxNullable[string]]()
 		} else {
 			_hx_tmp_2 = HxNullable[string]{Value: Hx_Field_go_haxe_hxdynamic_toString(hx_nullable_t65), Valid: true}
 		}
@@ -7856,7 +7853,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoreValue(value any) any {
 		var chain HxArray[*Hx_Obj_loreline_runtimescope]
 		_ = chain
 		chain = HxMakeArray[*Hx_Obj_loreline_runtimescope]()
-		if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(savedRef, "stack"), ((any)(nil))))) {
+		if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(Hx_Field_go_haxe_hxdynamic_getField(savedRef, "stack"), HxDefault[any]()))) {
 			var _hx_tmp_5 any
 			_ = _hx_tmp_5
 			if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(this.Hx_Field__restoreSavedInsertions, nil))) {
@@ -7927,16 +7924,16 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoreValue(value any) any {
 		savedCharacterRef = value
 		var character *Hx_Obj_loreline_runtimecharacter
 		_ = character
-		character = func() func(_hx_param_key string) *Hx_Obj_loreline_runtimecharacter {
+		character = func() func(key string) *Hx_Obj_loreline_runtimecharacter {
 			var _hx_closure_src_624 func(_hx_param_key any) any
 			_ = _hx_closure_src_624
 			_hx_closure_src_624 = this.Hx_Field_context.Hx_Field_topLevelCharacters.VTable.(interface {
 				Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 			}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_get
-			return func(_hx_param_key string) *Hx_Obj_loreline_runtimecharacter {
+			return func(key string) *Hx_Obj_loreline_runtimecharacter {
 				var hx_dyncast_243 any
 				_ = hx_dyncast_243
-				hx_dyncast_243 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_624(((any)(_hx_param_key))), "Hx_Obj_loreline_runtimecharacter")
+				hx_dyncast_243 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_624(((any)(key))), "Hx_Obj_loreline_runtimecharacter")
 				var _hx_tmp_8 *Hx_Obj_loreline_runtimecharacter
 				_ = _hx_tmp_8
 				if hx_dyncast_243 != nil {
@@ -8090,7 +8087,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_refreshFunctionHelpers() {
 			_hx_tmp_2 = key1
 			this.Hx_Field_stringHelpers.VTable.(interface {
 				Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
-			}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_set((Hx_Field_go_haxe_hxstring_substr(_hx_tmp_2, 7, HxNullable[int32]{})), _hx_reserved_func)
+			}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_set((Hx_Field_go_haxe_hxstring_substr(_hx_tmp_2, 7, HxDefault[HxNullable[int32]]())), _hx_reserved_func)
 		} else {
 			if Hx_Field_stringtools_startsWith(key1, "array_") {
 				var _hx_tmp_3 string
@@ -8098,7 +8095,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_refreshFunctionHelpers() {
 				_hx_tmp_3 = key1
 				this.Hx_Field_arrayHelpers.VTable.(interface {
 					Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
-				}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_set((Hx_Field_go_haxe_hxstring_substr(_hx_tmp_3, 6, HxNullable[int32]{})), _hx_reserved_func)
+				}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_set((Hx_Field_go_haxe_hxstring_substr(_hx_tmp_3, 6, HxDefault[HxNullable[int32]]())), _hx_reserved_func)
 			} else {
 				if Hx_Field_stringtools_startsWith(key1, "map_") {
 					var _hx_tmp_4 string
@@ -8106,7 +8103,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_refreshFunctionHelpers() {
 					_hx_tmp_4 = key1
 					this.Hx_Field_mapHelpers.VTable.(interface {
 						Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
-					}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_set((Hx_Field_go_haxe_hxstring_substr(_hx_tmp_4, 4, HxNullable[int32]{})), _hx_reserved_func)
+					}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_set((Hx_Field_go_haxe_hxstring_substr(_hx_tmp_4, 4, HxDefault[HxNullable[int32]]())), _hx_reserved_func)
 				} else {
 					if Hx_Field_stringtools_startsWith(key1, "beat_") {
 						var _hx_tmp_5 string
@@ -8114,7 +8111,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_refreshFunctionHelpers() {
 						_hx_tmp_5 = key1
 						this.Hx_Field_beatHelpers.VTable.(interface {
 							Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
-						}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_set((Hx_Field_go_haxe_hxstring_substr(_hx_tmp_5, 5, HxNullable[int32]{})), _hx_reserved_func)
+						}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_set((Hx_Field_go_haxe_hxstring_substr(_hx_tmp_5, 5, HxDefault[HxNullable[int32]]())), _hx_reserved_func)
 					}
 				}
 			}
@@ -8221,14 +8218,14 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_initializeTopLevelFunction(_hx
 		if !_hx_reserved_func.Hx_Field_external {
 			_hx_tmp_0 = true
 		} else {
-			_hx_tmp_0 = !func() func(_hx_param_key string) bool {
+			_hx_tmp_0 = !func() func(key string) bool {
 				var _hx_closure_src_625 func(_hx_param_key any) bool
 				_ = _hx_closure_src_625
 				_hx_closure_src_625 = this.Hx_Field_topLevelFunctions.VTable.(interface {
 					Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 				}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_exists
-				return func(_hx_param_key string) bool {
-					return _hx_closure_src_625(((any)(_hx_param_key)))
+				return func(key string) bool {
+					return _hx_closure_src_625(((any)(key)))
 				}
 			}()((_hx_reserved_func.Hx_Field_name).Value)
 		}
@@ -8473,40 +8470,40 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_initializeTopLevelState(state 
 }
 
 func (this *Hx_Obj_loreline_interpreter) Hx_Field_initializeTopLevelBeat(beat *Hx_Obj_loreline_nbeatdecl) {
-	if func() func(_hx_param_key string) bool {
+	if func() func(key string) bool {
 		var _hx_closure_src_626 func(_hx_param_key any) bool
 		_ = _hx_closure_src_626
 		_hx_closure_src_626 = this.Hx_Field_context.Hx_Field_topLevelBeats.VTable.(interface {
 			Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 		}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_exists
-		return func(_hx_param_key string) bool {
-			return _hx_closure_src_626(((any)(_hx_param_key)))
+		return func(key string) bool {
+			return _hx_closure_src_626(((any)(key)))
 		}
 	}()(beat.Hx_Field_name) {
 		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_runtimeerror_CreateInstance(Hx_Field_go_haxe_hxstring_concat("Duplicate top level beat: ", beat.Hx_Field_name), beat.Hx_Field_pos)))))
 	}
 
-	func() func(_hx_param_key string, _hx_param_value *Hx_Obj_loreline_nbeatdecl) {
+	func() func(key string, value *Hx_Obj_loreline_nbeatdecl) {
 		var _hx_closure_src_627 func(_hx_param_key any, _hx_param_value any)
 		_ = _hx_closure_src_627
 		_hx_closure_src_627 = this.Hx_Field_context.Hx_Field_topLevelBeats.VTable.(interface {
 			Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 		}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_set
-		return func(_hx_param_key string, _hx_param_value *Hx_Obj_loreline_nbeatdecl) {
-			_hx_closure_src_627(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+		return func(key string, value *Hx_Obj_loreline_nbeatdecl) {
+			_hx_closure_src_627(((any)(key)), ((any)(value)))
 		}
 	}()(beat.Hx_Field_name, beat)
 }
 
 func (this *Hx_Obj_loreline_interpreter) Hx_Field_initializeTopLevelCharacter(character *Hx_Obj_loreline_ncharacterdecl) {
-	if func() func(_hx_param_key string) bool {
+	if func() func(key string) bool {
 		var _hx_closure_src_628 func(_hx_param_key any) bool
 		_ = _hx_closure_src_628
 		_hx_closure_src_628 = this.Hx_Field_context.Hx_Field_topLevelCharacters.VTable.(interface {
 			Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 		}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_exists
-		return func(_hx_param_key string) bool {
-			return _hx_closure_src_628(((any)(_hx_param_key)))
+		return func(key string) bool {
+			return _hx_closure_src_628(((any)(key)))
 		}
 	}()(character.Hx_Field_name) {
 		panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_runtimeerror_CreateInstance(Hx_Field_go_haxe_hxstring_concat("Duplicate top level character: ", character.Hx_Field_name), character.Hx_Field_pos)))))
@@ -8521,14 +8518,14 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_initializeTopLevelCharacter(ch
 		}
 		return nil
 	})(), nil, nil)
-	func() func(_hx_param_key string, _hx_param_value *Hx_Obj_loreline_runtimecharacter) {
+	func() func(key string, value *Hx_Obj_loreline_runtimecharacter) {
 		var _hx_closure_src_629 func(_hx_param_key any, _hx_param_value any)
 		_ = _hx_closure_src_629
 		_hx_closure_src_629 = this.Hx_Field_context.Hx_Field_topLevelCharacters.VTable.(interface {
 			Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 		}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_set
-		return func(_hx_param_key string, _hx_param_value *Hx_Obj_loreline_runtimecharacter) {
-			_hx_closure_src_629(((any)(_hx_param_key)), ((any)(_hx_param_value)))
+		return func(key string, value *Hx_Obj_loreline_runtimecharacter) {
+			_hx_closure_src_629(((any)(key)), ((any)(value)))
 		}
 	}()(character.Hx_Field_name, characterState)
 	{
@@ -8833,7 +8830,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_finish() {
 		_ = (Hx_Array_Remove[*Hx_Obj_loreline_interpreter](this.Hx_Field_context.Hx_Field_children, this))
 	}
 
-	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(this.Hx_Field_handleFinish)), ((any)(nil))))) {
+	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(this.Hx_Field_handleFinish)), HxDefault[any]()))) {
 		this.Hx_Field_handleFinish(this)
 	}
 }
@@ -9267,8 +9264,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_evalText(text *Hx_Obj_loreline
 	})()
 	var _hx_tmp_2 HxNullable[string]
 	_ = _hx_tmp_2
-	_hx_tmp_2 = HxNullable[string]{Value: HxStringNull}
-
+	_hx_tmp_2 = HxDefault[HxNullable[string]]()
 	var _hx_tmp_3 string
 	_ = _hx_tmp_3
 	_hx_tmp_3 = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_getField(content, "text"))
@@ -9410,7 +9406,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_presentRestoredDialogue(node *
 	var _hx_tmp_2 HxNullable[string]
 	_ = _hx_tmp_2
 	if hx_nullable_t66 == nil {
-		_hx_tmp_2 = HxNullable[string]{Value: HxStringNull}
+		_hx_tmp_2 = HxDefault[HxNullable[string]]()
 	} else {
 		_hx_tmp_2 = HxNullable[string]{Value: Hx_Field_go_haxe_hxdynamic_toString(hx_nullable_t66), Valid: true}
 	}
@@ -9530,7 +9526,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoredOptionsMatch(choice *H
 				var _hx_tmp_5 *Hx_Obj_loreline_nchoiceoption
 				_ = _hx_tmp_5
 				_hx_tmp_5 = _hx_tmp_3
-				_hx_tmp_1 = ((Hx_Array_IndexOf[*Hx_Obj_loreline_nchoiceoption](_hx_tmp_4, _hx_tmp_5, HxNullable[int32]{})) == -1)
+				_hx_tmp_1 = ((Hx_Array_IndexOf[*Hx_Obj_loreline_nchoiceoption](_hx_tmp_4, _hx_tmp_5, HxDefault[HxNullable[int32]]())) == -1)
 			} else {
 				_hx_tmp_1 = false
 			}
@@ -9705,8 +9701,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_evalChoiceOptionsAndInsertions
 		if (startIndex).Valid == false {
 			var hx_nullable_t67 HxNullable[int32]
 			_ = hx_nullable_t67
-			hx_nullable_t67 = HxNullable[int32]{}
-
+			hx_nullable_t67 = HxDefault[HxNullable[int32]]()
 			startIndex = HxNullable[int32]{Value: (hx_nullable_t67).Value, Valid: (hx_nullable_t67).Valid}
 		}
 
@@ -9793,7 +9788,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_evalChoiceOptionsAndInsertions
 				var option *Hx_Obj_loreline_nchoiceoption
 				_ = option
 				option = _hx_tmp_3.Get(((int32)((index).Value)))
-				(index).Value = ((index).Value + 1)
+				(index).Value = (((int32)((index).Value)) + 1)
 				var _hx_tmp_4 bool
 				_ = _hx_tmp_4
 				if option.Hx_Field_once {
@@ -10477,7 +10472,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_restoreShuffleOrder(saved HxAr
 				var _hx_tmp_12 int32
 				_ = _hx_tmp_12
 				_hx_tmp_12 = _hx_tmp_10
-				_hx_tmp_5 = ((Hx_Array_IndexOf[int32](_hx_tmp_11, _hx_tmp_12, HxNullable[int32]{})) != -1)
+				_hx_tmp_5 = ((Hx_Array_IndexOf[int32](_hx_tmp_11, _hx_tmp_12, HxDefault[HxNullable[int32]]())) != -1)
 			}
 
 			if _hx_tmp_5 {
@@ -10679,7 +10674,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_finishWhenCollection(when *Hx_
 	if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(chosen, nil))) {
 		next()
 	} else {
-		if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(chosen, "insertion"), ((any)(nil))))) {
+		if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(Hx_Field_go_haxe_hxdynamic_getField(chosen, "insertion"), HxDefault[any]()))) {
 			var hx_dyncast_250 any
 			_ = hx_dyncast_250
 			hx_dyncast_250 = Hx_Field_go_haxe_hxdynamic_castClass(Hx_Field_go_haxe_hxdynamic_getField(chosen, "rule"), "Hx_Obj_loreline_nwhenrule")
@@ -11208,7 +11203,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_customStrategyCandidate(when *
 		if _hx_tmp_20 {
 			_hx_tmp_19 = HxNullable[int32]{Value: Hx_Field_std_int(((float64)(Hx_Field_go_haxe_hxdynamic_toFloat(result)))), Valid: true}
 		} else {
-			_hx_tmp_19 = HxNullable[int32]{}
+			_hx_tmp_19 = HxDefault[HxNullable[int32]]()
 		}
 
 		_hx_tmp_18 = _hx_tmp_19
@@ -12170,7 +12165,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_isOriginalScriptExpression(exp
 							{
 								var content *Hx_Obj_loreline_nstringliteral
 								_ = content
-								content = _g2.(Hx_Enum_loreline_stringparttype_Tag).Hx_Field_expr
+								content = ((Hx_Enum_loreline_stringparttype)(_g2)).(Hx_Enum_loreline_stringparttype_Tag).Hx_Field_expr
 								if !this.VTable.Hx_Field_isOriginalScriptExpression((func() *Hx_Obj_loreline_nexpr {
 									_hx_up := content
 									if _hx_up != nil {
@@ -12272,16 +12267,16 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_resolveBeatByName(name string,
 			return result
 		}
 
-		return func() func(_hx_param_key string) *Hx_Obj_loreline_nbeatdecl {
+		return func() func(key string) *Hx_Obj_loreline_nbeatdecl {
 			var _hx_closure_src_652 func(_hx_param_key any) any
 			_ = _hx_closure_src_652
 			_hx_closure_src_652 = this.Hx_Field_context.Hx_Field_topLevelBeats.VTable.(interface {
 				Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 			}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_get
-			return func(_hx_param_key string) *Hx_Obj_loreline_nbeatdecl {
+			return func(key string) *Hx_Obj_loreline_nbeatdecl {
 				var hx_dyncast_267 any
 				_ = hx_dyncast_267
-				hx_dyncast_267 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_652(((any)(_hx_param_key))), "Hx_Obj_loreline_nbeatdecl")
+				hx_dyncast_267 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_652(((any)(key))), "Hx_Obj_loreline_nbeatdecl")
 				var _hx_tmp_1 *Hx_Obj_loreline_nbeatdecl
 				_ = _hx_tmp_1
 				if hx_dyncast_267 != nil {
@@ -12344,16 +12339,16 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_resolveBeatRefByName(name stri
 
 	var topLevel *Hx_Obj_loreline_nbeatdecl
 	_ = topLevel
-	topLevel = func() func(_hx_param_key string) *Hx_Obj_loreline_nbeatdecl {
+	topLevel = func() func(key string) *Hx_Obj_loreline_nbeatdecl {
 		var _hx_closure_src_653 func(_hx_param_key any) any
 		_ = _hx_closure_src_653
 		_hx_closure_src_653 = this.Hx_Field_context.Hx_Field_topLevelBeats.VTable.(interface {
 			Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 		}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_get
-		return func(_hx_param_key string) *Hx_Obj_loreline_nbeatdecl {
+		return func(key string) *Hx_Obj_loreline_nbeatdecl {
 			var hx_dyncast_268 any
 			_ = hx_dyncast_268
-			hx_dyncast_268 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_653(((any)(_hx_param_key))), "Hx_Obj_loreline_nbeatdecl")
+			hx_dyncast_268 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_653(((any)(key))), "Hx_Obj_loreline_nbeatdecl")
 			var _hx_tmp_3 *Hx_Obj_loreline_nbeatdecl
 			_ = _hx_tmp_3
 			if hx_dyncast_268 != nil {
@@ -12453,7 +12448,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_captureChainForBeat(beat *Hx_O
 				var _hx_tmp_5 *Hx_Obj_loreline_nbeatdecl
 				_ = _hx_tmp_5
 				_hx_tmp_5 = _hx_tmp_3
-				_hx_tmp_1 = ((Hx_Array_IndexOf[*Hx_Obj_loreline_nbeatdecl](_hx_tmp_4, _hx_tmp_5, HxNullable[int32]{})) != -1)
+				_hx_tmp_1 = ((Hx_Array_IndexOf[*Hx_Obj_loreline_nbeatdecl](_hx_tmp_4, _hx_tmp_5, HxDefault[HxNullable[int32]]())) != -1)
 			} else {
 				_hx_tmp_1 = false
 			}
@@ -12829,16 +12824,16 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_getTranslatedString(node *Hx_O
 				_hx_tmp_3 = Hx_Field_go_haxe_hxstring_concat(relPath, "#")
 				var scoped *Hx_Obj_loreline_nstringliteral
 				_ = scoped
-				scoped = func() func(_hx_param_key string) *Hx_Obj_loreline_nstringliteral {
+				scoped = func() func(key string) *Hx_Obj_loreline_nstringliteral {
 					var _hx_closure_src_656 func(_hx_param_key any) any
 					_ = _hx_closure_src_656
 					_hx_closure_src_656 = this.Hx_Field_context.Hx_Field_translations.VTable.(interface {
 						Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 					}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_get
-					return func(_hx_param_key string) *Hx_Obj_loreline_nstringliteral {
+					return func(key string) *Hx_Obj_loreline_nstringliteral {
 						var hx_dyncast_272 any
 						_ = hx_dyncast_272
-						hx_dyncast_272 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_656(((any)(_hx_param_key))), "Hx_Obj_loreline_nstringliteral")
+						hx_dyncast_272 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_656(((any)(key))), "Hx_Obj_loreline_nstringliteral")
 						var _hx_tmp_2 *Hx_Obj_loreline_nstringliteral
 						_ = _hx_tmp_2
 						if hx_dyncast_272 != nil {
@@ -12967,7 +12962,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_evaluateString(str *Hx_Obj_lor
 					{
 						var text string
 						_ = text
-						text = _g.(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
+						text = ((Hx_Enum_loreline_stringparttype)(_g)).(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
 						{
 							if !keepWhitespace {
 								var l int32
@@ -13170,7 +13165,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_evaluateString(str *Hx_Obj_lor
 					{
 						var expr *Hx_Obj_loreline_nexpr
 						_ = expr
-						expr = _g.(Hx_Enum_loreline_stringparttype_Expr).Hx_Field_expr
+						expr = ((Hx_Enum_loreline_stringparttype)(_g)).(Hx_Enum_loreline_stringparttype_Expr).Hx_Field_expr
 						{
 							keepWhitespace = true
 							var value any
@@ -13198,10 +13193,10 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_evaluateString(str *Hx_Obj_lor
 					{
 						var closing bool
 						_ = closing
-						closing = _g.(Hx_Enum_loreline_stringparttype_Tag).Hx_Field_closing
+						closing = ((Hx_Enum_loreline_stringparttype)(_g)).(Hx_Enum_loreline_stringparttype_Tag).Hx_Field_closing
 						var expr *Hx_Obj_loreline_nstringliteral
 						_ = expr
-						expr = _g.(Hx_Enum_loreline_stringparttype_Tag).Hx_Field_expr
+						expr = ((Hx_Enum_loreline_stringparttype)(_g)).(Hx_Enum_loreline_stringparttype_Tag).Hx_Field_expr
 						{
 							var tagValue string
 							_ = tagValue
@@ -13257,7 +13252,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_pluralPipeProcess(str *Hx_Obj_
 					{
 						var text string
 						_ = text
-						text = tmp__g1_1.(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
+						text = ((Hx_Enum_loreline_stringparttype)(tmp__g1_1)).(Hx_Enum_loreline_stringparttype_Raw).Hx_Field_text
 						var _hx_tmp_1 bool
 						_ = _hx_tmp_1
 						if lastExprPartIndex >= 0 {
@@ -13275,7 +13270,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_pluralPipeProcess(str *Hx_Obj_
 							if tmp__g_1.Hx_Field_enumIndex() == 1 {
 								var expr *Hx_Obj_loreline_nexpr
 								_ = expr
-								expr = tmp__g_1.(Hx_Enum_loreline_stringparttype_Expr).Hx_Field_expr
+								expr = ((Hx_Enum_loreline_stringparttype)(tmp__g_1)).(Hx_Enum_loreline_stringparttype_Expr).Hx_Field_expr
 								countExpr = expr
 							} else {
 								countExpr = nil
@@ -13474,7 +13469,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_transformPipeRaw(text string, 
 					var _hx_tmp_6 int32
 					_ = _hx_tmp_6
 					_hx_tmp_6 = _hx_tmp_4
-					_hx_tmp_2 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_5, _hx_tmp_6, HxNullable[int32]{}))
+					_hx_tmp_2 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_5, _hx_tmp_6, HxDefault[HxNullable[int32]]()))
 				}
 
 				var singular string
@@ -13504,7 +13499,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_transformPipeRaw(text string, 
 					var _hx_tmp_11 int32
 					_ = _hx_tmp_11
 					_hx_tmp_11 = _hx_tmp_9
-					_hx_tmp_7 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_10, _hx_tmp_11, HxNullable[int32]{}))
+					_hx_tmp_7 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_10, _hx_tmp_11, HxDefault[HxNullable[int32]]()))
 				}
 
 				var pluralForm string
@@ -13535,7 +13530,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_transformPipeRaw(text string, 
 						var _hx_tmp_17 int32
 						_ = _hx_tmp_17
 						_hx_tmp_17 = _hx_tmp_15
-						_hx_tmp_13 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_16, _hx_tmp_17, HxNullable[int32]{}))
+						_hx_tmp_13 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_16, _hx_tmp_17, HxDefault[HxNullable[int32]]()))
 					}
 
 					_ = (Hx_Array_Push[*Hx_Obj_loreline_nstringpart](_hx_tmp_12, Hx_Obj_loreline_nstringpart_CreateInstance(Hx_Field_loreline__node_nodeid_impl__UNDEFINED, pos, Hx_Enum_loreline_stringparttype_Raw{_hx_tmp_13}, nil, nil)))
@@ -13629,7 +13624,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_transformPipeRaw(text string, 
 				var _hx_tmp_25 int32
 				_ = _hx_tmp_25
 				_hx_tmp_25 = _hx_tmp_23
-				_hx_tmp_21 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_24, _hx_tmp_25, HxNullable[int32]{}))
+				_hx_tmp_21 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_24, _hx_tmp_25, HxDefault[HxNullable[int32]]()))
 			}
 
 			var word1 string
@@ -13659,7 +13654,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_transformPipeRaw(text string, 
 				var _hx_tmp_30 int32
 				_ = _hx_tmp_30
 				_hx_tmp_30 = _hx_tmp_28
-				_hx_tmp_26 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_29, _hx_tmp_30, HxNullable[int32]{}))
+				_hx_tmp_26 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_29, _hx_tmp_30, HxDefault[HxNullable[int32]]()))
 			}
 
 			var word2 string
@@ -13699,7 +13694,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_transformPipeRaw(text string, 
 						var _hx_tmp_37 int32
 						_ = _hx_tmp_37
 						_hx_tmp_37 = _hx_tmp_35
-						_hx_tmp_33 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_36, _hx_tmp_37, HxNullable[int32]{}))
+						_hx_tmp_33 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_36, _hx_tmp_37, HxDefault[HxNullable[int32]]()))
 					}
 
 					_ = (Hx_Array_Push[*Hx_Obj_loreline_nstringpart](_hx_tmp_32, Hx_Obj_loreline_nstringpart_CreateInstance(Hx_Field_loreline__node_nodeid_impl__UNDEFINED, pos, Hx_Enum_loreline_stringparttype_Raw{_hx_tmp_33}, nil, nil)))
@@ -13749,7 +13744,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_transformPipeRaw(text string, 
 			var _hx_tmp_44 int32
 			_ = _hx_tmp_44
 			_hx_tmp_44 = _hx_tmp_42
-			_hx_tmp_40 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_43, _hx_tmp_44, HxNullable[int32]{}))
+			_hx_tmp_40 = (Hx_Field_go_haxe_hxstring_substr(_hx_tmp_43, _hx_tmp_44, HxDefault[HxNullable[int32]]()))
 		}
 
 		_ = (Hx_Array_Push[*Hx_Obj_loreline_nstringpart](_hx_tmp_39, Hx_Obj_loreline_nstringpart_CreateInstance(Hx_Field_loreline__node_nodeid_impl__UNDEFINED, pos, Hx_Enum_loreline_stringparttype_Raw{_hx_tmp_40}, nil, nil)))
@@ -13797,7 +13792,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_stripStringIndent(content stri
 	var _hx_tmp_0 string
 	_ = _hx_tmp_0
 	_hx_tmp_0 = content
-	if (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, "\n", HxNullable[int32]{})) == -1 {
+	if (Hx_Field_go_haxe_hxstring_indexOf(_hx_tmp_0, "\n", HxDefault[HxNullable[int32]]())) == -1 {
 		return content
 	}
 
@@ -13889,8 +13884,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_stripStringIndent(content stri
 					str = lines.Get(i)
 					var endIndex HxNullable[int32]
 					_ = endIndex
-					endIndex = HxNullable[int32]{}
-
+					endIndex = HxDefault[HxNullable[int32]]()
 					var _hx_tmp_5 string
 					_ = _hx_tmp_5
 					if (endIndex).Valid != false {
@@ -13908,7 +13902,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_stripStringIndent(content stri
 						var _hx_tmp_9 int32
 						_ = _hx_tmp_9
 						_hx_tmp_9 = _hx_tmp_7
-						_hx_tmp_5 = (Hx_Field_go_haxe_hxstring_substring(_hx_tmp_8, _hx_tmp_9, HxNullable[int32]{}))
+						_hx_tmp_5 = (Hx_Field_go_haxe_hxstring_substring(_hx_tmp_8, _hx_tmp_9, HxDefault[HxNullable[int32]]()))
 					}
 
 					lines.Set(i, _hx_tmp_5)
@@ -14325,7 +14319,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_callFunctionValue(fn any, args
 				}
 
 				if _hx_tmp_1 {
-					if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(((any)(next)), ((any)(nil))))) {
+					if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(((any)(next)), HxDefault[any]()))) {
 						panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_runtimeerror_CreateInstance("Cannot call async function in expression", pos)))))
 					} else {
 						var hx_dyncast_273 any
@@ -14345,7 +14339,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_callFunctionValue(fn any, args
 						asyncResult.Hx_Field_func(next)
 					}
 				} else {
-					if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(next)), ((any)(nil))))) {
+					if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(next)), HxDefault[any]()))) {
 						next()
 					}
 				}
@@ -14435,27 +14429,27 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_resolvesExistingBinding(name s
 		return true
 	}
 
-	if func() func(_hx_param_key string) bool {
+	if func() func(key string) bool {
 		var _hx_closure_src_659 func(_hx_param_key any) bool
 		_ = _hx_closure_src_659
 		_hx_closure_src_659 = this.Hx_Field_context.Hx_Field_topLevelCharacters.VTable.(interface {
 			Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 		}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_exists
-		return func(_hx_param_key string) bool {
-			return _hx_closure_src_659(((any)(_hx_param_key)))
+		return func(key string) bool {
+			return _hx_closure_src_659(((any)(key)))
 		}
 	}()(name) {
 		return true
 	}
 
-	if func() func(_hx_param_key string) bool {
+	if func() func(key string) bool {
 		var _hx_closure_src_660 func(_hx_param_key any) bool
 		_ = _hx_closure_src_660
 		_hx_closure_src_660 = this.Hx_Field_topLevelFunctions.VTable.(interface {
 			Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 		}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_exists
-		return func(_hx_param_key string) bool {
-			return _hx_closure_src_660(((any)(_hx_param_key)))
+		return func(key string) bool {
+			return _hx_closure_src_660(((any)(key)))
 		}
 	}()(name) {
 		return true
@@ -14499,14 +14493,14 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_evaluateDynamicCall(call *Hx_O
 				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_runtimeerror_CreateInstance("call() can only call functions. Use beat(...) to call a beat.", call.Hx_Field_pos)))))
 			}
 
-			if func() func(_hx_param_key string) bool {
+			if func() func(key string) bool {
 				var _hx_closure_src_661 func(_hx_param_key any) bool
 				_ = _hx_closure_src_661
 				_hx_closure_src_661 = this.Hx_Field_topLevelFunctions.VTable.(interface {
 					Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 				}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_exists
-				return func(_hx_param_key string) bool {
-					return _hx_closure_src_661(((any)(_hx_param_key)))
+				return func(key string) bool {
+					return _hx_closure_src_661(((any)(key)))
 				}
 			}()(name) {
 				fn = this.Hx_Field_topLevelFunctions.VTable.(interface {
@@ -14701,7 +14695,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_evaluateFunctionCall(call *Hx_
 				}
 
 				if _hx_tmp_8 {
-					if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(((any)(next)), ((any)(nil))))) {
+					if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(((any)(next)), HxDefault[any]()))) {
 						panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_runtimeerror_CreateInstance("Cannot call async function in expression", call.Hx_Field_pos)))))
 					} else {
 						var hx_dyncast_276 any
@@ -14721,7 +14715,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_evaluateFunctionCall(call *Hx_
 						asyncResult.Hx_Field_func(next)
 					}
 				} else {
-					if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(next)), ((any)(nil))))) {
+					if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(next)), HxDefault[any]()))) {
 						next()
 					}
 				}
@@ -14801,7 +14795,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_evaluateFunctionCall(call *Hx_
 						}
 
 						if _hx_tmp_15 {
-							if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(((any)(next)), ((any)(nil))))) {
+							if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(((any)(next)), HxDefault[any]()))) {
 								panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_runtimeerror_CreateInstance("Cannot call async function in expression", call.Hx_Field_pos)))))
 							} else {
 								var hx_dyncast_277 any
@@ -14821,7 +14815,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_evaluateFunctionCall(call *Hx_
 								asyncResult.Hx_Field_func(next)
 							}
 						} else {
-							if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(next)), ((any)(nil))))) {
+							if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_nequals(((any)(next)), HxDefault[any]()))) {
 								next()
 							}
 						}
@@ -15125,7 +15119,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_evaluateExpression(expr *Hx_Ob
 					if tmp__g_1.Hx_Field_enumIndex() == 1 {
 						var expr *Hx_Obj_loreline_nexpr
 						_ = expr
-						expr = tmp__g_1.(Hx_Enum_loreline_stringparttype_Expr).Hx_Field_expr
+						expr = ((Hx_Enum_loreline_stringparttype)(tmp__g_1)).(Hx_Enum_loreline_stringparttype_Expr).Hx_Field_expr
 						return this.VTable.Hx_Field_evaluateExpression(expr)
 					} else {
 						return Hx_Field_go_haxe_hxdynamic_getField(this.VTable.Hx_Field_evaluateString(str), "text")
@@ -15255,13 +15249,13 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_readAccess(access Hx_Enum_lore
 		{
 			var pos *Hx_Obj_loreline_position
 			_ = pos
-			pos = access.(Hx_Enum_loreline_runtimeaccess_FieldAccess).Hx_Field_pos
+			pos = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_FieldAccess).Hx_Field_pos
 			var obj any
 			_ = obj
-			obj = access.(Hx_Enum_loreline_runtimeaccess_FieldAccess).Hx_Field_obj
+			obj = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_FieldAccess).Hx_Field_obj
 			var name string
 			_ = name
-			name = access.(Hx_Enum_loreline_runtimeaccess_FieldAccess).Hx_Field_name
+			name = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_FieldAccess).Hx_Field_name
 			if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(obj, nil))) {
 				panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_runtimeerror_CreateInstance(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Cannot read field '", name), "' of null"), pos)))))
 			}
@@ -15273,13 +15267,13 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_readAccess(access Hx_Enum_lore
 		{
 			var pos *Hx_Obj_loreline_position
 			_ = pos
-			pos = access.(Hx_Enum_loreline_runtimeaccess_ArrayAccess).Hx_Field_pos
+			pos = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_ArrayAccess).Hx_Field_pos
 			var array any
 			_ = array
-			array = access.(Hx_Enum_loreline_runtimeaccess_ArrayAccess).Hx_Field_array
+			array = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_ArrayAccess).Hx_Field_array
 			var index int32
 			_ = index
-			index = access.(Hx_Enum_loreline_runtimeaccess_ArrayAccess).Hx_Field_index
+			index = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_ArrayAccess).Hx_Field_index
 			return Hx_Field_loreline_arrays_arrayGet(array, index)
 		}
 
@@ -15287,32 +15281,32 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_readAccess(access Hx_Enum_lore
 		{
 			var pos *Hx_Obj_loreline_position
 			_ = pos
-			pos = access.(Hx_Enum_loreline_runtimeaccess_CharacterAccess).Hx_Field_pos
+			pos = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_CharacterAccess).Hx_Field_pos
 			var name string
 			_ = name
-			name = access.(Hx_Enum_loreline_runtimeaccess_CharacterAccess).Hx_Field_name
-			if func() func(_hx_param_key string) bool {
+			name = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_CharacterAccess).Hx_Field_name
+			if func() func(key string) bool {
 				var _hx_closure_src_669 func(_hx_param_key any) bool
 				_ = _hx_closure_src_669
 				_hx_closure_src_669 = this.Hx_Field_context.Hx_Field_topLevelCharacters.VTable.(interface {
 					Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 				}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_exists
-				return func(_hx_param_key string) bool {
-					return _hx_closure_src_669(((any)(_hx_param_key)))
+				return func(key string) bool {
+					return _hx_closure_src_669(((any)(key)))
 				}
 			}()(name) {
 				var character *Hx_Obj_loreline_runtimecharacter
 				_ = character
-				character = func() func(_hx_param_key string) *Hx_Obj_loreline_runtimecharacter {
+				character = func() func(key string) *Hx_Obj_loreline_runtimecharacter {
 					var _hx_closure_src_670 func(_hx_param_key any) any
 					_ = _hx_closure_src_670
 					_hx_closure_src_670 = this.Hx_Field_context.Hx_Field_topLevelCharacters.VTable.(interface {
 						Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 					}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_get
-					return func(_hx_param_key string) *Hx_Obj_loreline_runtimecharacter {
+					return func(key string) *Hx_Obj_loreline_runtimecharacter {
 						var hx_dyncast_280 any
 						_ = hx_dyncast_280
-						hx_dyncast_280 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_670(((any)(_hx_param_key))), "Hx_Obj_loreline_runtimecharacter")
+						hx_dyncast_280 = Hx_Field_go_haxe_hxdynamic_castClass(_hx_closure_src_670(((any)(key))), "Hx_Obj_loreline_runtimecharacter")
 						var _hx_tmp_0 *Hx_Obj_loreline_runtimecharacter
 						_ = _hx_tmp_0
 						if hx_dyncast_280 != nil {
@@ -15340,18 +15334,18 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_readAccess(access Hx_Enum_lore
 		{
 			var pos *Hx_Obj_loreline_position
 			_ = pos
-			pos = access.(Hx_Enum_loreline_runtimeaccess_FunctionAccess).Hx_Field_pos
+			pos = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_FunctionAccess).Hx_Field_pos
 			var name string
 			_ = name
-			name = access.(Hx_Enum_loreline_runtimeaccess_FunctionAccess).Hx_Field_name
-			if func() func(_hx_param_key string) bool {
+			name = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_FunctionAccess).Hx_Field_name
+			if func() func(key string) bool {
 				var _hx_closure_src_671 func(_hx_param_key any) bool
 				_ = _hx_closure_src_671
 				_hx_closure_src_671 = this.Hx_Field_topLevelFunctions.VTable.(interface {
 					Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 				}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_exists
-				return func(_hx_param_key string) bool {
-					return _hx_closure_src_671(((any)(_hx_param_key)))
+				return func(key string) bool {
+					return _hx_closure_src_671(((any)(key)))
 				}
 			}()(name) {
 				return this.Hx_Field_topLevelFunctions.VTable.(interface {
@@ -15366,10 +15360,10 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_readAccess(access Hx_Enum_lore
 		{
 			var pos *Hx_Obj_loreline_position
 			_ = pos
-			pos = access.(Hx_Enum_loreline_runtimeaccess_BeatAccess).Hx_Field_pos
+			pos = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_BeatAccess).Hx_Field_pos
 			var ref *Hx_Obj_loreline_runtimebeatref
 			_ = ref
-			ref = access.(Hx_Enum_loreline_runtimeaccess_BeatAccess).Hx_Field_ref
+			ref = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_BeatAccess).Hx_Field_ref
 			return ((any)(ref))
 		}
 
@@ -15386,13 +15380,13 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_writeAccess(access Hx_Enum_lor
 		{
 			var pos *Hx_Obj_loreline_position
 			_ = pos
-			pos = access.(Hx_Enum_loreline_runtimeaccess_FieldAccess).Hx_Field_pos
+			pos = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_FieldAccess).Hx_Field_pos
 			var obj any
 			_ = obj
-			obj = access.(Hx_Enum_loreline_runtimeaccess_FieldAccess).Hx_Field_obj
+			obj = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_FieldAccess).Hx_Field_obj
 			var name string
 			_ = name
-			name = access.(Hx_Enum_loreline_runtimeaccess_FieldAccess).Hx_Field_name
+			name = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_FieldAccess).Hx_Field_name
 			{
 				if (bool)(Hx_Field_go_haxe_hxdynamic_toBool(Hx_Field_go_haxe_hxdynamic_equals(obj, nil))) {
 					panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_runtimeerror_CreateInstance(Hx_Field_go_haxe_hxstring_concat(Hx_Field_go_haxe_hxstring_concat("Cannot set field '", name), "' of null"), pos)))))
@@ -15406,13 +15400,13 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_writeAccess(access Hx_Enum_lor
 		{
 			var pos *Hx_Obj_loreline_position
 			_ = pos
-			pos = access.(Hx_Enum_loreline_runtimeaccess_ArrayAccess).Hx_Field_pos
+			pos = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_ArrayAccess).Hx_Field_pos
 			var array any
 			_ = array
-			array = access.(Hx_Enum_loreline_runtimeaccess_ArrayAccess).Hx_Field_array
+			array = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_ArrayAccess).Hx_Field_array
 			var index int32
 			_ = index
-			index = access.(Hx_Enum_loreline_runtimeaccess_ArrayAccess).Hx_Field_index
+			index = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_ArrayAccess).Hx_Field_index
 			Hx_Field_loreline_arrays_arraySet(array, index, value)
 		}
 
@@ -15420,10 +15414,10 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_writeAccess(access Hx_Enum_lor
 		{
 			var pos *Hx_Obj_loreline_position
 			_ = pos
-			pos = access.(Hx_Enum_loreline_runtimeaccess_CharacterAccess).Hx_Field_pos
+			pos = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_CharacterAccess).Hx_Field_pos
 			var name string
 			_ = name
-			name = access.(Hx_Enum_loreline_runtimeaccess_CharacterAccess).Hx_Field_name
+			name = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_CharacterAccess).Hx_Field_name
 			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_runtimeerror_CreateInstance(Hx_Field_go_haxe_hxstring_concat("Cannot overwrite character: ", name), pos)))))
 		}
 
@@ -15431,10 +15425,10 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_writeAccess(access Hx_Enum_lor
 		{
 			var pos *Hx_Obj_loreline_position
 			_ = pos
-			pos = access.(Hx_Enum_loreline_runtimeaccess_FunctionAccess).Hx_Field_pos
+			pos = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_FunctionAccess).Hx_Field_pos
 			var name string
 			_ = name
-			name = access.(Hx_Enum_loreline_runtimeaccess_FunctionAccess).Hx_Field_name
+			name = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_FunctionAccess).Hx_Field_name
 			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_runtimeerror_CreateInstance(Hx_Field_go_haxe_hxstring_concat("Cannot overwrite function: ", name), pos)))))
 		}
 
@@ -15442,10 +15436,10 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_writeAccess(access Hx_Enum_lor
 		{
 			var pos *Hx_Obj_loreline_position
 			_ = pos
-			pos = access.(Hx_Enum_loreline_runtimeaccess_BeatAccess).Hx_Field_pos
+			pos = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_BeatAccess).Hx_Field_pos
 			var ref *Hx_Obj_loreline_runtimebeatref
 			_ = ref
-			ref = access.(Hx_Enum_loreline_runtimeaccess_BeatAccess).Hx_Field_ref
+			ref = ((Hx_Enum_loreline_runtimeaccess)(access)).(Hx_Enum_loreline_runtimeaccess_BeatAccess).Hx_Field_ref
 			panic(Hx_Field_haxe_exception_thrown(((any)(Hx_Obj_loreline_runtimeerror_CreateInstance(Hx_Field_go_haxe_hxstring_concat("Cannot overwrite beat: ", ref.Hx_Field_beat.Hx_Field_name), pos)))))
 		}
 
@@ -15575,7 +15569,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_resolveAccess(access *Hx_Obj_l
 						Hx_As_Hx_Obj_loreline_naccess() *Hx_Obj_loreline_naccess
 					}).Hx_As_Hx_Obj_loreline_naccess().Hx_Field_name)
 				} else {
-					_hx_tmp_0 = HxNullable[string]{Value: HxStringNull}
+					_hx_tmp_0 = HxDefault[HxNullable[string]]()
 				}
 
 				var targetName HxNullable[string]
@@ -15814,14 +15808,14 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_resolveAccess(access *Hx_Obj_l
 			return Hx_Enum_loreline_runtimeaccess_FieldAccess{_hx_tmp_18, this.Hx_Field_context.Hx_Field_topLevelState.Hx_Field_fields, name}
 		}
 
-		if func() func(_hx_param_key string) bool {
+		if func() func(key string) bool {
 			var _hx_closure_src_675 func(_hx_param_key any) bool
 			_ = _hx_closure_src_675
 			_hx_closure_src_675 = this.Hx_Field_context.Hx_Field_topLevelCharacters.VTable.(interface {
 				Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 			}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_exists
-			return func(_hx_param_key string) bool {
-				return _hx_closure_src_675(((any)(_hx_param_key)))
+			return func(key string) bool {
+				return _hx_closure_src_675(((any)(key)))
 			}
 		}()(name) {
 			var _hx_tmp_19 *Hx_Obj_loreline_position
@@ -15876,14 +15870,14 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_resolveAccess(access *Hx_Obj_l
 			return Hx_Enum_loreline_runtimeaccess_CharacterAccess{_hx_tmp_22, name}
 		}
 
-		if func() func(_hx_param_key string) bool {
+		if func() func(key string) bool {
 			var _hx_closure_src_676 func(_hx_param_key any) bool
 			_ = _hx_closure_src_676
 			_hx_closure_src_676 = this.Hx_Field_topLevelFunctions.VTable.(interface {
 				Hx_As_Hx_Obj_haxe_ds_stringmap() *Hx_Obj_haxe_ds_stringmap
 			}).Hx_As_Hx_Obj_haxe_ds_stringmap().VTable.Hx_Field_exists
-			return func(_hx_param_key string) bool {
-				return _hx_closure_src_676(((any)(_hx_param_key)))
+			return func(key string) bool {
+				return _hx_closure_src_676(((any)(key)))
 			}
 		}()(name) {
 			var _hx_tmp_23 *Hx_Obj_loreline_position
@@ -16153,7 +16147,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_getTypeName(t Hx_Enum_valuetyp
 		{
 			var c *Hx_Obj_go_haxe_hxclass
 			_ = c
-			c = t.(Hx_Enum_valuetype_TClass).Hx_Field_c
+			c = ((Hx_Enum_valuetype)(t)).(Hx_Enum_valuetype_TClass).Hx_Field_c
 			return Hx_Field_type_getClassName(c)
 		}
 
@@ -16161,7 +16155,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_getTypeName(t Hx_Enum_valuetyp
 		{
 			var e *Hx_Obj_go_haxe_hxenum
 			_ = e
-			e = t.(Hx_Enum_valuetype_TEnum).Hx_Field_e
+			e = ((Hx_Enum_valuetype)(t)).(Hx_Enum_valuetype_TEnum).Hx_Field_e
 			return Hx_Field_type_getEnumName(e)
 		}
 
@@ -16201,7 +16195,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_performOperation(op Hx_Enum_lo
 
 					case 7:
 						{
-							if rightType.(Hx_Enum_valuetype_TClass).Hx_Field_c == Hx_Obj_string_RTTI {
+							if ((Hx_Enum_valuetype)(rightType)).(Hx_Enum_valuetype_TClass).Hx_Field_c == Hx_Obj_string_RTTI {
 								var _hx_tmp_1 string
 								_ = _hx_tmp_1
 								_hx_tmp_1 = Hx_Field_std_string(left)
@@ -16325,7 +16319,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_performOperation(op Hx_Enum_lo
 
 					case 7:
 						{
-							if rightType.(Hx_Enum_valuetype_TClass).Hx_Field_c == Hx_Obj_string_RTTI {
+							if ((Hx_Enum_valuetype)(rightType)).(Hx_Enum_valuetype_TClass).Hx_Field_c == Hx_Obj_string_RTTI {
 								var _hx_tmp_11 string
 								_ = _hx_tmp_11
 								_hx_tmp_11 = Hx_Field_std_string(left)
@@ -16438,14 +16432,14 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_performOperation(op Hx_Enum_lo
 
 			case 7:
 				{
-					if leftType.(Hx_Enum_valuetype_TClass).Hx_Field_c == Hx_Obj_string_RTTI {
+					if ((Hx_Enum_valuetype)(leftType)).(Hx_Enum_valuetype_TClass).Hx_Field_c == Hx_Obj_string_RTTI {
 						var _hx_tmp_20 string
 						_ = _hx_tmp_20
 						_hx_tmp_20 = Hx_Field_std_string(left)
 						return ((any)(Hx_Field_go_haxe_hxstring_concat(_hx_tmp_20, Hx_Field_std_string(right))))
 					} else {
 						if rightType.Hx_Field_enumIndex() == 7 {
-							if rightType.(Hx_Enum_valuetype_TClass).Hx_Field_c == Hx_Obj_string_RTTI {
+							if ((Hx_Enum_valuetype)(rightType)).(Hx_Enum_valuetype_TClass).Hx_Field_c == Hx_Obj_string_RTTI {
 								var _hx_tmp_21 string
 								_ = _hx_tmp_21
 								_hx_tmp_21 = Hx_Field_std_string(left)
@@ -16556,7 +16550,7 @@ func (this *Hx_Obj_loreline_interpreter) Hx_Field_performOperation(op Hx_Enum_lo
 			default:
 				{
 					if rightType.Hx_Field_enumIndex() == 7 {
-						if rightType.(Hx_Enum_valuetype_TClass).Hx_Field_c == Hx_Obj_string_RTTI {
+						if ((Hx_Enum_valuetype)(rightType)).(Hx_Enum_valuetype_TClass).Hx_Field_c == Hx_Obj_string_RTTI {
 							var _hx_tmp_30 string
 							_ = _hx_tmp_30
 							_hx_tmp_30 = Hx_Field_std_string(left)

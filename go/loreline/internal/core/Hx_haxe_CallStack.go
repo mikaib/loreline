@@ -422,10 +422,10 @@ func Hx_Field_haxe__callstack_callstack_impl__equalItems(item1 Hx_Enum_haxe_stac
 					if item2.Hx_Field_enumIndex() == 1 {
 						var m2 string
 						_ = m2
-						m2 = item2.(Hx_Enum_haxe_stackitem_Module).Hx_Field_m
+						m2 = ((Hx_Enum_haxe_stackitem)(item2)).(Hx_Enum_haxe_stackitem_Module).Hx_Field_m
 						var m1 string
 						_ = m1
-						m1 = item1.(Hx_Enum_haxe_stackitem_Module).Hx_Field_m
+						m1 = ((Hx_Enum_haxe_stackitem)(item1)).(Hx_Enum_haxe_stackitem_Module).Hx_Field_m
 						return (m1 == m2)
 					} else {
 						return false
@@ -441,28 +441,28 @@ func Hx_Field_haxe__callstack_callstack_impl__equalItems(item1 Hx_Enum_haxe_stac
 					if item2.Hx_Field_enumIndex() == 2 {
 						var item21 Hx_Enum_haxe_stackitem
 						_ = item21
-						item21 = item2.(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_s
+						item21 = ((Hx_Enum_haxe_stackitem)(item2)).(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_s
 						var file2 string
 						_ = file2
-						file2 = item2.(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_file
+						file2 = ((Hx_Enum_haxe_stackitem)(item2)).(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_file
 						var line2 int32
 						_ = line2
-						line2 = item2.(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_line
+						line2 = ((Hx_Enum_haxe_stackitem)(item2)).(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_line
 						var col2 HxNullable[int32]
 						_ = col2
-						col2 = item2.(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_column
+						col2 = ((Hx_Enum_haxe_stackitem)(item2)).(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_column
 						var col1 HxNullable[int32]
 						_ = col1
-						col1 = item1.(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_column
+						col1 = ((Hx_Enum_haxe_stackitem)(item1)).(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_column
 						var line1 int32
 						_ = line1
-						line1 = item1.(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_line
+						line1 = ((Hx_Enum_haxe_stackitem)(item1)).(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_line
 						var file1 string
 						_ = file1
-						file1 = item1.(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_file
+						file1 = ((Hx_Enum_haxe_stackitem)(item1)).(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_file
 						var item11 Hx_Enum_haxe_stackitem
 						_ = item11
-						item11 = item1.(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_s
+						item11 = ((Hx_Enum_haxe_stackitem)(item1)).(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_s
 						var _hx_tmp_0 bool
 						_ = _hx_tmp_0
 						var _hx_tmp_1 bool
@@ -519,16 +519,16 @@ func Hx_Field_haxe__callstack_callstack_impl__equalItems(item1 Hx_Enum_haxe_stac
 					if item2.Hx_Field_enumIndex() == 3 {
 						var class2 HxNullable[string]
 						_ = class2
-						class2 = item2.(Hx_Enum_haxe_stackitem_Method).Hx_Field_classname
+						class2 = ((Hx_Enum_haxe_stackitem)(item2)).(Hx_Enum_haxe_stackitem_Method).Hx_Field_classname
 						var method2 string
 						_ = method2
-						method2 = item2.(Hx_Enum_haxe_stackitem_Method).Hx_Field_method
+						method2 = ((Hx_Enum_haxe_stackitem)(item2)).(Hx_Enum_haxe_stackitem_Method).Hx_Field_method
 						var method1 string
 						_ = method1
-						method1 = item1.(Hx_Enum_haxe_stackitem_Method).Hx_Field_method
+						method1 = ((Hx_Enum_haxe_stackitem)(item1)).(Hx_Enum_haxe_stackitem_Method).Hx_Field_method
 						var class1 HxNullable[string]
 						_ = class1
-						class1 = item1.(Hx_Enum_haxe_stackitem_Method).Hx_Field_classname
+						class1 = ((Hx_Enum_haxe_stackitem)(item1)).(Hx_Enum_haxe_stackitem_Method).Hx_Field_classname
 						var _hx_tmp_7 bool
 						_ = _hx_tmp_7
 						var _hx_tmp_8 bool
@@ -577,10 +577,10 @@ func Hx_Field_haxe__callstack_callstack_impl__equalItems(item1 Hx_Enum_haxe_stac
 					if item2.Hx_Field_enumIndex() == 4 {
 						var v2 HxNullable[int32]
 						_ = v2
-						v2 = item2.(Hx_Enum_haxe_stackitem_LocalFunction).Hx_Field_v
+						v2 = ((Hx_Enum_haxe_stackitem)(item2)).(Hx_Enum_haxe_stackitem_LocalFunction).Hx_Field_v
 						var v1 HxNullable[int32]
 						_ = v1
-						v1 = item1.(Hx_Enum_haxe_stackitem_LocalFunction).Hx_Field_v
+						v1 = ((Hx_Enum_haxe_stackitem)(item1)).(Hx_Enum_haxe_stackitem_LocalFunction).Hx_Field_v
 						var _hx_tmp_13 bool
 						_ = _hx_tmp_13
 						var _hx_tmp_14 bool
@@ -717,7 +717,7 @@ func Hx_Field_haxe__callstack_callstack_impl__itemToString(b *Hx_Obj_stringbuf, 
 		{
 			var m string
 			_ = m
-			m = s.(Hx_Enum_haxe_stackitem_Module).Hx_Field_m
+			m = ((Hx_Enum_haxe_stackitem)(s)).(Hx_Enum_haxe_stackitem_Module).Hx_Field_m
 			{
 				func() func(x string) {
 					var _hx_closure_src_35 func(x any)
@@ -742,16 +742,16 @@ func Hx_Field_haxe__callstack_callstack_impl__itemToString(b *Hx_Obj_stringbuf, 
 		{
 			var s1 Hx_Enum_haxe_stackitem
 			_ = s1
-			s1 = s.(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_s
+			s1 = ((Hx_Enum_haxe_stackitem)(s)).(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_s
 			var file string
 			_ = file
-			file = s.(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_file
+			file = ((Hx_Enum_haxe_stackitem)(s)).(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_file
 			var line int32
 			_ = line
-			line = s.(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_line
+			line = ((Hx_Enum_haxe_stackitem)(s)).(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_line
 			var col HxNullable[int32]
 			_ = col
-			col = s.(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_column
+			col = ((Hx_Enum_haxe_stackitem)(s)).(Hx_Enum_haxe_stackitem_FilePos).Hx_Field_column
 			{
 				if s1 != nil {
 					Hx_Field_haxe__callstack_callstack_impl__itemToString(b, s1)
@@ -836,10 +836,10 @@ func Hx_Field_haxe__callstack_callstack_impl__itemToString(b *Hx_Obj_stringbuf, 
 		{
 			var cname HxNullable[string]
 			_ = cname
-			cname = s.(Hx_Enum_haxe_stackitem_Method).Hx_Field_classname
+			cname = ((Hx_Enum_haxe_stackitem)(s)).(Hx_Enum_haxe_stackitem_Method).Hx_Field_classname
 			var meth string
 			_ = meth
-			meth = s.(Hx_Enum_haxe_stackitem_Method).Hx_Field_method
+			meth = ((Hx_Enum_haxe_stackitem)(s)).(Hx_Enum_haxe_stackitem_Method).Hx_Field_method
 			{
 				var _hx_tmp_2 HxNullable[string]
 				_ = _hx_tmp_2
@@ -891,7 +891,7 @@ func Hx_Field_haxe__callstack_callstack_impl__itemToString(b *Hx_Obj_stringbuf, 
 		{
 			var n HxNullable[int32]
 			_ = n
-			n = s.(Hx_Enum_haxe_stackitem_LocalFunction).Hx_Field_v
+			n = ((Hx_Enum_haxe_stackitem)(s)).(Hx_Enum_haxe_stackitem_LocalFunction).Hx_Field_v
 			{
 				func() func(x string) {
 					var _hx_closure_src_47 func(x any)

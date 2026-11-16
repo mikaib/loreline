@@ -110,7 +110,7 @@ func Hx_Field_go_haxe_hxstring_charAt(s string, index int32) string {
 
 func Hx_Field_go_haxe_hxstring_charCodeAt(s string, index int32) HxNullable[int32] {
 	if index < 0 {
-		return HxNullable[int32]{}
+		return HxDefault[HxNullable[int32]]()
 	}
 
 	var i int32
@@ -143,7 +143,7 @@ func Hx_Field_go_haxe_hxstring_charCodeAt(s string, index int32) HxNullable[int3
 			_ = _hx_tmp_0
 			_hx_tmp_0 = v.Size
 			if _hx_tmp_0 == int(((int32)(0))) {
-				return HxNullable[int32]{}
+				return HxDefault[HxNullable[int32]]()
 			} else {
 				return HxNullable[int32]{Value: ((int32)(v.R)), Valid: true}
 			}
@@ -183,7 +183,7 @@ func Hx_Field_go_haxe_hxstring_charCodeAt(s string, index int32) HxNullable[int3
 		j++
 	}
 
-	return HxNullable[int32]{}
+	return HxDefault[HxNullable[int32]]()
 }
 
 func Hx_Field_go_haxe_hxstring_indexOf(s string, str string, startIndex__isOptional any) int32 {
@@ -199,8 +199,7 @@ func Hx_Field_go_haxe_hxstring_indexOf(s string, str string, startIndex__isOptio
 		if (startIndex).Valid == false {
 			var hx_nullable_t1 HxNullable[int32]
 			_ = hx_nullable_t1
-			hx_nullable_t1 = HxNullable[int32]{}
-
+			hx_nullable_t1 = HxDefault[HxNullable[int32]]()
 			startIndex = HxNullable[int32]{Value: (hx_nullable_t1).Value, Valid: (hx_nullable_t1).Valid}
 		}
 
@@ -318,8 +317,7 @@ func Hx_Field_go_haxe_hxstring_lastIndexOf(s string, str string, startIndex__isO
 		if (startIndex).Valid == false {
 			var hx_nullable_t2 HxNullable[int32]
 			_ = hx_nullable_t2
-			hx_nullable_t2 = HxNullable[int32]{}
-
+			hx_nullable_t2 = HxDefault[HxNullable[int32]]()
 			startIndex = HxNullable[int32]{Value: (hx_nullable_t2).Value, Valid: (hx_nullable_t2).Valid}
 		}
 
@@ -404,8 +402,7 @@ func Hx_Field_go_haxe_hxstring_substr(s string, pos int32, _hx_reserved_len__isO
 		if (_hx_reserved_len).Valid == false {
 			var hx_nullable_t3 HxNullable[int32]
 			_ = hx_nullable_t3
-			hx_nullable_t3 = HxNullable[int32]{}
-
+			hx_nullable_t3 = HxDefault[HxNullable[int32]]()
 			_hx_reserved_len = HxNullable[int32]{Value: (hx_nullable_t3).Value, Valid: (hx_nullable_t3).Valid}
 		}
 
@@ -488,8 +485,7 @@ func Hx_Field_go_haxe_hxstring_substring(s string, startIndex int32, endIndex__i
 		if (endIndex).Valid == false {
 			var hx_nullable_t4 HxNullable[int32]
 			_ = hx_nullable_t4
-			hx_nullable_t4 = HxNullable[int32]{}
-
+			hx_nullable_t4 = HxDefault[HxNullable[int32]]()
 			endIndex = HxNullable[int32]{Value: (hx_nullable_t4).Value, Valid: (hx_nullable_t4).Valid}
 		}
 

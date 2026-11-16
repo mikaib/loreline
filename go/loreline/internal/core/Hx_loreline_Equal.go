@@ -369,12 +369,12 @@ func Hx_Field_loreline_equal_stringMapEqual(interpreter *Hx_Obj_loreline_interpr
 			_ = val
 			val = _g_value
 			{
-				if !func() func(_hx_param_key string) bool {
+				if !func() func(key string) bool {
 					var _hx_closure_src_536 func(_hx_param_key any) bool
 					_ = _hx_closure_src_536
 					_hx_closure_src_536 = b.VTable.Hx_Field_exists
-					return func(_hx_param_key string) bool {
-						return _hx_closure_src_536(((any)(_hx_param_key)))
+					return func(key string) bool {
+						return _hx_closure_src_536(((any)(key)))
 					}
 				}()(key1) {
 					return false
@@ -408,12 +408,12 @@ func Hx_Field_loreline_equal_stringMapEqual(interpreter *Hx_Obj_loreline_interpr
 			var key string
 			_ = key
 			key = Hx_Field_go_haxe_hxdynamic_toString(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_4, HxMakeArray[any]().Dyn()))
-			if !func() func(_hx_param_key string) bool {
+			if !func() func(key string) bool {
 				var _hx_closure_src_537 func(_hx_param_key any) bool
 				_ = _hx_closure_src_537
 				_hx_closure_src_537 = a.VTable.Hx_Field_exists
-				return func(_hx_param_key string) bool {
-					return _hx_closure_src_537(((any)(_hx_param_key)))
+				return func(key string) bool {
+					return _hx_closure_src_537(((any)(key)))
 				}
 			}()(key) {
 				return false
@@ -469,12 +469,12 @@ func Hx_Field_loreline_equal_intMapEqual(interpreter *Hx_Obj_loreline_interprete
 			_ = val
 			val = _g_value
 			{
-				if !func() func(_hx_param_key int32) bool {
+				if !func() func(key int32) bool {
 					var _hx_closure_src_538 func(_hx_param_key any) bool
 					_ = _hx_closure_src_538
 					_hx_closure_src_538 = b.VTable.Hx_Field_exists
-					return func(_hx_param_key int32) bool {
-						return _hx_closure_src_538(((any)(_hx_param_key)))
+					return func(key int32) bool {
+						return _hx_closure_src_538(((any)(key)))
 					}
 				}()(key1) {
 					return false
@@ -508,12 +508,12 @@ func Hx_Field_loreline_equal_intMapEqual(interpreter *Hx_Obj_loreline_interprete
 			var key int32
 			_ = key
 			key = ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(Hx_Field_go_haxe_hxdynamic_call(_hx_tmp_4, HxMakeArray[any]().Dyn()))))
-			if !func() func(_hx_param_key int32) bool {
+			if !func() func(key int32) bool {
 				var _hx_closure_src_539 func(_hx_param_key any) bool
 				_ = _hx_closure_src_539
 				_hx_closure_src_539 = a.VTable.Hx_Field_exists
-				return func(_hx_param_key int32) bool {
-					return _hx_closure_src_539(((any)(_hx_param_key)))
+				return func(key int32) bool {
+					return _hx_closure_src_539(((any)(key)))
 				}
 			}()(key) {
 				return false

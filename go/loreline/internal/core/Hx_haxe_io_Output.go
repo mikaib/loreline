@@ -7,23 +7,23 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_io_output() {
 }
 
 type Hx_Obj_VTable_haxe_io_output interface {
-	Hx_Field_writeInt24(x int32)
-	Hx_Field_writeByte(c int32)
-	Hx_Field_close()
-	Hx_Field_write(s *Hx_Obj_haxe_io_bytes)
-	Hx_Field_writeFloat(x float64)
-	Hx_Field_writeUInt16(x int32)
-	Hx_Field_prepare(nbytes int32)
-	Hx_Field_set_bigEndian(b bool) bool
-	Hx_Field_writeInt16(x int32)
-	Hx_Field_writeUInt24(x int32)
-	Hx_Field_writeInt32(x int32)
 	Hx_Field_flush()
-	Hx_Field_writeFullBytes(s *Hx_Obj_haxe_io_bytes, pos int32, _hx_reserved_len int32)
-	Hx_Field_writeInt8(x int32)
-	Hx_Field_writeBytes(s *Hx_Obj_haxe_io_bytes, pos int32, _hx_reserved_len int32) int32
+	Hx_Field_close()
+	Hx_Field_writeUInt16(x int32)
+	Hx_Field_writeFloat(x float64)
 	Hx_Field_writeDouble(x float64)
 	Hx_Field_writeInput(i *Hx_Obj_haxe_io_input, bufsize__isOptional any)
+	Hx_Field_writeFullBytes(s *Hx_Obj_haxe_io_bytes, pos int32, _hx_reserved_len int32)
+	Hx_Field_writeInt8(x int32)
+	Hx_Field_writeInt16(x int32)
+	Hx_Field_writeInt24(x int32)
+	Hx_Field_prepare(nbytes int32)
+	Hx_Field_writeByte(c int32)
+	Hx_Field_writeBytes(s *Hx_Obj_haxe_io_bytes, pos int32, _hx_reserved_len int32) int32
+	Hx_Field_set_bigEndian(b bool) bool
+	Hx_Field_write(s *Hx_Obj_haxe_io_bytes)
+	Hx_Field_writeUInt24(x int32)
+	Hx_Field_writeInt32(x int32)
 	Hx_Field_writeString(s string, encoding__isOptional any)
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
@@ -247,8 +247,7 @@ func (this *Hx_Obj_haxe_io_output) Hx_Field_writeInput(i *Hx_Obj_haxe_io_input, 
 		if (bufsize).Valid == false {
 			var hx_nullable_t51 HxNullable[int32]
 			_ = hx_nullable_t51
-			hx_nullable_t51 = HxNullable[int32]{}
-
+			hx_nullable_t51 = HxDefault[HxNullable[int32]]()
 			bufsize = HxNullable[int32]{Value: (hx_nullable_t51).Value, Valid: (hx_nullable_t51).Valid}
 		}
 

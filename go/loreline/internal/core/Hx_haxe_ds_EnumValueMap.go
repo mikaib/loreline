@@ -7,28 +7,28 @@ func Hx_StaticInit_Hx_Obj_VTable_haxe_ds_enumvaluemap() {
 }
 
 type Hx_Obj_VTable_haxe_ds_enumvaluemap interface {
-	Hx_Field_compareArg(v1 any, v2 any) int32
+	Hx_Field_set(_hx_param_key any, _hx_param_value any)
+	Hx_Field_remove(_hx_param_key any) bool
 	Hx_Field_keyValueIterator() any
 	Hx_Field_setLoop(k any, v any, node *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
+	Hx_Field_keysLoop(node *Hx_Obj_haxe_ds_treenode, acc HxArray[any])
 	Hx_Field_merge(t1 *Hx_Obj_haxe_ds_treenode, t2 *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
 	Hx_Field_minBinding(t *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
+	Hx_Field_compareArg(v1 any, v2 any) int32
+	Hx_Field_get(_hx_param_key any) any
+	Hx_Field_keys() any
+	Hx_Field_balance(l *Hx_Obj_haxe_ds_treenode, k any, v any, r *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
+	Hx_Field_toString() string
+	Hx_Field_size() int32
+	Hx_Field_compare(_hx_param_k1 any, _hx_param_k2 any) int32
+	Hx_Field_compareArgs(a1 HxArray[any], a2 HxArray[any]) int32
+	Hx_Field_exists(_hx_param_key any) bool
+	Hx_Field_iterator() any
+	Hx_Field_removeLoop(k any, node *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
 	Hx_Field_removeMinBinding(t *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
 	Hx_Field_getSortIndex(v any) HxNullable[int32]
 	Hx_Field_copy() *Hx_Obj_haxe_imap
-	Hx_Field_remove(_hx_param_key any) bool
-	Hx_Field_exists(_hx_param_key any) bool
-	Hx_Field_iterator() any
-	Hx_Field_compare(_hx_param_k1 any, _hx_param_k2 any) int32
-	Hx_Field_compareArgs(a1 HxArray[any], a2 HxArray[any]) int32
-	Hx_Field_get(_hx_param_key any) any
-	Hx_Field_keys() any
-	Hx_Field_removeLoop(k any, node *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
-	Hx_Field_keysLoop(node *Hx_Obj_haxe_ds_treenode, acc HxArray[any])
-	Hx_Field_balance(l *Hx_Obj_haxe_ds_treenode, k any, v any, r *Hx_Obj_haxe_ds_treenode) *Hx_Obj_haxe_ds_treenode
-	Hx_Field_toString() string
-	Hx_Field_set(_hx_param_key any, _hx_param_value any)
 	Hx_Field_clear()
-	Hx_Field_size() int32
 	Hx_Field__RTTI() *Hx_Obj_go_haxe_hxclass
 }
 
@@ -206,7 +206,7 @@ func (this *Hx_Obj_haxe_ds_enumvaluemap) Hx_Field_getSortIndex(v any) HxNullable
 		var _hx_tmp_0 HxNullable[int32]
 		_ = _hx_tmp_0
 		if hx_nullable_t28 == nil {
-			_hx_tmp_0 = HxNullable[int32]{}
+			_hx_tmp_0 = HxDefault[HxNullable[int32]]()
 		} else {
 			_hx_tmp_0 = HxNullable[int32]{Value: ((int32)(Hx_Field_go_haxe_hxdynamic_toInt(hx_nullable_t28))), Valid: true}
 		}
@@ -386,9 +386,9 @@ func (this *Hx_Obj_haxe_ds_enumvaluemap) Hx_Field_compareArg(v1 any, v2 any) int
 
 	case 7:
 		{
-			if vt1.(Hx_Enum_valuetype_TClass).Hx_Field_c == Hx_Obj_string_RTTI {
+			if ((Hx_Enum_valuetype)(vt1)).(Hx_Enum_valuetype_TClass).Hx_Field_c == Hx_Obj_string_RTTI {
 				if vt2.Hx_Field_enumIndex() == 7 {
-					if vt2.(Hx_Enum_valuetype_TClass).Hx_Field_c == Hx_Obj_string_RTTI {
+					if ((Hx_Enum_valuetype)(vt2)).(Hx_Enum_valuetype_TClass).Hx_Field_c == Hx_Obj_string_RTTI {
 						return Hx_Field_reflect_compare(v1, v2)
 					} else {
 						var _hx_tmp_12 HxNullable[int32]
@@ -492,12 +492,12 @@ func (this *Hx_Obj_haxe_ds_enumvaluemap) Hx_Field_compareArg(v1 any, v2 any) int
 	case 8:
 		{
 			if vt2.Hx_Field_enumIndex() == 8 {
-				return func() func(_hx_param_k1 Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue, _hx_param_k2 Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue) int32 {
+				return func() func(k1 Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue, k2 Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue) int32 {
 					var _hx_closure_src_75 func(_hx_param_k1 any, _hx_param_k2 any) int32
 					_ = _hx_closure_src_75
 					_hx_closure_src_75 = this.VTable.Hx_Field_compare
-					return func(_hx_param_k1 Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue, _hx_param_k2 Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue) int32 {
-						return _hx_closure_src_75(((any)(_hx_param_k1)), ((any)(_hx_param_k2)))
+					return func(k1 Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue, k2 Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue) int32 {
+						return _hx_closure_src_75(((any)(k1)), ((any)(k2)))
 					}
 				}()(func() Hx_Obj_VTable_go_haxe__hxenumvalue__hxenumvalue {
 					_hx_d := Hx_Field_go_haxe_hxdynamic_ensureInterface(v1)
